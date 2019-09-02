@@ -4,3 +4,7 @@ author: "Morgan Brickey"
 date: "Edited: 2019-09-02"
 ---
 
+
+Bio
+:	Senior student with a major in Data Science and a minor in Computer Science.
+	I enjoy playing volleyball, working out, reading, and spending time at the beach.
