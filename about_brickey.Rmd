@@ -4,6 +4,7 @@ author: "Morgan Brickey"
 date: "Edited: 2019-09-02"
 ---
 
+![]SeekClipart.com_astronaut-clipart_3993971.png 'Morgan Brickey'{width=150 height=150}
 
 Bio
 :	Senior student with a major in Data Science and a minor in Computer Science.
