@@ -3,3 +3,13 @@ title: "About the Coder"
 author: "Audrey Way"
 date: "Edited: 2019-09-2"
 ---
+Bio
+: I'm a Data Science and Sociology with a focus in Criminology double major, senior, annd from Arlington VA.
+
+Things I love:
+:   -Art- painting, lettering, ceramics
+    -Traveling
+    -My dog
+
+This is one of my paintings.
+![](https://photos.app.goo.gl/Z38MUo6udoz5n2Di9){width=200 height=200}
