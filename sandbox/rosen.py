@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
-print(3)
-print(5)
+print(7)
+print(410)
