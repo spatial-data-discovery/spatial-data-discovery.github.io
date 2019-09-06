@@ -1,6 +1,12 @@
+# macos files
+.DS_Store
+
+# R compilations
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 *.Rproj
+
+# ignore readme html
 README.html
