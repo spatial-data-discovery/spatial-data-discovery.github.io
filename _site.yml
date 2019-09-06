@@ -9,8 +9,18 @@ navbar:
           menu:
             - text: "Coders"
             - text: "------"
-            - text: "Prof Davis"
+            - text: "dt-woods"
               href: about_davis.html
+            - text: "mbrickey"
+              href: about_brickey.html
+            - text: "oforiaddaejnr"
+              href: about_yaw.html
+            - text: "ithacalr"
+              href: about_rosen.html
+            - text: "alway1"
+              href: about_way.html
+            - text: "dpwisdom"
+              href: about_wisdom.html
 output:
     html_document:
         toc: false
