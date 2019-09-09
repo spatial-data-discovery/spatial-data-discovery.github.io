@@ -1,5 +1,15 @@
 ---
 title: "About the Coder"
 author: "Liz Rosen"
-date: "Edited: 2019-09-02"
+date: "Edited: 2019-09-08"
 ---
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj0SoTP-xZQHwWcURURb-FJHi6Vykt2KvFkGSIdzg9_RMPWD0BGA 'Liz Rosen'){width=150 height=150}
+
+Bio
+:   International Relations and Data Science, Class of 2020.
+
+    My favorite things:
+:   1. Endlessly rewatching *The Office*
+    2. Experimenting with new recipes
+    3. Applying data-driven methods to IR research questions

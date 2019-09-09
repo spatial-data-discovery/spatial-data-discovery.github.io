@@ -3,14 +3,22 @@ output_dir: "."
 navbar:
     title: "DATA 440 - Spatial Data Discovery"
     right:
-        - text: "Home"
-          href: index.html
         - text: "About"
           menu:
             - text: "Coders"
             - text: "------"
-            - text: "Prof Davis"
+            - text: "dt-woods"
               href: about_davis.html
+            - text: "mbrickey"
+              href: about_brickey.html
+            - text: "oforiaddaejnr"
+              href: about_oforiaddae.html
+            - text: "ithacalr"
+              href: about_rosen.html
+            - text: "alway1"
+              href: about_way.html
+            - text: "dpwisdom"
+              href: about_wisdom.html
 output:
     html_document:
         toc: false

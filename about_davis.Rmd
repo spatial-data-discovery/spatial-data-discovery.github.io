@@ -1,17 +1,8 @@
 ---
 title: "About the Coder"
 author: "Tyler W. Davis, PhD"
-date: "Edited: 2019-08-28"
+date: "Edited: 2019-09-05"
 ---
-
-> Assignment Requirements:
-> :   - **0.5 pt** - Name your .Rmd file "about" + underscore + your last name (e.g., `about_davis.Rmd`).
->     - **0.5 pt** - Include an embedded image (_keep it appropriate_)
->     - **0.5 pt** - Include at least one definition list (e.g., bio, hobbies, website, etc.)
->     - **0.5 pt** - Include an ordered or unordered list.
->     - **0.5 pt** - Include a type of text formatting (e.g., *italics*, **bold**, ~~strikethrough~~).
->     - **2.5 pt** - Keep your markdown formatting clean, clear, and consistent.
->     - **5.0 pt** - Include a copy of your Python utility script with a brief introduction of what it does and why you created it (see below for example). Also, please upload your .py file separately to the `ay1920-1/script` folder.
 
 ![](https://drdavis.space/photos/danger_250x250.png 'Tyler W. Davis'){width=150 height=150}
 
