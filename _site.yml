@@ -3,8 +3,6 @@ output_dir: "."
 navbar:
     title: "DATA 440 - Spatial Data Discovery"
     right:
-        - text: "Home"
-          href: index.html
         - text: "About"
           menu:
             - text: "Coders"
