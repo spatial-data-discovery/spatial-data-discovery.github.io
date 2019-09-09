@@ -3,3 +3,23 @@ title: "About the Coder"
 author: "Yaw Ofori-Addae"
 date: "Edited: 2019-09-02"
 ---
+
+![Rick Sanchez](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f506ccd-3a15-4715-95be-63bf8686f8c4/dbhuvw8-0a145a32-710c-4f84-879f-033a9ffcca33.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVmNTA2Y2NkLTNhMTUtNDcxNS05NWJlLTYzYmY4Njg2ZjhjNFwvZGJodXZ3OC0wYTE0NWEzMi03MTBjLTRmODQtODc5Zi0wMzNhOWZmY2NhMzMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5oH91ZWrJdHYscVgCLJuWpda66RO4M4PCH45-IaOn64.jpg){width=50% height=50%}
+
+**Bio**
+:	Data Science and Computer Science Double major. I enjoy playing soccer, learning cool things about machine learning, night out with buddies, watching movies, and listening to music.
+
+**Current Goals**
+: - Brush up on my French back to conversational
+  - Become a better coder
+  - Properly use my time
+  - Ace my classes
+  - Enhance my cooking skills
+  - Read more
+
+**Favorite Quotes**
+: - <i> Everything seems impossible until it is donw </i>
+  - <i> There has never been a genius wihout a touch of madness </i>
+
+
+
