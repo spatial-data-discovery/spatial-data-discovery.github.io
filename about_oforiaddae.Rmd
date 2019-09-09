@@ -4,22 +4,22 @@ author: "Yaw Ofori-Addae"
 date: "Edited: 2019-09-02"
 ---
 
-![Rick Sanchez](https://myrealdomain.com/images/rick-and-morty-for-free-7.png){width=50% height=50%}
+![Rick Sanchez](https://myrealdomain.com/images/rick-and-morty-for-free-7.png){width=10% height=10%}
 
 **Bio**
 :	Data Science and Computer Science Double major. I enjoy playing soccer, learning cool things about machine learning, night out with buddies, watching movies, and listening to music.
 
 **Current Goals**
-: - Brush up on my French back to conversational
-  - Become a better coder
-  - Properly use my time
-  - Ace my classes
-  - Enhance my cooking skills
-  - Read more
+: - Brush up on my French back to a conversational level
+- Become a better coder
+- Properly use my time
+- Ace my classes
+- Enhance my cooking skills
+- Read more
 
 **Favorite Quotes**
-: - <i> Everything seems impossible until it is donw </i>
-  - <i> There has never been a genius wihout a touch of madness </i>
+: - *Everything seems impossible until it is done*
+- *There has never been a genius without a touch of madness*
 
 
 
