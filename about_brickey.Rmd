@@ -4,6 +4,10 @@ author: "Morgan Brickey"
 date: "Edited: 2019-09-02"
 ---
 
+![](https://cdn2.iconfinder.com/data/icons/travel-and-destinations-1/2126/35p-512.png 'Morgan Brickey'){width=150 height=150}
+
 Bio
 :	I am a senior from Virginia Beach with a major in Data Science and a minor in Computer Science.
-	I enjoy playing volleyball, working out, reading, and spending time at the beach.
+
+About Me
+:	I enjoy playing volleyball, working out, reading, and spending time at the beach.
