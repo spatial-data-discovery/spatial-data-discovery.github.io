@@ -245,7 +245,7 @@ class MusicMan(object):
                   files and cleaning up empty directories
         Depends:  - assign_new_folders (raises exceptions)
                   - clean_up
-                  - find_files
+                  - find_files (raises exceptions)
                   - move_files (raises exceptions)
                   - rename_files
         """
