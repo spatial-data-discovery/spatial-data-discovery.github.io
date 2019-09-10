@@ -11,6 +11,8 @@ navbar:
               href: about_davis.html
             - text: "mbrickey"
               href: about_brickey.html
+            - text: "JiayingChen0307"
+              href: about_chen.html
             - text: "oforiaddaejnr"
               href: about_oforiaddae.html
             - text: "ithacalr"
@@ -19,6 +21,7 @@ navbar:
               href: about_way.html
             - text: "dpwisdom"
               href: about_wisdom.html
+
 output:
     html_document:
         toc: false
