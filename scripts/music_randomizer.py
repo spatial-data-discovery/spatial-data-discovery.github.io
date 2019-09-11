@@ -4,7 +4,7 @@
 #
 # VERSION 0.3.1
 #
-# LAST EDIT: 2019-08-23
+# LAST EDIT: 2019-09-11
 #
 # This script randomizes music files on a USB drive
 #
@@ -53,7 +53,7 @@ class MusicMan(object):
     # Class Parameters
     # ////////////////////////////////////////////////////////////////////////
     MAX_SONGS = 130560           # Denon: 999; Subaru: 130560
-    MAX_SONGS_PER_FOLDER = 255   # Subaru requirement
+    MAX_SONGS_PER_FOLDER = 20
     MAX_FOLDERS = 512
 
     # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
