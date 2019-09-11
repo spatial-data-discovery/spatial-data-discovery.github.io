@@ -9,7 +9,7 @@ date: "Edited: 2019-09-08"
 Bio
 :   International Relations and Data Science, Class of 2020.
 
-    My favorite things:
+My favorite things:
 :   1. Endlessly rewatching *The Office*
     2. Experimenting with new recipes
     3. Applying data-driven methods to IR research questions
