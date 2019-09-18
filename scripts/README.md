@@ -21,3 +21,6 @@ This folder contains utility and general functionality scripts.
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them,
   and writes them out to a new text file
+
+### embassy_news_scraper.py
+* This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
