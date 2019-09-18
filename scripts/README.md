@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2019-09-17
+* LAST UPDATED: 2019-09-18
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
@@ -18,3 +18,6 @@ This folder contains utility and general functionality scripts.
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
+### random_caps.py
+* This script takes a text file of ASCII characters, randomly capitalizes them,
+  and writes them out to a new text file
