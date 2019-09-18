@@ -1,25 +1,3 @@
----
-title: "About the Coder"
-author: "Liz Rosen"
-date: "Edited: 2019-09-08"
----
-
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj0SoTP-xZQHwWcURURb-FJHi6Vykt2KvFkGSIdzg9_RMPWD0BGA 'Liz Rosen'){width=150 height=150}
-
-Bio
-:   International Relations and Data Science, Class of 2020.
-
-My favorite things:
-:   1. Endlessly rewatching *The Office*
-    2. Experimenting with new recipes
-    3. Applying data-driven methods to IR research questions
-
-### Sample script
-[Excel Spreadsheet Cleaner (.py)](scripts/spreadsheet_cleaner.py)
-
-For my honors thesis, I need to convert lots of documents into spreadsheets and clean them. Sometimes, extra whitespace slips through the cracks. This script removes leading, trailing, and duplicate whitespace from .xls and .xlsx files and outputs a new, cleaned .xlsx file. 
-
-```{python spreadsheet, eval=FALSE}
 #!/usr/bin/env python3
 #
 # VERSION 0.1
