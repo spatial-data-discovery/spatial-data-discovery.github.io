@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2019-09-17
+* LAST UPDATED: 2019-09-18
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
