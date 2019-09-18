@@ -10,3 +10,9 @@
 
 # ignore readme html
 README.html
+
+# PyCharm
+.idea/
+
+# Virtual environments
+venv/
