@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2019-08-27
+* LAST UPDATED: 2019-09-17
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
@@ -11,3 +11,6 @@ This folder contains utility and general functionality scripts.
 
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
+
+### spreadsheet_cleaner.py
+* This script removes leading, trailing, and double whitespace from Excel spreadsheets
