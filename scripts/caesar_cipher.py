@@ -1,31 +1,4 @@
----
-title: "About the Coder"
-author: "Morgan Brickey"
-date: "Edited: 2019-09-11"
----
-
-![](https://ih1.redbubble.net/image.391047015.5346/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg 'Morgan Brickey'){width=150 height=150}
-
-Bio
-:	I am a senior from Virginia Beach with a major in Data Science and a minor in Computer Science.
-
-About Me
-:	  - I play club volleyball at William and Mary
-    - I enjoy working out, reading, and spending time at the beach
-    - I love old horror movies and loud music
-
-### Sample script
-[Caesar Cipher (.py)](scripts/caesar_cipher.py)
-
-My sample script is from a project I worked on two years ago. 
-It takes a message given by the user and encrypts it using a Caesar Cipher. 
-
-The Caesar Cipher, or the shift cipher, is one of the earliest and simplest methods of encrypting a message. It is a substitution cipher in which each letter is 'shifted' a certain number of places down the alphabet.
- 
-```{python caesar_cipher, eval=FALSE}
-#!/usr/bin/env python3
-#
-# caesar_cipher.py
+# caesar_ciper.py
 #
 # VERSION 0.2
 #
