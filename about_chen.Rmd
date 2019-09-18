@@ -20,7 +20,15 @@ Activities that I enjoy:
 ### Sample Script
 [Embassy News Scraper (.py)](scripts/embassy_news_scraper.py)
 
-My sample script is inspired by my research intern work at TDF last  semester. TDF is a research team at W&M that tracks financial flows from developing countries. A part of my job was to add descriptions of tens of news sources from Chinese Embassy websites each day to the database, which could be boring and I thought of automizing this work.
+My sample script is inspired by my research intern work at TDF last  
+
+semester. TDF is a research team at W&M that tracks financial flows from
+
+developing countries. A part of my job was to add descriptions of tens of
+
+news sources from Chinese Embassy websites each day to the database,
+
+which could be boring and I thought of automizing this work.
 
 '''{python embassy_news_scraper, eval=FALSE}
 #!/usr/bin/env python3
@@ -111,7 +119,7 @@ class NewsScraper:
         self.__get_access_date()
         self.__get_source()
         return "\n".join(self.info)
-        
+
 ##########################################################################
 # MAIN
 ##########################################################################
