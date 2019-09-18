@@ -14,3 +14,7 @@ This folder contains utility and general functionality scripts.
 
 ### spreadsheet_cleaner.py
 * This script removes leading, trailing, and double whitespace from Excel spreadsheets
+
+### caesar_cipher.py
+* This script takes a message given by the user and encrypts it using a Caesar Cipher
+
