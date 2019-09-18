@@ -1,3 +1,7 @@
+# Sandbox GPS Challenge
+# Morgan Brickey
+
+
 import pandas as pd
 import exifread
 from PIL import Image
@@ -104,10 +108,6 @@ df["Name"] = ["image000.jpg", "image001.jpg", "image002.jpg", "image003.jpg", "i
               "image012.jpg", "image013.jpg", "image014.jpg"]
 
 df.index.name = 'ID'
-
-
-
-
 
 for image in image_list:                  # loops through each image, gets the exif data and appends lat and long to   the lists
     get_exif_data(image)
