@@ -2,7 +2,7 @@
 #
 # VERSION 0.1
 #
-# LAST EDIT: 2019-09-16
+# LAST EDIT: 2019-09-17
 #
 # This script removes leading, trailing, and duplicate spaces in
 # .xls and .xlsx files and creates a new .xlsx file
