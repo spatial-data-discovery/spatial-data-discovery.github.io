@@ -109,13 +109,11 @@ class Caesar:
 ##############################################################################
 if __name__ == '__main__':
 
-    # Custructor call
+# Custructor call
     message = input("Enter The Message: ")
     cipher = Caesar(3)
 
-
-    # Check command line arguments
-
+# Check command line arguments
     if not re.match("^[A-Z a-z]*$", message):
         if (message == '-h') or (message == '--help'):
             show_help()
