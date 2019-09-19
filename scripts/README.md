@@ -24,3 +24,6 @@ This folder contains utility and general functionality scripts.
 
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
+
+### webscraper.py
+* This script takes the url for the WM CS website and extracts info about the department and courses offered.
