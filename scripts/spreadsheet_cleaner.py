@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 #
 # VERSION 0.1
-#
+# AUTHOR: Liz Rosen
 # LAST EDIT: 2019-09-17
 #
 # This script removes leading, trailing, and duplicate spaces in
 # .xls and .xlsx files and creates a new .xlsx file
+# NOTE: Currently only works when run on a folder that is in the same folder
+# as the script (i.e. path is ./2008)
 #
 ##############################################################################
 # REQUIRED MODULES
@@ -104,9 +106,9 @@ class SpreadSheet(object):
         Reference: https://stackoverflow.com/questions/10377998/how-can-i-iterate-over-files-in-a-given-directory
         """
         directory = base_dir
-        # have already checked if directory exists.
         for filename in os.listdir(directory):
             if filename.endswith(".xls") or filename.endswith(".xlsx"):
+                # Could also add a endswith to avoid getting _tidy.xlsx
                 self.file_list.append(os.path.join(directory, filename))
             else:
                 continue
@@ -122,6 +124,7 @@ class SpreadSheet(object):
         self.get_files(base_dir)
         for file_name in self.file_list:
             names = str(file_name).split(".")
+            # @TODO: figure out how to do os.path.join
             new_name = "." + str(names[1]) + "_tidy." + str(names[2])
             self.cleaning(file_name, new_name)
 
