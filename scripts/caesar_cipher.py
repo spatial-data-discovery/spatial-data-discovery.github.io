@@ -2,7 +2,7 @@
 #
 # VERSION 0.2
 #
-# LAST_EDIT: 2019-09-17
+# LAST_EDIT: 2019-09-20
 #
 # This script uses a Caesar cipher to encrypt a text message
 #
@@ -26,6 +26,7 @@ def show_help():
     help_txt = ("FILE: caesar_cipher.py\n"
                 "DESC: This script uses a Caesar cipher to encrypt a text message written by the user.\n"
                 "USGE: app_name [options]\n"
+                " ' ' no arguments runs the script\n"
                 "  -h, --help   shows the help text\n")
     print(help_txt)
 
@@ -63,6 +64,7 @@ class Caesar:
         self._encoder = [None] * 26
         self._decoder = [None] * 26
 
+        shift = int(shift)
         for k in range(26):
             self._encoder[k] = chr((k + shift) % 26 + ord('A'))
             #ord- numeric position of that character in ASCII
@@ -109,12 +111,15 @@ class Caesar:
 ##############################################################################
 if __name__ == '__main__':
 
-# Custructor call
-    message = input("Enter The Message: ")
-    cipher = Caesar(3)
+  if '-h' in sys.argv or '--help' in sys.argv:
+        show_help()
+  else:
+    
+    shift = input("Enter The Shift Value to Encode your Message: ")
+    message = input("Enter The Message You Want to be Encoded: ")
+    cipher = Caesar(shift)
 
-# Check command line arguments
-    if not re.match("^[A-Z a-z]*$", message):
+    if not re.match("^[A-Z a-z]*$", message):       # Check command line arguments
         if (message == '-h') or (message == '--help'):
             show_help()
 
