@@ -164,14 +164,20 @@ def writeout(f, d):
 # MAIN
 ##############################################################################
 if __name__ == "__main__":
-    #my_dir = "/home/user/Dropbox/Work/WM/Courses/DS/Spatial_Data/lessons/vector_points/photos"
-    my_dir = "C:\\Workspace\\ds440\\photos"
+    my_dir = input('Enter the path to image folder: ')
     my_outfile = "points.txt"
     process_img_files(my_dir, my_outfile)
 
 if None:
-    # For QGIS 2.18.17
     out_file = os.path.join(my_dir, my_outfile)
+
+    # For QGIS 2.18.17 (on Mac/Linux)
     uri = "file://%s?encoding=%s&delimiter=%s&xField=%s&yField=%s&crs=%s" % (out_file, "UTF-8",",", "LON", "LAT","epsg:4326")
     csv_layer=QgsVectorLayer(uri,"points","delimitedtext")
     QgsMapLayerRegistry.instance().addMapLayer(csv_layer)
+
+    # For QGIS 3.14 (on Windows)
+    out_file = out_file.replace("\\", "/")
+    uri = "file:///%s?encoding=%s&delimiter=%s&xField=%s&yField=%s&crs=%s" % (out_file, "UTF-8",",", "LON", "LAT","epsg:4326")
+    csv_layer=QgsVectorLayer(uri,"points","delimitedtext")
+    QgsProject.instance().addMapLayer(layer)
