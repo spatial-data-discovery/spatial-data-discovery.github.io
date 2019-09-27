@@ -16,3 +16,6 @@ README.html
 
 # Virtual environments
 venv/
+
+# QGIS auxiliary xml
+*.aux.xml
