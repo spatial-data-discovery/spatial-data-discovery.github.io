@@ -55,3 +55,24 @@ footer {
 .foot-text {
     text-align: center;
 }
+
+.banner {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0px;
+}
+.banner-img {
+    background: #ffffc3 url('images/banner_940x267.png') 50% 50% no-repeat;
+    min-height: 200px;
+}
+
+@media only screen and (max-width: 750px) {
+    .banner-img {
+        background: url('images/banner_500x500.png') 50% 50% no-repeat;
+        min-height: 500px;
+    }
+}
+
+.main-container {
+    margin-bottom: 40px;
+}
