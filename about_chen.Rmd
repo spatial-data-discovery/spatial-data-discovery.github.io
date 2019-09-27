@@ -129,3 +129,4 @@ if __name__ == '__main__':
             'Chinese Embassy websites.')
     else:
         print(NewsScraper(inp).get_info())
+```
