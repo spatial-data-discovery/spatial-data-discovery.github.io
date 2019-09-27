@@ -5,7 +5,7 @@ navbar:
     right:
         - text: "About"
           menu:
-            - text: "Coders"
+            - text: "The Coders"
             - text: "------"
             - text: "dt-woods"
               href: about_davis.html
