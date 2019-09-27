@@ -38,3 +38,20 @@ blockquote a:hover{
 blockquote em{
   font-style: italic;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.myfoot {
+    width: 100%;
+    color: #ffffff;
+    background-color: #222222;
+    padding-top: 10px;
+}
+
+.foot-text {
+    text-align: center;
+}
