@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Morgan Brickey"
-date: "Edited: 2019-09-11"
+date: "Edited: 2019-09-29"
 ---
 
 ![](https://ih1.redbubble.net/image.391047015.5346/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg 'Morgan Brickey'){width=150 height=150}
@@ -23,13 +23,11 @@ It takes a message given by the user and encrypts it using a Caesar Cipher.
 The Caesar Cipher, or the shift cipher, is one of the earliest and simplest methods of encrypting a message. It is a substitution cipher in which each letter is 'shifted' a certain number of places down the alphabet.
  
 ```{python caesar_cipher, eval=FALSE}
-#!/usr/bin/env python3
-#
-# caesar_cipher.py
+# caesar_ciper.py
 #
 # VERSION 0.2
 #
-# LAST_EDIT: 2019-09-17
+# LAST_EDIT: 2019-09-20
 #
 # This script uses a Caesar cipher to encrypt a text message
 #
@@ -53,6 +51,7 @@ def show_help():
     help_txt = ("FILE: caesar_cipher.py\n"
                 "DESC: This script uses a Caesar cipher to encrypt a text message written by the user.\n"
                 "USGE: app_name [options]\n"
+                " ' ' no arguments runs the script\n"
                 "  -h, --help   shows the help text\n")
     print(help_txt)
 
@@ -90,6 +89,7 @@ class Caesar:
         self._encoder = [None] * 26
         self._decoder = [None] * 26
 
+        shift = int(shift)
         for k in range(26):
             self._encoder[k] = chr((k + shift) % 26 + ord('A'))
             #ord- numeric position of that character in ASCII
@@ -136,12 +136,15 @@ class Caesar:
 ##############################################################################
 if __name__ == '__main__':
 
-# Custructor call
-    message = input("Enter The Message: ")
-    cipher = Caesar(3)
+  if '-h' in sys.argv or '--help' in sys.argv:
+        show_help()
+  else:
+    
+    shift = input("Enter The Shift Value to Encode your Message: ")
+    message = input("Enter The Message You Want to be Encoded: ")
+    cipher = Caesar(shift)
 
-# Check command line arguments
-    if not re.match("^[A-Z a-z]*$", message):
+    if not re.match("^[A-Z a-z]*$", message):       # Check command line arguments
         if (message == '-h') or (message == '--help'):
             show_help()
 
