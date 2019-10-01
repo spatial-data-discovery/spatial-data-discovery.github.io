@@ -21,7 +21,7 @@ This is one of my paintings.
 
 My sample script is something that was used in Data Driven Decision Making (with Dan Runfola) and I modified to support the help command line argument.
 
-<!-- import random
+```import random
 import math
 
 #FUNCTIONS
@@ -69,4 +69,4 @@ else:
     print((inside / total)* length**2)
 
   except ValueError:
-    print('Bad!') -->
+    print('Bad!') ```
