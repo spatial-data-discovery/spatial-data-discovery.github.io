@@ -21,7 +21,8 @@ This is one of my paintings.
 
 My sample script is something that was used in Data Driven Decision Making (with Dan Runfola) and I modified to support the help command line argument.
 
-```import random
+```
+import random
 import math
 
 #FUNCTIONS
