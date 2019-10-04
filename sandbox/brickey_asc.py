@@ -1,12 +1,10 @@
-###############################################################################
 # Morgan Brickey
 #
 # raster.py
 #
 # This script takes a raster file and checks that the number of rows and columns
 # are correct, and that all data inputs are numeric
-# Last edited 10/02/19
-###############################################################################
+# Last edited 10/03/19
 
 # Required Modules
 import os
@@ -15,8 +13,6 @@ import re
 
 # filepath = '/Users/MorganBrickey/Documents/Repositories/spatial_data_discovery/spatial-data-discovery.github.io/sandbox/brickey.txt'
 
-# User input for entering the filepath
-# filepath = input("Enter filepath: ")
 
 # Initialize constants
 NCOLS = 0
@@ -38,12 +34,17 @@ data = []
 # Look for the constants in line, use re.findall to return matches of just numbers, including negatives and decimals
 # Find the first item in the list, convert to integer and assign it to constant
 # if no constant is in the line, add the line to data list
+# References: https://stackabuse.com/read-a-file-line-by-line-in-python/
+#             https://docs.python.org/2/library/re.html
+
 
 def findFile(filepath):
     with open(filepath) as fp:
+        # read the file line by line
         for cnt, line in enumerate(fp):
             print(line)
             if 'NCOLS' in line:
+                # finds all numbers, assigns first number as variable
                 ncols = (re.findall('\-?\d+', line))
                 NCOLS = int(ncols[0])
             elif 'NROWS' in line:
