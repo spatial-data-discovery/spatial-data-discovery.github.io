@@ -7,7 +7,7 @@ for root, dirs, file in os.walk("."):
         num_row = 0
         dataset = list()
         discard = [0,1,2,3,4,5]
-        if filename.endswith(".txt"):
+        if filename.endswith(".txt") or filename.endswith(".asc"):
             retrieveFile = os.path.join(root, filename)
             ouvrir = open(retrieveFile, "r")
             for line in ouvrir:
