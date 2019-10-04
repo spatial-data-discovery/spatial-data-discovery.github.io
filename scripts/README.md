@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2019-09-18
+* LAST UPDATED: 2019-10-04
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
@@ -8,6 +8,12 @@
 This folder contains utility and general functionality scripts.
 
 ## Files
+
+### hdf_read.py
+* this script opens and reads an HDF5 file
+
+### hdf_write.py
+* this script creates a new and edits an existing HDF5 file
 
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
