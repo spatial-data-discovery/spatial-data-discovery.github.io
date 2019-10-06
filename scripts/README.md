@@ -33,3 +33,7 @@ This folder contains utility and general functionality scripts.
 
 ### webscraper.py
 * This script takes the url for the WM CS website and extracts info about the department and courses offered.
+
+### darts.py
+* This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board
+  and tell them what percent of the darts landed on the board.
