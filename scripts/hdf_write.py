@@ -2,9 +2,9 @@
 #
 # hdf_write.py
 #
-# VERSION 0.1
+# VERSION 0.2
 #
-# LAST EDIT: 2019-10-03
+# LAST EDIT: 2019-10-11
 #
 # This script writes an HDF5 file.
 
@@ -13,6 +13,7 @@
 ###############################################################################
 import os
 import os.path
+import sys
 
 import h5py
 import numpy
@@ -49,6 +50,12 @@ def set_attr(hf, attr_name, attr_val, obj_path):
 ###############################################################################
 # MAIN
 ###############################################################################
+# Check Python major/minor version (e.g., 3.7) for f string support:
+f_str = True
+py_maj, py_min = sys.version_info[:2]
+if py_maj == 3 and py_min < 6:
+    f_str = False
+
 # Create a system varianble called "DS_WORKSPACE" and save working path to it
 try:
     my_dir = os.environ['DS_WORKSPACE']
@@ -117,13 +124,19 @@ if False:
             # Check number of columns, print anytime value changes:
             ncols_temp = len(vals)
             if ncols != ncols_temp:
-                print(f"Found new ncol {ncols_temp} at row {nrows}")
+                if f_str:
+                    print(f"Found new ncol {ncols_temp} at row {nrows}")
+                else:
+                    print("Found new ncol %d at row %d" % (ncols_temp, nrows))
             ncols = ncols_temp
 
             # Save data to array:
             rdat = numpy.append(rdat, vals)
 
-    print(f"Read {nrows} rows and {ncols} columns")
+    if f_str:
+        print(f"Read {nrows} rows and {ncols} columns")
+    else:
+        print("Read %d rows and %d columns" % (nrows, ncols))
 
     # Resize to 2D array:
     rdat.resize((nrows, ncols))
@@ -143,9 +156,12 @@ if False:
     # Save data to HDF5 file:
     dset = "/data/assignment"
     if dset in hdfile:
-        print(f"{dset} already exists")
+        if f_str:
+            print(f"{dset} already exists")
+        else:
+            print("%s already exists" % (dset))
     else:
-        print(f"Creating dataset {dset}")
+        print("Creating dataset", dset)
         try:
             hdfile.create_dataset(name=dset,
                                   data=rdat.astype(int),
