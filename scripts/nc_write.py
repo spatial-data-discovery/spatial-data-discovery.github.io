@@ -62,8 +62,7 @@ if True:
     f.note = 'You may safely delete this file'
     f.institution = 'William & Mary'
 
-    # Let's assume we have a random color image:
-    my_obs = numpy.random.randint(255, size=(3,1000,1000))
+if False:
 
     # Create y dimension & variable:
     f.createDimension('y', 1000)
@@ -83,7 +82,9 @@ if True:
     color.standard_name = 'RGB'
     color.units = 'red green blue color bands'
 
-    # Create data variable:
+if False:
+
+    # Create random color image variable:
     img = f.createVariable('image', 'i', ('color','y','x'))
     img._FillValue = ERROR_VAL
     img.missing_value = ERROR_VAL
