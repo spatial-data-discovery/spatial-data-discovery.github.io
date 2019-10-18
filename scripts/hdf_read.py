@@ -4,7 +4,7 @@
 #
 # VERSION 0.1
 #
-# LAST EDIT: 2019-10-03
+# LAST EDIT: 2019-10-18
 #
 # This script reads an HDF5 file.
 #
