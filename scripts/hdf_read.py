@@ -24,7 +24,7 @@ def get_attr(hf, attr, group_path):
         """
         Name:     get_attr
         Features: Returns the given attribute for the given path
-        Inputs:   - h5py File (hf)
+        Inputs:   - open h5py file object (hf)
                   - str, attribute name (attr)
                   - str, group path (group_path)
         Outputs:  str, attribute value (val)
@@ -65,7 +65,8 @@ def get_object_attrs(hf, obj_path):
         """
         Name:     get_object_attrs
         Features: Returns dictionary of group/dataset attributes
-        Inputs:   str, object path (obj_path)
+        Inputs:   - open h5py file object (hf)
+                  - str, object path (obj_path)
         Outputs:  dict, session attributes (attrs_dict)
         """
         attr_dict = {}
@@ -87,7 +88,7 @@ def list_objects(hf, parent_path):
         """
         Name:     list_objects
         Features: Returns a sorted list of HDF5 objects under a given parent
-        Inputs:   - h5py File (hf)
+        Inputs:   - open h5py file object (hf)
                   - str, HDF5 path to parent object
         Outputs:  list, HDF5 objects
         """
@@ -111,12 +112,18 @@ def list_objects(hf, parent_path):
 
 def print_attrs(hf, group):
     """
+    Name:     print_attrs
+    Inputs:   - open h5py file object (hf)
+              - str, path to group or dataset (group)
+    Outputs:  None.
+    Features: Prints the attributes for a given HDF5 group/dataset
+    Depends:  get_object_attrs
     """
     if group in hf:
         d = get_object_attrs(hf, group)
         for key in d:
             val = d[key]
-            print(f"{group}: {key}: {val}")
+            print("%s: %s: %s" % (group, key, val))
 
 ###############################################################################
 # MAIN
@@ -141,7 +148,7 @@ if os.path.isfile(hdf_path):
         my_groups.append("/" + my_obj)
 
     for my_group in my_groups:
-        print(f"Objects in {my_group}")
+        print("Objects in", my_group)
         my_objects = list_objects(hdfile, my_group)
         if my_objects == 0:
             print("Found dataset")
