@@ -1,6 +1,6 @@
 # README
 --------
-* LAST UPDATED: 2019-10-18
+* LAST UPDATED: 2019-10-24
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
@@ -18,6 +18,9 @@ This folder contains utility and general functionality scripts.
 
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
+
+### hdf_qgis.py
+* this script opens a MODIS HDF4 file using GDAL, converts it to a GeoTIFF, and opens it for visualization in QGIS (tested using QGIS 3.4)
 
 ### hdf_read.py
 * this script opens and reads an HDF5 file using h5py
