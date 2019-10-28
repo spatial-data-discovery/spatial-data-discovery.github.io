@@ -15,7 +15,7 @@ blockquote{
   font-size: 16px;
   line-height: 1.2;
   color: #666;
-  text-align: justify;
+  text-align: center;
 
   /*Box Shadow - (Optional)*/
   -moz-box-shadow: 2px 2px 15px #ccc;
@@ -75,4 +75,23 @@ footer {
 
 .main-container {
     margin-bottom: 40px;
+}
+
+.credit-line {
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.credit-line p {
+    margin: 0;
+}
+
+.video-wrapper {
+    text-align: center;
+}
+
+#davisvideo {
+    display: inline-block;
+    width: 862px;
+    height: 429px;
 }

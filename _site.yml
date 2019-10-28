@@ -3,6 +3,10 @@ output_dir: "."
 navbar:
     title: "DATA 440 - Spatial Data Discovery"
     right:
+        - text: Spatial Discovery
+          menu:
+            - text: "Breathing of the Biosphere"
+              href:: project_davis.html
         - text: "About"
           menu:
             - text: "The Coders"
