@@ -3,10 +3,10 @@
 # hdf_qgis.py
 #
 # VERSION 0.1
-# LAST EDIT: 2019-10-24
+# LAST EDIT: 2019-10-28
 #
-# Use this script to read an HDF5 spatial data file,
-# convert the HDF5 dataset to a GeoTIFF, and
+# Use this script to read an HDF4 spatial data file,
+# convert the HDF dataset to a GeoTIFF, and
 # visualize the GeoTIFF in QGIS
 #
 # This script assumes you have downloaded a MODIS HDF4 dataset from

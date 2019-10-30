@@ -2,7 +2,7 @@
 #
 # nc_write.py
 #
-# LAST EDIT: 2019-10-10
+# LAST EDIT: 2019-10-28
 #
 # This script writes an NetCDF file.
 
@@ -64,7 +64,8 @@ if True:
 
 if False:
 
-    # Create y dimension & variable:
+    # Create y dimension and a variable
+    # name the variable 'y' of type 'i'nteger of dimension ('y',)
     f.createDimension('y', 1000)
     y = f.createVariable('y', 'i', ('y',) )
     y[:] = numpy.arange(0, 1000, 1, int)
