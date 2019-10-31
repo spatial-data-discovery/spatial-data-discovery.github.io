@@ -18,7 +18,7 @@ print()
 # Write the output file
 in_filename = os.path.basename(FILEPATH)
 in_dirname = os.path.dirname(FILEPATH)
-out_filename = os.path.splitext(in_filename)[0] + '_EVI.tiff'
+out_filename = os.path.splitext(in_filename)[0] + '.tiff'
 out_filepath = os.path.join(in_dirname, out_filename)
 gdal.Warp(out_filepath, net_file, dstSRS='EPSG:4326')
 
