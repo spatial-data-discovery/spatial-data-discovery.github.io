@@ -6,6 +6,7 @@ FILEPATH = "C:/Users/David/Documents/College/DATA_440_Spatial/netcdf_conv_assign
 
 # Open the NetCDF file
 # net_file = gdal.Open(FILEPATH, gdal.GA_ReadOnly)
+# https://geoexamples.blogspot.com/2013/09/reading-wrf-netcdf-files-with-gdal.html
 net_file = gdal.Open("NETCDF:" + FILEPATH + ":image")
 
 # Get the metadata
