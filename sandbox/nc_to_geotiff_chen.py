@@ -18,6 +18,8 @@ else:
 
 src_ds = gdal.Open(file_path, gdal.GA_ReadOnly)
 
+#Found the source for CreatCopy() method:
+#https://gdal.org/tutorials/raster_api_tut.html
 #Open output format driver, see gdal_translate --formats for list
 format = "GTiff"
 driver = gdal.GetDriverByName( format )
