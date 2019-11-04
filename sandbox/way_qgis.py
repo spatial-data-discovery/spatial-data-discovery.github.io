@@ -5,13 +5,15 @@ import os.path
 import gdal
 
 path = r'C:\Users\giraf\OneDrive\Documents\spatial_data\conv2_raster\fire\all_fires' # use your path
+all_files = glob.glob(path + "/*.nc")
+print(len(all_files))
 
+cdf_layer = gdal.Open(all_files[0], gdal.GA_ReadOnly)
+str_file_name = str(cdf_layer)
+
+out_file = os.path.splitext(str_file_name)[0] + 'to.tiff'
 out_path = r'C:\Users\giraf\OneDrive\Documents\spatial_data\conv2_raster\fire\all_fires\output.tiff'
 
-cdf_layer = gdal.Open('conv_part2_way.nc', gdal.GA_ReadOnly)
-print(cdf_layer)
+gdal.Warp(out_path, cdf_layer)
 
-#rlayer = gdal.Open(cdf_layer.GetSubDatasets()[0][0], gdal.GA_ReadOnly)
-
-#dal.Warp(out_path, rlayer, dstSRS='EPSG:4326')
-#iface.addRasterLayer(out_path, out_file)
+iface.addRasterLayer(out_path, out_file)
