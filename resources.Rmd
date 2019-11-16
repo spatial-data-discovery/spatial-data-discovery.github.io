@@ -1,0 +1,13 @@
+---
+title: "Resources"
+---
+
+# Helpful Links
+
+[GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
+:   Davis's introductory reader on geographic information systems.
+
+# Data
+
+[Data.gov](https://www.data.gov/)
+:   The home of the U.S. Government's open data.
