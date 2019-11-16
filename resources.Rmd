@@ -7,7 +7,18 @@ title: "Resources"
 [GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
 :   Davis's introductory reader on geographic information systems.
 
+[Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
+:   Link to metacharacters used in Perl regular expressions.
+
+[R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+:   A PDF with condensed info on formatting with markdown.
+
 # Data
 
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
+
+# Software
+
+[Panoply](https://www.giss.nasa.gov/tools/panoply/)
+:   A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
