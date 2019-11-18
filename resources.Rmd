@@ -7,6 +7,9 @@ title: "Resources"
 [GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
 :   Davis's introductory reader on geographic information systems.
 
+[Git Basics](https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics)
+:   Some useful commands for a basic git project workflow.
+
 [Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
 :   Link to metacharacters used in Perl regular expressions.
 
@@ -18,7 +21,29 @@ title: "Resources"
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
+[GeoQuery](http://geo.aiddata.org/query/#!/)
+:   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.[^goodman19]
+
+[^goodman19]: Goodman, S., BenYishay, A., Lv, Z., & Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers & Geosciences, 122, 103-112.
+
+[Google Dataset Search](https://toolbox.google.com/datasetsearch)
+:   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
+
 # Software
+
+[Git for Windows](https://github.com/git-for-windows/git/releases)
+:   A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
 
 [Panoply](https://www.giss.nasa.gov/tools/panoply/)
 :   A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
+
+[Python 3](https://www.python.org/)
+:   A programming language that lets you work quickly and integrate systems more effectively.
+
+[QGIS 3](https://www.qgis.org/en/site/)
+:   A free and open-source geographic information system.
+
+[Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
+
+[^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
