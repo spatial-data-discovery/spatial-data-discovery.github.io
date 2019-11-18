@@ -18,6 +18,9 @@ title: "Resources"
 
 # Data
 
+[Census Data](https://data.census.gov/cedsci)
+:   The leading source of quality data about the US's people and economy.
+
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
