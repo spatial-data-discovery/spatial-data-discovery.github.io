@@ -14,7 +14,10 @@ title: "Resources"
 :   Link to metacharacters used in Perl regular expressions.
 
 [R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
-:   A PDF with condensed info on formatting with markdown.
+:   (PDF) Condensed info on formatting with markdown in R.
+
+[Understanding Map Projections](http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf)
+:   (PDF) Esri's textbook on coordinate systems, geographic transformations, and recommended projections.
 
 # Data
 
@@ -23,6 +26,9 @@ title: "Resources"
 
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
+
+[Elfelt Server List](https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf)
+:   (PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
 
 [GeoQuery](http://geo.aiddata.org/query/#!/)
 :   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.[^goodman19]
