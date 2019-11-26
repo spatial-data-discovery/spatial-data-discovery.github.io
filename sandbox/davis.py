@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #
-# vector.py
+# davis.py
 #
 # VERSION 0.1
 #
-# LAST EDIT: 2019-09-15
+# LAST EDIT: 2019-11-24
 #
 # This script reads coordinates from images' Exif tags, and creates an XY point
 # file for plotting their location in QGIS.
@@ -133,7 +133,7 @@ def process_img_files(file_dir, out_file):
 
 def writeline(f, d):
     """
-    Name:     writeout
+    Name:     writeline
     Input:    - str, file name with path (f)
               - str, data to be written to file (d)
     Output:   None
@@ -144,6 +144,7 @@ def writeline(f, d):
             my_file.write(d)
     except:
         raise IOError("Can not write to output file.")
+
 
 def writeout(f, d):
     """
