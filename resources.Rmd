@@ -1,5 +1,9 @@
 ---
 title: "Resources"
+output:
+    html_document:
+        toc: true
+        toc_depth: 1
 ---
 
 # Helpful Links
@@ -64,3 +68,25 @@ title: "Resources"
 :   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
 
 [^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
+
+# Methods
+
+### Linear Interpolation
+Let's say you are given two pairs of information (\(x_1, y_1\)) and (\(x_2, y_2\)).
+These, for example, may represent elevations at two given locations or rainfall values at two given dates.
+Regardless of what they represent, let's say you are interested in finding the value \(u\) that lies somewhere between \(y_1\) and \(y_2\), which occurs at a location \(k\) between \(x_1\) and \(x_2\).
+In table format, it looks something like this:
+
+| X     | Y     | Description |
+|:-----:|:-----:|:------------|
+| $x_1$ | $y_1$ | Known $x,y$ pair just below the value you are looking for |
+| $k$   | $u$   | The pair you want the $y$-value for |
+| $x_2$ | $y_2$ | Known $x,y$ pair just above the value you are looking for |
+
+By linear interpolation, the rule of equal ratios applies, which states the following:
+
+$$\frac{k - x_1}{x_2 - x_1} = \frac{u - y_1}{y_2 - y_1}$$
+
+and can be solved for the unknown value, \(u\), represented by the following:
+
+$$u = \frac{\left(y_2 - y_1\right) \left(k - x_1\right)}{x_2 - x_1} + y_1$$

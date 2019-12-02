@@ -319,6 +319,14 @@ $(document).ready(function () {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#helpful-links">Helpful Links</a></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#software">Software</a></li>
+<li><a href="#methods">Methods</a></li>
+</ul>
+</div>
 
 <div id="helpful-links" class="section level1">
 <h1>Helpful Links</h1>
@@ -389,6 +397,43 @@ $(document).ready(function () {
 <dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
 </dd>
 </dl>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<div id="linear-interpolation" class="section level3">
+<h3>Linear Interpolation</h3>
+<p>Let’s say you are given two pairs of information (<span class="math inline">\(x_1, y_1\)</span>) and (<span class="math inline">\(x_2, y_2\)</span>). These, for example, may represent elevations at two given locations or rainfall values at two given dates. Regardless of what they represent, let’s say you are interested in finding the value <span class="math inline">\(u\)</span> that lies somewhere between <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, which occurs at a location <span class="math inline">\(k\)</span> between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>. In table format, it looks something like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">X</th>
+<th align="center">Y</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1\)</span></td>
+<td align="center"><span class="math inline">\(y_1\)</span></td>
+<td align="left">Known <span class="math inline">\(x,y\)</span> pair just below the value you are looking for</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(u\)</span></td>
+<td align="left">The pair you want the <span class="math inline">\(y\)</span>-value for</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_2\)</span></td>
+<td align="center"><span class="math inline">\(y_2\)</span></td>
+<td align="left">Known <span class="math inline">\(x,y\)</span> pair just above the value you are looking for</td>
+</tr>
+</tbody>
+</table>
+<p>By linear interpolation, the rule of equal ratios applies, which states the following:</p>
+<p><span class="math display">\[\frac{k - x_1}{x_2 - x_1} = \frac{u - y_1}{y_2 - y_1}\]</span></p>
+<p>and can be solved for the unknown value, <span class="math inline">\(u\)</span>, represented by the following:</p>
+<p><span class="math display">\[u = \frac{\left(y_2 - y_1\right) \left(k - x_1\right)}{x_2 - x_1} + y_1\]</span></p>
+</div>
 </div>
 <div class="footnotes">
 <hr />
