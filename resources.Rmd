@@ -50,6 +50,9 @@ output:
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[USGS Continents](https://pubs.usgs.gov/of/2006/1187/basemaps/continents/)
+:   Esri shapefiles for the major continent boundaries.
+
 # Software
 
 [Git for Windows](https://github.com/git-for-windows/git/releases)
