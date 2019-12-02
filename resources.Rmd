@@ -50,8 +50,15 @@ output:
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[Thematic Mapping World Borders](http://thematicmapping.org/downloads/world_borders.php)
+:   Esri shapefile of the world's country borders in two resolutions.[^sandvik08]
+
+[^sandvik08]: Data provided under a CC BY-SA 3.0 license. Copyright &copy; 2009 Bj&oslash;rn Sandvik. https://thematicmapping.org/
+
 [USGS Continents](https://pubs.usgs.gov/of/2006/1187/basemaps/continents/)
-:   Esri shapefiles for the major continent boundaries.
+:   Esri shapefile for the major continent boundaries.[^buczkowski07]
+
+[^buczkowski07]: Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center's Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at http://pubs.usgs.gov/of/2006/1187/
 
 # Software
 
