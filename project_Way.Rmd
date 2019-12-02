@@ -1,0 +1,23 @@
+---
+title: Children's Hospitals in the US
+subtitle: (Number per State)
+---
+
+![](C:\Users\giraf\OneDrive\Documents\spatial_data\final_data\threed_layout_bad.png)
+
+## Overview
+Health care in the United States isn't bad- on the contrary, it's quite good. We have access to technology and medicine that assists with a range of illnesses and disabilities and we are always making advances in healthcare. However, our system is biased and that significantly impacts the  accessiblity of care to those in need. This map is a basic exploration into the number of children's hospitals per state. While some states have many children's hospitals, others have none, creating disadvantaged populations in those states in particular. In states where there are hospitals, they are generally centralized around one area, which disadvantages those patients not near a children's hospital, particularlly in rural areas.
+
+## Data Description
+The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)[^hifld] and contains general information about hospitals from various state department or federal sources. Hospitals are categorized into ten primary categories depending on the range of offered services.
+
+The entire data set was downloaded and then a script was used to isolate the children's hospitals into a separate CSV file. This CSV file was then uploaded and visualized using QGIS[^qgis].
+
+Attributions
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-. Online: https://www.qgis.org
+[^hifld]: HIFLD. Homeland Infrastructure Foundation-Level Data. Accessed 2019-12-1. Online: https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27
+
+<div class="credit-line">
+Author: Audrey Way
+Last edited: 2019-10-28.
+</div>
