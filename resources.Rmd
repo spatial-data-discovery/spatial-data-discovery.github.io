@@ -81,6 +81,33 @@ output:
 
 # Methods
 
+### Images to Animations
+Based on Davis's MODIS EVI example using [GIMP](https://www.gimp.org/) and FFmpeg (FFmpeg installed with [Imagemagick](https://imagemagick.org/index.php)).
+
+1. Load spatial data into QGIS
+    - Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)
+    - Create layout (save layout in case you need to come back to it)
+    - Add map(s), legend(s), and text to layout
+    - Update and export maps to images (PNG) for each visualization
+1. Load images into GIMP
+    - Open one PNG in GIMP
+    - Open as layers the remaining images (order most recent layer at the top)
+    - Crop image to selection (use Rectangle Select Tool (shortcut key `r`) to draw a box around what you want, then use Image &#8594; Crop to Selection)
+    - Optimize your layers for GIF animation (Filters &#8594; Animation &#8594; Optimize for GIF)
+1. Save your layers as an animated GIF (Export &#8594; GIF)
+    - Check [x] As animation
+    - Loop forever
+    - Delay between frames (e.g., 150 ms)
+    - Use delay entered above for all frames
+1. From the command line, convert exported GIF to video format ([reference](https://gist.github.com/ingramchen/e2af352bf8b40bb88890fba4f47eccd0))
+
+    Update the `-i` input file name and `.mp4` output file name
+
+    ```
+    ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop='floor(in_w/2)*2:floor(in_h/2)*2' Untitled.mp4
+    ```
+
+
 ### Linear Interpolation
 Let's say you are given two pairs of information (\(x_1, y_1\)) and (\(x_2, y_2\)).
 These, for example, may represent elevations at two given locations or rainfall values at two given dates.

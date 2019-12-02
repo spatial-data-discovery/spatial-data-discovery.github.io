@@ -408,6 +408,36 @@ $(document).ready(function () {
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
+<div id="images-to-animations" class="section level3">
+<h3>Images to Animations</h3>
+<p>Based on Davis’s MODIS EVI example using <a href="https://www.gimp.org/">GIMP</a> and FFmpeg (FFmpeg installed with <a href="https://imagemagick.org/index.php">Imagemagick</a>).</p>
+<ol style="list-style-type: decimal">
+<li><p>Load spatial data into QGIS</p>
+<ul>
+<li>Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)</li>
+<li>Create layout (save layout in case you need to come back to it)</li>
+<li>Add map(s), legend(s), and text to layout</li>
+<li>Update and export maps to images (PNG) for each visualization</li>
+</ul></li>
+<li><p>Load images into GIMP</p>
+<ul>
+<li>Open one PNG in GIMP</li>
+<li>Open as layers the remaining images (order most recent layer at the top)</li>
+<li>Crop image to selection (use Rectangle Select Tool (shortcut key <code>r</code>) to draw a box around what you want, then use Image → Crop to Selection)</li>
+<li>Optimize your layers for GIF animation (Filters → Animation → Optimize for GIF)</li>
+</ul></li>
+<li><p>Save your layers as an animated GIF (Export → GIF)</p>
+<ul>
+<li>Check [x] As animation</li>
+<li>Loop forever</li>
+<li>Delay between frames (e.g., 150 ms)</li>
+<li>Use delay entered above for all frames</li>
+</ul></li>
+<li><p>From the command line, convert exported GIF to video format (<a href="https://gist.github.com/ingramchen/e2af352bf8b40bb88890fba4f47eccd0">reference</a>)</p>
+<p>Update the <code>-i</code> input file name and <code>.mp4</code> output file name</p>
+<pre><code>ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=&#39;floor(in_w/2)*2:floor(in_h/2)*2&#39; Untitled.mp4</code></pre></li>
+</ol>
+</div>
 <div id="linear-interpolation" class="section level3">
 <h3>Linear Interpolation</h3>
 <p>Let’s say you are given two pairs of information (<span class="math inline">\(x_1, y_1\)</span>) and (<span class="math inline">\(x_2, y_2\)</span>). These, for example, may represent elevations at two given locations or rainfall values at two given dates. Regardless of what they represent, let’s say you are interested in finding the value <span class="math inline">\(u\)</span> that lies somewhere between <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, which occurs at a location <span class="math inline">\(k\)</span> between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>. In table format, it looks something like this:</p>
