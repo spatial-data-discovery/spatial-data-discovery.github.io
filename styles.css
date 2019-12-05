@@ -90,8 +90,20 @@ footer {
     text-align: center;
 }
 
+.video-fr-wrapper {
+    display: inline-block;
+    float: right;
+    max-width: 500px;
+    margin: 0px 15px;
+}
+
 #davisvideo {
     display: inline-block;
     width: 862px;
     height: 429px;
+}
+
+#rozenvideo {
+    width: 500px;
+    height: 249px;
 }
