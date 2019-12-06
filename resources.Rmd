@@ -40,6 +40,9 @@ output:
 [R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 :   (PDF) Condensed info on formatting with markdown in R.
 
+[R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
+:   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
+
 [Thesaurus of Mathematical Languages](http://mathesaurus.sourceforge.net/)
 :   A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.[^gunderson08]
 
