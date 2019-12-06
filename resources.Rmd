@@ -64,6 +64,9 @@ output:
 [Elfelt Server List](https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf)
 :   (PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
 
+[FEC Elections and Voting](https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/)
+:   Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
+
 [GeoQuery](http://geo.aiddata.org/query/#!/)
 :   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.[^goodman19]
 
