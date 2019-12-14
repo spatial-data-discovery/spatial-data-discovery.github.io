@@ -1,6 +1,15 @@
 ---
-title: "Tornadoes Since the 1950s"
+title: "Tornadoes and Our Warming Climate"
 ---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="brickeyvideo" width="900" height="700" controls preload="true" autoplay loop muted>
+    <source src="https://drive.google.com/uc?id=1Pd-o3DLFWXaNxqQtYy2nZakS9WdQqGY4" type="video/mp4" >
+  </video>
+</div>
+
+> *"Tornadoes ... the dimensionless point at which parallel lines met and whirled and blew up. They made no sense."* -- David Foster Wallace
 
 ## Overview
 The tornado is one of the most fascinating, destructive, and mysterious storm systems that occur in the United States. 
@@ -12,7 +21,10 @@ Atmospheric instability occurs when warm, moist air is wedged under drier cooler
 
 It is likely that a warmer, more humid world would lead to more frequent instability in the atmosphere, but a warmer climate could also lessen the chances for wind shear. 
 Researchers have also found that the increase in outbreaks were driven by storm relative helicity, which is a measure of vertical wind shear. 
-However, this factor has not been projected to increase under a warming climate, leaving us even more unsure regarding the correlation between a warming climate and increased tornado activity.
+However, this factor has not been projected to increase under a warming climate, leaving us even more unsure regarding the correlation between a warming climate and increased tornado activity. 
+
+This data raises new questions about how climate change will impact the severity of thunderstorms and specific weather events. 
+The lack of direct correlation between our warming climate and the increase of tornado activity leaves two possibilities: either the recent increase in severity is not due to global warming, or global warming has implications for tornado activity that we do not understand. 
 
 ## Data Description
 The data points visualized above were collected by the National Weather Service[^nws] field offices found in the Storm Data[^stormdata] publication. 
@@ -20,13 +32,13 @@ The storms are broken up in five year periods, starting in the year 1950 and end
 
 The initial data was in a comprehensive CSV file, and a script written in the Python[^python] programming language was used to group the data in five year increments and keep only those tornadoes recorded as a 3 or greater on the Fujita[^fujita] Scale. 
 
-For each month, the data was visualized in ArcGIS Pro[^arcgis] using the same mapping properties and exported to PNG[^png] image format.
+For each five year period, the data was visualized in ArcGIS Pro[^arcgis] using the same mapping properties and exported to PNG[^png] image format.
 The image files were loaded into GIMP[^gimp], optimized and exported as an animated GIF[^gif].
 The animated GIF was converted to a video using FFmpeg[^ffmpeg].
 
 <div class="credit-line">
 Author: Morgan E. Brickey.
-Last edited: 2019-12-04
+Last edited: 2019-12-11
 </div>
 
 [^arcgis]: ArcGIS. Single Desktop GIS Application Part of Esri Geospatial Cloud. Accessed 2019-11-30.
