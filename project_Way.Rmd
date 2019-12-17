@@ -33,8 +33,33 @@ areas indicate the absence of children's hospitals in general.
 The data visualized above is from the Homeland Infrastructure Foundation-Level
 Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis]. Three D rendering was used to show the number of hospitals per state and a video was taken of the rendering. Ffmpeg[^ffmpeg] was used to crop the video to a size appropriate for the website.
 
-# Data Organization
-[Sorting by Children's Hospital Type (.py)](project/way.py)
+### Data Organization
+```
+#Author: Audrey Way
+#Last edited: 2019-12-16
+
+import os
+import os.path
+import pandas as pd
+
+my_dir = "."
+
+my_file = "Hospitals.csv"
+file_path = os.path.join(my_dir, my_file)
+
+#Creating the data frame
+df = pd.read_csv('Hospitals.csv')
+
+#Getting children and state
+gk = df.groupby('NAICS_DESC')
+gkk = gk.get_group("CHILDREN'S HOSPITALS, GENERAL")
+
+#sorting values by state in ascending order
+gkk.sort_values(by=['STATE'], inplace=True)
+
+#send data frame to csv file (load into QGIS)
+gkk.to_csv(r'.\state_childrens2.csv')
+```
 
 
 [^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: https://ffmpeg.org/
