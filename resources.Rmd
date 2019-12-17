@@ -111,8 +111,17 @@ output:
 [Atom Text Editor](https://atom.io)
 :   A hackable, cross-platform, open-source text editor by GitHub.
 
+[FFmpeg](https://ffmpeg.org/)
+:   A complete, cross-platform solution to record, convert and stream audio and video.
+
+[GIMP](https://www.gimp.org/)
+:   The GNU Image Manipulation Program is a free and open-source cross-platform raster graphics editor.
+
 [Git for Windows](https://github.com/git-for-windows/git/releases)
 :   A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
+
+[ImageMagick](https://imagemagick.org/)
+:   A free cross-platform software to create, edit, compose, or convert bitmap images.
 
 [Panoply](https://www.giss.nasa.gov/tools/panoply/)
 :   A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
