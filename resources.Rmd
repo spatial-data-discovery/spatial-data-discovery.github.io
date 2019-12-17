@@ -28,6 +28,9 @@ output:
 
 # Helpful Links
 
+[\&what\;](http://www.amp-what.com/unicode/search/)
+:   A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant & internationalization characters.
+
 [Data Types](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
 :   Review of numpy dtypes such as `i`, `f`, and `d`.[^scipy19]
 
@@ -36,6 +39,9 @@ output:
 
 [Git Basics](https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics)
 :   Some useful commands for a basic git project workflow.
+
+[Git Reference](https://git-scm.com/docs)
+:   A quick reference guide, including a cheat sheet and complete list of all commands.
 
 [Guidelines for Handling Image Metadata](https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf)
 :   (PDF) Metadata Working Group.
