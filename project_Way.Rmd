@@ -9,8 +9,20 @@ subtitle: An examination of the number of children's hospitals per state
   </video>
 </div>
 
-
 ## Overview
+<div id="way_table">
+| State         | Number of Children's Hospitals  |
+|---------------|:---------------------------------:|
+| TX       | 16                              |
+| CA    | 11                              |
+| FL, CO       |  5                              |
+| NJ, GA , MA, VA    |  4                             |
+| TN, WA, NE, AL   |  3                             |
+| IL, HI, OK, UT, LA, MI, NY, PR    |  2                   |
+| CT, MI, AR, MT, KS, KT, SD| 1|
+| Other 23 states | 0|
+</div>
+
 Health care in the United States isn't bad; on the contrary, it's quite good.
 We have access to technology and medicine that assists with a range of illnesses and disabilities and we are always making advances in healthcare.
 However, our system is biased and that significantly impacts the  accessibility
@@ -18,19 +30,6 @@ of care to those in need.
 This map is a basic exploration into the number of children's hospitals per state.
 It shows the number per state, with Texas having 16 hospitals and California having 11, while many states have no hospital.
 Some states have many children's hospitals, others have none, creating disadvantaged populations in those states in particular.
-
-<div id="way_table">
-| State         | Number of Children's Hospitals  |
-|---------------|---------------------------------|
-| TX       | 16                              |
-| CA    | 11                              |
-| FL, CO       |  5                              |
-| NJ, GA , MA, VA    |  4                             |
-| TN, WA, NE, AL   |  3                             |
-| IL, HI, OK, UT, LA, MI, NY, PR    |  2                              |
-| CT, MI, AR, MT, KS, KT, SD| 1|
-| All other states| 0|
-</div>
 
 ![](http://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png)
 
