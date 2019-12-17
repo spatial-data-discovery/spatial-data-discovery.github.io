@@ -7,6 +7,9 @@ output:
 ---
 
 # Python Packages
+[exifread](https://github.com/ianare/exif-py)
+:   Python package for reading exchangeable image file format (EXIF) metadata.[^exif19]
+
 [h5py](https://www.h5py.org/)
 :   Python package for reading and writing in the HDF5 binary data format.
 
@@ -16,6 +19,12 @@ output:
 [scipy.io.netcdf](https://docs.scipy.org/doc/scipy-0.16.1/reference/io.html#module-scipy.io.netcdf)
 :   Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
 
+[Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
+
+[^exif19]: Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianar&eacute; S&eacute;vi and contributors.
+
+[^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
 
 # Helpful Links
 
@@ -28,6 +37,9 @@ output:
 [Git Basics](https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics)
 :   Some useful commands for a basic git project workflow.
 
+[Guidelines for Handling Image Metadata](https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf)
+:   (PDF) Metadata Working Group.
+
 [HDF Knowledge Base](https://portal.hdfgroup.org/display/knowledge)
 :   Search the HDF knowledge base for answers; powered by The HDF Group.
 
@@ -36,6 +48,9 @@ output:
 
 [Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
 :   Link to metacharacters used in Perl regular expressions.
+
+[QGIS Print Layout](https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html)
+:   Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
 
 [R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 :   (PDF) Condensed info on formatting with markdown in R.
@@ -107,11 +122,6 @@ output:
 
 [QGIS 3](https://www.qgis.org/en/site/)
 :   A free and open-source geographic information system.
-
-[Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
-:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
-
-[^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
 
 # Methods
 
