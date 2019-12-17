@@ -21,7 +21,7 @@ California having the most hospitals, while many states have no hospital. Some
 states have many children's hospitals, others have none, creating disadvantaged
 populations in those states in particular.
 
-![]C:\\Users\\giraf\\OneDrive\\Documents\\spatial_data\\final_data\\hospitals_final.png
+![](hospitals_final.png)
 
 In states where there are children's hospitals, they are generally centralized
 around one area, which disadvantages patients, particularly in rural areas. The
@@ -30,11 +30,11 @@ each state, while the lighter areas are where there are less hospitals. White
 areas indicate the absence of children's hospitals in general.
 
 ## Data Description
-The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis].
+The data visualized above is from the Homeland Infrastructure Foundation-Level
+Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis]. Three D rendering was used to show the number of hospitals per state and a video was taken of the rendering. Ffmpeg[^ffmpeg] was used to crop the video to a size appropriate for the website.
 
 # Data Organization
 [Sorting by Children's Hospital Type (.py)](project/way.py)
-(include description of using ffmpeg to crop video of rendering)
 
 
 [^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: https://ffmpeg.org/
@@ -43,5 +43,5 @@ The data visualized above is from the Homeland Infrastructure Foundation-Level D
 
 <div class="credit-line">
 Author: Audrey Way
-Last edited: 2019-12-16.
+Last edited: 2019-12-17.
 </div>
