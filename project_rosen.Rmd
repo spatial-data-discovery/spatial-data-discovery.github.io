@@ -1,0 +1,70 @@
+---
+title: Climate Change and Conflict in Africa
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-fr-wrapper">
+  <video id="rosenvideo" controls preload="true" autoplay loop muted>
+    <source src="http://drdavis.space/teaching/ds/sdd/media/2019/12/africa.mp4" type="video/mp4" >
+  </video>
+</div>
+
+## Overview
+Many studies of Africa have linked climate change and conflict.
+Climate change can lead to increased conflict through a variety of ways.
+As weather becomes less predictable, farmers become less successful.
+Shortages of food and erratic rainfall patterns drive competition between groups that can spill into violence.
+
+Scarcity often prompts migration and dissatisfaction with the political status quota.
+Migration to urban centers or areas with more bountiful food and water creates cultural conflict and intensifies competition for resources.
+Populist politicians can also ride the wave of dissatisfaction to win votes by exploiting ethnic cleavages, reallocating resources from one group to another, or painting a minority as a scapegoat.
+
+The brunt of climate change is expected to fall on equatorial countries, like those in Africa.
+Violence and political instability have long plagued Africa.
+However, the effects of climate change will worsen matters.
+
+Although intuitive, the strength of the relationship between climate change and conflict is hotly debated amongst academics.
+A key study by Hendrix and Saleyhan linked rainfall variability with social conflict,[^hendrix] while a 2013 synthesis of the literature on climate and conflict found that more extreme rainfall and warmer temperatures increase the likelihood of conflict.[^hsiang]
+Unusually warm temperatures are more often linked with conflict than rainfall variation.[^olo]
+The impact of climate change on conflict is usually captured with econometric models rather than maps, possibly because the effects, although statistically significant, can be quite small.
+A visualization of the relationship between temperature anomalies and conflict is presented above.
+
+## Data Description
+The visualization above uses historical temperature data from the University of East Anglia's Climate Research Unit (CRU), as well as conflict data from the Uppsala Conflict Data Program (UCDP).
+The CRU TS v4.03 dataset contains monthly air temperature data, measured in degrees Celsius, at 0.5 x 0.5 degrees resolution.[^cru]
+In the visualization, the colors in each cell represent the difference between the year's average temperature  and the 50-year average temperature, in degrees Celsius.
+The UCDP dataset contains global, georeferenced conflict fatalities data from 1989 to 2010.[^ucdp]
+Each point in the visualization represents a conflict event and the size of the points represents the best estimate of event fatalities.
+
+Global, monthly temperature data from 1960 to 2010 was processed with a Python script.[^python]
+The script compiled five decade-long datasets into a single NetCDF file and subsetted the dataset down to a rectangle that spanned the African continent.[^nc]
+Then, the script calculated a cell-by-cell 50-year average temperature for the dataset.
+The final data product is a raster of Africa from 1989 to 2010, where each cell represents the difference, in degrees Celsius, between the year's arithmetic mean temperature and the 50-year average in that location.
+
+After adding all of the temperature and conflict data to QGIS,[^qgis] I added a map of African state boundaries,[^boundaries] then used it to exclude conflict events outside of Africa.
+I also cropped the temperature data to only show values within African borders.
+Inside of QGIS, each year of conflict mortality and temperature anomaly data was mapped using the same scale, legend, and extent settings.
+Then, the yearly visualizations were exported as PNG files.[^png]
+When all 21 PNG files were complete, they were uploaded to GIMP,[^gimp] then exported as a GIF.[^gif]
+Finally, I used FFmpeg to convert the GIF into a video,[^ffmpeg] encoded in MPEG-4.[^mpeg4]
+
+<div class="credit-line">
+Author: Liz Rosen.
+Last edited: 2019-12-16.
+</div>
+
+[^boundaries]: Sandvik, B. (2008). World Borders Dataset [shape files in TM_WORLD_BORDERS-0.3.zip]. Retrieved from http://thematicmapping.org/downloads/world_borders.php
+[^cru]: Harris, I., Jones, P.D., Osborn, T.J. & Lister, D.H. (2014). Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset. *International Journal of Climatology 34,* 623-642
+doi:10.1002/joc.3711
+[^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: https://ffmpeg.org/
+[^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-10-28. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: https://www.gimp.org/
+[^hendrix]: Hendrix, C. S., & Salehyan, I. (2012). Climate change, rainfall, and social conflict in Africa. *Journal of peace research, 49*(1), 35-50.
+[^hsiang]: Hsiang, S. M., Burke, M., & Miguel, E. (2013). Quantifying the influence of climate on human conflict. *Science, 341*(6151), 1235367.
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: https://mpeg.chiariglione.org/
+[^nc]: Network Common Data Form (NetCDF). Updated 2019. Unicode. Accessed 2019-12-03. Online: https://www.unidata.ucar.edu/software/netcdf/
+[^olo]: O’Loughlin, J., Linke, A. M., & Witmer, F. D. (2014). Effects of temperature and precipitation variability on the risk of violence in sub-Saharan Africa, 1980–2012. *Proceedings of the National Academy of Sciences, 111*(47), 16712-16717.
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2019-10-28. Online: http://www.libpng.org/pub/png/
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-10-28. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
+[^ucdp]: Sundberg, R., & Melander, E. (2013). Introducing the UCDP Georeferenced Event Dataset, *Journal of Peace Research, 50*(4), 523-532.

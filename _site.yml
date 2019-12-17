@@ -7,8 +7,19 @@ navbar:
           href: resources.html
         - text: Spatial Discovery
           menu:
+            - text: "Example"
             - text: "Breathing of the Biosphere"
-              href:: project_davis.html
+              href: project_davis.html
+            - text: "---------"
+            - text: "Fall 2019"
+            - text: "Children's Hospitals in U.S."
+              href: "#"
+            - text: "Climate Change & Conflict"
+              href: "project_rosen.html"
+            - text: "Last-Mile Delivery Network"
+              href: "#"
+            - text: "Tornadoes Since the 1950s"
+              href: "#"
         - text: "About"
           menu:
             - text: "The Coders"

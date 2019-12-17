@@ -269,8 +269,23 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Example</li>
     <li>
       <a href="project_davis.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Fall 2019</li>
+    <li>
+      <a href="#">Children's Hospitals in U.S.</a>
+    </li>
+    <li>
+      <a href="project_rosen.html">Climate Change &amp; Conflict</a>
+    </li>
+    <li>
+      <a href="#">Last-Mile Delivery Network</a>
+    </li>
+    <li>
+      <a href="#">Tornadoes Since the 1950s</a>
     </li>
   </ul>
 </li>
@@ -321,6 +336,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
+<li><a href="#python-packages">Python Packages</a></li>
 <li><a href="#helpful-links">Helpful Links</a></li>
 <li><a href="#data">Data</a></li>
 <li><a href="#software">Software</a></li>
@@ -328,26 +344,62 @@ $(document).ready(function () {
 </ul>
 </div>
 
+<div id="python-packages" class="section level1">
+<h1>Python Packages</h1>
+<dl>
+<dt><a href="https://github.com/ianare/exif-py">exifread</a></dt>
+<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+</dd>
+<dt><a href="https://www.h5py.org/">h5py</a></dt>
+<dd>Python package for reading and writing in the HDF5 binary data format.
+</dd>
+<dt><a href="https://www.hdfeos.org/software/pyhdf.php">pyhdf</a></dt>
+<dd>Python package for reading HDF4 (HDF-EOS) files.
+</dd>
+<dt><a href="https://docs.scipy.org/doc/scipy-0.16.1/reference/io.html#module-scipy.io.netcdf">scipy.io.netcdf</a></dt>
+<dd>Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
+</dd>
+<dt><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</a></dt>
+<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+</dd>
+</dl>
+</div>
 <div id="helpful-links" class="section level1">
 <h1>Helpful Links</h1>
 <dl>
+<dt><a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">Data Types</a></dt>
+<dd>Review of numpy dtypes such as <code>i</code>, <code>f</code>, and <code>d</code>.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+</dd>
 <dt><a href="https://drdavis.space/teaching/gis/gis-reader/">GIS Reader</a></dt>
 <dd>Davis’s introductory reader on geographic information systems.
 </dd>
 <dt><a href="https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics">Git Basics</a></dt>
 <dd>Some useful commands for a basic git project workflow.
 </dd>
+<dt><a href="https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf">Guidelines for Handling Image Metadata</a></dt>
+<dd>(PDF) Metadata Working Group.
+</dd>
+<dt><a href="https://portal.hdfgroup.org/display/knowledge">HDF Knowledge Base</a></dt>
+<dd>Search the HDF knowledge base for answers; powered by The HDF Group.
+</dd>
+<dt><a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture">NetCDF</a></dt>
+<dd>A look at the NetCDF library architecture for the <a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model">classic</a> and <a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model">enhanced</a> data model.
+</dd>
 <dt><a href="https://perldoc.perl.org/perlre.html#Metacharacters">Perl Regular Expressions</a></dt>
 <dd>Link to metacharacters used in Perl regular expressions.
+</dd>
+<dt><a href="https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html">QGIS Print Layout</a></dt>
+<dd>Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
 </dd>
 <dt><a href="https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheatsheet</a></dt>
 <dd>(PDF) Condensed info on formatting with markdown in R.
 </dd>
-<dt><a href="http://mathesaurus.sourceforge.net/">Thesaurus of Mathematical Languages</a></dt>
-<dd>A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+<dt><a href="https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html">R Markdown Websites</a></dt>
+<dd>The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
 </dd>
-</dl>
-<dl>
+<dt><a href="http://mathesaurus.sourceforge.net/">Thesaurus of Mathematical Languages</a></dt>
+<dd>A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+</dd>
 <dt><a href="http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf">Understanding Map Projections</a></dt>
 <dd>(PDF) Esri’s textbook on coordinate systems, geographic transformations, and recommended projections.
 </dd>
@@ -368,29 +420,43 @@ $(document).ready(function () {
 <dt><a href="https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf">Elfelt Server List</a></dt>
 <dd>(PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
 </dd>
-<dt><a href="http://geo.aiddata.org/query/#!/">GeoQuery</a></dt>
-<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+<dt><a href="https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/">FEC Elections and Voting</a></dt>
+<dd>Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
 </dd>
-</dl>
-<dl>
+<dt><a href="http://geo.aiddata.org/query/#!/">GeoQuery</a></dt>
+<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
+</dd>
 <dt><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a></dt>
 <dd>Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 </dd>
-<dt><a href="http://thematicmapping.org/downloads/world_borders.php">Thematic Mapping World Borders</a></dt>
-<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+<dt><a href="http://dwtkns.com/srtm30m/">SRTM 30-m DEM</a></dt>
+<dd>Derek Watkins’s interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
 </dd>
-</dl>
-<dl>
+<dt><a href="http://thematicmapping.org/downloads/world_borders.php">Thematic Mapping World Borders</a></dt>
+<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+</dd>
 <dt><a href="https://pubs.usgs.gov/of/2006/1187/basemaps/continents/">USGS Continents</a></dt>
-<dd>Esri shapefile for the major continent boundaries.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+<dd>Esri shapefile for the major continent boundaries.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
 </dd>
 </dl>
 </div>
 <div id="software" class="section level1">
 <h1>Software</h1>
 <dl>
+<dt><a href="https://atom.io">Atom Text Editor</a></dt>
+<dd>A hackable, cross-platform, open-source text editor by GitHub.
+</dd>
+<dt><a href="https://ffmpeg.org/">FFmpeg</a></dt>
+<dd>A complete, cross-platform solution to record, convert and stream audio and video.
+</dd>
+<dt><a href="https://www.gimp.org/">GIMP</a></dt>
+<dd>The GNU Image Manipulation Program is a free and open-source cross-platform raster graphics editor.
+</dd>
 <dt><a href="https://github.com/git-for-windows/git/releases">Git for Windows</a></dt>
 <dd>A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
+</dd>
+<dt><a href="https://imagemagick.org/">ImageMagick</a></dt>
+<dd>A free cross-platform software to create, edit, compose, or convert bitmap images.
 </dd>
 <dt><a href="https://www.giss.nasa.gov/tools/panoply/">Panoply</a></dt>
 <dd>A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
@@ -401,13 +467,32 @@ $(document).ready(function () {
 <dt><a href="https://www.qgis.org/en/site/">QGIS 3</a></dt>
 <dd>A free and open-source geographic information system.
 </dd>
-<dt><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</a></dt>
-<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
-</dd>
 </dl>
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
+<div id="environment-variables" class="section level3">
+<h3>Environment Variables</h3>
+<p>For convenience, I have included a check in my example scripts for an environment variable called “DS_WORKSPACE” that is used for reading from and saving to a designated workspace folder on your computer. If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in). To create and define your workspace folder, please follow these instructions.</p>
+<div id="windows" class="section level4">
+<h4>Windows</h4>
+<ul>
+<li>On your keyboard, type “Win + s” to open the search bar.</li>
+<li>Type “environ” in the search bar and select “Edit environment variables for your account”</li>
+<li>Under “User variables for ‘user’”, click “New…”</li>
+<li>For Variable name, type <code>DS_WORKSPACE</code></li>
+<li>For Variable value, type an absolute path to your directory (e.g., “C:\Workspace”); you may use the “Browse Directory…” button to navigate to your folder of choice.</li>
+<li>Click OK and click OK again.</li>
+</ul>
+</div>
+<div id="macos-linux" class="section level4">
+<h4>macOS / Linux</h4>
+<p>Run the following command in the terminal or save it to your <code>~/.bash_profile</code> to run it every time you open a terminal.</p>
+<ul>
+<li><code>export DS_WORKSPACE=~/Workspace</code></li>
+</ul>
+</div>
+</div>
 <div id="images-to-animations" class="section level3">
 <h3>Images to Animations</h3>
 <p>Based on Davis’s MODIS EVI example using <a href="https://www.gimp.org/">GIMP</a> and FFmpeg (FFmpeg installed with <a href="https://imagemagick.org/index.php">Imagemagick</a>).</p>
@@ -476,11 +561,13 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Copyright ©2006,2008 Vidar Bronken Gundersen, <a href="http://mathesaurus.sf.net/" class="uri">http://mathesaurus.sf.net/</a>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Copyright © 2008–2019. The SciPy Community.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Copyright ©2006,2008 Vidar Bronken Gundersen, <a href="http://mathesaurus.sf.net/" class="uri">http://mathesaurus.sf.net/</a>.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

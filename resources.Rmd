@@ -6,7 +6,30 @@ output:
         toc_depth: 1
 ---
 
+# Python Packages
+[exifread](https://github.com/ianare/exif-py)
+:   Python package for reading exchangeable image file format (EXIF) metadata.[^exif19]
+
+[h5py](https://www.h5py.org/)
+:   Python package for reading and writing in the HDF5 binary data format.
+
+[pyhdf](https://www.hdfeos.org/software/pyhdf.php)
+:   Python package for reading HDF4 (HDF-EOS) files.
+
+[scipy.io.netcdf](https://docs.scipy.org/doc/scipy-0.16.1/reference/io.html#module-scipy.io.netcdf)
+:   Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
+
+[Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
+
+[^exif19]: Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianar&eacute; S&eacute;vi and contributors.
+
+[^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
+
 # Helpful Links
+
+[Data Types](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
+:   Review of numpy dtypes such as `i`, `f`, and `d`.[^scipy19]
 
 [GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
 :   Davis's introductory reader on geographic information systems.
@@ -14,19 +37,36 @@ output:
 [Git Basics](https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics)
 :   Some useful commands for a basic git project workflow.
 
+[Guidelines for Handling Image Metadata](https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf)
+:   (PDF) Metadata Working Group.
+
+[HDF Knowledge Base](https://portal.hdfgroup.org/display/knowledge)
+:   Search the HDF knowledge base for answers; powered by The HDF Group.
+
+[NetCDF](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture)
+:   A look at the NetCDF library architecture for the [classic](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model) and [enhanced](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model) data model.
+
 [Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
 :   Link to metacharacters used in Perl regular expressions.
+
+[QGIS Print Layout](https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html)
+:   Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
 
 [R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 :   (PDF) Condensed info on formatting with markdown in R.
 
+[R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
+:   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
+
 [Thesaurus of Mathematical Languages](http://mathesaurus.sourceforge.net/)
 :   A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.[^gunderson08]
 
-[^gunderson08]: Copyright &copy;2006,2008 Vidar Bronken Gundersen, http://mathesaurus.sf.net/.
-
 [Understanding Map Projections](http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf)
 :   (PDF) Esri's textbook on coordinate systems, geographic transformations, and recommended projections.
+
+[^scipy19]: Copyright &copy; 2008--2019. The SciPy Community.
+
+[^gunderson08]: Copyright &copy;2006,2008 Vidar Bronken Gundersen, http://mathesaurus.sf.net/.
 
 # Data
 
@@ -42,28 +82,46 @@ output:
 [Elfelt Server List](https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf)
 :   (PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
 
+[FEC Elections and Voting](https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/)
+:   Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
+
 [GeoQuery](http://geo.aiddata.org/query/#!/)
 :   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.[^goodman19]
-
-[^goodman19]: Goodman, S., BenYishay, A., Lv, Z., & Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers & Geosciences, 122, 103-112.
 
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[SRTM 30-m DEM](http://dwtkns.com/srtm30m/)
+:   Derek Watkins's interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
+
 [Thematic Mapping World Borders](http://thematicmapping.org/downloads/world_borders.php)
 :   Esri shapefile of the world's country borders in two resolutions.[^sandvik08]
-
-[^sandvik08]: Data provided under a CC BY-SA 3.0 license. Copyright &copy; 2009 Bj&oslash;rn Sandvik. https://thematicmapping.org/
 
 [USGS Continents](https://pubs.usgs.gov/of/2006/1187/basemaps/continents/)
 :   Esri shapefile for the major continent boundaries.[^buczkowski07]
 
 [^buczkowski07]: Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center's Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at http://pubs.usgs.gov/of/2006/1187/
 
+[^goodman19]: Goodman, S., BenYishay, A., Lv, Z., & Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers & Geosciences, 122, 103-112.
+
+[^sandvik08]: Data provided under a CC BY-SA 3.0 license. Copyright &copy; 2009 Bj&oslash;rn Sandvik. https://thematicmapping.org/
+
 # Software
+
+[Atom Text Editor](https://atom.io)
+:   A hackable, cross-platform, open-source text editor by GitHub.
+
+[FFmpeg](https://ffmpeg.org/)
+:   A complete, cross-platform solution to record, convert and stream audio and video.
+
+[GIMP](https://www.gimp.org/)
+:   The GNU Image Manipulation Program is a free and open-source cross-platform raster graphics editor.
 
 [Git for Windows](https://github.com/git-for-windows/git/releases)
 :   A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
+
+[ImageMagick](https://imagemagick.org/)
+:   A free cross-platform software to create, edit, compose, or convert bitmap images.
 
 [Panoply](https://www.giss.nasa.gov/tools/panoply/)
 :   A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
@@ -74,12 +132,27 @@ output:
 [QGIS 3](https://www.qgis.org/en/site/)
 :   A free and open-source geographic information system.
 
-[Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
-:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
-
-[^gohlke19]: Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.
-
 # Methods
+
+### Environment Variables
+For convenience, I have included a check in my example scripts for an environment variable called "DS_WORKSPACE" that is used for reading from and saving to a designated workspace folder on your computer.
+If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in).
+To create and define your workspace folder, please follow these instructions.
+
+#### Windows
+* On your keyboard, type "Win + s" to open the search bar.
+* Type "environ" in the search bar and select "Edit environment variables for your account"
+* Under "User variables for 'user'", click "New..."
+* For Variable name, type `DS_WORKSPACE`
+* For Variable value, type an absolute path to your directory (e.g., "C:\\Workspace"); you may use the "Browse Directory..." button to navigate to your folder of choice.
+* Click OK and click OK again.
+
+
+#### macOS / Linux
+Run the following command in the terminal or save it to your `~/.bash_profile` to run it every time you open a terminal.
+
+* `export DS_WORKSPACE=~/Workspace`
+
 
 ### Images to Animations
 Based on Davis's MODIS EVI example using [GIMP](https://www.gimp.org/) and FFmpeg (FFmpeg installed with [Imagemagick](https://imagemagick.org/index.php)).
