@@ -1,6 +1,6 @@
 ---
 title: Children's Hospitals in the US
-subtitle: (Number per State)
+subtitle: An examination of the number of children's hospitals per state
 ---
 
 <div class="video-wrapper">
@@ -12,31 +12,44 @@ subtitle: (Number per State)
 
 ## Overview
 Health care in the United States isn't bad; on the contrary, it's quite good.
-We have access to technology and medicine that assists with a range of
-illnesses and disabilities and we are always making advances in healthcare.
+We have access to technology and medicine that assists with a range of illnesses and disabilities and we are always making advances in healthcare.
 However, our system is biased and that significantly impacts the  accessibility
-of care to those in need. This map is a basic exploration into the number of
-children's hospitals per state. It shows the number per state, with Texas and
-California having the most hospitals, while many states have no hospital. Some
-states have many children's hospitals, others have none, creating disadvantaged
-populations in those states in particular.
+of care to those in need.
+This map is a basic exploration into the number of children's hospitals per state.
+It shows the number per state, with Texas having 16 hospitals and California having 11, while many states have no hospital.
+Some states have many children's hospitals, others have none, creating disadvantaged populations in those states in particular.
+
+<div id="way_table">
+| State         | Number of Children's Hospitals  |
+|---------------|---------------------------------|
+| TX       | 16                              |
+| CA    | 11                              |
+| FL, CO       |  5                              |
+| NJ, GA , MA, VA    |  4                             |
+| TN, WA, NE, AL   |  3                             |
+| IL, HI, OK, UT, LA, MI, NY, PR    |  2                              |
+| CT, MI, AR, MT, KS, KT, SD| 1|
+| All other states| 0|
+</div>
 
 ![](childrens_hospitals_heatmap.png)
 
-In states where there are children's hospitals, they are generally centralized
-around one area, which disadvantages patients, particularly in rural areas. The
-darkest green areas in the map above show where hospitals are centralized in
-each state, while the lighter areas are where there are less hospitals. White
-areas indicate the absence of children's hospitals in general.
+In states where there are children's hospitals, they are generally centralized darkest green areas in the map above show where hospitals are centralized in
+each state, while the lighter areas are where there are less hospitals.
+White areas indicate the absence of children's hospitals in general.
 
 ## Data Description
-The data visualized above is from the Homeland Infrastructure Foundation-Level
-Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis]. Three D rendering was used to show the number of hospitals per state and a video was taken of the rendering. Ffmpeg[^ffmpeg] was used to crop the video to a size appropriate for the website.
+The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States.
+This data was extracted from a database of general hospital information using the script below.
+Various state department and federal sources contributed to this general database.
+This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis].
+Three D rendering was used to show the number of hospitals per state and a video was taken of the rendering.
+Ffmpeg[^ffmpeg] was used to crop the video to a size appropriate for the website.
 
 ### Data Organization
-```
-#Author: Audrey Way
-#Last edited: 2019-12-16
+```python
+# Author: Audrey Way
+# Last edited: 2019-12-16
 
 import os
 import os.path
@@ -47,17 +60,17 @@ my_dir = "."
 my_file = "Hospitals.csv"
 file_path = os.path.join(my_dir, my_file)
 
-#Creating the data frame
+# Creating the data frame
 df = pd.read_csv('Hospitals.csv')
 
-#Getting children and state
+# Getting children and state
 gk = df.groupby('NAICS_DESC')
 gkk = gk.get_group("CHILDREN'S HOSPITALS, GENERAL")
 
-#sorting values by state in ascending order
+# sorting values by state in ascending order
 gkk.sort_values(by=['STATE'], inplace=True)
 
-#send data frame to csv file (load into QGIS)
+# send data frame to csv file (load into QGIS)
 gkk.to_csv(r'.\state_childrens2.csv')
 ```
 
