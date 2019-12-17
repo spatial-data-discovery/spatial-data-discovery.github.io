@@ -5,7 +5,7 @@ subtitle: (Number per State)
 
 <div class="video-wrapper">
   <video id="way_video" controls preload="true" autoplay loop muted>
-    <source src="final_rendering.mp4" type="video/mp4" >
+    <source src="http://drdavis.space/teaching/ds/sdd/media/2019/12/final_rendering.mp4" type="video/mp4" >
   </video>
 </div>
 
@@ -21,7 +21,7 @@ California having the most hospitals, while many states have no hospital. Some
 states have many children's hospitals, others have none, creating disadvantaged
 populations in those states in particular.
 
-![](childrens_hospitals_heatmap.png)
+![](http://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png)
 
 In states where there are children's hospitals, they are generally centralized
 around one area, which disadvantages patients, particularly in rural areas. The
