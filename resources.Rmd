@@ -76,6 +76,9 @@ output:
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[SRTM 30-m DEM](http://dwtkns.com/srtm30m/)
+:   Derek Watkins's interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
+
 [Thematic Mapping World Borders](http://thematicmapping.org/downloads/world_borders.php)
 :   Esri shapefile of the world's country borders in two resolutions.[^sandvik08]
 
