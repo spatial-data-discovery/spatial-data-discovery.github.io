@@ -46,6 +46,9 @@ output:
 [NetCDF](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture)
 :   A look at the NetCDF library architecture for the [classic](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model) and [enhanced](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model) data model.
 
+[Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
+:   This document explains the extended and slightly revised version of John Gruber's Markdown syntax.
+
 [Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
 :   Link to metacharacters used in Perl regular expressions.
 

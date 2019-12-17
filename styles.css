@@ -112,3 +112,10 @@ footer {
     width: 910px;
     height: 435px;
 }
+
+#way_table {
+    display: inline-block;
+    float: right;
+    max-width: 500px;
+    margin-left: 20px;
+}

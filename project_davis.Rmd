@@ -23,6 +23,15 @@ This cycle is important for our understanding of the global carbon cycle: a prop
 
 Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons---called the "breathing of the terrestrial biosphere"---as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.
 
+<div id="way_table">
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+| 12 | 12 | 12 | 12 |
+| 123 | 123 | 123 | 123  |
+| 1 | 1 | 1 | 1 |
+
+</div>
+
 ## Data Description
 The data visualized above is the enhanced vegetation index (EVI), which is created by combining specific energy bands collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra[^terra] satellite orbiting the earth about 16 times each day.
 EVI ranges between zero and one, represented by the varying brightness of green where zero (white) represents an absence of vegetation and one (dark green) represents a dense vegetation cover.
