@@ -4,8 +4,8 @@ title: Encroachment of Humans Into Natural Areas
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-  <video id="oforiaddae'svideo" controls preload="true" autoplay loop muted>
-    <source src="Encroachment.mp4" type="video/mp4" >
+  <video id="oforiaddaevideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/encroachment.mp4" type="video/mp4" >
   </video>
 </div>
 
