@@ -1,0 +1,44 @@
+---
+title: Presidental Election Margins of Victory
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="wisdomvideo" controls preload="true" autoplay loop muted>
+    <source src="http://drdavis.space/teaching/ds/sdd/media/2019/12/cloud_gif_to_mp4.mp4"type="video/mp4" >
+  </video>
+</div>
+Margin of victory by county for US presidential elections. Red indicates the Republican candidate and blue indicates the Democratic candidate. Black indicates no data.
+
+
+## Overview
+I spend a good amount of my time searching out fun or interesting visualizations of data. Recently, I saw an article[^article] about plotting election data from the 2016 presidential election in the United States based on both the margin of victory in an area and the population of a area. One of the most challenging aspects of data visualization is the fact that we only have a few dimensions to work with on the page. Squeezing a lot of information into only a few dimensions is where data visualization is at its most creative. The author of the article managed to create a 2-dimensional color scale that he could apply to a map in order to show both the margin of victory in a county and the total population in a county using only one color. 
+
+This project was my attempt to recreate that color scale and apply it to other presidential elections. I intended to whip up a quick Python[^python] script to figure out the color for each county and then use QGIS[^qgis] to see those colors on a map of the United States. Half of that plan went pretty well.
+
+I have a bit of experience munging data in Python[^python] with Pandas,[^pandas] so I was able to calculate the colors I needed in each county for the 2000, 2004, 2008, 2012, and 2016 United States presidential elections. I haven't spent much time with QGIS,[^qgis], so I had a lot of trouble getting the colors I had calcuated to show up on the map. In the end, I had to settle for a simpler color scheme and only show margins of victory in each county. I think this project was still a good exercise in creating a visualization from a dataset, even if it didn't turn out exactly the way I had envisioned it.   
+
+
+## Data Description
+The county-level election data comes from the MIT Election Data Science Lab's[^mit] GitHub repository[^source]. The data has votes for every candidate that ran in a county in a given year, so there are more people than just the Republican and Democrat who were running that year. 
+
+This visualization takes that data and looks at the margin of victory in each county to determine what the color of that county should be. The color calculation is based on the calculation in the original article[^article] that inspired me, but it is only 1-dimensional instead of the full 2-dimensional one that the author created.
+
+I created the visual portion of the project with QGIS[^qgis], turned it into an animated GIF with GIMP[^gimp], and used an online tool[^cloud_convert] to turn the GIF into a video.
+
+
+<div class="credit-line">
+Author: David Wisdom.
+Last edited: 2019-12-18.
+</div>
+
+
+[^article]: Weru, Larry. "Muddy America: Color Balancing the Election Map." Accessed 2019-12-18. Online: https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/
+[^cloud_convert]: Cloudconvert. Accessed 2019-12-18. Online: https://cloudconvert.com/gif-to-mp4
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-18. Online: https://www.gimp.org/
+[^mit]: MIT Election Data Science Lab. Accessed 2019-12-18. Online:https://electionlab.mit.edu/
+[^pandas]: Pandas. Accessed 2019-12-18. Online: https://pandas.pydata.org/
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-12-18. Online: https://www.python.org/
+[^source]: MEDSL GitHub Repository. Accessed 2019-12-18. Online: https://github.com/MEDSL/county-returns/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: https://www.qgis.org
+
