@@ -5,7 +5,7 @@ title: Presidental Election Margins of Victory
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
   <video id="wisdomvideo" controls preload="true" autoplay loop muted>
-    <source src="http://drdavis.space/teaching/ds/sdd/media/2019/12/cloud.mp4"type="video/mp4" >
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/cloud.mp4"type="video/mp4" >
   </video>
 </div>
 Margin of victory by county for US presidential elections. Red indicates the Republican candidate and blue indicates the Democratic candidate. Black indicates no data.
