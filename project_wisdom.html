@@ -12,7 +12,7 @@
 
 
 
-<title>Presidental Election Margins of Victory</title>
+<title>Presidential Election Margins of Victory</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -333,7 +333,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Presidental Election Margins of Victory</h1>
+<h1 class="title toc-ignore">Presidential Election Margins of Victory</h1>
 
 </div>
 
@@ -345,9 +345,9 @@ $(document).ready(function () {
 <p>Margin of victory by county for US presidential elections. Red indicates the Republican candidate and blue indicates the Democratic candidate. Black indicates no data.</p>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>I spend a good amount of my time searching out fun or interesting visualizations of data. Recently, I saw an article<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> about plotting election data from the 2016 presidential election in the United States based on both the margin of victory in an area and the population of a area. One of the most challenging aspects of data visualization is the fact that we only have a few dimensions to work with on the page. Squeezing a lot of information into only a few dimensions is where data visualization is at its most creative. The author of the article managed to create a 2-dimensional color scale that he could apply to a map in order to show both the margin of victory in a county and the total population in a county using only one color.</p>
+<p>I spend a good amount of my time searching out fun or interesting visualizations of data. Recently, I saw an article<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> about plotting election data from the 2016 presidential election in the United States based on both the margin of victory in an area and the population of an area. One of the most challenging aspects of data visualization is the fact that we only have a few dimensions to work with on the page. Squeezing a lot of information into only a few dimensions is where data visualization is at its most creative. The author of the article managed to create a 2-dimensional color scale that he could apply to a map in order to show both the margin of victory in a county and the total population in a county using only one color.</p>
 <p>This project was my attempt to recreate that color scale and apply it to other presidential elections. I intended to whip up a quick Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> script to figure out the color for each county and then use QGIS<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> to see those colors on a map of the United States. Half of that plan went pretty well.</p>
-<p>I have a bit of experience munging data in Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with Pandas,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> so I was able to calculate the colors I needed in each county for the 2000, 2004, 2008, 2012, and 2016 United States presidential elections. I haven’t spent much time with QGIS,<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, so I had a lot of trouble getting the colors I had calcuated to show up on the map. In the end, I had to settle for a simpler color scheme and only show margins of victory in each county. I think this project was still a good exercise in creating a visualization from a dataset, even if it didn’t turn out exactly the way I had envisioned it.</p>
+<p>I have a bit of experience munging data in Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with Pandas,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> so I was able to calculate the colors I needed in each county for the 2000, 2004, 2008, 2012, and 2016 United States presidential elections. I haven’t spent much time with QGIS,<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, so I had a lot of trouble getting the colors I had calculated to show up on the map. In the end, I had to settle for a simpler color scheme and only show margins of victory in each county. I think this project was still a good exercise in creating a visualization from a dataset, even if it didn’t turn out exactly the way I had envisioned it.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
@@ -367,7 +367,7 @@ $(document).ready(function () {
 <li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-18. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
 <li id="fn5"><p>Pandas. Accessed 2019-12-18. Online: <a href="https://pandas.pydata.org/" class="uri">https://pandas.pydata.org/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
 <li id="fn6"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>MIT Election Data Science Lab. Accessed 2019-12-18. Online:<a href="https://electionlab.mit.edu/" class="uri">https://electionlab.mit.edu/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>MIT Election Data Science Lab. Accessed 2019-12-18. Online: <a href="https://electionlab.mit.edu/" class="uri">https://electionlab.mit.edu/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
 <li id="fn8"><p>MEDSL GitHub Repository. Accessed 2019-12-18. Online: <a href="https://github.com/MEDSL/county-returns/" class="uri">https://github.com/MEDSL/county-returns/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
 <li id="fn9"><p>Weru, Larry. “Muddy America: Color Balancing the Election Map.” Accessed 2019-12-18. Online: <a href="https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/" class="uri">https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
 <li id="fn10"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
