@@ -18,6 +18,8 @@ navbar:
               href: "project_rosen.html"
             - text: "Last-Mile Delivery Network"
               href: "project_chen.html"
+            - text: "Margins of Presidential Victory"
+              href: "project_wisdom.html"
             - text: "Tornadoes Since the 1950s"
               href: "#"
         - text: "About"
