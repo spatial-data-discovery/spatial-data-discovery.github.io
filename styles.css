@@ -87,7 +87,9 @@ footer {
 }
 
 .video-wrapper {
+    display: inline-block;
     text-align: center;
+    max-width: 910px;
 }
 
 .video-fr-wrapper {
@@ -97,20 +99,9 @@ footer {
     margin: 0px 15px;
 }
 
-#davisvideo {
-    display: inline-block;
-    width: 862px;
-    height: 429px;
-}
-
-#rosenvideo {
-    width: 500px;
-    height: 468px;
-}
-
-#way_video {
-    width: 910px;
-    height: 435px;
+#scaledvideo {
+    width: 100%;
+    height: auto;
 }
 
 #way_table {
@@ -120,7 +111,11 @@ footer {
     margin-left: 20px;
 }
 
-#oforiaddaevideo {
-    width: 900px;
-    height: 634px;
+@media only screen and (max-width: 660px) {
+    #way_table {
+        float: none;
+        width: 100%;
+        max-width: 660px;
+        margin-left: 0px;
+    }
 }

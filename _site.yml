@@ -23,7 +23,7 @@ navbar:
             - text: "Margins of Presidential Victory"
               href: "project_wisdom.html"
             - text: "Tornadoes Since the 1950s"
-              href: "#"
+              href: "project_brickey.html"
         - text: "About"
           menu:
             - text: "The Coders"

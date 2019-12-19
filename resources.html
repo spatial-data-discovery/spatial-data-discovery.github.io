@@ -7,7 +7,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -54,7 +53,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -173,6 +174,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -229,17 +232,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -291,7 +297,7 @@ $(document).ready(function () {
       <a href="project_wisdom.html">Margins of Presidential Victory</a>
     </li>
     <li>
-      <a href="#">Tornadoes Since the 1950s</a>
+      <a href="project_brickey.html">Tornadoes Since the 1950s</a>
     </li>
   </ul>
 </li>
@@ -354,7 +360,7 @@ $(document).ready(function () {
 <h1>Python Packages</h1>
 <dl>
 <dt><a href="https://github.com/ianare/exif-py">exifread</a></dt>
-<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
 </dd>
 <dt><a href="https://www.h5py.org/">h5py</a></dt>
 <dd>Python package for reading and writing in the HDF5 binary data format.
@@ -366,7 +372,7 @@ $(document).ready(function () {
 <dd>Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
 </dd>
 <dt><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</a></dt>
-<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
 </dd>
 </dl>
 </div>
@@ -377,7 +383,7 @@ $(document).ready(function () {
 <dd>A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant &amp; internationalization characters.
 </dd>
 <dt><a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">Data Types</a></dt>
-<dd>Review of numpy dtypes such as <code>i</code>, <code>f</code>, and <code>d</code>.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+<dd>Review of numpy dtypes such as <code>i</code>, <code>f</code>, and <code>d</code>.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>
 </dd>
 <dt><a href="https://drdavis.space/teaching/gis/gis-reader/">GIS Reader</a></dt>
 <dd>Davis’s introductory reader on geographic information systems.
@@ -413,7 +419,7 @@ $(document).ready(function () {
 <dd>The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
 </dd>
 <dt><a href="http://mathesaurus.sourceforge.net/">Thesaurus of Mathematical Languages</a></dt>
-<dd>A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+<dd>A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>
 </dd>
 <dt><a href="http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf">Understanding Map Projections</a></dt>
 <dd>(PDF) Esri’s textbook on coordinate systems, geographic transformations, and recommended projections.
@@ -439,7 +445,7 @@ $(document).ready(function () {
 <dd>Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
 </dd>
 <dt><a href="http://geo.aiddata.org/query/#!/">GeoQuery</a></dt>
-<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
+<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>
 </dd>
 <dt><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a></dt>
 <dd>Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
@@ -448,10 +454,10 @@ $(document).ready(function () {
 <dd>Derek Watkins’s interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
 </dd>
 <dt><a href="http://thematicmapping.org/downloads/world_borders.php">Thematic Mapping World Borders</a></dt>
-<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>
 </dd>
 <dt><a href="https://pubs.usgs.gov/of/2006/1187/basemaps/continents/">USGS Continents</a></dt>
-<dd>Esri shapefile for the major continent boundaries.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
+<dd>Esri shapefile for the major continent boundaries.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>
 </dd>
 </dl>
 </div>
@@ -512,21 +518,21 @@ $(document).ready(function () {
 <h3>Images to Animations</h3>
 <p>Based on Davis’s MODIS EVI example using <a href="https://www.gimp.org/">GIMP</a> and FFmpeg (FFmpeg installed with <a href="https://imagemagick.org/index.php">Imagemagick</a>).</p>
 <ol style="list-style-type: decimal">
-<li><p>Load spatial data into QGIS</p>
+<li>Load spatial data into QGIS
 <ul>
 <li>Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)</li>
 <li>Create layout (save layout in case you need to come back to it)</li>
 <li>Add map(s), legend(s), and text to layout</li>
 <li>Update and export maps to images (PNG) for each visualization</li>
 </ul></li>
-<li><p>Load images into GIMP</p>
+<li>Load images into GIMP
 <ul>
 <li>Open one PNG in GIMP</li>
 <li>Open as layers the remaining images (order most recent layer at the top)</li>
 <li>Crop image to selection (use Rectangle Select Tool (shortcut key <code>r</code>) to draw a box around what you want, then use Image → Crop to Selection)</li>
 <li>Optimize your layers for GIF animation (Filters → Animation → Optimize for GIF)</li>
 </ul></li>
-<li><p>Save your layers as an animated GIF (Export → GIF)</p>
+<li>Save your layers as an animated GIF (Export → GIF)
 <ul>
 <li>Check [x] As animation</li>
 <li>Loop forever</li>
@@ -576,13 +582,13 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Copyright © 2008–2019. The SciPy Community.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Copyright ©2006,2008 Vidar Bronken Gundersen, <a href="http://mathesaurus.sf.net/" class="uri">http://mathesaurus.sf.net/</a>.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Copyright © 2008–2019. The SciPy Community.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Copyright ©2006,2008 Vidar Bronken Gundersen, <a href="http://mathesaurus.sf.net/" class="uri">http://mathesaurus.sf.net/</a>.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref7">↩</a></p></li>
 </ol>
 </div>
 
@@ -608,23 +614,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -4,7 +4,7 @@ title: The Breathing of the Terrestrial Biosphere
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-  <video id="davisvideo" controls preload="true" autoplay loop muted>
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
     <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" >
   </video>
 </div>

@@ -7,7 +7,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -54,7 +53,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -173,6 +174,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -229,17 +232,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -291,7 +297,7 @@ $(document).ready(function () {
       <a href="project_wisdom.html">Margins of Presidential Victory</a>
     </li>
     <li>
-      <a href="#">Tornadoes Since the 1950s</a>
+      <a href="project_brickey.html">Tornadoes Since the 1950s</a>
     </li>
   </ul>
 </li>
@@ -343,20 +349,20 @@ $(document).ready(function () {
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-fr-wrapper">
-<p><video id="rosenvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/africa.mp4" type="video/mp4" > </video></p>
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/africa.mp4" type="video/mp4" > </video></p>
 </div>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>Many studies of Africa have linked climate change and conflict. Climate change can lead to increased conflict in a variety of ways. As weather becomes less predictable, farmers become less successful. Shortages of food and erratic rainfall patterns drive competition between groups that can spill into violence.</p>
 <p>Scarcity often prompts migration and dissatisfaction with the political status quota. Migration to urban centers or areas with more bountiful food and water creates cultural conflict and intensifies competition for resources. Populist politicians can also ride the wave of dissatisfaction to win votes by exploiting ethnic cleavages, reallocating resources from one group to another, or using a minority as a scapegoat.</p>
 <p>The brunt of climate change is expected to fall on equatorial and coastal countries, like those in Africa. Violence and political instability have long plagued Africa. However, the effects of climate change will worsen matters.</p>
-<p>Although intuitive, the strength of the relationship between climate change and conflict is hotly debated amongst academics. A key study by Hendrix and Saleyhan linked rainfall variability with social conflict,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> while a 2013 synthesis of the literature on climate and conflict found that more extreme rainfall and warmer temperatures increase the likelihood of conflict.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Unusually warm temperatures are more often linked with conflict than rainfall variation.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The impact of climate change on conflict is usually captured with econometric models rather than maps, possibly because the effects, although statistically significant, can be quite small. The relationship between temperature anomalies and conflict is visualized above.</p>
+<p>Although intuitive, the strength of the relationship between climate change and conflict is hotly debated amongst academics. A key study by Hendrix and Saleyhan linked rainfall variability with social conflict,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> while a 2013 synthesis of the literature on climate and conflict found that more extreme rainfall and warmer temperatures increase the likelihood of conflict.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Unusually warm temperatures are more often linked with conflict than rainfall variation.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> The impact of climate change on conflict is usually captured with econometric models rather than maps, possibly because the effects, although statistically significant, can be quite small. The relationship between temperature anomalies and conflict is visualized above.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>This visualization uses historical temperature data from the University of East Anglia’s Climate Research Unit (CRU), as well as conflict data from the Uppsala Conflict Data Program (UCDP). The CRU TS v4.03 dataset contains monthly air temperature data, measured in degrees Celsius, at 0.5 x 0.5 degrees resolution.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> In the visualization, the colors in each cell represent the difference between the year’s average temperature and the 50-year average temperature, in degrees Celsius. The UCDP dataset contains global, georeferenced conflict fatalities data from 1989 to 2010.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Each point in the visualization represents a conflict event and the size of the points represents the best estimate of event fatalities.</p>
-<p>Global, monthly temperature data from 1960 to 2010 was processed with a Python script.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> The script compiled five decade-long datasets into a single NetCDF file and subsetted the dataset down to a rectangle that spanned the African continent.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> Then, the script calculated a cell-by-cell 50-year average temperature for the dataset. The final data product is a raster of Africa from 1989 to 2010, where each cell represents the difference, in degrees Celsius, between the year’s arithmetic mean temperature and the 50-year average in that location.</p>
-<p>After adding all of the temperature and conflict data to QGIS,<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> I added a map of African state boundaries,<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> then used it to exclude conflict events outside of Africa. I also cropped the temperature data to only show values within African borders. Inside of QGIS, each year of conflict mortality and temperature anomaly data was mapped using the same scale, legend, and extent settings. Then, the yearly visualizations were exported as PNG files.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> When all 21 PNG files were complete, they were uploaded to GIMP,<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> then exported as a GIF.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> Finally, I used FFmpeg to convert the GIF into a video,<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> encoded in MPEG-4.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<p>This visualization uses historical temperature data from the University of East Anglia’s Climate Research Unit (CRU), as well as conflict data from the Uppsala Conflict Data Program (UCDP). The CRU TS v4.03 dataset contains monthly air temperature data, measured in degrees Celsius, at 0.5 x 0.5 degrees resolution.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> In the visualization, the colors in each cell represent the difference between the year’s average temperature and the 50-year average temperature, in degrees Celsius. The UCDP dataset contains global, georeferenced conflict fatalities data from 1989 to 2010.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> Each point in the visualization represents a conflict event and the size of the points represents the best estimate of event fatalities.</p>
+<p>Global, monthly temperature data from 1960 to 2010 was processed with a Python script.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> The script compiled five decade-long datasets into a single NetCDF file and subsetted the dataset down to a rectangle that spanned the African continent.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> Then, the script calculated a cell-by-cell 50-year average temperature for the dataset. The final data product is a raster of Africa from 1989 to 2010, where each cell represents the difference, in degrees Celsius, between the year’s arithmetic mean temperature and the 50-year average in that location.</p>
+<p>After adding all of the temperature and conflict data to QGIS,<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> I added a map of African state boundaries,<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> then used it to exclude conflict events outside of Africa. I also cropped the temperature data to only show values within African borders. Inside of QGIS, each year of conflict mortality and temperature anomaly data was mapped using the same scale, legend, and extent settings. Then, the yearly visualizations were exported as PNG files.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> When all 21 PNG files were complete, they were uploaded to GIMP,<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> then exported as a GIF.<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> Finally, I used FFmpeg to convert the GIF into a video,<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> encoded in MPEG-4.<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a></p>
 <div class="credit-line">
 <p>Author: Liz Rosen. Last edited: 2019-12-17.</p>
 </div>
@@ -364,20 +370,20 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Hendrix, C. S., &amp; Salehyan, I. (2012). Climate change, rainfall, and social conflict in Africa. <em>Journal of peace research, 49</em>(1), 35-50.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Hsiang, S. M., Burke, M., &amp; Miguel, E. (2013). Quantifying the influence of climate on human conflict. <em>Science, 341</em>(6151), 1235367.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>O’Loughlin, J., Linke, A. M., &amp; Witmer, F. D. (2014). Effects of temperature and precipitation variability on the risk of violence in sub-Saharan Africa, 1980–2012. <em>Proceedings of the National Academy of Sciences, 111</em>(47), 16712-16717.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Harris, I., Jones, P.D., Osborn, T.J. &amp; Lister, D.H. (2014). Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset. <em>International Journal of Climatology 34,</em> 623-642 <a href="doi:10.1002/joc.3711" class="uri">doi:10.1002/joc.3711</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Sundberg, R., &amp; Melander, E. (2013). Introducing the UCDP Georeferenced Event Dataset, <em>Journal of Peace Research, 50</em>(4), 523-532.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-16. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Network Common Data Form (NetCDF). Updated 2019. Unicode. Accessed 2019-12-03. Online: <a href="https://www.unidata.ucar.edu/software/netcdf/" class="uri">https://www.unidata.ucar.edu/software/netcdf/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-16. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Sandvik, B. (2008). World Borders Dataset [shape files in TM_WORLD_BORDERS-0.3.zip]. Retrieved from <a href="http://thematicmapping.org/downloads/world_borders.php" class="uri">http://thematicmapping.org/downloads/world_borders.php</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-16. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref12" class="footnote-back">↩︎</a></p></li>
-<li id="fn13"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-16. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Hendrix, C. S., &amp; Salehyan, I. (2012). Climate change, rainfall, and social conflict in Africa. <em>Journal of peace research, 49</em>(1), 35-50.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Hsiang, S. M., Burke, M., &amp; Miguel, E. (2013). Quantifying the influence of climate on human conflict. <em>Science, 341</em>(6151), 1235367.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>O’Loughlin, J., Linke, A. M., &amp; Witmer, F. D. (2014). Effects of temperature and precipitation variability on the risk of violence in sub-Saharan Africa, 1980–2012. <em>Proceedings of the National Academy of Sciences, 111</em>(47), 16712-16717.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Harris, I., Jones, P.D., Osborn, T.J. &amp; Lister, D.H. (2014). Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset. <em>International Journal of Climatology 34,</em> 623-642 <a href="doi:10.1002/joc.3711" class="uri">doi:10.1002/joc.3711</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Sundberg, R., &amp; Melander, E. (2013). Introducing the UCDP Georeferenced Event Dataset, <em>Journal of Peace Research, 50</em>(4), 523-532.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-16. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Network Common Data Form (NetCDF). Updated 2019. Unicode. Accessed 2019-12-03. Online: <a href="https://www.unidata.ucar.edu/software/netcdf/" class="uri">https://www.unidata.ucar.edu/software/netcdf/</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-16. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Sandvik, B. (2008). World Borders Dataset [shape files in TM_WORLD_BORDERS-0.3.zip]. Retrieved from <a href="http://thematicmapping.org/downloads/world_borders.php" class="uri">http://thematicmapping.org/downloads/world_borders.php</a><a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-16. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-16. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref13">↩</a></p></li>
+<li id="fn14"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref14">↩</a></p></li>
 </ol>
 </div>
 
@@ -403,23 +409,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
