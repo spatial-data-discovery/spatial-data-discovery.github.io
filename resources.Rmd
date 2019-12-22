@@ -100,6 +100,9 @@ output:
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
+[Natural Earth](https://www.naturalearthdata.com/)
+:   A public-domain map dataset at 1:10m, 1:50m, and 1:110 million scales featuring tightly integrated vector and raster data for making a variety of visually pleasing, well-crafted maps.
+
 [SRTM 30-m DEM](http://dwtkns.com/srtm30m/)
 :   Derek Watkins's interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
 

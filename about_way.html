@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Audrey Way" />
@@ -25,36 +26,64 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #0000ff; } /* Keyword */
-code > span.ch { color: #008080; } /* Char */
-code > span.st { color: #008080; } /* String */
-code > span.co { color: #008000; } /* Comment */
-code > span.ot { color: #ff4000; } /* Other */
-code > span.al { color: #ff0000; } /* Alert */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #008000; font-weight: bold; } /* Warning */
-code > span.cn { } /* Constant */
-code > span.sc { color: #008080; } /* SpecialChar */
-code > span.vs { color: #008080; } /* VerbatimString */
-code > span.ss { color: #008080; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #0000ff; } /* ControlFlow */
-code > span.op { } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ff4000; } /* Preprocessor */
-code > span.do { color: #008000; } /* Documentation */
-code > span.an { color: #008000; } /* Annotation */
-code > span.cv { color: #008000; } /* CommentVar */
-code > span.at { } /* Attribute */
-code > span.in { color: #008000; } /* Information */
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
 
 </style>
 <script>
@@ -70,7 +99,7 @@ code > span.in { color: #008000; } /* Information */
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -114,9 +143,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -235,8 +262,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -293,20 +318,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -404,8 +426,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>Audrey Way</em></h4>
-<h4 class="date"><em>Edited: 2019-09-2</em></h4>
+<h4 class="author">Audrey Way</h4>
+<h4 class="date">Edited: 2019-09-2</h4>
 
 </div>
 
@@ -422,65 +444,62 @@ $(document).ready(function () {
 <li>My dog</li>
 </ul>
 <p>This is one of my paintings.</p>
-<div class="figure">
-<img src="https://lh3.googleusercontent.com/fs8ED_1QoQRRgqDm83lUYv0LAKoyqqPyM920avfo0eymwzX_ZC8ZgUtLamwbyjqM71KNfXMydaYtBxRogL0C6HzN3RZZU0DS3JbEXq3oBYDzNz5g8csdIFE6B4agqr63EHGLqLH-39WVGa5vKbEgV9RtUrHdzjjbl8trI-5tWgfLxpaxiSVTs7RraSxqkCOs_zhNVFoEf8Zj42IyWII2_qFLJmfDX238KX4H07FqXfS5aeb26vFliaD0GZN9gdPvoCkgrL00Kr-RPK6Y-Dyajo3rkK7mHLLeo-lQ7QPTd0kW3F59RXYhQH7clKae899vIz5gEIdooECJkGLA6gMnBV27LPYJ8k-JDbcTjn_kkXcm98Fk4pgeuyQgVBu9mdxrHT-P0hAAAxG85MNH95QBf1fnOyFSScfZSTEtT9o3XqGIYauxo7IhVaFLF_wOmfXOawy4ElV8c_yAbQ2oafzyfrdS6GZ_dtRQMZKJbE-6oETdwQRWCfAX5sVRHrVMttjyWkviJ8-YqMlJb1vKvCmnBsUoyWB5WxbaRbU7TcIh59e9XinHlN5Y5f6RIR0Muovk2q5eXT-nIT324NLHIiH_5QkVfL9tcB-OSLwep1DjwZK9D22lqeH3ICy416aHc2B44q8XyoCybF78YXf4z_PXX7KfWLoHNgQZSivDvgOtvzaIK_xs_il2Wf0FubcKGjPW3deZcPM7aCNraDYcQiddurq8L_HijXxRNPAeuxVJB6Pg2h2mbQ=w870-h869-no" width="200" height="200" />
-
-</div>
+<p><img src="https://lh3.googleusercontent.com/fs8ED_1QoQRRgqDm83lUYv0LAKoyqqPyM920avfo0eymwzX_ZC8ZgUtLamwbyjqM71KNfXMydaYtBxRogL0C6HzN3RZZU0DS3JbEXq3oBYDzNz5g8csdIFE6B4agqr63EHGLqLH-39WVGa5vKbEgV9RtUrHdzjjbl8trI-5tWgfLxpaxiSVTs7RraSxqkCOs_zhNVFoEf8Zj42IyWII2_qFLJmfDX238KX4H07FqXfS5aeb26vFliaD0GZN9gdPvoCkgrL00Kr-RPK6Y-Dyajo3rkK7mHLLeo-lQ7QPTd0kW3F59RXYhQH7clKae899vIz5gEIdooECJkGLA6gMnBV27LPYJ8k-JDbcTjn_kkXcm98Fk4pgeuyQgVBu9mdxrHT-P0hAAAxG85MNH95QBf1fnOyFSScfZSTEtT9o3XqGIYauxo7IhVaFLF_wOmfXOawy4ElV8c_yAbQ2oafzyfrdS6GZ_dtRQMZKJbE-6oETdwQRWCfAX5sVRHrVMttjyWkviJ8-YqMlJb1vKvCmnBsUoyWB5WxbaRbU7TcIh59e9XinHlN5Y5f6RIR0Muovk2q5eXT-nIT324NLHIiH_5QkVfL9tcB-OSLwep1DjwZK9D22lqeH3ICy416aHc2B44q8XyoCybF78YXf4z_PXX7KfWLoHNgQZSivDvgOtvzaIK_xs_il2Wf0FubcKGjPW3deZcPM7aCNraDYcQiddurq8L_HijXxRNPAeuxVJB6Pg2h2mbQ=w870-h869-no" width="200" height="200" /></p>
 <div id="sample-script" class="section level3">
 <h3>Sample script</h3>
 <p><a href="scripts/darts.py">Dart Game (.py)</a></p>
 <p>My sample script is something that was used in Data Driven Decision Making (with Dan Runfola) and I modified to support the help command line argument.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#Last edit: 10-7-19</span>
-<span class="co">#Required imports</span>
-<span class="im">import</span> random
-<span class="im">import</span> math
-
-<span class="co">#FUNCTIONS</span>
-<span class="co">#Help function from Davis&#39;s music randomizer</span>
-<span class="kw">def</span> show_help():
-    <span class="co">&quot;&quot;&quot;</span>
-<span class="co">    Name:     show_help</span>
-<span class="co">    Inputs:   None</span>
-<span class="co">    Outputs:  None</span>
-<span class="co">    Features: Prints the help text when user uses the &#39;-h&#39; command flag</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    help_txt <span class="op">=</span> ( <span class="st">&quot;-h, --help   Enter a whole number!</span><span class="ch">\n</span><span class="st">&quot;</span>)
-    <span class="bu">print</span>(help_txt)
-
-<span class="co">#VARIABLES</span>
-
-<span class="co">#total darts thrown</span>
-n <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;How many darts would you like to throw?&#39;</span>)
-<span class="cf">if</span> n <span class="op">==</span> <span class="st">&#39;-h&#39;</span> <span class="kw">or</span> n <span class="op">==</span> <span class="st">&#39;--help&#39;</span>:
-  show_help()
-<span class="cf">else</span>:
-  <span class="cf">try</span>:
-    total <span class="op">=</span> <span class="bu">int</span>(n)
-    <span class="cf">if</span> total <span class="op">&lt;</span> <span class="dv">0</span>:
-      <span class="bu">print</span>(<span class="st">&#39;You must must throw a positive number of darts.&#39;</span>)
-    <span class="co">#Number of darts that land inside (initializing the list)</span>
-    inside <span class="op">=</span> <span class="dv">0</span>
-    <span class="co">#Total number of darts to throw (gotten from input)</span>
-    <span class="co"># total = n</span>
-    <span class="co">#Define the length of a side of the square</span>
-    length <span class="op">=</span> <span class="dv">10</span>
-    <span class="co">#Define the size of the circle, originating from the center of the square</span>
-    circle_radius <span class="op">=</span> <span class="fl">5.0</span>
-
-    <span class="co">#Iterate for the number of darts</span>
-    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, total):
-      x <span class="op">=</span> random.uniform(<span class="dv">0</span>, length)
-      y <span class="op">=</span> random.uniform(<span class="dv">0</span>, length)
-      <span class="co">#test if the dart is inside or outside</span>
-      <span class="co">#(ie, is the distance from the center of the square less than the circle radius?)</span>
-      <span class="cf">if</span> math.sqrt((x<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> (y<span class="op">**</span><span class="dv">2</span>)) <span class="op">&lt;</span> circle_radius<span class="op">*</span><span class="dv">2</span>:
-        inside <span class="op">+=</span> <span class="dv">1</span>
-
-    <span class="bu">print</span>(<span class="st">&quot;Percent of Darts Inside:&quot;</span>)
-    <span class="bu">print</span>((inside <span class="op">/</span> total)<span class="op">*</span> length<span class="op">**</span><span class="dv">2</span>)
-
-  <span class="cf">except</span> <span class="pp">ValueError</span>:
-    <span class="bu">print</span>(<span class="st">&#39;Bad!&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Last edit: 10-7-19</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#Required imports</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> random</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> math</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#FUNCTIONS</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#Help function from Davis&#39;s music randomizer</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">def</span> show_help():</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">    Name:     show_help</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">    Inputs:   None</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">    Outputs:  None</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">    Features: Prints the help text when user uses the &#39;-h&#39; command flag</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    help_txt <span class="op">=</span> ( <span class="st">&quot;-h, --help   Enter a whole number!</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="bu">print</span>(help_txt)</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#VARIABLES</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#total darts thrown</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a>n <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;How many darts would you like to throw?&#39;</span>)</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="cf">if</span> n <span class="op">==</span> <span class="st">&#39;-h&#39;</span> <span class="kw">or</span> n <span class="op">==</span> <span class="st">&#39;--help&#39;</span>:</span>
+<span id="cb1-23"><a href="#cb1-23"></a>  show_help()</span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="cf">else</span>:</span>
+<span id="cb1-25"><a href="#cb1-25"></a>  <span class="cf">try</span>:</span>
+<span id="cb1-26"><a href="#cb1-26"></a>    total <span class="op">=</span> <span class="bu">int</span>(n)</span>
+<span id="cb1-27"><a href="#cb1-27"></a>    <span class="cf">if</span> total <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-28"><a href="#cb1-28"></a>      <span class="bu">print</span>(<span class="st">&#39;You must must throw a positive number of darts.&#39;</span>)</span>
+<span id="cb1-29"><a href="#cb1-29"></a>    <span class="co">#Number of darts that land inside (initializing the list)</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>    inside <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a>    <span class="co">#Total number of darts to throw (gotten from input)</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a>    <span class="co"># total = n</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>    <span class="co">#Define the length of a side of the square</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a>    length <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a>    <span class="co">#Define the size of the circle, originating from the center of the square</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>    circle_radius <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a></span>
+<span id="cb1-38"><a href="#cb1-38"></a>    <span class="co">#Iterate for the number of darts</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, total):</span>
+<span id="cb1-40"><a href="#cb1-40"></a>      x <span class="op">=</span> random.uniform(<span class="dv">0</span>, length)</span>
+<span id="cb1-41"><a href="#cb1-41"></a>      y <span class="op">=</span> random.uniform(<span class="dv">0</span>, length)</span>
+<span id="cb1-42"><a href="#cb1-42"></a>      <span class="co">#test if the dart is inside or outside</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a>      <span class="co">#(ie, is the distance from the center of the square less than the circle radius?)</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a>      <span class="cf">if</span> math.sqrt((x<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> (y<span class="op">**</span><span class="dv">2</span>)) <span class="op">&lt;</span> circle_radius<span class="op">*</span><span class="dv">2</span>:</span>
+<span id="cb1-45"><a href="#cb1-45"></a>        inside <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a>    <span class="bu">print</span>(<span class="st">&quot;Percent of Darts Inside:&quot;</span>)</span>
+<span id="cb1-48"><a href="#cb1-48"></a>    <span class="bu">print</span>((inside <span class="op">/</span> total)<span class="op">*</span> length<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a>  <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb1-51"><a href="#cb1-51"></a>    <span class="bu">print</span>(<span class="st">&#39;Bad!&#39;</span>)</span></code></pre></div>
 </div>
 
 <footer class="myfoot">
@@ -505,6 +524,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
