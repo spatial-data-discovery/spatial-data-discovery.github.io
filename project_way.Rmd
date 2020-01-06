@@ -32,7 +32,7 @@ Texas has the most children’s hospitals, totaling at 16, while California has 
 However, several states have no children’s hospital at all, making it difficult for a child to receive care when they need it.
 This creates disadvantaged populations in these states in particular, however, even in states where there are hospitals, much of the population is still disadvantaged.
 
-![](http://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png)
+![](https://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png)
 
 In states where there are children’s hospitals, they tend to be centralized in one area.
 For example, in Texas, where there are the most hospitals, they are all located in one place.
