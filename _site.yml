@@ -28,20 +28,20 @@ navbar:
           menu:
             - text: "The Coders"
             - text: "------"
-            - text: "dt-woods"
-              href: about_dtwoods.html
-            - text: "mbrickey"
-              href: about_mbrickey.html
-            - text: "JiayingChen0307"
-              href: about_jiayingchen0307.html
-            - text: "oforiaddaejnr"
-              href: about_oforiaddaejnr.html
-            - text: "ithacalr"
-              href: about_ithacalr.html
             - text: "alway1"
               href: about_alway1.html
             - text: "dpwisdom"
               href: about_dpwisdom.html
+            - text: "dt-woods"
+              href: about_dtwoods.html
+            - text: "ithacalr"
+              href: about_ithacalr.html
+            - text: "JiayingChen0307"
+              href: about_jiayingchen0307.html
+            - text: "mbrickey"
+              href: about_mbrickey.html
+            - text: "oforiaddaejnr"
+              href: about_oforiaddaejnr.html
 
 output:
     html_document:
