@@ -9,39 +9,39 @@ navbar:
           menu:
             - text: "Example"
             - text: "Breathing of the Biosphere"
-              href: project_davis.html
+              href: project_dtwoods.html
             - text: "---------"
             - text: "Fall 2019"
             - text: "Children's Hospitals in U.S."
-              href: "project_way.html"
+              href: "project_alway1.html"
             - text: "Climate Change & Conflict"
-              href: "project_rosen.html"
+              href: "project_ithacalr.html"
             - text: "Encroachment Into Natural Areas"
-              href: "project_oforiaddae.html"
+              href: "project_oforiaddaejnr.html"
             - text: "Last-Mile Delivery Network"
-              href: "project_chen.html"
+              href: "project_jiayingchen0307.html"
             - text: "Margins of Presidential Victory"
-              href: "project_wisdom.html"
+              href: "project_dpwisdom.html"
             - text: "Tornadoes Since the 1950s"
-              href: "project_brickey.html"
+              href: "project_mbrickey.html"
         - text: "About"
           menu:
             - text: "The Coders"
             - text: "------"
             - text: "dt-woods"
-              href: about_davis.html
+              href: about_dtwoods.html
             - text: "mbrickey"
-              href: about_brickey.html
+              href: about_mbrickey.html
             - text: "JiayingChen0307"
-              href: about_chen.html
+              href: about_jiayingchen0307.html
             - text: "oforiaddaejnr"
-              href: about_oforiaddae.html
+              href: about_oforiaddaejnr.html
             - text: "ithacalr"
-              href: about_rosen.html
+              href: about_ithacalr.html
             - text: "alway1"
-              href: about_way.html
+              href: about_alway1.html
             - text: "dpwisdom"
-              href: about_wisdom.html
+              href: about_dpwisdom.html
 
 output:
     html_document:
