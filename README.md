@@ -17,7 +17,7 @@ This assignment is a way of introducing you to the Markdown syntax and demonstra
 
 If you have not already, create a folder for our course repository, clone the repository on to your computer, and configure your git workspace using the commands below.
 
-```
+```bash
 # On the Terminal / Command Prompt
 cd [path to repository] # replace "[path to repository]" with the directory path
 git clone https://github.com/spatial-data-discovery/spatial-data-discovery.github.io.git
@@ -37,7 +37,7 @@ When you are ready to write your "About" page:
 * Add an image you would like to associate with your bio.
 * Use a definition list, ordered/unordered list, and a text emphasis format somewhere in your file.
 
-```
+```markdown
 ---
 title: "About the Coder"
 author: "YOURNAME"
@@ -59,7 +59,7 @@ INCLUDE A TEXT EMPHASIS FORMAT (*ITALICS*, **BOLD**, ~~STRIKETHROUGH~~)
 
 Save and close your file, stage it, commit it and push it to the course's online repository.
 
-```
+```bash
 # On the Terminal / Command Prompt</span>
 git pull # check for remote changes on the repository
 git add [your .Rmd file] # replace "[your .Rmd file]" with your file name
