@@ -7,6 +7,7 @@ output:
 ---
 
 # Python Packages
+
 [exifread](https://github.com/ianare/exif-py)
 :   Python package for reading exchangeable image file format (EXIF) metadata.[^exif19]
 
@@ -126,6 +127,8 @@ output:
 [FFmpeg](https://ffmpeg.org/)
 :   A complete, cross-platform solution to record, convert and stream audio and video.
 
+    (*for Mac users: download the zip, unzip, and copy ffmpeg to /usr/local/share*)
+
 [GIMP](https://www.gimp.org/)
 :   The GNU Image Manipulation Program is a free and open-source cross-platform raster graphics editor.
 
@@ -135,6 +138,14 @@ output:
 [ImageMagick](https://imagemagick.org/)
 :   A free cross-platform software to create, edit, compose, or convert bitmap images.
 
+[OSGeo4W](https://trac.osgeo.org/osgeo4w/)
+:   A binary distribution of a broad set of open-source geospatial software (e.g., QGIS, GDAL/OGR, GRASS) for Windows environments.
+
+    (*note: you can get Python3 w/ packages, netcdf, hdf5, and ffmpeg using OSGeo4W*)
+
+[Pandoc](https://pandoc.org/)
+:   A universal document converter.
+
 [Panoply](https://www.giss.nasa.gov/tools/panoply/)
 :   A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
 
@@ -143,6 +154,9 @@ output:
 
 [QGIS 3](https://www.qgis.org/en/site/)
 :   A free and open-source geographic information system.
+
+[R](https://cran.r-project.org/)
+:   A freely available language and environment for statistical computing and graphics.
 
 # Methods
 

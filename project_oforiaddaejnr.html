@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -14,6 +14,7 @@
 <title>Encroachment of Humans Into Natural Areas</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -53,9 +54,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,7 +68,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -174,8 +172,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -220,6 +216,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -232,20 +229,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -361,8 +355,8 @@ $(document).ready(function () {
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
 <p>The data visualized above is a combination of normalized enhanced vegetation index (NDVI) and Defence Meteorological Satellite Program (DMSP) Operational Linescan System (OLS) nighttime lights data. The NDVI data was colleceted by the Vegetation Index and Phenology Lab (VIPPHEN) NDVI ranges between -1 and 1. Negative values of NDVI (values approaching -1) correspond to water. Values close to zero (-0.1 to 0.1) generally correspond to barren areas of rock, sand, or snow. Low, positive values represent shrub and grassland (approximately 0.2 to 0.4), while high values indicate temperate and tropical rainforests (values approaching 1).</p>
-<p>VIPPHEN NDVI data sets were downloaded in HDF<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>) for every 2 years starting from 1994. The data were extracted using a computer program written in the Python<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> programming language with the help of the scientific dataset application program interface provided by the <a href="http://fhs.github.io/pyhdf/">pyhdf</a> package<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
-<p>For each year, the data were visualized in QGIS<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> using the same mapping properties and exported to PNG<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> image format. The image files were loaded into GIMP<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, optimized and exported as an animated GIF<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. The animated GIF was converted to a video (encoded in MPEG-4<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>) using FFmpeg<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
+<p>VIPPHEN NDVI data sets were downloaded in HDF<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>) for every 2 years starting from 1994. The data were extracted using a computer program written in the Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> programming language with the help of the scientific dataset application program interface provided by the <a href="http://fhs.github.io/pyhdf/">pyhdf</a> package<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>For each year, the data were visualized in QGIS<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> using the same mapping properties and exported to PNG<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> image format. The image files were loaded into GIMP<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, optimized and exported as an animated GIF<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. The animated GIF was converted to a video (encoded in MPEG-4<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>) using FFmpeg<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
 <div class="credit-line">
 <p>Author: Yaw Ofori-Addae. Last edited: 2019-12-18.</p>
 </div>
@@ -370,15 +364,15 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-12-18. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-18. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA’s Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: <a href="https://www.hdfeos.org/software/pyhdf.php" class="uri">https://www.hdfeos.org/software/pyhdf.php</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-12-18. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-18. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-12-18. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-18. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref9">↩</a></p></li>
+<li id="fn1"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-12-18. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-18. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA’s Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: <a href="https://www.hdfeos.org/software/pyhdf.php" class="uri">https://www.hdfeos.org/software/pyhdf.php</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-12-18. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-18. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-12-18. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-18. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
@@ -404,6 +398,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
