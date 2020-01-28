@@ -32,6 +32,9 @@ output:
 [\&what\;](http://www.amp-what.com/unicode/search/)
 :   A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant & internationalization characters.
 
+[Command Line Basics | Windows](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands)
+:   A tutorial by Codrut Neagu on some basic Windows CMD commands to help you get around the Command Prompt.
+
 [Data Types](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
 :   Review of numpy dtypes such as `i`, `f`, and `d`.[^scipy19]
 
@@ -67,6 +70,9 @@ output:
 
 [R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
 :   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
+
+[Terminal Cheatsheet | Mac](https://github.com/0nn0/terminal-mac-cheatsheet)
+:   A list of some most used commands and shortcuts in the terminal for Mac by Onno Schwanen.
 
 [Thesaurus of Mathematical Languages](http://mathesaurus.sourceforge.net/)
 :   A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.[^gunderson08]
