@@ -22,6 +22,7 @@ date: "Edited: 2020-01-29"
     * Cook
         
 <!-- Script -->
+### Script
 ``` {python twoSum, eval = FALSE}
 """
 @Author: Tinh Son. Date: 2020-1-28
