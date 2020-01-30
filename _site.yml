@@ -26,9 +26,10 @@ navbar:
               href: "project_mbrickey.html"
         - text: "About"
           menu:
-            - text: "The Coders"
+            - text: "The Coder Pages"
+              href: about.html
             - text: "------"
-            - text: "Spring 2020"
+            - text: "Spring 2020 Team"
             - text: "dt-woods"
               href: about_dtwoods.html
             - text: "elkelthen"
@@ -41,20 +42,6 @@ navbar:
               href: about_leanlow.html
             - text: "matt-kc"
               href: about_matt-kc.html
-            - text: "------"
-            - text: "Fall 2019"
-            - text: "alway1"
-              href: about_alway1.html
-            - text: "dpwisdom"
-              href: about_dpwisdom.html
-            - text: "ithacalr"
-              href: about_ithacalr.html
-            - text: "JiayingChen0307"
-              href: about_jiayingchen0307.html
-            - text: "mbrickey"
-              href: about_mbrickey.html
-            - text: "oforiaddaejnr"
-              href: about_oforiaddaejnr.html
 
 output:
     html_document:
