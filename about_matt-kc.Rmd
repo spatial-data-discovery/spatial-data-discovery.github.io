@@ -1,0 +1,15 @@
+---
+title: "About the Coder"
+author: "Matthew Cusick"
+date: "Edited: 1/30/2020"
+---
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Final_Trophee_Monal_2012_n08.jpg/1024px-Final_Trophee_Monal_2012_n08.jpg 'Fencing Example'){width=150 height=150}
+
+Bio
+:   Student, Data Scientist, Fencer
+    I enjoy facing and overcoming challenges while learning more about the world.
+
+Websites:
+:   - https://github.com/Matt-KC
+    - https://linkedin.com/in/matthewkcusick/
