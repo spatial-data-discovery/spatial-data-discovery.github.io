@@ -2,24 +2,17 @@
 title: "About the Coder"
 author: "LeAnn Lo"
 date: "Edited 1/30/2020"
-output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+![ Not my dog but I really want one ]( https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png )
 
-![Not my dog but I really want one](https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png)
-
-###Bio
+### Bio
 I am part of the Class of 2020! I am from northern Virginia and majoring in CAMS (computational applied math & statistics) and minoring in Computer Science. Hopefully working in Data Science in the future!
 
 
-###About Me (TMI): 
+### About Me (TMI): 
 - I love eating and going out to new restaurants (but I'm a terrible cook).
-    
 - My favorite movies are **Parasite** (Picture of the year! Let's go!), HER, and Rush Hour.
-    
 - I am trying to teach myself the guitar but don't know anything about music theory (also trying to learn that)
     
     
