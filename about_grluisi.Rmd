@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "Grant Luisi"
+date: "2020-01-30"
+---
+
+![](https://static.wixstatic.com/media/057dbf_8934bdaa47114405ba4a10619311c98b.jpg/v1/crop/x_0,y_577,w_3144,h_1637/fill/w_511,h_301,al_c,q_80,usm_0.66_1.00_0.01/057dbf_8934bdaa47114405ba4a10619311c98b.webp 'Skyhawk N2838L. Williamsburg Flight Center.')
+
+Bio
+:   My name is Grant and I am a junior at the College of William and Mary.
+    I am majoring in Computational and Applied Mathematics and Statistics (CAMS) with a minor in Classical Studies.
+
+About me:
+:   - I am studying to be a pilot.
+      I fly Cessna 172's (*see above*)
+    - I love hiking and skiing
