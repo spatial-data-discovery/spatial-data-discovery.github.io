@@ -28,13 +28,23 @@ navbar:
           menu:
             - text: "The Coders"
             - text: "------"
+            - text: "Spring 2020"
+            - text: "dt-woods"
+              href: about_dtwoods.html
+            - text: "elkelthen"
+              href: about_elkelthen.html
+            - text: "intj1"
+              href: about_intj1.html
+            - text: "leanlow"
+              href: about_leanlow.html
+            - text: "matt-kc"
+              href: about_matt-kc.html
+            - text: "------"
             - text: "Fall 2019"
             - text: "alway1"
               href: about_alway1.html
             - text: "dpwisdom"
               href: about_dpwisdom.html
-            - text: "dt-woods"
-              href: about_dtwoods.html
             - text: "ithacalr"
               href: about_ithacalr.html
             - text: "JiayingChen0307"
