@@ -1,23 +1,22 @@
-
 ---
-Title: "About the Coder"
-Author: "Tinh Son"
-Date: "Edited: 2020-1-28"
+title: "About the Coder"
+author: "Tinh Son"
+date: "Edited: 2020-01-29"
 ---
 
 <!-- Image -->
-![OnePunch](https://dazzlingfolders.s3.amazonaws.com/one-punch-man.jpg "One Punch Man Potato Head")
+![OnePunch](https://dazzlingfolders.s3.amazonaws.com/one-punch-man.jpg "One Punch Man Potato Head"){width=150 height=150}
 
 
 <!-- Bio --> 
-Bio:
-     Senior, performer, sleeper... breathing. 
+**Bio**
+:    Senior, performer, sleeper... breathing. 
      Major in Computer Science and Applied Math. 
      **Love** Python, _okay_ with C and ~~everything else~~.
      
 <!-- Hobbies -->
-Hobbies:
-    * Sleep
+**Hobbies**
+:   * Sleep
     * Body Pump
     * Violin
     * Cook
