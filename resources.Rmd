@@ -164,6 +164,12 @@ output:
 [R](https://cran.r-project.org/)
 :   A freely available language and environment for statistical computing and graphics.
 
+# Syllabi
+
+[__Spring 2020__](https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/)
+
+[__Fall 2019__](https://drdavis.space/teaching/ds/sdd/syllabus/2019/fall/)
+
 # Methods
 
 ### Environment Variables
