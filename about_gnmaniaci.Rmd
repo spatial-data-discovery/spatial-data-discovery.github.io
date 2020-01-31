@@ -3,8 +3,8 @@ title: "About the Coder"
 author: "Gianna Maniaci"
 date: "January 30, 2020"
 ---
-Bio: 
-     Hi! 
+Bio:
+:    Hi! 
      My name is Gianna, and I am a junior at the college majoring in data science and minoring in public health. 
      I love to travel, one of my goals is to go to all of the national parks in the US. 
      I have currently been to _9 parks_. 
