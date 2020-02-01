@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Mallika Suri"
+date: "Edited: 2020-01-30"
+---
+
+![](https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-09-at-5.37.37-PM.jpg?w=1200&ssl=1 'https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-09-at-5.37.37-PM.jpg?w=1200&ssl=1'){width=150 height=150}
+
+
+Bio
+:   I am a 2020 grad from Northern Virginia majoring in data science.
+
+Interests:
+:  - I enjoy **snowboarding**
+	 - I love **traveling** - I have been to over 30 countries
+	 - I have been **scuba diving** for 5 years
+	 - I am a **dog** lover
