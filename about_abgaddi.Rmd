@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Abby Gaddi"
+date: "Edited: 2020-02-02"
+---
+
+![](https://data.whicdn.com/images/315745282/original.jpg "panda eating ramen")
+
+Bio
+:  I'm a junior majoring in Data Science, and I can do a flip.
+
+Things I am *scared* of
+:   - E.T.
+    - Spiders
+    - the show Wallace and Gromit
+    - deer
+    - 3 lane highways
