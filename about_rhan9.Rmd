@@ -6,10 +6,11 @@ date: "Edited 2020-02-02"
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png "Basketball"){width=150 height=150}
 
-# **Bio**
-: Hi everyone, my name is Ryan Han and I am a senior at the College pursuing a Data Science major and a Math minor.
+**Bio**
+:   Hi everyone, my name is Ryan Han and I am a senior at the College
+    pursuing a Data Science major and a Math minor.
 
-## **Hobbies**:
-- I like to play **Basketball**
-- I like to listen to _podcasts_
-- I like to play *Dota2*
+**Hobbies**
+: - I like to play **Basketball**
+  - I like to listen to _podcasts_
+  - I like to play *Dota2*
