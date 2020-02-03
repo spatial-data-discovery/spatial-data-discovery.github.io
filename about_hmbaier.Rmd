@@ -8,9 +8,11 @@ date: "2020-02-02"
 
   
 **Bio**
+
 My name is Heather and I am a senior majoring in data science with a minor in computer science. I'm from Warrenton, VA and after graduation I'll be moving to Tysons, VA to work for Logistics Management Institute (LMI).  
   
 **About Me**
+
 - Most days I eat breakfast food for every meal  
 - I have watched the entirety of Friends three times  
 - I love maps
