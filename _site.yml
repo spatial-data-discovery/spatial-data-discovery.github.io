@@ -30,6 +30,8 @@ navbar:
               href: about.html
             - text: "------"
             - text: "Spring 2020 Team"
+            - text: "abgaddi"
+              href: about_abgaddi.html
             - text: "dt-woods"
               href: about_dtwoods.html
             - text: "elkelthen"
@@ -42,8 +44,12 @@ navbar:
               href: about_intj1.html
             - text: "leanlow"
               href: about_leanlow.html
+            - text: "mallikasuri"
+              href: about_mallikasuri.html
             - text: "matt-kc"
               href: about_matt-kc.html
+            - text: "rhan9"
+              href: about_rhan9.html
 
 output:
     html_document:
