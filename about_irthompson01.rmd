@@ -10,9 +10,10 @@ Edited: "February 3, 2020"
 :   I am a senior on the swim team with a Data Science major and Computer Science minor.
 
 **Hobbies**
-  + Fishing
-  + Puzzle Cubes
-  + *Old* Nintendo video games
-  + Archery
+
++ Fishing
++ Puzzle Cubes
++ *Old* Nintendo video games
++ Archery
 
 ![](https://i.redd.it/bj2qtsp7fif11.jpg) <!-- this is how you embed an image -->
