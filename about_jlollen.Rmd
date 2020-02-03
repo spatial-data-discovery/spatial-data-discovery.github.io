@@ -1,0 +1,15 @@
+---
+title: "About the Coder"
+author: "Jenna Ollen"
+date: "2020-02-03"
+---
+![](https://www.thesprucepets.com/thmb/Mn97CATmMX-N5qkl1aHC0ZbWhu8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/19933184_104417643500613_5541725731421159424_n-5ba0548546e0fb0050edecc0.jpg 'Jenna Ollen'){width=150 height=150}
+
+Bio
+:   I'm a student at William & Mary who enjoys learning about data science. In my free time, I *love* to cook.
+
+Favorite Recipes at the Moment:
+:   *[Ricotta Gnocchi, AKA Gnudi](https://www.gimmesomeoven.com/ricotta-gnocchi/)
+    *[Rosemary Focaccia Bread](https://www.gimmesomeoven.com/rosemary-focaccia-bread/)
+
+***
