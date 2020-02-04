@@ -23,9 +23,10 @@ date: "Edited: 2020-01-29"
         
 <!-- Script -->
 ### Script
+[twoSum (.py)](scripts/twoSum.py)
 ``` {python twoSum, eval = FALSE}
 """
-@Author: Tinh Son. Date: 2020-1-28
+@Author: Tinh Son. Date: 2020-2-04
 @Description: This code is written as a practice challenge from Leetcode.com, with linear run time.
 
 @Problem
@@ -102,7 +103,7 @@ def main(argv):
     print(twoSum(nums, target))
 
 if __name__ == "__main__":
-    if len(sys.argv) <= 1:
+    if len(sys.argv) <= 1 or sys.argv[1] in ["--h", "--help"]:
         printHelp()
         exit(1)
     main(sys.argv)
