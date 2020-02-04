@@ -21,31 +21,15 @@ import sys
 
 
 ##############################################################################
-# FUNCTIONS
-##############################################################################
-def show_help():
-    """
-    Name:     show_help
-    Inputs:   None
-    Outputs:  None
-    Features: Prints the help text when user uses the '-h' command flag
-    """
-    help_txt = ("FILE: music_randomizer.py\n"
-                "DESC: Randomizes MP3 files within a folder or USB drive.\n"
-                "USGE: app_name [options]\n"
-                "  -p, --path   path to parent MP3 folder\n"
-                "  -h, --help   shows the help text\n")
-    print(help_txt)
-
-
-##############################################################################
 # CLASSES
 ##############################################################################
 class MusicMan(object):
     """
     Name:     MusicMan
     Features: Class for randomizing and organizing MP3 files for USB playback
-    History:  Version 0.3
+    History:  Version 0.3.2
+              - added argparse; rm show_help [20.02.02]
+              Version 0.3
               - updated rename mp3 files function [17.01.15]
               Version 0.2
               - use Reader class for mp3 title tag in file remaning [17.01.14]
