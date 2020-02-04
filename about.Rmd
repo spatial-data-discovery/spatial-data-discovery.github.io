@@ -1,6 +1,6 @@
 ---
 title: "The GitHub Development Team"
-date: "Updated: 2020-01-30"
+date: "Updated: `r format(Sys.time(), '%B %d, %Y')`"
 ---
 
 ```{r echo = FALSE, results = 'asis'}
