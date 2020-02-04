@@ -1,15 +1,19 @@
 ---
 title: "About the Coder"
 author: "Alexandra Burke"
-date: "Edited: 2020-02-03"
+date: "Edited: 2020-02-04"
 ---
 
 ![](https://upload.wikimedia.org/wikipedia/commons/2/2c/Evil_Eye.svg 'Allie Burke'){width=220 height=220}
 
 #About me
+
 :	Hi! My name is Allie Burke, I'm a Senior at **The College of William and Mary**.
+	
 	I'm a Finance Major and Data Science Minor.
+
 #Hobbies
+
 : 	-running
 	-knitting
 	-yoga
