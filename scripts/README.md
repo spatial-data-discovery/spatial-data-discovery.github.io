@@ -50,5 +50,8 @@ This folder contains utility and general functionality scripts.
 ### text.txt
 * a test file for random_caps.py
 
+### twoSum.py
+* Finds the index of two values in a list that adds up to the target number
+
 ### webscraper.py
 * This script takes the url for the WM CS website and extracts info about the department and courses offered.
