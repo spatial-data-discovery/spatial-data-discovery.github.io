@@ -2,15 +2,16 @@
 #
 # music_randomizer.py
 #
-# VERSION 0.3.1
+# VERSION 0.3.2
 #
-# LAST EDIT: 2019-09-11
+# LAST EDIT: 2020-02-04
 #
 # This script randomizes music files on a USB drive
 #
 ##############################################################################
 # REQUIRED MODULES
 ##############################################################################
+import argparse
 import errno
 import os
 import random
@@ -256,7 +257,7 @@ class MusicMan(object):
             self.move_files()          # move files to new folder
             self.clean_up()            # remove lingering empty directories
         else:
-            print("Found no music files!")
+            print("Found no music files! Check your path.")
 
     def set_new_names(self):
         """
@@ -285,27 +286,10 @@ class MusicMan(object):
 ##############################################################################
 if __name__ == "__main__":
     # Check command-line arguments
-    num_args = len(sys.argv)
-    my_dir = None
-    if num_args > 3:
-        show_help()
-        print("Too many arguments given.")
-    elif num_args > 1 and num_args < 4:
-        if '-p' in sys.argv or '--path' in sys.argv:
-            if '-p' == sys.argv[-1] or '--path' == sys.argv[-1]:
-                # Bad form!
-                show_help()
-                print("No path given following '-p' argument.")
-            else:
-                # Get the path
-                my_dir = sys.argv[-1]
-                my_music = MusicMan(my_dir)
-                my_music.run()
-        elif '-h' in sys.argv or '--help' in sys.argv:
-            show_help()
-        else:
-            show_help()
-            print('Unrecognized argument.')
-    else:
-        show_help()
-        print('No arguments given.')
+    p = argparse.ArgumentParser(
+        description="Randomizes MP3 files within a folder or USB drive.")
+    p.add_argument("-p", "--path", default=".",
+                   help="Path to your music folders")
+    args = p.parse_args()
+    my_music = MusicMan(args.path)
+    my_music.run()
