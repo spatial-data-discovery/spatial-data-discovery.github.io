@@ -32,10 +32,14 @@ navbar:
             - text: "Spring 2020 Team"
             - text: "abgaddi"
               href: about_abgaddi.html
+            - text: "aburke01"
+              href: about_aburke01.html
             - text: "dt-woods"
               href: about_dtwoods.html
             - text: "elkelthen"
               href: about_elkelthen.html
+            - text: "emmgillstrick"
+              href: about_emmgillstrick.html
             - text: "gnmaniaci"
               href: about_gnmaniaci.html
             - text: "grluisi"
@@ -46,12 +50,22 @@ navbar:
               href: about_intj1.html
             - text: "irthompson01"
               href: about_irthompson01.html
+            - text: "jlollen"
+              href: about_jlollen.html
+            - text: "jpcasale"
+              href: about_jpcasale.html
             - text: "leanlow"
               href: about_leanlow.html
+            - text: "luhuynh"
+              href: about_luhuynh.html
             - text: "mallikasuri"
               href: about_mallikasuri.html
             - text: "matt-kc"
               href: about_matt-kc.html
+            - text: "nd3600"
+              href: about_nd3600.html
+            - text: "pulakraj"
+              href: about_pulakraj.html
             - text: "rhan9"
               href: about_rhan9.html
 
