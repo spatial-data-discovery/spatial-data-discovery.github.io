@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "Emma Strickland"
+date: "Edited: 2020-02-03"
+---
+
+Bio
+:   I'm a Computational & Applied Math major from Blacksburg, VA with an interest in data analysis.
+I recently studied abroad in Oman over the winter break!
+
+![This is a picture of Muscat, the capital of Oman](https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg){width=224 height=148}
+
+*Some of my hobbies*
+:   -Surfing
+    -Thrifting and sewing
+    -Reading
