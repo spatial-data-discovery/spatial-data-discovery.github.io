@@ -1,0 +1,23 @@
+---
+title: "About the Coder"
+author: "Pulak Raj"
+date: "Edited: 02/02/2020"
+---
+
+![My favorite fencer, Max Heinzer](https://i.pinimg.com/736x/7d/69/fd/7d69fde10b2020441f9c8b93de2aa861--epee-fencing-fencing-sport.jpg)
+
+**Bio**
+:
+
+* William & Mary Student, Coder, Fencer  
+* I enjoy playing most sports and reading/watching fantasy  
+* Die hard Nets fan
+
+**Coding Languages**
+:
+
+* C++
+* Python
+* R
+* SQL
+* etc.
