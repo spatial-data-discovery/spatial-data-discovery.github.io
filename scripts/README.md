@@ -28,6 +28,9 @@ This folder contains utility and general functionality scripts.
 ### hdf_write.py
 * this script creates a new and edits an existing HDF5 file using h5py
 
+### keywords.py
+*This script takes a text file, get the most commonly used words, and then googles for links related to these words
+
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
 
