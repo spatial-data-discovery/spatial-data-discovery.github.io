@@ -9,7 +9,7 @@ Bio
 :   I'm a student at William & Mary who enjoys learning about data science. In my free time, I *love* to cook.
 
 Favorite Recipes at the Moment:
-:   *[Ricotta Gnocchi, AKA Gnudi](https://www.gimmesomeoven.com/ricotta-gnocchi/)
-    *[Rosemary Focaccia Bread](https://www.gimmesomeoven.com/rosemary-focaccia-bread/)
+:   * [Ricotta Gnocchi, AKA Gnudi](https://www.gimmesomeoven.com/ricotta-gnocchi/)
+    * [Rosemary Focaccia Bread](https://www.gimmesomeoven.com/rosemary-focaccia-bread/)
 
 ***
