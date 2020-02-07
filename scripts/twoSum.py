@@ -76,7 +76,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description = "Given an array of integers, return indices of the two numbers such that they add up to a specific target.")
     
-    p.add_argument("LIST", help = "List of integers")
+    p.add_argument("LIST", help = "List of integers, ex. \"2, 7, 11, 15\"")
     p.add_argument("TARGET", help = "Targeted number")
     
     args = p.parse_args()
