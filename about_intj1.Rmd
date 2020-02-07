@@ -25,8 +25,8 @@ date: "Edited: 2020-01-29"
 ### Script
 [twoSum (.py)](scripts/twoSum.py)
 ``` {python twoSum, eval = FALSE}
-"""
-@Author: Tinh Son. Date: 2020-2-04
+'''
+@Author: Tinh Son. Date: 2020-2-06
 @Description: This code is written as a practice challenge from Leetcode.com, with linear run time.
 
 @Problem
@@ -41,20 +41,19 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
-Execution format: python .\PEP8_TinhSon.py LIST TARGET
+Execution format: python .\twoSum.py LIST TARGET
 Where LIST is in string 
 Where TARGET is a whole number
 
-Example: python .\PEP8_TinhSon.py "2, 7, 11, 15" 9
+Example: python .\twoSum.py "2, 7, 11, 15" 9
 
-"""
+'''
 # import sys argv to receive input from console
 import sys
 # use regex to check input
 import re 
-
-def printHelp():
-    print("Execution format: python .\PEP8_TinhSon.py LIST TARGET \n Where LIST is in string \n Where TARGET is a whole number \n Example: python .\\PEP8_TinhSon.py \"2, 7, 11, 15, 9\" 26")
+#argparse as required by spec
+import argparse
           
 # function takes in list and target, returns list
 def twoSum(nums: list, target: int) -> list:
@@ -76,11 +75,9 @@ def twoSum(nums: list, target: int) -> list:
 
 # where main function is called
 def main(argv):
-    # make sure argument length is 2
-    assert len(argv[1:]) == 2, "Too many arguments"
     
     # parses string format into list
-    preNums =  argv[1:][0]
+    preNums =  argv[0:][0]
     
     # use regex to check if each variable is valid input. Perform negative lookbehind/ahead for a decimal point. 
     formatCheck = re.findall(r'(?<!\.)\b[\d]+\b(?!\.)', preNums)
@@ -103,9 +100,13 @@ def main(argv):
     print(twoSum(nums, target))
 
 if __name__ == "__main__":
-    if len(sys.argv) <= 1 or sys.argv[1] in ["--h", "--help"]:
-        printHelp()
-        exit(1)
-    main(sys.argv)
+    p = argparse.ArgumentParser(
+        description = "Given an array of integers, return indices of the two numbers such that they add up to a specific target.")
+    
+    p.add_argument("LIST", help = "List of integers, ex. \"2, 7, 11, 15\"")
+    p.add_argument("TARGET", help = "Targeted number")
+    
+    args = p.parse_args()
+    main([args.LIST, args.TARGET])
     
 ```
