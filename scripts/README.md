@@ -12,6 +12,9 @@ This folder contains utility and general functionality scripts.
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
+### crosswind.py
+* This script determines which runway pilots should use based on runways available, wind direction, and wind speed.
+
 ### darts.py
 * This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board
   and tell them what percent of the darts landed on the board.
@@ -31,7 +34,7 @@ This folder contains utility and general functionality scripts.
 ### josephus.py
 * This script demonstrates the way linked lists work as well as adding a fun game to the mix!
   Josephus takes any number inputted by the user and makes a linked list of 1 to that number.
-  It will then rotate the linked list so the first value becomes the last and then removes the 
+  It will then rotate the linked list so the first value becomes the last and then removes the
   new first value. It will continue to do this until there is only one number left, this is the survivor!
 
 ### keywords.py
