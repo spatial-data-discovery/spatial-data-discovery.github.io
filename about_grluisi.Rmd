@@ -24,7 +24,7 @@ For example taking off runway 9 would indicate we are traveling to the east (90 
 Every runway has an alternate runway offset by 180 degrees, so the same strip of pavement serves as runway 9 and 27.
 
 It is also important to take wind direction and speed into account.
-An aircraft should always be taking off into the wind, and never with a tail wind.
+An aircraft should always be taking off into the wind, and never with a tailwind.
 The crosswind component is an important piece of information when determining if it is safe to takeoff or land on a particular runway.
 
 ``` {python crosswind, eval = FALSE}
