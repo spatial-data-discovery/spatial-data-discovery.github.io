@@ -28,6 +28,12 @@ This folder contains utility and general functionality scripts.
 ### hdf_write.py
 * this script creates a new and edits an existing HDF5 file using h5py
 
+### josephus.py
+* This project demonstrates the way linked lists work as well as adding a fun game to the mix!
+  Josephus takes any number inputted by the user and makes a linked list of 1 to that number.
+  It will then rotate the linked list so the first value becomes the last and then removes the 
+  new first value. It will continue to do this until there is only one number left, this is the survivor!
+
 ### keywords.py
 * This script takes a text file, get the most commonly used words, and then googles for links related to these words
 
