@@ -1,31 +1,3 @@
----
-title: "About the Coder"
-author: "LeAnn Lo"
-date: "Edited 1/30/2020"
----
-
-![ Not my dog but I really want one ]( https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png )
-
-### Bio
-I am part of the Class of 2020! I am from northern Virginia and majoring in CAMS (computational applied math & statistics) and minoring in Computer Science. Hopefully working in Data Science in the future!
-
-
-### About Me (TMI): 
-- I love eating and going out to new restaurants (but I'm a terrible cook).
-- My favorite movies are **Parasite** (Picture of the year! Let's go!), HER, and Rush Hour.
-- I am trying to teach myself the guitar but don't know anything about music theory (also trying to learn that)
-    
-
-### Sample script
-[Extracting Column from csv Files (.py)](scripts/extract_column.py)
-
-This sample script was originally made to extract gene names from files that contain the gene names, counts, and various statistics. The extracted column is put into a text file and removes the first item which would typically be the word 'gene'. This file is useful for looking comparing genes later on or any header column.
-
-This script can take an argument -c for the column number to be extracted, this index starts at 0 (0 is the first column and so on). The only default argument needed is the file path that is a csv file, it will take the first column on default.
-
-Usage: extract_column.py <file path> -c <column number with index starting at 0>
-
-```{python header_to_textfile, eval=FALSE}    
 #!/usr/bin/env python
 """
 Gets all of the content that is in the first column of a csv
@@ -59,13 +31,14 @@ def main(fName,column,dirName = None):
 def runOnDir(dirName):
 	filenames = next(os.walk(dirName))[2]
 	for fName in filenames:
+		#if ('DESeq2') in fName:     #commented line out in case file name does not have DESeq in name
 			print("Running on file:",  fName)
 			main(fName, dirName)
 """
 
+
 if __name__ == "__main__":
-	
-	"""    for running on a directory
+	"""
 	dirName = sys.argv[1]
 	if (dirName[-1] != '/'):
 		dirName += '/'
@@ -80,5 +53,5 @@ if __name__ == "__main__":
 	args = p.parse_args()
 	#fName = sys.argv[1]    #without argsparse
 	main(args.file,args.column)
-```
+
 
