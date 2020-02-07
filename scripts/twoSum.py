@@ -21,8 +21,6 @@ Where TARGET is a whole number
 Example: python .\twoSum.py "2, 7, 11, 15" 9
 
 '''
-# import sys argv to receive input from console
-import sys
 # use regex to check input
 import re 
 #argparse as required by spec
