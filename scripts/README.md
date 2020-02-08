@@ -12,6 +12,9 @@ This folder contains utility and general functionality scripts.
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
+### changelog_generator.py
+* This script generates a changelog (Hopefully) to the professors specs programmatically.
+
 ### crosswind.py
 * This script determines which runway pilots should use based on runways available, wind direction, and wind speed.
 
