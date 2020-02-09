@@ -52,6 +52,9 @@ This folder contains utility and general functionality scripts.
 ### nc_write.py
 * this script creates a NetCDF "classic" data file and writes attributes, variables, and dimensions to the file using scipy.io
 
+### PlotRGB.py
+* This script prompts the user for the path to a folder containing Landsat 5 bands and the function plots a natural color image of the    satellite image and prints some basic infomration about the data
+
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them,
   and writes them out to a new text file
