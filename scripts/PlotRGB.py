@@ -2,7 +2,7 @@
 #
 # Author: Heather Baier
 #
-# Date: 2020-02-07
+# Date: 2020-02-09
 #
 # This script prompts the user for the path to a folder contiang 
 # Landsat 5 bands and the function plots a natural color image of the
