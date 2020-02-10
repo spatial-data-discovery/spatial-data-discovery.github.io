@@ -38,7 +38,8 @@ This folder contains utility and general functionality scripts.
 * This script demonstrates the way linked lists work as well as adding a fun game to the mix!
   Josephus takes any number inputted by the user and makes a linked list of 1 to that number.
   It will then rotate the linked list so the first value becomes the last and then removes the
-  new first value. It will continue to do this until there is only one number left, this is the survivor!
+  new first value. It will continue to do this until there is only one number left.
+  This is the survivor!
 
 ### keywords.py
 * This script takes a text file, get the most commonly used words, and then googles for links related to these words
