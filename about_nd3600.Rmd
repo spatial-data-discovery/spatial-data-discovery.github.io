@@ -13,7 +13,7 @@ date: "Edited: 2019-30-1"
 
 **Bio**
 
-: I'm a Data Science major, and a computer science minor. I am from Northern Virginia. 
+: I'm a Data Science major, and a computer science minor. I am from Northern Virginia.
 
 *About me*:
 
@@ -21,7 +21,66 @@ date: "Edited: 2019-30-1"
 
 - I was born in The Netherlands
 
-- I have a Yorkie 
+- I have a Yorkie
 ![This is a picture of the Celtics Starting Lineup](https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2020/01/Celtics-1040x700-Web.jpg)
 
+### Sample Script
+[keywords (.py)](scripts/keywords.py)
 
+The goal of my script is to help sumarize large and complex readings. It does this by finding the most common words in a text file, and then Googling them and returning the first five links. These links will normally be Wikipedia articles, and other simple sources which cover the key concepts in the reading.
+
+``` {python keywords, eval = FALSE}
+import collections
+import pandas as pd0
+import argparse
+if __name__ == "__main__":
+    # Check command-line arguments
+
+
+
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS,
+                        help='The point of this script is to help summarize long readings.It finds the most used words in a text and returns shorter and simpler articles which go over these concepts.')
+    args=parser.parse_args()
+
+
+    file = open('NDFM.txt', encoding="utf8")#input file
+    a= file.read()
+
+
+    # Stopwords in text file
+
+    stopwords = set(line.strip() for line in open('stopwords.txt'))
+    stopwords = stopwords.union(set(['mr','mrs','one','two','said']))
+
+    wordcount = {}
+    for word in a.lower().split():
+        word = word.replace(".","")
+        word = word.replace(",","")
+        word = word.replace(":","")
+        word = word.replace(""","")
+        word = word.replace("!","")
+        word = word.replace("?","")
+        if word not in stopwords:
+            if word not in wordcount:
+                wordcount[word] = 1
+            else:
+                wordcount[word] += 1
+    # Print most common word
+    n_print = int(input("How many key words to google?: "))
+
+    word_counter = collections.Counter(wordcount)
+    googleString=""
+    for word, count in word_counter.most_common(n_print):
+        googleString = googleString +" "+ word
+
+    try:
+        from googlesearch import search
+    except ImportError:
+        print("No module named 'google' found")
+    for j in search(googleString, tld="co.in", num=10, stop=5, pause=2):
+        print(j)
+
+    file.close()
+
+```
