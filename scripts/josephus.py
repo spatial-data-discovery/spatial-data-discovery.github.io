@@ -4,7 +4,7 @@
 #Josephus takes any number inputted by the user and makes a link list of 1 to that number
 #it will then rotate the linked list so the first value becomes the last and removes the new first value
 #it will continue to do this until there is only one number left, this is the survivor!
-
+#I created this project in Computer Science 241, but added the help section
 
 
 
