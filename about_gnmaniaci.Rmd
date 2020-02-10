@@ -22,7 +22,7 @@ Other Interests:
 ### Sample Script
 [Josephus (.py)](scripts/josephus.py)
 
-My sample script is something I had to complete for a prior class, CSCI 241. 
+My sample script is something I had to complete for a prior class, Computer Science 241. 
 I did change it slightly by adding a help description the utility script assignment.
 This script demonstrates the way linked lists work as well as adding a fun game to the mix! 
 Josephus takes any number inputted by the user and makes a linked list of 1 to that number. 
