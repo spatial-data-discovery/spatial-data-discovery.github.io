@@ -1,47 +1,3 @@
----
-title: "About the Coder"
-author: "Alexandra Burke"
-date: "Edited: 2020-02-09"
----
-
-![](https://upload.wikimedia.org/wikipedia/commons/2/2c/Evil_Eye.svg 'Allie Burke'){width=220 height=220}
-
-**About me**
-
-:	Hi! My name is Allie Burke, I'm a Senior at **The College of William and Mary**.
-	
-	I'm a Finance Major and Data Science Minor.
-
-**Hobbies**
-
-: 	-running
-
-	-knitting
-
-	-yoga
- 
-
-### Sample script
-Book_keeping (.py)](scripts/Book_keeping.py)
-
-I wrote this sample script as a way to keep up with daily inventory changes at a small used bookstore that mostly has one copy of each book. It has the user load in two excel files that contain the inventory list and the sales made that day. My script checks to see which books were purchased, and returns an excel file with the new inventory list that can be used for the next day. 
-
-
-```{python Book_keeping, eval=FALSE}
-#!/usr/bin/env python3
-#
-# Book_keeping.py
-#
-#
-# LAST EDIT: 2020-02-09
-#
-# This script compares entries in inventory and sales lists. 
-#
-##############################################################################
-# REQUIRED MODULES
-##############################################################################
-
-
 import pandas as pd
 inventory = []
 booksales = []
@@ -93,6 +49,3 @@ def Book_keeping(Inventory, Daily_sales):
     return Inventory.to_excel("NewInventory.xlsx",sheet_name = "Inventory",engine='xlsxwriter')
 
 Book_keeping("Inventory.xlsx","Today.xlsx")
-
-```
- 

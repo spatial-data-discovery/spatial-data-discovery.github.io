@@ -9,6 +9,9 @@ This folder contains utility and general functionality scripts.
 
 ## Files
 
+### Book_keeping.py
+* This script takes in two excel files and compares them to update inventory.  
+
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
