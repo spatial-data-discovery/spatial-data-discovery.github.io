@@ -16,7 +16,7 @@ if __name__ == "__main__":
     a= file.read()
 
 
-    # Stopwords
+    # Stopwords in text file
 
     stopwords = set(line.strip() for line in open('stopwords.txt'))
     stopwords = stopwords.union(set(['mr','mrs','one','two','said']))
