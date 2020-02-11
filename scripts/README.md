@@ -47,6 +47,9 @@ This folder contains utility and general functionality scripts.
 ### keywords.py
 * This script takes a text file, get the most commonly used words, and then googles for links related to these words
 
+### magic8ball.py
+* This script asks the user a question and then gives them the response a Magic 8 ball would
+
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
 
