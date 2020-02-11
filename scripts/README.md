@@ -24,10 +24,10 @@ This folder contains utility and general functionality scripts.
 ### darts.py
 * This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board
   and tell them what percent of the darts landed on the board.
-  
+
 ### dna_translator.py
 * This script takes a DNA sequence, finds the complementary sequence (called the template DNA), and returns the corresponding
-RNA codons and proteins they encode for in a list. 
+RNA codons and proteins they encode for in a list.
 
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
@@ -72,6 +72,9 @@ RNA codons and proteins they encode for in a list.
 
 ### nc_write.py
 * this script creates a NetCDF "classic" data file and writes attributes, variables, and dimensions to the file using scipy.io
+
+### netCDF_mean.py
+* This script reads in a netCDF file and writes out the average of the variables to a new file.
 
 ### Pdf_Converter.py
 * This script converts files between different formats. It is currently hardcoded to convert .docx to .pdf.
