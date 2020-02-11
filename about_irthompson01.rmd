@@ -18,7 +18,7 @@ Edited: "February 3, 2020"
 
 ![](https://i.redd.it/bj2qtsp7fif11.jpg) <!-- this is how you embed an image -->
 
-####Sample Script
+#### Sample Script
 
 This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude,
 longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.
