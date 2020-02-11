@@ -62,6 +62,9 @@ This folder contains utility and general functionality scripts.
 ### nc_write.py
 * this script creates a NetCDF "classic" data file and writes attributes, variables, and dimensions to the file using scipy.io
 
+### Pdf_Converter.py
+* This script converts files between different formats. It is currently hardcoded to convert .docx to .pdf.
+
 ### PlotRGB.py
 * This script prompts the user for the path to a folder containing Landsat 5 bands and the function plots a natural color image of the    satellite image and prints some basic infomration about the data
 
