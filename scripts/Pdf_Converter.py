@@ -15,6 +15,7 @@ Output: .pdf file
 Example output file name: MattWorkNotes.pdf
 
 Example input: python Pdf_Converter.py C:\\Users\\Name\\Dir\\FileName.docx C:\\Users\\Name\\Dir\\FileName.pdf (Using single backslashes)
+
 """
 # Standard modules
 import sys, os, time, argparse
