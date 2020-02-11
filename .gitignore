@@ -19,3 +19,6 @@ venv/
 
 # QGIS auxiliary xml
 *.aux.xml
+
+# Python compilations
+__pycache__
