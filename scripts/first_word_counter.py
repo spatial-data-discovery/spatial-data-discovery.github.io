@@ -1,26 +1,3 @@
----
-title: "About the Coder"
-auto: "Ryan Han"
-date: "Edited 2020-02-02"  
----
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png "Basketball"){width=150 height=150}
-
-**Bio**
-:   Hi everyone, my name is Ryan Han and I am a senior at the College
-    pursuing a Data Science major and a Math minor.
-
-**Hobbies**
-  - I like to play **Basketball**
-  - I like to listen to _podcasts_
-  - I like to play *Dota2*
-
-###My Script
-[first_word_counter(.py)](scripts/first_word_counter.py)
-
-This script takes a .txt/.md file and word of your choice and figures out how many times the specific word starts a sentence in the file.
-
-```{python "first", eval = FALSE}
 # first_word_counter.py
 
 # By: Ryan Han
@@ -84,5 +61,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     first_word_counter()
-    
-```

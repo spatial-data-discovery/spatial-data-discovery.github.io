@@ -1,35 +1,4 @@
----
-title: "About the Coder"
-author: "Matthew Cusick"
-date: "Edited: 2/10/2020"
----
- **Matthew Cusick**
 
- My name is Matthew and I fence for William & Mary.  
-
-![Two Fencers Competing in an International Event](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Final_Trophee_Monal_2012_n08.jpg/1024px-Final_Trophee_Monal_2012_n08.jpg 'Fencing Example')
-
-
-Bio:
- 
-  - Student, Data Scientist, Fencer
-
-  - I enjoy facing and overcoming challenges while learning more about the world.
-
-
-Websites:
-
-  - https://github.com/Matt-KC
-
-  - https://linkedin.com/in/matthewkcusick/
-
-
-### Sample Script
-[PDF Converter (.py)](scripts/Pdf_Converter.py)
-
-My sample script is a useful tool that can convert .docx files into .pdf files. By changing the microsoft formatting code, you can convert to a large variety of file formats. Right now, the formatting code is hardcoded, but I should be able to add it as a command line argument. Furthermore, I plan to improve this script so that it can sequentially convert a large amount of .docx files in one run.
-
-```
 """
 Author: Matthew Cusick
 
@@ -46,6 +15,7 @@ Output: .pdf file
 Example output file name: MattWorkNotes.pdf
 
 Example input: python Pdf_Converter.py C:\\Users\\Name\\Dir\\FileName.docx C:\\Users\\Name\\Dir\\FileName.pdf (Using single backslashes)
+
 """
 # Standard modules
 import sys, os, time, argparse
@@ -83,4 +53,3 @@ if __name__ == "__main__":
     p.add_argument('output', help = "Absolute file path for desired .pdf file")
     args = p.parse_args()
     convertToPDF(args.input, args.output)
-```

@@ -1,35 +1,4 @@
----
-title: "About the Coder"
-author: "Pulak Raj"
-date: "Edited: 02/02/2020"
----
-
-![My favorite fencer, Max Heinzer](https://i.pinimg.com/736x/7d/69/fd/7d69fde10b2020441f9c8b93de2aa861--epee-fencing-fencing-sport.jpg)
-
-**Bio**
-:
-
-* William & Mary Student, Coder, Fencer  
-* I enjoy playing most sports and reading/watching fantasy  
-* Die-hard Nets fan
-
-**Coding Languages**
-:
-
-* C++
-* Python
-* R
-* SQL
-* etc.
-
-### Sample Script
-
-[Hangman (.py)](scripts/hangman.py)
-
-My sample script is a simple hangman game. It opens up in command line and can be played in command line. The game requires a dictionary labeled american to be in the same folder.
-
-```{python hangman, eval=FALSE}
-# This script runs a simple hangman game in command line.
+# This script runs a simple hangman game in command line. 
 #
 # Last edit: 2/10/20
 
@@ -153,4 +122,3 @@ if __name__ == "__main__":
     from hangman import *
     h = Hangman()
     h.play()
-```

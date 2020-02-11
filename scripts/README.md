@@ -9,6 +9,9 @@ This folder contains utility and general functionality scripts.
 
 ## Files
 
+### american
+* Dictionary needed for hangman.py
+
 ### Book_keeping.py
 * This script takes in two excel files and compares them to update inventory.  
 
@@ -25,8 +28,18 @@ This folder contains utility and general functionality scripts.
 * This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board
   and tell them what percent of the darts landed on the board.
 
+### dna_translator.py
+* This script takes a DNA sequence, finds the complementary sequence (called the template DNA), and returns the corresponding
+RNA codons and proteins they encode for in a list.
+
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
+
+### first_word_counter.py
+* This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
+
+### hangman.py
+* This script uses the dictionary, american, to play Hangman in command prompt
 
 ### hdf_qgis.py
 * this script opens a MODIS HDF4 file using GDAL, converts it to a GeoTIFF, and opens it for visualization in QGIS (tested using QGIS 3.4)
@@ -50,6 +63,13 @@ This folder contains utility and general functionality scripts.
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would
 
+### milkweed_data.py
+* This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa
+* The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width.
+
+### movie_script_scraper.py
+* This code scrapes movie scripts from Scripts.com and saves the text in a .txt file
+
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
 
@@ -58,6 +78,12 @@ This folder contains utility and general functionality scripts.
 
 ### nc_write.py
 * this script creates a NetCDF "classic" data file and writes attributes, variables, and dimensions to the file using scipy.io
+
+### netCDF_mean.py
+* This script reads in a netCDF file and writes out the average of the variables to a new file.
+
+### Pdf_Converter.py
+* This script converts files between different formats. It is currently hardcoded to convert .docx to .pdf.
 
 ### PlotRGB.py
 * This script prompts the user for the path to a folder containing Landsat 5 bands and the function plots a natural color image of the    satellite image and prints some basic infomration about the data
