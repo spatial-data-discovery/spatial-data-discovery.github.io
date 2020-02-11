@@ -24,6 +24,10 @@ This folder contains utility and general functionality scripts.
 ### darts.py
 * This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board
   and tell them what percent of the darts landed on the board.
+  
+### dna_translator.py
+* This script takes a DNA sequence, finds the complementary sequence (called the template DNA), and returns the corresponding
+RNA codons and proteins they encode for in a list. 
 
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
