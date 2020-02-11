@@ -50,6 +50,9 @@ This folder contains utility and general functionality scripts.
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would
 
+### movie_script_scraper.py
+* This code scrapes movie scripts from Scripts.com and saves the text in a .txt file
+
 ### music_randomizer.py
 * This script randomizes and organizes MP3 files in a folder or on a USB drive
 
