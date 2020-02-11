@@ -15,7 +15,7 @@ from sklearn.decomposition import PCA
 from sklearn import preprocessing
 from pathlib import Path
 
-data_file = Path("leaf_data.csv")
+data_file = Path("milkweed_leaf_data.csv")
 leaf_width_ex = []
 leaf_length_ex = []
 
