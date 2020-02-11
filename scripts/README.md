@@ -33,7 +33,7 @@ RNA codons and proteins they encode for in a list.
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
 ### first_word_counter.py
-* This script # This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
+* This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
 
 ### hdf_qgis.py
 * this script opens a MODIS HDF4 file using GDAL, converts it to a GeoTIFF, and opens it for visualization in QGIS (tested using QGIS 3.4)
