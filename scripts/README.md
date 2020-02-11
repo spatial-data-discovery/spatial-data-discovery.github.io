@@ -57,6 +57,10 @@ RNA codons and proteins they encode for in a list.
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would
 
+### milkweed_data.py
+* This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa
+* The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width.
+
 ### movie_script_scraper.py
 * This code scrapes movie scripts from Scripts.com and saves the text in a .txt file
 
