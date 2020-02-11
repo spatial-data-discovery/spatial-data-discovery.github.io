@@ -1,37 +1,3 @@
----
-title: "About the Coder"
-author: "Ian Thompson"
-Edited: "February 3, 2020"
----
-
-
-
-**Bio**
-:   I am a senior on the swim team with a Data Science major and Computer Science minor.
-
-**Hobbies**
-
-+ Fishing
-+ Puzzle Cubes
-+ *Old* Nintendo video games
-+ Archery
-
-![](https://i.redd.it/bj2qtsp7fif11.jpg) <!-- this is how you embed an image -->
-
-####Sample Script
-
-This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude,
-longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.
-
-To run this script, place a netCDF file in the same folder as the script and run with the command
-
-```
-python netcdf_mean.py YourFile.nc
-
-```
-
-```
-'''
 '''
 Averaging climate and weather data (netCDF) by time
 @Author Ian Thompson
@@ -80,6 +46,3 @@ if __name__ == "__main__":
 
     ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
     ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-
-```
