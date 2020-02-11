@@ -66,6 +66,9 @@ This folder contains utility and general functionality scripts.
 ### README.md
 * this readme file
 
+### slot_machine.py
+* This script simulates how upper confidence bound reinforcement learning works with a slot machine and prompts the user for the beginning balance and how many times to play
+
 ### spreadsheet_cleaner.py
 * This script removes leading, trailing, and double whitespace from Excel spreadsheets
 
