@@ -10,6 +10,9 @@ Created on Sat Feb  8 18:44:30 2020
 # This script calculates your caloric needs based on height, age, sex, and weight.
 ##
 
+# Imports here
+import argparse
+
 # First determine the person's BMR using Harris-Benedict formula.
 # Adult male: 66 + (6.3 x body weight in lbs.) + (12.9 x height in inches) - (6.8 x age in years) = BMR
 # Adult female: 655 + (4.3 x weight in lbs.) + (4.7 x height in inches) - (4.7 x age in years) = BMR 
@@ -57,3 +60,6 @@ else :
         
     print(" ")
     print("Based on the information you have inputted, your APPROXIMATE caloric needs are " + str(caloricNeeds) + " calories per day to maintain your current weight.")
+    
+    
+p = argparse.ArgumentParser(description="Calculates your daily caloric needs")
