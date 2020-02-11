@@ -1,28 +1,3 @@
----
-title: "About the Coder"
-author: "Emma Strickland"
-date: "Edited: 2020-02-03"
----
-
-Bio
-:   I'm a Computational & Applied Math major from Blacksburg, VA with an interest in data analysis.
-I recently studied abroad in Oman over the winter break!
-
-![This is a picture of Muscat, the capital of Oman](https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg){width=224 height=148}
-
-*Some of my hobbies*
-:   - Surfing
-    - Thrifting and sewing
-    - Reading
-
-
-### Sample script
-[DNA to RNA Translator (.py)](scripts/dna_translator.py)
-
-I wrote part of this sample script for a computational biology class, and added on to it for this project.
-It takes a DNA sequence, finds the complementary sequence (called the template DNA), and outputs the corresponding RNA codons and proteins they encode for in a list.
-
-```{python dna, eval=FALSE}
 #dna_translator.py
 #
 #Author: Emma Strickland
@@ -70,7 +45,7 @@ def translate_dna(dna):
         if len(template_strand) % 3 != 0:
             template_strand = template_strand[:-1]
     codons = [template_strand[i:i+3] for i in range(0,len(template_strand),3)] #RNA codons are groups of 3 base pairs
-    proteins = [protein_based_on_codon[codons[i]] for i in range(0,len(codons))] #Use dictionary to convert codons to protein name
+    proteins = [protein_based_on_codon[codons[i]] for i in range(0,len(codons))] #Use dictionary to convert condons to protein name
     for w in range(0, len(proteins)):
         if proteins[w] == 'STOP': #Identifying stop codons
             return codons[:w+1], proteins[:w+1]
@@ -82,4 +57,3 @@ if __name__ == "__main__":
     parser.add_argument('input', type = str, help = "Input DNA sequence as a string")
     args = parser.parse_args()
     print(translate_dna(args.input))
-```
