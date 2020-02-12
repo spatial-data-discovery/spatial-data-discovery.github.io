@@ -14,15 +14,15 @@ date: "Edited: 2020-02-09"
 
 **Hobbies**
 
-: 	-running
+: 	- running
 
-	-knitting
+	- knitting
 
-	-yoga
+	- yoga
  
 
 ### Sample script
-Book_keeping (.py)](scripts/Book_keeping.py)
+[Book_keeping (.py)](scripts/Book_keeping.py)
 
 I wrote this sample script as a way to keep up with daily inventory changes at a small used bookstore that mostly has one copy of each book. It has the user load in two excel files that contain the inventory list and the sales made that day. My script checks to see which books were purchased, and returns an excel file with the new inventory list that can be used for the next day. 
 

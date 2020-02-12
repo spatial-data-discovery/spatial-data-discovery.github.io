@@ -35,6 +35,9 @@ RNA codons and proteins they encode for in a list.
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
+### extract_column.py
+* This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header
+
 ### first_word_counter.py
 * This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
 

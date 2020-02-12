@@ -1,26 +1,3 @@
----
-title: "About the Coder"
-author: "Jonah Casale, Student"
-date: "Edited: 2020-03-02"
----
-
-![ALT TEXT](https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg 'Jonah Casale')
-
-Bio
-:   I am from Redmond, WA, and I am a student at the College of William and Mary.  I enjoy many activities, including drawing, singing, games, and weight lifting; I especially enjoy **acting**.  What I do _not_ like?  I'd say jogging, useless Apple products, and hot weather. 
-
-CODING LANGUAGES I'VE WORKED WITH
-
-- Python
-- Java
-- C and C++
-- A tiny bit of Pascal
-- A tiny bit of SQL
-
-## Sample Python Script 
-[caloric_needs_calculator.py](/scripts/caloric_needs_calculator.py) This is a script that calculates your daily caloric needs.
-
-```{python, eval=FALSE}
 # -*- coding: utf-8 -*-
 """
 Created on Sat Feb  8 18:44:30 2020
@@ -86,10 +63,3 @@ else :
     
     
 p = argparse.ArgumentParser(description="Calculates your daily caloric needs")
-
-
-```
-
-
-
-
