@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Ryan Han" />
 
 
 <title>About the Coder</title>
@@ -481,20 +482,32 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="date">Edited 2020-02-02</h4>
+<h4 class="author">Ryan Han</h4>
+<h4 class="date">Edited 2020-02-10</h4>
 
 </div>
 
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png" title="Basketball" width="150" height="150" /></p>
-<dl>
-<dt><strong>Bio</strong></dt>
-<dd>Hi everyone, my name is Ryan Han and I am a senior at the College pursuing a Data Science major and a Math minor.
-</dd>
-</dl>
-<p><strong>Hobbies</strong> - I like to play <strong>Basketball</strong> - I like to listen to <em>podcasts</em> - I like to play <em>Dota2</em></p>
-<p>###My Script <a href="scripts/first_word_counter.py">first_word_counter(.py)</a></p>
-<p>This script takes a .txt/.md file and word of your choice and figures out how many times the specific word starts a sentence in the file.</p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png" title="Basketball" width="150" height="150" alt="" />
+<p class="caption">I am a big fan of basketball</p>
+</div>
+<div id="bio" class="section level3">
+<h3><strong>Bio</strong></h3>
+<p>Hi everyone, my name is Ryan Han and I am a senior at the College pursuing a Data Science major and a Math minor.</p>
+</div>
+<div id="hobbies" class="section level3">
+<h3><strong>Hobbies</strong>:</h3>
+<ul>
+<li>I like to play <strong>Basketball</strong></li>
+<li>I like to listen to <em>podcasts</em></li>
+<li>I like to play <em>Dota2</em></li>
+</ul>
+</div>
+<div id="my-script" class="section level3">
+<h3>My Script</h3>
+<p><a href="scripts/first_word_counter.py">first_word_counter(.py)</a></p>
+<p>This script asks for a .txt/.md file and word of your choice and figures out how many times the specific word starts a sentence in the file.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># first_word_counter.py</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co"># By: Ryan Han</span></span>
@@ -544,7 +557,7 @@ $(document).ready(function () {
 <span id="cb1-47"><a href="#cb1-47"></a></span>
 <span id="cb1-48"><a href="#cb1-48"></a>    <span class="co"># Proper grammar</span></span>
 <span id="cb1-49"><a href="#cb1-49"></a>    <span class="cf">if</span> count <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb1-50"><a href="#cb1-50"></a>        <span class="bu">print</span>(<span class="st">&quot;There is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot; line in the file with &quot;</span> <span class="op">+</span> word <span class="op">+</span> <span class="st">&quot; as the first word.&quot;</span>)</span>
+<span id="cb1-50"><a href="#cb1-50"></a>        <span class="bu">print</span>(<span class="st">&quot;There is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot; line in the file with &quot;</span> <span class="op">+</span> <span class="st">&quot;&#39;&quot;</span> <span class="op">+</span> word <span class="op">+</span> <span class="st">&quot;&#39;&quot;</span> <span class="op">+</span> <span class="st">&quot; as the first word.&quot;</span>)</span>
 <span id="cb1-51"><a href="#cb1-51"></a>    <span class="cf">else</span>:</span>
 <span id="cb1-52"><a href="#cb1-52"></a>        <span class="bu">print</span>(<span class="st">&quot;There are &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot; lines in the file with &quot;</span> <span class="op">+</span> <span class="st">&quot;&#39;&quot;</span> <span class="op">+</span> word <span class="op">+</span> <span class="st">&quot;&#39;&quot;</span> <span class="op">+</span> <span class="st">&quot; as the first word.&quot;</span>)</span>
 <span id="cb1-53"><a href="#cb1-53"></a></span>
@@ -554,10 +567,11 @@ $(document).ready(function () {
 <span id="cb1-57"><a href="#cb1-57"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
 <span id="cb1-58"><a href="#cb1-58"></a>    <span class="co"># --help command line description</span></span>
 <span id="cb1-59"><a href="#cb1-59"></a>    parser <span class="op">=</span> argparse.ArgumentParser(</span>
-<span id="cb1-60"><a href="#cb1-60"></a>    description <span class="op">=</span> <span class="st">&quot;Input a .txt/.md file and word of your choice. This script will figure out how many times your word starts a sentence in the file.&quot;</span>)</span>
+<span id="cb1-60"><a href="#cb1-60"></a>    description <span class="op">=</span> <span class="st">&quot;This script will ask you for a .txt/.md file and word of your choice. Then it will figure out how many times your word starts a sentence in the file.&quot;</span>)</span>
 <span id="cb1-61"><a href="#cb1-61"></a>    args <span class="op">=</span> parser.parse_args()</span>
 <span id="cb1-62"><a href="#cb1-62"></a></span>
 <span id="cb1-63"><a href="#cb1-63"></a>    first_word_counter()</span></code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
