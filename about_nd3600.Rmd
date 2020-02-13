@@ -1,14 +1,7 @@
-# Nikhil Daga
-
-
 ---
-
 title: "About the Coder"
-
 author: "Nikhil Daga"
-
-date: "Edited: 2019-30-1"
-
+date: "Edited: 2020-13-2"
 ---
 
 **Bio**
