@@ -30,7 +30,7 @@ def main(nc_file):
     print('##################################################')
 
 
-    output = file + "_mean"
+    output = "mean_" + nc_file
 
     print("File Out: " + output)
 

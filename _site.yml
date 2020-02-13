@@ -4,7 +4,15 @@ navbar:
     title: "DATA 440 - Spatial Data Discovery"
     right:
         - text: Resources
-          href: resources.html
+          menu:
+            - text: "Data"
+              href: resource_data.html
+            - text: "Links"
+              href: resource_link.html
+            - text: "Methods"
+              href: resource_meth.html
+            - text: "Software"
+              href: resource_soft.html
         - text: Spatial Discovery
           menu:
             - text: "Example"

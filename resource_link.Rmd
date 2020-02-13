@@ -1,0 +1,64 @@
+---
+title: "Resources | Links"
+---
+
+[\&what\;](http://www.amp-what.com/unicode/search/)
+:   A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant & internationalization characters.
+
+[Command Line Basics | Windows](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands)
+:   A tutorial by Codrut Neagu on some basic Windows CMD commands to help you get around the Command Prompt.
+
+[Data Types](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
+:   Review of numpy dtypes such as `i`, `f`, and `d`.[^scipy19]
+
+[GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
+:   Davis's introductory reader on geographic information systems.
+
+[Git Basics](https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics)
+:   Some useful commands for a basic git project workflow.
+
+[Git Reference](https://git-scm.com/docs)
+:   A quick reference guide, including a cheat sheet and complete list of all commands.
+
+[Guidelines for Handling Image Metadata](https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf)
+:   (PDF) Metadata Working Group.
+
+[HDF Knowledge Base](https://portal.hdfgroup.org/display/knowledge)
+:   Search the HDF knowledge base for answers; powered by The HDF Group.
+
+[NetCDF](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture)
+:   A look at the NetCDF library architecture for the [classic](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model) and [enhanced](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model) data model.
+
+[Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
+:   This document explains the extended and slightly revised version of John Gruber's Markdown syntax.
+
+[Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
+:   Link to metacharacters used in Perl regular expressions.
+
+[QGIS Print Layout](https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html)
+:   Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
+
+[R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+:   (PDF) Condensed info on formatting with markdown in R.
+
+[R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
+:   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
+
+[Syllabus - Fall 2019](https://drdavis.space/teaching/ds/sdd/syllabus/2019/fall/)
+:   Course syllabus for Spatial Data Discovery (Fall 2019)
+
+[Syllabus - Spring 2020](https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/)
+:   Course syllabus for Spatial Data Discovery (Spring 2020)
+
+[Terminal Cheatsheet | Mac](https://github.com/0nn0/terminal-mac-cheatsheet)
+:   A list of some most used commands and shortcuts in the terminal for Mac by Onno Schwanen.
+
+[Thesaurus of Mathematical Languages](http://mathesaurus.sourceforge.net/)
+:   A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.[^gunderson08]
+
+[Understanding Map Projections](http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf)
+:   (PDF) Esri's textbook on coordinate systems, geographic transformations, and recommended projections.
+
+[^scipy19]: Copyright &copy; 2008--2019. The SciPy Community.
+
+[^gunderson08]: Copyright &copy;2006,2008 Vidar Bronken Gundersen, http://mathesaurus.sf.net/.
