@@ -47,7 +47,7 @@ def first_word_counter():
 
     # Proper grammar
     if count == 1:
-        print("There is " + str(count) + " line in the file with " + word + " as the first word.")
+        print("There is " + str(count) + " line in the file with " + "'" + word + "'" + " as the first word.")
     else:
         print("There are " + str(count) + " lines in the file with " + "'" + word + "'" + " as the first word.")
 
@@ -57,7 +57,7 @@ def first_word_counter():
 if __name__ == '__main__':
     # --help command line description
     parser = argparse.ArgumentParser(
-    description = "Input a .txt/.md file and word of your choice. This script will figure out how many times your word starts a sentence in the file.")
+    description = "This script will ask you for a .txt/.md file and word of your choice. Then it will figure out how many times your word starts a sentence in the file.")
     args = parser.parse_args()
 
     first_word_counter()
