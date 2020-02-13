@@ -15,7 +15,7 @@ date: "Edited: 2/3/20"
     - https://youtu.be/oQXfyILU_-4
 
 
-```{python}
+```{python, eval=False}
 #This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa
 #The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width
 #IDE used: iPython (Anaconda)
