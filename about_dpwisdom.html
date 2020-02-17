@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="David Wisdom" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -26,63 +25,36 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; } /* Alert */
-code span.an { color: #008000; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #0000ff; } /* ControlFlow */
-code span.ch { color: #008080; } /* Char */
-code span.cn { } /* Constant */
-code span.co { color: #008000; } /* Comment */
-code span.cv { color: #008000; } /* CommentVar */
-code span.do { color: #008000; } /* Documentation */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.im { } /* Import */
-code span.in { color: #008000; } /* Information */
-code span.kw { color: #0000ff; } /* Keyword */
-code span.op { } /* Operator */
-code span.ot { color: #ff4000; } /* Other */
-code span.pp { color: #ff4000; } /* Preprocessor */
-code span.sc { color: #008080; } /* SpecialChar */
-code span.ss { color: #008080; } /* SpecialString */
-code span.st { color: #008080; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #008080; } /* VerbatimString */
-code span.wa { color: #008000; font-weight: bold; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
 
 </style>
 <script>
@@ -98,7 +70,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -142,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -156,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -260,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -304,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -317,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -482,14 +461,17 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">David Wisdom</h4>
-<h4 class="date">Edited: 2019-09-22</h4>
+<h4 class="author"><em>David Wisdom</em></h4>
+<h4 class="date"><em>Edited: 2019-09-22</em></h4>
 
 </div>
 
 
 <p>My name is David and I like to sail. I worked at a sailing school teaching dinghy sailing for a few years (<em>see below for a picture</em>).</p>
-<p><img src="https://danwoog.files.wordpress.com/2017/07/pic-longshore-sailing-school-amy-saperstein1.jpg" title="Longshore Sailing School Beach" /></p>
+<div class="figure">
+<img src="https://danwoog.files.wordpress.com/2017/07/pic-longshore-sailing-school-amy-saperstein1.jpg" title="Longshore Sailing School Beach" />
+
+</div>
 <p>I taught kids to sail several different boats while I was a sailing instructor.</p>
 <dl>
 <dt><strong>Bug</strong></dt>
@@ -517,54 +499,54 @@ $(document).ready(function () {
 <div id="sample-script" class="section level3">
 <h3>Sample Script</h3>
 <p><a href="scripts/random_caps.py">Random Caps (.py)</a> I wrote this script to randomly capitalize characters in a text file. I’m not sure whether there are any uses for this but it was a fun exercise. The code is below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy.random <span class="im">as</span> random</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Define constants</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>UPPER <span class="op">=</span> <span class="st">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>LOWER <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">def</span> main(file_in: <span class="bu">str</span>, file_out: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;./rand_caps.txt&quot;</span>):</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">    Takes an input text file and randomly capitalizes the letters in it.</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co">    Writes the output to another text file.</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co">    :param file_in: Path to a text file containing letters to randomly capitalize</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co">    :param file_out: Path to a text file to write the new letters in</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co">                     Default: `./rand_caps.txt`</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a>    file_input <span class="op">=</span> <span class="bu">open</span>(file_in, <span class="st">&quot;r&quot;</span>)</span>
-<span id="cb1-18"><a href="#cb1-18"></a>    char_list <span class="op">=</span> []</span>
-<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co"># Collect all the ASCII characters</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a>    <span class="cf">for</span> line <span class="kw">in</span> file_input:</span>
-<span id="cb1-21"><a href="#cb1-21"></a>        <span class="cf">for</span> character <span class="kw">in</span> line:</span>
-<span id="cb1-22"><a href="#cb1-22"></a>            char_list.append(character)</span>
-<span id="cb1-23"><a href="#cb1-23"></a></span>
-<span id="cb1-24"><a href="#cb1-24"></a>    file_input.close()</span>
-<span id="cb1-25"><a href="#cb1-25"></a>    output_file <span class="op">=</span> <span class="bu">open</span>(file_out, <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb1-26"><a href="#cb1-26"></a>    <span class="co"># Go through and randomly capitalize them</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a>    <span class="cf">for</span> character <span class="kw">in</span> char_list:</span>
-<span id="cb1-28"><a href="#cb1-28"></a>        <span class="co"># Pick whether to change it</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>        change_char <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb1-30"><a href="#cb1-30"></a>        <span class="co"># Change it from upper to lower or vice-versa</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a>        <span class="cf">if</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> UPPER:</span>
-<span id="cb1-32"><a href="#cb1-32"></a>            output_file.write(character.lower())</span>
-<span id="cb1-33"><a href="#cb1-33"></a>        <span class="cf">elif</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> LOWER:</span>
-<span id="cb1-34"><a href="#cb1-34"></a>            output_file.write(character.upper())</span>
-<span id="cb1-35"><a href="#cb1-35"></a>        <span class="cf">else</span>:</span>
-<span id="cb1-36"><a href="#cb1-36"></a>            output_file.write(character)</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    output_file.close()</span>
-<span id="cb1-38"><a href="#cb1-38"></a></span>
-<span id="cb1-39"><a href="#cb1-39"></a></span>
-<span id="cb1-40"><a href="#cb1-40"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-41"><a href="#cb1-41"></a>    <span class="im">import</span> argparse</span>
-<span id="cb1-42"><a href="#cb1-42"></a></span>
-<span id="cb1-43"><a href="#cb1-43"></a>    p <span class="op">=</span> argparse.ArgumentParser()</span>
-<span id="cb1-44"><a href="#cb1-44"></a>    p.add_argument(<span class="st">&quot;file&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file to read in letters from&quot;</span>)</span>
-<span id="cb1-45"><a href="#cb1-45"></a>    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--out&quot;</span>, nargs<span class="op">=</span><span class="st">&quot;?&quot;</span>, default<span class="op">=</span><span class="st">&quot;./rand_caps.txt&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Path to a file to hold the output&quot;</span>)</span>
-<span id="cb1-46"><a href="#cb1-46"></a>    args <span class="op">=</span> p.parse_args()</span>
-<span id="cb1-47"><a href="#cb1-47"></a></span>
-<span id="cb1-48"><a href="#cb1-48"></a>    main(args.<span class="bu">file</span>, args.out)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy.random <span class="im">as</span> random
+
+<span class="co"># Define constants</span>
+UPPER <span class="op">=</span> <span class="st">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+LOWER <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+
+
+<span class="kw">def</span> main(file_in: <span class="bu">str</span>, file_out: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;./rand_caps.txt&quot;</span>):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Takes an input text file and randomly capitalizes the letters in it.</span>
+<span class="co">    Writes the output to another text file.</span>
+
+<span class="co">    :param file_in: Path to a text file containing letters to randomly capitalize</span>
+<span class="co">    :param file_out: Path to a text file to write the new letters in</span>
+<span class="co">                     Default: `./rand_caps.txt`</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    file_input <span class="op">=</span> <span class="bu">open</span>(file_in, <span class="st">&quot;r&quot;</span>)
+    char_list <span class="op">=</span> []
+    <span class="co"># Collect all the ASCII characters</span>
+    <span class="cf">for</span> line <span class="kw">in</span> file_input:
+        <span class="cf">for</span> character <span class="kw">in</span> line:
+            char_list.append(character)
+
+    file_input.close()
+    output_file <span class="op">=</span> <span class="bu">open</span>(file_out, <span class="st">&#39;w&#39;</span>)
+    <span class="co"># Go through and randomly capitalize them</span>
+    <span class="cf">for</span> character <span class="kw">in</span> char_list:
+        <span class="co"># Pick whether to change it</span>
+        change_char <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">2</span>)
+        <span class="co"># Change it from upper to lower or vice-versa</span>
+        <span class="cf">if</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> UPPER:
+            output_file.write(character.lower())
+        <span class="cf">elif</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> LOWER:
+            output_file.write(character.upper())
+        <span class="cf">else</span>:
+            output_file.write(character)
+    output_file.close()
+
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    <span class="im">import</span> argparse
+
+    p <span class="op">=</span> argparse.ArgumentParser()
+    p.add_argument(<span class="st">&quot;file&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file to read in letters from&quot;</span>)
+    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--out&quot;</span>, nargs<span class="op">=</span><span class="st">&quot;?&quot;</span>, default<span class="op">=</span><span class="st">&quot;./rand_caps.txt&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Path to a file to hold the output&quot;</span>)
+    args <span class="op">=</span> p.parse_args()
+
+    main(args.<span class="bu">file</span>, args.out)</code></pre></div>
 </div>
 
 <footer class="myfoot">
@@ -589,23 +571,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

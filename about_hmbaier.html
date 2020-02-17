@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Heather Baier" />
@@ -16,7 +16,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -56,7 +55,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -70,6 +71,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -174,6 +176,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -218,7 +222,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -231,17 +234,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -396,13 +402,16 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Heather Baier</h4>
-<h4 class="date">2020-02-02</h4>
+<h4 class="author"><em>Heather Baier</em></h4>
+<h4 class="date"><em>2020-02-02</em></h4>
 
 </div>
 
 
-<p><img src="https://live.staticflickr.com/65535/49480580283_ee5f4be461_b.jpg" /></p>
+<div class="figure">
+<img src="https://live.staticflickr.com/65535/49480580283_ee5f4be461_b.jpg" />
+
+</div>
 <p><strong>Bio</strong></p>
 <p>My name is Heather and I am a senior majoring in data science with a minor in computer science. I’m from Warrenton, VA and after graduation I’ll be moving to Tysons, VA to work for Logistics Management Institute (LMI).</p>
 <p><strong>About Me</strong></p>
@@ -436,23 +445,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

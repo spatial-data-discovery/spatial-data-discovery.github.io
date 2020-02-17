@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Abby Gaddi" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -55,7 +54,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +70,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +175,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +221,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +233,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -395,13 +401,16 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Abby Gaddi</h4>
-<h4 class="date">Edited: 2020-02-02</h4>
+<h4 class="author"><em>Abby Gaddi</em></h4>
+<h4 class="date"><em>Edited: 2020-02-02</em></h4>
 
 </div>
 
 
-<p><img src="https://data.whicdn.com/images/315745282/original.jpg" title="panda eating ramen" /></p>
+<div class="figure">
+<img src="https://data.whicdn.com/images/315745282/original.jpg" title="panda eating ramen" />
+
+</div>
 <dl>
 <dt>Bio</dt>
 <dd>I’m a junior majoring in Data Science, and I can do a flip.
@@ -421,7 +430,10 @@ $(document).ready(function () {
 <p><a href="scripts/slot_machine.py">Slot Machine (.py)</a></p>
 <p>My sample script is something I used for a lab in my Machine Learning class last semester. It uses a slot machine simulator as an example for Upper Confidence Bound reinforcment learning. This type of machine learning can be used to help other problems such as identifying the best treatment in clinical testing and looking at best performance in online advertising or in game designing.</p>
 <p>``` #slot_machine.py # #Author: Abby Gaddi # #Date: 2020-02-10 # #This script shows how Upper Confidence Boundary reinforcment learning #is used with machine slots as an example, and prompts the user for the starting balance and trial number. # # #LIBRARIES import random import math import argparse</p>
-<p>#Slot machine odds function given from class def playSlots(machine):</p>
+</div>
+<div id="slot-machine-odds-function-given-from-class" class="section level1">
+<h1>Slot machine odds function given from class</h1>
+<p>def playSlots(machine):</p>
 <pre><code>if(machine == 1):
     return round(random.uniform(0,1),2)
 
@@ -486,7 +498,10 @@ for n in range(0,N):
     balance = balance - 1 + award
     return(&#39;You won: $&#39; + str(round(balance,2))+&#39;\n Machine &#39; + str(sum_of_rewards.index(max(sum_of_rewards))) +&#39; won you the most money&#39; )
     </code></pre>
-<p>#MAIN if <strong>name</strong> == ‘<strong>main</strong>’: p = argparse.ArgumentParser(description = “Play an unrealistic slot machine simulator by gambling an amount you want to play with<br />
+</div>
+<div id="main" class="section level1">
+<h1>MAIN</h1>
+<p>if <strong>name</strong> == ‘<strong>main</strong>’: p = argparse.ArgumentParser(description = “Play an unrealistic slot machine simulator by gambling an amount you want to play with<br />
 and see which machine has the best cash reward.”) args = p.parse_args()</p>
 <pre><code>balance = int(input(&#39;How much money would you like to play with? (no dollar sign) &#39;))
 N = int(input(&#39;How many times would you like to play? &#39;))
@@ -515,23 +530,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

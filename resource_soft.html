@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -14,7 +14,6 @@
 <title>Resources | Software</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -54,7 +53,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -68,6 +69,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -172,6 +174,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -216,7 +220,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -229,17 +232,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -447,10 +453,10 @@ $(document).ready(function () {
 <h3>Python Packages</h3>
 <dl>
 <dt><a href="https://github.com/ianare/exif-py">exifread</a></dt>
-<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
 </dd>
 <dt><a href="https://pypi.org/project/gpsphoto/">gpsphoto</a></dt>
-<dd>Return, modify, or remove GPS data from JPEG or TIFF Exif data.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Requires ExifRead, piexif, and PIL.
+<dd>Return, modify, or remove GPS data from JPEG or TIFF Exif data.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Requires ExifRead, piexif, and PIL.
 </dd>
 <dt><a href="https://www.h5py.org/">h5py</a></dt>
 <dd>Python package for reading and writing in the HDF5 binary data format.
@@ -465,16 +471,16 @@ $(document).ready(function () {
 <dd>Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
 </dd>
 <dt><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</a></dt>
-<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>
 </dd>
 </dl>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Author Jess Williams (2019).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Author Jess Williams (2019).<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref3">↩</a></p></li>
 </ol>
 </div>
 
@@ -500,23 +506,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

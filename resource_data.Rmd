@@ -35,6 +35,9 @@ title: "Resources | Data"
 [USGS Continents](https://pubs.usgs.gov/of/2006/1187/basemaps/continents/)
 :   Esri shapefile for the major continent boundaries.[^buczkowski07]
 
+[VA GIS Clearinghouse](https://vgin.maps.arcgis.com/home/index.html)
+:   Hosted by the Virginia Geographic Information Network (VGIN), the GIS Clearinghouse is a repository of geospatial data produced and used by state agencies in Virginia, localities in Virginia, Federal Government partners, non-profits, and colleges and universities across Virginia.
+
 [^buczkowski07]: Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center's Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at http://pubs.usgs.gov/of/2006/1187/
 
 [^goodman19]: Goodman, S., BenYishay, A., Lv, Z., & Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers & Geosciences, 122, 103-112.
