@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Emma Strickland" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,8 +461,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Emma Strickland</h4>
-<h4 class="date">Edited: 2020-02-03</h4>
+<h4 class="author"><em>Emma Strickland</em></h4>
+<h4 class="date"><em>Edited: 2020-02-03</em></h4>
 
 </div>
 
@@ -389,7 +473,7 @@ $(document).ready(function () {
 </dd>
 </dl>
 <div class="figure">
-<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg" width="224" height="148" alt="" />
+<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg" alt="This is a picture of Muscat, the capital of Oman" width="224" height="148" />
 <p class="caption">This is a picture of Muscat, the capital of Oman</p>
 </div>
 <dl>
@@ -401,6 +485,70 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample script</h3>
+<p><a href="scripts/dna_translator.py">DNA to RNA Translator (.py)</a></p>
+<p>I wrote part of this sample script for a computational biology class, and added on to it for this project. It takes a DNA sequence, finds the complementary sequence (called the template DNA), and outputs the corresponding RNA codons and proteins they encode for in a list.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#dna_translator.py</span>
+<span class="co">#</span>
+<span class="co">#Author: Emma Strickland</span>
+<span class="co">#</span>
+<span class="co">#Last Edit: 2020-02-10</span>
+<span class="co">#</span>
+<span class="co">#This script takes a non-template DNA sequence as an input and returns a list of the RNA codons and protein sequence that will result from transcription and translation</span>
+<span class="im">import</span> argparse
+
+<span class="co">#Dictionary to match codon sequences to the protein they encode for</span>
+protein_based_on_codon <span class="op">=</span> {<span class="st">&quot;UUU&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUC&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;UUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,
+                          <span class="st">&quot;UCU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCA&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCG&quot;</span>:<span class="st">&quot;Serine&quot;</span>,
+                          <span class="st">&quot;UAU&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAC&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UAG&quot;</span>:<span class="st">&quot;STOP&quot;</span>,
+                          <span class="st">&quot;UGU&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGC&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UGG&quot;</span>:<span class="st">&quot;Tryptophan&quot;</span>,
+                          <span class="st">&quot;CUU&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUC&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,
+                          <span class="st">&quot;CCU&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCC&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCA&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCG&quot;</span>:<span class="st">&quot;Proline&quot;</span>,
+                          <span class="st">&quot;CAU&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAC&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAA&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>, <span class="st">&quot;CAG&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>,
+                          <span class="st">&quot;CGU&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGC&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,
+                          <span class="st">&quot;AUU&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUC&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUA&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUG&quot;</span>:<span class="st">&quot;Methionine&quot;</span>,
+                          <span class="st">&quot;ACU&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACC&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACA&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACG&quot;</span>:<span class="st">&quot;Threonine&quot;</span>,
+                          <span class="st">&quot;AAU&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAC&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAA&quot;</span>:<span class="st">&quot;Lysine&quot;</span>, <span class="st">&quot;AAG&quot;</span>:<span class="st">&quot;Lysine&quot;</span>,
+                          <span class="st">&quot;AGU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;AGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,
+                          <span class="st">&quot;GUU&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUC&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUA&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUG&quot;</span>:<span class="st">&quot;Valine&quot;</span>,
+                          <span class="st">&quot;GCU&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCC&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCA&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCG&quot;</span>:<span class="st">&quot;Alanine&quot;</span>,
+                          <span class="st">&quot;GAU&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAC&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAA&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>, <span class="st">&quot;GAG&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>,
+                          <span class="st">&quot;GGU&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGC&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGA&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGG&quot;</span>:<span class="st">&quot;Glycine&quot;</span>}
+
+<span class="co">#Function that converts DNA sequence to RNA and protein sequence</span>
+<span class="kw">def</span> translate_dna(dna):
+    dna <span class="op">=</span> dna.upper()
+    <span class="co">#Replacing base pairs with complement base pair</span>
+    template_strand <span class="op">=</span> <span class="st">&quot;&quot;</span>
+    <span class="cf">for</span> letter <span class="kw">in</span> dna:
+        <span class="cf">if</span> letter <span class="op">==</span> <span class="st">&quot;A&quot;</span>:
+            template_strand <span class="op">+=</span> <span class="st">&quot;U&quot;</span> <span class="co">#RNA has U instead of T</span>
+        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;T&quot;</span>:
+            template_strand <span class="op">+=</span> <span class="st">&quot;A&quot;</span>
+        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;G&quot;</span>:
+            template_strand <span class="op">+=</span> <span class="st">&quot;C&quot;</span>
+        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;C&quot;</span>:
+            template_strand <span class="op">+=</span> <span class="st">&quot;G&quot;</span>
+    template_strand <span class="op">=</span> template_strand[::<span class="op">-</span><span class="dv">1</span> ] <span class="co">#Reverses DNA sequence to give you the template strand which RNA transcription is based on</span>
+    <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>: <span class="co">#Strand must be divisible by 3 to group into codons</span>
+        template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]
+        <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>:
+            template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]
+    codons <span class="op">=</span> [template_strand[i:i<span class="op">+</span><span class="dv">3</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(template_strand),<span class="dv">3</span>)] <span class="co">#RNA codons are groups of 3 base pairs</span>
+    proteins <span class="op">=</span> [protein_based_on_codon[codons[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(codons))] <span class="co">#Use dictionary to convert codons to protein name</span>
+    <span class="cf">for</span> w <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(proteins)):
+        <span class="cf">if</span> proteins[w] <span class="op">==</span> <span class="st">&#39;STOP&#39;</span>: <span class="co">#Identifying stop codons</span>
+            <span class="cf">return</span> codons[:w<span class="op">+</span><span class="dv">1</span>], proteins[:w<span class="op">+</span><span class="dv">1</span>]
+    <span class="cf">return</span> codons, proteins
+
+<span class="co">#MAIN</span>
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Takes a DNA sequence and returns the RNA codons&quot;</span>)
+    parser.add_argument(<span class="st">&#39;input&#39;</span>, <span class="bu">type</span> <span class="op">=</span> <span class="bu">str</span>, <span class="bu">help</span> <span class="op">=</span> <span class="st">&quot;Input DNA sequence as a string&quot;</span>)
+    args <span class="op">=</span> parser.parse_args()
+    <span class="bu">print</span>(translate_dna(args.<span class="bu">input</span>))</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -424,23 +572,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

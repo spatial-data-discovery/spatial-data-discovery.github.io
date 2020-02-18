@@ -9,10 +9,9 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>About the Coder</title>
+<title>Resources | Links</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -400,82 +399,76 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>Ian Thompson</em></h4>
+<h1 class="title toc-ignore">Resources | Links</h1>
 
 </div>
 
 
 <dl>
-<dt><strong>Bio</strong></dt>
-<dd>I am a senior on the swim team with a Data Science major and Computer Science minor.
+<dt><a href="http://www.amp-what.com/unicode/search/">&amp;what;</a></dt>
+<dd>A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant &amp; internationalization characters.
+</dd>
+<dt><a href="https://www.digitalcitizen.life/command-prompt-how-use-basic-commands">Command Line Basics | Windows</a></dt>
+<dd>A tutorial by Codrut Neagu on some basic Windows CMD commands to help you get around the Command Prompt.
+</dd>
+<dt><a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">Data Types</a></dt>
+<dd>Review of numpy dtypes such as <code>i</code>, <code>f</code>, and <code>d</code>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
+</dd>
+<dt><a href="https://drdavis.space/teaching/gis/gis-reader/">GIS Reader</a></dt>
+<dd>Davis’s introductory reader on geographic information systems.
+</dd>
+<dt><a href="https://bitbucket.org/usda-ars/prida_one/wiki/developer#markdown-header-git-basics">Git Basics</a></dt>
+<dd>Some useful commands for a basic git project workflow.
+</dd>
+<dt><a href="https://git-scm.com/docs">Git Reference</a></dt>
+<dd>A quick reference guide, including a cheat sheet and complete list of all commands.
+</dd>
+<dt><a href="https://web.archive.org/web/20120131102845/http://www.metadataworkinggroup.org/pdf/mwg_guidance.pdf">Guidelines for Handling Image Metadata</a></dt>
+<dd>(PDF) Metadata Working Group.
+</dd>
+<dt><a href="https://portal.hdfgroup.org/display/knowledge">HDF Knowledge Base</a></dt>
+<dd>Search the HDF knowledge base for answers; powered by The HDF Group.
+</dd>
+<dt><a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture">NetCDF</a></dt>
+<dd>A look at the NetCDF library architecture for the <a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model">classic</a> and <a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model">enhanced</a> data model.
+</dd>
+<dt><a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a></dt>
+<dd>This document explains the extended and slightly revised version of John Gruber’s Markdown syntax.
+</dd>
+<dt><a href="https://perldoc.perl.org/perlre.html#Metacharacters">Perl Regular Expressions</a></dt>
+<dd>Link to metacharacters used in Perl regular expressions.
+</dd>
+<dt><a href="https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html">QGIS Print Layout</a></dt>
+<dd>Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
+</dd>
+<dt><a href="https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheatsheet</a></dt>
+<dd>(PDF) Condensed info on formatting with markdown in R.
+</dd>
+<dt><a href="https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html">R Markdown Websites</a></dt>
+<dd>The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
+</dd>
+<dt><a href="https://drdavis.space/teaching/ds/sdd/syllabus/2019/fall/">Syllabus - Fall 2019</a></dt>
+<dd>Course syllabus for Spatial Data Discovery (Fall 2019)
+</dd>
+<dt><a href="https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/">Syllabus - Spring 2020</a></dt>
+<dd>Course syllabus for Spatial Data Discovery (Spring 2020)
+</dd>
+<dt><a href="https://github.com/0nn0/terminal-mac-cheatsheet">Terminal Cheatsheet | Mac</a></dt>
+<dd>A list of some most used commands and shortcuts in the terminal for Mac by Onno Schwanen.
+</dd>
+<dt><a href="http://mathesaurus.sourceforge.net/">Thesaurus of Mathematical Languages</a></dt>
+<dd>A quick reference of mathematical computation environments for computer algebra, numeric processing, and data visualization including synonymous commands in MATLAB, Python, R, and others.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
+</dd>
+<dt><a href="http://downloads2.esri.com/support/documentation/ao_/710Understanding_Map_Projections.pdf">Understanding Map Projections</a></dt>
+<dd>(PDF) Esri’s textbook on coordinate systems, geographic transformations, and recommended projections.
 </dd>
 </dl>
-<p><strong>Hobbies</strong></p>
-<ul>
-<li>Fishing</li>
-<li>Puzzle Cubes</li>
-<li><em>Old</em> Nintendo video games</li>
-<li>Archery</li>
-</ul>
-<p><img src="https://i.redd.it/bj2qtsp7fif11.jpg" /> <!-- this is how you embed an image --></p>
-<div id="sample-script" class="section level4">
-<h4>Sample Script</h4>
-<p>This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude, longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.</p>
-<p>To run this script, place a netCDF file in the same folder as the script and run with the command</p>
-<pre><code>python netcdf_mean.py YourFile.nc
-</code></pre>
-<pre><code>&#39;&#39;&#39;
-&#39;&#39;&#39;
-Averaging climate and weather data (netCDF) by time
-@Author Ian Thompson
-&#39;&#39;&#39;
-import xarray as xr
-import netCDF4 as nd
-from netCDF4 import Dataset, num2date
-import pandas as pd
-import sys
-import argparse
-import warnings
-
-def main(nc_file):
-    file = &#39;./&#39; + str(nc_file)
-    print(&quot;File In: &quot; + file)
-    tp = nd.Dataset(file, &#39;r&#39;, Formate=&#39;netCDF4&#39;)
-
-    for var in tp.variables:
-        print(&quot;Name: &quot;, var,
-              &quot;|| Units: &quot;, tp[var].units,
-              &quot;|| Shape: &quot;, tp[var].shape,
-              &quot;|| Long Name: &quot;, tp[var].long_name)
-
-    tp_xr = xr.open_dataset(file)
-    with warnings.catch_warnings():
-        warnings.simplefilter(&quot;ignore&quot;, category=RuntimeWarning)
-        tp_mean = tp_xr.resample(time=&#39;1M&#39;).mean()
-
-    print(tp_mean.data_vars)
-    print(&#39;##################################################&#39;)
-
-
-    output = file + &quot;_mean&quot;
-
-    print(&quot;File Out: &quot; + output)
-
-    tp_mean.to_netcdf(output)
-
-
-if __name__ == &quot;__main__&quot;:
-    p = argparse.ArgumentParser(description=&quot;Averages the a netCDF file across time, writes out to new file&quot;)
-    p.add_argument(&#39;file&#39;, nargs=&#39;?&#39;, help=&quot;The file name - must be in the same folder as script&quot;)
-    args = p.parse_args()
-
-    main(args.file)
-
-    ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
-    ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-</code></pre>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Copyright © 2008–2019. The SciPy Community.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Copyright ©2006,2008 Vidar Bronken Gundersen, <a href="http://mathesaurus.sf.net/" class="uri">http://mathesaurus.sf.net/</a>.<a href="#fnref2">↩</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">

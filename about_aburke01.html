@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Alexandra Burke" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,20 +461,99 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Alexandra Burke</h4>
-<h4 class="date">Edited: 2020-02-03</h4>
+<h4 class="author"><em>Alexandra Burke</em></h4>
+<h4 class="date"><em>Edited: 2020-02-09</em></h4>
 
 </div>
 
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Evil_Eye.svg" title="Allie Burke" width="220" height="220" /></p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Evil_Eye.svg" title="Allie Burke" width="220" height="220" />
+
+</div>
 <dl>
-<dt>#About me</dt>
-<dd>Hi! My name is Allie Burke, I’m a Senior at <strong>The College of William and Mary</strong>. I’m a Finance Major and Data Science Minor. #Hobbies
+<dt><strong>About me</strong></dt>
+<dd><p>Hi! My name is Allie Burke, I’m a Senior at <strong>The College of William and Mary</strong>.</p>
+<p>I’m a Finance Major and Data Science Minor.</p>
 </dd>
-<dd>-running -knitting -yoga
+<dt><strong>Hobbies</strong></dt>
+<dd><ul>
+<li><p>running</p></li>
+<li><p>knitting</p></li>
+<li><p>yoga</p></li>
+</ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample script</h3>
+<p><a href="scripts/Book_keeping.py">Book_keeping (.py)</a></p>
+<p>I wrote this sample script as a way to keep up with daily inventory changes at a small used bookstore that mostly has one copy of each book. It has the user load in two excel files that contain the inventory list and the sales made that day. My script checks to see which books were purchased, and returns an excel file with the new inventory list that can be used for the next day.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python3</span>
+<span class="co">#</span>
+<span class="co"># Book_keeping.py</span>
+<span class="co">#</span>
+<span class="co">#</span>
+<span class="co"># LAST EDIT: 2020-02-09</span>
+<span class="co">#</span>
+<span class="co"># This script compares entries in inventory and sales lists. </span>
+<span class="co">#</span>
+<span class="co">##############################################################################</span>
+<span class="co"># REQUIRED MODULES</span>
+<span class="co">##############################################################################</span>
+
+
+<span class="im">import</span> pandas <span class="im">as</span> pd
+inventory <span class="op">=</span> []
+booksales <span class="op">=</span> []
+
+<span class="kw">def</span> Book_keeping(Inventory, Daily_sales):
+
+    <span class="co">#reads in the two excel files</span>
+
+    Inventory <span class="op">=</span> pd.read_excel(Inventory)
+    Today_total <span class="op">=</span> pd.read_excel(Daily_sales)
+
+    <span class="co">#converts the idCode columns in each sheet into integers</span>
+
+    <span class="cf">for</span> num <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:
+        <span class="bu">int</span>(num)
+    <span class="cf">for</span> digit <span class="kw">in</span> Today_total[<span class="st">&quot;idCode&quot;</span>]:
+        <span class="bu">int</span>(digit)
+
+    <span class="co">#iterates over the idCode column and creates a list for both sheets</span>
+
+    <span class="cf">for</span> copies <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:
+        inventory.append(copies)
+    <span class="cf">for</span> book <span class="kw">in</span> Today_total[<span class="st">&quot;idCode&quot;</span>]:
+        booksales.append(book)
+
+    <span class="co">#Calculates where the new day&#39;s inventory will appear in the excel sheet</span>
+
+    tail <span class="op">=</span> (<span class="bu">len</span>(inventory)<span class="op">-</span><span class="bu">len</span>(booksales))
+
+    <span class="co">#removes purchased books from the inventory</span>
+
+    <span class="cf">for</span> book <span class="kw">in</span> booksales:
+        inventory.remove(book)
+
+    <span class="co">#adds the new inventory to the excel sheet</span>
+
+    <span class="cf">for</span> a <span class="kw">in</span> inventory:
+        <span class="cf">for</span> part <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:
+
+            <span class="cf">if</span> a <span class="op">==</span> part:
+                Inventory <span class="op">=</span> Inventory.append(Inventory.loc[Inventory[<span class="st">&quot;idCode&quot;</span>]<span class="op">==</span> a])
+
+    <span class="co">#removes the earlier entries</span>
+
+    Inventory <span class="op">=</span> Inventory.tail(tail)
+
+    <span class="co">#returns the final inventory list to be used the next day</span>
+
+    <span class="cf">return</span> Inventory.to_excel(<span class="st">&quot;NewInventory.xlsx&quot;</span>,sheet_name <span class="op">=</span> <span class="st">&quot;Inventory&quot;</span>,engine<span class="op">=</span><span class="st">&#39;xlsxwriter&#39;</span>)
+
+Book_keeping(<span class="st">&quot;Inventory.xlsx&quot;</span>,<span class="st">&quot;Today.xlsx&quot;</span>)</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -414,23 +577,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

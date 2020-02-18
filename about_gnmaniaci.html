@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Gianna Maniaci" />
@@ -16,7 +16,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -25,6 +24,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -56,7 +115,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -70,6 +131,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -174,6 +236,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -218,7 +282,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -231,17 +294,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -261,8 +327,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -378,8 +462,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Gianna Maniaci</h4>
-<h4 class="date">January 30, 2020</h4>
+<h4 class="author"><em>Gianna Maniaci</em></h4>
+<h4 class="date"><em>January 30, 2020</em></h4>
 
 </div>
 
@@ -389,7 +473,10 @@ $(document).ready(function () {
 <dd>Hi! My name is Gianna, and I am a junior at the college majoring in data science and minoring in public health. I love to travel, one of my goals is to go to all of the national parks in the US. I have currently been to <em>9 parks</em>. The most recent park I visited was the Grand Canyon.
 </dd>
 </dl>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Dawn_on_the_S_rim_of_the_Grand_Canyon_%288645178272%29.jpg" title="Grand Canyon" width="150" height="150" /></p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Dawn_on_the_S_rim_of_the_Grand_Canyon_%288645178272%29.jpg" title="Grand Canyon" width="150" height="150" />
+
+</div>
 <dl>
 <dt>Other Interests:</dt>
 <dd><ul>
@@ -400,6 +487,226 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample Script</h3>
+<p><a href="scripts/josephus.py">Josephus (.py)</a></p>
+<p>My sample script is something I had to complete for a prior class, Computer Science 241. I did change it slightly by adding a help description the utility script assignment. This script demonstrates the way linked lists work as well as adding a fun game to the mix! Josephus takes any number inputted by the user and makes a linked list of 1 to that number. It will then rotate the linked list so the first value becomes the last and then removes the new first value. It will continue to do this until there is only one number left, this is the survivor!</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#Gianna Maniaci</span>
+
+<span class="co">#This project demonstrates the way linked lists work as well as adding a fun game to the mix!</span>
+<span class="co">#Josephus takes any number inputted by the user and makes a link list of 1 to that number</span>
+<span class="co">#it will then rotate the linked list so the first value becomes the last and removes the new first value</span>
+<span class="co">#it will continue to do this until there is only one number left, this is the survivor!</span>
+
+
+
+
+
+<span class="co">#from Linked_List import Linked_List   &lt;----- This has been commented out because I added the </span>
+                                              <span class="co">#linked list class into this document</span>
+<span class="im">import</span> argparse
+
+<span class="kw">def</span> Josephus(ll):
+  <span class="co">#Prints the linked list after each time it rotates left and </span>
+  <span class="co">#removes the first value</span>
+  <span class="cf">while</span> (<span class="bu">len</span>(ll) <span class="op">!=</span> <span class="dv">1</span>):
+    ll.rotate_left()
+    ll.remove_element_at(<span class="dv">0</span>)
+    <span class="bu">print</span>(ll)
+  <span class="co">#prints the surviving value</span>
+  <span class="bu">print</span> (<span class="st">&quot;The survivor is: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(ll.get_element_at(<span class="dv">0</span>)))
+
+
+
+<span class="kw">class</span> Linked_List:
+  
+  <span class="kw">class</span> __Node:
+    
+    <span class="co">#defines a node</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val):
+      <span class="va">self</span>.val <span class="op">=</span> val
+      <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> <span class="va">None</span>
+      <span class="va">self</span>.prev <span class="op">=</span> <span class="va">None</span>
+
+  <span class="co">#defines a linked list</span>
+  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):
+    <span class="va">self</span>.__size <span class="op">=</span> <span class="dv">0</span>
+    <span class="va">self</span>.__header <span class="op">=</span> Linked_List.__Node(<span class="va">None</span>)
+    <span class="va">self</span>.__trailer <span class="op">=</span> Linked_List.__Node(<span class="va">None</span>)
+    <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer
+    <span class="va">self</span>.__trailer.prev <span class="op">=</span> <span class="va">self</span>.__header
+
+  <span class="co">#returns length of list</span>
+  <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):
+    <span class="cf">return</span> <span class="va">self</span>.__size
+
+  <span class="co">#add val to the end of the list</span>
+  <span class="kw">def</span> append_element(<span class="va">self</span>, val):
+    new_element <span class="op">=</span> Linked_List.__Node(val)
+
+    <span class="co">#if there are no values currently in the list implement this:</span>
+    <span class="cf">if</span> (<span class="va">self</span>.__size <span class="op">==</span> <span class="dv">0</span>):
+      <span class="va">self</span>.__trailer.prev <span class="op">=</span> new_element
+      <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> new_element
+      new_element.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer
+      new_element.prev <span class="op">=</span> <span class="va">self</span>.__header
+
+    <span class="co">#if there are values currently in the list implement this:</span>
+    <span class="cf">else</span>:
+      new_element.prev <span class="op">=</span> <span class="va">self</span>.__trailer.prev
+      new_element.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer
+      <span class="va">self</span>.__trailer.prev.<span class="bu">next</span> <span class="op">=</span> new_element
+      <span class="va">self</span>.__trailer.prev <span class="op">=</span> new_element
+
+    <span class="co">#increases size by 1</span>
+    <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">+</span> <span class="dv">1</span>
+
+  <span class="co">#inserts a value at a position given by the user</span>
+  <span class="kw">def</span> insert_element_at(<span class="va">self</span>, val, index):   
+    new_element <span class="op">=</span> Linked_List.__Node(val)
+    pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>
+
+    <span class="co">#makes sure the index is in bounds</span>
+    <span class="cf">if</span> (index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):
+      <span class="co">#if the index is at 0 it will implement this</span>
+      <span class="cf">if</span> (index <span class="op">==</span> <span class="dv">0</span>):
+        new_element.prev <span class="op">=</span> <span class="va">self</span>.__header
+        new_element.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>
+        <span class="va">self</span>.__header.<span class="bu">next</span>.prev <span class="op">=</span> new_element
+        <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> new_element
+        
+
+      <span class="co">#otherwise inserts the value at the given index</span>
+      <span class="cf">else</span>:
+        location <span class="op">=</span> <span class="dv">0</span>
+        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):
+          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span>
+          <span class="cf">if</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):
+            pointer <span class="op">=</span> pointer.<span class="bu">next</span>
+        new_element.prev <span class="op">=</span> pointer
+        new_element.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span>
+        pointer.<span class="bu">next</span>.prev <span class="op">=</span> new_element
+        pointer.<span class="bu">next</span> <span class="op">=</span> new_element
+
+      <span class="co">#increases size by 1</span>
+      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">+</span> <span class="dv">1</span>
+
+  <span class="co">#if index is out of bounds it will raise an error</span>
+    <span class="cf">else</span>:
+      <span class="cf">raise</span> <span class="pp">IndexError</span>
+
+  <span class="co">#removes element at given value</span>
+  <span class="kw">def</span> remove_element_at(<span class="va">self</span>, index):
+    pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>
+
+    <span class="co">#makes sure index given is in bounds</span>
+    <span class="cf">if</span>(index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):
+      <span class="co">#removes element at index 0 if index given is 0 </span>
+      <span class="cf">if</span> (index <span class="op">==</span> <span class="dv">0</span>):
+        <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>.<span class="bu">next</span>
+        <span class="va">self</span>.__header.<span class="bu">next</span>.prev <span class="op">=</span> <span class="va">self</span>.__header
+
+      <span class="co">#removes the last item in the list if user indicated this index</span>
+      <span class="cf">elif</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):
+        <span class="va">self</span>.__trailer.prev <span class="op">=</span> <span class="va">self</span>.__trailer.prev.prev
+        <span class="va">self</span>.__trailer.prev.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer
+
+      <span class="co">#otherwise removes the value at the given index</span>
+      <span class="cf">else</span>:
+        location <span class="op">=</span> <span class="dv">0</span>
+        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):
+          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span>
+          pointer <span class="op">=</span> pointer.<span class="bu">next</span>
+        pointer.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span>.<span class="bu">next</span>
+        pointer.<span class="bu">next</span>.prev <span class="op">=</span> pointer
+
+      <span class="co">#decreases size by 1</span>
+      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>
+
+    <span class="co">#raises error if index is out of bounds</span>
+    <span class="cf">else</span>:
+      <span class="cf">raise</span> <span class="pp">IndexError</span>
+      
+
+  <span class="co">#returns the value stored in a given index</span>
+  <span class="kw">def</span> get_element_at(<span class="va">self</span>, index):
+
+    <span class="co">#makes sure index given is in bounds</span>
+    <span class="cf">if</span> (index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):
+      <span class="co">#if the user wants the last item in the list implement this:</span>
+      <span class="cf">if</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):
+        pointer <span class="op">=</span> <span class="va">self</span>.__trailer.prev
+        <span class="cf">return</span> (pointer.val)
+
+      <span class="co">#finds correct index location and returns the value</span>
+      pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>
+      location <span class="op">=</span> <span class="dv">0</span>
+      <span class="cf">while</span> (location <span class="op">!=</span> index):
+        location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span>
+        pointer <span class="op">=</span> pointer.<span class="bu">next</span>
+      <span class="cf">return</span> (pointer.val)
+
+    <span class="co">#raises an index error if index is out of bounds</span>
+    <span class="cf">else</span>:
+      <span class="cf">raise</span> <span class="pp">IndexError</span>
+    
+  <span class="co">#removes first element in the list and appends it to the end</span>
+  <span class="kw">def</span> rotate_left(<span class="va">self</span>):
+    first_number <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="dv">0</span>)
+    <span class="va">self</span>.remove_element_at(<span class="dv">0</span>)
+    <span class="va">self</span>.append_element(first_number)
+    
+  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):
+    <span class="co">#returns an empty list if there is nothing in the linked list</span>
+    <span class="cf">if</span> (<span class="va">self</span>.__size <span class="op">==</span> <span class="dv">0</span>):
+      <span class="cf">return</span> <span class="st">&#39;[]&#39;</span>
+    <span class="co">#if the linked list is not empty it adds one value at a time</span>
+    <span class="co">#to a new string and returns it.</span>
+    <span class="cf">else</span>:
+      current <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>
+      print_this <span class="op">=</span> (<span class="st">&quot;[ &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val))
+    <span class="cf">while</span> (current.<span class="bu">next</span> <span class="op">!=</span> <span class="va">self</span>.__trailer):
+      current <span class="op">=</span> current.<span class="bu">next</span>
+      print_this <span class="op">+=</span> <span class="st">&quot;, &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val)
+    <span class="cf">return</span> (print_this <span class="op">+</span> <span class="st">&quot; ]&quot;</span>)
+
+
+  <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):
+    <span class="co">#tells the iterator where to start</span>
+    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="dv">0</span>
+    <span class="cf">return</span> <span class="va">self</span>
+
+  <span class="kw">def</span> <span class="fu">__next__</span>(<span class="va">self</span>):
+    <span class="co"># fetch the next value and return it. If there are no more </span>
+    <span class="co"># values to fetch, raise a StopIteration exception.</span>
+    <span class="cf">if</span> (<span class="va">self</span>.<span class="fu">__iter__</span> <span class="op">==</span> <span class="va">self</span>.__size):
+      <span class="cf">raise</span> <span class="pp">StopIteration</span>
+    to_return <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="va">self</span>.__iter_index)
+    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="va">self</span>.__iter_index <span class="op">+</span> <span class="dv">1</span>
+    <span class="cf">return</span> to_return
+
+
+
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+
+  p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Josephus Finds the Surviving Individual&quot;</span>)
+  args <span class="op">=</span> p.parse_args()
+
+  <span class="co">#asks user for n value</span>
+  n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Input the total number of people: &quot;</span>))
+  <span class="co">#creates linked list</span>
+  ll <span class="op">=</span> Linked_List()
+  <span class="co">#adds n values to the linked list</span>
+  i <span class="op">=</span> <span class="dv">1</span>
+  <span class="cf">while</span> (i <span class="op">&lt;</span> n <span class="op">+</span> <span class="dv">1</span>):
+    ll.append_element(i) 
+    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span>
+  <span class="co">#prints the initial list</span>
+  <span class="bu">print</span>(<span class="st">&quot;Initial order:&quot;</span>, ll)
+  <span class="co">#calls the function</span>
+  Josephus(ll)</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -423,23 +730,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Abby Gaddi" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -55,7 +54,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +70,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +175,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +221,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +233,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +266,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,13 +401,16 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Abby Gaddi</h4>
-<h4 class="date">Edited: 2020-02-02</h4>
+<h4 class="author"><em>Abby Gaddi</em></h4>
+<h4 class="date"><em>Edited: 2020-02-02</em></h4>
 
 </div>
 
 
-<p><img src="https://data.whicdn.com/images/315745282/original.jpg" title="panda eating ramen" /></p>
+<div class="figure">
+<img src="https://data.whicdn.com/images/315745282/original.jpg" title="panda eating ramen" />
+
+</div>
 <dl>
 <dt>Bio</dt>
 <dd>I’m a junior majoring in Data Science, and I can do a flip.
@@ -398,6 +425,88 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample script</h3>
+<p><a href="scripts/slot_machine.py">Slot Machine (.py)</a></p>
+<p>My sample script is something I used for a lab in my Machine Learning class last semester. It uses a slot machine simulator as an example for Upper Confidence Bound reinforcment learning. This type of machine learning can be used to help other problems such as identifying the best treatment in clinical testing and looking at best performance in online advertising or in game designing.</p>
+<p>``` #slot_machine.py # #Author: Abby Gaddi # #Date: 2020-02-10 # #This script shows how Upper Confidence Boundary reinforcment learning #is used with machine slots as an example, and prompts the user for the starting balance and trial number. # # #LIBRARIES import random import math import argparse</p>
+</div>
+<div id="slot-machine-odds-function-given-from-class" class="section level1">
+<h1>Slot machine odds function given from class</h1>
+<p>def playSlots(machine):</p>
+<pre><code>if(machine == 1):
+    return round(random.uniform(0,1),2)
+
+if(machine == 2):
+    return round(random.uniform(0.5,1.5),2)
+
+if(machine&gt;=3 and machine &lt;=10):
+    return round(random.triangular(0,0.5,1),2)
+
+if(machine &gt;=11 and machine &lt;=14):
+    return round(random.triangular(0.5,1,1.5),2)
+
+if(machine == 15):
+    return round(random.triangular(0.8,1,3.0),2)
+
+if(machine &gt;= 16 and machine &lt;= 20):
+    return round(random.uniform(0,1.1),2)
+
+if(machine &gt;20):
+    print(&quot;There are only 20 slot machines!  You&#39;ve gone awry.&quot;)</code></pre>
+<p>def calculate_UCB(balance,N):</p>
+<pre><code>#VARIABLES
+#number of slot machines
+d = 20
+#used for the machine/computer to learn
+machine_record = []
+award_record = []
+number_of_selections = [0] * d
+sum_of_rewards = [0] * d
+
+#UPPER CONFIDENCE BOUND REINFORCEMENT LEARNING
+for n in range(0,N):
+
+    #initialize the machine choice at one
+    machine_choice = 1
+    #define the max upper bound, based on the mean and maximum return value
+    max_upper_bound = 0
+
+    #calculating which machine has the best return value so it is constantly picked
+    for i in range(1,d):
+        if number_of_selections[i] &gt; 0:
+            #calculate the average money got back
+            average_award = sum_of_rewards[i] / number_of_selections[i]
+            #calculate the money the machine thinks it will get back
+            delta_i = math.sqrt(3/2*math.log(n+1)/number_of_selections[i])
+            upper_bound = average_award + delta_i
+        else:
+            #if the machine is being used for the first time, set the upperbound very high to force the computer to test it
+            upper_bound = 1e200
+
+        if upper_bound &gt; max_upper_bound:
+            max_upper_bound = upper_bound
+            #choose the machine with the highest upper bound
+            machine_choice = i
+
+    #calculate earnings/balance
+    machine_record.append(machine_choice)
+    number_of_selections[machine_choice] = number_of_selections[machine_choice] + 1
+    award = playSlots(machine=machine_choice)
+    sum_of_rewards[machine_choice] = sum_of_rewards[machine_choice] + award
+    award_record.append(award)
+    balance = balance - 1 + award
+    return(&#39;You won: $&#39; + str(round(balance,2))+&#39;\n Machine &#39; + str(sum_of_rewards.index(max(sum_of_rewards))) +&#39; won you the most money&#39; )
+    </code></pre>
+</div>
+<div id="main" class="section level1">
+<h1>MAIN</h1>
+<p>if <strong>name</strong> == ‘<strong>main</strong>’: p = argparse.ArgumentParser(description = “Play an unrealistic slot machine simulator by gambling an amount you want to play with<br />
+and see which machine has the best cash reward.”) args = p.parse_args()</p>
+<pre><code>balance = int(input(&#39;How much money would you like to play with? (no dollar sign) &#39;))
+N = int(input(&#39;How many times would you like to play? &#39;))
+print(calculate_UCB(balance, N))</code></pre>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -421,23 +530,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

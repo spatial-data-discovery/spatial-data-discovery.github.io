@@ -1,0 +1,45 @@
+---
+title: "Resources | Data"
+---
+
+[Census Data](https://data.census.gov/cedsci)
+:   The leading source of quality data about the US's people and economy.
+
+[Data.gov](https://www.data.gov/)
+:   The home of the U.S. Government's open data.
+
+[EarthData](https://search.earthdata.nasa.gov/search)
+:   Access thousands of unique data products in NASA's Earth Observing System Data and Information System (EOSDIS) collection from a variety of sources including the International Space Station, satellites, airborne campaigns, field campaigns, in-situ instruments, and model outputs.
+
+[Elfelt Server List](https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf)
+:   (PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
+
+[FEC Elections and Voting](https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/)
+:   Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
+
+[GeoQuery](http://geo.aiddata.org/query/#!/)
+:   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.[^goodman19]
+
+[Google Dataset Search](https://toolbox.google.com/datasetsearch)
+:   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
+
+[Natural Earth](https://www.naturalearthdata.com/)
+:   A public-domain map dataset at 1:10m, 1:50m, and 1:110 million scales featuring tightly integrated vector and raster data for making a variety of visually pleasing, well-crafted maps.
+
+[SRTM 30-m DEM](http://dwtkns.com/srtm30m/)
+:   Derek Watkins's interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
+
+[Thematic Mapping World Borders](http://thematicmapping.org/downloads/world_borders.php)
+:   Esri shapefile of the world's country borders in two resolutions.[^sandvik08]
+
+[USGS Continents](https://pubs.usgs.gov/of/2006/1187/basemaps/continents/)
+:   Esri shapefile for the major continent boundaries.[^buczkowski07]
+
+[VA GIS Clearinghouse](https://vgin.maps.arcgis.com/home/index.html)
+:   Hosted by the Virginia Geographic Information Network (VGIN), the GIS Clearinghouse is a repository of geospatial data produced and used by state agencies in Virginia, localities in Virginia, Federal Government partners, non-profits, and colleges and universities across Virginia.
+
+[^buczkowski07]: Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center's Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at http://pubs.usgs.gov/of/2006/1187/
+
+[^goodman19]: Goodman, S., BenYishay, A., Lv, Z., & Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers & Geosciences, 122, 103-112.
+
+[^sandvik08]: Data provided under a CC BY-SA 3.0 license. Copyright &copy; 2009 Bj&oslash;rn Sandvik. https://thematicmapping.org/

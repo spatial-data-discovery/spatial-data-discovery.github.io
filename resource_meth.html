@@ -9,10 +9,9 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>About the Coder</title>
+<title>Resources | Methods</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -400,82 +399,105 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>Ian Thompson</em></h4>
+<h1 class="title toc-ignore">Resources | Methods</h1>
 
 </div>
 
 
-<dl>
-<dt><strong>Bio</strong></dt>
-<dd>I am a senior on the swim team with a Data Science major and Computer Science minor.
-</dd>
-</dl>
-<p><strong>Hobbies</strong></p>
+<div id="setting-environment-variables" class="section level3">
+<h3>Setting Environment Variables</h3>
+<p>For convenience, I have included a check in my example scripts for an environment variable called “DS_WORKSPACE” that is used for reading from and saving to a designated workspace folder on your computer. If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in). To create and define your workspace folder, please follow these instructions.</p>
+<div id="on-windows" class="section level4">
+<h4>On Windows</h4>
 <ul>
-<li>Fishing</li>
-<li>Puzzle Cubes</li>
-<li><em>Old</em> Nintendo video games</li>
-<li>Archery</li>
+<li>On your keyboard, type “Win + s” to open the search bar.</li>
+<li>Type “environ” in the search bar and select “Edit environment variables for your account”</li>
+<li>Under “User variables for ‘user’”, click “New…”</li>
+<li>For Variable name, type <code>DS_WORKSPACE</code></li>
+<li>For Variable value, type an absolute path to your directory (e.g., “C:\Workspace”); you may use the “Browse Directory…” button to navigate to your folder of choice.</li>
+<li>Click OK and click OK again.</li>
 </ul>
-<p><img src="https://i.redd.it/bj2qtsp7fif11.jpg" /> <!-- this is how you embed an image --></p>
-<div id="sample-script" class="section level4">
-<h4>Sample Script</h4>
-<p>This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude, longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.</p>
-<p>To run this script, place a netCDF file in the same folder as the script and run with the command</p>
-<pre><code>python netcdf_mean.py YourFile.nc
-</code></pre>
-<pre><code>&#39;&#39;&#39;
-&#39;&#39;&#39;
-Averaging climate and weather data (netCDF) by time
-@Author Ian Thompson
-&#39;&#39;&#39;
-import xarray as xr
-import netCDF4 as nd
-from netCDF4 import Dataset, num2date
-import pandas as pd
-import sys
-import argparse
-import warnings
-
-def main(nc_file):
-    file = &#39;./&#39; + str(nc_file)
-    print(&quot;File In: &quot; + file)
-    tp = nd.Dataset(file, &#39;r&#39;, Formate=&#39;netCDF4&#39;)
-
-    for var in tp.variables:
-        print(&quot;Name: &quot;, var,
-              &quot;|| Units: &quot;, tp[var].units,
-              &quot;|| Shape: &quot;, tp[var].shape,
-              &quot;|| Long Name: &quot;, tp[var].long_name)
-
-    tp_xr = xr.open_dataset(file)
-    with warnings.catch_warnings():
-        warnings.simplefilter(&quot;ignore&quot;, category=RuntimeWarning)
-        tp_mean = tp_xr.resample(time=&#39;1M&#39;).mean()
-
-    print(tp_mean.data_vars)
-    print(&#39;##################################################&#39;)
-
-
-    output = file + &quot;_mean&quot;
-
-    print(&quot;File Out: &quot; + output)
-
-    tp_mean.to_netcdf(output)
-
-
-if __name__ == &quot;__main__&quot;:
-    p = argparse.ArgumentParser(description=&quot;Averages the a netCDF file across time, writes out to new file&quot;)
-    p.add_argument(&#39;file&#39;, nargs=&#39;?&#39;, help=&quot;The file name - must be in the same folder as script&quot;)
-    args = p.parse_args()
-
-    main(args.file)
-
-    ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
-    ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-</code></pre>
+</div>
+<div id="on-macos-linux" class="section level4">
+<h4>On macOS / Linux</h4>
+<p>Run the following command in the terminal or save it to your <code>~/.bash_profile</code> to run it every time you open a terminal.</p>
+<ul>
+<li><code>export DS_WORKSPACE=~/Workspace</code></li>
+</ul>
+</div>
+</div>
+<div id="hacking-arcgis-pros-python" class="section level3">
+<h3>Hacking ArcGIS Pro’s Python</h3>
+<p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
+<ul>
+<li>Clone ArcGIS Pro python environment and name it (e.g., ‘sdd’)</li>
+<li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
+<li>Open terminal, type <code>activate sdd</code></li>
+</ul>
+</div>
+<div id="converting-images-to-animations" class="section level3">
+<h3>Converting Images to Animations</h3>
+<p>Based on Davis’s MODIS EVI example using <a href="https://www.gimp.org/">GIMP</a> and FFmpeg (FFmpeg installed with <a href="https://imagemagick.org/index.php">Imagemagick</a>).</p>
+<ol style="list-style-type: decimal">
+<li>Load spatial data into QGIS
+<ul>
+<li>Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)</li>
+<li>Create layout (save layout in case you need to come back to it)</li>
+<li>Add map(s), legend(s), and text to layout</li>
+<li>Update and export maps to images (PNG) for each visualization</li>
+</ul></li>
+<li>Load images into GIMP
+<ul>
+<li>Open one PNG in GIMP</li>
+<li>Open as layers the remaining images (order most recent layer at the top)</li>
+<li>Crop image to selection (use Rectangle Select Tool (shortcut key <code>r</code>) to draw a box around what you want, then use Image → Crop to Selection)</li>
+<li>Optimize your layers for GIF animation (Filters → Animation → Optimize for GIF)</li>
+</ul></li>
+<li>Save your layers as an animated GIF (Export → GIF)
+<ul>
+<li>Check [x] As animation</li>
+<li>Loop forever</li>
+<li>Delay between frames (e.g., 150 ms)</li>
+<li>Use delay entered above for all frames</li>
+</ul></li>
+<li><p>From the command line, convert exported GIF to video format (<a href="https://gist.github.com/ingramchen/e2af352bf8b40bb88890fba4f47eccd0">reference</a>)</p>
+<p>Update the <code>-i</code> input file name and <code>.mp4</code> output file name</p>
+<pre><code>ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=&#39;floor(in_w/2)*2:floor(in_h/2)*2&#39; Untitled.mp4</code></pre></li>
+</ol>
+</div>
+<div id="interpolating" class="section level3">
+<h3>Interpolating</h3>
+<p>Let’s say you are given two pairs of information (<span class="math inline">\(x_1, y_1\)</span>) and (<span class="math inline">\(x_2, y_2\)</span>). These, for example, may represent elevations at two given locations or rainfall values at two given dates. Regardless of what they represent, let’s say you are interested in finding the value <span class="math inline">\(u\)</span> that lies somewhere between <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, which occurs at a location <span class="math inline">\(k\)</span> between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>. In table format, it looks something like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">X</th>
+<th align="center">Y</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_1\)</span></td>
+<td align="center"><span class="math inline">\(y_1\)</span></td>
+<td align="left">Known <span class="math inline">\(x,y\)</span> pair just below the value you are looking for</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(u\)</span></td>
+<td align="left">The pair you want the <span class="math inline">\(y\)</span>-value for</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x_2\)</span></td>
+<td align="center"><span class="math inline">\(y_2\)</span></td>
+<td align="left">Known <span class="math inline">\(x,y\)</span> pair just above the value you are looking for</td>
+</tr>
+</tbody>
+</table>
+<p>By linear interpolation, the rule of equal ratios applies, which states the following:</p>
+<p><span class="math display">\[\frac{k - x_1}{x_2 - x_1} = \frac{u - y_1}{y_2 - y_1}\]</span></p>
+<p>and can be solved for the unknown value, <span class="math inline">\(u\)</span>, represented by the following:</p>
+<p><span class="math display">\[u = \frac{\left(y_2 - y_1\right) \left(k - x_1\right)}{x_2 - x_1} + y_1\]</span></p>
 </div>
 
 <footer class="myfoot">

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="John R. Garst, not a PhD" />
@@ -15,7 +15,6 @@
 <title>John Garst: The Culmination of Human Evolution</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,8 +461,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">John Garst: The Culmination of Human Evolution</h1>
-<h4 class="author">John R. Garst, not a PhD</h4>
-<h4 class="date">Edited: 1/30/2020</h4>
+<h4 class="author"><em>John R. Garst, not a PhD</em></h4>
+<h4 class="date"><em>Edited: 1/30/2020</em></h4>
 
 </div>
 
@@ -391,6 +475,120 @@ $(document).ready(function () {
 <li>working in Java, Python, C, and C++</li>
 </ul>
 <p><img src="https://edit.co.uk/uploads/2016/12/Image-2-Alternatives-to-stock-photography-Thinkstock.jpg" title="Tyler W. Davis" /> This is the first result when you google “Generic Stock Photo.”</p>
+<div id="sample-script" class="section level3">
+<h3>Sample script</h3>
+<p><a href="scripts/music_randomizer.py">Music Randomizer (.py)</a></p>
+<p>My sample script is a changelog updater. I wrote it because doing homework is boring. The script will generate or update a changelog based on a list of programs obtained through powershell. This only works for windows computers.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> datetime <span class="im">import</span> date
+<span class="im">import</span> subprocess, sys
+<span class="im">import</span> argparse
+<span class="im">import</span> os
+<span class="im">import</span> re
+
+<span class="co">#Stackoverflow code to change from utf16 to utf8. WMIC generates utf16 for installed programs list,</span>
+<span class="co">#which doesnt work for what I&#39;m trying to do.</span>
+<span class="kw">def</span> correctSubtitleEncoding(filename, newFilename, encoding_from<span class="op">=</span><span class="st">&#39;UTF-16&#39;</span>, encoding_to<span class="op">=</span><span class="st">&#39;UTF-8&#39;</span>):
+    <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span>encoding_from) <span class="im">as</span> fr:
+        <span class="cf">with</span> <span class="bu">open</span>(newFilename, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span>encoding_to) <span class="im">as</span> fw:
+            <span class="cf">for</span> line <span class="kw">in</span> fr:
+                fw.write(line[:<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;</span><span class="ch">\r</span><span class="st">&#39;</span>)
+
+<span class="kw">def</span> updateOld(old, oldLines, new, newLines):
+    <span class="co">#close and reopen in write mode to replace file contents.</span>
+    old.close()
+    old <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;oldchangelog.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(newLines)):
+        old.write(newLines[i])
+
+
+<span class="co">#Begin Program by parsing args. Should only be help.</span>
+cmdarg <span class="op">=</span> argparse.ArgumentParser(description <span class="op">=</span> <span class="st">&quot;Updates Changelog. Open the script and change the path to the powershell file to match your computer&#39;s requirements </span><span class="ch">\n</span><span class="st"> You will need to do the same in the .ps1 file.&quot;</span>)
+args <span class="op">=</span> cmdarg.parse_args()
+
+<span class="co">#get the local directory for use in this program.</span>
+dir_path <span class="op">=</span> os.getcwd()
+dir_path <span class="op">+=</span> <span class="vs">r&quot;\p.ps1&quot;</span>
+dir_path <span class="op">=</span> <span class="bu">repr</span>(dir_path)
+
+<span class="co">#For log</span>
+pslogPath <span class="op">=</span> os.getcwd()
+pslogPath <span class="op">+=</span> <span class="vs">r&quot;\PSlog.txt&quot;</span>
+pslogPath <span class="op">=</span> <span class="bu">repr</span>(pslogPath)
+
+<span class="co">#create a powershell script in the current directory</span>
+powershellScript <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;p.ps1&quot;</span>, <span class="st">&quot;w&quot;</span>)
+<span class="co">#populate that file with the command to get the list of programs</span>
+powershellScript.write(<span class="st">&quot;Get-ItemProperty HKLM:</span><span class="ch">\\</span><span class="st">Software</span><span class="ch">\\</span><span class="st">Wow6432Node</span><span class="ch">\\</span><span class="st">Microsoft</span><span class="ch">\\</span><span class="st">Windows</span><span class="ch">\\</span><span class="st">CurrentVersion</span><span class="ch">\\</span><span class="st">Uninstall</span><span class="ch">\\</span><span class="st">* | Select-Object DisplayName, DisplayVersion | Format-Table -AutoSize &gt; &quot;</span> <span class="op">+</span> pslogPath)
+<span class="co">#finished with the file, and we can&#39;t keep it open now or it will be in use when we try to execute it.</span>
+powershellScript.close()
+
+<span class="co">#Get path to the above script</span>
+psScriptpath <span class="op">=</span> os.getcwd()
+psScriptpath <span class="op">+=</span> <span class="vs">r&#39;\p.ps1&#39;</span>
+
+<span class="co">#First generate a new up to date list of programs.</span>
+<span class="co">#&quot;C:\\Users\\elkel\\Desktop\\UtilScript\\p.ps1&quot;</span>
+p <span class="op">=</span> subprocess.Popen([<span class="st">&quot;powershell.exe&quot;</span>,
+              psScriptpath],
+              stdout<span class="op">=</span>sys.stdout)
+p.communicate()
+
+
+
+<span class="co">#Since we should be running this after the installed programs list generator,</span>
+<span class="co">#and that should generate a file with the date, this will access that file.</span>
+<span class="co">#Then the others are easy enough to get.</span>
+
+old <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;oldchangelog.txt&quot;</span>, <span class="st">&quot;r+&quot;</span>)
+correctSubtitleEncoding(<span class="st">&quot;PSlog.txt&quot;</span>, <span class="st">&quot;new.txt&quot;</span>)
+new <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;new.txt&quot;</span>, <span class="st">&quot;r+&quot;</span>)
+log <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;changelog.txt&quot;</span>, <span class="st">&quot;a&quot;</span>)
+
+<span class="co">#Get the list of lines for comparison</span>
+oldLines <span class="op">=</span> old.readlines()
+newLines <span class="op">=</span> new.readlines()
+
+<span class="co">#For first time runs, we should fill the changelog with all of the contents from the newLines list.</span>
+<span class="cf">if</span> <span class="bu">len</span>(oldLines) <span class="op">==</span> <span class="dv">0</span>:
+    log.write(<span class="st">&quot;Begin Tracking &quot;</span> <span class="op">+</span> <span class="bu">str</span>(date.today()))
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(newLines)):
+        log.write(newLines[i])
+    updateOld(old, oldLines, new, newLines)
+    exit()
+
+
+<span class="co">#The magic area. Goes through and checks every line, stripping all space characters and comparing them.</span>
+<span class="co">#If spaces are not removed, the comparison fails.</span>
+
+log.write(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">UPDATES AS OF &quot;</span> <span class="op">+</span> <span class="bu">str</span>(date.today()) <span class="op">+</span> <span class="st">&quot;:&quot;</span>)
+
+anyChanges <span class="op">=</span> <span class="va">False</span>
+
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(newLines)):
+    <span class="cf">if</span> newLines[i].replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;&#39;</span>) <span class="op">!=</span> oldLines[i].replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;&#39;</span>):
+        anyChanges <span class="op">=</span> <span class="va">True</span>
+        <span class="co">#Check to see if this is an entirely new program or just an updated version of an old one.</span>
+        <span class="co">#If it is new, put it in the changelog as such and skip to the next line</span>
+        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):
+            <span class="cf">if</span> newLines[i][j] <span class="op">!=</span> oldLines[i][j]:
+                <span class="bu">print</span>(<span class="st">&quot;Here I am&quot;</span>)
+                log.write(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">NEW PROGRAM: &quot;</span> <span class="op">+</span> newLines[i])
+                <span class="kw">del</span>(newLines[i])
+                <span class="cf">break</span>
+
+        <span class="bu">print</span>(<span class="st">&quot;NOT SAME, updating&quot;</span>)
+        <span class="bu">print</span>(newLines[i])
+        <span class="bu">print</span>(oldLines[i])
+        <span class="co">#write to changelog</span>
+        log.write(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> <span class="op">+</span> newLines[i])
+        <span class="co">#Change the line that represents an update</span>
+        oldLines[i] <span class="op">=</span> newLines[i]
+
+<span class="cf">if</span> anyChanges <span class="op">==</span> <span class="va">False</span>:
+    log.write(<span class="st">&quot;</span><span class="ch">\n</span><span class="st"> No Changes&quot;</span>)
+
+updateOld(old, oldLines, new, newLines)</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -414,23 +612,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

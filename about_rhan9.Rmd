@@ -1,24 +1,24 @@
 ---
 title: "About the Coder"
-auto: "Ryan Han"
-date: "Edited 2020-02-02"  
+author: "Ryan Han"
+date: "Edited 2020-02-10"  
 ---
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png "Basketball"){width=150 height=150}
+![ I am a big fan of basketball ](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png "Basketball"){width=150 height=150}
 
-**Bio**
-:   Hi everyone, my name is Ryan Han and I am a senior at the College
+### **Bio**
+   Hi everyone, my name is Ryan Han and I am a senior at the College
     pursuing a Data Science major and a Math minor.
 
-**Hobbies**
+### **Hobbies**:
   - I like to play **Basketball**
   - I like to listen to _podcasts_
   - I like to play *Dota2*
 
-###My Script
+### My Script
 [first_word_counter(.py)](scripts/first_word_counter.py)
 
-This script takes a .txt/.md file and word of your choice and figures out how many times the specific word starts a sentence in the file.
+This script asks for a .txt/.md file and word of your choice and figures out how many times the specific word starts a sentence in the file.
 
 ```{python "first", eval = FALSE}
 # first_word_counter.py
@@ -70,7 +70,7 @@ def first_word_counter():
 
     # Proper grammar
     if count == 1:
-        print("There is " + str(count) + " line in the file with " + word + " as the first word.")
+        print("There is " + str(count) + " line in the file with " + "'" + word + "'" + " as the first word.")
     else:
         print("There are " + str(count) + " lines in the file with " + "'" + word + "'" + " as the first word.")
 
@@ -80,9 +80,7 @@ def first_word_counter():
 if __name__ == '__main__':
     # --help command line description
     parser = argparse.ArgumentParser(
-    description = "Input a .txt/.md file and word of your choice. This script will figure out how many times your word starts a sentence in the file.")
+    description = "This script will ask you for a .txt/.md file and word of your choice. Then it will figure out how many times your word starts a sentence in the file.")
     args = parser.parse_args()
 
     first_word_counter()
-    
-```

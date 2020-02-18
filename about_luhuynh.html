@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Lu Huynh" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,13 +461,16 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Lu Huynh</h4>
-<h4 class="date">Edited: 2/3/20</h4>
+<h4 class="author"><em>Lu Huynh</em></h4>
+<h4 class="date"><em>Edited: 2/3/20</em></h4>
 
 </div>
 
 
-<p><img src="https://preview.redd.it/r49nq09bn6e41.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9be9362eb174e4d3ef64e8d1c3662411c97a5ae4" title="life is filled with irony" width="150" height="150" /></p>
+<div class="figure">
+<img src="https://preview.redd.it/r49nq09bn6e41.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9be9362eb174e4d3ef64e8d1c3662411c97a5ae4" title="life is filled with irony" width="150" height="150" />
+
+</div>
 <dl>
 <dt><strong>Bio</strong></dt>
 <dd>Fourth-year biology major. My passions include videography, fashion, and astronomy.
@@ -395,6 +482,169 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa</span>
+<span class="co">#The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width</span>
+<span class="co">#IDE used: iPython (Anaconda)</span>
+<span class="im">import</span> csv
+<span class="im">import</span> pandas <span class="im">as</span> pd
+<span class="im">import</span> seaborn <span class="im">as</span> sns
+<span class="co">#import matplotlib</span>
+<span class="im">import</span> numpy <span class="im">as</span> np
+
+<span class="im">from</span> matplotlib <span class="im">import</span> pyplot
+<span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA
+<span class="im">from</span> sklearn <span class="im">import</span> preprocessing
+<span class="im">from</span> pathlib <span class="im">import</span> Path
+
+data_file <span class="op">=</span> Path(<span class="st">&quot;leaf_data.csv&quot;</span>)
+leaf_width_ex <span class="op">=</span> []
+leaf_length_ex <span class="op">=</span> []
+
+leaf_width_syr <span class="op">=</span> []
+leaf_length_syr <span class="op">=</span> []  
+
+leaf_width_sp <span class="op">=</span> []
+leaf_length_sp <span class="op">=</span> []
+
+basal_angle_ex <span class="op">=</span> []
+basal_angle_syr <span class="op">=</span> []
+basal_angle_sp <span class="op">=</span> []
+
+tip_angle_ex <span class="op">=</span> []
+tip_angle_syr <span class="op">=</span> []
+tip_angle_sp <span class="op">=</span> []
+
+pbt_ex <span class="op">=</span> []
+pbt_syr <span class="op">=</span> []
+pbt_sp <span class="op">=</span> []
+
+lbw_ex <span class="op">=</span> []
+lbw_syr <span class="op">=</span> []
+lbw_sp <span class="op">=</span> []
+
+species_list <span class="op">=</span> []
+ID_list <span class="op">=</span> []
+var_list <span class="op">=</span> [<span class="st">&#39;leaf length&#39;</span>, <span class="st">&#39;leaf width&#39;</span>, <span class="st">&#39;basal angle&#39;</span>, <span class="st">&#39;tip angle&#39;</span>, <span class="st">&#39;petiole-total ratio&#39;</span>, <span class="st">&#39;length-width ratio&#39;</span>]
+<span class="co">#making master list of lists</span>
+feed_to_PCA <span class="op">=</span> []
+
+<span class="co">#cleaning and conversion</span>
+<span class="cf">with</span> <span class="bu">open</span> (data_file, <span class="st">&#39;r&#39;</span>, newline <span class="op">=</span> <span class="st">&#39;&#39;</span> ) <span class="im">as</span> data:
+    asc <span class="op">=</span> csv.DictReader(data)
+    <span class="cf">for</span> x <span class="kw">in</span> asc:
+        species_list.append(x[<span class="st">&#39;species&#39;</span>])
+        ID_list.append(x[<span class="st">&#39;ID&#39;</span>])
+        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;exaltata&#39;</span>:
+            leaf_width_ex.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            leaf_length_ex.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            basal_angle_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))
+            tip_angle_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))
+            pbt_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))
+            lbw_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))
+            
+        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;syriaca&#39;</span>:  
+            leaf_width_syr.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            leaf_length_syr.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            basal_angle_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))
+            tip_angle_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))
+            pbt_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))
+            lbw_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))
+            
+        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;speciosa&#39;</span>:  
+            leaf_width_sp.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            leaf_length_sp.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))
+            basal_angle_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))
+            tip_angle_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))
+            pbt_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))
+            lbw_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))
+
+<span class="co">#creating vectors to feed into matplotlib PCA object</span>
+length_vector <span class="op">=</span> leaf_length_ex <span class="op">+</span> leaf_length_syr <span class="op">+</span> leaf_length_sp
+width_vector <span class="op">=</span> leaf_width_ex <span class="op">+</span> leaf_width_syr <span class="op">+</span> leaf_width_sp
+b_angle_vector <span class="op">=</span> basal_angle_ex <span class="op">+</span> basal_angle_syr <span class="op">+</span> basal_angle_sp
+tip_angle_vector <span class="op">=</span> tip_angle_ex <span class="op">+</span> tip_angle_syr <span class="op">+</span> tip_angle_sp
+pbt_vector <span class="op">=</span> pbt_ex <span class="op">+</span> pbt_syr <span class="op">+</span> pbt_sp
+lbw_vector <span class="op">=</span> lbw_ex <span class="op">+</span> lbw_syr <span class="op">+</span> lbw_sp 
+
+<span class="co">#adding lists to the master list of lists to convert to array</span>
+feed_to_PCA.append(length_vector)
+feed_to_PCA.append(width_vector)
+feed_to_PCA.append(b_angle_vector)
+feed_to_PCA.append(tip_angle_vector)
+feed_to_PCA.append(pbt_vector)
+feed_to_PCA.append(lbw_vector)
+
+<span class="co">#conversion to numpy array (unnecessary but useful if needed for matplotlib PCA)</span>
+array <span class="op">=</span> np.array(feed_to_PCA)
+array_scaled <span class="op">=</span> preprocessing.scale(array) <span class="co">#scaling data before running PCA</span>
+df_scaled <span class="op">=</span> pd.DataFrame(array_scaled) <span class="co">#converting NumPy array to Pandas data frame</span>
+df_tp <span class="op">=</span> df_scaled.transpose() <span class="co"># transposing because scikit PCA reads differently from matplotlib PCA</span>
+species_df <span class="op">=</span> pd.DataFrame(species_list) <span class="co">#adding species as its own data frame</span>
+species_df.columns <span class="op">=</span> [<span class="st">&quot;Species&quot;</span>] <span class="co">#giving the species data frame a column title</span>
+ID_df <span class="op">=</span> pd.DataFrame(ID_list)
+ID_df.columns <span class="op">=</span> [<span class="st">&quot;ID Number&quot;</span>]
+var_df <span class="op">=</span> pd.DataFrame(var_list)
+var_df.columns <span class="op">=</span> [<span class="st">&#39;Features&#39;</span>]
+
+<span class="co">#creating PCA object</span>
+myPCA <span class="op">=</span> PCA(n_components <span class="op">=</span> <span class="dv">2</span>)
+principal_comps <span class="op">=</span> myPCA.fit_transform(df_tp) <span class="co">#fit AND transform</span>
+principal_df <span class="op">=</span> pd.DataFrame(data <span class="op">=</span> principal_comps, columns <span class="op">=</span> [<span class="st">&quot;PC1&quot;</span>, <span class="st">&quot;PC2&quot;</span>])  
+feat_df <span class="op">=</span> pd.DataFrame(np.transpose(myPCA.components_))
+
+<span class="co">#final data frame for merging/plotting</span>
+final_df <span class="op">=</span> pd.concat([principal_df, species_df], axis <span class="op">=</span> <span class="dv">1</span>)
+final_df2 <span class="op">=</span> pd.concat([final_df, ID_df], axis <span class="op">=</span> <span class="dv">1</span>)
+final_df2.to_csv(<span class="st">&#39;finalDF.csv&#39;</span>)
+
+
+<span class="co">#scatterplot of </span>
+pyplot.figure(<span class="dv">1</span>)    
+pyplot.scatter(leaf_width_ex, leaf_length_ex, c <span class="op">=</span> <span class="st">&#39;y&#39;</span>, marker <span class="op">=</span> <span class="st">&#39;s&#39;</span>, label <span class="op">=</span> <span class="st">&#39;exaltata&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)
+pyplot.scatter(leaf_width_syr, leaf_length_syr, c <span class="op">=</span> <span class="st">&#39;b&#39;</span>, label <span class="op">=</span> <span class="st">&#39;syriaca&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)
+pyplot.scatter(leaf_width_sp, leaf_length_sp, c <span class="op">=</span> <span class="st">&#39;g&#39;</span>, marker <span class="op">=</span> <span class="st">&#39;d&#39;</span>, label <span class="op">=</span> <span class="st">&#39;speciosa&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)
+pyplot.legend(loc <span class="op">=</span> <span class="st">&#39;upper left&#39;</span>)
+pyplot.title(<span class="st">&quot;Milkweed leaf length vs. width by species&quot;</span>)
+pyplot.xlabel(<span class="st">&quot;Leaf width (mm)&quot;</span>)
+pyplot.ylabel(<span class="st">&quot;Leaf length (mm)&quot;</span>)
+pyplot.show()
+
+<span class="co">#plotting frequency distribution of basal angle by species</span>
+pyplot.figure(<span class="dv">2</span>)
+sns.distplot(basal_angle_ex, color <span class="op">=</span> <span class="st">&quot;yellow&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Exaltata&quot;</span>)
+sns.distplot(basal_angle_syr, color <span class="op">=</span> <span class="st">&quot;skyblue&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Syriaca&quot;</span>)
+sns.distplot(basal_angle_sp, color <span class="op">=</span> <span class="st">&#39;green&#39;</span>, label   <span class="op">=</span> <span class="st">&#39;Speciosa&#39;</span>)
+pyplot.legend(loc <span class="op">=</span> <span class="st">&quot;upper right&quot;</span>)
+pyplot.title(<span class="st">&quot;Frequency distribution of basal angle by species&quot;</span>)
+pyplot.xlabel(<span class="st">&quot;Basal angle (degrees)&quot;</span>)
+pyplot.ylabel(<span class="st">&quot;Frequency&quot;</span>)
+pyplot.show()
+
+<span class="co">#plotting frequency distribution of tip angle by species</span>
+sns.distplot(tip_angle_ex, color <span class="op">=</span> <span class="st">&quot;yellow&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Exaltata&quot;</span>)
+sns.distplot(tip_angle_syr, color <span class="op">=</span> <span class="st">&quot;skyblue&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Syriaca&quot;</span>)
+sns.distplot(tip_angle_sp, color <span class="op">=</span> <span class="st">&quot;green&quot;</span>, label <span class="op">=</span> <span class="st">&#39;Speciosa&#39;</span>)
+pyplot.legend(loc <span class="op">=</span> <span class="st">&quot;upper right&quot;</span>)
+pyplot.title(<span class="st">&quot;Frequency distribution of tip angle by species&quot;</span>)
+pyplot.xlabel(<span class="st">&quot;Tip angle (degrees)&quot;</span>)    
+pyplot.ylabel(<span class="st">&quot;Frequency&quot;</span>)
+pyplot.show()
+
+<span class="co">#visualizing Principal Component Analysis of the 3 asclepias species</span>
+pyplot.figure(<span class="dv">4</span>)
+colors <span class="op">=</span> [<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;skyblue&#39;</span>, <span class="st">&#39;green&#39;</span>]
+species_names <span class="op">=</span> [<span class="st">&#39;exaltata&#39;</span>, <span class="st">&#39;syriaca&#39;</span>, <span class="st">&#39;speciosa&#39;</span>]
+<span class="cf">for</span> sp, color <span class="kw">in</span> <span class="bu">zip</span>(species_names, colors):
+    keep_this_index <span class="op">=</span> final_df2[<span class="st">&quot;Species&quot;</span>] <span class="op">==</span> sp
+    pc1 <span class="op">=</span> final_df2.loc[keep_this_index, <span class="st">&#39;PC1&#39;</span>]
+    pc2 <span class="op">=</span> final_df2.loc[keep_this_index, <span class="st">&#39;PC2&#39;</span>]
+    pc1_scale <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (pc1.<span class="bu">max</span>() <span class="op">-</span> pc1.<span class="bu">min</span>()) <span class="co"># SCALE IT AGAIN!</span>
+    pc2_scale <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (pc2.<span class="bu">max</span>() <span class="op">-</span> pc2.<span class="bu">min</span>())
+    pyplot.scatter(pc1 <span class="op">*</span> pc1_scale, pc2 <span class="op">*</span> pc2_scale, c <span class="op">=</span> color, alpha <span class="op">=</span> <span class="fl">0.6</span>)
+pyplot.legend(species_names)
+pyplot.xlabel(<span class="st">&quot;Principal Component 1&quot;</span>)
+pyplot.ylabel(<span class="st">&quot;Principal Component 2&quot;</span>)
+pyplot.grid()</code></pre></div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -418,23 +668,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

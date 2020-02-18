@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="LeAnn Lo" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,14 +461,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">LeAnn Lo</h4>
-<h4 class="date">Edited 1/30/2020</h4>
+<h4 class="author"><em>LeAnn Lo</em></h4>
+<h4 class="date"><em>Edited 1/30/2020</em></h4>
 
 </div>
 
 
 <div class="figure">
-<img src="https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png" alt="" />
+<img src="https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png" alt="Not my dog but I really want one" />
 <p class="caption">Not my dog but I really want one</p>
 </div>
 <div id="bio" class="section level3">
@@ -398,6 +482,67 @@ $(document).ready(function () {
 <li>My favorite movies are <strong>Parasite</strong> (Picture of the year! Let’s go!), HER, and Rush Hour.</li>
 <li>I am trying to teach myself the guitar but don’t know anything about music theory (also trying to learn that)</li>
 </ul>
+</div>
+<div id="sample-script" class="section level3">
+<h3>Sample script</h3>
+<p><a href="scripts/extract_column.py">Extracting Column from csv Files (.py)</a></p>
+<p>This sample script was originally made to extract gene names from files that contain the gene names, counts, and various statistics. The extracted column is put into a text file and removes the first item which would typically be the word ‘gene’. This file is useful for looking comparing genes later on or any header column.</p>
+<p>This script can take an argument -c for the column number to be extracted, this index starts at 0 (0 is the first column and so on). The only default argument needed is the file path that is a csv file, it will take the first column on default.</p>
+<p>Usage: extract_column.py <file path> -c <column number with index starting at 0></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="co">&quot;&quot;&quot;</span>
+<span class="co">Gets all of the content that is in the first column of a csv</span>
+<span class="co">Skips the header to make content more iterable</span>
+
+<span class="co">Usage: Extract_header_column.py &lt;Directory of files&gt;</span>
+<span class="co">Output: Text files of the gene names in the same directory</span>
+
+<span class="co">Example output file name:</span>
+<span class="co">&lt;Sib_18_30_symmetric_difference_results.csv_names</span>
+<span class="co">&quot;&quot;&quot;</span>
+<span class="im">import</span> sys, csv, os, argparse
+
+<span class="kw">def</span> main(fName,column,dirName <span class="op">=</span> <span class="va">None</span>):
+    <span class="co">#with open(dirName + fName, &#39;r&#39;) as reader:</span>
+    <span class="cf">with</span> <span class="bu">open</span>(fName, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> reader: 
+        data <span class="op">=</span> [row <span class="cf">for</span> row <span class="kw">in</span> csv.reader(reader)]
+
+    <span class="co">#with open(dirName + fName + &#39;_names.txt&#39;, &#39;w&#39;) as writer:</span>
+    <span class="cf">with</span> <span class="bu">open</span>(fName <span class="op">+</span> <span class="st">&#39;_names.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> writer:
+        count <span class="op">=</span> <span class="dv">0</span>
+        <span class="cf">for</span> row <span class="kw">in</span> data:
+            <span class="cf">if</span> (count <span class="op">!=</span> <span class="dv">0</span>):
+                writer.write(row[column] <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
+            count <span class="op">+=</span> <span class="dv">1</span>
+    <span class="bu">print</span>(<span class="st">&quot;Wrote&quot;</span>, count, <span class="st">&quot;rows&quot;</span>)
+
+
+<span class="co">&quot;&quot;&quot; </span>
+<span class="co">#this function is used if you want to run on a directory</span>
+<span class="co">def runOnDir(dirName):</span>
+<span class="co">    filenames = next(os.walk(dirName))[2]</span>
+<span class="co">    for fName in filenames:</span>
+<span class="co">            print(&quot;Running on file:&quot;,  fName)</span>
+<span class="co">            main(fName, dirName)</span>
+<span class="co">&quot;&quot;&quot;</span>
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    
+    <span class="co">&quot;&quot;&quot;    for running on a directory</span>
+<span class="co">    dirName = sys.argv[1]</span>
+<span class="co">    if (dirName[-1] != &#39;/&#39;):</span>
+<span class="co">        dirName += &#39;/&#39;</span>
+<span class="co">    runOnDir(dirName)</span>
+<span class="co">    &quot;&quot;&quot;</span>
+
+    <span class="co">#this is used if you want to prompt the user for a specific column</span>
+    <span class="co">#inputNum = input(&quot;Which column number do you want to output?&quot;)</span>
+    p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Extracts the first (on default), or a given column from a csv file. This will output a new text file with _name at the end.&quot;</span>)
+    p.add_argument(<span class="st">&#39;file&#39;</span>, nargs<span class="op">=</span><span class="st">&#39;?&#39;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file path&quot;</span>)
+    p.add_argument(<span class="st">&quot;-c&quot;</span>, <span class="st">&quot;--column&quot;</span>, <span class="bu">type</span> <span class="op">=</span><span class="bu">int</span>, default<span class="op">=</span><span class="dv">0</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The column number (starting at 0) that you want to be extracted.&quot;</span>)
+    args <span class="op">=</span> p.parse_args()
+    <span class="co">#fName = sys.argv[1]    #without argsparse</span>
+    main(args.<span class="bu">file</span>,args.column)</code></pre></div>
 </div>
 
 <footer class="myfoot">
@@ -422,23 +567,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

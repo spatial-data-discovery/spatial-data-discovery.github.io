@@ -9,10 +9,9 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>About the Coder</title>
+<title>Resources | Software</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -400,82 +399,89 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>Ian Thompson</em></h4>
+<h1 class="title toc-ignore">Resources | Software</h1>
 
 </div>
 
 
+<div id="apps" class="section level3">
+<h3>Apps</h3>
 <dl>
-<dt><strong>Bio</strong></dt>
-<dd>I am a senior on the swim team with a Data Science major and Computer Science minor.
+<dt><a href="https://atom.io">Atom Text Editor</a></dt>
+<dd>A hackable, cross-platform, open-source text editor by GitHub.
+</dd>
+<dt><a href="https://ffmpeg.org/">FFmpeg</a></dt>
+<dd><p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
+<p>(<em>for Mac users: download the zip, unzip, and copy ffmpeg to /usr/local/share</em>)</p>
+</dd>
+<dt><a href="https://www.gimp.org/">GIMP</a></dt>
+<dd>The GNU Image Manipulation Program is a free and open-source cross-platform raster graphics editor.
+</dd>
+<dt><a href="https://github.com/git-for-windows/git/releases">Git for Windows</a></dt>
+<dd>A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
+</dd>
+<dt><a href="https://imagemagick.org/">ImageMagick</a></dt>
+<dd>A free cross-platform software to create, edit, compose, or convert bitmap images.
+</dd>
+<dt><a href="https://trac.osgeo.org/osgeo4w/">OSGeo4W</a></dt>
+<dd><p>A binary distribution of a broad set of open-source geospatial software (e.g., QGIS, GDAL/OGR, GRASS) for Windows environments.</p>
+<p>(<em>note: you can get Python3 w/ packages, netcdf, hdf5, and ffmpeg using OSGeo4W</em>)</p>
+</dd>
+<dt><a href="https://pandoc.org/">Pandoc</a></dt>
+<dd>A universal document converter.
+</dd>
+<dt><a href="https://www.giss.nasa.gov/tools/panoply/">Panoply</a></dt>
+<dd>A cross-platform application that plots geo-referenced and other arrays from netCDF, HDF, and other datasets.
+</dd>
+<dt><a href="https://www.qgis.org/en/site/">QGIS 3</a></dt>
+<dd>A free and open-source geographic information system.
 </dd>
 </dl>
-<p><strong>Hobbies</strong></p>
-<ul>
-<li>Fishing</li>
-<li>Puzzle Cubes</li>
-<li><em>Old</em> Nintendo video games</li>
-<li>Archery</li>
-</ul>
-<p><img src="https://i.redd.it/bj2qtsp7fif11.jpg" /> <!-- this is how you embed an image --></p>
-<div id="sample-script" class="section level4">
-<h4>Sample Script</h4>
-<p>This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude, longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.</p>
-<p>To run this script, place a netCDF file in the same folder as the script and run with the command</p>
-<pre><code>python netcdf_mean.py YourFile.nc
-</code></pre>
-<pre><code>&#39;&#39;&#39;
-&#39;&#39;&#39;
-Averaging climate and weather data (netCDF) by time
-@Author Ian Thompson
-&#39;&#39;&#39;
-import xarray as xr
-import netCDF4 as nd
-from netCDF4 import Dataset, num2date
-import pandas as pd
-import sys
-import argparse
-import warnings
-
-def main(nc_file):
-    file = &#39;./&#39; + str(nc_file)
-    print(&quot;File In: &quot; + file)
-    tp = nd.Dataset(file, &#39;r&#39;, Formate=&#39;netCDF4&#39;)
-
-    for var in tp.variables:
-        print(&quot;Name: &quot;, var,
-              &quot;|| Units: &quot;, tp[var].units,
-              &quot;|| Shape: &quot;, tp[var].shape,
-              &quot;|| Long Name: &quot;, tp[var].long_name)
-
-    tp_xr = xr.open_dataset(file)
-    with warnings.catch_warnings():
-        warnings.simplefilter(&quot;ignore&quot;, category=RuntimeWarning)
-        tp_mean = tp_xr.resample(time=&#39;1M&#39;).mean()
-
-    print(tp_mean.data_vars)
-    print(&#39;##################################################&#39;)
-
-
-    output = file + &quot;_mean&quot;
-
-    print(&quot;File Out: &quot; + output)
-
-    tp_mean.to_netcdf(output)
-
-
-if __name__ == &quot;__main__&quot;:
-    p = argparse.ArgumentParser(description=&quot;Averages the a netCDF file across time, writes out to new file&quot;)
-    p.add_argument(&#39;file&#39;, nargs=&#39;?&#39;, help=&quot;The file name - must be in the same folder as script&quot;)
-    args = p.parse_args()
-
-    main(args.file)
-
-    ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
-    ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-</code></pre>
+</div>
+<div id="programming-languages" class="section level3">
+<h3>Programming Languages</h3>
+<dl>
+<dt><a href="https://www.python.org/">Python 3</a></dt>
+<dd>A programming language that lets you work quickly and integrate systems more effectively.
+</dd>
+<dt><a href="https://cran.r-project.org/">R</a></dt>
+<dd>A freely available language and environment for statistical computing and graphics.
+</dd>
+</dl>
+</div>
+<div id="python-packages" class="section level3">
+<h3>Python Packages</h3>
+<dl>
+<dt><a href="https://github.com/ianare/exif-py">exifread</a></dt>
+<dd>Python package for reading exchangeable image file format (EXIF) metadata.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
+</dd>
+<dt><a href="https://pypi.org/project/gpsphoto/">gpsphoto</a></dt>
+<dd>Return, modify, or remove GPS data from JPEG or TIFF Exif data.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Requires ExifRead, piexif, and PIL.
+</dd>
+<dt><a href="https://www.h5py.org/">h5py</a></dt>
+<dd>Python package for reading and writing in the HDF5 binary data format.
+</dd>
+<dt><a href="https://pillow.readthedocs.io/en/stable/index.html">Pillow</a></dt>
+<dd>A friendly PIL (Python Imaging Library) fork by <a href="https://github.com/python-pillow/Pillow/graphs/contributors">Alex Clark and Contributors</a>.
+</dd>
+<dt><a href="https://www.hdfeos.org/software/pyhdf.php">pyhdf</a></dt>
+<dd>Python package for reading HDF4 (HDF-EOS) files.
+</dd>
+<dt><a href="https://docs.scipy.org/doc/scipy-0.16.1/reference/io.html#module-scipy.io.netcdf">scipy.io.netcdf</a></dt>
+<dd>Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
+</dd>
+<dt><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</a></dt>
+<dd>Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>
+</dd>
+</dl>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianaré Sévi and contributors.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Author Jess Williams (2019).<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Christoph Gohlke, Laboratory for Fluorescence Dynamics, University of California, Irvine.<a href="#fnref3">↩</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">

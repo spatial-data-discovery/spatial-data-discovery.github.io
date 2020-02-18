@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Pulak Raj" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,14 +461,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Pulak Raj</h4>
-<h4 class="date">Edited: 02/02/2020</h4>
+<h4 class="author"><em>Pulak Raj</em></h4>
+<h4 class="date"><em>Edited: 02/02/2020</em></h4>
 
 </div>
 
 
 <div class="figure">
-<img src="https://i.pinimg.com/736x/7d/69/fd/7d69fde10b2020441f9c8b93de2aa861--epee-fencing-fencing-sport.jpg" alt="" />
+<img src="https://i.pinimg.com/736x/7d/69/fd/7d69fde10b2020441f9c8b93de2aa861--epee-fencing-fencing-sport.jpg" alt="My favorite fencer, Max Heinzer" />
 <p class="caption">My favorite fencer, Max Heinzer</p>
 </div>
 <p><strong>Bio</strong> :</p>
@@ -403,6 +487,135 @@ $(document).ready(function () {
 <li>SQL</li>
 <li>etc.</li>
 </ul>
+<div id="sample-script" class="section level3">
+<h3>Sample Script</h3>
+<p><a href="scripts/hangman.py">Hangman (.py)</a></p>
+<p>My sample script is a simple hangman game. It opens up in command line and can be played in command line. The game requires a dictionary labeled american to be in the same folder.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># This script runs a simple hangman game in command line.</span>
+<span class="co">#</span>
+<span class="co"># Last edit: 2/10/20</span>
+
+<span class="co">#required modules</span>
+<span class="im">import</span> random
+<span class="im">import</span> argparse
+
+<span class="kw">class</span> Hangman(<span class="bu">object</span>):
+    <span class="co"># Opens up the dictionary</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, level <span class="op">=</span> <span class="dv">5</span>, non_ascii <span class="op">=</span> <span class="va">False</span>, dictionary <span class="op">=</span> <span class="st">&#39;american&#39;</span>):
+        <span class="va">self</span>.file_object <span class="op">=</span> <span class="bu">open</span>(dictionary, <span class="st">&#39;r&#39;</span>).read().split()
+        <span class="va">self</span>.non_ascii <span class="op">=</span> non_ascii
+        <span class="va">self</span>.level <span class="op">=</span> level
+        <span class="cf">return</span>
+
+    <span class="kw">def</span> play(<span class="va">self</span>):
+        <span class="co"># Letter that can be present in a word</span>
+        normal_letters <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>, <span class="st">&#39;k&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;m&#39;</span>, <span class="st">&#39;n&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;p&#39;</span>, <span class="st">&#39;q&#39;</span>, <span class="st">&#39;r&#39;</span>, <span class="st">&#39;s&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;u&#39;</span>, <span class="st">&#39;v&#39;</span>, <span class="st">&#39;w&#39;</span>, <span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>, <span class="st">&#39;z&#39;</span>, <span class="st">&quot;&#39;&quot;</span>]
+        normal_checker <span class="op">=</span> <span class="dv">0</span>
+        <span class="co"># Chooses an eligible word from the dictionary</span>
+        first_word <span class="op">=</span> random.choice(<span class="va">self</span>.file_object).lower()
+        <span class="cf">if</span> <span class="bu">len</span>(first_word) <span class="op">&lt;</span> <span class="va">self</span>.level:
+            first_word <span class="op">=</span> random.choice(<span class="va">self</span>.file_object).lower()
+        <span class="cf">if</span> <span class="va">self</span>.non_ascii <span class="op">==</span> <span class="va">False</span>:
+            <span class="cf">while</span> normal_checker <span class="op">==</span> <span class="dv">0</span>:
+                <span class="cf">for</span> i <span class="kw">in</span> first_word:
+                    <span class="cf">if</span> i <span class="kw">not</span> <span class="kw">in</span> normal_letters:
+                        first_word <span class="op">=</span> random.choice(<span class="va">self</span>.file_object).lower()
+                        <span class="cf">if</span> <span class="bu">len</span>(first_word) <span class="op">&lt;</span> <span class="va">self</span>.level:
+                            first_word <span class="op">=</span> random.choice(<span class="va">self</span>.file_object).lower()
+                    <span class="cf">elif</span> (i <span class="kw">in</span> normal_letters) <span class="kw">and</span> (i <span class="kw">is</span> first_word[<span class="bu">len</span>(first_word) <span class="op">-</span> <span class="dv">1</span>]):
+                        normal_checker <span class="op">=</span> <span class="dv">1</span>
+                    <span class="cf">else</span>:
+                        <span class="cf">pass</span>
+        <span class="co"># Removes apostrophe(s) from the word</span>
+        <span class="cf">if</span> <span class="st">&quot;&#39;&quot;</span> <span class="kw">in</span> first_word:
+            first_word <span class="op">=</span> <span class="bu">list</span>(first_word)
+            first_word.remove(<span class="st">&quot;&#39;&quot;</span>)
+            first_word <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(first_word)
+            <span class="bu">print</span>(<span class="st">&#39;Word contains an apostrophe. Apostrophe has been removed.&#39;</span>)
+        word <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(first_word)
+        x <span class="op">=</span> <span class="st">&#39; &#39;</span> <span class="op">*</span> <span class="bu">len</span>(word)
+        incorrect_count <span class="op">=</span> <span class="dv">0</span>
+        g <span class="op">=</span> <span class="dv">0</span>
+        letters_guessed <span class="op">=</span> <span class="st">&#39;&#39;</span>
+
+        <span class="co"># Multiple board states for different stages of the game</span>
+        boards <span class="op">=</span> [
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">6</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">5</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">4</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|  /|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">4</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|  /|</span><span class="ch">\\\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">4</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|  /|</span><span class="ch">\\\n</span><span class="st">&#39;</span> <span class="st">&#39;|  /</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">3</span>,
+
+        <span class="st">&#39;-----</span><span class="ch">\n</span><span class="st">|   |</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|   O</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|  /|</span><span class="ch">\\\n</span><span class="st">&#39;</span> <span class="st">&#39;|  / </span><span class="ch">\\\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;|</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">*</span> <span class="dv">3</span>
+        ]
+
+        <span class="bu">print</span>(boards[<span class="dv">0</span>] <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters:&#39;</span>)
+        <span class="co"># Handles guessing procedure for the game</span>
+        <span class="cf">while</span> (x <span class="kw">not</span> <span class="kw">in</span> word) <span class="kw">and</span> (g <span class="op">==</span> <span class="dv">0</span>):
+            same_letter <span class="op">=</span> <span class="dv">0</span>
+            long_letter <span class="op">=</span> <span class="dv">0</span>
+            duplicate_guess <span class="op">=</span> <span class="dv">0</span>
+            letter <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Guess a letter:  &#39;</span>)
+            <span class="cf">if</span> (letter <span class="kw">in</span> x) <span class="kw">or</span> (letter <span class="kw">in</span> letters_guessed):
+                duplicate_guess <span class="op">=</span> <span class="dv">1</span>
+            <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
+            <span class="cf">if</span> duplicate_guess <span class="op">==</span> <span class="dv">0</span>:
+                <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(word)):
+                        <span class="cf">if</span> letter <span class="kw">is</span> word[i]:
+                            x <span class="op">=</span> <span class="bu">list</span>(x)
+                            x[i] <span class="op">=</span> letter
+                            x <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(x)
+                            <span class="cf">if</span> same_letter <span class="op">==</span> <span class="dv">0</span>:
+                                <span class="bu">print</span>(<span class="st">&#39;Correct!&#39;</span>)
+                            same_letter <span class="op">=</span> <span class="dv">1</span>
+                        <span class="cf">elif</span> <span class="bu">len</span>(letter) <span class="op">&gt;</span> <span class="dv">1</span>:
+                            long_letter <span class="op">=</span> <span class="dv">1</span>
+                        <span class="cf">elif</span> i <span class="op">==</span> <span class="bu">len</span>(word) <span class="op">-</span> <span class="dv">1</span> <span class="kw">and</span> same_letter <span class="op">==</span> <span class="dv">0</span>:
+                            incorrect_count <span class="op">+=</span> <span class="dv">1</span>
+                            <span class="cf">if</span> incorrect_count <span class="op">==</span> <span class="dv">6</span>:
+                                <span class="bu">print</span>(<span class="st">&#39;Incorrect.&#39;</span>)
+                                g <span class="op">=</span> <span class="dv">1</span>
+                            <span class="cf">else</span>:
+                                <span class="bu">print</span>(<span class="st">&#39;Incorrect. Guess again.&#39;</span>)
+                            letters_guessed <span class="op">+=</span> <span class="st">&#39; &#39;</span> <span class="op">+</span> letter
+                        <span class="cf">else</span>:
+                            <span class="cf">pass</span>
+            <span class="co"># Handles error if more than one character is guessed</span>
+            <span class="cf">if</span> long_letter <span class="op">==</span> <span class="dv">1</span>:
+                <span class="bu">print</span>(boards[incorrect_count] <span class="op">+</span> x <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters: &#39;</span> <span class="op">+</span> letters_guessed <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">Please only enter one letter.&#39;</span>)
+            <span class="co"># Handles error if a letter that has been guessed is guessed again</span>
+            <span class="cf">elif</span> duplicate_guess <span class="op">==</span> <span class="dv">1</span>:
+                <span class="bu">print</span>(boards[incorrect_count] <span class="op">+</span> x <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters: &#39;</span> <span class="op">+</span> letters_guessed <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">You already guessed this letter.&#39;</span>)
+            <span class="cf">elif</span> (x <span class="kw">not</span> <span class="kw">in</span> word) <span class="kw">and</span> (g <span class="op">==</span> <span class="dv">0</span>) <span class="kw">and</span> (duplicate_guess <span class="op">==</span> <span class="dv">0</span>):
+                <span class="bu">print</span>(boards[incorrect_count] <span class="op">+</span> x <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters: &#39;</span> <span class="op">+</span> letters_guessed)
+
+        <span class="cf">if</span> g <span class="op">==</span> <span class="dv">1</span>:
+            <span class="bu">print</span>(boards[incorrect_count] <span class="op">+</span> x <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters: &#39;</span> <span class="op">+</span> letters_guessed <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
+            <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">You lose! The word was &#39;</span> <span class="op">+</span> first_word <span class="op">+</span> <span class="st">&#39;.</span><span class="ch">\n</span><span class="st">&#39;</span>)
+
+        <span class="cf">if</span> x <span class="kw">in</span> word:
+            <span class="bu">print</span>(boards[incorrect_count] <span class="op">+</span> x <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;- &#39;</span> <span class="op">*</span> <span class="bu">len</span>(first_word) <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;Guessed Letters: &#39;</span> <span class="op">+</span> letters_guessed <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
+            <span class="bu">print</span>(<span class="st">&#39;You win!</span><span class="ch">\n</span><span class="st">&#39;</span>)
+
+        play_again <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Play again?(Y/N)  &#39;</span>)
+        <span class="cf">if</span> (play_again <span class="op">==</span> <span class="st">&#39;Y&#39;</span>) <span class="kw">or</span> (play_again <span class="op">==</span> <span class="st">&#39;y&#39;</span>):
+            <span class="va">self</span>.play()
+        <span class="cf">else</span>:
+            exit()
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&#39;Play hangman. All letters are lowercase and there are no symbols.&#39;</span>)
+    args <span class="op">=</span> parser.parse_args()
+    <span class="im">from</span> hangman <span class="im">import</span> <span class="op">*</span>
+    h <span class="op">=</span> Hangman()
+    h.play()</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -426,23 +639,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

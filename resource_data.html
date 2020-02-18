@@ -9,10 +9,9 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>About the Coder</title>
+<title>Resources | Data</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -400,82 +399,56 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>Ian Thompson</em></h4>
+<h1 class="title toc-ignore">Resources | Data</h1>
 
 </div>
 
 
 <dl>
-<dt><strong>Bio</strong></dt>
-<dd>I am a senior on the swim team with a Data Science major and Computer Science minor.
+<dt><a href="https://data.census.gov/cedsci">Census Data</a></dt>
+<dd>The leading source of quality data about the US’s people and economy.
+</dd>
+<dt><a href="https://www.data.gov/">Data.gov</a></dt>
+<dd>The home of the U.S. Government’s open data.
+</dd>
+<dt><a href="https://search.earthdata.nasa.gov/search">EarthData</a></dt>
+<dd>Access thousands of unique data products in NASA’s Earth Observing System Data and Information System (EOSDIS) collection from a variety of sources including the International Space Station, satellites, airborne campaigns, field campaigns, in-situ instruments, and model outputs.
+</dd>
+<dt><a href="https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf">Elfelt Server List</a></dt>
+<dd>(PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
+</dd>
+<dt><a href="https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/">FEC Elections and Voting</a></dt>
+<dd>Every two years, the Federal Election Commission publishes Federal Elections, a compilation of official, certified federal election results; these include primary, runoff, and general election results for the Senate, the House of Representatives and (when applicable) the President.
+</dd>
+<dt><a href="http://geo.aiddata.org/query/#!/">GeoQuery</a></dt>
+<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
+</dd>
+<dt><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a></dt>
+<dd>Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
+</dd>
+<dt><a href="https://www.naturalearthdata.com/">Natural Earth</a></dt>
+<dd>A public-domain map dataset at 1:10m, 1:50m, and 1:110 million scales featuring tightly integrated vector and raster data for making a variety of visually pleasing, well-crafted maps.
+</dd>
+<dt><a href="http://dwtkns.com/srtm30m/">SRTM 30-m DEM</a></dt>
+<dd>Derek Watkins’s interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
+</dd>
+<dt><a href="http://thematicmapping.org/downloads/world_borders.php">Thematic Mapping World Borders</a></dt>
+<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
+</dd>
+<dt><a href="https://pubs.usgs.gov/of/2006/1187/basemaps/continents/">USGS Continents</a></dt>
+<dd>Esri shapefile for the major continent boundaries.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>
+</dd>
+<dt><a href="https://vgin.maps.arcgis.com/home/index.html">VA GIS Clearinghouse</a></dt>
+<dd>Hosted by the Virginia Geographic Information Network (VGIN), the GIS Clearinghouse is a repository of geospatial data produced and used by state agencies in Virginia, localities in Virginia, Federal Government partners, non-profits, and colleges and universities across Virginia.
 </dd>
 </dl>
-<p><strong>Hobbies</strong></p>
-<ul>
-<li>Fishing</li>
-<li>Puzzle Cubes</li>
-<li><em>Old</em> Nintendo video games</li>
-<li>Archery</li>
-</ul>
-<p><img src="https://i.redd.it/bj2qtsp7fif11.jpg" /> <!-- this is how you embed an image --></p>
-<div id="sample-script" class="section level4">
-<h4>Sample Script</h4>
-<p>This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude, longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.</p>
-<p>To run this script, place a netCDF file in the same folder as the script and run with the command</p>
-<pre><code>python netcdf_mean.py YourFile.nc
-</code></pre>
-<pre><code>&#39;&#39;&#39;
-&#39;&#39;&#39;
-Averaging climate and weather data (netCDF) by time
-@Author Ian Thompson
-&#39;&#39;&#39;
-import xarray as xr
-import netCDF4 as nd
-from netCDF4 import Dataset, num2date
-import pandas as pd
-import sys
-import argparse
-import warnings
-
-def main(nc_file):
-    file = &#39;./&#39; + str(nc_file)
-    print(&quot;File In: &quot; + file)
-    tp = nd.Dataset(file, &#39;r&#39;, Formate=&#39;netCDF4&#39;)
-
-    for var in tp.variables:
-        print(&quot;Name: &quot;, var,
-              &quot;|| Units: &quot;, tp[var].units,
-              &quot;|| Shape: &quot;, tp[var].shape,
-              &quot;|| Long Name: &quot;, tp[var].long_name)
-
-    tp_xr = xr.open_dataset(file)
-    with warnings.catch_warnings():
-        warnings.simplefilter(&quot;ignore&quot;, category=RuntimeWarning)
-        tp_mean = tp_xr.resample(time=&#39;1M&#39;).mean()
-
-    print(tp_mean.data_vars)
-    print(&#39;##################################################&#39;)
-
-
-    output = file + &quot;_mean&quot;
-
-    print(&quot;File Out: &quot; + output)
-
-    tp_mean.to_netcdf(output)
-
-
-if __name__ == &quot;__main__&quot;:
-    p = argparse.ArgumentParser(description=&quot;Averages the a netCDF file across time, writes out to new file&quot;)
-    p.add_argument(&#39;file&#39;, nargs=&#39;?&#39;, help=&quot;The file name - must be in the same folder as script&quot;)
-    args = p.parse_args()
-
-    main(args.file)
-
-    ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
-    ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-</code></pre>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref3">↩</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">

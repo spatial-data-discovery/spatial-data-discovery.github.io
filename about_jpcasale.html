@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Jonah Casale, Student" />
@@ -15,7 +15,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -24,6 +23,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -55,7 +114,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,6 +130,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -173,6 +235,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -217,7 +281,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -230,17 +293,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -260,8 +326,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -377,14 +461,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Jonah Casale, Student</h4>
-<h4 class="date">Edited: 2020-03-02</h4>
+<h4 class="author"><em>Jonah Casale, Student</em></h4>
+<h4 class="date"><em>Edited: 2020-03-02</em></h4>
 
 </div>
 
 
 <div class="figure">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg" title="Jonah Casale" alt="" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg" title="Jonah Casale" alt="ALT TEXT" />
 <p class="caption">ALT TEXT</p>
 </div>
 <dl>
@@ -392,7 +476,83 @@ $(document).ready(function () {
 <dd>I am from Redmond, WA, and I am a student at the College of William and Mary. I enjoy many activities, including drawing, singing, games, and weight lifting; I especially enjoy <strong>acting</strong>. What I do <em>not</em> like? I’d say jogging, useless Apple products, and hot weather.
 </dd>
 </dl>
-<p>CODING LANGUAGES I’VE WORKED WITH - Python - Java - C and C++ - A tiny bit of Pascal - A tiny bit of SQL</p>
+<p>CODING LANGUAGES I’VE WORKED WITH</p>
+<ul>
+<li>Python</li>
+<li>Java</li>
+<li>C and C++</li>
+<li>A tiny bit of Pascal</li>
+<li>A tiny bit of SQL</li>
+</ul>
+<div id="sample-python-script" class="section level2">
+<h2>Sample Python Script</h2>
+<p><a href="/scripts/caloric_needs_calculator.py">caloric_needs_calculator.py</a> This is a script that calculates your daily caloric needs.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># -*- coding: utf-8 -*-</span>
+<span class="co">&quot;&quot;&quot;</span>
+<span class="co">Created on Sat Feb  8 18:44:30 2020</span>
+
+<span class="co">@author: jandj</span>
+<span class="co">&quot;&quot;&quot;</span>
+
+<span class="co">##</span>
+<span class="co"># This is a Python utility script for Spatial Data Discovery, created by Jonah Casale.</span>
+<span class="co"># This script calculates your caloric needs based on height, age, sex, and weight.</span>
+<span class="co">##</span>
+
+<span class="co"># Imports here</span>
+<span class="im">import</span> argparse
+
+<span class="co"># First determine the person&#39;s BMR using Harris-Benedict formula.</span>
+<span class="co"># Adult male: 66 + (6.3 x body weight in lbs.) + (12.9 x height in inches) - (6.8 x age in years) = BMR</span>
+<span class="co"># Adult female: 655 + (4.3 x weight in lbs.) + (4.7 x height in inches) - (4.7 x age in years) = BMR </span>
+userBodyWeight <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please enter your body weight (lbs.): </span><span class="ch">\n</span><span class="st">&quot;</span>)
+userHeight <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please enter your height (in inches): </span><span class="ch">\n</span><span class="st">&quot;</span>)
+userSex <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please enter your sex: type M for male or F for female: </span><span class="ch">\n</span><span class="st">&quot;</span>)
+userAge <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please enter your age (in years): </span><span class="ch">\n</span><span class="st">&quot;</span>)
+<span class="co"># Cast all the numerical inputs to floats.</span>
+userBodyWeight <span class="op">=</span> <span class="bu">float</span>(userBodyWeight)
+userHeight <span class="op">=</span> <span class="bu">float</span>(userHeight)
+userAge <span class="op">=</span> <span class="bu">float</span>(userAge)
+<span class="co"># Check if user&#39;s inputs are positive, not negative.  If negative, print error message.  </span>
+<span class="co"># Otherwise, program continues.</span>
+<span class="cf">if</span> (<span class="bu">float</span>(userBodyWeight) <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">or</span> (<span class="bu">float</span>(userHeight) <span class="op">&lt;</span> <span class="dv">0</span>) <span class="kw">or</span> (<span class="bu">float</span>(userAge) <span class="op">&lt;</span> <span class="dv">0</span>) :
+    <span class="bu">print</span>(<span class="st">&quot;One of your answers is a negative number.  Please enter positive numbers only.  Try again.&quot;</span>)
+<span class="cf">else</span> :
+    <span class="co"># Determine formula based on sex to calculate BMR.</span>
+    <span class="cf">if</span> (userSex <span class="op">==</span> <span class="st">&quot;M&quot;</span>) <span class="kw">or</span> (userSex <span class="op">==</span> <span class="st">&quot;m&quot;</span>) :
+        userBMR <span class="op">=</span> <span class="dv">66</span> <span class="op">+</span> (<span class="fl">6.3</span> <span class="op">*</span> userBodyWeight) <span class="op">+</span> (<span class="fl">12.9</span> <span class="op">*</span> userHeight) <span class="op">-</span> (<span class="fl">6.8</span> <span class="op">*</span> userAge) 
+    <span class="cf">if</span> (userSex <span class="op">==</span> <span class="st">&quot;F&quot;</span>) <span class="kw">or</span> (userSex <span class="op">==</span> <span class="st">&quot;f&quot;</span>) :
+        userBMR <span class="op">=</span> <span class="dv">655</span> <span class="op">+</span> (<span class="fl">4.3</span> <span class="op">*</span> userBodyWeight) <span class="op">+</span> (<span class="fl">4.7</span> <span class="op">*</span> userHeight) <span class="op">-</span> (<span class="fl">4.7</span> <span class="op">*</span> userAge) 
+        
+    <span class="co"># Now ask for user&#39;s activity level.</span>
+    <span class="bu">print</span>(<span class="st">&quot;Would you say that you are: </span><span class="ch">\n</span><span class="st">&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;sedentary (little or no exercise at all)&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;lightly_active (light exercise/sports 1-3 days/week)&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;moderately_active (moderate exercise/sports 3-5 days/week)&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;very_active (hard exercise/sports 6-7 days a week)&quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;extremely_active (we&#39;re talking elite athletes here!)&quot;</span>)
+    
+    activityLevel <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please type your activity level (sedentary, lightly_active, moderately_active, very_active, extremely_active): </span><span class="ch">\n</span><span class="st">&quot;</span>)
+    
+    <span class="cf">if</span> activityLevel <span class="op">==</span> <span class="st">&quot;sedentary&quot;</span> :
+        caloricNeeds <span class="op">=</span> userBMR <span class="op">*</span> <span class="fl">1.2</span>
+    <span class="cf">elif</span> activityLevel <span class="op">==</span> <span class="st">&quot;lightly_active&quot;</span> :
+        caloricNeeds <span class="op">=</span> userBMR <span class="op">*</span> <span class="fl">1.375</span>
+    <span class="cf">elif</span> activityLevel <span class="op">==</span> <span class="st">&quot;moderately_active&quot;</span> :
+        caloricNeeds <span class="op">=</span> userBMR <span class="op">*</span> <span class="fl">1.55</span>
+    <span class="cf">elif</span> activityLevel <span class="op">==</span> <span class="st">&quot;very_active&quot;</span> :
+        caloricNeeds <span class="op">==</span> userBMR <span class="op">*</span> <span class="fl">1.725</span>
+    <span class="cf">elif</span> activityLevel <span class="op">==</span> <span class="st">&quot;extremely_active&quot;</span> :
+        caloricNeeds <span class="op">==</span> userBMR <span class="op">*</span> <span class="fl">1.9</span>
+    <span class="cf">else</span> :
+        <span class="bu">print</span>(<span class="st">&quot;You inputed your activity level incorrectly.  Start over and try again.&quot;</span>)
+        
+    <span class="bu">print</span>(<span class="st">&quot; &quot;</span>)
+    <span class="bu">print</span>(<span class="st">&quot;Based on the information you have inputted, your APPROXIMATE caloric needs are &quot;</span> <span class="op">+</span> <span class="bu">str</span>(caloricNeeds) <span class="op">+</span> <span class="st">&quot; calories per day to maintain your current weight.&quot;</span>)
+    
+    
+p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Calculates your daily caloric needs&quot;</span>)</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -416,23 +576,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

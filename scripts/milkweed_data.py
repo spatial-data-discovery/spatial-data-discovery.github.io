@@ -3,7 +3,7 @@
 
 #This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa
 #KThe script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width
-#IDE used: iPython (Anaconda)
+#IDE used: Spyder (Anaconda)
 import csv
 import pandas as pd
 import seaborn as sns

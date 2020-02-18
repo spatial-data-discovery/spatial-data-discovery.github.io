@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Grant Luisi" />
@@ -16,7 +16,6 @@
 <title>About the Coder</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<script src="site_libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -25,6 +24,66 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -56,7 +115,9 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -70,6 +131,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -174,6 +236,8 @@ $(document).ready(function () {
 });
 </script>
 
+<div class="container-fluid main-container">
+
 <!-- tabsets -->
 
 <style type="text/css">
@@ -218,7 +282,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -231,17 +294,20 @@ $(document).ready(function () {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
 
 
 
@@ -261,8 +327,26 @@ $(document).ready(function () {
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="resources.html">Resources</a>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resource_data.html">Data</a>
+    </li>
+    <li>
+      <a href="resource_link.html">Links</a>
+    </li>
+    <li>
+      <a href="resource_meth.html">Methods</a>
+    </li>
+    <li>
+      <a href="resource_soft.html">Software</a>
+    </li>
+  </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -378,13 +462,16 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Grant Luisi</h4>
-<h4 class="date">2020-01-30</h4>
+<h4 class="author"><em>Grant Luisi</em></h4>
+<h4 class="date"><em>2020-01-30</em></h4>
 
 </div>
 
 
-<p><img src="https://static.wixstatic.com/media/057dbf_8934bdaa47114405ba4a10619311c98b.jpg/v1/crop/x_0,y_577,w_3144,h_1637/fill/w_511,h_301,al_c,q_80,usm_0.66_1.00_0.01/057dbf_8934bdaa47114405ba4a10619311c98b.webp" title="Skyhawk N2838L. Williamsburg Flight Center." /></p>
+<div class="figure">
+<embed src="https://static.wixstatic.com/media/057dbf_8934bdaa47114405ba4a10619311c98b.jpg/v1/crop/x_0,y_577,w_3144,h_1637/fill/w_511,h_301,al_c,q_80,usm_0.66_1.00_0.01/057dbf_8934bdaa47114405ba4a10619311c98b.webp" title="Skyhawk N2838L. Williamsburg Flight Center." />
+
+</div>
 <dl>
 <dt>Bio</dt>
 <dd>My name is Grant and I am a junior at the College of William and Mary. I am majoring in Computational and Applied Mathematics and Statistics (CAMS) with a minor in Classical Studies.
@@ -396,6 +483,63 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="script" class="section level3">
+<h3>Script</h3>
+<p><a href="scripts/crosswind.py">crosswind (.py)</a></p>
+<p>I wrote my sample script to help with initial decision making when I am flying.<br />
+Every runway is denoted by the direction it is pointing to divided by 10. For example taking off runway 9 would indicate we are traveling to the east (90 degrees). Every runway has an alternate runway offset by 180 degrees, so the same strip of pavement serves as runway 9 and 27.</p>
+<p>It is also important to take wind direction and speed into account. An aircraft should always be taking off into the wind, and never with a tailwind. The crosswind component is an important piece of information when determining if it is safe to takeoff or land on a particular runway.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># crosswind.py</span>
+<span class="co">#</span>
+<span class="co"># Author: Grant Luisi</span>
+<span class="co">#</span>
+<span class="co"># Date: 2020-02-07</span>
+<span class="co">#</span>
+<span class="co"># This script calculates which runway should be used based</span>
+<span class="co"># on the wind and calculates the crosswind component</span>
+<span class="co"># Required Modules</span>
+<span class="im">from</span> math <span class="im">import</span> sin, radians
+<span class="im">import</span> argparse
+
+<span class="co"># Function</span>
+
+<span class="kw">def</span> crosswind():
+    r <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter a runway number (1-36): &#39;</span>))
+    d <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter wind direction in degrees (1-360): &#39;</span>))
+    s <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter wind velocity: &#39;</span>))
+    <span class="cf">try</span>:
+        <span class="co"># determining runways</span>
+        first_runway <span class="op">=</span> r
+        <span class="cf">if</span> first_runway <span class="op">&lt;=</span> <span class="dv">18</span>:
+            second_runway <span class="op">=</span> r<span class="op">+</span><span class="dv">18</span>
+        <span class="cf">else</span>:
+            second_runway <span class="op">=</span> r<span class="dv">-18</span>
+        <span class="co"># determining the desired runway</span>
+        first_runway <span class="op">=</span> first_runway<span class="op">*</span><span class="dv">10</span>
+        second_runway <span class="op">=</span> second_runway<span class="op">*</span><span class="dv">10</span>
+        first_runway_degree_crosswind <span class="op">=</span> <span class="bu">abs</span>(d<span class="op">-</span>first_runway)
+        second_runway_degree_crosswind <span class="op">=</span> <span class="bu">abs</span>(d<span class="op">-</span>second_runway)
+        <span class="cf">if</span> first_runway_degree_crosswind<span class="op">&gt;</span>second_runway_degree_crosswind:
+            desired_runway <span class="op">=</span> second_runway
+        <span class="cf">else</span>:
+            desired_runway <span class="op">=</span> first_runway
+        <span class="co"># Calculating crosswind component if intial runway is preferred</span>
+        <span class="cf">if</span> desired_runway <span class="op">==</span> first_runway:
+            crosswind_component <span class="op">=</span> s<span class="op">*</span>sin(radians(first_runway_degree_crosswind))
+            <span class="bu">print</span>(<span class="st">&#39;Use runway &#39;</span><span class="op">+</span><span class="bu">str</span>(first_runway<span class="op">/</span><span class="dv">10</span>)<span class="op">+</span><span class="st">&#39;. The crosswind component is &#39;</span><span class="op">+</span><span class="bu">str</span>(crosswind_component))
+        <span class="co"># Calculating crosswind component if other runway is preferred</span>
+        <span class="cf">elif</span> desired_runway <span class="op">==</span> second_runway:
+            crosswind_component <span class="op">=</span> s<span class="op">*</span>sin(radians(second_runway_degree_crosswind))
+            <span class="bu">print</span>(<span class="st">&#39;Instead of your intial runway, use runway &#39;</span><span class="op">+</span><span class="bu">str</span>(second_runway<span class="op">/</span><span class="dv">10</span>)<span class="op">+</span><span class="st">&#39;. The crosswind_component is &#39;</span><span class="op">+</span><span class="bu">str</span>(crosswind_component))
+    <span class="cf">except</span> <span class="pp">ValueError</span>:
+        <span class="bu">print</span>(<span class="st">&#39;Oops&#39;</span>)
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
+    p <span class="op">=</span> argparse.ArgumentParser(
+        description<span class="op">=</span><span class="st">&quot;Calculates which runway to use and the associated crosswind component&quot;</span>)
+    args <span class="op">=</span> p.parse_args()
+    crosswind()</code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -419,23 +563,6 @@ $(document).ready(function () {
 
 
 </script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
