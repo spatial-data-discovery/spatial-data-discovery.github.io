@@ -21,7 +21,7 @@ def updateOld(old, oldLines, new, newLines):
 
 
 #Begin Program by parsing args. Should only be help.
-cmdarg = argparse.ArgumentParser(description = "Updates Changelog. You will need powershell execution permissions.")
+cmdarg = argparse.ArgumentParser(description = "Updates Changelog. You will need powershell execution permissions. To do this, open Powershell as an administrator (Right click in start menu) and paste the following command: Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser")
 args = cmdarg.parse_args()
 
 #get the local directory for use in this program.
@@ -73,7 +73,7 @@ except:
     log = open("changelog.txt", "w")
     log.close()
     log = open("changelog.txt", "a")
-    
+
 #Get the list of lines for comparison
 oldLines = old.readlines()
 newLines = new.readlines()

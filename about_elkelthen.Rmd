@@ -15,11 +15,11 @@ date: "Edited: 1/30/2020"
   -  working in Java, Python, C, and C++
 
 
-![](https://edit.co.uk/uploads/2016/12/Image-2-Alternatives-to-stock-photography-Thinkstock.jpg 'Tyler W. Davis')
+![](https://edit.co.uk/uploads/2016/12/Image-2-Alternatives-to-stock-photography-Thinkstock.jpg 'Some Random Guy')
 This is the first result when you google "Generic Stock Photo."
 
 ### Sample script
-[Music Randomizer (.py)](scripts/music_randomizer.py)
+[Changelog Generator (.py)](scripts/changelog_generator.py)
 
 My sample script is a changelog updater.
 I wrote it because doing homework is boring.
