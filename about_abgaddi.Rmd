@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Abby Gaddi"
-date: "Edited: 2020-02-02"
+date: "Edited: 2020-19-02"
 ---
 
 ![](https://data.whicdn.com/images/315745282/original.jpg "panda eating ramen")
@@ -24,7 +24,8 @@ It uses a slot machine simulator as an example for Upper Confidence Bound reinfo
 This type of machine learning can be used to help other problems such as identifying the best treatment in clinical testing
 and looking at best performance in online advertising or in game designing.
 
-``` #slot_machine.py
+``` {python slots, eval=FALSE}
+#slot_machine.py
 #
 #Author: Abby Gaddi
 #
