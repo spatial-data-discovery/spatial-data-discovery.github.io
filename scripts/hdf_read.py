@@ -2,9 +2,9 @@
 #
 # hdf_read.py
 #
-# VERSION 0.1
+# VERSION 0.2
 #
-# LAST EDIT: 2019-10-18
+# LAST EDIT: 2020-02-25
 #
 # This script reads an HDF5 file.
 #
@@ -128,11 +128,11 @@ def print_attrs(hf, group):
 ###############################################################################
 # MAIN
 ###############################################################################
-# Create a system varianble called "DS_WORKSPACE" and save working path to it
+# Set working directory to "DS_WORKSPACE" or default to local directory
 try:
     my_dir = os.environ['DS_WORKSPACE']
 except:
-    my_dir = os.path.expanduser("~")
+    my_dir = "."
 
 my_file = "test.hdf"
 hdf_path = os.path.join(my_dir, my_file)

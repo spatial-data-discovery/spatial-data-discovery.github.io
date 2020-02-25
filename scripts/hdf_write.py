@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2019-10-11
+# LAST EDIT: 2020-02-25
 #
 # This script writes an HDF5 file.
 
@@ -21,6 +21,20 @@ import numpy
 ###############################################################################
 # FUNCTIONS
 ###############################################################################
+def check_fstr():
+    """
+    Name:     check_fstr
+    Inputs:   None.
+    Outputs:  bool
+    Features: Returns true if f strings are supported based on Python version
+    """
+    f_str = True
+    py_maj, py_min = sys.version_info[:2]
+    if py_maj == 3 and py_min < 6:
+        f_str = False
+    return f_str
+
+
 def set_attr(hf, attr_name, attr_val, obj_path):
         """
         Name:     set_attr
@@ -50,34 +64,29 @@ def set_attr(hf, attr_name, attr_val, obj_path):
 ###############################################################################
 # MAIN
 ###############################################################################
-# Check Python major/minor version (e.g., 3.7) for f string support:
-f_str = True
-py_maj, py_min = sys.version_info[:2]
-if py_maj == 3 and py_min < 6:
-    f_str = False
 
-# Create a system varianble called "DS_WORKSPACE" and save working path to it
+# Set working directory to "DS_WORKSPACE" or default to local directory
 try:
     my_dir = os.environ['DS_WORKSPACE']
 except:
-    my_dir = os.path.expanduser("~")
+    my_dir = "."
 
 my_file = "test.hdf"
 hdf_path = os.path.join(my_dir, my_file)
 
 if os.path.isfile(hdf_path):
     # Open for appending
-    print('opening file')
+    print('opening existing HDF file')
     hdfile = h5py.File(hdf_path, 'r+')
 else:
     # Create new file
-    print('creating file')
+    print('creating HDF file')
     hdfile = h5py.File(hdf_path, 'w')
 
 # Writing root attributes
 if False:
     set_attr(hdfile, "author", "Tyler W. Davis", "/")
-    set_attr(hdfile, "date", "2019-10-04", "/")
+    set_attr(hdfile, "date", "2020-02-25", "/")
     set_attr(hdfile, "affiliation", "William & Mary", "/")
 
 # Create a group
@@ -102,6 +111,9 @@ if False:
 
 # Create the assignment dataset:
 if False:
+    # Check Python major/minor version (e.g., 3.7) for f string support:
+    f_str = check_fstr()
+
     my_data_file = "assignment.asc"
     my_proj_file = "assignment.prj"
     my_data_path = os.path.join(my_dir, my_data_file)
