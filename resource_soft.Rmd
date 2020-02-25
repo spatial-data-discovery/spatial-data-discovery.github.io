@@ -18,6 +18,9 @@ title: "Resources | Software"
 [Git for Windows](https://github.com/git-for-windows/git/releases)
 :   A lightweight, native set of tools that brings the full feature set of the Git SCM to Windows while providing appropriate user interfaces for experienced Git users and novices alike.
 
+[HDFView](https://www.hdfgroup.org/downloads/hdfview/)
+:   A visual tool written in Java for browsing and editing HDF (HDF5 and HDF4) files.
+
 [ImageMagick](https://imagemagick.org/)
 :   A free cross-platform software to create, edit, compose, or convert bitmap images.
 

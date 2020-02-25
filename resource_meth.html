@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
 <title>Resources | Methods</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -53,9 +54,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -69,7 +68,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -174,8 +172,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -220,6 +216,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -232,20 +229,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -428,7 +422,7 @@ $(document).ready(function () {
 </div>
 <div id="hacking-arcgis-pros-python" class="section level3">
 <h3>Hacking ArcGIS Pro’s Python</h3>
-<p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
+<p><a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm</a></p>
 <ul>
 <li>Clone ArcGIS Pro python environment and name it (e.g., ‘sdd’)</li>
 <li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
@@ -439,21 +433,21 @@ $(document).ready(function () {
 <h3>Converting Images to Animations</h3>
 <p>Based on Davis’s MODIS EVI example using <a href="https://www.gimp.org/">GIMP</a> and FFmpeg (FFmpeg installed with <a href="https://imagemagick.org/index.php">Imagemagick</a>).</p>
 <ol style="list-style-type: decimal">
-<li>Load spatial data into QGIS
+<li><p>Load spatial data into QGIS</p>
 <ul>
 <li>Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)</li>
 <li>Create layout (save layout in case you need to come back to it)</li>
 <li>Add map(s), legend(s), and text to layout</li>
 <li>Update and export maps to images (PNG) for each visualization</li>
 </ul></li>
-<li>Load images into GIMP
+<li><p>Load images into GIMP</p>
 <ul>
 <li>Open one PNG in GIMP</li>
 <li>Open as layers the remaining images (order most recent layer at the top)</li>
 <li>Crop image to selection (use Rectangle Select Tool (shortcut key <code>r</code>) to draw a box around what you want, then use Image → Crop to Selection)</li>
 <li>Optimize your layers for GIF animation (Filters → Animation → Optimize for GIF)</li>
 </ul></li>
-<li>Save your layers as an animated GIF (Export → GIF)
+<li><p>Save your layers as an animated GIF (Export → GIF)</p>
 <ul>
 <li>Check [x] As animation</li>
 <li>Loop forever</li>
@@ -522,6 +516,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="LeAnn Lo" />
@@ -14,6 +14,7 @@
 
 <title>About the Coder</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -25,36 +26,63 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #0000ff; } /* Keyword */
-code > span.ch { color: #008080; } /* Char */
-code > span.st { color: #008080; } /* String */
-code > span.co { color: #008000; } /* Comment */
-code > span.ot { color: #ff4000; } /* Other */
-code > span.al { color: #ff0000; } /* Alert */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #008000; font-weight: bold; } /* Warning */
-code > span.cn { } /* Constant */
-code > span.sc { color: #008080; } /* SpecialChar */
-code > span.vs { color: #008080; } /* VerbatimString */
-code > span.ss { color: #008080; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #0000ff; } /* ControlFlow */
-code > span.op { } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ff4000; } /* Preprocessor */
-code > span.do { color: #008000; } /* Documentation */
-code > span.an { color: #008000; } /* Annotation */
-code > span.cv { color: #008000; } /* CommentVar */
-code > span.at { } /* Attribute */
-code > span.in { color: #008000; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
 
 </style>
 <script>
@@ -70,7 +98,7 @@ code > span.in { color: #008000; } /* Information */
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -114,9 +142,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -130,7 +156,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -235,8 +260,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -281,6 +304,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -293,20 +317,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -461,14 +482,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author"><em>LeAnn Lo</em></h4>
-<h4 class="date"><em>Edited 1/30/2020</em></h4>
+<h4 class="author">LeAnn Lo</h4>
+<h4 class="date">Edited 1/30/2020</h4>
 
 </div>
 
 
 <div class="figure">
-<img src="https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png" alt="Not my dog but I really want one" />
+<img src="https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png" alt="" />
 <p class="caption">Not my dog but I really want one</p>
 </div>
 <div id="bio" class="section level3">
@@ -488,61 +509,61 @@ $(document).ready(function () {
 <p><a href="scripts/extract_column.py">Extracting Column from csv Files (.py)</a></p>
 <p>This sample script was originally made to extract gene names from files that contain the gene names, counts, and various statistics. The extracted column is put into a text file and removes the first item which would typically be the word ‘gene’. This file is useful for looking comparing genes later on or any header column.</p>
 <p>This script can take an argument -c for the column number to be extracted, this index starts at 0 (0 is the first column and so on). The only default argument needed is the file path that is a csv file, it will take the first column on default.</p>
-<p>Usage: extract_column.py <file path> -c <column number with index starting at 0></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
-<span class="co">&quot;&quot;&quot;</span>
-<span class="co">Gets all of the content that is in the first column of a csv</span>
-<span class="co">Skips the header to make content more iterable</span>
-
-<span class="co">Usage: Extract_header_column.py &lt;Directory of files&gt;</span>
-<span class="co">Output: Text files of the gene names in the same directory</span>
-
-<span class="co">Example output file name:</span>
-<span class="co">&lt;Sib_18_30_symmetric_difference_results.csv_names</span>
-<span class="co">&quot;&quot;&quot;</span>
-<span class="im">import</span> sys, csv, os, argparse
-
-<span class="kw">def</span> main(fName,column,dirName <span class="op">=</span> <span class="va">None</span>):
-    <span class="co">#with open(dirName + fName, &#39;r&#39;) as reader:</span>
-    <span class="cf">with</span> <span class="bu">open</span>(fName, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> reader: 
-        data <span class="op">=</span> [row <span class="cf">for</span> row <span class="kw">in</span> csv.reader(reader)]
-
-    <span class="co">#with open(dirName + fName + &#39;_names.txt&#39;, &#39;w&#39;) as writer:</span>
-    <span class="cf">with</span> <span class="bu">open</span>(fName <span class="op">+</span> <span class="st">&#39;_names.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> writer:
-        count <span class="op">=</span> <span class="dv">0</span>
-        <span class="cf">for</span> row <span class="kw">in</span> data:
-            <span class="cf">if</span> (count <span class="op">!=</span> <span class="dv">0</span>):
-                writer.write(row[column] <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
-            count <span class="op">+=</span> <span class="dv">1</span>
-    <span class="bu">print</span>(<span class="st">&quot;Wrote&quot;</span>, count, <span class="st">&quot;rows&quot;</span>)
-
-
-<span class="co">&quot;&quot;&quot; </span>
-<span class="co">#this function is used if you want to run on a directory</span>
-<span class="co">def runOnDir(dirName):</span>
-<span class="co">    filenames = next(os.walk(dirName))[2]</span>
-<span class="co">    for fName in filenames:</span>
-<span class="co">            print(&quot;Running on file:&quot;,  fName)</span>
-<span class="co">            main(fName, dirName)</span>
-<span class="co">&quot;&quot;&quot;</span>
-
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
-    
-    <span class="co">&quot;&quot;&quot;    for running on a directory</span>
-<span class="co">    dirName = sys.argv[1]</span>
-<span class="co">    if (dirName[-1] != &#39;/&#39;):</span>
-<span class="co">        dirName += &#39;/&#39;</span>
-<span class="co">    runOnDir(dirName)</span>
-<span class="co">    &quot;&quot;&quot;</span>
-
-    <span class="co">#this is used if you want to prompt the user for a specific column</span>
-    <span class="co">#inputNum = input(&quot;Which column number do you want to output?&quot;)</span>
-    p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Extracts the first (on default), or a given column from a csv file. This will output a new text file with _name at the end.&quot;</span>)
-    p.add_argument(<span class="st">&#39;file&#39;</span>, nargs<span class="op">=</span><span class="st">&#39;?&#39;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file path&quot;</span>)
-    p.add_argument(<span class="st">&quot;-c&quot;</span>, <span class="st">&quot;--column&quot;</span>, <span class="bu">type</span> <span class="op">=</span><span class="bu">int</span>, default<span class="op">=</span><span class="dv">0</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The column number (starting at 0) that you want to be extracted.&quot;</span>)
-    args <span class="op">=</span> p.parse_args()
-    <span class="co">#fName = sys.argv[1]    #without argsparse</span>
-    main(args.<span class="bu">file</span>,args.column)</code></pre></div>
+<p>Usage: extract_column.py <file path> -c &lt;column number with index starting at 0&gt;</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#!/usr/bin/env python</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">Gets all of the content that is in the first column of a csv</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">Skips the header to make content more iterable</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">Usage: Extract_header_column.py &lt;Directory of files&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">Output: Text files of the gene names in the same directory</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">Example output file name:</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">&lt;Sib_18_30_symmetric_difference_results.csv_names</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="im">import</span> sys, csv, os, argparse</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">def</span> main(fName,column,dirName <span class="op">=</span> <span class="va">None</span>):</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="co">#with open(dirName + fName, &#39;r&#39;) as reader:</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="cf">with</span> <span class="bu">open</span>(fName, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> reader: </span>
+<span id="cb1-17"><a href="#cb1-17"></a>        data <span class="op">=</span> [row <span class="cf">for</span> row <span class="kw">in</span> csv.reader(reader)]</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co">#with open(dirName + fName + &#39;_names.txt&#39;, &#39;w&#39;) as writer:</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>    <span class="cf">with</span> <span class="bu">open</span>(fName <span class="op">+</span> <span class="st">&#39;_names.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> writer:</span>
+<span id="cb1-21"><a href="#cb1-21"></a>        count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>        <span class="cf">for</span> row <span class="kw">in</span> data:</span>
+<span id="cb1-23"><a href="#cb1-23"></a>            <span class="cf">if</span> (count <span class="op">!=</span> <span class="dv">0</span>):</span>
+<span id="cb1-24"><a href="#cb1-24"></a>                writer.write(row[column] <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb1-25"><a href="#cb1-25"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>    <span class="bu">print</span>(<span class="st">&quot;Wrote&quot;</span>, count, <span class="st">&quot;rows&quot;</span>)</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">&quot;&quot;&quot; </span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">#this function is used if you want to run on a directory</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">def runOnDir(dirName):</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">    filenames = next(os.walk(dirName))[2]</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co">    for fName in filenames:</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="co">            print(&quot;Running on file:&quot;,  fName)</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="co">            main(fName, dirName)</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-39"><a href="#cb1-39"></a>    </span>
+<span id="cb1-40"><a href="#cb1-40"></a>    <span class="co">&quot;&quot;&quot;    for running on a directory</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="co">    dirName = sys.argv[1]</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="co">    if (dirName[-1] != &#39;/&#39;):</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="co">        dirName += &#39;/&#39;</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="co">    runOnDir(dirName)</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a></span>
+<span id="cb1-47"><a href="#cb1-47"></a>    <span class="co">#this is used if you want to prompt the user for a specific column</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a>    <span class="co">#inputNum = input(&quot;Which column number do you want to output?&quot;)</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a>    p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Extracts the first (on default), or a given column from a csv file. This will output a new text file with _name at the end.&quot;</span>)</span>
+<span id="cb1-50"><a href="#cb1-50"></a>    p.add_argument(<span class="st">&#39;file&#39;</span>, nargs<span class="op">=</span><span class="st">&#39;?&#39;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file path&quot;</span>)</span>
+<span id="cb1-51"><a href="#cb1-51"></a>    p.add_argument(<span class="st">&quot;-c&quot;</span>, <span class="st">&quot;--column&quot;</span>, <span class="bu">type</span> <span class="op">=</span><span class="bu">int</span>, default<span class="op">=</span><span class="dv">0</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The column number (starting at 0) that you want to be extracted.&quot;</span>)</span>
+<span id="cb1-52"><a href="#cb1-52"></a>    args <span class="op">=</span> p.parse_args()</span>
+<span id="cb1-53"><a href="#cb1-53"></a>    <span class="co">#fName = sys.argv[1]    #without argsparse</span></span>
+<span id="cb1-54"><a href="#cb1-54"></a>    main(args.<span class="bu">file</span>,args.column)</span></code></pre></div>
 </div>
 
 <footer class="myfoot">
@@ -567,6 +588,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
