@@ -14,7 +14,7 @@ Favorite Recipes at the Moment:
 
 ***
 
-###Sample Script 
+### Sample Script 
 
 [Movie Script Scraper (.py)](scripts/movie_script_scraper.py)
 
