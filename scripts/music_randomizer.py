@@ -4,7 +4,7 @@
 #
 # VERSION 0.3.2
 #
-# LAST EDIT: 2020-02-04
+# LAST EDIT: 2020-03-03
 #
 # This script randomizes music files on a USB drive
 #
@@ -269,11 +269,19 @@ class MusicMan(object):
 # MAIN
 ##############################################################################
 if __name__ == "__main__":
-    # Check command-line arguments
+    # Create an ArgumentParser class object for dealing with commandline args
     p = argparse.ArgumentParser(
         description="Randomizes MP3 files within a folder or USB drive.")
+
+    # Add an additional optional argument for music folder path
+    # the default (if not given) will be to look locally.
     p.add_argument("-p", "--path", default=".",
                    help="Path to your music folders")
+
+    # Read any commandline arguements sent to the program
+    # NOTE: if -h or --help, the program stops here
     args = p.parse_args()
+
+    # Create an instance of the musicman class and run it
     my_music = MusicMan(args.path)
     my_music.run()
