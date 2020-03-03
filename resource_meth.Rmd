@@ -22,6 +22,14 @@ Run the following command in the terminal or save it to your `~/.bash_profile` t
 * `export DS_WORKSPACE=~/Workspace`
 
 
+### Installing Wheel Files
+[Python wheel](https://pythonwheels.com/) files (.whl) are the new distribution standard for Python packages.
+You may come across wheel files (especially those of you trying to install numpy on Windows) because they can come with precompiled C code, which you would otherwise have to compile on your machine.
+You can install a .whl package using pip.
+
+For example, download a wheel package ("package-0.10.2-cp37-cp37m-win_amd64.whl"), open a terminal and `cd` to folder where it was downloaded, and run `pip install package-0.10.2-cp37-cp37m-win_amd64.whl`.
+
+
 ### Hacking ArcGIS Pro's Python
 [https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)
 
