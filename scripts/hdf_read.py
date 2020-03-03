@@ -13,7 +13,7 @@
 ###############################################################################
 import os
 import os.path
-
+import numpy
 import h5py
 
 
@@ -134,7 +134,7 @@ try:
 except:
     my_dir = "."
 
-my_file = "test.hdf"
+my_file = 'MOD13C2.A2020001.006.2020034154921.hdf'
 hdf_path = os.path.join(my_dir, my_file)
 
 # Reading root attributes
