@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2020-02-25
+# LAST EDIT: 2020-03-04
 #
 # This script reads an HDF5 file.
 #
@@ -13,6 +13,7 @@
 ###############################################################################
 import os
 import os.path
+
 import numpy
 import h5py
 
@@ -134,7 +135,7 @@ try:
 except:
     my_dir = "."
 
-my_file = 'MOD13C2.A2020001.006.2020034154921.hdf'
+my_file = 'test.hdf'
 hdf_path = os.path.join(my_dir, my_file)
 
 # Reading root attributes
