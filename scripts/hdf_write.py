@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2020-02-25
+# LAST EDIT: 2020-03-04
 #
 # This script writes an HDF5 file.
 
@@ -177,7 +177,8 @@ if False:
         try:
             hdfile.create_dataset(name=dset,
                                   data=rdat.astype(int),
-                                  chunks=True)
+                                  chunks=True,
+                                  compression="gzip")
         except TypeError as e:
             print(e)
         else:
