@@ -64,7 +64,7 @@ if True:
     f.note = 'You may safely delete this file'
     f.institution = 'William & Mary'
 
-if False:
+if True:
 
     # Create y dimension and a variable
     # name the variable 'y' of type 'i'nteger of dimension ('y',)
@@ -81,11 +81,14 @@ if False:
 
     # Create color dimension & variable
     f.createDimension('color', 3)
-    color = f.createVariable('color', 'i', ('color',))
+    color = f.createVariable('color', 'c', ('color',))
+    color[0] = 'r'
+    color[1] = 'g'
+    color[2] = 'b'
     color.standard_name = 'RGB'
     color.units = 'red green blue color bands'
 
-if False:
+if True:
 
     # Create random color image variable:
     img = f.createVariable('image', 'i', ('color','y','x'))
@@ -93,7 +96,8 @@ if False:
     img.missing_value = ERROR_VAL
     img.long_name = 'Random RGB color band image'
     img.units = 'none'
-    img.valid_range = numpy.array([0, 255])
+    img.valid_min = 0
+    img.valid_max = 255
     img[0] = numpy.random.randint(255, size=(720,960))
     img[1] = numpy.random.randint(255, size=(720,960))
     img[2] = numpy.random.randint(255, size=(720,960))
