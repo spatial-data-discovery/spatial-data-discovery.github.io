@@ -64,7 +64,7 @@ if True:
     f.note = 'You may safely delete this file'
     f.institution = 'William & Mary'
 
-if True:
+if False:
 
     # Create y dimension and a variable
     # name the variable 'y' of type 'i'nteger of dimension ('y',)
@@ -88,7 +88,7 @@ if True:
     color.standard_name = 'RGB'
     color.units = 'red green blue color bands'
 
-if True:
+if False:
 
     # Create random color image variable:
     img = f.createVariable('image', 'i', ('color','y','x'))
