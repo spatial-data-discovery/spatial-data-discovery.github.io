@@ -2,9 +2,11 @@
 #
 # nc_write.py
 #
-# LAST EDIT: 2019-10-28
+# LAST EDIT: 2020-03-21
 #
 # This script writes an NetCDF file.
+# Usage: run this script in tandem with nc_read.py.
+# Each time, change the next False statement to True.
 
 ###############################################################################
 # IMPORT MODULES
@@ -46,7 +48,7 @@ def nc_history():
 try:
     my_dir = os.environ['DS_WORKSPACE']
 except:
-    my_dir = os.path.expanduser("~")
+    my_dir = "."
 
 my_file = "test.nc"
 nc_path = os.path.join(my_dir, my_file)
@@ -66,16 +68,16 @@ if False:
 
     # Create y dimension and a variable
     # name the variable 'y' of type 'i'nteger of dimension ('y',)
-    f.createDimension('y', 1000)
+    f.createDimension('y', 720)
     y = f.createVariable('y', 'i', ('y',) )
-    y[:] = numpy.arange(0, 1000, 1, int)
-    y.units = 'pixels'
+    y[:] = numpy.arange(0, 720, 1, int)
+    y.units = 'row index'
 
     # Create x dimension & variable:
-    f.createDimension('x', 1000)
+    f.createDimension('x', 960)
     x = f.createVariable('x', 'i', ('x',))
-    x[:] = numpy.arange(0, 1000, 1, int)
-    x.units = 'pixels'
+    x[:] = numpy.arange(0, 960, 1, int)
+    x.units = 'col index'
 
     # Create color dimension & variable
     f.createDimension('color', 3)
@@ -91,8 +93,13 @@ if False:
     img.missing_value = ERROR_VAL
     img.long_name = 'Random RGB color band image'
     img.units = 'none'
-    img[0] = numpy.random.randint(255, size=(1000,1000))
-    img[1] = numpy.random.randint(255, size=(1000,1000))
-    img[2] = numpy.random.randint(255, size=(1000,1000))
+    img.valid_range = numpy.array([0, 255])
+    img[0] = numpy.random.randint(255, size=(720,960))
+    img[1] = numpy.random.randint(255, size=(720,960))
+    img[2] = numpy.random.randint(255, size=(720,960))
+
+    # Reference for Attribute convensions
+    # http://www.bic.mni.mcgill.ca/users/sean/Docs/netcdf/guide.txn_18.html
+    # David Fulker, Unidata Program Center Director, UCAR
 
 f.close()

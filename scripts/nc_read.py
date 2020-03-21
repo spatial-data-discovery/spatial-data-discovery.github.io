@@ -2,7 +2,7 @@
 #
 # nc_write.py
 #
-# LAST EDIT: 2019-10-10
+# LAST EDIT: 2020-03-21
 #
 # This script writes an NetCDF file.
 
@@ -42,7 +42,7 @@ def print_keys(my_obj):
 try:
     my_dir = os.environ['DS_WORKSPACE']
 except:
-    my_dir = os.path.expanduser("~")
+    my_dir = "."
 
 my_file = "test.nc"
 nc_path = os.path.join(my_dir, my_file)
