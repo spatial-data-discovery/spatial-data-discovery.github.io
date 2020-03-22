@@ -350,6 +350,18 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning/netcdf/index.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Resources
      
     <span class="caret"></span>
@@ -597,9 +609,9 @@ $(document).ready(function () {
 <span id="cb1-86"><a href="#cb1-86"></a>      <span class="co">#otherwise inserts the value at the given index</span></span>
 <span id="cb1-87"><a href="#cb1-87"></a>      <span class="cf">else</span>:</span>
 <span id="cb1-88"><a href="#cb1-88"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-89"><a href="#cb1-89"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):</span>
+<span id="cb1-89"><a href="#cb1-89"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
 <span id="cb1-90"><a href="#cb1-90"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-91"><a href="#cb1-91"></a>          <span class="cf">if</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):</span>
+<span id="cb1-91"><a href="#cb1-91"></a>          <span class="cf">if</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
 <span id="cb1-92"><a href="#cb1-92"></a>            pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
 <span id="cb1-93"><a href="#cb1-93"></a>        new_element.prev <span class="op">=</span> pointer</span>
 <span id="cb1-94"><a href="#cb1-94"></a>        new_element.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span></span>
@@ -632,7 +644,7 @@ $(document).ready(function () {
 <span id="cb1-121"><a href="#cb1-121"></a>      <span class="co">#otherwise removes the value at the given index</span></span>
 <span id="cb1-122"><a href="#cb1-122"></a>      <span class="cf">else</span>:</span>
 <span id="cb1-123"><a href="#cb1-123"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-124"><a href="#cb1-124"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="dv">-1</span>)):</span>
+<span id="cb1-124"><a href="#cb1-124"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
 <span id="cb1-125"><a href="#cb1-125"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb1-126"><a href="#cb1-126"></a>          pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
 <span id="cb1-127"><a href="#cb1-127"></a>        pointer.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span>.<span class="bu">next</span></span>

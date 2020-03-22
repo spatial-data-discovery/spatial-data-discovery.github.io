@@ -3,6 +3,10 @@ output_dir: "."
 navbar:
     title: "DATA 440 - Spatial Data Discovery"
     right:
+        - text: Learning
+          menu:
+            - text: "NetCDF"
+              href: learning/netcdf/index.html
         - text: Resources
           menu:
             - text: "Data"
