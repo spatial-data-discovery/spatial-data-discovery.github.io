@@ -2,7 +2,7 @@
 #
 # nc_write.py
 #
-# LAST EDIT: 2020-03-21
+# LAST EDIT: 2020-03-24
 #
 # This script writes an NetCDF file.
 
@@ -31,7 +31,7 @@ def print_keys(my_obj):
             if isinstance(value, bytes):
                 value = value.decode("utf-8")
 
-            print(f"  {key}: {value}")
+            print("  %s: %s" % (key, value))
     except AttributeError as e:
         print("Object has no keys.", e)
 
