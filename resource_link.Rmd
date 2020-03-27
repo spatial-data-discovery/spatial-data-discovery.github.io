@@ -44,12 +44,6 @@ title: "Resources | Links"
 [R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
 :   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
 
-[Syllabus - Fall 2019](https://drdavis.space/teaching/ds/sdd/syllabus/2019/fall/)
-:   Course syllabus for Spatial Data Discovery (Fall 2019)
-
-[Syllabus - Spring 2020](https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/)
-:   Course syllabus for Spatial Data Discovery (Spring 2020)
-
 [Terminal Cheatsheet | Mac](https://github.com/0nn0/terminal-mac-cheatsheet)
 :   A list of some most used commands and shortcuts in the terminal for Mac by Onno Schwanen.
 

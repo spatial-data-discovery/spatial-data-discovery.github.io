@@ -12,3 +12,8 @@ In this capstone course, you will get the opportunity to utilize your Python pro
 You will present to the world your own story of spatial data discovery using R-based markdown to write professionally for the web.
 
 I will take you through my own journey of data discovery, provide you with the know-how for accessing large data repositories, demonstrate methods for data harmonizing, processing, modeling and visualizing, and challenge you to think spatially.
+
+### Previous Syllabi
+
+* [Syllabus - Spring 2020](https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/)
+* [Syllabus - Fall 2019](https://drdavis.space/teaching/ds/sdd/syllabus/2019/fall/)
