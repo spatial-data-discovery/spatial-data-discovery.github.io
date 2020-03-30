@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 #
-# hdf_qgis.py
+# hdf2geotiff.py
 #
 # VERSION 0.2
 # LAST EDIT: 2020-03-30
+#
+# based on hdf_qgis.py
 #
 # Use this script to read an HDF4 spatial data file,
 # convert the HDF dataset to a GeoTIFF, and
