@@ -410,6 +410,7 @@ $(document).ready(function () {
 </div>
 
 
+<hr />
 <div id="setting-environment-variables" class="section level3">
 <h3>Setting Environment Variables</h3>
 <p>For convenience, I have included a check in my example scripts for an environment variable called “DS_WORKSPACE” that is used for reading from and saving to a designated workspace folder on your computer. If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in). To create and define your workspace folder, please follow these instructions.</p>
@@ -430,12 +431,14 @@ $(document).ready(function () {
 <ul>
 <li><code>export DS_WORKSPACE=~/Workspace</code></li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="installing-wheel-files" class="section level3">
 <h3>Installing Wheel Files</h3>
 <p><a href="https://pythonwheels.com/">Python wheel</a> files (.whl) are the new distribution standard for Python packages. You may come across wheel files (especially those of you trying to install numpy on Windows) because they can come with precompiled C code, which you would otherwise have to compile on your machine. You can install a .whl package using pip.</p>
 <p>For example, download a wheel package (“package-0.10.2-cp37-cp37m-win_amd64.whl”), open a terminal and <code>cd</code> to folder where it was downloaded, and run <code>pip install package-0.10.2-cp37-cp37m-win_amd64.whl</code>.</p>
+<hr />
 </div>
 <div id="hacking-arcgis-pros-python" class="section level3">
 <h3>Hacking ArcGIS Pro’s Python</h3>
@@ -445,6 +448,7 @@ $(document).ready(function () {
 <li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
 <li>Open terminal, type <code>activate sdd</code></li>
 </ul>
+<hr />
 </div>
 <div id="converting-images-to-animations" class="section level3">
 <h3>Converting Images to Animations</h3>
@@ -475,6 +479,7 @@ $(document).ready(function () {
 <p>Update the <code>-i</code> input file name and <code>.mp4</code> output file name</p>
 <pre><code>ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=&#39;floor(in_w/2)*2:floor(in_h/2)*2&#39; Untitled.mp4</code></pre></li>
 </ol>
+<hr />
 </div>
 <div id="interpolating" class="section level3">
 <h3>Interpolating</h3>
