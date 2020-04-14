@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Alexandra Burke" />
 
 
-<title>About the Coder</title>
+<title>Monitoring Climate Change Through the Ocean</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -498,96 +497,66 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Alexandra Burke</h4>
-<h4 class="date">Edited: 2020-02-09</h4>
+<h1 class="title toc-ignore">Monitoring Climate Change Through the Ocean</h1>
 
 </div>
 
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Evil_Eye.svg" title="Allie Burke" width="220" height="220" /></p>
-<dl>
-<dt><strong>About me</strong></dt>
-<dd><p>Hi! My name is Allie Burke, I’m a Senior at <strong>The College of William and Mary</strong>.</p>
-<p>I’m a Finance Major and Data Science Minor.</p>
-</dd>
-<dt><strong>Hobbies</strong></dt>
-<dd><ul>
-<li><p>running</p></li>
-<li><p>knitting</p></li>
-<li><p>yoga</p></li>
-</ul>
-</dd>
-</dl>
-<div id="sample-script" class="section level3">
-<h3>Sample script</h3>
-<p><a href="scripts/Book_keeping.py">Book_keeping (.py)</a></p>
-<p>I wrote this sample script as a way to keep up with daily inventory changes at a small used bookstore that mostly has one copy of each book. It has the user load in two excel files that contain the inventory list and the sales made that day. My script checks to see which books were purchased, and returns an excel file with the new inventory list that can be used for the next day.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#!/usr/bin/env python3</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Book_keeping.py</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># LAST EDIT: 2020-02-09</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># This script compares entries in inventory and sales lists. </span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">##############################################################################</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># REQUIRED MODULES</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="co">##############################################################################</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-16"><a href="#cb1-16"></a>inventory <span class="op">=</span> []</span>
-<span id="cb1-17"><a href="#cb1-17"></a>booksales <span class="op">=</span> []</span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="kw">def</span> Book_keeping(Inventory, Daily_sales):</span>
-<span id="cb1-20"><a href="#cb1-20"></a></span>
-<span id="cb1-21"><a href="#cb1-21"></a>    <span class="co">#reads in the two excel files</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a>    Inventory <span class="op">=</span> pd.read_excel(Inventory)</span>
-<span id="cb1-24"><a href="#cb1-24"></a>    Today_total <span class="op">=</span> pd.read_excel(Daily_sales)</span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a>    <span class="co">#converts the idCode columns in each sheet into integers</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a></span>
-<span id="cb1-28"><a href="#cb1-28"></a>    <span class="cf">for</span> num <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:</span>
-<span id="cb1-29"><a href="#cb1-29"></a>        <span class="bu">int</span>(num)</span>
-<span id="cb1-30"><a href="#cb1-30"></a>    <span class="cf">for</span> digit <span class="kw">in</span> Today_total[<span class="st">&quot;idCode&quot;</span>]:</span>
-<span id="cb1-31"><a href="#cb1-31"></a>        <span class="bu">int</span>(digit)</span>
-<span id="cb1-32"><a href="#cb1-32"></a></span>
-<span id="cb1-33"><a href="#cb1-33"></a>    <span class="co">#iterates over the idCode column and creates a list for both sheets</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a></span>
-<span id="cb1-35"><a href="#cb1-35"></a>    <span class="cf">for</span> copies <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:</span>
-<span id="cb1-36"><a href="#cb1-36"></a>        inventory.append(copies)</span>
-<span id="cb1-37"><a href="#cb1-37"></a>    <span class="cf">for</span> book <span class="kw">in</span> Today_total[<span class="st">&quot;idCode&quot;</span>]:</span>
-<span id="cb1-38"><a href="#cb1-38"></a>        booksales.append(book)</span>
-<span id="cb1-39"><a href="#cb1-39"></a></span>
-<span id="cb1-40"><a href="#cb1-40"></a>    <span class="co">#Calculates where the new day&#39;s inventory will appear in the excel sheet</span></span>
-<span id="cb1-41"><a href="#cb1-41"></a></span>
-<span id="cb1-42"><a href="#cb1-42"></a>    tail <span class="op">=</span> (<span class="bu">len</span>(inventory)<span class="op">-</span><span class="bu">len</span>(booksales))</span>
-<span id="cb1-43"><a href="#cb1-43"></a></span>
-<span id="cb1-44"><a href="#cb1-44"></a>    <span class="co">#removes purchased books from the inventory</span></span>
-<span id="cb1-45"><a href="#cb1-45"></a></span>
-<span id="cb1-46"><a href="#cb1-46"></a>    <span class="cf">for</span> book <span class="kw">in</span> booksales:</span>
-<span id="cb1-47"><a href="#cb1-47"></a>        inventory.remove(book)</span>
-<span id="cb1-48"><a href="#cb1-48"></a></span>
-<span id="cb1-49"><a href="#cb1-49"></a>    <span class="co">#adds the new inventory to the excel sheet</span></span>
-<span id="cb1-50"><a href="#cb1-50"></a></span>
-<span id="cb1-51"><a href="#cb1-51"></a>    <span class="cf">for</span> a <span class="kw">in</span> inventory:</span>
-<span id="cb1-52"><a href="#cb1-52"></a>        <span class="cf">for</span> part <span class="kw">in</span> Inventory[<span class="st">&quot;idCode&quot;</span>]:</span>
-<span id="cb1-53"><a href="#cb1-53"></a></span>
-<span id="cb1-54"><a href="#cb1-54"></a>            <span class="cf">if</span> a <span class="op">==</span> part:</span>
-<span id="cb1-55"><a href="#cb1-55"></a>                Inventory <span class="op">=</span> Inventory.append(Inventory.loc[Inventory[<span class="st">&quot;idCode&quot;</span>]<span class="op">==</span> a])</span>
-<span id="cb1-56"><a href="#cb1-56"></a></span>
-<span id="cb1-57"><a href="#cb1-57"></a>    <span class="co">#removes the earlier entries</span></span>
-<span id="cb1-58"><a href="#cb1-58"></a></span>
-<span id="cb1-59"><a href="#cb1-59"></a>    Inventory <span class="op">=</span> Inventory.tail(tail)</span>
-<span id="cb1-60"><a href="#cb1-60"></a></span>
-<span id="cb1-61"><a href="#cb1-61"></a>    <span class="co">#returns the final inventory list to be used the next day</span></span>
-<span id="cb1-62"><a href="#cb1-62"></a></span>
-<span id="cb1-63"><a href="#cb1-63"></a>    <span class="cf">return</span> Inventory.to_excel(<span class="st">&quot;NewInventory.xlsx&quot;</span>,sheet_name <span class="op">=</span> <span class="st">&quot;Inventory&quot;</span>,engine<span class="op">=</span><span class="st">&#39;xlsxwriter&#39;</span>)</span>
-<span id="cb1-64"><a href="#cb1-64"></a></span>
-<span id="cb1-65"><a href="#cb1-65"></a>Book_keeping(<span class="st">&quot;Inventory.xlsx&quot;</span>,<span class="st">&quot;Today.xlsx&quot;</span>)</span></code></pre></div>
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst.mp4" > </video></p>
+</div>
+<blockquote>
+<p><em>El Niño (/ɛl ˈniːn.joʊ/; Spanish: [el ˈniɲo]) is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean.</em> – Wikipedia</p>
+</blockquote>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The ocean makes up roughly 71% of the earth’s surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.</p>
+<p>Changes in sea surface temperature influence weather and climate patterns globally. The El Niño-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.</p>
+<p>El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click <a href="https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina">here</a></p>
+<p>The animation above shows signs of El Niño for 2019, highlighted by the influx of warmer water in the equatorial Pacific.</p>
+</div>
+<div id="data-conversion" class="section level2">
+<h2>Data Conversion</h2>
+<p>The world map animation above is monthly sea surface temperature (SST) for 2019. Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus’ Climate Change Service<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. It was downloaded <a href="https://cds.climate.copernicus.eu/cdsapp#!/home">here</a> from the Climate Data Store.</p>
+<p>SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26°F - 91°F</p>
+<p>The data was extracted and reformatted using a Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and numpy<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># ... (omitted code)</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> createRaster(np_array, no_data, lowerLeft, xcell, year, var):</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    time_slice <span class="op">=</span> arcpy.NumPyArrayToRaster(np_array, value_to_nodata <span class="op">=</span> no_data,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>                                                    lower_left_corner <span class="op">=</span> lowerLeft,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>                                                    x_cell_size <span class="op">=</span> <span class="fl">0.25</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>    file_path <span class="op">=</span> <span class="st">&#39;./output/&#39;</span> <span class="op">+</span> var <span class="op">+</span> <span class="st">&#39;_raster_&#39;</span><span class="op">+</span> <span class="bu">str</span>(year)<span class="op">+</span> <span class="st">&#39;.tif&#39;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    time_slice.save(file_path)</span></code></pre></div>
+</div>
+<div id="visualization-process" class="section level2">
+<h2>Visualization Process</h2>
+<p>For each month, the data were visualized in QGIS<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> using the same saved layout and exported to a PNG<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> image.</p>
+<p>The PNG files produced by each raster were imported into GIMP<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>, optimized and exported as an animated GIF<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+<p>The GIF was then uploaded and converted to a video (MP4<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>) using EzGif<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
+<div class="credit-line">
+<p>Author: Ian Thompson</p>
+<p>Last edited: 2020-04-13.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">
