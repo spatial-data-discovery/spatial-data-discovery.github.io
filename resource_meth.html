@@ -486,6 +486,25 @@ $(document).ready(function () {
 </ol>
 <hr />
 </div>
+<div id="locating-your-google-places" class="section level3">
+<h3>Locating Your Google Places</h3>
+<ol style="list-style-type: decimal">
+<li>In Google Maps, save locations to starred places
+<ul>
+<li><a href="https://support.google.com/maps/answer/3184808?co=GENIE.Platform%3DDesktop&amp;hl=en">Google Maps Help</a></li>
+</ul></li>
+<li>Open <a href="https://takeout.google.com/">Google Takeout</a></li>
+<li>Unselect everything except for <strong>Maps (your places)</strong></li>
+<li>Choose your delivery method (e.g., email link) and file type (e.g., compressed zip)</li>
+<li>Archive will save as GeoJSON</li>
+<li>Open GeoJSON in a GIS or other geospatial application
+<ul>
+<li><a href="https://opengislab.com/blog/2018/11/8/adding-and-viewing-geojson-in-qgis-and-arcgis">Adding and Viewing GeoJSON in QGIS and ArcGIS (open.gis.lab)</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/json-to-features.htm">JSON to Features (Esri ArcGIS Pro)</a></li>
+</ul></li>
+</ol>
+<hr />
+</div>
 <div id="interpolating" class="section level3">
 <h3>Interpolating</h3>
 <p>Let’s say you are given two pairs of information (<span class="math inline">\(x_1, y_1\)</span>) and (<span class="math inline">\(x_2, y_2\)</span>). These, for example, may represent elevations at two given locations or rainfall values at two given dates. Regardless of what they represent, let’s say you are interested in finding the value <span class="math inline">\(u\)</span> that lies somewhere between <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, which occurs at a location <span class="math inline">\(k\)</span> between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>. In table format, it looks something like this:</p>

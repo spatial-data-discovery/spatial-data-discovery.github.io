@@ -74,6 +74,19 @@ Based on Davis's MODIS EVI example using [GIMP](https://www.gimp.org/) and FFmpe
 
 ***
 
+### Locating Your Google Places
+1. In Google Maps, save locations to starred places
+    - [Google Maps Help](https://support.google.com/maps/answer/3184808?co=GENIE.Platform%3DDesktop&hl=en)
+1. Open [Google Takeout](https://takeout.google.com/)
+1. Unselect everything except for **Maps (your places)**
+1. Choose your delivery method (e.g., email link) and file type (e.g., compressed zip)
+1. Archive will save as GeoJSON
+1. Open GeoJSON in a GIS or other geospatial application
+    - [Adding and Viewing GeoJSON in QGIS and ArcGIS (open.gis.lab)](https://opengislab.com/blog/2018/11/8/adding-and-viewing-geojson-in-qgis-and-arcgis)
+    - [JSON to Features (Esri ArcGIS Pro)](https://pro.arcgis.com/en/pro-app/tool-reference/conversion/json-to-features.htm)
+
+***
+
 ### Interpolating
 Let's say you are given two pairs of information (\(x_1, y_1\)) and (\(x_2, y_2\)).
 These, for example, may represent elevations at two given locations or rainfall values at two given dates.
