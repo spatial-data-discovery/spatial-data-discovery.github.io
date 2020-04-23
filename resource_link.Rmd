@@ -11,6 +11,9 @@ title: "Resources | Links"
 [Data Types](https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html)
 :   Review of numpy dtypes such as `i`, `f`, and `d`.[^scipy19]
 
+[GDAL Tutorials](https://gdal.org/tutorials/index.html)
+:   Tutorials for the Geospatial Data Abstraction Library (GDAL) and its application program interfaces (APIs).
+
 [GIS Reader](https://drdavis.space/teaching/gis/gis-reader/)
 :   Davis's introductory reader on geographic information systems.
 

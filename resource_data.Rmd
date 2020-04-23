@@ -53,6 +53,9 @@ title: "Resources | Data"
 [OpenTopography](https://opentopography.org/)
 :   Aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
 
+[Publica Mundi](http://www.publicamundi.eu/)
+:   Scalable, reusable open geospatial data; checkout their GeoJSON files on their [GitHub site](https://github.com/PublicaMundi/MappingAPI/tree/master/data/geojson).
+
 [Shark Attack File](http://www.sharkattackfile.net/)
 :   A time-stamped semi-geolocated incident log of global shark attacks.
 
