@@ -21,6 +21,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -252,7 +254,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">DATA 440 - Spatial Data Discovery</a>
+      <a class="navbar-brand" href="index.html">Spatial Data Discovery</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -260,6 +262,18 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning/netcdf/index.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Resources
      
@@ -278,6 +292,9 @@ $(document).ready(function () {
     <li>
       <a href="resource_soft.html">Software</a>
     </li>
+    <li>
+      <a href="https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/">Syllabus</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -290,6 +307,11 @@ $(document).ready(function () {
     <li class="dropdown-header">Example</li>
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Spring 2020</li>
+    <li>
+      <a href="project_irthompson01.html">Monitoring Ocean Climate Change</a>
     </li>
     <li class="divider"></li>
     <li class="dropdown-header">Fall 2019</li>
@@ -384,6 +406,12 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li>
+  <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -398,6 +426,7 @@ $(document).ready(function () {
 </div>
 
 
+<hr />
 <div id="setting-environment-variables" class="section level3">
 <h3>Setting Environment Variables</h3>
 <p>For convenience, I have included a check in my example scripts for an environment variable called “DS_WORKSPACE” that is used for reading from and saving to a designated workspace folder on your computer. If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in). To create and define your workspace folder, please follow these instructions.</p>
@@ -418,12 +447,14 @@ $(document).ready(function () {
 <ul>
 <li><code>export DS_WORKSPACE=~/Workspace</code></li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="installing-wheel-files" class="section level3">
 <h3>Installing Wheel Files</h3>
 <p><a href="https://pythonwheels.com/">Python wheel</a> files (.whl) are the new distribution standard for Python packages. You may come across wheel files (especially those of you trying to install numpy on Windows) because they can come with precompiled C code, which you would otherwise have to compile on your machine. You can install a .whl package using pip.</p>
 <p>For example, download a wheel package (“package-0.10.2-cp37-cp37m-win_amd64.whl”), open a terminal and <code>cd</code> to folder where it was downloaded, and run <code>pip install package-0.10.2-cp37-cp37m-win_amd64.whl</code>.</p>
+<hr />
 </div>
 <div id="hacking-arcgis-pros-python" class="section level3">
 <h3>Hacking ArcGIS Pro’s Python</h3>
@@ -433,6 +464,7 @@ $(document).ready(function () {
 <li>Create user environment that points to <code>...\Program Files\ArcGIS\Pro\bin\Python\Scripts\</code></li>
 <li>Open terminal, type <code>activate sdd</code></li>
 </ul>
+<hr />
 </div>
 <div id="converting-images-to-animations" class="section level3">
 <h3>Converting Images to Animations</h3>
@@ -463,6 +495,26 @@ $(document).ready(function () {
 <p>Update the <code>-i</code> input file name and <code>.mp4</code> output file name</p>
 <pre><code>ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop=&#39;floor(in_w/2)*2:floor(in_h/2)*2&#39; Untitled.mp4</code></pre></li>
 </ol>
+<hr />
+</div>
+<div id="locating-your-google-places" class="section level3">
+<h3>Locating Your Google Places</h3>
+<ol style="list-style-type: decimal">
+<li>In Google Maps, save locations to starred places
+<ul>
+<li><a href="https://support.google.com/maps/answer/3184808?co=GENIE.Platform%3DDesktop&amp;hl=en">Google Maps Help</a></li>
+</ul></li>
+<li>Open <a href="https://takeout.google.com/">Google Takeout</a></li>
+<li>Unselect everything except for <strong>Maps (your places)</strong></li>
+<li>Choose your delivery method (e.g., email link) and file type (e.g., compressed zip)</li>
+<li>Archive will save as GeoJSON</li>
+<li>Open GeoJSON in a GIS or other geospatial application
+<ul>
+<li><a href="https://opengislab.com/blog/2018/11/8/adding-and-viewing-geojson-in-qgis-and-arcgis">Adding and Viewing GeoJSON in QGIS and ArcGIS (open.gis.lab)</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/tool-reference/conversion/json-to-features.htm">JSON to Features (Esri ArcGIS Pro)</a></li>
+</ul></li>
+</ol>
+<hr />
 </div>
 <div id="interpolating" class="section level3">
 <h3>Interpolating</h3>
@@ -501,7 +553,7 @@ $(document).ready(function () {
 
 <footer class="myfoot">
     <div class="foot-text">
-        <p>Data Science at William &amp; Mary (2019)</p>
+        <p>Data Science at William &amp; Mary (2020)</p>
     </div>
 </footer>
 

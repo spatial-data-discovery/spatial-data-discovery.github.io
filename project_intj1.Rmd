@@ -1,0 +1,110 @@
+---
+title: Projecting COVID-19 Cases
+author: "Tinh Son"
+date: "Edited: 2020-04-23"
+---
+
+<!-- Image -->
+![OnePunch](http://ih1.redbubble.net/image.143081673.4030/flat,800x800,075,t.u2.jpg "One Punch Man Potato Head"){width=150 height=150}
+
+
+<!-- Bio --> 
+**Bio**
+:    Senior, performer, sleeper... breathing. 
+     Major in Computer Science and Applied Math. 
+     **Love** Python, _okay_ with C and ~~everything else~~.
+     
+<!-- Hobbies -->
+**Hobbies**
+:   * Sleep
+    * Body Pump
+    * Violin
+    * Cook
+        
+<!-- Script -->
+### Script
+[twoSum (.py)](scripts/twoSum.py)
+``` {python twoSum, eval = FALSE}
+'''
+@Author: Tinh Son. Date: 2020-2-06
+@Description: This code is written as a practice challenge from Leetcode.com, with linear run time.
+
+@Problem
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+Execution format: python .\twoSum.py LIST TARGET
+Where LIST is in string 
+Where TARGET is a whole number
+
+Example: python .\twoSum.py "2, 7, 11, 15" 9
+
+'''
+# use regex to check input
+import re 
+#argparse as required by spec
+import argparse
+          
+# function takes in list and target, returns list
+def twoSum(nums: list, target: int) -> list:
+    # create hash-table
+    dic = {}
+
+    # loops through value and index
+    for ind, val in enumerate(nums):
+        # if complement value is not in hash-table
+        if (target - val) not in dic:
+            # add current value with corresponding index to hash-table
+            dic[val] = ind
+        else:
+            # complement value found
+             return [dic[target - val], ind]
+            
+    # none found
+    return []
+
+# where main function is called
+def main(argv):
+    
+    # parses string format into list
+    preNums =  argv[0:][0]
+    
+    # use regex to check if each variable is valid input. Perform negative lookbehind/ahead for a decimal point. 
+    formatCheck = re.findall(r'(?<!\.)\b[\d]+\b(?!\.)', preNums)
+    
+    # if everything is in proper format, number of values in filter will be the same as numher of values in preNums
+    assert len(formatCheck) == len(preNums.split(',')), "Input must be all whole numbers and follows proper format"
+    
+    # convert preNums to nums after assert is True
+    nums = map(int, preNums.strip('[]').split(','))
+        
+    # takes second target arugment
+    target = argv[-1]
+    
+    # use regex to make sure the input is neither string nor a float
+    assert len(re.findall(r'(?<!\.)\b[\d]+\b(?!\.)', target)) == 1, "Target only accepts one input, and input needs to be a whole number"
+    
+    target = int(target)
+    
+    # printa result
+    print(twoSum(nums, target))
+
+if __name__ == "__main__":
+    p = argparse.ArgumentParser(
+        description = "Given an array of integers, return indices of the two numbers such that they add up to a specific target.")
+    
+    p.add_argument("LIST", help = "List of integers, ex. \"2, 7, 11, 15\"")
+    p.add_argument("TARGET", help = "Targeted number")
+    
+    args = p.parse_args()
+    main([args.LIST, args.TARGET])
+    
+```

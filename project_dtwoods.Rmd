@@ -21,7 +21,7 @@ But, as autumn fades to winter in the northern hemisphere, it is the dawn of spr
 The change in the seasons creates this constant growing and dying of plant life.
 This cycle is important for our understanding of the global carbon cycle: a property used in studies to understand and predict Earth's future climate.
 
-Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons---called the "breathing of the terrestrial biosphere"---as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.
+Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons---called the "breathing of the terrestrial biosphere[^baldocchi]"---as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.
 
 ## Data Description
 The data visualized above is the enhanced vegetation index (EVI), which is created by combining specific energy bands collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra[^terra] satellite orbiting the earth about 16 times each day.
@@ -41,8 +41,9 @@ Author: Tyler W. Davis.
 Last edited: 2019-10-28.
 </div>
 
+[^baldocchi]: Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1--6, 2008.
 [^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: https://ffmpeg.org/
-[^gepisat]: Python script was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: https://bitbucket.org/labprentice/gepisat
+[^gepisat]: Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: https://bitbucket.org/labprentice/gepisat
 [^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-10-28. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
 [^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: https://www.gimp.org/
 [^hdf]: Hierarchical Data Format. Copyright 2006--2019. The HDF Group. Accessed 2019-10-28. Online: https://www.hdfgroup.org/

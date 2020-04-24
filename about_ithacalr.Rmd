@@ -17,7 +17,7 @@ My favorite things:
 ### Sample script
 [Excel Spreadsheet Cleaner (.py)](scripts/spreadsheet_cleaner.py)
 
-For my honors thesis, I need to convert lots of documents into spreadsheets and clean them. Sometimes, extra whitespace slips through the cracks. This script removes leading, trailing, and duplicate whitespace from .xls and .xlsx files and outputs a new, cleaned .xlsx file. 
+For my honors thesis, I need to convert lots of documents into spreadsheets and clean them. Sometimes, extra whitespace slips through the cracks. This script removes leading, trailing, and duplicate whitespace from .xls and .xlsx files and outputs a new, cleaned .xlsx file.
 
 ```{python spreadsheet, eval=FALSE}
 #!/usr/bin/env python3
@@ -157,3 +157,4 @@ if __name__ == "__main__":
         input_path = str(input("Type path to directory: "))
         utility = SpreadSheet(input_path)
         utility.run(input_path)
+```

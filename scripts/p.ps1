@@ -1,0 +1,1 @@
+Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion | Format-Table -AutoSize > 'C:\\Users\\irtho\\Desktop\\WM_2019_2020\\Spring_2020\\SpatialData460\\spatial-data-discovery.github.io\\scripts\\PSlog.txt'
