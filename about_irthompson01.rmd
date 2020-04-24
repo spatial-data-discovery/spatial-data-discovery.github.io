@@ -3,9 +3,6 @@ title: "About the Coder"
 author: "Ian Thompson"
 Edited: "February 3, 2020"
 ---
-
-
-
 **Bio**
 :   I am a senior on the swim team with a Data Science major and Computer Science minor.
 
