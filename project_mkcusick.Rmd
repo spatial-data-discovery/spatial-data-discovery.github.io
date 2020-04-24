@@ -1,0 +1,49 @@
+---
+title: The Spread of Covid-19 Throughout the United States (contiguous US?)
+author: Matthew Cusick
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" >
+  </video>
+</div>
+
+> *"Catchy phrase* -- someone important
+## Overview
+Info about project and background
+
+Use citation inserts like this[^baldocchi].
+
+## Data Description
+Wheres the data from? What does this look like -> ([LP DAAC](https://lpdaac.usgs.gov/)).
+Python[^python] programming language with [pyhdf](http://fhs.github.io/pyhdf/) package[^pyhdf].
+
+The script does.... data[^gepisat].
+
+Blah blah
+
+```
+python script
+```
+## Visualization
+Describe time slider/animation process
+
+<div class="credit-line">
+Author: Matthew Cusick.
+Last edited: 2020-04-24.
+</div>
+
+[^baldocchi]: Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1--6, 2008.
+[^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: https://ffmpeg.org/
+[^gepisat]: Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: https://bitbucket.org/labprentice/gepisat
+[^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-10-28. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: https://www.gimp.org/
+[^hdf]: Hierarchical Data Format. Copyright 2006--2019. The HDF Group. Accessed 2019-10-28. Online: https://www.hdfgroup.org/
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: https://mpeg.chiariglione.org/
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2019-10-28. Online: http://www.libpng.org/pub/png/
+[^pyhdf]: HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA's Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: https://www.hdfeos.org/software/pyhdf.php
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-10-28. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
+[^terra]: About Terra. NASA.gov. Accessed 2019-10-28. Online: https://terra.nasa.gov/about
