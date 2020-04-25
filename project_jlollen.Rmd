@@ -1,0 +1,19 @@
+---
+title: The Opioid Epidemic
+---
+
+
+> *"128 People Die Every Day from an Opioid Overdose."* -- Centers for Disease Control and Prevention [^cdc]
+
+## Overview
+
+
+## Data Description
+
+
+<div class="credit-line">
+Author: Jenna Ollen.
+Last edited: 2020-04-25.
+</div>
+
+[^cdc]: Centers for Disease Control and Prevention. "Understanding the Epidemic". Accessed 2020-04-25 Online: https://www.cdc.gov/drugoverdose/epidemic/index.html
