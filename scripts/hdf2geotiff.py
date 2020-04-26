@@ -80,11 +80,6 @@ rlayer = gdal.Open(hdf_layer.GetSubDatasets()[1][0], gdal.GA_ReadOnly)
 # See what's all available with this class:
 dir(rlayer)
 
-# Let's take a look at the metadata for this data layer
-for key in rlayer.GetMetadata_Dict():
-    val = rlayer.GetMetadata_Dict()[key]
-    print(key, val)
-
 # Create an output GeoTIFF raster
 # NOTE: although the data layer says it is in EPSG:9122; it's unknown
 # so, let's create a GeoTIFF in the standard EPSG:4326 (WGS84)

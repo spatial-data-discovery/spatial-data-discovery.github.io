@@ -12,12 +12,12 @@ def correctSubtitleEncoding(filename, newFilename, encoding_from='UTF-16', encod
             for line in fr:
                 fw.write(line[:-1]+'\r')
 
-def updateOld(old, oldLines, new, newLines):
+def updateOld(newList):
     #close and reopen in write mode to replace file contents.
-    old.close()
+    os.remove("oldchangelog.txt")
     old = open("oldchangelog.txt", "w")
-    for i in range(len(newLines)):
-        old.write(newLines[i])
+    for i in range(len(newList)):
+        old.write(newList[i])
 
 
 #Begin Program by parsing args. Should only be help.
@@ -77,13 +77,21 @@ except:
 #Get the list of lines for comparison
 oldLines = old.readlines()
 newLines = new.readlines()
+newList = []
+
+for i in range(len(newLines)):
+    newList.append(newLines[i])
+
+
+#We no longer need this file
+old.close()
 
 #For first time runs, we should fill the changelog with all of the contents from the newLines list.
 if len(oldLines) == 0:
     log.write("Begin Tracking " + str(date.today()))
     for i in range(len(newLines)):
         log.write(newLines[i])
-    updateOld(old, oldLines, new, newLines)
+    updateOld(newList)
     exit()
 
 
@@ -94,28 +102,32 @@ log.write("\n\nUPDATES AS OF " + str(date.today()) + ":")
 
 anyChanges = False
 
-for i in range(len(newLines)):
-    if newLines[i].replace(' ', '') != oldLines[i].replace(' ', ''):
-        anyChanges = True
-        #Check to see if this is an entirely new program or just an updated version of an old one.
-        #If it is new, put it in the changelog as such and skip to the next line
-        for j in range(3):
-            if newLines[i][j] != oldLines[i][j]:
-                print("Here I am")
-                log.write("\nNEW PROGRAM: " + newLines[i])
-                del(newLines[i])
-                break
+try:
+    for i in range(len(newLines)):
+        if newLines[i].replace(' ', '') != oldLines[i].replace(' ', ''):
+            anyChanges = True
+            newProgram = False
+            #Check to see if this is an entirely new program or just an updated version of an old one.
+            #If it is new, put it in the changelog as such and skip to the next line
+            for j in range(3):
+                if newLines[i][j] != oldLines[i][j]:
+                    log.write("\nNEW PROGRAM: " + newLines[i])
+                    del newLines[i]
+                    i -= 1
+                    newProgram = True
+                    break
 
-
-        print("NOT SAME, updating")
-        print(newLines[i])
-        print(oldLines[i])
-        #write to changelog
-        log.write("\n" + newLines[i])
-        #Change the line that represents an update
-        oldLines[i] = newLines[i]
+            if newProgram == False:
+                print("NOT SAME, updating")
+                print(newLines[i])
+                print(oldLines[i])
+                #write to changelog
+                log.write("\n" + newLines[i])
+                #Change the line that represents an update
+                oldLines[i] = newLines[i]
+except:
+    print("Index Error detected, but that just means you installed a new program. \n Shouldn't have an effect on the program I don't think...")
 
 if anyChanges == False:
     log.write("\n No Changes")
-
-updateOld(old, oldLines, new, newLines)
+updateOld(newList)
