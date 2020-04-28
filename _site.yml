@@ -26,8 +26,18 @@ navbar:
               href: project_dtwoods.html
             - text: "---------"
             - text: "Spring 2020"
+            - text: "COVID-19 Spread Within The US"
+              href: project_mkcusick.html
+            - text: "COVID-19 Strictness Policies"
+              href: project_msuri.html
+            - text: "Global Earthquake Frequency"
+              href: project_grluisi.html
             - text: "Monitoring Ocean Climate Change"
               href: project_irthompson01.html
+            - text: "Projecting COVID-19 Cases"
+              href: project_intj1.html
+            - text: "The Opioid Epidemic"
+              href: project_jlollen.html
             - text: "---------"
             - text: "Fall 2019"
             - text: "Children's Hospitals in U.S."
