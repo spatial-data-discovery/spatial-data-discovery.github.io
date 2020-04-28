@@ -1,0 +1,22 @@
+---
+title: "The Strictness of COVID-19 Policy by State"
+---
+
+
+## Overview
+
+Overview will go here.
+
+## Data Description
+
+Data Description will go here.
+
+## Python Script
+
+Python script will go here.
+
+<div class="credit-line">
+Author: Mallika Suri.
+Last edited: 2020-05-27
+</div>
+
