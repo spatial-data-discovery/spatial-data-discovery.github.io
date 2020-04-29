@@ -1,110 +1,148 @@
 ---
-title: Projecting COVID-19 Cases
-author: "Tinh Son"
-date: "Edited: 2020-04-23"
+title: Projecting COVID-19 Cases Under No Intervention Measures
 ---
 
-<!-- Image -->
-![OnePunch](http://ih1.redbubble.net/image.143081673.4030/flat,800x800,075,t.u2.jpg "One Punch Man Potato Head"){width=150 height=150}
+<!----Map------>
+<div class = "video-wrapper">
+  <video id = "scaledvideo" controls preload = "true" autoplay loop muted>
+    <source src= '' type = "video/avi" >
+  </video>
+</div>
 
 
-<!-- Bio --> 
-**Bio**
-:    Senior, performer, sleeper... breathing. 
-     Major in Computer Science and Applied Math. 
-     **Love** Python, _okay_ with C and ~~everything else~~.
-     
-<!-- Hobbies -->
-**Hobbies**
-:   * Sleep
-    * Body Pump
-    * Violin
-    * Cook
+<!----Overview--->
+## Overview
+
+As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with aobut one third of those cases (1.03 million) is reported within the United States [^COVID]. 
+With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures. 
+
+While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
+
+![SIR model](link1)
+![SIR model with delay](link2)
+![tau description](link3)
+
+From this model, the parameters, beta and gamma, are estimated by MCMC[^MCMC] and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here are assumptions and initial conditions for projection:
+
+- Basic state projection has an average population of about 6 millions (US pop / 50 states).
+
+- Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed. 
+
+- Removed is sum of (current recovered + current deaths) / 50 states.
+
+- The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
+
+- Parameters beta and gamma are tuned within the MCMC so that the reproduction rate cannot 
+
+- This projection assumes that **absolutely no intervention measures were enforced**.
+
+**Both MCMC simulations and projection assume a 14 days incubation period**. Model is integrated using [scipy's odeint](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html). The result projection:
+
+![Projection](FinalProjection)
+
+Based on the projection, for an "average state" of 6 million people, the number of infectives will peak at
+200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered thus should only be is a representation of the worst case scenario. However, interesting information can still be extracted from this curve, such as the possible inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.   
+
+<!-----Data Description---->
+## Data Description and Data Processing
+
+The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py.
+
+The video above showed the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot location from March 9th to March 10th, where cases recorded are grouped from local-wise to state wise. This state-wide report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
+
+Johns Hopkins CSSEGIS offers detail information about COVID-19 cases all over the world. The primary data source is [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports). One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relied on the number of confirmed cases. 
+
+A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.
+
+```python
+class preProcess():
+    def __init__(self, path, country):
+        self.__dates = sorted([re.search(r'(\d+-\d+-\d+)', d).group() for d in glob.glob(os.path.join(path, "*.csv"))])
+        self.__df = {re.search(r'(\d+-\d+-\d+)',i).group(): pd.read_csv(i) for i in glob.glob(os.path.join(path, "*.csv"))}
+        self.c_format = {'Country/Region', 'Country_Region'} #Upon looking at csv formats, I realized there are inconsistencies in keys. This should fix it.
+        self.coords_format = {'Latitude', 'Longitude', 'Lat', 'Long_'}
+        self.s_format = {'Province/State', 'Province_State'}
+        self.__countries = sorted({country for d in self.__dates for country in self.__df[d][(self.c_format & set(self.__df[d].columns)).pop()]})
         
-<!-- Script -->
-### Script
-[twoSum (.py)](scripts/twoSum.py)
-``` {python twoSum, eval = FALSE}
-'''
-@Author: Tinh Son. Date: 2020-2-06
-@Description: This code is written as a practice challenge from Leetcode.com, with linear run time.
+        #1
+        self.__cDates = sorted({i for i in self.dates if country in set(self.df[i][(self.c_format & set(self.df[i].columns)).pop()])} &
+                               {j for j in self.dates if len(set(self.df[j][(self.coords_format & set(self.df[j].columns))]))})
 
-@Problem
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
-Example:
-
-Given nums = [2, 7, 11, 15], target = 9,
-
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
-
-Execution format: python .\twoSum.py LIST TARGET
-Where LIST is in string 
-Where TARGET is a whole number
-
-Example: python .\twoSum.py "2, 7, 11, 15" 9
-
-'''
-# use regex to check input
-import re 
-#argparse as required by spec
-import argparse
-          
-# function takes in list and target, returns list
-def twoSum(nums: list, target: int) -> list:
-    # create hash-table
-    dic = {}
-
-    # loops through value and index
-    for ind, val in enumerate(nums):
-        # if complement value is not in hash-table
-        if (target - val) not in dic:
-            # add current value with corresponding index to hash-table
-            dic[val] = ind
-        else:
-            # complement value found
-             return [dic[target - val], ind]
-            
-    # none found
-    return []
-
-# where main function is called
-def main(argv):
-    
-    # parses string format into list
-    preNums =  argv[0:][0]
-    
-    # use regex to check if each variable is valid input. Perform negative lookbehind/ahead for a decimal point. 
-    formatCheck = re.findall(r'(?<!\.)\b[\d]+\b(?!\.)', preNums)
-    
-    # if everything is in proper format, number of values in filter will be the same as numher of values in preNums
-    assert len(formatCheck) == len(preNums.split(',')), "Input must be all whole numbers and follows proper format"
-    
-    # convert preNums to nums after assert is True
-    nums = map(int, preNums.strip('[]').split(','))
+        #2
+        self.__country = self.countryBreakDown(country)
         
-    # takes second target arugment
-    target = argv[-1]
-    
-    # use regex to make sure the input is neither string nor a float
-    assert len(re.findall(r'(?<!\.)\b[\d]+\b(?!\.)', target)) == 1, "Target only accepts one input, and input needs to be a whole number"
-    
-    target = int(target)
-    
-    # printa result
-    print(twoSum(nums, target))
-
-if __name__ == "__main__":
-    p = argparse.ArgumentParser(
-        description = "Given an array of integers, return indices of the two numbers such that they add up to a specific target.")
-    
-    p.add_argument("LIST", help = "List of integers, ex. \"2, 7, 11, 15\"")
-    p.add_argument("TARGET", help = "Targeted number")
-    
-    args = p.parse_args()
-    main([args.LIST, args.TARGET])
-    
+        #3 
+        self.__states = self.statesBreakDown()...        
 ```
+Where reusable variables are important in making the structure easier to identify for the users:
+
+```python
+#Break down stats by State/Province
+def countryBreakDown(self, country):
+    #Data processing is getting more difficult than I though. Let's hope that they stop changing the data format as the day goes on.
+    pre_df = {d: self.df[d][self.df[d][(self.c_format & set(self.df[d].columns)).pop()] == country][[(self.s_format & set(self.df[d].columns)).pop(), 
+                                       sorted(self.coords_format & set(self.df[d].columns))[-1],
+                                       sorted(self.coords_format & set(self.df[d].columns))[0], 
+                                       'Confirmed', 'Recovered', 'Deaths']].set_index((self.s_format & set(self.df[d].columns)).pop()) for d in self.cDates}
+    #Add multi-Index
+    for k, v in pre_df.items():
+        coords = list(prod(['Coordinates'], v.columns[:2]))
+        coords.extend(list(prod([k], v.columns[2:])))
+        v.columns = pd.MultiIndex.from_tuples(coords)
+        v.index.names = ['State/Province'] #Rename index level for consistency
+    return pre_df
+
+#Statesbreak down. PASS IN self.country
+def statesBreakDown(self):
+    #Use latest date as scheme for merge. This relies heavily on the latest date contains coords
+    latest = self.cDates[-1]
+    dff = self.country[latest].groupby(self.country[latest].index).sum()
+    dff.drop(columns = dff.columns.levels[0][0], level = 0, inplace = True) #Drop the date columns, so all we have now are the states
+    if len(dff.columns.levels) == 2:
+        dff.drop(columns = dff.columns.levels[0][1], level = 0, inplace = True) #DROPPING COORDINATES TOO. COMMENT IF NEEDED
+    #####################################################################
+    for i in self.cDates:
+        df = self.country[i].groupby(self.country[i].index).sum()
+        #Some dates do not have the coordinates column, Need to check length of level 0 multiIndex
+        if len(df.columns.levels) == 2:
+            df.drop(columns = df.columns.levels[0][1], level = 0, inplace = True)
+        dff = pd.merge(dff, df, how = 'left', on = 'State/Province')
+    #Depending on new locations, might need to add or remove from below
+    dff.drop(index = ['Recovered','Virgin Islands', 'Northern Mariana Islands', 'Grand Princess', 'Diamond Princess', 'Puerto Rico'], inplace = True) 
+    dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
+    return dff ...
+```
+Overall, what determines whether or not the script will work in the future is contingent on the data collection teams and their willingness to be consistent.
+
+During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] are helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] as then used to project COVID-19 statistic upon. After the data is processed and mapped, cv2[^CV] was used to stitch these maps together. 
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "credit-line">
+Author: Tinh Son
+Last edited: 2020-04-28
+</div>
+
+[^COVID]: https://news.google.com/covid19/map?hl=en-US&gl=US&ceid=US:en
+[^FLU]: https://www.cdc.gov/flu/about/burden/index.html
+[^REOPEN]: https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm
+[^SIR]: https://www.hindawi.com/journals/ddns/2008/636153/
+[^MCMC]: https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50
+[^DRAM] http://helios.fmi.fi/~lainema/dram/
+[^PYMCMCSTAT]: https://pypi.org/project/pymcmcstat/
+[^PD]: https://pandas.pydata.org/
+[^NP]: https://numpy.org/
+[^RE]: https://docs.python.org/3/library/re.html
+[^ITER]: https://docs.python.org/3/library/itertools.html
+[^BASEMAP]: https://matplotlib.org/basemap/
+[^PLT]: https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html
+[^CV]: https://pypi.org/project/opencv-python/
