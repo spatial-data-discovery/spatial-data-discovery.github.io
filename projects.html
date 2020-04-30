@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Jiaying Chen" />
 
 
-<title>Amazon’s Last-Mile Delivery Network</title>
+<title>Spatial Data Discovery Projects</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -437,40 +436,47 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Amazon’s Last-Mile Delivery Network</h1>
+<h1 class="title toc-ignore">Spatial Data Discovery Projects</h1>
 
 </div>
 
 
-<!-- VIDEO ON LOOP: see styles.css for formatting -->
-<div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/warehouse.mp4" type="video/mp4" > </video></p>
-</div>
-<div id="overview" class="section level2">
-<h2>Overview</h2>
-<p>Amazon is ambitious in taking further control of its supply chain. Since the company launched its first facility for last-mile delivery in 2013, the distribution network has been booming behind services including Prime Now, Whole Foods grocery delivery, and the one-day Prime delivery in plan.</p>
-<p>As an e-commerce giant that is estimated to share 38% of the market in 2019<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, Amazon’s expansion on its distribution network may have a wide influence on delivery firms and other local or online retailers. With its logistics infrastructure, Amazon is threatening the business of delivery firms in the densely populated areas, leaving them with less profitable rural areas. The company may also outcompete other e-commerce providers in terms of speed and efficiency. Thus, visualizing Amazon’s delivery network may help business owners and economics researchers understand Amazon’s long-term strategy to grow its logistics services capacity and its influence on the e-commerce market.</p>
-<p>The animation visualizes the population coverage of Amazon’s delivery network in the contiguous U.S. from 2013 to 2020 (projected). The areas reachable by truck from a delivery station within one hour are colored with orange, and the areas that take more than one hour for trucks to travel from a delivery station are colored with dark blue. The variations in population density are revealed through tints.</p>
-</div>
-<div id="data-description" class="section level2">
-<h2>Data Description</h2>
-<p>The population density map uses the 2010 U.S. Census Grids downloaded from Center for International Earth Science Information Network(<a href="https://sedac.ciesin.columbia.edu/data/set/usgrid-summary-file1-2010">CIESIN</a>). For square km grids, with the numbers of people ranging from 0 to 20, a gradual change in tint is on display. Grids with a population greater than or equal to 20 appeal identical in tint.</p>
-<p>The addresses of the delivery stations are obtained from MWPVL International(<a href="http://www.mwpvl.com/html/amazon_com.html">MWPVL</a>). A script was used to extract the addresses from a PNG file and another script is used to clean and split the data by year. Both scripts are written in Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. The addresses are geocoded into location points with ArcMap<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Based on these location points, ArcGIS Online<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> is used to estimate the 1-hour trucking-time areas and the estimations are exported as shapefiles back into ArcMap for clipping. The clipped raster files are later imported into QGIS<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> for scaling and coloring. The output image sequences are made into an animation using Photoshop<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<div class="credit-line">
-<p>Author: Jiaying Chen. Last edited: 2019-12-18.</p>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Bloomberg.com. (2019). Amazon U.S. Online Market Share Estimate Cut to 38% From 47%. Accessed 2019-12-14. Online: <a href="https://www.bloomberg.com/news/articles/2019-06-13/emarketer-cuts-estimate-of-amazon-s-u-s-online-market-share" class="uri">https://www.bloomberg.com/news/articles/2019-06-13/emarketer-cuts-estimate-of-amazon-s-u-s-online-market-share</a>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>ArcMap Desktop 10.5. Software released through Environmental Systems Research Institute(ESRI). Accessed 2019-11-26. Online: <a href="http://desktop.arcgis.com/en/arcmap/" class="uri">http://desktop.arcgis.com/en/arcmap/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>ArcGIS Online. Software released through Environmental Systems Research Institute(ESRI). Accessed 2019-11-26. Online: <a href="http://desktop.arcgis.com/en/arcmap/" class="uri">http://desktop.arcgis.com/en/arcmap/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-11-26. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Photoshop CC 2017. Software released through Adobe. Accessed 2019-11-26. Online: <a href="https://www.adobe.com/products/photoshop.html" class="uri">https://www.adobe.com/products/photoshop.html</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+<h3>
+<a href='project_alway1.html'>Children’s Hospitals in the US</a>
+</h3>
+<p class="semester">
+by Audrey Way | Fall 2019
+</p>
+<h3>
+<a href='project_dpwisdom.html'>Presidential Election Margins of Victory</a>
+</h3>
+<p class="semester">
+by David Wisdom | Fall 2019
+</p>
+<h3>
+<a href='project_ithacalr.html'>Climate Change and Conflict in Africa</a>
+</h3>
+<p class="semester">
+by Liz Rosen | Fall 2019
+</p>
+<h3>
+<a href='project_jiayingchen0307.html'>Amazon’s Last-Mile Delivery Network</a>
+</h3>
+<p class="semester">
+by Jiaying Chen | Fall 2019
+</p>
+<h3>
+<a href='project_mbrickey.html'>Tornadoes and Our Warming Climate</a>
+</h3>
+<p class="semester">
+by Morgan E. Brickey | Fall 2019
+</p>
+<h3>
+<a href='project_oforiaddaejnr.html'>Encroachment of Humans Into Natural Areas</a>
+</h3>
+<p class="semester">
+by Yaw Ofori-Addae | Fall 2019
+</p>
 
 <footer class="myfoot">
     <div class="foot-text">

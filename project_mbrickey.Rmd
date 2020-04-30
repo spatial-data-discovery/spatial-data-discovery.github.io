@@ -1,5 +1,7 @@
 ---
 title: "Tornadoes and Our Warming Climate"
+author-meta: "Morgan E. Brickey"
+semester: "Fall 2019"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

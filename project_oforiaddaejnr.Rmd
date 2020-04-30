@@ -1,5 +1,7 @@
 ---
 title: Encroachment of Humans Into Natural Areas
+author-meta: "Yaw Ofori-Addae"
+semester: "Fall 2019"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

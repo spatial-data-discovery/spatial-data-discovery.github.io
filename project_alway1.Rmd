@@ -1,6 +1,8 @@
 ---
 title: Children's Hospitals in the US
 subtitle: An examination of the number of children's hospitals per state
+author-meta: "Audrey Way"
+semester: "Fall 2019"
 ---
 
 <div class="video-wrapper">

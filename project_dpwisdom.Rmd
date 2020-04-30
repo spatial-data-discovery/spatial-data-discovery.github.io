@@ -1,5 +1,7 @@
 ---
 title: Presidential Election Margins of Victory
+author-meta: "David Wisdom"
+semester: "Fall 2019"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

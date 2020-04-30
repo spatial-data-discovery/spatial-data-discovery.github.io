@@ -1,0 +1,34 @@
+---
+title: "Spatial Data Discovery Projects"
+---
+
+```{r echo = FALSE}
+library(rmarkdown)
+
+get.content <- function(my.file){
+  my.out = ""
+  my.meta <- rmarkdown::yaml_front_matter(my.file)
+  if (! is.null(my.meta$semester)) {
+    my.url <- sub("Rmd", "html", my.file, ignore.case=TRUE)
+    my.out <- paste(
+      c(
+        "<h3><a href='", my.url, "'>",
+        my.meta$title, "</a></h3>\n",
+        "<p class='semester'>by ", my.meta$`author-meta`, " | ",
+        my.meta$semester, "</p>\n"
+      ),
+      collapse = ""
+    )
+  }
+  return(my.out)
+}
+```
+
+```{r echo = FALSE, results = 'asis', comment = NA}
+# TODO: group by semester; sort by title
+myfiles <- list.files(pattern = "^project_.*Rmd$", ignore.case = TRUE)
+for (f in myfiles){
+    f.out <- get.content(f)
+    writeLines(f.out)
+}
+```

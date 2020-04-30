@@ -1,5 +1,7 @@
 ---
 title: Amazon's Last-Mile Delivery Network
+author-meta: "Jiaying Chen"
+semester: "Fall 2019"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

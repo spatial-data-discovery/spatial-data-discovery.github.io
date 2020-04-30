@@ -1,5 +1,7 @@
 ---
 title: Climate Change and Conflict in Africa
+author-meta: "Liz Rosen"
+semester: "Fall 2019"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
