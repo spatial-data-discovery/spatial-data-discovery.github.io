@@ -94,37 +94,37 @@ def countryBreakDown(self, country):
 
 #Statesbreak down. PASS IN self.country
 def statesBreakDown(self):
-    #Use latest date as scheme for merge. This relies heavily on the latest date contains coords
-    latest = self.cDates[-1]
-    dff = self.country[latest].groupby(self.country[latest].index).sum()
-    dff.drop(columns = dff.columns.levels[0][0], level = 0, inplace = True) #Drop the date columns, so all we have now are the states
-    if len(dff.columns.levels) == 2:
-        dff.drop(columns = dff.columns.levels[0][1], level = 0, inplace = True) #DROPPING COORDINATES TOO. COMMENT IF NEEDED
-    #####################################################################
-    for i in self.cDates:
-        df = self.country[i].groupby(self.country[i].index).sum()
-        #Some dates do not have the coordinates column, Need to check length of level 0 multiIndex
-        if len(df.columns.levels) == 2:
-            df.drop(columns = df.columns.levels[0][1], level = 0, inplace = True)
-        dff = pd.merge(dff, df, how = 'left', on = 'State/Province')
-    #Depending on new locations, might need to add or remove from below
-    dff.drop(index = ['Recovered','Virgin Islands', 'Northern Mariana Islands', 'Grand Princess', 'Diamond Princess', 'Puerto Rico'], inplace = True) 
-    dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
-    return dff ...
+        statesdict = {"D.C":"District of Columbia","AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"}
+        DPfilter = {'Unassigned Location (From Diamond Princess)','Grand Princess Cruise Ship'} 
+        #Use latest date as scheme for merge. This relies heavily on the latest date contains coords
+        latest = self.cDates[-1]
+        dff = self.country[latest].groupby(self.country[latest].index).sum()
+        dff.drop(columns = dff.columns.levels[0][0], level = 0, inplace = True) #Drop the date columns, so all we have now are the states
+        if len(dff.columns.levels) == 2:
+            dff.drop(columns = dff.columns.levels[0][1], level = 0, inplace = True) #DROPPING COORDINATES TOO. COMMENT IF NEEDED
+        #####################################################################
+        for i in self.cDates:
+            df = self.country[i].groupby(self.country[i].index).sum()
+            #Some dates do not have the coordinates column, Need to check length of level 0 multiIndex
+            if len(df.columns.levels) == 2:
+                df.drop(columns = df.columns.levels[0][1], level = 0, inplace = True)
+            #before merging, filter state/province columns from previous dates
+            if len(set(df.index) & DPfilter):
+                df.drop(index = list(set(df.index) & DPfilter), inplace = True)
+            filtered = [re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)[0] for x in df.index if len(re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)) == 1] 
+            if len(set(statesdict) & set(filtered)):
+                df.index = [statesdict[s] for s in filtered]
+                df = df.groupby(df.index).sum()
+                df.index.names = ['State/Province']
+            dff = pd.merge(dff, df, how = 'left', on = 'State/Province')
+        #Depending on new locations, might need to add or remove from below
+        dff.drop(index = ['Recovered','Virgin Islands', 'Northern Mariana Islands', 'Grand Princess', 'Diamond Princess', 'Puerto Rico'], inplace = True)
+        dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
+        return dff 
 ```
 Overall, what determines whether or not the script will work in the future is contingent on the data collection teams and their willingness to be consistent.
 
 During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] are helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] as then used to project COVID-19 statistic upon. After the data is processed and mapped, cv2[^CV] was used to stitch these maps together. 
-
-
-
-
-
-
-
-
-
-
 
 
 <div class = "credit-line">
@@ -137,7 +137,7 @@ Last edited: 2020-04-28
 [^REOPEN]: https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm
 [^SIR]: https://www.hindawi.com/journals/ddns/2008/636153/
 [^MCMC]: https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50
-[^DRAM] http://helios.fmi.fi/~lainema/dram/
+[^DRAM]: http://helios.fmi.fi/~lainema/dram/
 [^PYMCMCSTAT]: https://pypi.org/project/pymcmcstat/
 [^PD]: https://pandas.pydata.org/
 [^NP]: https://numpy.org/
