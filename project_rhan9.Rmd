@@ -1,0 +1,20 @@
+---
+title: The Rise of a Superstar
+---
+
+## Overview
+Ever since I was a little kid, basketball has been a big part of my life. It is my favorite sport and my favorite hobby.
+
+When the National Basketball Association(NBA) cancelled the remainder of its 2019-2020 season, due to COVID-19, I was extremely disappointed.
+
+Inspired by posts by [Kirk Goldsberry](https://fivethirtyeight.com/features/how-mapping-shots-in-the-nba-changed-it-forever/) and a LA Times graphic about [Kobe Bryant's](https://graphics.latimes.com/kobe-every-shot-ever/) career shots, I decide to visualize the growth of an NBA player through his shot charts. I thought this project would help fill the void in my life caused by the lack of NBA basketball. In a reality without COVID the playoffs would be happening right now.
+
+## Data Description
+The data visualized above are the shots attempted by [Giannis Antetokounmpo](https://en.wikipedia.org/wiki/Giannis_Antetokounmpo) during the regular season.
+I thought it would be a good idea to display Antetokounmpo's shots, because he has quickly gone from an unknown player in his first season, 2013-2014, to a superstar and the Most Valuable Player(MVP) of the NBA in his last complete season 2018-2019. He was the favorite to repeat as MVP for the 2019-2020 season.
+
+
+<div class="credit-line">
+Author: Ryan Han.
+Last edited: 2020-04-30.
+</div>
