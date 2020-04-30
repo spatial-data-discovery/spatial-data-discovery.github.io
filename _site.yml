@@ -34,24 +34,17 @@ navbar:
               href: project_grluisi.html
             - text: "Monitoring Ocean Climate Change"
               href: project_irthompson01.html
+            - text: "Opioid Epidemic"
+              href: project_jlollen.html
             - text: "Projecting COVID-19 Cases"
               href: project_intj1.html
-            - text: "The Opioid Epidemic"
-              href: project_jlollen.html
+            - text: "Rise of a Superstar"
+              href: project_rhan9.html
+            - text: "Spread of Urbanization"
+              href: project_emmgillstrick.html
             - text: "---------"
-            - text: "Fall 2019"
-            - text: "Children's Hospitals in U.S."
-              href: "project_alway1.html"
-            - text: "Climate Change & Conflict"
-              href: "project_ithacalr.html"
-            - text: "Encroachment Into Natural Areas"
-              href: "project_oforiaddaejnr.html"
-            - text: "Last-Mile Delivery Network"
-              href: "project_jiayingchen0307.html"
-            - text: "Margins of Presidential Victory"
-              href: "project_dpwisdom.html"
-            - text: "Tornadoes Since the 1950s"
-              href: "project_mbrickey.html"
+            - text: "Previous Projects"
+              href: projects.html
         - text: "About"
           menu:
             - text: "The Coder Pages"

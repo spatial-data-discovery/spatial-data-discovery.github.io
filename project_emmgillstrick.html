@@ -11,7 +11,7 @@
 
 
 
-<title>The GitHub Development Team</title>
+<title>Spread of Urbanization</title>
 
 <script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -426,96 +426,135 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">The GitHub Development Team</h1>
-<h4 class="date">Updated: April 30, 2020</h4>
+<h1 class="title toc-ignore">Spread of Urbanization</h1>
 
 </div>
 
 
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>will add</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>The data visualized above is the Land Cover Climate Modeling Grid collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and Aqua<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> satellites. Terra passes from north to south across the equator each morning, while Aqua passes south to north over the equator each afternoon. The data contains values representing different land cover types ranging from 0 to 15.</p>
+<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. The data were extracted and put into yearly raster files with a computer program written in Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
+<p>For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG image format.</p>
+<p>Original Data Set Values:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">The Coder Pages</th>
+<th>Land Cover Type</th>
+<th>Raster Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="about_abgaddi.html">abgaddi</a></td>
+<td>Water</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_aburke01.html">aburke01</a></td>
+<td>Evergreen Needleleaf Forest</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_alway1.html">alway1</a></td>
+<td>Evergreen Broadleaf Forest</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_dpwisdom.html">dpwisdom</a></td>
+<td>Deciduous Needleleaf Forest</td>
+<td>3</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_dtwoods.html">dtwoods</a></td>
+<td>Deciduous Broadleaf Forest</td>
+<td>4</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_elkelthen.html">elkelthen</a></td>
+<td>Mixed Forests</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_emmgillstrick.html">emmgillstrick</a></td>
+<td>Closed Shrublands</td>
+<td>6</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_gnmaniaci.html">gnmaniaci</a></td>
+<td>Open Shrublands</td>
+<td>7</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_grluisi.html">grluisi</a></td>
+<td>Woody Savannas</td>
+<td>8</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_hmbaier.html">hmbaier</a></td>
+<td>Savannas</td>
+<td>9</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_intj1.html">intj1</a></td>
+<td>Grasslands</td>
+<td>10</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_irthompson01.html">irthompson01</a></td>
+<td>Permanent Wetlands</td>
+<td>11</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_ithacalr.html">ithacalr</a></td>
+<td>Croplands</td>
+<td>12</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_jiayingchen0307.html">jiayingchen0307</a></td>
+<td>Urban and Built-up</td>
+<td>13</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="about_jlollen.html">jlollen</a></td>
+<td>Snow and Ice</td>
+<td>14</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="about_jpcasale.html">jpcasale</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="about_leanlow.html">leanlow</a></td>
-</tr>
-<tr class="even">
-<td align="left"><a href="about_luhuynh.html">luhuynh</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="about_mallikasuri.html">mallikasuri</a></td>
-</tr>
-<tr class="even">
-<td align="left"><a href="about_matt-kc.html">matt-kc</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="about_mbrickey.html">mbrickey</a></td>
-</tr>
-<tr class="even">
-<td align="left"><a href="about_nd3600.html">nd3600</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="about_oforiaddaejnr.html">oforiaddaejnr</a></td>
-</tr>
-<tr class="even">
-<td align="left"><a href="about_pulakraj.html">pulakraj</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="about_rhan9.html">rhan9</a></td>
+<td>Barren or Sparsely Vegetated</td>
+<td>15</td>
 </tr>
 </tbody>
 </table>
+<p>Modified Data Set Values:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Land Cover Type</th>
+<th>Raster Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Water</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Undeveloped Land (1-11, 14-15)</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Croplands</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Urban and Built-up</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<div class="credit-line">
+<p>Author: Emma Strickland. Last edited: 2020-04-28</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>About Terra. NASA.gov. Accessed 2019-04-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>About Aqua. Nasa.gov. Accessed 2020-04-28. Online: <a href="https://eospso.nasa.gov/missions/aqua" class="uri">https://eospso.nasa.gov/missions/aqua</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
