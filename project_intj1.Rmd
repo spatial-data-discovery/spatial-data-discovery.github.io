@@ -56,7 +56,7 @@ From this model, the parameters, $\beta$ and $\gamma$, are estimated by MCMC[^MC
 
 **Both MCMC simulations and projection assume a 14 days incubation period**. Model is integrated using [scipy's odeint](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html). The result projection:
 
-![Projection](FinalProjection)
+![Projection](https://drdavis.space/teaching/ds/sdd/media/2020/05/FinalProjection.png)
 
 Based on the projection, for an "average state" of 6 million people, the number of infectives will peak at
 200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered thus should only be is a representation of the worst case scenario. However, interesting information can still be extracted from this curve, such as the possible inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.   
