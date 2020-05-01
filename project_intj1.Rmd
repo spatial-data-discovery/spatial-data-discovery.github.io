@@ -18,11 +18,29 @@ With the number of deaths exceeding that of the common flu [^FLU] within just a 
 
 While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
 
-![SIR model](link1)
-![SIR model with delay](link2)
-![tau description](link3)
+ $$\frac{dS}{dt} = - \frac{\beta S_\tau I_\tau}{N}$$
 
-From this model, the parameters, beta and gamma, are estimated by MCMC[^MCMC] and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here are assumptions and initial conditions for projection:
+ $$\frac{dI}{dt} =  \frac{\beta  S I}{N} - \gamma I$$
+
+ $$\frac{dR}{dt} = \gamma I$$
+
+ $$R_0 = \frac{\beta}{\gamma}$$
+
+Where:
+
+- $\beta$ is the infection rate
+
+- $\gamma$ is the removed rate
+
+- $N$ is the total population
+
+- $R_0$ is the basic reproduction rate
+
+- $\tau$ is the delay constant from incubation period to infection: $S(t) = S,\ S(t - \tau) = S_\tau...$ and so on.
+
+One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered + Deaths is combined to R to facilitate MCMC process. 
+
+From this model, the parameters, $\beta$ and $\gamma$, are estimated by MCMC[^MCMC] and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here are assumptions and initial conditions for projection:
 
 - Basic state projection has an average population of about 6 millions (US pop / 50 states).
 
@@ -32,7 +50,7 @@ From this model, the parameters, beta and gamma, are estimated by MCMC[^MCMC] an
 
 - The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
 
-- Parameters beta and gamma are tuned within the MCMC so that the reproduction rate cannot 
+- Parameters $\beta$ and $\gamma$ are tuned within the MCMC so that the reproduction rate cannot exceed $2.1$.
 
 - This projection assumes that **absolutely no intervention measures were enforced**.
 
