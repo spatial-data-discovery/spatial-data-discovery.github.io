@@ -1,0 +1,166 @@
+---
+title: Projecting COVID-19 Cases Under No Intervention Measures
+---
+
+<!----Map------>
+<div class = "video-wrapper">
+  <video id = "scaledvideo" controls preload = "true" autoplay loop muted>
+    <source src= '' type = "video/avi" >
+  </video>
+</div>
+
+
+<!----Overview--->
+## Overview
+
+As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with aobut one third of those cases (1.03 million) is reported within the United States [^COVID]. 
+With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures. 
+
+While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
+
+ $$\frac{dS}{dt} = - \frac{\beta S_\tau I_\tau}{N}$$
+
+ $$\frac{dI}{dt} =  \frac{\beta  S I}{N} - \gamma I$$
+
+ $$\frac{dR}{dt} = \gamma I$$
+
+ $$R_0 = \frac{\beta}{\gamma}$$
+
+Where:
+
+- $\beta$ is the infection rate
+
+- $\gamma$ is the removed rate
+
+- $N$ is the total population
+
+- $R_0$ is the basic reproduction rate
+
+- $\tau$ is the delay constant from incubation period to infection: $S(t) = S,\ S(t - \tau) = S_\tau...$ and so on.
+
+One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered + Deaths is combined to R to facilitate MCMC process. 
+
+From this model, the parameters, $\beta$ and $\gamma$, are estimated by MCMC[^MCMC] and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here are assumptions and initial conditions for projection:
+
+- Basic state projection has an average population of about 6 millions (US pop / 50 states).
+
+- Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed. 
+
+- Removed is sum of (current recovered + current deaths) / 50 states.
+
+- The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
+
+- Parameters $\beta$ and $\gamma$ are tuned within the MCMC so that the reproduction rate cannot exceed $2.1$.
+
+- This projection assumes that **absolutely no intervention measures were enforced**.
+
+**Both MCMC simulations and projection assume a 14 days incubation period**. Model is integrated using [scipy's odeint](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html). The result projection:
+
+![Projection](FinalProjection)
+
+Based on the projection, for an "average state" of 6 million people, the number of infectives will peak at
+200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered thus should only be is a representation of the worst case scenario. However, interesting information can still be extracted from this curve, such as the possible inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.   
+
+<!-----Data Description---->
+## Data Description and Data Processing
+
+The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py.
+
+The video above showed the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot location from March 9th to March 10th, where cases recorded are grouped from local-wise to state wise. This state-wide report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
+
+Johns Hopkins CSSEGIS offers detail information about COVID-19 cases all over the world. The primary data source is [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports). One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relied on the number of confirmed cases. 
+
+A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.
+
+```python
+class preProcess():
+    def __init__(self, path, country):
+        self.__dates = sorted([re.search(r'(\d+-\d+-\d+)', d).group() for d in glob.glob(os.path.join(path, "*.csv"))])
+        self.__df = {re.search(r'(\d+-\d+-\d+)',i).group(): pd.read_csv(i) for i in glob.glob(os.path.join(path, "*.csv"))}
+        self.c_format = {'Country/Region', 'Country_Region'} #Upon looking at csv formats, I realized there are inconsistencies in keys. This should fix it.
+        self.coords_format = {'Latitude', 'Longitude', 'Lat', 'Long_'}
+        self.s_format = {'Province/State', 'Province_State'}
+        self.__countries = sorted({country for d in self.__dates for country in self.__df[d][(self.c_format & set(self.__df[d].columns)).pop()]})
+        
+        #1
+        self.__cDates = sorted({i for i in self.dates if country in set(self.df[i][(self.c_format & set(self.df[i].columns)).pop()])} &
+                               {j for j in self.dates if len(set(self.df[j][(self.coords_format & set(self.df[j].columns))]))})
+
+        #2
+        self.__country = self.countryBreakDown(country)
+        
+        #3 
+        self.__states = self.statesBreakDown()...        
+```
+Where reusable variables are important in making the structure easier to identify for the users:
+
+```python
+#Break down stats by State/Province
+def countryBreakDown(self, country):
+    #Data processing is getting more difficult than I though. Let's hope that they stop changing the data format as the day goes on.
+    pre_df = {d: self.df[d][self.df[d][(self.c_format & set(self.df[d].columns)).pop()] == country][[(self.s_format & set(self.df[d].columns)).pop(), 
+                                       sorted(self.coords_format & set(self.df[d].columns))[-1],
+                                       sorted(self.coords_format & set(self.df[d].columns))[0], 
+                                       'Confirmed', 'Recovered', 'Deaths']].set_index((self.s_format & set(self.df[d].columns)).pop()) for d in self.cDates}
+    #Add multi-Index
+    for k, v in pre_df.items():
+        coords = list(prod(['Coordinates'], v.columns[:2]))
+        coords.extend(list(prod([k], v.columns[2:])))
+        v.columns = pd.MultiIndex.from_tuples(coords)
+        v.index.names = ['State/Province'] #Rename index level for consistency
+    return pre_df
+
+#Statesbreak down. PASS IN self.country
+def statesBreakDown(self):
+        statesdict = {"D.C":"District of Columbia","AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"}
+        DPfilter = {'Unassigned Location (From Diamond Princess)','Grand Princess Cruise Ship'} 
+        #Use latest date as scheme for merge. This relies heavily on the latest date contains coords
+        latest = self.cDates[-1]
+        dff = self.country[latest].groupby(self.country[latest].index).sum()
+        dff.drop(columns = dff.columns.levels[0][0], level = 0, inplace = True) #Drop the date columns, so all we have now are the states
+        if len(dff.columns.levels) == 2:
+            dff.drop(columns = dff.columns.levels[0][1], level = 0, inplace = True) #DROPPING COORDINATES TOO. COMMENT IF NEEDED
+        #####################################################################
+        for i in self.cDates:
+            df = self.country[i].groupby(self.country[i].index).sum()
+            #Some dates do not have the coordinates column, Need to check length of level 0 multiIndex
+            if len(df.columns.levels) == 2:
+                df.drop(columns = df.columns.levels[0][1], level = 0, inplace = True)
+            #before merging, filter state/province columns from previous dates
+            if len(set(df.index) & DPfilter):
+                df.drop(index = list(set(df.index) & DPfilter), inplace = True)
+            filtered = [re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)[0] for x in df.index if len(re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)) == 1] 
+            if len(set(statesdict) & set(filtered)):
+                df.index = [statesdict[s] for s in filtered]
+                df = df.groupby(df.index).sum()
+                df.index.names = ['State/Province']
+            dff = pd.merge(dff, df, how = 'left', on = 'State/Province')
+        #Depending on new locations, might need to add or remove from below
+        dff.drop(index = ['Recovered','Virgin Islands', 'Northern Mariana Islands', 'Grand Princess', 'Diamond Princess', 'Puerto Rico'], inplace = True)
+        dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
+        return dff 
+```
+Overall, what determines whether or not the script will work in the future is contingent on the data collection teams and their willingness to be consistent.
+
+During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] are helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] as then used to project COVID-19 statistic upon. After the data is processed and mapped, cv2[^CV] was used to stitch these maps together. 
+
+
+<div class = "credit-line">
+Author: Tinh Son
+Last edited: 2020-04-28
+</div>
+
+[^COVID]: https://news.google.com/covid19/map?hl=en-US&gl=US&ceid=US:en
+[^FLU]: https://www.cdc.gov/flu/about/burden/index.html
+[^REOPEN]: https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm
+[^SIR]: https://www.hindawi.com/journals/ddns/2008/636153/
+[^MCMC]: https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50
+[^DRAM]: http://helios.fmi.fi/~lainema/dram/
+[^PYMCMCSTAT]: https://pypi.org/project/pymcmcstat/
+[^PD]: https://pandas.pydata.org/
+[^NP]: https://numpy.org/
+[^RE]: https://docs.python.org/3/library/re.html
+[^ITER]: https://docs.python.org/3/library/itertools.html
+[^BASEMAP]: https://matplotlib.org/basemap/
+[^PLT]: https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html
+[^CV]: https://pypi.org/project/opencv-python/
