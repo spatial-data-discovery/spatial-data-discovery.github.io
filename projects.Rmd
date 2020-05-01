@@ -2,6 +2,8 @@
 title: "Spatial Data Discovery Projects"
 ---
 
+***
+
 ```{r echo = FALSE}
 library(rmarkdown)
 
