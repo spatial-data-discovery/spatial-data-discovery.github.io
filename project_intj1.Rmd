@@ -147,17 +147,6 @@ Overall, script functionality is contingent on the data collection teams and the
 During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] was then used to project COVID-19 statistics:
 
 ```python
-    def statesGraph(self, state):
-        fig, ax = plt.subplots(1, figsize = (15, 12))
-        c, r, d = self.getStats(state)
-        ax.plot(self.cDates, c, label = 'Confirmed')
-        ax.plot(self.cDates, r, label = 'Recovered')
-        ax.plot(self.cDates, d, label = 'Deaths')
-        ax.set_xticks(self.cDates[::5])
-        ax.set_xticklabels(self.cDates[::5], rotation = 45)
-        ax.legend()
-        plt.title(state)
-        
     #Valid columns are: 'Confirmed', 'Recovered', 'Deaths'
     def barGraphPerCountry(self, c_frame, column):
         fig, ax = plt.subplots(figsize = (12, 6))    
