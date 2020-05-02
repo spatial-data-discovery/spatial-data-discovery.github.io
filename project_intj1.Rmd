@@ -13,7 +13,7 @@ title: Projecting COVID-19 Cases Under No Intervention Measures
 <!----Overview--->
 ## Overview
 
-As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with aobut one third of those cases (1.03 million) is reported within the United States [^COVID]. 
+As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States [^COVID]. 
 With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures. 
 
 While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
@@ -38,11 +38,11 @@ Where:
 
 - $\tau$ is the delay constant from incubation period to infection: $S(t) = S,\ S(t - \tau) = S_\tau...$ and so on.
 
-One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered + Deaths is combined to R to facilitate MCMC process. 
+One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process. 
 
-From this model, the parameters, $\beta$ and $\gamma$, are estimated by MCMC[^MCMC] and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here are assumptions and initial conditions for projection:
+From this model, the parameters, $\beta$ and $\gamma$, were estimated by MCMC[^MCMC] and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] was used for 10000 simulations the likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here were the assumptions and initial conditions for projection:
 
-- Basic state projection has an average population of about 6 millions (US pop / 50 states).
+- Basic state projection has an average population of about 6 millions (US population / 50 states).
 
 - Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed. 
 
@@ -50,25 +50,25 @@ From this model, the parameters, $\beta$ and $\gamma$, are estimated by MCMC[^MC
 
 - The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
 
-- Parameters $\beta$ and $\gamma$ are tuned within the MCMC so that the reproduction rate cannot exceed $2.1$.
+- Parameters $\beta$ and $\gamma$ are tuned within MCMC settings so that the reproduction rate cannot exceed $2.1$.
 
 - This projection assumes that **absolutely no intervention measures were enforced**.
 
-**Both MCMC simulations and projection assume a 14 days incubation period**. Model is integrated using [scipy's odeint](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html). The result projection:
+**Both MCMC simulations and projection assumed a 14 days incubation period**. Model was integrated using [scipy's odeint](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html). The result projection:
 
 ![Projection](https://drdavis.space/teaching/ds/sdd/media/2020/05/FinalProjection.png)
 
 Based on the projection, for an "average state" of 6 million people, the number of infectives will peak at
-200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered thus should only be is a representation of the worst case scenario. However, interesting information can still be extracted from this curve, such as the possible inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.   
+200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered and thus should only be a representation of the worst case scenario. However, the model indicates an inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.   
 
 <!-----Data Description---->
 ## Data Description and Data Processing
 
-The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py.
+The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py).
 
-The video above showed the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot location from March 9th to March 10th, where cases recorded are grouped from local-wise to state wise. This state-wide report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
+The video above shows the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
 
-Johns Hopkins CSSEGIS offers detail information about COVID-19 cases all over the world. The primary data source is [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports). One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relied on the number of confirmed cases. 
+[Johns Hopkins CSSEGIS](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports) offers detailed data about COVID-19 cases all over the world.  One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases. 
 
 A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.
 
@@ -140,9 +140,9 @@ def statesBreakDown(self):
         dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
         return dff 
 ```
-Overall, what determines whether or not the script will work in the future is contingent on the data collection teams and their willingness to be consistent.
+Overall, script functionality is contingent on the data collection teams and their willingness to be consistent.
 
-During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] are helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] as then used to project COVID-19 statistic upon. After the data is processed and mapped, cv2[^CV] was used to stitch these maps together. 
+During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] were helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] was then used to project COVID-19 statistic upon. After the data was processed and mapped, cv2[^CV] was used to stitch these maps together. 
 
 
 <div class = "credit-line">
