@@ -147,7 +147,7 @@ During this process, high performance processing modules like pandas[^PD], numpy
 
 <div class = "credit-line">
 Author: Tinh Son
-Last edited: 2020-04-28
+Last edited: 2020-05-01
 </div>
 
 [^COVID]: https://news.google.com/covid19/map?hl=en-US&gl=US&ceid=US:en
