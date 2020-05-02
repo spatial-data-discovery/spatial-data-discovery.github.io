@@ -254,12 +254,12 @@ Author: Tinh Son
 Last edited: 2020-05-01
 </div>
 
-[^COVID]: https://news.google.com/covid19/map?hl=en-US&gl=US&ceid=US:en
-[^FLU]: https://www.cdc.gov/flu/about/burden/index.html
-[^REOPEN]: https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm
-[^SIR]: https://www.hindawi.com/journals/ddns/2008/636153/
-[^MCMC]: https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50
-[^DRAM]: http://helios.fmi.fi/~lainema/dram/
+[^COVID]:"Coronavirus (COVID-19).” Google News, Google, news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US%3Aen.
+[^FLU]:“Disease Burden of Influenza.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/index.html.
+[^REOPEN]:“2019-2020 U.S. Flu Season: Preliminary Burden Estimates.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm.
+[^SIR]:Zhang, Zhi-yu, et al. “Analysis of a Delayed SIR Model with Nonlinear Incidence Rate.” Discrete Dynamics in Nature and Society, Hindawi, 27 Jan. 2009, www.hindawi.com/journals/ddns/2008/636153/. 
+[^MCMC]: Shaver, Ben. “A Zero-Math Introduction to Markov Chain Monte Carlo Methods.” Medium, Towards Data Science, 24 Dec. 2017, towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50. 
+[^DRAM]:Laine, M., et al. “Delayed Rejection Adaptive Metropolis.” DRAM, 2011, helios.fmi.fi/~lainema/dram/. 
 [^PYMCMCSTAT]: https://pypi.org/project/pymcmcstat/
 [^PD]: https://pandas.pydata.org/
 [^NP]: https://numpy.org/
