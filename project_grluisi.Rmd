@@ -9,21 +9,34 @@ title: Global Earthquake Frequency
   </video>
 </div>
 
-> *We expect about 16 major earthquakes in any given year, which includes 15 earthquakes in the magnitude 7 range and one earthquake magnitude 8.0 or greater* -USGS
+> *We expect about 16 major earthquakes in any given year, which includes 15 earthquakes in the magnitude 7 range and one earthquake magnitude 8.0 or greater.* -- USGS
 
 ## Overview
 
-When the Earth's lithosphere has a sudden release of energy, the result is the shaking of the Earth's surface.  This event is commonly known as an earthquake.  Some earthquakes are so weak they may go unnoticed while others are so powerful they can wreak havoc on the surface.  Because of the potential destruction that these events can cause, it is important to track Global trends concerning their location, frequency, and magnitude.
+When the Earth's lithosphere has a sudden release of energy, the result is the shaking of the Earth's surface.
+This event is commonly known as an earthquake.
+Some earthquakes are so weak they may go unnoticed while others are so powerful they can wreak havoc on the surface.
+Because of the potential destruction that these events can cause, it is important to track global trends concerning their location, frequency, and magnitude.
 
-Over the past century, the global frequency of earthquakes has remained relatively steady. Advancing technologies have allowed the false notion that earthquake activity is increasing to become standard.  According to the United States Geological Survey (USGS), the National Earthquake Information Center locates about 20,000 earthquakes each year. That is approximately 55 earthquakes per day![^USGS] The increase in the number of seismic instruments and their precision gives only the appearance that earthquake activity is increasing.
+Over the past century, the global frequency of earthquakes has remained relatively steady.
+Advancing technologies have allowed the false notion that earthquake activity is increasing to become standard.
+According to the United States Geological Survey[^USGS] (USGS), the National Earthquake Information Center locates about 20,000 earthquakes each year.
+That is approximately 55 earthquakes per day!
+The increase in the number of seismic instruments and their precision gives only the appearance that earthquake activity is increasing.
 
-The animation above is a testament to this. It appears that the number of earthquakes with magnitude 6.5 or greater has been increasing since 1900, but in reality as technology advanced we simply had a greater ability to detect earthquakes that would have previously gone unnoticed.
+The animation above is a testament to this.
+It appears that the number of earthquakes with magnitude 6.5 or greater has been increasing since 1900, but in reality as technology advanced we simply had a greater ability to detect earthquakes that would have previously gone unnoticed.
 
-Other contributors to the false notion of increasing earthquake activity are increasing population and global communication[^BGS]. Earthquakes in very populated centers of the world will easily get the attention of the public. As population and urban areas increase, the chances of an earthquake getting attention also increase. Global communication has vastly increased our ability to monitor seismic activity around the world, allowing people to hear of earthquakes much more frequently.
+Other contributors to the false notion of increasing earthquake activity are increasing population and global communication[^BGS].
+Earthquakes in very populated centers of the world will easily get the attention of the public.
+As population and urban areas increase, the chances of an earthquake getting attention also increase.
+Global communication has vastly increased our ability to monitor seismic activity around the world, allowing people to hear of earthquakes much more frequently.
 
 ## Data Description
 
-The data visualization above is the location and magnitude of all earthquakes with magnitude 6.5 or greater since 1900. The data is from the USGS Earthquake Catalog. The dataset can be found [here](https://earthquake.usgs.gov/earthquakes/search/#%7B%22autoUpdate%22%3A%5B%5D%2C%22basemap%22%3A%22grayscale%22%2C%22feed%22%3A%221586212590772%22%2C%22listFormat%22%3A%22default%22%2C%22mapposition%22%3A%5B%5B-88.76258566395309%2C-101.25%5D%2C%5B88.7776770744229%2C461.24999999999994%5D%5D%2C%22overlays%22%3A%5B%22plates%22%5D%2C%22restrictListToMap%22%3A%5B%22restrictListToMap%22%5D%2C%22search%22%3A%7B%22id%22%3A%221586212590772%22%2C%22name%22%3A%22Search%20Results%22%2C%22isSearch%22%3Atrue%2C%22params%22%3A%7B%22starttime%22%3A%221900-03-30%2000%3A00%3A00%22%2C%22endtime%22%3A%222020-04-06%2023%3A59%3A59%22%2C%22minmagnitude%22%3A8%2C%22orderby%22%3A%22time%22%7D%7D%2C%22sort%22%3A%22newest%22%2C%22timezone%22%3A%22utc%22%2C%22viewModes%22%3A%5B%22list%22%2C%22map%22%2C%22settings%22%5D%2C%22event%22%3A%22official19640328033616_30%22%7D).
+The data visualization above is the location and magnitude of all earthquakes with magnitude 6.5 or greater since 1900.
+The data is from the USGS Earthquake Catalog.
+The dataset can be found [here](https://earthquake.usgs.gov/earthquakes/search/#%7B%22autoUpdate%22%3A%5B%5D%2C%22basemap%22%3A%22grayscale%22%2C%22feed%22%3A%221586212590772%22%2C%22listFormat%22%3A%22default%22%2C%22mapposition%22%3A%5B%5B-88.76258566395309%2C-101.25%5D%2C%5B88.7776770744229%2C461.24999999999994%5D%5D%2C%22overlays%22%3A%5B%22plates%22%5D%2C%22restrictListToMap%22%3A%5B%22restrictListToMap%22%5D%2C%22search%22%3A%7B%22id%22%3A%221586212590772%22%2C%22name%22%3A%22Search%20Results%22%2C%22isSearch%22%3Atrue%2C%22params%22%3A%7B%22starttime%22%3A%221900-03-30%2000%3A00%3A00%22%2C%22endtime%22%3A%222020-04-06%2023%3A59%3A59%22%2C%22minmagnitude%22%3A8%2C%22orderby%22%3A%22time%22%7D%7D%2C%22sort%22%3A%22newest%22%2C%22timezone%22%3A%22utc%22%2C%22viewModes%22%3A%5B%22list%22%2C%22map%22%2C%22settings%22%5D%2C%22event%22%3A%22official19640328033616_30%22%7D).
 
 The specifications for the dataset used to produce the animation above were as follows:
 
@@ -39,9 +52,19 @@ The specifications for the dataset used to produce the animation above were as f
 
 - Order by: Time - Oldest First
 
-Using a script written in the Python[^python] programming language, the data was organized and split into twelve CSV[^csv] files each containing the year, latitude, longitude, and magnitude for all earthquakes in a given decade. Note that 2010-2020 includes a greater amount of time (approximately 4 months) than the preceding decades. The script also created dummy variables "Count Major" and "Count Great" for each earthquake. If the earthquake's magnitude was in the range of 6.5-6.9, both dummy variables equated to 0. If the magnitude was in the range 7.0-7.9, "Count Major" was equal to 1 while "Count Great" was equal to 0. If the magnitude was 8.0 or greater, "Count Major" was equal to 0 while "Count Great" was equal to 1. Any other variables included in the initial USGS dataset were removed.
+Using a script written in the Python[^python] programming language, the data was organized and split into twelve CSV (comma-separated values) files each containing the year, latitude, longitude, and magnitude for all earthquakes in a given decade.
+Note that 2010-2020 includes a greater amount of time (approximately 4 months) than the preceding decades.
+The script also created dummy variables "Count Major" and "Count Great" for each earthquake.
+If the earthquake's magnitude was in the range of 6.5-6.9, both dummy variables equated to 0.
+If the magnitude was in the range 7.0-7.9, "Count Major" was equal to 1 while "Count Great" was equal to 0.
+If the magnitude was 8.0 or greater, "Count Major" was equal to 0 while "Count Great" was equal to 1.
+Any other variables included in the initial USGS dataset were removed.
 
-For each decade, the data were visualized in QGIS[^qgis] using the same world map layer and properties. QGIS provided statistics for the mean magnitude, maximum magnitude, total earthquakes, number of Major earthquakes (sum of "Count Major" column), and number of Great earthquakes (sum of "Count Great" column) for a given decade. Each decade was then exported to a PNG[^png] image. The image files were uploaded into GIMP[^gimp] and exported as an animated GIF[^gif]. The GIF was then converted to a MP4[^mp4] video file using FFmpeg[^ffmpeg].
+For each decade, the data were visualized in QGIS[^qgis] using the same world map layer and properties.
+QGIS provided statistics for the mean magnitude, maximum magnitude, total earthquakes, number of Major earthquakes (sum of "Count Major" column), and number of Great earthquakes (sum of "Count Great" column) for a given decade.
+Each decade was then exported to a PNG[^png] image.
+The image files were uploaded into GIMP[^gimp] and exported as an animated GIF[^gif].
+The GIF was then converted to a MP4[^mp4] video file using FFmpeg[^ffmpeg].
 
 <div class="credit-line">
 
@@ -56,8 +79,6 @@ Last edited: 2012-05-02.
 [^BGS]: The British Geological Survey. Accessed 2020-04-07. Online: https://www.bgs.ac.uk/about/whoWeAre.html
 
 [^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2020-04-07. Online: https://www.python.org/
-
-[^csv]: Comma-separated values file. Accessed: 2020-04-14. Online: https://en.wikipedia.org/wiki/Comma-separated_values
 
 [^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04-16. Online: https://www.qgis.org/
 
