@@ -26,6 +26,8 @@ navbar:
               href: project_dtwoods.html
             - text: "---------"
             - text: "Spring 2020"
+            - text: "Air Pollution & Quality on Hay Fever"
+              href: project_leanlow.html
             - text: "COVID-19 Spread Within The US"
               href: project_mkcusick.html
             - text: "COVID-19 Strictness Policies"

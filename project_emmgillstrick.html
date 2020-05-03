@@ -13,7 +13,6 @@
 
 <title>Spread of Urbanization</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -311,6 +310,9 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
+      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
+    </li>
+    <li>
       <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
     </li>
     <li>
@@ -440,8 +442,8 @@ $(document).ready(function () {
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>The data visualized above is the Land Cover Climate Modeling Grid collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and Aqua<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> satellites. Terra passes from north to south across the equator each morning, while Aqua passes south to north over the equator each afternoon. The data contains values representing different land cover types ranging from 0 to 15.</p>
-<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. The data were extracted and put into yearly raster files with a computer program written in Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
+<p>The data visualized above is the Land Cover Climate Modeling Grid collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and Aqua<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> satellites. Terra passes from north to south across the equator each morning, while Aqua passes south to north over the equator each afternoon. The data contains values representing different land cover types ranging from 0 to 15.</p>
+<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. The data were extracted and put into yearly raster files with a computer program written in Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
 <p>For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG image format.</p>
 <p>Original Data Set Values:</p>
 <table>
@@ -552,10 +554,10 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>About Terra. NASA.gov. Accessed 2019-04-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>About Aqua. Nasa.gov. Accessed 2020-04-28. Online: <a href="https://eospso.nasa.gov/missions/aqua" class="uri">https://eospso.nasa.gov/missions/aqua</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>About Terra. NASA.gov. Accessed 2019-04-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>About Aqua. Nasa.gov. Accessed 2020-04-28. Online: <a href="https://eospso.nasa.gov/missions/aqua" class="uri">https://eospso.nasa.gov/missions/aqua</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
 

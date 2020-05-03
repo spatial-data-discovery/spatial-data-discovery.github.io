@@ -13,7 +13,6 @@
 
 <title>Projecting COVID-19 Cases Under No Intervention Measures</title>
 
-<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -27,63 +26,36 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; } /* Alert */
-code span.an { color: #008000; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #0000ff; } /* ControlFlow */
-code span.ch { color: #008080; } /* Char */
-code span.cn { } /* Constant */
-code span.co { color: #008000; } /* Comment */
-code span.cv { color: #008000; } /* CommentVar */
-code span.do { color: #008000; } /* Documentation */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.im { } /* Import */
-code span.in { color: #008000; } /* Information */
-code span.kw { color: #0000ff; } /* Keyword */
-code span.op { } /* Operator */
-code span.ot { color: #ff4000; } /* Other */
-code span.pp { color: #ff4000; } /* Preprocessor */
-code span.sc { color: #008080; } /* SpecialChar */
-code span.ss { color: #008080; } /* SpecialString */
-code span.st { color: #008080; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #008080; } /* VerbatimString */
-code span.wa { color: #008000; font-weight: bold; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
 
 </style>
 <script>
@@ -398,6 +370,9 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
+      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
+    </li>
+    <li>
       <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
     </li>
     <li>
@@ -528,8 +503,8 @@ $(document).ready(function () {
 <!----Overview--->
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with aobut one third of those cases (1.03 million) is reported within the United States <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. With the number of deaths exceeding that of the common flu <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> within just a short period of time, and as some states are beginning to reopen <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures.</p>
-<p>While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor <a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>:</p>
+<p>As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. With the number of deaths exceeding that of the common flu <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> within just a short period of time, and as some states are beginning to reopen <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures.</p>
+<p>While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>:</p>
 <p><span class="math display">\[\frac{dS}{dt} = - \frac{\beta S_\tau I_\tau}{N}\]</span></p>
 <p><span class="math display">\[\frac{dI}{dt} =  \frac{\beta  S I}{N} - \gamma I\]</span></p>
 <p><span class="math display">\[\frac{dR}{dt} = \gamma I\]</span></p>
@@ -542,116 +517,193 @@ $(document).ready(function () {
 <li><p><span class="math inline">\(R_0\)</span> is the basic reproduction rate</p></li>
 <li><p><span class="math inline">\(\tau\)</span> is the delay constant from incubation period to infection: <span class="math inline">\(S(t) = S,\ S(t - \tau) = S_\tau...\)</span> and so on.</p></li>
 </ul>
-<p>One main assumption is that the total population remains constant, such that <span class="math inline">\(S + I + R = N\)</span>. Also notice that the initial number of infected must be <span class="math inline">\(\ge 1\)</span> for there to be any movement at all. For the model, Recovered + Deaths is combined to R to facilitate MCMC process.</p>
-<p>From this model, the parameters, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span>, are estimated by MCMC<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and current reported COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> is used for 10000 simulations the likelihood function is assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. Here are assumptions and initial conditions for projection:</p>
+<p>One main assumption is that the total population remains constant, such that <span class="math inline">\(S + I + R = N\)</span>. Also notice that the initial number of infected must be <span class="math inline">\(\ge 1\)</span> for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process.</p>
+<p>From this model, the parameters, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span>, were estimated by MCMC<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> was used for 10000 simulations the likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Here were the assumptions and initial conditions for projection:</p>
 <ul>
-<li><p>Basic state projection has an average population of about 6 millions (US pop / 50 states).</p></li>
+<li><p>Basic state projection has an average population of about 6 millions (US population / 50 states).</p></li>
 <li><p>Susceptible population is the average population - (latest confirmed number / 50 states) - latest removed.</p></li>
 <li><p>Removed is sum of (current recovered + current deaths) / 50 states.</p></li>
 <li><p>The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date.</p></li>
-<li><p>Parameters <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> are tuned within the MCMC so that the reproduction rate cannot exceed <span class="math inline">\(2.1\)</span>.</p></li>
+<li><p>Parameters <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> are tuned within MCMC settings so that the reproduction rate cannot exceed <span class="math inline">\(2.1\)</span>.</p></li>
 <li><p>This projection assumes that <strong>absolutely no intervention measures were enforced</strong>.</p></li>
 </ul>
-<p><strong>Both MCMC simulations and projection assume a 14 days incubation period</strong>. Model is integrated using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy’s odeint</a>. The result projection:</p>
+<p><strong>Both MCMC simulations and projection assumed a 14 days incubation period</strong>. Model was integrated using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html">scipy’s odeint</a>. The result projection:</p>
 <div class="figure">
-<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/FinalProjection.png" alt="" />
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/FinalProjection.png" alt="Projection" />
 <p class="caption">Projection</p>
 </div>
-<p>Based on the projection, for an “average state” of 6 million people, the number of infectives will peak at 200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered thus should only be is a representation of the worst case scenario. However, interesting information can still be extracted from this curve, such as the possible inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.</p>
+<p>Based on the projection, for an “average state” of 6 million people, the number of infectives will peak at 200000 about 150 days from March 1st. Due to the simple nature of the model, many factors are not considered and thus should only be a representation of the worst case scenario. However, the model indicates an inflection point of around 110 days from March 1st, where the rates of infectives are slowing down.</p>
 <!-----Data Description---->
 </div>
 <div id="data-description-and-data-processing" class="section level2">
 <h2>Data Description and Data Processing</h2>
-<p>The entire data aquisition and processing can be found <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb">here</a>, with automated script [here](<a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py" class="uri">https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py</a>.</p>
-<p>The video above showed the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot location from March 9th to March 10th, where cases recorded are grouped from local-wise to state wise. This state-wide report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population.</p>
-<p>Johns Hopkins CSSEGIS offers detail information about COVID-19 cases all over the world. The primary data source is <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">here</a>. One major flaw of this database is its inconsistent formatting, especially in the “Recovered” column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relied on the number of confirmed cases.</p>
+<p>The entire data aquisition and processing can be found <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb">here</a>, with automated script <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py">here</a>.</p>
+<p>The video above shows the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population.</p>
+<p><a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">Johns Hopkins CSSEGIS</a> offers detailed data about COVID-19 cases all over the world. One major flaw of this database is its inconsistent formatting, especially in the “Recovered” column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases.</p>
 <p>A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">class</span> preProcess():</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, path, country):</span>
-<span id="cb1-3"><a href="#cb1-3"></a>        <span class="va">self</span>.__dates <span class="op">=</span> <span class="bu">sorted</span>([re.search(<span class="vs">r&#39;(\d+-\d+-\d+)&#39;</span>, d).group() <span class="cf">for</span> d <span class="kw">in</span> glob.glob(os.path.join(path, <span class="st">&quot;*.csv&quot;</span>))])</span>
-<span id="cb1-4"><a href="#cb1-4"></a>        <span class="va">self</span>.__df <span class="op">=</span> {re.search(<span class="vs">r&#39;(\d+-\d+-\d+)&#39;</span>,i).group(): pd.read_csv(i) <span class="cf">for</span> i <span class="kw">in</span> glob.glob(os.path.join(path, <span class="st">&quot;*.csv&quot;</span>))}</span>
-<span id="cb1-5"><a href="#cb1-5"></a>        <span class="va">self</span>.c_format <span class="op">=</span> {<span class="st">&#39;Country/Region&#39;</span>, <span class="st">&#39;Country_Region&#39;</span>} <span class="co">#Upon looking at csv formats, I realized there are inconsistencies in keys. This should fix it.</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>        <span class="va">self</span>.coords_format <span class="op">=</span> {<span class="st">&#39;Latitude&#39;</span>, <span class="st">&#39;Longitude&#39;</span>, <span class="st">&#39;Lat&#39;</span>, <span class="st">&#39;Long_&#39;</span>}</span>
-<span id="cb1-7"><a href="#cb1-7"></a>        <span class="va">self</span>.s_format <span class="op">=</span> {<span class="st">&#39;Province/State&#39;</span>, <span class="st">&#39;Province_State&#39;</span>}</span>
-<span id="cb1-8"><a href="#cb1-8"></a>        <span class="va">self</span>.__countries <span class="op">=</span> <span class="bu">sorted</span>({country <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.__dates <span class="cf">for</span> country <span class="kw">in</span> <span class="va">self</span>.__df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.__df[d].columns)).pop()]})</span>
-<span id="cb1-9"><a href="#cb1-9"></a>        </span>
-<span id="cb1-10"><a href="#cb1-10"></a>        <span class="co">#1</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>        <span class="va">self</span>.__cDates <span class="op">=</span> <span class="bu">sorted</span>({i <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> country <span class="kw">in</span> <span class="bu">set</span>(<span class="va">self</span>.df[i][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[i].columns)).pop()])} <span class="op">&amp;</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a>                               {j <span class="cf">for</span> j <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(<span class="va">self</span>.df[j][(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[j].columns))]))})</span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a>        <span class="co">#2</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a>        <span class="va">self</span>.__country <span class="op">=</span> <span class="va">self</span>.countryBreakDown(country)</span>
-<span id="cb1-16"><a href="#cb1-16"></a>        </span>
-<span id="cb1-17"><a href="#cb1-17"></a>        <span class="co">#3 </span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>        <span class="va">self</span>.__states <span class="op">=</span> <span class="va">self</span>.statesBreakDown()...        </span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> preProcess():
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, path, country):
+        <span class="va">self</span>.__dates <span class="op">=</span> <span class="bu">sorted</span>([re.search(<span class="vs">r&#39;(\d+-\d+-\d+)&#39;</span>, d).group() <span class="cf">for</span> d <span class="kw">in</span> glob.glob(os.path.join(path, <span class="st">&quot;*.csv&quot;</span>))])
+        <span class="va">self</span>.__df <span class="op">=</span> {re.search(<span class="vs">r&#39;(\d+-\d+-\d+)&#39;</span>,i).group(): pd.read_csv(i) <span class="cf">for</span> i <span class="kw">in</span> glob.glob(os.path.join(path, <span class="st">&quot;*.csv&quot;</span>))}
+        <span class="va">self</span>.c_format <span class="op">=</span> {<span class="st">&#39;Country/Region&#39;</span>, <span class="st">&#39;Country_Region&#39;</span>} <span class="co">#Upon looking at csv formats, I realized there are inconsistencies in keys. This should fix it.</span>
+        <span class="va">self</span>.coords_format <span class="op">=</span> {<span class="st">&#39;Latitude&#39;</span>, <span class="st">&#39;Longitude&#39;</span>, <span class="st">&#39;Lat&#39;</span>, <span class="st">&#39;Long_&#39;</span>}
+        <span class="va">self</span>.s_format <span class="op">=</span> {<span class="st">&#39;Province/State&#39;</span>, <span class="st">&#39;Province_State&#39;</span>}
+        <span class="va">self</span>.__countries <span class="op">=</span> <span class="bu">sorted</span>({country <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.__dates <span class="cf">for</span> country <span class="kw">in</span> <span class="va">self</span>.__df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.__df[d].columns)).pop()]})
+        
+        <span class="co">#1</span>
+        <span class="va">self</span>.__cDates <span class="op">=</span> <span class="bu">sorted</span>({i <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> country <span class="kw">in</span> <span class="bu">set</span>(<span class="va">self</span>.df[i][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[i].columns)).pop()])} <span class="op">&amp;</span>
+                               {j <span class="cf">for</span> j <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(<span class="va">self</span>.df[j][(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[j].columns))]))})
+
+        <span class="co">#2</span>
+        <span class="va">self</span>.__country <span class="op">=</span> <span class="va">self</span>.countryBreakDown(country)
+        
+        <span class="co">#3 </span>
+        <span class="va">self</span>.__states <span class="op">=</span> <span class="va">self</span>.statesBreakDown()...        </code></pre></div>
 <p>Where reusable variables are important in making the structure easier to identify for the users:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#Break down stats by State/Province</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">def</span> countryBreakDown(<span class="va">self</span>, country):</span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="co">#Data processing is getting more difficult than I though. Let&#39;s hope that they stop changing the data format as the day goes on.</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>    pre_df <span class="op">=</span> {d: <span class="va">self</span>.df[d][<span class="va">self</span>.df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()] <span class="op">==</span> country][[(<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop(), </span>
-<span id="cb2-5"><a href="#cb2-5"></a>                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb2-6"><a href="#cb2-6"></a>                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="dv">0</span>], </span>
-<span id="cb2-7"><a href="#cb2-7"></a>                                       <span class="st">&#39;Confirmed&#39;</span>, <span class="st">&#39;Recovered&#39;</span>, <span class="st">&#39;Deaths&#39;</span>]].set_index((<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()) <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.cDates}</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="co">#Add multi-Index</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="cf">for</span> k, v <span class="kw">in</span> pre_df.items():</span>
-<span id="cb2-10"><a href="#cb2-10"></a>        coords <span class="op">=</span> <span class="bu">list</span>(prod([<span class="st">&#39;Coordinates&#39;</span>], v.columns[:<span class="dv">2</span>]))</span>
-<span id="cb2-11"><a href="#cb2-11"></a>        coords.extend(<span class="bu">list</span>(prod([k], v.columns[<span class="dv">2</span>:])))</span>
-<span id="cb2-12"><a href="#cb2-12"></a>        v.columns <span class="op">=</span> pd.MultiIndex.from_tuples(coords)</span>
-<span id="cb2-13"><a href="#cb2-13"></a>        v.index.names <span class="op">=</span> [<span class="st">&#39;State/Province&#39;</span>] <span class="co">#Rename index level for consistency</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a>    <span class="cf">return</span> pre_df</span>
-<span id="cb2-15"><a href="#cb2-15"></a></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="co">#Statesbreak down. PASS IN self.country</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="kw">def</span> statesBreakDown(<span class="va">self</span>):</span>
-<span id="cb2-18"><a href="#cb2-18"></a>        statesdict <span class="op">=</span> {<span class="st">&quot;D.C&quot;</span>:<span class="st">&quot;District of Columbia&quot;</span>,<span class="st">&quot;AL&quot;</span>:<span class="st">&quot;Alabama&quot;</span>,<span class="st">&quot;AK&quot;</span>:<span class="st">&quot;Alaska&quot;</span>,<span class="st">&quot;AZ&quot;</span>:<span class="st">&quot;Arizona&quot;</span>,<span class="st">&quot;AR&quot;</span>:<span class="st">&quot;Arkansas&quot;</span>,<span class="st">&quot;CA&quot;</span>:<span class="st">&quot;California&quot;</span>,<span class="st">&quot;CO&quot;</span>:<span class="st">&quot;Colorado&quot;</span>,<span class="st">&quot;CT&quot;</span>:<span class="st">&quot;Connecticut&quot;</span>,<span class="st">&quot;DE&quot;</span>:<span class="st">&quot;Delaware&quot;</span>,<span class="st">&quot;FL&quot;</span>:<span class="st">&quot;Florida&quot;</span>,<span class="st">&quot;GA&quot;</span>:<span class="st">&quot;Georgia&quot;</span>,<span class="st">&quot;HI&quot;</span>:<span class="st">&quot;Hawaii&quot;</span>,<span class="st">&quot;ID&quot;</span>:<span class="st">&quot;Idaho&quot;</span>,<span class="st">&quot;IL&quot;</span>:<span class="st">&quot;Illinois&quot;</span>,<span class="st">&quot;IN&quot;</span>:<span class="st">&quot;Indiana&quot;</span>,<span class="st">&quot;IA&quot;</span>:<span class="st">&quot;Iowa&quot;</span>,<span class="st">&quot;KS&quot;</span>:<span class="st">&quot;Kansas&quot;</span>,<span class="st">&quot;KY&quot;</span>:<span class="st">&quot;Kentucky&quot;</span>,<span class="st">&quot;LA&quot;</span>:<span class="st">&quot;Louisiana&quot;</span>,<span class="st">&quot;ME&quot;</span>:<span class="st">&quot;Maine&quot;</span>,<span class="st">&quot;MD&quot;</span>:<span class="st">&quot;Maryland&quot;</span>,<span class="st">&quot;MA&quot;</span>:<span class="st">&quot;Massachusetts&quot;</span>,<span class="st">&quot;MI&quot;</span>:<span class="st">&quot;Michigan&quot;</span>,<span class="st">&quot;MN&quot;</span>:<span class="st">&quot;Minnesota&quot;</span>,<span class="st">&quot;MS&quot;</span>:<span class="st">&quot;Mississippi&quot;</span>,<span class="st">&quot;MO&quot;</span>:<span class="st">&quot;Missouri&quot;</span>,<span class="st">&quot;MT&quot;</span>:<span class="st">&quot;Montana&quot;</span>,<span class="st">&quot;NE&quot;</span>:<span class="st">&quot;Nebraska&quot;</span>,<span class="st">&quot;NV&quot;</span>:<span class="st">&quot;Nevada&quot;</span>,<span class="st">&quot;NH&quot;</span>:<span class="st">&quot;New Hampshire&quot;</span>,<span class="st">&quot;NJ&quot;</span>:<span class="st">&quot;New Jersey&quot;</span>,<span class="st">&quot;NM&quot;</span>:<span class="st">&quot;New Mexico&quot;</span>,<span class="st">&quot;NY&quot;</span>:<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;NC&quot;</span>:<span class="st">&quot;North Carolina&quot;</span>,<span class="st">&quot;ND&quot;</span>:<span class="st">&quot;North Dakota&quot;</span>,<span class="st">&quot;OH&quot;</span>:<span class="st">&quot;Ohio&quot;</span>,<span class="st">&quot;OK&quot;</span>:<span class="st">&quot;Oklahoma&quot;</span>,<span class="st">&quot;OR&quot;</span>:<span class="st">&quot;Oregon&quot;</span>,<span class="st">&quot;PA&quot;</span>:<span class="st">&quot;Pennsylvania&quot;</span>,<span class="st">&quot;RI&quot;</span>:<span class="st">&quot;Rhode Island&quot;</span>,<span class="st">&quot;SC&quot;</span>:<span class="st">&quot;South Carolina&quot;</span>,<span class="st">&quot;SD&quot;</span>:<span class="st">&quot;South Dakota&quot;</span>,<span class="st">&quot;TN&quot;</span>:<span class="st">&quot;Tennessee&quot;</span>,<span class="st">&quot;TX&quot;</span>:<span class="st">&quot;Texas&quot;</span>,<span class="st">&quot;UT&quot;</span>:<span class="st">&quot;Utah&quot;</span>,<span class="st">&quot;VT&quot;</span>:<span class="st">&quot;Vermont&quot;</span>,<span class="st">&quot;VA&quot;</span>:<span class="st">&quot;Virginia&quot;</span>,<span class="st">&quot;WA&quot;</span>:<span class="st">&quot;Washington&quot;</span>,<span class="st">&quot;WV&quot;</span>:<span class="st">&quot;West Virginia&quot;</span>,<span class="st">&quot;WI&quot;</span>:<span class="st">&quot;Wisconsin&quot;</span>,<span class="st">&quot;WY&quot;</span>:<span class="st">&quot;Wyoming&quot;</span>}</span>
-<span id="cb2-19"><a href="#cb2-19"></a>        DPfilter <span class="op">=</span> {<span class="st">&#39;Unassigned Location (From Diamond Princess)&#39;</span>,<span class="st">&#39;Grand Princess Cruise Ship&#39;</span>} </span>
-<span id="cb2-20"><a href="#cb2-20"></a>        <span class="co">#Use latest date as scheme for merge. This relies heavily on the latest date contains coords</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a>        latest <span class="op">=</span> <span class="va">self</span>.cDates[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb2-22"><a href="#cb2-22"></a>        dff <span class="op">=</span> <span class="va">self</span>.country[latest].groupby(<span class="va">self</span>.country[latest].index).<span class="bu">sum</span>()</span>
-<span id="cb2-23"><a href="#cb2-23"></a>        dff.drop(columns <span class="op">=</span> dff.columns.levels[<span class="dv">0</span>][<span class="dv">0</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#Drop the date columns, so all we have now are the states</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a>        <span class="cf">if</span> <span class="bu">len</span>(dff.columns.levels) <span class="op">==</span> <span class="dv">2</span>:</span>
-<span id="cb2-25"><a href="#cb2-25"></a>            dff.drop(columns <span class="op">=</span> dff.columns.levels[<span class="dv">0</span>][<span class="dv">1</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#DROPPING COORDINATES TOO. COMMENT IF NEEDED</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a>        <span class="co">#####################################################################</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.cDates:</span>
-<span id="cb2-28"><a href="#cb2-28"></a>            df <span class="op">=</span> <span class="va">self</span>.country[i].groupby(<span class="va">self</span>.country[i].index).<span class="bu">sum</span>()</span>
-<span id="cb2-29"><a href="#cb2-29"></a>            <span class="co">#Some dates do not have the coordinates column, Need to check length of level 0 multiIndex</span></span>
-<span id="cb2-30"><a href="#cb2-30"></a>            <span class="cf">if</span> <span class="bu">len</span>(df.columns.levels) <span class="op">==</span> <span class="dv">2</span>:</span>
-<span id="cb2-31"><a href="#cb2-31"></a>                df.drop(columns <span class="op">=</span> df.columns.levels[<span class="dv">0</span>][<span class="dv">1</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb2-32"><a href="#cb2-32"></a>            <span class="co">#before merging, filter state/province columns from previous dates</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a>            <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter):</span>
-<span id="cb2-34"><a href="#cb2-34"></a>                df.drop(index <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter), inplace <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb2-35"><a href="#cb2-35"></a>            filtered <span class="op">=</span> [re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> df.index <span class="cf">if</span> <span class="bu">len</span>(re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)) <span class="op">==</span> <span class="dv">1</span>] </span>
-<span id="cb2-36"><a href="#cb2-36"></a>            <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(statesdict) <span class="op">&amp;</span> <span class="bu">set</span>(filtered)):</span>
-<span id="cb2-37"><a href="#cb2-37"></a>                df.index <span class="op">=</span> [statesdict[s] <span class="cf">for</span> s <span class="kw">in</span> filtered]</span>
-<span id="cb2-38"><a href="#cb2-38"></a>                df <span class="op">=</span> df.groupby(df.index).<span class="bu">sum</span>()</span>
-<span id="cb2-39"><a href="#cb2-39"></a>                df.index.names <span class="op">=</span> [<span class="st">&#39;State/Province&#39;</span>]</span>
-<span id="cb2-40"><a href="#cb2-40"></a>            dff <span class="op">=</span> pd.merge(dff, df, how <span class="op">=</span> <span class="st">&#39;left&#39;</span>, on <span class="op">=</span> <span class="st">&#39;State/Province&#39;</span>)</span>
-<span id="cb2-41"><a href="#cb2-41"></a>        <span class="co">#Depending on new locations, might need to add or remove from below</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a>        dff.drop(index <span class="op">=</span> [<span class="st">&#39;Recovered&#39;</span>,<span class="st">&#39;Virgin Islands&#39;</span>, <span class="st">&#39;Northern Mariana Islands&#39;</span>, <span class="st">&#39;Grand Princess&#39;</span>, <span class="st">&#39;Diamond Princess&#39;</span>, <span class="st">&#39;Puerto Rico&#39;</span>], inplace <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb2-43"><a href="#cb2-43"></a>        dff.fillna(<span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#Fill na for states whose values don&#39;t exist from previous dates</span></span>
-<span id="cb2-44"><a href="#cb2-44"></a>        <span class="cf">return</span> dff </span></code></pre></div>
-<p>Overall, what determines whether or not the script will work in the future is contingent on the data collection teams and their willingness to be consistent.</p>
-<p>During this process, high performance processing modules like pandas<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>, numpy<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>, re<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, and itertools<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> are helpful in data manipulation and multiIndexing during reformat. Map creation was made easy with basemap<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>, where pyplot<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> as then used to project COVID-19 statistic upon. After the data is processed and mapped, cv2<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> was used to stitch these maps together.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#Break down stats by State/Province</span>
+<span class="kw">def</span> countryBreakDown(<span class="va">self</span>, country):
+    <span class="co">#Data processing is getting more difficult than I though. Let&#39;s hope that they stop changing the data format as the day goes on.</span>
+    pre_df <span class="op">=</span> {d: <span class="va">self</span>.df[d][<span class="va">self</span>.df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()] <span class="op">==</span> country][[(<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop(), 
+                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="op">-</span><span class="dv">1</span>],
+                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="dv">0</span>], 
+                                       <span class="st">&#39;Confirmed&#39;</span>, <span class="st">&#39;Recovered&#39;</span>, <span class="st">&#39;Deaths&#39;</span>]].set_index((<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()) <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.cDates}
+    <span class="co">#Add multi-Index</span>
+    <span class="cf">for</span> k, v <span class="kw">in</span> pre_df.items():
+        coords <span class="op">=</span> <span class="bu">list</span>(prod([<span class="st">&#39;Coordinates&#39;</span>], v.columns[:<span class="dv">2</span>]))
+        coords.extend(<span class="bu">list</span>(prod([k], v.columns[<span class="dv">2</span>:])))
+        v.columns <span class="op">=</span> pd.MultiIndex.from_tuples(coords)
+        v.index.names <span class="op">=</span> [<span class="st">&#39;State/Province&#39;</span>] <span class="co">#Rename index level for consistency</span>
+    <span class="cf">return</span> pre_df
+
+<span class="co">#Statesbreak down. PASS IN self.country</span>
+<span class="kw">def</span> statesBreakDown(<span class="va">self</span>):
+        statesdict <span class="op">=</span> {<span class="st">&quot;D.C&quot;</span>:<span class="st">&quot;District of Columbia&quot;</span>,<span class="st">&quot;AL&quot;</span>:<span class="st">&quot;Alabama&quot;</span>,<span class="st">&quot;AK&quot;</span>:<span class="st">&quot;Alaska&quot;</span>,<span class="st">&quot;AZ&quot;</span>:<span class="st">&quot;Arizona&quot;</span>,<span class="st">&quot;AR&quot;</span>:<span class="st">&quot;Arkansas&quot;</span>,<span class="st">&quot;CA&quot;</span>:<span class="st">&quot;California&quot;</span>,<span class="st">&quot;CO&quot;</span>:<span class="st">&quot;Colorado&quot;</span>,<span class="st">&quot;CT&quot;</span>:<span class="st">&quot;Connecticut&quot;</span>,<span class="st">&quot;DE&quot;</span>:<span class="st">&quot;Delaware&quot;</span>,<span class="st">&quot;FL&quot;</span>:<span class="st">&quot;Florida&quot;</span>,<span class="st">&quot;GA&quot;</span>:<span class="st">&quot;Georgia&quot;</span>,<span class="st">&quot;HI&quot;</span>:<span class="st">&quot;Hawaii&quot;</span>,<span class="st">&quot;ID&quot;</span>:<span class="st">&quot;Idaho&quot;</span>,<span class="st">&quot;IL&quot;</span>:<span class="st">&quot;Illinois&quot;</span>,<span class="st">&quot;IN&quot;</span>:<span class="st">&quot;Indiana&quot;</span>,<span class="st">&quot;IA&quot;</span>:<span class="st">&quot;Iowa&quot;</span>,<span class="st">&quot;KS&quot;</span>:<span class="st">&quot;Kansas&quot;</span>,<span class="st">&quot;KY&quot;</span>:<span class="st">&quot;Kentucky&quot;</span>,<span class="st">&quot;LA&quot;</span>:<span class="st">&quot;Louisiana&quot;</span>,<span class="st">&quot;ME&quot;</span>:<span class="st">&quot;Maine&quot;</span>,<span class="st">&quot;MD&quot;</span>:<span class="st">&quot;Maryland&quot;</span>,<span class="st">&quot;MA&quot;</span>:<span class="st">&quot;Massachusetts&quot;</span>,<span class="st">&quot;MI&quot;</span>:<span class="st">&quot;Michigan&quot;</span>,<span class="st">&quot;MN&quot;</span>:<span class="st">&quot;Minnesota&quot;</span>,<span class="st">&quot;MS&quot;</span>:<span class="st">&quot;Mississippi&quot;</span>,<span class="st">&quot;MO&quot;</span>:<span class="st">&quot;Missouri&quot;</span>,<span class="st">&quot;MT&quot;</span>:<span class="st">&quot;Montana&quot;</span>,<span class="st">&quot;NE&quot;</span>:<span class="st">&quot;Nebraska&quot;</span>,<span class="st">&quot;NV&quot;</span>:<span class="st">&quot;Nevada&quot;</span>,<span class="st">&quot;NH&quot;</span>:<span class="st">&quot;New Hampshire&quot;</span>,<span class="st">&quot;NJ&quot;</span>:<span class="st">&quot;New Jersey&quot;</span>,<span class="st">&quot;NM&quot;</span>:<span class="st">&quot;New Mexico&quot;</span>,<span class="st">&quot;NY&quot;</span>:<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;NC&quot;</span>:<span class="st">&quot;North Carolina&quot;</span>,<span class="st">&quot;ND&quot;</span>:<span class="st">&quot;North Dakota&quot;</span>,<span class="st">&quot;OH&quot;</span>:<span class="st">&quot;Ohio&quot;</span>,<span class="st">&quot;OK&quot;</span>:<span class="st">&quot;Oklahoma&quot;</span>,<span class="st">&quot;OR&quot;</span>:<span class="st">&quot;Oregon&quot;</span>,<span class="st">&quot;PA&quot;</span>:<span class="st">&quot;Pennsylvania&quot;</span>,<span class="st">&quot;RI&quot;</span>:<span class="st">&quot;Rhode Island&quot;</span>,<span class="st">&quot;SC&quot;</span>:<span class="st">&quot;South Carolina&quot;</span>,<span class="st">&quot;SD&quot;</span>:<span class="st">&quot;South Dakota&quot;</span>,<span class="st">&quot;TN&quot;</span>:<span class="st">&quot;Tennessee&quot;</span>,<span class="st">&quot;TX&quot;</span>:<span class="st">&quot;Texas&quot;</span>,<span class="st">&quot;UT&quot;</span>:<span class="st">&quot;Utah&quot;</span>,<span class="st">&quot;VT&quot;</span>:<span class="st">&quot;Vermont&quot;</span>,<span class="st">&quot;VA&quot;</span>:<span class="st">&quot;Virginia&quot;</span>,<span class="st">&quot;WA&quot;</span>:<span class="st">&quot;Washington&quot;</span>,<span class="st">&quot;WV&quot;</span>:<span class="st">&quot;West Virginia&quot;</span>,<span class="st">&quot;WI&quot;</span>:<span class="st">&quot;Wisconsin&quot;</span>,<span class="st">&quot;WY&quot;</span>:<span class="st">&quot;Wyoming&quot;</span>}
+        DPfilter <span class="op">=</span> {<span class="st">&#39;Unassigned Location (From Diamond Princess)&#39;</span>,<span class="st">&#39;Grand Princess Cruise Ship&#39;</span>} 
+        <span class="co">#Use latest date as scheme for merge. This relies heavily on the latest date contains coords</span>
+        latest <span class="op">=</span> <span class="va">self</span>.cDates[<span class="op">-</span><span class="dv">1</span>]
+        dff <span class="op">=</span> <span class="va">self</span>.country[latest].groupby(<span class="va">self</span>.country[latest].index).<span class="bu">sum</span>()
+        dff.drop(columns <span class="op">=</span> dff.columns.levels[<span class="dv">0</span>][<span class="dv">0</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#Drop the date columns, so all we have now are the states</span>
+        <span class="cf">if</span> <span class="bu">len</span>(dff.columns.levels) <span class="op">==</span> <span class="dv">2</span>:
+            dff.drop(columns <span class="op">=</span> dff.columns.levels[<span class="dv">0</span>][<span class="dv">1</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#DROPPING COORDINATES TOO. COMMENT IF NEEDED</span>
+        <span class="co">#####################################################################</span>
+        <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.cDates:
+            df <span class="op">=</span> <span class="va">self</span>.country[i].groupby(<span class="va">self</span>.country[i].index).<span class="bu">sum</span>()
+            <span class="co">#Some dates do not have the coordinates column, Need to check length of level 0 multiIndex</span>
+            <span class="cf">if</span> <span class="bu">len</span>(df.columns.levels) <span class="op">==</span> <span class="dv">2</span>:
+                df.drop(columns <span class="op">=</span> df.columns.levels[<span class="dv">0</span>][<span class="dv">1</span>], level <span class="op">=</span> <span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>)
+            <span class="co">#before merging, filter state/province columns from previous dates</span>
+            <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter):
+                df.drop(index <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter), inplace <span class="op">=</span> <span class="va">True</span>)
+            filtered <span class="op">=</span> [re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> df.index <span class="cf">if</span> <span class="bu">len</span>(re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)) <span class="op">==</span> <span class="dv">1</span>] 
+            <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(statesdict) <span class="op">&amp;</span> <span class="bu">set</span>(filtered)):
+                df.index <span class="op">=</span> [statesdict[s] <span class="cf">for</span> s <span class="kw">in</span> filtered]
+                df <span class="op">=</span> df.groupby(df.index).<span class="bu">sum</span>()
+                df.index.names <span class="op">=</span> [<span class="st">&#39;State/Province&#39;</span>]
+            dff <span class="op">=</span> pd.merge(dff, df, how <span class="op">=</span> <span class="st">&#39;left&#39;</span>, on <span class="op">=</span> <span class="st">&#39;State/Province&#39;</span>)
+        <span class="co">#Depending on new locations, might need to add or remove from below</span>
+        dff.drop(index <span class="op">=</span> [<span class="st">&#39;Recovered&#39;</span>,<span class="st">&#39;Virgin Islands&#39;</span>, <span class="st">&#39;Northern Mariana Islands&#39;</span>, <span class="st">&#39;Grand Princess&#39;</span>, <span class="st">&#39;Diamond Princess&#39;</span>, <span class="st">&#39;Puerto Rico&#39;</span>], inplace <span class="op">=</span> <span class="va">True</span>)
+        dff.fillna(<span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#Fill na for states whose values don&#39;t exist from previous dates</span>
+        <span class="cf">return</span> dff </code></pre></div>
+<p>Overall, script functionality is contingent on the data collection teams and their willingness to be consistent.</p>
+</div>
+<div id="data-visualization" class="section level2">
+<h2>Data Visualization</h2>
+<p>During this process, high performance processing modules like pandas<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, numpy<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, re<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, and itertools<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>, where pyplot<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> was then used to project COVID-19 statistics:</p>
+<p>```python #Valid columns are: ‘Confirmed’, ‘Recovered’, ‘Deaths’ def barGraphPerCountry(self, c_frame, column): fig, ax = plt.subplots(figsize = (12, 6))<br />
+fig = sns.barplot(x = list(c_frame.index), y = column, data = c_frame, orient = ‘v’) ax.set_xticklabels([])</p>
+<pre><code>def mapPlot(self, c_frame, column, save = 1):
+    date = c_frame.columns.levels[0][0]
+    cf = c_frame.copy(deep = True)
+    cf.columns = cf.columns.droplevel(0)
+    #Filter coordinates from US cases outside mainland (excluding Alaska)
+    cf = cf[(cf[cf.columns[0]].between(-130, -55) &amp; cf[cf.columns[1]].between(26, 50))]
+    
+    
+    &#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;
+    lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
+    confirmed, color = cf[&#39;Confirmed&#39;].values, cf[column].values 
+    max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
+    
+    &#39;&#39;&#39;Draw map&#39;&#39;&#39;
+    fig = plt.figure(figsize = (20, 20))
+    m = Basemap(projection = &#39;lcc&#39;, resolution = &#39;h&#39;,
+        width = 5E6, height = 4E6, 
+        lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
+    m.shadedrelief()
+    m.drawcoastlines(color = &#39;gray&#39;)
+    m.drawcountries(color = &#39;black&#39;)
+    m.drawstates(color = &#39;gray&#39;)
+    
+    &#39;&#39;&#39;Scatter&#39;&#39;&#39;
+    cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
+    m.scatter(x = lon, y = lat, latlon = True,
+              s = confirmed,
+              c = color, cmap = plt.get_cmap(&#39;jet&#39;),
+              norm = cNorm,
+              alpha = 0.5)
+
+    cbar = plt.colorbar(label = column, shrink = 0.60)    
+    
+    plt.ylabel(&#39;Latitude&#39;, fontsize = 14)
+    plt.xlabel(&#39;Longitude&#39;, fontsize = 14)
+    plt.title(&#39;Confirmed Cases for {}: {}&#39;.format(date, int(confirmed.sum())), fontsize = 20)
+    
+    #Size legend
+    for a in [10, 100, 500]:
+        plt.scatter([], [], c = &#39;k&#39;, alpha = 0.9, s = a,
+                    label = str(a) + &#39; Confirmed&#39;)
+    plt.legend(loc = 3, fontsize = 16)
+    
+    if not save:
+        plt.show()
+        
+    else:
+        if not os.path.exists(&#39;Progress&#39;):
+            os.makedirs(&#39;Progress&#39;)
+        plt.savefig(&quot;Progress/{}.png&quot;.format(date), bbox_inches = &#39;tight&#39;, dpi = 100)
+        plt.clf()
+        plt.close()</code></pre>
+<p>```</p>
+<p>COVID-19 cases within the US from each date was passed into the method above to produce each graph:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mpl.use(<span class="st">&#39;Agg&#39;</span>)
+<span class="cf">for</span> i, date <span class="kw">in</span> <span class="bu">enumerate</span>(df.country.keys()):
+    <span class="bu">print</span>(<span class="st">&quot;Creating map for </span><span class="sc">{}</span><span class="st">.........</span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(date, i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(df.country.keys())))
+    df.mapPlot(df.country[date], <span class="st">&#39;Deaths&#39;</span>, <span class="dv">1</span>)</code></pre></div>
+<p>Then cv2<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a> was used to stitch the graphs together. “Agg” mode was invoked to prevent matplotlib from outputing each graph it created:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">    <span class="co">&#39;&#39;&#39;Stitching images together&#39;&#39;&#39;</span>
+    <span class="bu">print</span>(<span class="st">&#39;Creating video of maps...&#39;</span>)
+    path <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(os.path.join(<span class="st">&#39;./Progress/*.png&#39;</span>)))
+    files <span class="op">=</span> [cv2.imread(<span class="bu">file</span>) <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> path]
+    height, width, layers <span class="op">=</span> files[<span class="dv">0</span>].shape
+    size <span class="op">=</span> (width, height)
+    files <span class="op">=</span> [cv2.resize(<span class="bu">file</span>, size) <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files]
+
+    out <span class="op">=</span> cv2.VideoWriter(<span class="st">&#39;ConfirmedvsDeaths.avi&#39;</span>, cv2.VideoWriter_fourcc(<span class="op">*</span><span class="st">&#39;XVID&#39;</span>), <span class="dv">60</span>, size) 
+    <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files:
+        <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):
+            out.write(<span class="bu">file</span>)
+    out.release()</code></pre></div>
 <div class="credit-line">
-<p>Author: Tinh Son Last edited: 2020-04-28</p>
+<p>Author: Tinh Son Last edited: 2020-05-01</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US:en" class="uri">https://news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US:en</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://www.cdc.gov/flu/about/burden/index.html" class="uri">https://www.cdc.gov/flu/about/burden/index.html</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm" class="uri">https://www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://www.hindawi.com/journals/ddns/2008/636153/" class="uri">https://www.hindawi.com/journals/ddns/2008/636153/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p><a href="https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50" class="uri">https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p><a href="http://helios.fmi.fi/~lainema/dram/" class="uri">http://helios.fmi.fi/~lainema/dram/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p><a href="https://pypi.org/project/pymcmcstat/" class="uri">https://pypi.org/project/pymcmcstat/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p><a href="https://pandas.pydata.org/" class="uri">https://pandas.pydata.org/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p><a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p><a href="https://docs.python.org/3/library/re.html" class="uri">https://docs.python.org/3/library/re.html</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p><a href="https://docs.python.org/3/library/itertools.html" class="uri">https://docs.python.org/3/library/itertools.html</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p><a href="https://matplotlib.org/basemap/" class="uri">https://matplotlib.org/basemap/</a><a href="#fnref12" class="footnote-back">↩︎</a></p></li>
-<li id="fn13"><p><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html" class="uri">https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html</a><a href="#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p><a href="https://pypi.org/project/opencv-python/" class="uri">https://pypi.org/project/opencv-python/</a><a href="#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>“Coronavirus (COVID-19).” Google News, Google, news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US%3Aen.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>“Disease Burden of Influenza.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/index.html.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>“2019-2020 U.S. Flu Season: Preliminary Burden Estimates.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Zhang, Zhi-yu, et al. “Analysis of a Delayed SIR Model with Nonlinear Incidence Rate.” Discrete Dynamics in Nature and Society, Hindawi, 27 Jan. 2009, www.hindawi.com/journals/ddns/2008/636153/.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Shaver, Ben. “A Zero-Math Introduction to Markov Chain Monte Carlo Methods.” Medium, Towards Data Science, 24 Dec. 2017, towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Laine, M., et al. “Delayed Rejection Adaptive Metropolis.” DRAM, 2011, helios.fmi.fi/~lainema/dram/.<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><a href="https://pypi.org/project/pymcmcstat/" class="uri">https://pypi.org/project/pymcmcstat/</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p><a href="https://pandas.pydata.org/" class="uri">https://pandas.pydata.org/</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p><a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p><a href="https://docs.python.org/3/library/re.html" class="uri">https://docs.python.org/3/library/re.html</a><a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p><a href="https://docs.python.org/3/library/itertools.html" class="uri">https://docs.python.org/3/library/itertools.html</a><a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p><a href="https://matplotlib.org/basemap/" class="uri">https://matplotlib.org/basemap/</a><a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html" class="uri">https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html</a><a href="#fnref13">↩</a></p></li>
+<li id="fn14"><p><a href="https://pypi.org/project/opencv-python/" class="uri">https://pypi.org/project/opencv-python/</a><a href="#fnref14">↩</a></p></li>
 </ol>
 </div>
 
