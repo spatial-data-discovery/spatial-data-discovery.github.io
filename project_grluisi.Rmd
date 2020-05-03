@@ -70,7 +70,7 @@ The GIF was then converted to a MP4[^mp4] video file using FFmpeg[^ffmpeg].
 
 Author: Grant Luisi.
 
-Last edited: 2012-05-02.
+Last edited: 2020-05-02.
 
 </div>
 
