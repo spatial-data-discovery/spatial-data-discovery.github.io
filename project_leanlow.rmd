@@ -1,0 +1,26 @@
+---
+title: Air Pollution and Quality on Hay Fever
+author-meta: "LeAnn Lo"
+semester: "Spring 2020"
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+</div>
+
+## Overview
+To be filled.
+
+## Data Description
+
+To be filled
+
+
+<div class="credit-line">
+Author: LeAnn Lo.
+Last edited: 2020-04-30.
+</div>
+
+
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2020-04-30. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04-30. Online: https://www.qgis.org
