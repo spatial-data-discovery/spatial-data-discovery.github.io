@@ -41,7 +41,7 @@ The specifications for the dataset used to produce the animation above were as f
 
 Using a script written in the Python[^python] programming language, the data was organized and split into twelve CSV[^csv] files each containing the year, latitude, longitude, and magnitude for all earthquakes in a given decade. Note that 2010-2020 includes a greater amount of time (approximately 4 months) than the preceding decades. The script also created dummy variables "Count Major" and "Count Great" for each earthquake. If the earthquake's magnitude was in the range of 6.5-6.9, both dummy variables equated to 0. If the magnitude was in the range 7.0-7.9, "Count Major" was equal to 1 while "Count Great" was equal to 0. If the magnitude was 8.0 or greater, "Count Major" was equal to 0 while "Count Great" was equal to 1. Any other variables included in the initial USGS dataset were removed.
 
-For each decade, the data were visualized in QGIS[^qgis] using the same world map layer and properties and exported to a PNG[^png] image format. The image files were uploaded into GIMP[^gimp] and exported as an animated GIF[^gif]. The GIF was then converted to a MP4[^mp4] video file using FFmpeg[^ffmpeg].
+For each decade, the data were visualized in QGIS[^qgis] using the same world map layer and properties. QGIS provided statistics for the mean magnitude, maximum magnitude, total earthquakes, number of Major earthquakes (sum of "Count Major" column), and number of Great earthquakes (sum of "Count Great" column) for a given decade. Each decade was then exported to a PNG[^png] image. The image files were uploaded into GIMP[^gimp] and exported as an animated GIF[^gif]. The GIF was then converted to a MP4[^mp4] video file using FFmpeg[^ffmpeg].
 
 <div class="credit-line">
 
