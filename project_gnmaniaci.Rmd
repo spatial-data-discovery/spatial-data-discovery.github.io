@@ -1,5 +1,5 @@
 ---
-title: Popularity of Google Search Results including "MMR" & "AUTISM"  and Vaccination Coverage of the MMR Vaccine
+title: Vaccination Coverage of the Measles Mumps Rubella Vaccine VS. Popularity of Google Searches Including Terms: "MMR" & "AUTISM"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
