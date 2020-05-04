@@ -47,15 +47,15 @@ Author: Gianna N. Maniaci.
 Last edited: 2020-04-30.
 </div>
 
-[^NYTIMES]: Jenny McCarthy. Accessed 2020-04-15. Online: https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html
-[^Lancet]: Lancet retracts article. Accessed 2020-04-15. Online: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/
-[^NLM]: No link found between autism and MMR Vaccine. Accessed 2020-04-15. Online: https://www.ncbi.nlm.nih.gov/pubmed/25562790
-[^GTrends]: Google Trend Data. Accessed 2020-04-15. Online: https://trends.google.com/trends/explore?date=all&geo=US&q=mmr%20autism
+[^NYTIMES]: New York Times. Online: https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html
+[^Lancet]: PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/
+[^NLM]: PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: https://www.ncbi.nlm.nih.gov/pubmed/25562790
+[^GTrends]: Google Trends Data. Accessed 2020-04-15. Online: https://trends.google.com/trends/explore?date=all&geo=US&q=mmr%20autism
 [^CDC]: Vaccination Coverage Data. Accessed 2020-04-15. Online: https://www.cdc.gov/vaccines/imz-managers/coverage/childvaxview/data-reports/mmr/trend/index.html
 [^python]: Python. Copyright (C) 2001--2020. Python Software Foundation. Accessed 2020-04. Online: https://www.python.org/
-[^Excel]: Microsoft Excel (C) 2020. Accessed 2020-04. Online: https://www.microsoft.com/en-us/microsoft-365/excel
+[^Excel]: Microsoft Excel. Copyright (C) 2020. Accessed 2020-04. Online: https://www.microsoft.com/en-us/microsoft-365/excel
 [^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04. Online: https://www.qgis.org
 [^png]: Portable Network Graphics (PNG). Copyright 1995--2020 Greg Roelofs. Accessed 2020-04. Online: http://www.libpng.org/pub/png/
 [^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-01. Online: https://www.gimp.org/
 [^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2020-05-01. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
-[^ezgif]: Accessed: 2020-05-01. Online: https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif
+[^ezgif]: EZGIF. Accessed: 2020-05-01. Online: https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif
