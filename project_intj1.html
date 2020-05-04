@@ -373,6 +373,12 @@ $(document).ready(function () {
       <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
+      <a href="project_jrgarst.html">Electronic Content In Libraries</a>
+    </li>
+    <li>
+      <a href="project_nd3600.html">Fast Food and Obesity</a>
+    </li>
+    <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
@@ -506,7 +512,7 @@ $(document).ready(function () {
 <!----Overview--->
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. With the number of deaths exceeding that of the common flu <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> within just a short period of time, and as some states are beginning to reopen <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures.</p>
+<p>As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. With the number of deaths exceeding that of the common flu <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> within just a short period of time, and as some states are beginning to reopen <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, It is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures.</p>
 <p>While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>:</p>
 <p><span class="math display">\[\frac{dS}{dt} = - \frac{\beta S_\tau I_\tau}{N}\]</span></p>
 <p><span class="math display">\[\frac{dI}{dt} =  \frac{\beta  S I}{N} - \gamma I\]</span></p>
@@ -521,11 +527,11 @@ $(document).ready(function () {
 <li><p><span class="math inline">\(\tau\)</span> is the delay constant from incubation period to infection: <span class="math inline">\(S(t) = S,\ S(t - \tau) = S_\tau...\)</span> and so on.</p></li>
 </ul>
 <p>One main assumption is that the total population remains constant, such that <span class="math inline">\(S + I + R = N\)</span>. Also notice that the initial number of infected must be <span class="math inline">\(\ge 1\)</span> for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process.</p>
-<p>From this model, the parameters, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span>, were estimated by MCMC<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> was used for 10000 simulations the likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Here were the assumptions and initial conditions for projection:</p>
+<p>From this model, the parameters, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span>, were estimated by MCMC<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> was used for 10000 simulations. The likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Here were the assumptions and initial conditions for projection:</p>
 <ul>
-<li><p>Basic state projection has an average population of about 6 millions (US population / 50 states).</p></li>
+<li><p>Basic state projection has an average population of about 6 million (US population / 50 states).</p></li>
 <li><p>Susceptible population is the average population - (latest confirmed number / 50 states) - latest removed.</p></li>
-<li><p>Removed is sum of (current recovered + current deaths) / 50 states.</p></li>
+<li><p>Removed is (current recovered + current deaths) / 50 states.</p></li>
 <li><p>The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date.</p></li>
 <li><p>Parameters <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> are tuned within MCMC settings so that the reproduction rate cannot exceed <span class="math inline">\(2.1\)</span>.</p></li>
 <li><p>This projection assumes that <strong>absolutely no intervention measures were enforced</strong>.</p></li>
@@ -541,7 +547,7 @@ $(document).ready(function () {
 <div id="data-description-and-data-processing" class="section level2">
 <h2>Data Description and Data Processing</h2>
 <p>The entire data aquisition and processing can be found <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb">here</a>, with automated script <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py">here</a>.</p>
-<p>The video above shows the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population.</p>
+<p>The video above shows the number of COVID-19 cases (confirmed and deaths) to location over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population.</p>
 <p><a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">Johns Hopkins CSSEGIS</a> offers detailed data about COVID-19 cases all over the world. One major flaw of this database is its inconsistent formatting, especially in the “Recovered” column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases.</p>
 <p>A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> preProcess():
@@ -614,58 +620,51 @@ $(document).ready(function () {
 <p>During this process, high performance processing modules like pandas<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, numpy<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, re<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, and itertools<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>, where pyplot<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> was then used to project COVID-19 statistics:</p>
 <p>```python #Valid columns are: ‘Confirmed’, ‘Recovered’, ‘Deaths’ def barGraphPerCountry(self, c_frame, column): fig, ax = plt.subplots(figsize = (12, 6))<br />
 fig = sns.barplot(x = list(c_frame.index), y = column, data = c_frame, orient = ‘v’) ax.set_xticklabels([])</p>
-<pre><code>def mapPlot(self, c_frame, column, save = 1):
-    date = c_frame.columns.levels[0][0]
-    cf = c_frame.copy(deep = True)
-    cf.columns = cf.columns.droplevel(0)
-    #Filter coordinates from US cases outside mainland (excluding Alaska)
-    cf = cf[(cf[cf.columns[0]].between(-130, -55) &amp; cf[cf.columns[1]].between(26, 50))]
-    
-    
-    &#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;
-    lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
-    confirmed, color = cf[&#39;Confirmed&#39;].values, cf[column].values 
-    max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
-    
-    &#39;&#39;&#39;Draw map&#39;&#39;&#39;
-    fig = plt.figure(figsize = (20, 20))
-    m = Basemap(projection = &#39;lcc&#39;, resolution = &#39;h&#39;,
-        width = 5E6, height = 4E6, 
-        lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
-    m.shadedrelief()
-    m.drawcoastlines(color = &#39;gray&#39;)
-    m.drawcountries(color = &#39;black&#39;)
-    m.drawstates(color = &#39;gray&#39;)
-    
-    &#39;&#39;&#39;Scatter&#39;&#39;&#39;
-    cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
-    m.scatter(x = lon, y = lat, latlon = True,
-              s = confirmed,
-              c = color, cmap = plt.get_cmap(&#39;jet&#39;),
-              norm = cNorm,
-              alpha = 0.5)
+<p>def mapPlot(self, c_frame, column, save = 1): date = c_frame.columns.levels[0][0] cf = c_frame.copy(deep = True) cf.columns = cf.columns.droplevel(0) #Filter coordinates from US cases outside mainland (excluding Alaska) cf = cf[(cf[cf.columns[0]].between(-130, -55) &amp; cf[cf.columns[1]].between(26, 50))]</p>
+<pre><code>&#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;
+lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
+confirmed, color = cf[&#39;Confirmed&#39;].values, cf[column].values 
+max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
 
-    cbar = plt.colorbar(label = column, shrink = 0.60)    
+&#39;&#39;&#39;Draw map&#39;&#39;&#39;
+fig = plt.figure(figsize = (20, 20))
+m = Basemap(projection = &#39;lcc&#39;, resolution = &#39;h&#39;,
+    width = 5E6, height = 4E6, 
+    lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
+m.shadedrelief()
+m.drawcoastlines(color = &#39;gray&#39;)
+m.drawcountries(color = &#39;black&#39;)
+m.drawstates(color = &#39;gray&#39;)
+
+&#39;&#39;&#39;Scatter&#39;&#39;&#39;
+cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
+m.scatter(x = lon, y = lat, latlon = True,
+      s = confirmed,
+      c = color, cmap = plt.get_cmap(&#39;jet&#39;),
+      norm = cNorm,
+      alpha = 0.5)
+
+cbar = plt.colorbar(label = column, shrink = 0.60)    
+
+plt.ylabel(&#39;Latitude&#39;, fontsize = 14)
+plt.xlabel(&#39;Longitude&#39;, fontsize = 14)
+plt.title(&#39;Confirmed Cases for {}: {}&#39;.format(date, int(confirmed.sum())), fontsize = 20)
+
+#Size legend
+for a in [10, 100, 500]:
+    plt.scatter([], [], c = &#39;k&#39;, alpha = 0.9, s = a,
+            label = str(a) + &#39; Confirmed&#39;)
+plt.legend(loc = 3, fontsize = 16)
+
+if not save:
+    plt.show()
     
-    plt.ylabel(&#39;Latitude&#39;, fontsize = 14)
-    plt.xlabel(&#39;Longitude&#39;, fontsize = 14)
-    plt.title(&#39;Confirmed Cases for {}: {}&#39;.format(date, int(confirmed.sum())), fontsize = 20)
-    
-    #Size legend
-    for a in [10, 100, 500]:
-        plt.scatter([], [], c = &#39;k&#39;, alpha = 0.9, s = a,
-                    label = str(a) + &#39; Confirmed&#39;)
-    plt.legend(loc = 3, fontsize = 16)
-    
-    if not save:
-        plt.show()
-        
-    else:
-        if not os.path.exists(&#39;Progress&#39;):
-            os.makedirs(&#39;Progress&#39;)
-        plt.savefig(&quot;Progress/{}.png&quot;.format(date), bbox_inches = &#39;tight&#39;, dpi = 100)
-        plt.clf()
-        plt.close()</code></pre>
+else:
+    if not os.path.exists(&#39;Progress&#39;):
+    os.makedirs(&#39;Progress&#39;)
+    plt.savefig(&quot;Progress/{}.png&quot;.format(date), bbox_inches = &#39;tight&#39;, dpi = 100)
+    plt.clf()
+    plt.close()</code></pre>
 <p>```</p>
 <p>COVID-19 cases within the US from each date was passed into the method above to produce each graph:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mpl.use(<span class="st">&#39;Agg&#39;</span>)
@@ -687,7 +686,7 @@ fig = sns.barplot(x = list(c_frame.index), y = column, data = c_frame, orient = 
             out.write(<span class="bu">file</span>)
     out.release()</code></pre></div>
 <div class="credit-line">
-<p>Author: Tinh Son Last edited: 2020-05-01</p>
+<p>Author: Tinh Son Last edited: 2020-05-04</p>
 </div>
 </div>
 <div class="footnotes">
