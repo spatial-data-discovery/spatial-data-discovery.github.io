@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>About the Coder</title>
+<title>UNICEF and the third SDG</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -435,82 +434,97 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Ian Thompson</h4>
+<h1 class="title toc-ignore">UNICEF and the third SDG</h1>
+<h3 class="subtitle">An exploration of UNICEF’s progress towards reaching Good Health &amp; Well-Being</h3>
 
 </div>
 
 
-<dl>
-<dt><strong>Bio</strong></dt>
-<dd>I am a senior on the swim team with a Data Science major and Computer Science minor.
-</dd>
-</dl>
-<p><strong>Hobbies</strong></p>
-<ul>
-<li>Fishing</li>
-<li>Puzzle Cubes</li>
-<li><em>Old</em> Nintendo video games</li>
-<li>Archery</li>
-</ul>
-<p><img src="https://i.redd.it/bj2qtsp7fif11.jpg" /> <!-- this is how you embed an image --></p>
-<div id="sample-script" class="section level4">
-<h4>Sample Script</h4>
-<p>This is a script that takes a netCDF file which contains data for a variable(usually climate), latitude, longitude and time. It averages the file across the climate variable and writes it out to a new netCDF file.</p>
-<p>To run this script, place a netCDF file in the same folder as the script and run with the command</p>
-<pre><code>python netcdf_mean.py YourFile.nc
-</code></pre>
-<pre><code>&#39;&#39;&#39;
-&#39;&#39;&#39;
-Averaging climate and weather data (netCDF) by time
-@Author Ian Thompson
-&#39;&#39;&#39;
-import xarray as xr
-import netCDF4 as nd
-from netCDF4 import Dataset, num2date
-import pandas as pd
-import sys
-import argparse
-import warnings
-
-def main(nc_file):
-    file = &#39;./&#39; + str(nc_file)
-    print(&quot;File In: &quot; + file)
-    tp = nd.Dataset(file, &#39;r&#39;, Formate=&#39;netCDF4&#39;)
-
-    for var in tp.variables:
-        print(&quot;Name: &quot;, var,
-              &quot;|| Units: &quot;, tp[var].units,
-              &quot;|| Shape: &quot;, tp[var].shape,
-              &quot;|| Long Name: &quot;, tp[var].long_name)
-
-    tp_xr = xr.open_dataset(file)
-    with warnings.catch_warnings():
-        warnings.simplefilter(&quot;ignore&quot;, category=RuntimeWarning)
-        tp_mean = tp_xr.resample(time=&#39;1M&#39;).mean()
-
-    print(tp_mean.data_vars)
-    print(&#39;##################################################&#39;)
-
-
-    output = file + &quot;_mean&quot;
-
-    print(&quot;File Out: &quot; + output)
-
-    tp_mean.to_netcdf(output)
-
-
-if __name__ == &quot;__main__&quot;:
-    p = argparse.ArgumentParser(description=&quot;Averages the a netCDF file across time, writes out to new file&quot;)
-    p.add_argument(&#39;file&#39;, nargs=&#39;?&#39;, help=&quot;The file name - must be in the same folder as script&quot;)
-    args = p.parse_args()
-
-    main(args.file)
-
-    ###https://stackoverflow.com/questions/45796170/calculating-monthly-mean-from-daily-netcdf-file-in-python
-    ####https: // stackoverflow.com / questions / 28420988 / how - to - read - netcdf - file - and -write - to - csv - using - python
-
-</code></pre>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>In 2015, the UN created the Sustainable Development Goals (SDGs) with their strategies for reducing the overall global poverty in the future.<br />
+As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.<br />
+For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF’s progress.<br />
+Looking around on their website, there is already a lot of subjective progress and analysis on the collected data. However, there are seventeen SDGs and the methodology that is used is too complex to look at briefly and understand right away. So, I narrowed down the analysis to just look at the third goal, Good Health and Well-Being, partly because of current events. Out of all the indicators used to measure this goal, the three quantitative indicators that had the most data were neonatal mortality rate, under age five mortality rate, and the percentage of infants who received the third dose of a DTP vaccine. The map above shows a simple representation of whether or not a country has improved since the SDGs were created (in green) or has worsened over the years (red). Although the positive percent changes are relatively small, it is still an improvement that should not discredit UNICEFs efforts in reaching this difficult goal for better overall health. Furthermore, every developing country has its own unique needs and might measure its success differently than the standards in more developed countries.</p>
+<p>The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators. An explanation of how this was calculated can be found in the Data Description below.<br />
+On one hand it seems that majority of the countries that have met the goal or are above the goal, which are represented in blue, are the developed countries. On the other hand, a lot of the countries that are far below the goal, which are represented by the light yellow/green, are mostly in Africa. Looking closer at the indicators of these countries, it shows there is still a significant disparity between developing and developed countries that need more focus before coming close to UNICEFs goal. In addition to this, looking through the available data from the UNICEF Data Warehouse stresses the lack of crucial information in many countries on indicators not included for this exploration and the need for a push in collecting this data properly so that more programs can be better catered toward individual country’s needs. This is also emphasized by the fact that the most recent information is from two years ago.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>All the data used is taken from the UNICEF Data Warehouse. The python script takes this CSV and splits the data based on the indicators and recombines them so that each country shows each indicator in one row rather than multiple rows for one country. Afterwards, the script produces a CSV with calculations that can be displayed in a GIS with an existing countries shapefile.</p>
+<p>For the purpose of analysis, a goal ‘score’ was calculated by using the numerical goals that UNICEF established for each indicator. The goal for neonatal mortality rate is 12, for under-five mortality rate 15, and 95% of children with the DTP vaccine. The mortality rates represent the probability the child would survive past the given age. All three indicators were changed into a decimal, and the percent of children with the vaccine was subtracted from 1 to represent the percent of children who were not vaccinated. Assuming all events are independent, the probabilities were then multiplied and subtracted from 1 to represent the goal ‘score’ which is essentially the probability of survival for a child. This goal was 99.85%. Using this idea, the script creates a column and calculates the scores for each country in both 2015 and 2018. Then, a z-score column for each year to represent how many standard deviations the country is away from the goal probability. Finally, the script creates a column to calculate the percent change of the scores from 2015 to 2018.</p>
+<p>The data was visualised by using the join table tool in ArcGIS Pro with the created CSV and a Countries shape-file from ESRI. Classifications for each map do not have an equal interval since they were based off of the percentiles of where the data fell for the 2015 score and percent change. The goal comparison map for 2018 used the same class breaks as the map for 2015. The breakdown can be found below.</p>
+<div id="classification-breakdown" class="section level3">
+<h3>classification breakdown</h3>
+<div id="way_table">
+<table>
+<thead>
+<tr class="header">
+<th>Colour</th>
+<th align="center">Percent Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Light Green</td>
+<td align="center">&lt; -0.23%</td>
+</tr>
+<tr class="even">
+<td>Green</td>
+<td align="center">&lt; -0.01%</td>
+</tr>
+<tr class="odd">
+<td>Yellow</td>
+<td align="center">&lt; 0.00%</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td align="center">&lt; 0.17%</td>
+</tr>
+<tr class="odd">
+<td>Red</td>
+<td align="center">&lt; 10.0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="way_table">
+<table>
+<thead>
+<tr class="header">
+<th>Colour</th>
+<th align="center">Z - Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lightest Green</td>
+<td align="center">&lt; -3.00</td>
+</tr>
+<tr class="even">
+<td>Light Green</td>
+<td align="center">&lt; -2.00</td>
+</tr>
+<tr class="odd">
+<td>Green</td>
+<td align="center">&lt; 0.00</td>
+</tr>
+<tr class="even">
+<td>Blue</td>
+<td align="center">&lt; 0.07</td>
+</tr>
+<tr class="odd">
+<td>Dark Blue</td>
+<td align="center">&lt; 0.30</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="credit-line">
+<p>Author: Abby Gaddi Last edited: 2020-05-03</p>
+</div>
+<p>sources</p>
+</div>
 </div>
 
 <footer class="myfoot">

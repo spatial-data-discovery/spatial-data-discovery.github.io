@@ -339,6 +339,9 @@ $(document).ready(function () {
     <li>
       <a href="project_emmgillstrick.html">Spread of Urbanization</a>
     </li>
+    <li>
+      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
+    </li>
     <li class="divider"></li>
     <li>
       <a href="projects.html">Previous Projects</a>
@@ -441,12 +444,12 @@ $(document).ready(function () {
 <p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/grluisi_project.mp4" type="video/mp4" > </video></p>
 </div>
 <blockquote>
-<p><em>We expect about 16 major earthquakes in any given year, which includes 15 earthquakes in the magnitude 7 range and one earthquake magnitude 8.0 or greater</em> -USGS</p>
+<p><em>We expect about 16 major earthquakes in any given year, which includes 15 earthquakes in the magnitude 7 range and one earthquake magnitude 8.0 or greater.</em> – USGS</p>
 </blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>When the Earth’s lithosphere has a sudden release of energy, the result is the shaking of the Earth’s surface. This event is commonly known as an earthquake. Some earthquakes are so weak they may go unnoticed while others are so powerful they can wreak havoc on the surface. Because of the potential destruction that these events can cause, it is important to track Global trends concerning their location, frequency, and magnitude.</p>
-<p>Over the past century, the global frequency of earthquakes has remained relatively steady. Advancing technologies have allowed the false notion that earthquake activity is increasing to become standard. According to the United States Geological Survey (USGS), the National Earthquake Information Center locates about 20,000 earthquakes each year. That is approximately 55 earthquakes per day!<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> The increase in the number of seismic instruments and their precision gives only the appearance that earthquake activity is increasing.</p>
+<p>When the Earth’s lithosphere has a sudden release of energy, the result is the shaking of the Earth’s surface. This event is commonly known as an earthquake. Some earthquakes are so weak they may go unnoticed while others are so powerful they can wreak havoc on the surface. Because of the potential destruction that these events can cause, it is important to track global trends concerning their location, frequency, and magnitude.</p>
+<p>Over the past century, the global frequency of earthquakes has remained relatively steady. Advancing technologies have allowed the false notion that earthquake activity is increasing to become standard. According to the United States Geological Survey<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> (USGS), the National Earthquake Information Center locates about 20,000 earthquakes each year. That is approximately 55 earthquakes per day! The increase in the number of seismic instruments and their precision gives only the appearance that earthquake activity is increasing.</p>
 <p>The animation above is a testament to this. It appears that the number of earthquakes with magnitude 6.5 or greater has been increasing since 1900, but in reality as technology advanced we simply had a greater ability to detect earthquakes that would have previously gone unnoticed.</p>
 <p>Other contributors to the false notion of increasing earthquake activity are increasing population and global communication<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Earthquakes in very populated centers of the world will easily get the attention of the public. As population and urban areas increase, the chances of an earthquake getting attention also increase. Global communication has vastly increased our ability to monitor seismic activity around the world, allowing people to hear of earthquakes much more frequently.</p>
 </div>
@@ -462,11 +465,11 @@ $(document).ready(function () {
 <li><p>Format: CSV</p></li>
 <li><p>Order by: Time - Oldest First</p></li>
 </ul>
-<p>Using a script written in the Python<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> programming language, the data was organized and split into twelve CSV<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> files each containing the year, latitude, longitude, and magnitude for all earthquakes in a given decade. Note that 2010-2020 includes a greater amount of time (approximately 4 months) than the preceding decades. The script also created dummy variables “Count Major” and “Count Great” for each earthquake. If the earthquake’s magnitude was in the range of 6.5-6.9, both dummy variables equated to 0. If the magnitude was in the range 7.0-7.9, “Count Major” was equal to 1 while “Count Great” was equal to 0. If the magnitude was 8.0 or greater, “Count Major” was equal to 0 while “Count Great” was equal to 1. Any other variables included in the initial USGS dataset were removed.</p>
-<p>For each decade, the data were visualized in QGIS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> using the same world map layer and properties. QGIS provided statistics for the mean magnitude, maximum magnitude, total earthquakes, number of Major earthquakes (sum of “Count Major” column), and number of Great earthquakes (sum of “Count Great” column) for a given decade. Each decade was then exported to a PNG<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> image. The image files were uploaded into GIMP<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> and exported as an animated GIF<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. The GIF was then converted to a MP4<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> video file using FFmpeg<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
+<p>Using a script written in the Python<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> programming language, the data was organized and split into twelve CSV (comma-separated values) files each containing the year, latitude, longitude, and magnitude for all earthquakes in a given decade. Note that 2010-2020 includes a greater amount of time (approximately 4 months) than the preceding decades. The script also created dummy variables “Count Major” and “Count Great” for each earthquake. If the earthquake’s magnitude was in the range of 6.5-6.9, both dummy variables equated to 0. If the magnitude was in the range 7.0-7.9, “Count Major” was equal to 1 while “Count Great” was equal to 0. If the magnitude was 8.0 or greater, “Count Major” was equal to 0 while “Count Great” was equal to 1. Any other variables included in the initial USGS dataset were removed.</p>
+<p>For each decade, the data were visualized in QGIS<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> using the same world map layer and properties. QGIS provided statistics for the mean magnitude, maximum magnitude, total earthquakes, number of Major earthquakes (sum of “Count Major” column), and number of Great earthquakes (sum of “Count Great” column) for a given decade. Each decade was then exported to a PNG<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> image. The image files were uploaded into GIMP<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> and exported as an animated GIF<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. The GIF was then converted to a MP4<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> video file using FFmpeg<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
 <div class="credit-line">
 <p>Author: Grant Luisi.</p>
-<p>Last edited: 2012-05-02.</p>
+<p>Last edited: 2020-05-02.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -475,13 +478,12 @@ $(document).ready(function () {
 <li id="fn1"><p>The United States Geological Survey. Accessed 2020-04-06. Online: <a href="https://www.usgs.gov/about/about-us/who-we-are" class="uri">https://www.usgs.gov/about/about-us/who-we-are</a><a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>The British Geological Survey. Accessed 2020-04-07. Online: <a href="https://www.bgs.ac.uk/about/whoWeAre.html" class="uri">https://www.bgs.ac.uk/about/whoWeAre.html</a><a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2020-04-07. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Comma-separated values file. Accessed: 2020-04-14. Online: <a href="https://en.wikipedia.org/wiki/Comma-separated_values" class="uri">https://en.wikipedia.org/wiki/Comma-separated_values</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04-16. Online: <a href="https://www.qgis.org/" class="uri">https://www.qgis.org/</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2020-04-22. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-04-22. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2020-04-22. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-04-22. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2020-04-22. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref10">↩</a></p></li>
+<li id="fn4"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04-16. Online: <a href="https://www.qgis.org/" class="uri">https://www.qgis.org/</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2020-04-22. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-04-22. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2020-04-22. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-04-22. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2020-04-22. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref9">↩</a></p></li>
 </ol>
 </div>
 
