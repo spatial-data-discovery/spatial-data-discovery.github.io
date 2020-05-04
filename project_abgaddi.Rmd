@@ -1,0 +1,73 @@
+---
+title: UNICEF and the third SDG
+subtitle: An exploration of UNICEF's progress towards reaching Good Health & Well-Being
+---
+
+## Overview
+In 2015, the UN created the Sustainable Development Goals (SDGs) with their strategies for reducing the overall global poverty in the future.  
+As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.  
+For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF’s progress.  
+Looking around on their website, there is already a lot of subjective progress and analysis on the collected data.
+However, there are seventeen SDGs and the methodology that is used is too complex to look at briefly and understand right away.
+So, I narrowed down the analysis to just look at the third goal, Good Health and Well-Being, partly because of current events.
+Out of all the indicators used to measure this goal, the three quantitative indicators that had the most data were neonatal mortality rate, under age five mortality rate, and the percentage of infants who received the third dose of a DTP vaccine.
+The map above shows a simple representation of whether or not a country has improved since the SDGs were created (in green) or has worsened over the years (red).
+Although the positive percent changes are relatively small, it is still an improvement that should not discredit UNICEFs efforts in reaching this difficult goal for better overall health.
+Furthermore, every developing country has its own unique needs and might measure its success differently than the standards in more developed countries.
+
+The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators. 
+An explanation of how this was calculated can be found in the Data Description below.  
+On one hand it seems that majority of the countries that have met the goal or are above the goal, which are represented in blue, are the developed countries.
+On the other hand, a lot of the countries that are far below the goal, which are represented by the light yellow/green, are mostly in Africa.
+Looking closer at the indicators of these countries, it shows there is still a significant disparity between developing and developed countries that need more focus before coming close to UNICEFs goal.
+In addition to this, looking through the available data from the UNICEF Data Warehouse stresses the lack of crucial information in many countries on indicators not included for this exploration and the need for a push in collecting this data properly so that more programs can be better catered toward individual country’s needs.
+This is also emphasized by the fact that the most recent information is from two years ago.
+
+## Data Description
+All the data used is taken from the UNICEF Data Warehouse.
+The python script takes this CSV and splits the data based on the indicators and recombines them so that each country shows each indicator in one row rather than multiple rows for one country.
+Afterwards, the script produces a CSV with calculations that can be displayed in a GIS with an existing countries shapefile.
+
+For the purpose of analysis, a goal 'score' was calculated by using the numerical goals that UNICEF established for each indicator.
+The goal for neonatal mortality rate is 12, for under-five mortality rate 15, and 95% of children with the DTP vaccine.
+The mortality rates represent the probability the child would survive past the given age.
+All three indicators were changed into a decimal, and the percent of children with the vaccine was subtracted from 1 to represent the percent of children who were not vaccinated.
+Assuming all events are independent, the probabilities were then multiplied and subtracted from 1 to represent the goal 'score' which is essentially the probability of survival for a child.
+This goal was 99.85%.
+Using this idea, the script creates a column and calculates the scores for each country in both 2015 and 2018.
+Then, a z-score column for each year to represent how many standard deviations the country is away from the goal probability.
+Finally, the script creates a column to calculate the percent change of the scores from 2015 to 2018.
+
+The data was visualised by using the join table tool in ArcGIS Pro with the created CSV and a Countries shape-file from ESRI.
+Classifications for each map do not have an equal interval since they were based off of the percentiles of where the data fell for the 2015 score and percent change. The goal comparison map for 2018 used the same class breaks as the map for 2015.
+The breakdown can be found below.
+
+### classification breakdown
+
+<div id="way_table">
+|Colour        | Percent Change  |
+|--------------|:---------------:|
+| Light Green  |  < -0.23%       |
+| Green        |  < -0.01%       |
+| Yellow       |  < 0.00%        |
+| Orange       |  < 0.17%        |
+| Red          |  < 10.0%        |
+</div>
+
+<div id="way_table">
+|Colour          | Z - Score  |
+|----------------|:----------:|
+| Lightest Green |  < -3.00   |
+| Light Green    |  < -2.00   |
+| Green          |  < 0.00    |
+| Blue           |  < 0.07    |
+| Dark Blue      |  < 0.30    |
+</div>
+
+
+<div class="credit-line">
+Author: Abby Gaddi
+Last edited: 2020-05-03
+
+</div>
+sources
