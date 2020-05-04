@@ -1,0 +1,62 @@
+---
+title: US Libraries and Electronic content Use
+---
+
+![Visualization](https://github.com/spatial-data-discovery/ay1920-2/tree/master/project/jrgarst/Final/Final.jpeg)
+
+## Overview
+
+Libraries in the US fill an interesting role. They are not only a place to go to get free books, in many places, they serve as a community center. Libraries push constantly to draw people in by staying on or near the forefront of educational technology as much as they can while remaining a free place to come. Part of this effort right now is an increasing push toward electronic content. Especially today, during the coronavirus outbreak, libraries look to offer services that do not require patrons coming in person. This visualization uses data from the institute of library and museum services, a government agency that collects yearly reports from each state on many aspects of their libraries' use, to demonstrate the most current available use of electronic material from libraries in the United States.
+
+## Data Description
+
+The data sources, both the library information in CSV format and the map in a .shp file, can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/jrgarst/progress.txt) under the sources heading.
+The map above shows the circulation of electronic material compared to the number of electronic materials in each state's libraries. Importantly, this is not limited to Ebooks, but expanded to show all electronic content available for checkout from a library: books, audio, and video.
+
+
+### Data Organization
+
+The script below was used to generate the image used in the final visualization. If you would like to generate files of your own, download the data, organize your files correctly, then change the variable names in the #plot section (these are the all caps variables).
+
+```{r, eval=FALSE}
+#libraries
+library(raster)
+library("rgdal")
+library("data.table")
+library(sf)
+library(ggplot2)
+library(maptools)
+library(rgeos)
+library(plyr)
+
+#Set the working directory
+setwd('C:/Users/elkel/Desktop/dataScience/Final')
+
+#Create a dataframe from the CSV file I created in CSVRead.py
+libDF <- read.csv("Libraries.csv", sep = ",")
+
+shapefile = readOGR(dsn = "states_21basic", layer = "states")
+shapefile@data$id = rownames(shapefile@data)
+
+shapefile.df = fortify(shapefile)
+shapefile.df = join(shapefile.df, shapefile@data, by = "id")
+#Merge the two based on State data.
+shapefile.df <- merge(shapefile.df, libDF, by.x='STATE_ABBR', by.y='STABR')
+
+
+#plot
+ggplot(shapefile.df) +
+  aes(long,lat,group=group) +
+  geom_path(color="white") +
+  geom_polygon(aes(fill=ELMATCIR / EBOOK + AUDIO_DL + VIDEO_DL)) +
+  scale_fill_gradient(low = "blue", high = "red") +
+  theme(legend.title = element_blank())
+  coord_equal()
+
+
+```
+
+<div class="credit-line">
+Author: John Garst
+Last edited: 2020-04-23
+</div>
