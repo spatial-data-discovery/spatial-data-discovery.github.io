@@ -14,7 +14,7 @@ title: Projecting COVID-19 Cases Under No Intervention Measures
 ## Overview
 
 As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States [^COVID]. 
-With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at how effective social distancing and lockdown could be by comparing the projection of infectives under no intervention measures. 
+With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures. 
 
 While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
 
@@ -40,13 +40,13 @@ Where:
 
 One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process. 
 
-From this model, the parameters, $\beta$ and $\gamma$, were estimated by MCMC[^MCMC] and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] was used for 10000 simulations the likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here were the assumptions and initial conditions for projection:
+From this model, the parameters, $\beta$ and $\gamma$, were estimated by MCMC[^MCMC] and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] was used for 10000 simulations. The likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here were the assumptions and initial conditions for projection:
 
-- Basic state projection has an average population of about 6 millions (US population / 50 states).
+- Basic state projection has an average population of about 6 million (US population / 50 states).
 
 - Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed. 
 
-- Removed is sum of (current recovered + current deaths) / 50 states.
+- Removed is (current recovered + current deaths) / 50 states.
 
 - The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
 
@@ -66,7 +66,7 @@ Based on the projection, for an "average state" of 6 million people, the number 
 
 The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py).
 
-The video above shows the number of COVID-19 cases with respect to location and deaths over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
+The video above shows the number of COVID-19 cases (confirmed and deaths) to location over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
 
 [Johns Hopkins CSSEGIS](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports) offers detailed data about COVID-19 cases all over the world.  One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases. 
 
@@ -147,67 +147,67 @@ Overall, script functionality is contingent on the data collection teams and the
 During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] was then used to project COVID-19 statistics:
 
 ```python
-    #Valid columns are: 'Confirmed', 'Recovered', 'Deaths'
-    def barGraphPerCountry(self, c_frame, column):
-        fig, ax = plt.subplots(figsize = (12, 6))    
-        fig = sns.barplot(x = list(c_frame.index), 
-                          y = column, 
-                          data = c_frame,
-                          orient = 'v')
-        ax.set_xticklabels([])
-        
-    def mapPlot(self, c_frame, column, save = 1):
-        date = c_frame.columns.levels[0][0]
-        cf = c_frame.copy(deep = True)
-        cf.columns = cf.columns.droplevel(0)
-        #Filter coordinates from US cases outside mainland (excluding Alaska)
-        cf = cf[(cf[cf.columns[0]].between(-130, -55) & cf[cf.columns[1]].between(26, 50))]
-        
-        
-        '''Bookkeeping'''
-        lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
-        confirmed, color = cf['Confirmed'].values, cf[column].values 
-        max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
-        
-        '''Draw map'''
-        fig = plt.figure(figsize = (20, 20))
-        m = Basemap(projection = 'lcc', resolution = 'h',
-            width = 5E6, height = 4E6, 
-            lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
-        m.shadedrelief()
-        m.drawcoastlines(color = 'gray')
-        m.drawcountries(color = 'black')
-        m.drawstates(color = 'gray')
-        
-        '''Scatter'''
-        cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
-        m.scatter(x = lon, y = lat, latlon = True,
-                  s = confirmed,
-                  c = color, cmap = plt.get_cmap('jet'),
-                  norm = cNorm,
-                  alpha = 0.5)
-    
-        cbar = plt.colorbar(label = column, shrink = 0.60)    
-        
-        plt.ylabel('Latitude', fontsize = 14)
-        plt.xlabel('Longitude', fontsize = 14)
-        plt.title('Confirmed Cases for {}: {}'.format(date, int(confirmed.sum())), fontsize = 20)
-        
-        #Size legend
-        for a in [10, 100, 500]:
-            plt.scatter([], [], c = 'k', alpha = 0.9, s = a,
-                        label = str(a) + ' Confirmed')
-        plt.legend(loc = 3, fontsize = 16)
-        
-        if not save:
-            plt.show()
-            
-        else:
-            if not os.path.exists('Progress'):
-                os.makedirs('Progress')
-            plt.savefig("Progress/{}.png".format(date), bbox_inches = 'tight', dpi = 100)
-            plt.clf()
-            plt.close()
+#Valid columns are: 'Confirmed', 'Recovered', 'Deaths'
+def barGraphPerCountry(self, c_frame, column):
+	fig, ax = plt.subplots(figsize = (12, 6))    
+	fig = sns.barplot(x = list(c_frame.index), 
+		          y = column, 
+		          data = c_frame,
+		          orient = 'v')
+	ax.set_xticklabels([])
+
+def mapPlot(self, c_frame, column, save = 1):
+	date = c_frame.columns.levels[0][0]
+	cf = c_frame.copy(deep = True)
+	cf.columns = cf.columns.droplevel(0)
+	#Filter coordinates from US cases outside mainland (excluding Alaska)
+	cf = cf[(cf[cf.columns[0]].between(-130, -55) & cf[cf.columns[1]].between(26, 50))]
+
+
+	'''Bookkeeping'''
+	lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
+	confirmed, color = cf['Confirmed'].values, cf[column].values 
+	max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
+
+	'''Draw map'''
+	fig = plt.figure(figsize = (20, 20))
+	m = Basemap(projection = 'lcc', resolution = 'h',
+	    width = 5E6, height = 4E6, 
+	    lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
+	m.shadedrelief()
+	m.drawcoastlines(color = 'gray')
+	m.drawcountries(color = 'black')
+	m.drawstates(color = 'gray')
+
+	'''Scatter'''
+	cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
+	m.scatter(x = lon, y = lat, latlon = True,
+		  s = confirmed,
+		  c = color, cmap = plt.get_cmap('jet'),
+		  norm = cNorm,
+		  alpha = 0.5)
+
+	cbar = plt.colorbar(label = column, shrink = 0.60)    
+
+	plt.ylabel('Latitude', fontsize = 14)
+	plt.xlabel('Longitude', fontsize = 14)
+	plt.title('Confirmed Cases for {}: {}'.format(date, int(confirmed.sum())), fontsize = 20)
+
+	#Size legend
+	for a in [10, 100, 500]:
+	    plt.scatter([], [], c = 'k', alpha = 0.9, s = a,
+		        label = str(a) + ' Confirmed')
+	plt.legend(loc = 3, fontsize = 16)
+
+	if not save:
+	    plt.show()
+	    
+	else:
+	    if not os.path.exists('Progress'):
+		os.makedirs('Progress')
+	    plt.savefig("Progress/{}.png".format(date), bbox_inches = 'tight', dpi = 100)
+	    plt.clf()
+	    plt.close()
  ```
 
 COVID-19 cases within the US from each date was passed into the method above to produce each graph:
@@ -240,7 +240,7 @@ Then cv2[^CV] was used to stitch the graphs together. "Agg" mode was invoked to 
 
 <div class = "credit-line">
 Author: Tinh Son
-Last edited: 2020-05-01
+Last edited: 2020-05-04
 </div>
 
 [^COVID]:"Coronavirus (COVID-19).” Google News, Google, news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US%3Aen.
