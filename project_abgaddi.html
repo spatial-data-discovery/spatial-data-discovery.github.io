@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ian Thompson" />
 
 
-<title>Monitoring Climate Change Through the Ocean</title>
+<title>UNICEF and the third SDG</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -435,67 +434,97 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Monitoring Climate Change Through the Ocean</h1>
-<h4 class="author">Ian Thompson</h4>
+<h1 class="title toc-ignore">UNICEF and the third SDG</h1>
+<h3 class="subtitle">An exploration of UNICEF’s progress towards reaching Good Health &amp; Well-Being</h3>
 
 </div>
 
 
-<!-- VIDEO ON LOOP: see styles.css for formatting -->
-<div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst.mp4" > </video></p>
-</div>
-<blockquote>
-<p><em>El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean.</em> – Wikipedia</p>
-</blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>The ocean makes up roughly 71% of the earth’s surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.</p>
-<p>Changes in sea surface temperature influence weather and climate patterns globally. The El Niño-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.</p>
-<p>El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click <a href="https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina">here</a></p>
-<p>The animation above shows signs of El Niño for 2019, highlighted by the influx of warmer water in the equatorial Pacific.</p>
+<p>In 2015, the UN created the Sustainable Development Goals (SDGs) with their strategies for reducing the overall global poverty in the future.<br />
+As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.<br />
+For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF’s progress.<br />
+Looking around on their website, there is already a lot of subjective progress and analysis on the collected data. However, there are seventeen SDGs and the methodology that is used is too complex to look at briefly and understand right away. So, I narrowed down the analysis to just look at the third goal, Good Health and Well-Being, partly because of current events. Out of all the indicators used to measure this goal, the three quantitative indicators that had the most data were neonatal mortality rate, under age five mortality rate, and the percentage of infants who received the third dose of a DTP vaccine. The map above shows a simple representation of whether or not a country has improved since the SDGs were created (in green) or has worsened over the years (red). Although the positive percent changes are relatively small, it is still an improvement that should not discredit UNICEFs efforts in reaching this difficult goal for better overall health. Furthermore, every developing country has its own unique needs and might measure its success differently than the standards in more developed countries.</p>
+<p>The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators. An explanation of how this was calculated can be found in the Data Description below.<br />
+On one hand it seems that majority of the countries that have met the goal or are above the goal, which are represented in blue, are the developed countries. On the other hand, a lot of the countries that are far below the goal, which are represented by the light yellow/green, are mostly in Africa. Looking closer at the indicators of these countries, it shows there is still a significant disparity between developing and developed countries that need more focus before coming close to UNICEFs goal. In addition to this, looking through the available data from the UNICEF Data Warehouse stresses the lack of crucial information in many countries on indicators not included for this exploration and the need for a push in collecting this data properly so that more programs can be better catered toward individual country’s needs. This is also emphasized by the fact that the most recent information is from two years ago.</p>
 </div>
-<div id="data-conversion" class="section level2">
-<h2>Data Conversion</h2>
-<p>The world map animation above is monthly sea surface temperature (SST) for 2019. Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus’ Climate Change Service<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. It was downloaded <a href="https://cds.climate.copernicus.eu/cdsapp#!/home">here</a> from the Climate Data Store.</p>
-<p>SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26°F - 91°F</p>
-<p>The data was extracted and reformatted using a Python<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> and numpy<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.</p>
-<pre><code>import arcpy
-
-...
-
-def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
-    time_slice = arcpy.NumPyArrayToRaster(np_array, value_to_nodata = no_data,
-                                                    lower_left_corner = lowerLeft,
-                                                    x_cell_size = 0.25)
-
-    file_path = &#39;./output/&#39; + var + &#39;_raster_&#39;+ str(year)+ &#39;.tif&#39;
-    time_slice.save(file_path)</code></pre>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>All the data used is taken from the UNICEF Data Warehouse. The python script takes this CSV and splits the data based on the indicators and recombines them so that each country shows each indicator in one row rather than multiple rows for one country. Afterwards, the script produces a CSV with calculations that can be displayed in a GIS with an existing countries shapefile.</p>
+<p>For the purpose of analysis, a goal ‘score’ was calculated by using the numerical goals that UNICEF established for each indicator. The goal for neonatal mortality rate is 12, for under-five mortality rate 15, and 95% of children with the DTP vaccine. The mortality rates represent the probability the child would survive past the given age. All three indicators were changed into a decimal, and the percent of children with the vaccine was subtracted from 1 to represent the percent of children who were not vaccinated. Assuming all events are independent, the probabilities were then multiplied and subtracted from 1 to represent the goal ‘score’ which is essentially the probability of survival for a child. This goal was 99.85%. Using this idea, the script creates a column and calculates the scores for each country in both 2015 and 2018. Then, a z-score column for each year to represent how many standard deviations the country is away from the goal probability. Finally, the script creates a column to calculate the percent change of the scores from 2015 to 2018.</p>
+<p>The data was visualised by using the join table tool in ArcGIS Pro with the created CSV and a Countries shape-file from ESRI. Classifications for each map do not have an equal interval since they were based off of the percentiles of where the data fell for the 2015 score and percent change. The goal comparison map for 2018 used the same class breaks as the map for 2015. The breakdown can be found below.</p>
+<div id="classification-breakdown" class="section level3">
+<h3>classification breakdown</h3>
+<div id="way_table">
+<table>
+<thead>
+<tr class="header">
+<th>Colour</th>
+<th align="center">Percent Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Light Green</td>
+<td align="center">&lt; -0.23%</td>
+</tr>
+<tr class="even">
+<td>Green</td>
+<td align="center">&lt; -0.01%</td>
+</tr>
+<tr class="odd">
+<td>Yellow</td>
+<td align="center">&lt; 0.00%</td>
+</tr>
+<tr class="even">
+<td>Orange</td>
+<td align="center">&lt; 0.17%</td>
+</tr>
+<tr class="odd">
+<td>Red</td>
+<td align="center">&lt; 10.0%</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="visualization-process" class="section level2">
-<h2>Visualization Process</h2>
-<p>For each month, the data were visualized in QGIS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> using the same saved layout and exported to a PNG<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> image.</p>
-<p>The PNG files produced by each raster were imported into GIMP<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>, optimized and exported as an animated GIF<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>.</p>
-<p>The GIF was then uploaded and converted to a video (MP4<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>) using EzGif<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
+<div id="way_table">
+<table>
+<thead>
+<tr class="header">
+<th>Colour</th>
+<th align="center">Z - Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lightest Green</td>
+<td align="center">&lt; -3.00</td>
+</tr>
+<tr class="even">
+<td>Light Green</td>
+<td align="center">&lt; -2.00</td>
+</tr>
+<tr class="odd">
+<td>Green</td>
+<td align="center">&lt; 0.00</td>
+</tr>
+<tr class="even">
+<td>Blue</td>
+<td align="center">&lt; 0.07</td>
+</tr>
+<tr class="odd">
+<td>Dark Blue</td>
+<td align="center">&lt; 0.30</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="credit-line">
-<p>Author: Ian Thompson</p>
-<p>Last edited: 2020-04-13.</p>
+<p>Author: Abby Gaddi Last edited: 2020-05-03</p>
 </div>
+<p>sources</p>
 </div>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10">↩</a></p></li>
-</ol>
 </div>
 
 <footer class="myfoot">

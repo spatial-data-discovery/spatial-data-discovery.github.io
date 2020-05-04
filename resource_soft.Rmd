@@ -60,6 +60,9 @@ title: "Resources | Software"
 [h5py](https://www.h5py.org/)
 :   Python package for reading and writing in the HDF5 binary data format.
 
+[pandas](https://pandas.pydata.org/)
+:   A fast, powerful, flexible and easy to use open source data analysis and manipulation tool.
+
 [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
 :   A friendly PIL (Python Imaging Library) fork by [Alex Clark and Contributors](https://github.com/python-pillow/Pillow/graphs/contributors).
 
@@ -70,7 +73,16 @@ title: "Resources | Software"
 :   Provides modules, classes, and functions to read data from and write data to the classic NetCDF file format.
 
 [Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
-:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language. A few binaries are available for the PyPy distribution.[^gohlke19]
+:   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language.
+    A few binaries are available for the PyPy distribution.[^gohlke19]
+
+### R Packages
+
+[rmarkdown](https://rmarkdown.rstudio.com/)
+:   An authoring framework for data science.
+
+[knitr](https://yihui.org/knitr/)
+:   Elegant, flexible, and fast dynamic report generation with R.
 
 [^exif19]: Copyright (c) 2002-2007 Gene Cash. Copyright (c) 2007-2015 Ianar&eacute; S&eacute;vi and contributors.
 
