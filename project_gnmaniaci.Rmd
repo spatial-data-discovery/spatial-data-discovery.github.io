@@ -44,7 +44,7 @@ The animated gif was converted to a video using an ezgif[^ezgif] an online video
 
 <div class="credit-line">
 Author: Gianna N. Maniaci.
-Last edited: 2020-04-30.
+Last edited: 2020-05-04.
 </div>
 
 [^NYTIMES]: New York Times. Online: https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html
