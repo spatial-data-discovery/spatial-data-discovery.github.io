@@ -310,13 +310,7 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
-    </li>
-    <li>
-      <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
-    </li>
-    <li>
-      <a href="project_msuri.html">COVID-19 Strictness Policies</a>
+      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
@@ -325,10 +319,10 @@ $(document).ready(function () {
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
     </li>
     <li>
-      <a href="project_irthompson01.html">Monitoring Ocean Climate Change</a>
+      <a href="project_jlollen.html">Opioid Epidemic</a>
     </li>
     <li>
-      <a href="project_jlollen.html">Opioid Epidemic</a>
+      <a href="project_leanlow.html">Pollen Index</a>
     </li>
     <li>
       <a href="project_intj1.html">Projecting COVID-19 Cases</a>
@@ -337,7 +331,13 @@ $(document).ready(function () {
       <a href="project_rhan9.html">Rise of a Superstar</a>
     </li>
     <li>
+      <a href="project_mkcusick.html">Spread of COVID-19 in the USA</a>
+    </li>
+    <li>
       <a href="project_emmgillstrick.html">Spread of Urbanization</a>
+    </li>
+    <li>
+      <a href="project_msuri.html">Strictness of COVID-19 Policies</a>
     </li>
     <li>
       <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
@@ -439,20 +439,349 @@ $(document).ready(function () {
 </div>
 
 
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png" alt="COVID-19 Strictness Policy By State" />
+<p class="caption">COVID-19 Strictness Policy By State</p>
+</div>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>Overview will go here.</p>
+<p>We are currently in unprecedented times amidst a global pandemic due to COVID-19. COVID-19 is known to be a flu-like virus that is extremely contagious. Since it was discovered in late 2019, there is no known vaccination for COVID-19.</p>
+<p>Some countries, such as Italy<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and Spain<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> have experienced extreme hardship in the healthcare system where they do not have enough hospital beds. In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures. After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.</p>
+<p>I thought it would be interesting to see how strict different states are during the crisis to see if other people are in similar situations as I am.</p>
+<dl>
+<dt>The above map takes into account the following social distancing policies:</dt>
+<dd><ul>
+<li>The easing of social distancing measures</li>
+<li>Stay at home orders</li>
+<li>Mandatory quarantine for travelers</li>
+<li>Non-essential business closures</li>
+<li>Large gathering bans</li>
+<li>School closures</li>
+<li>Limits on restaruants and bars</li>
+<li>The postponement of the primary elections</li>
+<li>Whether the state has been declared in a State of Emergency</li>
+</ul>
+</dd>
+</dl>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>Data Description will go here.</p>
+<p>The data was found on the Kaiser Family Foundation[^KFF] website. However, I was less interested in the individual policies than I was in the strictness of the policies as a whole. As such, I created my own scale to measure the how strict the social distancing measures were for each state.</p>
+<p>The website produced a .csv file which I then loaded into a Python<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> package called pandas<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. I used pandas to preprocess the data and create the strictness measures.</p>
+<p>I went through each category of the different measures and assigned them a point value. The stricter the policy, the higher the point value was. If the state did not have a policy in place for that particular category, a value of 0 was assigned. If the the state was easing up on the social distancing measures, a negative point value was assigned.</p>
+<p>A breakdown of the point values are seen below:</p>
+<div id="state-is-easing-social-distancing-measures" class="section level4">
+<h4>State Is Easing Social Distancing Measures</h4>
+<table>
+<colgroup>
+<col width="89%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Reopens Certain Businesses</td>
+<td>-1</td>
+</tr>
+<tr class="odd">
+<td>Reopens Certain Businesses; Allows Limited Restaurant Dine-in Services</td>
+<td>-2</td>
+</tr>
+<tr class="even">
+<td>Changes to Stay at Home Order; Reopens Certain Businesses</td>
+<td>-2</td>
+</tr>
+<tr class="odd">
+<td>Changes to Stay at Home Order; Reopens Certain Businesses; Eases Large Gatherings Ban</td>
+<td>-3</td>
+</tr>
+<tr class="even">
+<td>Changes to Stay at Home Order; Reopens Certain Businesses; Allows Limited Restaurant Dine-in Services; Eases Large Gatherings Ban</td>
+<td>-4</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="python-script" class="section level2">
-<h2>Python Script</h2>
-<p>Python script will go here.</p>
+<div id="stay-at-home-order" class="section level4">
+<h4>Stay at Home Order</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statewide</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>High-Risk Groups</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>High-Risk Groups*</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Other</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Expired*</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mandatory-quarantine-for-travelers" class="section level4">
+<h4>Mandatory Quarantine for Travelers</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Travelers</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>All Air Travelers</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>From Certain States</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Other</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="non-essential-business-closures" class="section level4">
+<h4>Non-Essential Business Closures</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Non-Essential Businesses</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>All Non-Essential Retail Businesses</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Certain Non-Essential Businesses</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Certain Non-Essential Businesses*</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Open with Reduced Capacity*</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="large-gatherings-bans" class="section level4">
+<h4>Large Gatherings Bans</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Gatherings Prohibited</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>&gt;10 People Prohibited</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>20+ People Prohibited*</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Other</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Expired*</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="school-closures" class="section level4">
+<h4>School Closures</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Closed for School Year</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Closed</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Recommended Closure for School Year</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Recommended Closure</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div id="bar-and-restaurant-limits" class="section level6">
+<h6>Bar and Restaurant Limits</h6>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Closed Except for Takeout/Delivery</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Limited On-Site Service</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Limited On-Site Service*</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Other</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="primary-election-postponement" class="section level6">
+<h6>Primary Election Postponement</h6>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cancelled</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Postponed</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="emergency-declaration" class="section level6">
+<h6>Emergency Declaration</h6>
+<table>
+<thead>
+<tr class="header">
+<th>Policy Type</th>
+<th>Point Allotment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yes</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><em>A * value indicates that the state has eased a more restricitve social distancing measure</em></p>
+<p>After creating the point system, I added up all the points for each state and used the Python package plotly[^plotly] to create a chloropleth map of the data. I then exported the visualization as a .png<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> file.</p>
 <div class="credit-line">
-<p>Author: Mallika Suri. Last edited: 2020-05-27</p>
+<p>Author: Mallika Suri. Last edited: 2020-05-04</p>
 </div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>COVID-19 in Italy. Online: <a href="https://www.nejm.org/doi/full/10.1056/NEJMp2005492" class="uri">https://www.nejm.org/doi/full/10.1056/NEJMp2005492</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>COVID-19 in Spain. Online: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11149196" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/11149196</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Online: <a href="https://www.python.org" class="uri">https://www.python.org</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Pandas. Copyright (C) 2020. Online: <a href="https://pandas.pydata.org" class="uri">https://pandas.pydata.org</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref5">↩</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">
