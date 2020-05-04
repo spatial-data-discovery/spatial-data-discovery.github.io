@@ -33,6 +33,71 @@ You can install a .whl package using pip.
 
 For example, download a wheel package ("package-0.10.2-cp37-cp37m-win_amd64.whl"), open a terminal and `cd` to folder where it was downloaded, and run `pip install package-0.10.2-cp37-cp37m-win_amd64.whl`.
 
+***
+
+### Linking Images to Markdown Files
+In order for images to appear on your web page that is rendered from markdown, you need a publicly accessible URL for the image.
+
+Two popular cloud-based storage options are Dropbox and Google Drive.
+You may also find public domain or CC-BY-SA images on Wikimedia Commons.
+If you want to access images that are saved in one of these locations, try the steps outlined below.
+
+#### Dropbox
+1. Create a shareable link to a media file (e.g., https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?dl=0).
+2. Change the `?dl=0` to `?raw=1`
+
+```
+![Example link to image stored on Dropbox.](https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1){width=150 height=150}
+```
+
+![Example link to image stored on Dropbox.](https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1){width=150 height=150}
+
+
+#### Drive
+1. Create a shareable link to a media file (e.g., https://drive.google.com/file/d/11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4/view?usp=sharing)
+2. Identify the file ID.
+    It appears after the `/file/d` and before the `/view?` in the URL (i.e., `11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4` from the example URL above).
+3. Take the file ID and place it in a URL formatted as: `https://drive.google.com/uc?export=view&id=` and append the file ID at the end.
+
+```
+![Example link to image stored in Drive](https://drive.google.com/uc?export=view&id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4){width=150 height=150}
+```
+
+![Example link to image stored in Drive](https://drive.google.com/uc?export=view&id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4){width=150 height=150}
+
+#### Wikimedia
+1. Find an image you want to link to on https://commons.wikimedia.com
+2. Notice that the preview image page is not the actual image and will not work in markdown.
+    Check out the difference between these two links (yes, both URLs appear to end with .png, but only the second one is an actual image; you can scroll down the page on the first link and find the "More Details" button)
+    * [Preview page](https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg#/media/File:Albert_Einstein_Head.jpg)
+    * [Image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+
+```
+![Example link to image stored on Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+```
+
+![Example link to image stored on Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+
+
+***
+
+### Making Markdown Tables
+Do you dread making tables in markdown?
+Try using an R data frame and let knitr do the work for you!
+Here's an example R code chunk and the web table it produces:
+
+```{r}
+library(knitr)
+my.data <- data.frame(
+    months = c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+    days_in_month = c(31, 28, 31, 30, 31, 30,
+                      31, 31, 30, 31, 30, 31)
+    )
+knitr::kable(my.data, col.names = c("Months", "Number of Days"))
+```
+
+More on R's data.frame object can be found [here](https://www.tutorialspoint.com/r/r_data_frames.htm).
 
 ***
 
