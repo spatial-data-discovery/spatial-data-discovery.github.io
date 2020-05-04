@@ -12,17 +12,24 @@ author: Matthew Cusick
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/Legend.png 'Legend')
 
+</br> 
+
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/CasesDeaths.png 'Cases and Deaths Plot')
 
-> *"Catchy phrase* -- someone important
+</br>
+
+> *"This thing's not going to stop until it infects 60 to 70 percent of people. The idea that this is going to be done soon defies microbiology."* -- Mike Osterholm, Director of CIDRAP
 
 ## Overview
-Info about project and background
+This project visualizes the spread of COVID-19 within the contiguous United States. The animation begins on 1/21/2020 and updates weekly through 4/21/20. 
 
 Use citation inserts like this[^filler].
 
 ## Data Description
-Wheres the data from? What does this look like -> ([LP DAAC](https://lpdaac.usgs.gov/)).
+The data for this visualization comes from a [NY Times COVID-19 dataset](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv) and a [NY Times US Counties dataset](https://www.arcgis.com/home/item.html?id=53935d5d1c8540539d290072fcda77c1).
+
+These two datasets can be merged together through their shared FIPS IDs, resulting in the table used for the visualization.
+
 Python[^python] programming language with [pyhdf](http://fhs.github.io/pyhdf/) package[^pyhdf].
 
 The script does....
