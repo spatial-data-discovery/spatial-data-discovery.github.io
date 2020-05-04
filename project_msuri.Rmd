@@ -2,6 +2,7 @@
 title: "The Strictness of COVID-19 Policy by State"
 ---
 
+![COVID-19 Strictness Policy By State](https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png)
 
 ## Overview
 
@@ -32,7 +33,7 @@ I went through each category of the different measures and assigned them a point
 
 A breakdown of the point values are seen below:
 
-###### State Is Easing Social Distancing Measures
+#### State Is Easing Social Distancing Measures
 
 | Policy Type                                                                                                                         | Point Allotment |
 | ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -43,7 +44,7 @@ A breakdown of the point values are seen below:
 | Changes to Stay at Home Order; Reopens Certain Businesses; Eases Large Gatherings Ban                                               | -3              |
 | Changes to Stay at Home Order; Reopens Certain Businesses; Allows Limited Restaurant Dine-in Services; Eases Large Gatherings Ban   | -4              |
 
-###### Stay at Home Order
+#### Stay at Home Order
 
 | Policy Type         | Point Allotment |
 | ------------------- | --------------- |
@@ -54,7 +55,7 @@ A breakdown of the point values are seen below:
 | None                | 0               |
 | Expired*            | -1              |
 
-###### Mandatory Quarantine for Travelers
+#### Mandatory Quarantine for Travelers
 
 | Policy Type         | Point Allotment |
 | ------------------- | --------------- |
@@ -65,7 +66,7 @@ A breakdown of the point values are seen below:
 | None                | 0               |
 
 
-###### Non-Essential Business Closures
+#### Non-Essential Business Closures
 
 | Policy Type                          | Point Allotment |
 | ------------------------------------ | --------------- |
@@ -76,7 +77,7 @@ A breakdown of the point values are seen below:
 | Open with Reduced Capacity*          | 1               |
 | None                                 | 0               |
 
-###### Large Gatherings Bans
+#### Large Gatherings Bans
 
 | Policy Type               | Point Allotment |
 | ------------------------- | --------------- |
@@ -87,7 +88,7 @@ A breakdown of the point values are seen below:
 | None                      | 0               |
 | Expired*                  | -1              |
 
-###### School Closures
+#### School Closures
 
 | Policy Type                          | Point Allotment |
 | ------------------------------------ | --------------- |
