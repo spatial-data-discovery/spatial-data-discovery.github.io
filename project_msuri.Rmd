@@ -6,9 +6,12 @@ title: "The Strictness of COVID-19 Policy by State"
 
 ## Overview
 
-We are currently in unprecedented times amidst a global pandemic due to COVID-19. COVID-19 is known to be a flu-like virus that is extremely contagious. Since it was discovered in late 2019, there is no known vaccination for COVID-19. 
+We are currently in unprecedented times amidst a global pandemic due to COVID-19. COVID-19 is known to be a flu-like virus that is extremely contagious. 
+Since it was discovered in late 2019, there is no known vaccination for COVID-19. 
 
-Some countries, such as Italy[^italy] and Spain[^spain] have experienced extreme hardship in the healthcare system where they do not have enough hospital beds. In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures. After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.
+Some countries, such as Italy[^italy] and Spain[^spain] have experienced extreme hardship in the healthcare system where they do not have enough hospital beds. 
+In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures. 
+After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.
 
 I thought it would be interesting to see how strict different states are during the crisis to see if other people are in similar situations as I am. 
 
@@ -25,11 +28,17 @@ The above map takes into account the following social distancing policies:
 
 ## Data Description
 
-The data was found on the Kaiser Family Foundation[^KFF] website. However, I was less interested in the individual policies than I was in the strictness of the policies as a whole. As such, I created my own scale to measure the how strict the social distancing measures were for each state.
+The data was found on the Kaiser Family Foundation[^KFF] website. 
+However, I was less interested in the individual policies than I was in the strictness of the policies as a whole. 
+As such, I created my own scale to measure the how strict the social distancing measures were for each state.
 
-The website produced a .csv file which I then loaded into a Python[^python] package called pandas[^pandas]. I used pandas to preprocess the data and create the strictness measures.
+The website produced a .csv file which I then loaded into a Python[^python] package called pandas[^pandas]. 
+I used pandas to preprocess the data and create the strictness measures.
 
-I went through each category of the different measures and assigned them a point value. The stricter the policy, the higher the point value was. If the state did not have a policy in place for that particular category, a value of 0 was assigned. If the the state was easing up on the social distancing measures, a negative point value was assigned. 
+I went through each category of the different measures and assigned them a point value. 
+The stricter the policy, the higher the point value was. 
+If the state did not have a policy in place for that particular category, a value of 0 was assigned. 
+If the the state was easing up on the social distancing measures, a negative point value was assigned. 
 
 A breakdown of the point values are seen below:
 
@@ -98,7 +107,7 @@ A breakdown of the point values are seen below:
 | Recommended Closure                  | 1               |
 | None                                 | 0               |
 
-###### Bar and Restaurant Limits
+#### Bar and Restaurant Limits
 
 | Policy Type                          | Point Allotment |
 | ------------------------------------ | --------------- |
@@ -108,7 +117,7 @@ A breakdown of the point values are seen below:
 | Other                                | 1               |
 | None                                 | 0               |
 
-###### Primary Election Postponement
+#### Primary Election Postponement
 
 | Policy Type    | Point Allotment |
 | -------------- | --------------- |
@@ -116,16 +125,18 @@ A breakdown of the point values are seen below:
 | Postponed      | 2               |
 | None           | 0               |
 
-###### Emergency Declaration
+#### Emergency Declaration
 
 | Policy Type    | Point Allotment |
 | -------------- | --------------- |
 | Yes            | 1               |
 | None           | 0               |
 
-_A * value indicates that the state has eased a more restricitve social distancing measure_
+_A * indicates that the state has eased a more restricitve social distancing measure._
 
-After creating the point system, I added up all the points for each state and used the Python package plotly[^plotly] to create a chloropleth map of the data. I then exported the visualization as a .png[^png] file.
+After creating the point system, 
+I added up all the points for each state and used the Python package plotly[^plotly] to create a chloropleth map of the data. 
+I then exported the visualization as a .png[^png] file.
 
 
 <div class="credit-line">
@@ -148,7 +159,7 @@ Online: https://www.python.org
 [^pandas]: Pandas. Copyright (C) 2020. 
 Online: https://pandas.pydata.org
 
-[^ployly]: Plotly. Copyright (C) 2020.
+[^plotly]: Plotly. Copyright (C) 2020.
 Online: https://plotly.com
 
 [^png]: Portable Network Graphics (PNG). Copyright 1995--2019
