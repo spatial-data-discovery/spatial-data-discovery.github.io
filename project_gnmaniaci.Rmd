@@ -13,13 +13,13 @@ title: Popularity of Google Search Results including "MMR" & "AUTISM"  and Vacci
 ## Overview
 The internet has the power to spread thoughts and ideas all over the world.
 Whether this information is true or false, it can spread like wildfire.
-Because of this, it is neccessary to observe whether the internet has had an effect on differing pieces of society.
+Because of this, it is necessary to observe whether the internet has had an effect on differing pieces of society.
 
-One of the bigger issues circling the internet over the past decade has been whether or not to vaccinate children.
+One of the bigger issues circling the internet over the past decade has been whether vaccination causes autism.
 In 2007 Jenny McCarthy spoke out against vaccines when she was invited to talk on Oprah, stating that the Measles, Mumps, Rubella (MMR) Vaccine caused her child to develop autism [^NYTIMES].
 However, since that point many academic journals have claimed otherwise.
-In  2010 The Lancet retracted a major article published 12 years prior, which linked autism to the MMR Vaccine [^Lancet].
-A study done in 2015 found no link betweeen the MMR Vaccine and Autism [^NLM].
+In 2010 The Lancet retracted a major article published 12 years prior, which linked autism to the MMR Vaccine [^Lancet].
+A study done in 2015 found no link between the MMR Vaccine and Autism [^NLM].
 
 It is likely that during the time each event occurred, a google search containing similar terms would produce the relevant article of that period.
 By looking at the popularity of Google searches including the terms "MMR" and "Autism", we can see whether any of the events mentioned above have impacted vaccination coverage over time.
@@ -31,7 +31,7 @@ Magnitude is not visualized.
 The Google search term data was downloaded from Google Trends[^GTrends] and the vaccination coverage was downloaded from the Center for Disease Control (CDC).
 The Google trends data was downloaded in 50 different CSVs, one for each state, and had monthly data, when yearly data was what needed to be compared.
 A Python[^python] Script was used to average the monthly data for each year and reformat it into one CSV so it could be easily compared with the vaccination coverage data.
-Once both data were in the same format percent change was calculated between each year using the following formula in excel[^Excel]: (x_2 - x_1)/|x_1| .
+Once both data were in the same format percent change was calculated between each year using the following formula in excel[^Excel]: $$(x_2 - x_1)/|x_1|$$.
 Zero was inputted as the no data value.
 In order to avoid divide by zero errors, all zeros were replaced by 0.00000001.
 Once this information was established, another python script was built to compare the behaviors of the 2 functions and sorted them on whether they were increasing, decreasing, or there was no change/no data available.
