@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Nikhil Daga" />
 
 
-<title>About the Coder</title>
+<title>The Connection Between Fast Food and Obesity</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,66 +24,6 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #0000ff; } /* Keyword */
-code > span.ch { color: #008080; } /* Char */
-code > span.st { color: #008080; } /* String */
-code > span.co { color: #008000; } /* Comment */
-code > span.ot { color: #ff4000; } /* Other */
-code > span.al { color: #ff0000; } /* Alert */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #008000; font-weight: bold; } /* Warning */
-code > span.cn { } /* Constant */
-code > span.sc { color: #008080; } /* SpecialChar */
-code > span.vs { color: #008080; } /* VerbatimString */
-code > span.ss { color: #008080; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #0000ff; } /* ControlFlow */
-code > span.op { } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ff4000; } /* Preprocessor */
-code > span.do { color: #008000; } /* Documentation */
-code > span.an { color: #008000; } /* Annotation */
-code > span.cv { color: #008000; } /* CommentVar */
-code > span.at { } /* Attribute */
-code > span.in { color: #008000; } /* Information */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -501,76 +440,29 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Nikhil Daga</h4>
-<h4 class="date">Edited: 2020-13-2</h4>
+<h1 class="title toc-ignore">The Connection Between Fast Food and Obesity</h1>
 
 </div>
 
 
-<dl>
-<dt><strong>Bio</strong></dt>
-<dd><p>I’m a Data Science major, and a computer science minor. I am from Northern Virginia.</p>
-</dd>
-</dl>
-<p><em>About me</em>:</p>
-<ul>
-<li><p>I am a Boston Celtics Fan (picture below)</p></li>
-<li><p>I was born in The Netherlands</p></li>
-<li><p>I have a Yorkie <img src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2020/01/Celtics-1040x700-Web.jpg" alt="This is a picture of the Celtics Starting Lineup" /></p></li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/keywords.py">keywords (.py)</a></p>
-<p>The goal of my script is to help sumarize large and complex readings. It does this by finding the most common words in a text file, and then Googling them and returning the first five links. These links will normally be Wikipedia articles, and other simple sources which cover the key concepts in the reading.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> collections
-<span class="im">import</span> pandas <span class="im">as</span> pd0
-<span class="im">import</span> argparse
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
-    <span class="co"># Check command-line arguments</span>
-
-    parser <span class="op">=</span> argparse.ArgumentParser(add_help<span class="op">=</span><span class="va">False</span>)
-    parser.add_argument(<span class="st">&#39;-h&#39;</span>, <span class="st">&#39;--help&#39;</span>, action<span class="op">=</span><span class="st">&#39;help&#39;</span>, default<span class="op">=</span>argparse.SUPPRESS,
-                        <span class="bu">help</span><span class="op">=</span><span class="st">&#39;The point of this script is to help summarize long readings.It finds the most used words in a text and returns shorter and simpler articles which go over these concepts.&#39;</span>)
-    args<span class="op">=</span>parser.parse_args()
-
-    <span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;NDFM.txt&#39;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>)<span class="co">#input file</span>
-    a<span class="op">=</span> <span class="bu">file</span>.read()
-
-    <span class="co"># Stopwords in text file</span>
-
-    stopwords <span class="op">=</span> <span class="bu">set</span>(line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(<span class="st">&#39;stopwords.txt&#39;</span>))
-    stopwords <span class="op">=</span> stopwords.union(<span class="bu">set</span>([<span class="st">&#39;mr&#39;</span>,<span class="st">&#39;mrs&#39;</span>,<span class="st">&#39;one&#39;</span>,<span class="st">&#39;two&#39;</span>,<span class="st">&#39;said&#39;</span>]))
-
-    wordcount <span class="op">=</span> {}
-    <span class="cf">for</span> word <span class="kw">in</span> a.lower().split():
-        word <span class="op">=</span> word.replace(<span class="st">&quot;.&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;,&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;:&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;&quot;&quot;,&quot;&quot;)</span>
-<span class="st">        word = word.replace(&quot;!&quot;,&quot;&quot;)</span>
-<span class="st">        word = word.replace(&quot;?&quot;,&quot;&quot;)</span>
-<span class="st">        if word not in stopwords:</span>
-<span class="st">            if word not in wordcount:</span>
-<span class="st">                wordcount[word] = 1</span>
-<span class="st">            else:</span>
-<span class="st">                wordcount[word] += 1</span>
-<span class="st">    # Print most common word</span>
-<span class="st">    n_print = int(input(&quot;How many key words to google?: &quot;))</span>
-
-<span class="st">    word_counter = collections.Counter(wordcount)</span>
-<span class="st">    googleString=&quot;&quot;</span>
-<span class="st">    for word, count in word_counter.most_common(n_print):</span>
-<span class="st">        googleString = googleString +&quot; &quot;+ word</span>
-
-<span class="st">    try:</span>
-<span class="st">        from googlesearch import search</span>
-<span class="st">    except ImportError:</span>
-<span class="st">        print(&quot;No module named &#39;google&#39; found&quot;)</span>
-<span class="st">    for j in search(googleString, tld=&quot;co.in&quot;, num=10, stop=5, pause=2):</span>
-<span class="st">        print(j)</span>
-
-<span class="st">    file.close()</span></code></pre></div>
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png" alt="Visualization" />
+<p class="caption">Visualization</p>
+</div>
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png" alt="Visualization" />
+<p class="caption">Visualization</p>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The United States has more fast food restaurants than anywhere else in the world. In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States. No matter what type of food you want to eat there is a fast food version available. While fast food is tasty, cheap, and convenient it is obviously not the healthiest.</p>
+<p>The United states also has a global reputation for being one of the most obese countries in the world. Unfortunately this is well deserved with over 36% of the population being considered obese and another 33% of the population being overweight. Naturally many people tend to believe the amount of fast food restaurants tends to have a direct correlation with obesity in the United States.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<div class="credit-line">
+<p>Author: Nikhil Daga. Last edited: 2020-05-04.</p>
+</div>
 </div>
 
 <footer class="myfoot">

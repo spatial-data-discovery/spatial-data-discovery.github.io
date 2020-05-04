@@ -12,7 +12,7 @@
 <meta name="author" content="LeAnn Lo" />
 
 
-<title>Pollen Index During the Transition to Summer/Late Spring</title>
+<title>Pollen and Hay Fever During the Transition to Summer/Late Spring</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -374,6 +374,12 @@ $(document).ready(function () {
       <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
+      <a href="project_jrgarst.html">Electronic Content In Libraries</a>
+    </li>
+    <li>
+      <a href="project_nd3600.html">Fast Food and Obesity</a>
+    </li>
+    <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
@@ -495,7 +501,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Pollen Index During the Transition to Summer/Late Spring</h1>
+<h1 class="title toc-ignore">Pollen and Hay Fever During the Transition to Summer/Late Spring</h1>
 
 </div>
 
@@ -509,13 +515,13 @@ $(document).ready(function () {
 </blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>Hay Fever is also known as seasonal allergies and nearly 40% of adults report experiencing symptoms during peak pollen seasons from late March to Early April. The symptoms for hay fever can include a runny nose, sore throat, sneezing, watery eyes, and many more uncomfortable symptoms. It It is typically triggered by several different types of pollen from various trees such as Oak, Cedar, or Maple, and many various plants and fungi such as ragweed. The allergic response to something so seemingly mundance is due to the body’s response to the pollen. For some people, their Immunoglobulin E (IgE) antibodies[^Summer Hay Fever] can view the pollen as a threat and release histamines which trigger the immune system to emit more fluids to “wash out” the pollen and other potential threats. While this is an inconvenience for most people, it can excaberate other conditions such as asthma, bronchitis, and immunosuppressed diseases.</p>
-<p>While allergies can last year-round, hay fever and seasonal allergies are most active during late March and early May which is the peak bloom of many trees and plants. Towards the end of this season, there is usually an increase of rain which can significantly decrease the amount of pollen in the air. Since the symptoms of allergies are very similar to many more serious illnesses, it is important to be aware of when these symptoms are more prevalent and know when to be concerned about certain symptoms. Hay Fever can be treated with over the counter antihistamines and nasal sprays, but can have unfavorable side effects such as drowsiness, mucus dryness, and nausea. With the current prevalence of COVID-19, it is important to be able to distinguish these symptoms from more concerning ones. For example, a dry cough is not a symptom of allergies which generates more mucus or discharge, but is a symptom for COVID-19.</p>
-<p>The visualization above shows the pollen index for each county in Florida (although some counties in grey did not have data for specific days). The pollen index is calculated based on the number of pollen grains in a cubic meter of air, the proportion is measured on a scale of 0 to 10 where 0 has no pollen and 10 is a very high number of particles. As the days approach May, there is lower pollen index throughout the state, and based off weather information, there was an increase in rainfall. At the beginning of the video, we are in peak pollen season and can observe higher indexes during that time. It is also notable that the north area of Florida is more likely to have high pollen indexes compared to Southern areas which is closer to the gulf and ocean, and likely has a lower density of pollen particles due to winds from the sea.</p>
+<p>Hay Fever is also known as seasonal allergies and nearly 40% of adults report experiencing symptoms during peak pollen seasons from late March to Early April. The symptoms for hay fever can include a runny nose, sore throat, sneezing, watery eyes, and many more uncomfortable symptoms. It is typically triggered by several different types of pollen from various trees such as Oak, Cedar, or Maple, and many various plants and fungi such as ragweed. The allergic response to something so seemingly mundane is due to the body’s response to the pollen. For some people, their Immunoglobulin E (IgE) antibodies<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> can view the pollen as a threat and release histamines which trigger the immune system to emit more fluids to “wash out” the pollen and other potential threats. While this is an inconvenience for most people, it can exacerbate other conditions such as asthma, bronchitis, and immunosuppressed diseases.</p>
+<p>While allergies can last year-round, hay fever and seasonal allergies are most active during late March and early May which is the peak bloom of many trees and plants. Towards the end of this season, there is usually an increase of rain which can significantly decrease the amount of pollen in the air. Since the symptoms of allergies are very similar to many more serious illnesses, it is important to be aware of when these symptoms are more prevalent and know when to be concerned about certain symptoms. Hay Fever can be treated with over the counter antihistamines and nasal sprays, but may have unfavorable side effects such as drowsiness, mucus dryness, and nausea. With the current prevalence of COVID-19, it is important to be able to distinguish these symptoms from more concerning ones. For example, a dry cough is not a symptom of allergies which generates more mucus or discharge, but is a symptom for COVID-19.</p>
+<p>The visualization above shows the pollen index for each county in Florida (although some counties in grey did not have data for specific days). The pollen index is calculated based on the number of pollen grains in a cubic meter of air, the proportion is measured on a scale of 0 to 10 where 0 has no pollen and 10 is a very high number of particles. As the days approach May, there is a lower pollen index throughout the state, and based on weather information, there was an increase in rainfall. At the beginning of the video, we are in peak pollen season and can observe higher indexes during that time. It is also notable that the north area of Florida is more likely to have high pollen indexes compared to Southern areas which are closer to the gulf and ocean, and likely has a lower density of pollen particles due to winds from the sea.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>Pollen Index levels from all counties in Florida were scraped from Pollen.com using <a href="https://github.com/bachya/pyiqvia">pyiqvia</a>, an open source API available on GitHub<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Zip codes are given to the library which was translated from the Federal Information Processing Standard Publication (FIPS) code that is given to every county within the U.S, the dictionary was built from metadata files pulled from data.world<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. FIPS, county name data, and geospatial coordinates were retrieved from builtin R library, “counties”.</p>
+<p>Pollen Index levels from all counties in Florida were scraped from Pollen.com using <a href="https://github.com/bachya/pyiqvia">pyiqvia</a>, an open source API available on GitHub<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. Zip codes are given to the library which was translated from the Federal Information Processing Standard Publication (FIPS) code that is given to every county within the U.S, the dictionary was built from metadata files pulled from data.world<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. FIPS, county name data, and geospatial coordinates were retrieved from builtin R library, “counties”.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> asyncio
 
 <span class="im">from</span> aiohttp <span class="im">import</span> ClientSession
@@ -542,9 +548,8 @@ $(document).ready(function () {
 completelist<span class="op">=</span>[]
 <span class="cf">for</span> i <span class="kw">in</span> fipsdict.keys():
     <span class="cf">await</span> main(<span class="bu">str</span>(i))</code></pre></div>
-<p>All pollen indexes from a 30-day historical range (only from current day) were pulled and transposed into a csv file. This data file was then piped into R Studio for processing and visualization. The “urbnmapr” library<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> within R was used to get shapefiles for counties within Florida. Builtin libraries “sf” was used for plotting and defining the counties, “dplyr” was used for data wrangling, and “ggplot2” was for gradient scale coloring.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-pollen =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;/Users/LeAnnLo/Downloads/output.csv&quot;</span>)
+<p>All pollen indexes from a 30-day historical range (only from current day) were pulled and transposed into a csv file. This data file was then piped into R Studio for processing and visualization. The “urbnmapr” library<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> within R was used to get shapefiles for counties within Florida. Builtin libraries “sf” was used for plotting and defining the counties, “dplyr” was used for data wrangling, and “ggplot2” was for gradient scale coloring.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pollen =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;/Users/LeAnnLo/Downloads/output.csv&quot;</span>)
 pollen &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">lapply</span>(pollen, as.character), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)
 pollen =<span class="st"> </span><span class="kw">transform</span>(pollen, <span class="dt">pollen_index =</span> <span class="kw">as.numeric</span>(pollen_index))
 
@@ -558,20 +563,21 @@ pollen <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_map</span>(<span class="dt">projection =</span> <span class="st">&quot;albers&quot;</span>, <span class="dt">lat0 =</span> <span class="dv">39</span>, <span class="dt">lat1 =</span> <span class="dv">45</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">fill =</span> <span class="st">&quot;Pollen Index&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Pollen Index in Florida for 4/5/2020&quot;</span>)</code></pre></div>
-<p>All graphs were exported into .tiff format in R Studio for high resolution imaging (although this is unnecessary), and were imported into GIMP<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> to transform images into a GIF, and then converted into a video (.mp4) with the ffmpeg<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> library.</p>
+<p>All graphs were exported into .tiff format in R Studio for high resolution imaging (although this is unnecessary), and were imported into GIMP<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> to transform images into a GIF, and then converted into a video (.mp4) with the ffmpeg<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> library.</p>
 <div class="credit-line">
-<p>Author: LeAnn Lo. Last edited: 2020-04-30.</p>
+<p>Author: LeAnn Lo. Last edited: 2020-05-04.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>What are the Symptoms of Hay Fever? Jacquelyn Cafasso and Ana Gotter. <a href="https://www.healthline.com/health/hay-fever-symptoms" class="uri">https://www.healthline.com/health/hay-fever-symptoms</a>. Accessed 05/05/2020. [^Summer Hay Fever]: Durham S. (1998). ABC of allergies. Summer hay fever. BMJ (Clinical research ed.), 316(7134), 843–845. <a href="https://doi.org/10.1136/bmj.316.7134.843" class="uri">https://doi.org/10.1136/bmj.316.7134.843</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Aaron Bach, pyiqvia, (2019), GitHub repository, <a href="https://github.com/bachya/pyiqvia" class="uri">https://github.com/bachya/pyiqvia</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Nic Colley, US Zipcode to County State to FIPS Look Up, <a href="https://data.world/niccolley/us-zipcode-to-county-state" class="uri">https://data.world/niccolley/us-zipcode-to-county-state</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Urban Institute, (2019), GitHub repository, <a href="https://github.com/UrbanInstitute/urbnmapr" class="uri">https://github.com/UrbanInstitute/urbnmapr</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p><a href="https://www.gimp.org/downloads/oldstable/" class="uri">https://www.gimp.org/downloads/oldstable/</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p><a href="https://ffmpeg.org/ffmpeg.html" class="uri">https://ffmpeg.org/ffmpeg.html</a><a href="#fnref6">↩</a></p></li>
+<li id="fn1"><p>What are the Symptoms of Hay Fever? Jacquelyn Cafasso and Ana Gotter. <a href="https://www.healthline.com/health/hay-fever-symptoms" class="uri">https://www.healthline.com/health/hay-fever-symptoms</a>. Accessed 05/05/2020.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Durham S. (1998). ABC of allergies. Summer hay fever. BMJ (Clinical research ed.), 316(7134), 843–845. <a href="https://doi.org/10.1136/bmj.316.7134.843" class="uri">https://doi.org/10.1136/bmj.316.7134.843</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Aaron Bach, pyiqvia, (2019), GitHub repository, <a href="https://github.com/bachya/pyiqvia" class="uri">https://github.com/bachya/pyiqvia</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Nic Colley, US Zipcode to County State to FIPS Look Up, <a href="https://data.world/niccolley/us-zipcode-to-county-state" class="uri">https://data.world/niccolley/us-zipcode-to-county-state</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Urban Institute, (2019), GitHub repository, <a href="https://github.com/UrbanInstitute/urbnmapr" class="uri">https://github.com/UrbanInstitute/urbnmapr</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><a href="https://www.gimp.org/downloads/oldstable/" class="uri">https://www.gimp.org/downloads/oldstable/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><a href="https://ffmpeg.org/ffmpeg.html" class="uri">https://ffmpeg.org/ffmpeg.html</a><a href="#fnref7">↩</a></p></li>
 </ol>
 </div>
 

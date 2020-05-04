@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Nikhil Daga" />
 
 
-<title>About the Coder</title>
+<title>US Libraries and Electronic content Use</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -501,76 +500,62 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Nikhil Daga</h4>
-<h4 class="date">Edited: 2020-13-2</h4>
+<h1 class="title toc-ignore">US Libraries and Electronic content Use</h1>
 
 </div>
 
 
-<dl>
-<dt><strong>Bio</strong></dt>
-<dd><p>I’m a Data Science major, and a computer science minor. I am from Northern Virginia.</p>
-</dd>
-</dl>
-<p><em>About me</em>:</p>
-<ul>
-<li><p>I am a Boston Celtics Fan (picture below)</p></li>
-<li><p>I was born in The Netherlands</p></li>
-<li><p>I have a Yorkie <img src="https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2020/01/Celtics-1040x700-Web.jpg" alt="This is a picture of the Celtics Starting Lineup" /></p></li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/keywords.py">keywords (.py)</a></p>
-<p>The goal of my script is to help sumarize large and complex readings. It does this by finding the most common words in a text file, and then Googling them and returning the first five links. These links will normally be Wikipedia articles, and other simple sources which cover the key concepts in the reading.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> collections
-<span class="im">import</span> pandas <span class="im">as</span> pd0
-<span class="im">import</span> argparse
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
-    <span class="co"># Check command-line arguments</span>
+<div class="figure">
+<img src="https://github.com/spatial-data-discovery/ay1920-2/tree/master/project/jrgarst/Final/Final.jpeg" alt="Visualization" />
+<p class="caption">Visualization</p>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Libraries in the US fill an interesting role. They are not only a place to go to get free books, in many places, they serve as a community center. Libraries push constantly to draw people in by staying on or near the forefront of educational technology as much as they can while remaining a free place to come. Part of this effort right now is an increasing push toward electronic content. Especially today, during the coronavirus outbreak, libraries look to offer services that do not require patrons coming in person. This visualization uses data from the institute of library and museum services, a government agency that collects yearly reports from each state on many aspects of their libraries’ use, to demonstrate the most current available use of electronic material from libraries in the United States.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>The data sources, both the library information in CSV format and the map in a .shp file, can be found <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/jrgarst/progress.txt">here</a> under the sources heading. The map above shows the circulation of electronic material compared to the number of electronic materials in each state’s libraries. Importantly, this is not limited to Ebooks, but expanded to show all electronic content available for checkout from a library: books, audio, and video.</p>
+<div id="data-organization" class="section level3">
+<h3>Data Organization</h3>
+<p>The script below was used to generate the image used in the final visualization. If you would like to generate files of your own, download the data, organize your files correctly, then change the variable names in the #plot section (these are the all caps variables).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#libraries</span>
+<span class="kw">library</span>(raster)
+<span class="kw">library</span>(<span class="st">&quot;rgdal&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;data.table&quot;</span>)
+<span class="kw">library</span>(sf)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(maptools)
+<span class="kw">library</span>(rgeos)
+<span class="kw">library</span>(plyr)
 
-    parser <span class="op">=</span> argparse.ArgumentParser(add_help<span class="op">=</span><span class="va">False</span>)
-    parser.add_argument(<span class="st">&#39;-h&#39;</span>, <span class="st">&#39;--help&#39;</span>, action<span class="op">=</span><span class="st">&#39;help&#39;</span>, default<span class="op">=</span>argparse.SUPPRESS,
-                        <span class="bu">help</span><span class="op">=</span><span class="st">&#39;The point of this script is to help summarize long readings.It finds the most used words in a text and returns shorter and simpler articles which go over these concepts.&#39;</span>)
-    args<span class="op">=</span>parser.parse_args()
+<span class="co">#Set the working directory</span>
+<span class="kw">setwd</span>(<span class="st">&#39;C:/Users/elkel/Desktop/dataScience/Final&#39;</span>)
 
-    <span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;NDFM.txt&#39;</span>, encoding<span class="op">=</span><span class="st">&quot;utf8&quot;</span>)<span class="co">#input file</span>
-    a<span class="op">=</span> <span class="bu">file</span>.read()
+<span class="co">#Create a dataframe from the CSV file I created in CSVRead.py</span>
+libDF &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Libraries.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)
 
-    <span class="co"># Stopwords in text file</span>
+shapefile =<span class="st"> </span><span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;states_21basic&quot;</span>, <span class="dt">layer =</span> <span class="st">&quot;states&quot;</span>)
+shapefile<span class="op">@</span>data<span class="op">$</span>id =<span class="st"> </span><span class="kw">rownames</span>(shapefile<span class="op">@</span>data)
 
-    stopwords <span class="op">=</span> <span class="bu">set</span>(line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(<span class="st">&#39;stopwords.txt&#39;</span>))
-    stopwords <span class="op">=</span> stopwords.union(<span class="bu">set</span>([<span class="st">&#39;mr&#39;</span>,<span class="st">&#39;mrs&#39;</span>,<span class="st">&#39;one&#39;</span>,<span class="st">&#39;two&#39;</span>,<span class="st">&#39;said&#39;</span>]))
+shapefile.df =<span class="st"> </span><span class="kw">fortify</span>(shapefile)
+shapefile.df =<span class="st"> </span><span class="kw">join</span>(shapefile.df, shapefile<span class="op">@</span>data, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)
+<span class="co">#Merge the two based on State data.</span>
+shapefile.df &lt;-<span class="st"> </span><span class="kw">merge</span>(shapefile.df, libDF, <span class="dt">by.x=</span><span class="st">&#39;STATE_ABBR&#39;</span>, <span class="dt">by.y=</span><span class="st">&#39;STABR&#39;</span>)
 
-    wordcount <span class="op">=</span> {}
-    <span class="cf">for</span> word <span class="kw">in</span> a.lower().split():
-        word <span class="op">=</span> word.replace(<span class="st">&quot;.&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;,&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;:&quot;</span>,<span class="st">&quot;&quot;</span>)
-        word <span class="op">=</span> word.replace(<span class="st">&quot;&quot;&quot;,&quot;&quot;)</span>
-<span class="st">        word = word.replace(&quot;!&quot;,&quot;&quot;)</span>
-<span class="st">        word = word.replace(&quot;?&quot;,&quot;&quot;)</span>
-<span class="st">        if word not in stopwords:</span>
-<span class="st">            if word not in wordcount:</span>
-<span class="st">                wordcount[word] = 1</span>
-<span class="st">            else:</span>
-<span class="st">                wordcount[word] += 1</span>
-<span class="st">    # Print most common word</span>
-<span class="st">    n_print = int(input(&quot;How many key words to google?: &quot;))</span>
 
-<span class="st">    word_counter = collections.Counter(wordcount)</span>
-<span class="st">    googleString=&quot;&quot;</span>
-<span class="st">    for word, count in word_counter.most_common(n_print):</span>
-<span class="st">        googleString = googleString +&quot; &quot;+ word</span>
-
-<span class="st">    try:</span>
-<span class="st">        from googlesearch import search</span>
-<span class="st">    except ImportError:</span>
-<span class="st">        print(&quot;No module named &#39;google&#39; found&quot;)</span>
-<span class="st">    for j in search(googleString, tld=&quot;co.in&quot;, num=10, stop=5, pause=2):</span>
-<span class="st">        print(j)</span>
-
-<span class="st">    file.close()</span></code></pre></div>
+<span class="co">#plot</span>
+<span class="kw">ggplot</span>(shapefile.df) <span class="op">+</span>
+<span class="st">  </span><span class="kw">aes</span>(long,lat,<span class="dt">group=</span>group) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">color=</span><span class="st">&quot;white&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ELMATCIR <span class="op">/</span><span class="st"> </span>EBOOK <span class="op">+</span><span class="st"> </span>AUDIO_DL <span class="op">+</span><span class="st"> </span>VIDEO_DL)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())
+  <span class="kw">coord_equal</span>()</code></pre></div>
+<div class="credit-line">
+<p>Author: John Garst Last edited: 2020-04-23</p>
+</div>
+</div>
 </div>
 
 <footer class="myfoot">

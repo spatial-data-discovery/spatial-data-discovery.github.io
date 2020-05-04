@@ -66,6 +66,23 @@ footer {
     min-height: 200px;
 }
 
+.suri {
+    max-width: 500px;
+}
+.suri table {
+    width: 100%;
+}
+.suri td:nth-child(1){
+    width: 66%;
+}
+.suri td:nth-child(2){
+    width: 33%;
+    text-align: right;
+}
+.suri .header th:nth-child(2){
+    text-align: right;
+}
+
 @media only screen and (max-width: 750px) {
     .banner-img {
         background: url('images/banner_500x500.png') 50% 50% no-repeat;

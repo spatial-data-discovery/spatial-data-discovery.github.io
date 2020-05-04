@@ -1,0 +1,27 @@
+---
+title: The Connection Between Fast Food and Obesity
+---
+![Visualization](https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png)
+
+![Visualization](https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png)
+
+## Overview
+The United States has more fast food restaurants than anywhere else in the world.
+In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States.
+No matter what type of food you want to eat there is a fast food version available.
+While fast food is tasty, cheap, and convenient it is obviously not the healthiest.
+
+The United states also has a global reputation for being one of the most obese countries in the world.
+Unfortunately this is well deserved with over 36% of the population being considered obese and another 33% of the population being overweight.
+Naturally many people tend to believe the amount of fast food restaurants tends to have a direct correlation with obesity in the United States.
+
+
+
+## Data Description
+
+
+
+<div class="credit-line">
+Author: Nikhil Daga.
+Last edited: 2020-05-04.
+</div>
