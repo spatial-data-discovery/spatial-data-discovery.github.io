@@ -34,7 +34,7 @@ A Python[^python] Script was used to average the monthly data for each year and 
 Once both data were in the same format percent change was calculated between each year using the following formula in excel[^Excel]: (x_2 - x_1)/|x_1| .
 Zero was inputted as the no data value.
 In order to avoid divide by zero errors, all zeros were replaced by 0.00000001.
-Once this information was established, another python[^python] script was built to compare the behaviors of the 2 functions and sorted them on whether they were increasing, decreasing, or there was no change/no data available.
+Once this information was established, another python script was built to compare the behaviors of the 2 functions and sorted them on whether they were increasing, decreasing, or there was no change/no data available.
 Because changing all the zeros to 0.00000001 would have caused the percent change formula to produce a huge number if this number was used as X_1, the script counted all these inputs as no data.
 
 For each change in years, the data was visualized in QGIS[^qgis] using the same mapping properties and exported to png[^png] format.
