@@ -111,6 +111,7 @@ arcpy.management.CalculateField(tableView, "fips", "29999", "PYTHON3", '')
 
 os.remove(csvFileName)
 print("Finished successfully!")
+
 ```
 ## Visualization
 Visualization created in ArcGIS Pro using the Timeslider[^timeslider] and Animation[^animation] tools. The merged dataset has a date-time attribute, which allows ArcGIS Pro to show changes in the data over time. These views are added as keyframes into the animation tool, and finally exported into a mp4 file.
