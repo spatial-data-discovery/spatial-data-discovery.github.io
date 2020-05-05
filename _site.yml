@@ -40,6 +40,8 @@ navbar:
               href: project_pulakraj.html
             - text: "Opioid Epidemic"
               href: project_jlollen.html
+            - text: "Philippines School Chooser"
+              href: project_baier.html
             - text: "Pollen Index"
               href: project_leanlow.html
             - text: "Projecting COVID-19 Cases"
