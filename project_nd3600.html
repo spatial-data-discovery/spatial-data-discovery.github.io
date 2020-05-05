@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="David Wisdom" />
 
 
-<title>About the Coder</title>
+<title>The Connection Between Fast Food and Obesity</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,66 +24,6 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #0000ff; } /* Keyword */
-code > span.ch { color: #008080; } /* Char */
-code > span.st { color: #008080; } /* String */
-code > span.co { color: #008000; } /* Comment */
-code > span.ot { color: #ff4000; } /* Other */
-code > span.al { color: #ff0000; } /* Alert */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #008000; font-weight: bold; } /* Warning */
-code > span.cn { } /* Constant */
-code > span.sc { color: #008080; } /* SpecialChar */
-code > span.vs { color: #008080; } /* VerbatimString */
-code > span.ss { color: #008080; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #0000ff; } /* ControlFlow */
-code > span.op { } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ff4000; } /* Preprocessor */
-code > span.do { color: #008000; } /* Documentation */
-code > span.an { color: #008000; } /* Annotation */
-code > span.cv { color: #008000; } /* CommentVar */
-code > span.at { } /* Attribute */
-code > span.in { color: #008000; } /* Information */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -509,93 +448,35 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">David Wisdom</h4>
-<h4 class="date">Edited: 2019-09-22</h4>
+<h1 class="title toc-ignore">The Connection Between Fast Food and Obesity</h1>
 
 </div>
 
 
-<p>My name is David and I like to sail. I worked at a sailing school teaching dinghy sailing for a few years (<em>see below for a picture</em>).</p>
 <div class="figure">
-<img src="https://danwoog.files.wordpress.com/2017/07/pic-longshore-sailing-school-amy-saperstein1.jpg" title="Longshore Sailing School Beach" />
-
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png" alt="Visualization" />
+<p class="caption">Visualization</p>
 </div>
-<p>I taught kids to sail several different boats while I was a sailing instructor.</p>
-<dl>
-<dt><strong>Bug</strong></dt>
-<dd>An 8ft monohull with one tiny sail
-</dd>
-<dt><strong>Hunter 140</strong></dt>
-<dd>A 14ft monohull with two tiny sails
-</dd>
-<dt><strong>Laser/RS Neo</strong></dt>
-<dd>An 11ft monohull with one normal-sized sail
-</dd>
-<dt><strong>Hobie Wave</strong></dt>
-<dd>A 13ft catamaran with one normal-sized sail
-</dd>
-<dt><strong>Hobie Getaway</strong></dt>
-<dd>A 17ft catamaran with two normal-sized sails
-</dd>
-</dl>
-<p>I also enjoy other activities:</p>
-<ul>
-<li>Cooking</li>
-<li>Hiking and backpacking</li>
-<li>Reading fiction and poetry</li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/random_caps.py">Random Caps (.py)</a> I wrote this script to randomly capitalize characters in a text file. I’m not sure whether there are any uses for this but it was a fun exercise. The code is below.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy.random <span class="im">as</span> random
-
-<span class="co"># Define constants</span>
-UPPER <span class="op">=</span> <span class="st">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-LOWER <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
-
-
-<span class="kw">def</span> main(file_in: <span class="bu">str</span>, file_out: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;./rand_caps.txt&quot;</span>):
-    <span class="co">&quot;&quot;&quot;</span>
-<span class="co">    Takes an input text file and randomly capitalizes the letters in it.</span>
-<span class="co">    Writes the output to another text file.</span>
-
-<span class="co">    :param file_in: Path to a text file containing letters to randomly capitalize</span>
-<span class="co">    :param file_out: Path to a text file to write the new letters in</span>
-<span class="co">                     Default: `./rand_caps.txt`</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    file_input <span class="op">=</span> <span class="bu">open</span>(file_in, <span class="st">&quot;r&quot;</span>)
-    char_list <span class="op">=</span> []
-    <span class="co"># Collect all the ASCII characters</span>
-    <span class="cf">for</span> line <span class="kw">in</span> file_input:
-        <span class="cf">for</span> character <span class="kw">in</span> line:
-            char_list.append(character)
-
-    file_input.close()
-    output_file <span class="op">=</span> <span class="bu">open</span>(file_out, <span class="st">&#39;w&#39;</span>)
-    <span class="co"># Go through and randomly capitalize them</span>
-    <span class="cf">for</span> character <span class="kw">in</span> char_list:
-        <span class="co"># Pick whether to change it</span>
-        change_char <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">2</span>)
-        <span class="co"># Change it from upper to lower or vice-versa</span>
-        <span class="cf">if</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> UPPER:
-            output_file.write(character.lower())
-        <span class="cf">elif</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> LOWER:
-            output_file.write(character.upper())
-        <span class="cf">else</span>:
-            output_file.write(character)
-    output_file.close()
-
-
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
-    <span class="im">import</span> argparse
-
-    p <span class="op">=</span> argparse.ArgumentParser()
-    p.add_argument(<span class="st">&quot;file&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file to read in letters from&quot;</span>)
-    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--out&quot;</span>, nargs<span class="op">=</span><span class="st">&quot;?&quot;</span>, default<span class="op">=</span><span class="st">&quot;./rand_caps.txt&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Path to a file to hold the output&quot;</span>)
-    args <span class="op">=</span> p.parse_args()
-
-    main(args.<span class="bu">file</span>, args.out)</code></pre></div>
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png" alt="Visualization" />
+<p class="caption">Visualization</p>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The United States has more fast food restaurants than anywhere else in the world. In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States No matter what type of food you want to eat there is a fast food version available. While fast food is tasty, cheap, and convenient it is obviously not the healthiest.</p>
+<p>The United states also has a global reputation for being one of the most obese countries in the world. Unfortunately this is well deserved with over 36% of the population being considered obese and another 33% of the population being overweight. Naturally many people tend to believe the amount of fast food restaurants tends to have a direct correlation with obesity in the United States.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>In order to do this project I needed three data sets. These were state by state obesity rates, state population rates, and a dataset of all the fast food restaurants in The United States. Originally I wanted to get fast food data for the past 10 years. The goal was to show the increase in restaurants in one animation, and the increase in obesity rates in the other. The obesity data for the past 10 years is easily available in csv format from data.gov. However reliable restaurant data is very difficult to find due to this not being public data published by the government or NGOs. In order to obtain a reliable data set for the past decade it would have costed me at least 100 dollars</p>
+<p>As a result I had to change my game plan. The largest free and reliable fast food data set I could find contains 10,000 entrees. While this is far less than the actual amount of fast food restaurants in the United States, it is still a reliable metric. The reason for this is these 10,000 restaurants are a random subset taken from a larger dataset which costs money. I realized I would need a way to standardize my data. For example let’s say California and Virginia have the same amount of fast food restaurants it doesn’t mean anything. This is because California’s population is over 4.5 times that of Virginia. As a result I had to get population data to standardize all the results. I got this data from census.gov. I got the restaurant’s data from Kaggle.</p>
+</div>
+<div id="visualization-process" class="section level2">
+<h2>Visualization Process</h2>
+<p>I wrote two scripts for this project. The first script reads the obesity, fast food, and population csv files using pandas. It also standardizes the data to only include US states, and all use state abbreviations in the name column. In addition it calculates fast food restaurants per person in each state. Finally all the data is returned in a csv file. The second script takes in the csv created by the previous script. It utilizes the python library plotly to make state by state heat maps for obesity and fast food restaurants per person.</p>
+<div class="credit-line">
+<p>Author: Nikhil Daga. Last edited: 2020-05-04.</p>
+</div>
 </div>
 
 <footer class="myfoot">

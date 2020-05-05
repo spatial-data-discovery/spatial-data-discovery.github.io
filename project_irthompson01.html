@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ian Thompson" />
+<meta name="author" content="Ian R. Thompson" />
 
 
 <title>Monitoring Climate Change Through the Ocean</title>
@@ -308,16 +308,19 @@ $(document).ready(function () {
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
     </li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
+      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
-      <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
+      <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
-      <a href="project_msuri.html">COVID-19 Strictness Policies</a>
+      <a href="project_nd3600.html">Fast Food and Obesity</a>
     </li>
     <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
@@ -326,10 +329,16 @@ $(document).ready(function () {
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
     </li>
     <li>
-      <a href="project_irthompson01.html">Monitoring Ocean Climate Change</a>
+      <a href="project_pulakraj.html">Hidden in the Light</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
+    </li>
+    <li>
+      <a href="project_baier.html">Philippines School Chooser</a>
+    </li>
+    <li>
+      <a href="project_leanlow.html">Pollen Index</a>
     </li>
     <li>
       <a href="project_intj1.html">Projecting COVID-19 Cases</a>
@@ -338,14 +347,19 @@ $(document).ready(function () {
       <a href="project_rhan9.html">Rise of a Superstar</a>
     </li>
     <li>
+      <a href="project_mkcusick.html">Spread of COVID-19 in the USA</a>
+    </li>
+    <li>
       <a href="project_emmgillstrick.html">Spread of Urbanization</a>
     </li>
     <li>
-      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
+      <a href="project_msuri.html">Strictness of COVID-19 Policies</a>
     </li>
-    <li class="divider"></li>
     <li>
-      <a href="projects.html">Previous Projects</a>
+      <a href="project_aburke01.html">Stunted Superfund Cleanup</a>
+    </li>
+    <li>
+      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
     </li>
   </ul>
 </li>
@@ -436,24 +450,24 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Monitoring Climate Change Through the Ocean</h1>
-<h4 class="author">Ian Thompson</h4>
+<h4 class="author">Ian R. Thompson</h4>
 
 </div>
 
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst.mp4" > </video></p>
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst_08_19.mp4" > </video></p>
 </div>
 <blockquote>
-<p><em>El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean.</em> – Wikipedia</p>
+<p>El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean. – Wikipedia</p>
 </blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>The ocean makes up roughly 71% of the earth’s surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.</p>
 <p>Changes in sea surface temperature influence weather and climate patterns globally. The El Niño-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.</p>
 <p>El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click <a href="https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina">here</a></p>
-<p>The animation above shows signs of El Niño for 2019, highlighted by the influx of warmer water in the equatorial Pacific.</p>
+<p>The animation above shows the patterns of El Niño from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.</p>
 </div>
 <div id="data-conversion" class="section level2">
 <h2>Data Conversion</h2>
@@ -465,12 +479,17 @@ $(document).ready(function () {
 ...
 
 def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
+    &quot;&quot;&quot;Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)&quot;&quot;&quot;
     time_slice = arcpy.NumPyArrayToRaster(np_array, value_to_nodata = no_data,
                                                     lower_left_corner = lowerLeft,
                                                     x_cell_size = 0.25)
 
-    file_path = &#39;./output/&#39; + var + &#39;_raster_&#39;+ str(year)+ &#39;.tif&#39;
-    time_slice.save(file_path)</code></pre>
+    file_path = os.path.join(dir, var + &#39;_raster_&#39;+ str(year)+ &#39;.tif&#39;)#&#39;./output/&#39; +
+    time_slice.save(file_path)
+
+...
+
+</code></pre>
 </div>
 <div id="visualization-process" class="section level2">
 <h2>Visualization Process</h2>
@@ -479,7 +498,7 @@ def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
 <p>The GIF was then uploaded and converted to a video (MP4<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>) using EzGif<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
 <div class="credit-line">
 <p>Author: Ian Thompson</p>
-<p>Last edited: 2020-04-13.</p>
+<p>Last edited: 2020-05-04.</p>
 </div>
 </div>
 <div class="footnotes">

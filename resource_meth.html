@@ -24,6 +24,66 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -307,16 +367,19 @@ $(document).ready(function () {
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
     </li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
+      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
-      <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
+      <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
-      <a href="project_msuri.html">COVID-19 Strictness Policies</a>
+      <a href="project_nd3600.html">Fast Food and Obesity</a>
     </li>
     <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
@@ -325,10 +388,16 @@ $(document).ready(function () {
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
     </li>
     <li>
-      <a href="project_irthompson01.html">Monitoring Ocean Climate Change</a>
+      <a href="project_pulakraj.html">Hidden in the Light</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
+    </li>
+    <li>
+      <a href="project_baier.html">Philippines School Chooser</a>
+    </li>
+    <li>
+      <a href="project_leanlow.html">Pollen Index</a>
     </li>
     <li>
       <a href="project_intj1.html">Projecting COVID-19 Cases</a>
@@ -337,14 +406,19 @@ $(document).ready(function () {
       <a href="project_rhan9.html">Rise of a Superstar</a>
     </li>
     <li>
+      <a href="project_mkcusick.html">Spread of COVID-19 in the USA</a>
+    </li>
+    <li>
       <a href="project_emmgillstrick.html">Spread of Urbanization</a>
     </li>
     <li>
-      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
+      <a href="project_msuri.html">Strictness of COVID-19 Policies</a>
     </li>
-    <li class="divider"></li>
     <li>
-      <a href="projects.html">Previous Projects</a>
+      <a href="project_aburke01.html">Stunted Superfund Cleanup</a>
+    </li>
+    <li>
+      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
     </li>
   </ul>
 </li>
@@ -467,6 +541,125 @@ $(document).ready(function () {
 <h3>Installing Wheel Files</h3>
 <p><a href="https://pythonwheels.com/">Python wheel</a> files (.whl) are the new distribution standard for Python packages. You may come across wheel files (especially those of you trying to install numpy on Windows) because they can come with precompiled C code, which you would otherwise have to compile on your machine. You can install a .whl package using pip.</p>
 <p>For example, download a wheel package (“package-0.10.2-cp37-cp37m-win_amd64.whl”), open a terminal and <code>cd</code> to folder where it was downloaded, and run <code>pip install package-0.10.2-cp37-cp37m-win_amd64.whl</code>.</p>
+<hr />
+</div>
+<div id="linking-images-to-markdown-files" class="section level3">
+<h3>Linking Images to Markdown Files</h3>
+<p>In order for images to appear on your web page that is rendered from markdown, you need a publicly accessible URL for the image.</p>
+<p>Two popular cloud-based storage options are Dropbox and Google Drive. You may also find public domain or CC-BY-SA images on Wikimedia Commons. If you want to access images that are saved in one of these locations, try the steps outlined below.</p>
+<div id="dropbox" class="section level4">
+<h4>Dropbox</h4>
+<ol style="list-style-type: decimal">
+<li>Create a shareable link to a media file (e.g., <a href="https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?dl=0" class="uri">https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?dl=0</a>).</li>
+<li>Change the <code>?dl=0</code> to <code>?raw=1</code></li>
+</ol>
+<pre><code>![Example link to image stored on Dropbox.](https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1){width=150 height=150}</code></pre>
+<div class="figure">
+<img src="https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1" alt="Example link to image stored on Dropbox." width="150" height="150" />
+<p class="caption">Example link to image stored on Dropbox.</p>
+</div>
+</div>
+<div id="drive" class="section level4">
+<h4>Drive</h4>
+<ol style="list-style-type: decimal">
+<li>Create a shareable link to a media file (e.g., <a href="https://drive.google.com/file/d/11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4/view?usp=sharing" class="uri">https://drive.google.com/file/d/11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4/view?usp=sharing</a>)</li>
+<li>Identify the file ID. It appears after the <code>/file/d</code> and before the <code>/view?</code> in the URL (i.e., <code>11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4</code> from the example URL above).</li>
+<li>Take the file ID and place it in a URL formatted as: <code>https://drive.google.com/uc?export=view&amp;id=</code> and append the file ID at the end.</li>
+</ol>
+<pre><code>![Example link to image stored in Drive](https://drive.google.com/uc?export=view&amp;id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4){width=150 height=150}</code></pre>
+<div class="figure">
+<img src="https://drive.google.com/uc?export=view&amp;id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4" alt="Example link to image stored in Drive" width="150" height="150" />
+<p class="caption">Example link to image stored in Drive</p>
+</div>
+</div>
+<div id="wikimedia" class="section level4">
+<h4>Wikimedia</h4>
+<ol style="list-style-type: decimal">
+<li>Find an image you want to link to on <a href="https://commons.wikimedia.com" class="uri">https://commons.wikimedia.com</a></li>
+<li>Notice that the preview image page is not the actual image and will not work in markdown. Check out the difference between these two links (yes, both URLs appear to end with .png, but only the second one is an actual image; you can scroll down the page on the first link and find the “More Details” button)
+<ul>
+<li><a href="https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg#/media/File:Albert_Einstein_Head.jpg">Preview page</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg">Image</a></li>
+</ul></li>
+</ol>
+<pre><code>![Example link to image stored on Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)</code></pre>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg" alt="Example link to image stored on Wikimedia" />
+<p class="caption">Example link to image stored on Wikimedia</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="making-markdown-tables" class="section level3">
+<h3>Making Markdown Tables</h3>
+<p>Do you dread making tables in markdown? Try using an R data frame and let knitr do the work for you! Here’s an example R code chunk and the web table it produces:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+my.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+    <span class="dt">months =</span> <span class="kw">c</span>(<span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;May&quot;</span>, <span class="st">&quot;Jun&quot;</span>,
+               <span class="st">&quot;Jul&quot;</span>, <span class="st">&quot;Aug&quot;</span>, <span class="st">&quot;Sep&quot;</span>, <span class="st">&quot;Oct&quot;</span>, <span class="st">&quot;Nov&quot;</span>, <span class="st">&quot;Dec&quot;</span>),
+    <span class="dt">days_in_month =</span> <span class="kw">c</span>(<span class="dv">31</span>, <span class="dv">28</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>,
+                      <span class="dv">31</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">31</span>)
+    )
+knitr<span class="op">::</span><span class="kw">kable</span>(my.data, <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;Months&quot;</span>, <span class="st">&quot;Number of Days&quot;</span>))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Months</th>
+<th align="right">Number of Days</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Jan</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">Feb</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="left">Mar</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">Apr</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">May</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">Jun</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Jul</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">Aug</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">Sep</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Oct</td>
+<td align="right">31</td>
+</tr>
+<tr class="odd">
+<td align="left">Nov</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Dec</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<p>More on R’s data.frame object can be found <a href="https://www.tutorialspoint.com/r/r_data_frames.htm">here</a>.</p>
 <hr />
 </div>
 <div id="hacking-arcgis-pros-python" class="section level3">

@@ -12,7 +12,7 @@
 <meta name="author" content="Matthew Cusick" />
 
 
-<title>The Spread of Covid-19 Throughout the United States (contiguous US?)</title>
+<title>The Spread of COVID-19 Throughout the Contiguous United States</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -308,16 +308,19 @@ $(document).ready(function () {
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
     </li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_leanlow.html">Air Pollution &amp; Quality on Hay Fever</a>
+      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
     </li>
     <li>
-      <a href="project_mkcusick.html">COVID-19 Spread Within The US</a>
+      <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
-      <a href="project_msuri.html">COVID-19 Strictness Policies</a>
+      <a href="project_nd3600.html">Fast Food and Obesity</a>
     </li>
     <li>
       <a href="project_grluisi.html">Global Earthquake Frequency</a>
@@ -326,10 +329,16 @@ $(document).ready(function () {
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
     </li>
     <li>
-      <a href="project_irthompson01.html">Monitoring Ocean Climate Change</a>
+      <a href="project_pulakraj.html">Hidden in the Light</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
+    </li>
+    <li>
+      <a href="project_baier.html">Philippines School Chooser</a>
+    </li>
+    <li>
+      <a href="project_leanlow.html">Pollen Index</a>
     </li>
     <li>
       <a href="project_intj1.html">Projecting COVID-19 Cases</a>
@@ -338,14 +347,19 @@ $(document).ready(function () {
       <a href="project_rhan9.html">Rise of a Superstar</a>
     </li>
     <li>
+      <a href="project_mkcusick.html">Spread of COVID-19 in the USA</a>
+    </li>
+    <li>
       <a href="project_emmgillstrick.html">Spread of Urbanization</a>
     </li>
     <li>
-      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
+      <a href="project_msuri.html">Strictness of COVID-19 Policies</a>
     </li>
-    <li class="divider"></li>
     <li>
-      <a href="projects.html">Previous Projects</a>
+      <a href="project_aburke01.html">Stunted Superfund Cleanup</a>
+    </li>
+    <li>
+      <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
     </li>
   </ul>
 </li>
@@ -435,7 +449,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">The Spread of Covid-19 Throughout the United States (contiguous US?)</h1>
+<h1 class="title toc-ignore">The Spread of COVID-19 Throughout the Contiguous United States</h1>
 <h4 class="author">Matthew Cusick</h4>
 
 </div>
@@ -443,33 +457,124 @@ $(document).ready(function () {
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" > </video></p>
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/MapHD.mp4" type="video/mp4" > </video></p>
 </div>
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/Legend.png" title="Legend" />
+
+</div>
+<p></br></p>
+<div class="figure">
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/CasesDeaths.png" title="Cases and Deaths Plot" />
+
+</div>
+<p></br></p>
 <blockquote>
-<p>*“Catchy phrase* – someone important ## Overview Info about project and background</p>
+<p><em>“This thing’s not going to stop until it infects 60 to 70 percent of people. The idea that this is going to be done soon defies microbiology.”</em> – Mike Osterholm, Director of CIDRAP</p>
 </blockquote>
-<p>Use citation inserts like this<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>This project visualizes the spread of COVID-19 within the contiguous United States. The animation begins on 1/21/2020 and updates weekly through 4/21/20.</p>
+<p>This is achieved by representing every county as an individual polygon, and coloring them by the ‘cases’ attribute column. Invisible counties have no recorded COVID-19 cases, beige counties have &lt;= 100 cases, increasing up to the maximum recorded amount of ~5400 cases. See the visualization section for details on the tools used.</p>
+<p>COVID-19 is a threat to humanity, and it is therefore important to track it with the goal of developing methods to prevent further spread. By monitoring the spread of COVID-19 on a county by county level, scientists can determine the effectiveness of local quarantine and social distancing methods.</p>
+</div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>Wheres the data from? What does this look like -&gt; (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>). Python<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> programming language with <a href="http://fhs.github.io/pyhdf/">pyhdf</a> package<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
-<p>The script does…. data<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</p>
-<p>Blah blah</p>
-<pre><code>python script</code></pre>
+<p>The data for this visualization comes from a <a href="https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv">NY Times COVID-19 dataset</a> and a <a href="https://www.arcgis.com/home/item.html?id=53935d5d1c8540539d290072fcda77c1">NY Times US County dataset</a>.</p>
+<p>The NY Times COVID-19 dataset is updated daily. Running my script will use urllib.request<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> to download the latest csv and then perform minor modifications to a few fips values so every county can be represented in the visualization.</p>
+<p>These two datasets can be merged together in ArcGIS Pro via their shared FIPS values, resulting in the table used for the visualization.</p>
+<p>This script is written in Python<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<pre><code>import arcpy # See notice
+import os
+import urllib.request
+import sys
+from datetime import datetime
+
+NYTConvid19USCountyDataURL = &quot;https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv&quot;
+
+# !!CREATE A GEODATABASE FOR THIS SCRIPT OR USE ONE THAT ALREADY EXISTS!!
+
+# Download the following counties dataset
+# https://www.arcgis.com/home/item.html?id=53935d5d1c8540539d290072fcda77c1
+# This dataset is NOT needed for the script, but is needed to create the visualization       
+# Save the dataset in the geodatabase, you will use this database
+# for the &#39;outGDB&#39; variable
+
+# Where to create initial CSV:
+# Example: r&#39;C:\Users\mattk\Desktop\SpatialDD\NYTimes\us-counties.csv&#39; without the r&#39; &#39;
+csvFileName = sys.argv[1]
+
+# Path to existing File Geodatabase:
+# Example: r&#39;C:\Users\mattk\Documents\ArcGIS\Projects\mkcusick_SDD\mkcusick_SDD.gdb&#39; without the r&#39; &#39;
+outGDB = sys.argv[2]
+
+# Table to be created
+outTableName = &#39;NYTCovid19_TimeSeriesCases&#39;
+
+# Download csv file
+print(&#39;Downloading NYTimes time series data from github from: &#39; + NYTConvid19USCountyDataURL)
+urllib.request.urlretrieve(NYTConvid19USCountyDataURL, csvFileName)
+
+# Creating/updating a table in a geodatabase
+fullTableName = r&#39;{0}\{1}&#39;.format(outGDB, outTableName)
+field_mapping = &#39;date &quot;date&quot; true true false 8 Date 0 0,First,#,{0},date,-1,-1;&#39;.format(csvFileName)
+field_mapping += &#39;county &quot;county&quot; true true false 50 Text 0 0,First,#,{0},county,0,50;&#39;.format(csvFileName)
+field_mapping += &#39;state &quot;state&quot; true true false 30 Text 0 0,First,#,{0},state,0,20;&#39;.format(csvFileName)
+field_mapping += &#39;fips &quot;fips&quot; true true false 5 Text 0 0,First,#,{0},fips,-1,-1;&#39;.format(csvFileName)
+field_mapping += &#39;cases &quot;cases&quot; true true false 4 Long 0 0,First,#,{0},cases,-1,-1;&#39;.format(csvFileName)
+field_mapping += &#39;deaths &quot;deaths&quot; true true false 4 Long 0 0,First,#,{0},deaths,-1,-1&#39;.format(csvFileName)
+
+if not arcpy.Exists(r&#39;{0}\{1}&#39;.format(outGDB, outTableName)):
+    arcpy.conversion.TableToTable(csvFileName, outGDB, outTableName, &#39;&#39;, field_mapping, &#39;&#39;)
+    arcpy.management.AddIndex(fullTableName, &quot;date&quot;, &quot;indxDate&quot;, &quot;NON_UNIQUE&quot;, &quot;NON_ASCENDING&quot;)
+    arcpy.management.AddIndex(fullTableName, &quot;fips&quot;, &quot;indxFips&quot;, &quot;NON_UNIQUE&quot;, &quot;NON_ASCENDING&quot;)
+    print(&#39;Data copied to {0}. Indexes are created on date and fips fields at {1}&#39;.format(fullTableName, datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)))
+else:
+    arcpy.management.TruncateTable(fullTableName)
+    arcpy.management.Append(csvFileName, fullTableName, &quot;NO_TEST&quot;, field_mapping, &#39;&#39;, &#39;&#39;)
+    print(&#39;Table: {0} is updated at {1}&#39;.format(fullTableName, datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)))
+
+tableView = arcpy.management.MakeTableView(fullTableName, &quot;NYT_View&quot;)
+
+# Post-processing county FIPS
+print(&#39;Adding leading 0 in front of some fips that get dropped during conversion process&#39;)
+expression = &quot;fixFips(!fips!)&quot;
+codeblock = &quot;&quot;&quot;
+def fixFips(fips):
+    if (fips != None):
+        if (len(fips) == 4):
+            return &#39;0&#39; + fips
+        else:
+            return fips&quot;&quot;&quot;
+arcpy.management.CalculateField(tableView, &quot;fips&quot;, expression, &quot;PYTHON3&quot;, codeblock)
+
+# Adding some made up FIPS so these locations get joined correctly with US County Data
+print(&#39;Adding some made up FIPS for New York City, NY and Kansas City, MO&#39;)
+arcpy.management.SelectLayerByAttribute(tableView, &quot;NEW_SELECTION&quot;, &quot;county = &#39;New York City&#39; And state = &#39;New York&#39;&quot;, None)
+arcpy.management.CalculateField(tableView, &quot;fips&quot;, &quot;36999&quot;, &quot;PYTHON3&quot;, &#39;&#39;)
+arcpy.management.SelectLayerByAttribute(tableView, &quot;NEW_SELECTION&quot;, &quot;county = &#39;Kansas City&#39; And state = &#39;Missouri&#39;&quot;, None)
+arcpy.management.CalculateField(tableView, &quot;fips&quot;, &quot;29999&quot;, &quot;PYTHON3&quot;, &#39;&#39;)
+
+os.remove(csvFileName)
+print(&quot;Finished successfully!&quot;)
+</code></pre>
 </div>
 <div id="visualization" class="section level2">
 <h2>Visualization</h2>
-<p>Describe time slider/animation process</p>
+<p>Visualization created in ArcGIS Pro using the Timeslider<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> and Animation<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> tools. The merged dataset has a date-time attribute, which allows ArcGIS Pro to show changes in the data over time. These views are added as keyframes into the animation tool, and finally exported into a mp4 file.</p>
 <div class="credit-line">
-<p>Author: Matthew Cusick. Last edited: 2020-04-24.</p>
+<p>Author: Matthew Cusick. Last edited: 2020-05-03.</p>
+<p>Many thanks to Tanu Hoque<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, a product engineer on the Esri Mapping Team, for providing the NY Times County dataset and insight on how to get the COVID-19 data from github using a script.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1–6, 2008.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Python package for working with urls. <a href="https://docs.python.org/3/library/urllib.html" class="uri">https://docs.python.org/3/library/urllib.html</a><a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA’s Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: <a href="https://www.hdfeos.org/software/pyhdf.php" class="uri">https://www.hdfeos.org/software/pyhdf.php</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: <a href="https://bitbucket.org/labprentice/gepisat" class="uri">https://bitbucket.org/labprentice/gepisat</a><a href="#fnref4">↩</a></p></li>
+<li id="fn3"><p>Temporal properties tool. Online: <a href="https://pro.arcgis.com/en/pro-app/help/mapping/time/overview-of-time.htm" class="uri">https://pro.arcgis.com/en/pro-app/help/mapping/time/overview-of-time.htm</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Animation tool. Online: <a href="https://pro.arcgis.com/en/pro-app/help/mapping/animation/overview-of-animation.htm" class="uri">https://pro.arcgis.com/en/pro-app/help/mapping/animation/overview-of-animation.htm</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Tanu Hoque. <a href="https://www.esri.com/arcgis-blog/author/mahoque/" class="uri">https://www.esri.com/arcgis-blog/author/mahoque/</a><a href="#fnref5">↩</a></p></li>
 </ol>
 </div>
 

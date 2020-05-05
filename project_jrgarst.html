@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="David Wisdom" />
 
 
-<title>About the Coder</title>
+<title>US Libraries and Electronic content Use</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -509,93 +508,62 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">David Wisdom</h4>
-<h4 class="date">Edited: 2019-09-22</h4>
+<h1 class="title toc-ignore">US Libraries and Electronic content Use</h1>
 
 </div>
 
 
-<p>My name is David and I like to sail. I worked at a sailing school teaching dinghy sailing for a few years (<em>see below for a picture</em>).</p>
 <div class="figure">
-<img src="https://danwoog.files.wordpress.com/2017/07/pic-longshore-sailing-school-amy-saperstein1.jpg" title="Longshore Sailing School Beach" />
-
+<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/final.jpeg" alt="Visualization" />
+<p class="caption">Visualization</p>
 </div>
-<p>I taught kids to sail several different boats while I was a sailing instructor.</p>
-<dl>
-<dt><strong>Bug</strong></dt>
-<dd>An 8ft monohull with one tiny sail
-</dd>
-<dt><strong>Hunter 140</strong></dt>
-<dd>A 14ft monohull with two tiny sails
-</dd>
-<dt><strong>Laser/RS Neo</strong></dt>
-<dd>An 11ft monohull with one normal-sized sail
-</dd>
-<dt><strong>Hobie Wave</strong></dt>
-<dd>A 13ft catamaran with one normal-sized sail
-</dd>
-<dt><strong>Hobie Getaway</strong></dt>
-<dd>A 17ft catamaran with two normal-sized sails
-</dd>
-</dl>
-<p>I also enjoy other activities:</p>
-<ul>
-<li>Cooking</li>
-<li>Hiking and backpacking</li>
-<li>Reading fiction and poetry</li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/random_caps.py">Random Caps (.py)</a> I wrote this script to randomly capitalize characters in a text file. I’m not sure whether there are any uses for this but it was a fun exercise. The code is below.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy.random <span class="im">as</span> random
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Libraries in the US fill an interesting role. They are not only a place to go to get free books, in many places, they serve as a community center. Libraries push constantly to draw people in by staying on or near the forefront of educational technology as much as they can while remaining a free place to come. Part of this effort right now is an increasing push toward electronic content. Especially today, during the coronavirus outbreak, libraries look to offer services that do not require patrons coming in person. This visualization uses data from the institute of library and museum services, a government agency that collects yearly reports from each state on many aspects of their libraries’ use, to demonstrate the most current available use of electronic material from libraries in the United States.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>The data sources, both the library information in CSV format and the map in a .shp file, can be found <a href="https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/jrgarst/progress.txt">here</a> under the sources heading. The map above shows the circulation of electronic material compared to the number of electronic materials in each state’s libraries. Importantly, this is not limited to Ebooks, but expanded to show all electronic content available for checkout from a library: books, audio, and video.</p>
+<div id="data-organization" class="section level3">
+<h3>Data Organization</h3>
+<p>The script below was used to generate the image used in the final visualization. If you would like to generate files of your own, download the data, organize your files correctly, then change the variable names in the #plot section (these are the all caps variables).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#libraries</span>
+<span class="kw">library</span>(raster)
+<span class="kw">library</span>(<span class="st">&quot;rgdal&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;data.table&quot;</span>)
+<span class="kw">library</span>(sf)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(maptools)
+<span class="kw">library</span>(rgeos)
+<span class="kw">library</span>(plyr)
 
-<span class="co"># Define constants</span>
-UPPER <span class="op">=</span> <span class="st">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-LOWER <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+<span class="co">#Set the working directory</span>
+<span class="kw">setwd</span>(<span class="st">&#39;C:/Users/elkel/Desktop/dataScience/Final&#39;</span>)
 
+<span class="co">#Create a dataframe from the CSV file I created in CSVRead.py</span>
+libDF &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Libraries.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)
 
-<span class="kw">def</span> main(file_in: <span class="bu">str</span>, file_out: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;./rand_caps.txt&quot;</span>):
-    <span class="co">&quot;&quot;&quot;</span>
-<span class="co">    Takes an input text file and randomly capitalizes the letters in it.</span>
-<span class="co">    Writes the output to another text file.</span>
+shapefile =<span class="st"> </span><span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;states_21basic&quot;</span>, <span class="dt">layer =</span> <span class="st">&quot;states&quot;</span>)
+shapefile<span class="op">@</span>data<span class="op">$</span>id =<span class="st"> </span><span class="kw">rownames</span>(shapefile<span class="op">@</span>data)
 
-<span class="co">    :param file_in: Path to a text file containing letters to randomly capitalize</span>
-<span class="co">    :param file_out: Path to a text file to write the new letters in</span>
-<span class="co">                     Default: `./rand_caps.txt`</span>
-<span class="co">    &quot;&quot;&quot;</span>
-    file_input <span class="op">=</span> <span class="bu">open</span>(file_in, <span class="st">&quot;r&quot;</span>)
-    char_list <span class="op">=</span> []
-    <span class="co"># Collect all the ASCII characters</span>
-    <span class="cf">for</span> line <span class="kw">in</span> file_input:
-        <span class="cf">for</span> character <span class="kw">in</span> line:
-            char_list.append(character)
-
-    file_input.close()
-    output_file <span class="op">=</span> <span class="bu">open</span>(file_out, <span class="st">&#39;w&#39;</span>)
-    <span class="co"># Go through and randomly capitalize them</span>
-    <span class="cf">for</span> character <span class="kw">in</span> char_list:
-        <span class="co"># Pick whether to change it</span>
-        change_char <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">2</span>)
-        <span class="co"># Change it from upper to lower or vice-versa</span>
-        <span class="cf">if</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> UPPER:
-            output_file.write(character.lower())
-        <span class="cf">elif</span> change_char <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> character <span class="kw">in</span> LOWER:
-            output_file.write(character.upper())
-        <span class="cf">else</span>:
-            output_file.write(character)
-    output_file.close()
+shapefile.df =<span class="st"> </span><span class="kw">fortify</span>(shapefile)
+shapefile.df =<span class="st"> </span><span class="kw">join</span>(shapefile.df, shapefile<span class="op">@</span>data, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)
+<span class="co">#Merge the two based on State data.</span>
+shapefile.df &lt;-<span class="st"> </span><span class="kw">merge</span>(shapefile.df, libDF, <span class="dt">by.x=</span><span class="st">&#39;STATE_ABBR&#39;</span>, <span class="dt">by.y=</span><span class="st">&#39;STABR&#39;</span>)
 
 
-<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:
-    <span class="im">import</span> argparse
-
-    p <span class="op">=</span> argparse.ArgumentParser()
-    p.add_argument(<span class="st">&quot;file&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The file to read in letters from&quot;</span>)
-    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--out&quot;</span>, nargs<span class="op">=</span><span class="st">&quot;?&quot;</span>, default<span class="op">=</span><span class="st">&quot;./rand_caps.txt&quot;</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Path to a file to hold the output&quot;</span>)
-    args <span class="op">=</span> p.parse_args()
-
-    main(args.<span class="bu">file</span>, args.out)</code></pre></div>
+<span class="co">#plot</span>
+<span class="kw">ggplot</span>(shapefile.df) <span class="op">+</span>
+<span class="st">  </span><span class="kw">aes</span>(long,lat,<span class="dt">group=</span>group) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">color=</span><span class="st">&quot;white&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ELMATCIR <span class="op">/</span><span class="st"> </span>EBOOK <span class="op">+</span><span class="st"> </span>AUDIO_DL <span class="op">+</span><span class="st"> </span>VIDEO_DL)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>())
+  <span class="kw">coord_equal</span>()</code></pre></div>
+<div class="credit-line">
+<p>Author: John Garst Last edited: 2020-04-23</p>
+</div>
+</div>
 </div>
 
 <footer class="myfoot">

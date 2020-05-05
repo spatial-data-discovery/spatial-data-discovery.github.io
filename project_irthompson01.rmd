@@ -1,17 +1,15 @@
 ---
 title: Monitoring Climate Change Through the Ocean
-author: Ian Thompson
+author: Ian R. Thompson
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
-
 <div class="video-wrapper">
   <video id="scaledvideo" controls preload="true" autoplay loop muted>
-    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst.mp4" >
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst_08_19.mp4" >
   </video>
 </div>
-
-> *El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean.* -- Wikipedia
+> El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean. -- Wikipedia
 
 ## Overview
 
@@ -21,7 +19,7 @@ Changes in sea surface temperature influence weather and climate patterns global
 
 El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click [here](https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina)
 
-The animation above shows signs of El Niño for 2019, highlighted by the influx of warmer water in the equatorial Pacific.
+The animation above shows the patterns of El Niño from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.
 
 ## Data Conversion
 
@@ -38,12 +36,17 @@ import arcpy
 ...
 
 def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
+    """Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)"""
     time_slice = arcpy.NumPyArrayToRaster(np_array, value_to_nodata = no_data,
                                                     lower_left_corner = lowerLeft,
                                                     x_cell_size = 0.25)
 
-    file_path = './output/' + var + '_raster_'+ str(year)+ '.tif'
+    file_path = os.path.join(dir, var + '_raster_'+ str(year)+ '.tif')#'./output/' +
     time_slice.save(file_path)
+
+...
+
+
 ```
 
 ## Visualization Process
@@ -58,7 +61,7 @@ The GIF was then uploaded and converted to a video (MP4[^mpeg4]) using EzGif[^ez
 
 Author: Ian Thompson
 
-Last edited: 2020-04-13.
+Last edited: 2020-05-04.
 
 </div>
 

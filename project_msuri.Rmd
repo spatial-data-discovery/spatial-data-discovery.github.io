@@ -2,21 +2,200 @@
 title: "The Strictness of COVID-19 Policy by State"
 ---
 
+![](https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png)
 
 ## Overview
 
-Overview will go here.
+We are currently in unprecedented times amidst a global pandemic due to COVID-19. COVID-19 is known to be a flu-like virus that is extremely contagious.
+Since it was discovered in late 2019, there is no known vaccination for COVID-19.
+
+Some countries, such as Italy[^italy] and Spain[^spain] have experienced extreme hardship in the healthcare system where they do not have enough hospital beds.
+In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures.
+After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.
+
+I thought it would be interesting to see how strict different states are during the crisis to see if other people are in similar situations as I am.
+
+The above map takes into account the following social distancing policies:
+: - The easing of social distancing measures
+	- Stay at home orders
+	- Mandatory quarantine for travelers
+	- Non-essential business closures
+	- Large gathering bans
+	- School closures
+	- Limits on restaruants and bars
+	- The postponement of the primary elections
+	- Whether the state has been declared in a State of Emergency
 
 ## Data Description
 
-Data Description will go here.
+The data was found on the Kaiser Family Foundation[^KFF] website.
+However, I was less interested in the individual policies than I was in the strictness of the policies as a whole.
+As such, I created my own scale to measure the how strict the social distancing measures were for each state.
 
-## Python Script
+The website produced a .csv file which I then loaded into a Python[^python] package called pandas[^pandas].
+I used pandas to preprocess the data and create the strictness measures.
 
-Python script will go here.
+I went through each category of the different measures and assigned them a point value.
+The stricter the policy, the higher the point value was.
+If the state did not have a policy in place for that particular category, a value of 0 was assigned.
+If the the state was easing up on the social distancing measures, a negative point value was assigned.
+
+A breakdown of the point values are seen below:
+
+#### State Is Easing Social Distancing Measures
+
+<div class="suri">
+
+| Policy Type                                                                                                                         | Point Allotment |
+| ----------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| None                                                                                                                                | 0               |
+| Reopens Certain Businesses                                                                                                          | -1              |
+| Reopens Certain Businesses; Allows Limited Restaurant Dine-in Services                                                              | -2              |
+| Changes to Stay at Home Order; Reopens Certain Businesses                                                                           | -2              |
+| Changes to Stay at Home Order; Reopens Certain Businesses; Eases Large Gatherings Ban                                               | -3              |
+| Changes to Stay at Home Order; Reopens Certain Businesses; Allows Limited Restaurant Dine-in Services; Eases Large Gatherings Ban   | -4              |
+
+</div>
+
+#### Stay at Home Order
+
+<div class="suri">
+
+| Policy Type         | Point Allotment |
+| ------------------- | --------------- |
+| Statewide           | 3               |
+| High-Risk Groups    | 2               |
+| High-Risk Groups*   | 1               |
+| Other               | 1               |
+| None                | 0               |
+| Expired*            | -1              |
+
+</div>
+
+#### Mandatory Quarantine for Travelers
+
+<div class="suri">
+
+| Policy Type         | Point Allotment |
+| ------------------- | --------------- |
+| All Travelers       | 3               |
+| All Air Travelers   | 2               |
+| From Certain States | 1               |
+| Other               | 1               |
+| None                | 0               |
+
+</div>
+
+#### Non-Essential Business Closures
+
+<div class="suri">
+
+| Policy Type                          | Point Allotment |
+| ------------------------------------ | --------------- |
+| All Non-Essential Businesses         | 5               |
+| All Non-Essential Retail Businesses  | 4               |
+| Certain Non-Essential Businesses     | 3               |
+| Certain Non-Essential Businesses*    | 2               |
+| Open with Reduced Capacity*          | 1               |
+| None                                 | 0               |
+
+</div>
+
+#### Large Gatherings Bans
+
+<div class="suri">
+
+| Policy Type               | Point Allotment |
+| ------------------------- | --------------- |
+| All Gatherings Prohibited | 4               |
+| >10 People Prohibited     | 3               |
+| 20+ People Prohibited*    | 2               |
+| Other                     | 1               |
+| None                      | 0               |
+| Expired*                  | -1              |
+
+</div>
+
+#### School Closures
+
+<div class="suri">
+
+| Policy Type                          | Point Allotment |
+| ------------------------------------ | --------------- |
+| Closed for School Year               | 3               |
+| Closed                               | 3               |
+| Recommended Closure for School Year  | 2               |
+| Recommended Closure                  | 1               |
+| None                                 | 0               |
+
+</div>
+
+#### Bar and Restaurant Limits
+
+<div class="suri">
+
+| Policy Type                          | Point Allotment |
+| ------------------------------------ | --------------- |
+| Closed Except for Takeout/Delivery   | 3               |
+| Limited On-Site Service              | 3               |
+| Limited On-Site Service*             | 2               |
+| Other                                | 1               |
+| None                                 | 0               |
+
+</div>
+
+#### Primary Election Postponement
+
+<div class="suri">
+
+| Policy Type    | Point Allotment |
+| -------------- | --------------- |
+| Cancelled      | 3               |
+| Postponed      | 2               |
+| None           | 0               |
+
+</div>
+
+#### Emergency Declaration
+
+<div class="suri">
+
+| Policy Type    | Point Allotment |
+| -------------- | --------------- |
+| Yes            | 1               |
+| None           | 0               |
+
+</div>
+
+_A * indicates that the state has eased a more restricitve social distancing measure._
+
+After creating the point system,
+I added up all the points for each state and used the Python package plotly[^plotly] to create a chloropleth map of the data.
+I then exported the visualization as a .png[^png] file.
+
 
 <div class="credit-line">
 Author: Mallika Suri.
-Last edited: 2020-05-27
+Last edited: 2020-05-04
 </div>
 
+[^italy]: COVID-19 in Italy.
+Online: https://www.nejm.org/doi/full/10.1056/NEJMp2005492
+
+[^spain]: COVID-19 in Spain.
+Online:  https://www.ncbi.nlm.nih.gov/pubmed/11149196
+
+[^kff]: Kaiser Family Foundation website.
+Online: https://www.kff.org
+
+[^python]: Python. Copyright (C) 2001–2020. Python Software Foundation.
+Online: https://www.python.org
+
+[^pandas]: Pandas. Copyright (C) 2020.
+Online: https://pandas.pydata.org
+
+[^plotly]: Plotly. Copyright (C) 2020.
+Online: https://plotly.com
+
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019
+Online: http://www.libpng.org/pub/png/
