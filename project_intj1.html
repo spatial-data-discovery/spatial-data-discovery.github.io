@@ -367,6 +367,9 @@ $(document).ready(function () {
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
     </li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
@@ -416,10 +419,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="projects.html">Previous Projects</a>
     </li>
   </ul>
 </li>
@@ -567,23 +566,23 @@ $(document).ready(function () {
         <span class="va">self</span>.coords_format <span class="op">=</span> {<span class="st">&#39;Latitude&#39;</span>, <span class="st">&#39;Longitude&#39;</span>, <span class="st">&#39;Lat&#39;</span>, <span class="st">&#39;Long_&#39;</span>}
         <span class="va">self</span>.s_format <span class="op">=</span> {<span class="st">&#39;Province/State&#39;</span>, <span class="st">&#39;Province_State&#39;</span>}
         <span class="va">self</span>.__countries <span class="op">=</span> <span class="bu">sorted</span>({country <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.__dates <span class="cf">for</span> country <span class="kw">in</span> <span class="va">self</span>.__df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.__df[d].columns)).pop()]})
-        
+
         <span class="co">#1</span>
         <span class="va">self</span>.__cDates <span class="op">=</span> <span class="bu">sorted</span>({i <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> country <span class="kw">in</span> <span class="bu">set</span>(<span class="va">self</span>.df[i][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[i].columns)).pop()])} <span class="op">&amp;</span>
                                {j <span class="cf">for</span> j <span class="kw">in</span> <span class="va">self</span>.dates <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(<span class="va">self</span>.df[j][(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[j].columns))]))})
 
         <span class="co">#2</span>
         <span class="va">self</span>.__country <span class="op">=</span> <span class="va">self</span>.countryBreakDown(country)
-        
-        <span class="co">#3 </span>
+
+        <span class="co">#3</span>
         <span class="va">self</span>.__states <span class="op">=</span> <span class="va">self</span>.statesBreakDown()...        </code></pre></div>
 <p>Where reusable variables are important in making the structure easier to identify for the users:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#Break down stats by State/Province</span>
 <span class="kw">def</span> countryBreakDown(<span class="va">self</span>, country):
     <span class="co">#Data processing is getting more difficult than I though. Let&#39;s hope that they stop changing the data format as the day goes on.</span>
-    pre_df <span class="op">=</span> {d: <span class="va">self</span>.df[d][<span class="va">self</span>.df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()] <span class="op">==</span> country][[(<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop(), 
+    pre_df <span class="op">=</span> {d: <span class="va">self</span>.df[d][<span class="va">self</span>.df[d][(<span class="va">self</span>.c_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()] <span class="op">==</span> country][[(<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop(),
                                        <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="op">-</span><span class="dv">1</span>],
-                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="dv">0</span>], 
+                                       <span class="bu">sorted</span>(<span class="va">self</span>.coords_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns))[<span class="dv">0</span>],
                                        <span class="st">&#39;Confirmed&#39;</span>, <span class="st">&#39;Recovered&#39;</span>, <span class="st">&#39;Deaths&#39;</span>]].set_index((<span class="va">self</span>.s_format <span class="op">&amp;</span> <span class="bu">set</span>(<span class="va">self</span>.df[d].columns)).pop()) <span class="cf">for</span> d <span class="kw">in</span> <span class="va">self</span>.cDates}
     <span class="co">#Add multi-Index</span>
     <span class="cf">for</span> k, v <span class="kw">in</span> pre_df.items():
@@ -596,7 +595,7 @@ $(document).ready(function () {
 <span class="co">#Statesbreak down. PASS IN self.country</span>
 <span class="kw">def</span> statesBreakDown(<span class="va">self</span>):
         statesdict <span class="op">=</span> {<span class="st">&quot;D.C&quot;</span>:<span class="st">&quot;District of Columbia&quot;</span>,<span class="st">&quot;AL&quot;</span>:<span class="st">&quot;Alabama&quot;</span>,<span class="st">&quot;AK&quot;</span>:<span class="st">&quot;Alaska&quot;</span>,<span class="st">&quot;AZ&quot;</span>:<span class="st">&quot;Arizona&quot;</span>,<span class="st">&quot;AR&quot;</span>:<span class="st">&quot;Arkansas&quot;</span>,<span class="st">&quot;CA&quot;</span>:<span class="st">&quot;California&quot;</span>,<span class="st">&quot;CO&quot;</span>:<span class="st">&quot;Colorado&quot;</span>,<span class="st">&quot;CT&quot;</span>:<span class="st">&quot;Connecticut&quot;</span>,<span class="st">&quot;DE&quot;</span>:<span class="st">&quot;Delaware&quot;</span>,<span class="st">&quot;FL&quot;</span>:<span class="st">&quot;Florida&quot;</span>,<span class="st">&quot;GA&quot;</span>:<span class="st">&quot;Georgia&quot;</span>,<span class="st">&quot;HI&quot;</span>:<span class="st">&quot;Hawaii&quot;</span>,<span class="st">&quot;ID&quot;</span>:<span class="st">&quot;Idaho&quot;</span>,<span class="st">&quot;IL&quot;</span>:<span class="st">&quot;Illinois&quot;</span>,<span class="st">&quot;IN&quot;</span>:<span class="st">&quot;Indiana&quot;</span>,<span class="st">&quot;IA&quot;</span>:<span class="st">&quot;Iowa&quot;</span>,<span class="st">&quot;KS&quot;</span>:<span class="st">&quot;Kansas&quot;</span>,<span class="st">&quot;KY&quot;</span>:<span class="st">&quot;Kentucky&quot;</span>,<span class="st">&quot;LA&quot;</span>:<span class="st">&quot;Louisiana&quot;</span>,<span class="st">&quot;ME&quot;</span>:<span class="st">&quot;Maine&quot;</span>,<span class="st">&quot;MD&quot;</span>:<span class="st">&quot;Maryland&quot;</span>,<span class="st">&quot;MA&quot;</span>:<span class="st">&quot;Massachusetts&quot;</span>,<span class="st">&quot;MI&quot;</span>:<span class="st">&quot;Michigan&quot;</span>,<span class="st">&quot;MN&quot;</span>:<span class="st">&quot;Minnesota&quot;</span>,<span class="st">&quot;MS&quot;</span>:<span class="st">&quot;Mississippi&quot;</span>,<span class="st">&quot;MO&quot;</span>:<span class="st">&quot;Missouri&quot;</span>,<span class="st">&quot;MT&quot;</span>:<span class="st">&quot;Montana&quot;</span>,<span class="st">&quot;NE&quot;</span>:<span class="st">&quot;Nebraska&quot;</span>,<span class="st">&quot;NV&quot;</span>:<span class="st">&quot;Nevada&quot;</span>,<span class="st">&quot;NH&quot;</span>:<span class="st">&quot;New Hampshire&quot;</span>,<span class="st">&quot;NJ&quot;</span>:<span class="st">&quot;New Jersey&quot;</span>,<span class="st">&quot;NM&quot;</span>:<span class="st">&quot;New Mexico&quot;</span>,<span class="st">&quot;NY&quot;</span>:<span class="st">&quot;New York&quot;</span>,<span class="st">&quot;NC&quot;</span>:<span class="st">&quot;North Carolina&quot;</span>,<span class="st">&quot;ND&quot;</span>:<span class="st">&quot;North Dakota&quot;</span>,<span class="st">&quot;OH&quot;</span>:<span class="st">&quot;Ohio&quot;</span>,<span class="st">&quot;OK&quot;</span>:<span class="st">&quot;Oklahoma&quot;</span>,<span class="st">&quot;OR&quot;</span>:<span class="st">&quot;Oregon&quot;</span>,<span class="st">&quot;PA&quot;</span>:<span class="st">&quot;Pennsylvania&quot;</span>,<span class="st">&quot;RI&quot;</span>:<span class="st">&quot;Rhode Island&quot;</span>,<span class="st">&quot;SC&quot;</span>:<span class="st">&quot;South Carolina&quot;</span>,<span class="st">&quot;SD&quot;</span>:<span class="st">&quot;South Dakota&quot;</span>,<span class="st">&quot;TN&quot;</span>:<span class="st">&quot;Tennessee&quot;</span>,<span class="st">&quot;TX&quot;</span>:<span class="st">&quot;Texas&quot;</span>,<span class="st">&quot;UT&quot;</span>:<span class="st">&quot;Utah&quot;</span>,<span class="st">&quot;VT&quot;</span>:<span class="st">&quot;Vermont&quot;</span>,<span class="st">&quot;VA&quot;</span>:<span class="st">&quot;Virginia&quot;</span>,<span class="st">&quot;WA&quot;</span>:<span class="st">&quot;Washington&quot;</span>,<span class="st">&quot;WV&quot;</span>:<span class="st">&quot;West Virginia&quot;</span>,<span class="st">&quot;WI&quot;</span>:<span class="st">&quot;Wisconsin&quot;</span>,<span class="st">&quot;WY&quot;</span>:<span class="st">&quot;Wyoming&quot;</span>}
-        DPfilter <span class="op">=</span> {<span class="st">&#39;Unassigned Location (From Diamond Princess)&#39;</span>,<span class="st">&#39;Grand Princess Cruise Ship&#39;</span>} 
+        DPfilter <span class="op">=</span> {<span class="st">&#39;Unassigned Location (From Diamond Princess)&#39;</span>,<span class="st">&#39;Grand Princess Cruise Ship&#39;</span>}
         <span class="co">#Use latest date as scheme for merge. This relies heavily on the latest date contains coords</span>
         latest <span class="op">=</span> <span class="va">self</span>.cDates[<span class="op">-</span><span class="dv">1</span>]
         dff <span class="op">=</span> <span class="va">self</span>.country[latest].groupby(<span class="va">self</span>.country[latest].index).<span class="bu">sum</span>()
@@ -612,7 +611,7 @@ $(document).ready(function () {
             <span class="co">#before merging, filter state/province columns from previous dates</span>
             <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter):
                 df.drop(index <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(df.index) <span class="op">&amp;</span> DPfilter), inplace <span class="op">=</span> <span class="va">True</span>)
-            filtered <span class="op">=</span> [re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> df.index <span class="cf">if</span> <span class="bu">len</span>(re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)) <span class="op">==</span> <span class="dv">1</span>] 
+            filtered <span class="op">=</span> [re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> df.index <span class="cf">if</span> <span class="bu">len</span>(re.findall(<span class="vs">r&#39;([A-Z]</span><span class="sc">{2}</span><span class="vs">|[A\.-Z]</span><span class="sc">{3}</span><span class="vs">)&#39;</span>, x)) <span class="op">==</span> <span class="dv">1</span>]
             <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(statesdict) <span class="op">&amp;</span> <span class="bu">set</span>(filtered)):
                 df.index <span class="op">=</span> [statesdict[s] <span class="cf">for</span> s <span class="kw">in</span> filtered]
                 df <span class="op">=</span> df.groupby(df.index).<span class="bu">sum</span>()
@@ -621,60 +620,72 @@ $(document).ready(function () {
         <span class="co">#Depending on new locations, might need to add or remove from below</span>
         dff.drop(index <span class="op">=</span> [<span class="st">&#39;Recovered&#39;</span>,<span class="st">&#39;Virgin Islands&#39;</span>, <span class="st">&#39;Northern Mariana Islands&#39;</span>, <span class="st">&#39;Grand Princess&#39;</span>, <span class="st">&#39;Diamond Princess&#39;</span>, <span class="st">&#39;Puerto Rico&#39;</span>], inplace <span class="op">=</span> <span class="va">True</span>)
         dff.fillna(<span class="dv">0</span>, inplace <span class="op">=</span> <span class="va">True</span>) <span class="co">#Fill na for states whose values don&#39;t exist from previous dates</span>
-        <span class="cf">return</span> dff </code></pre></div>
+        <span class="cf">return</span> dff</code></pre></div>
 <p>Overall, script functionality is contingent on the data collection teams and their willingness to be consistent.</p>
 </div>
 <div id="data-visualization" class="section level2">
 <h2>Data Visualization</h2>
 <p>During this process, high performance processing modules like pandas<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, numpy<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, re<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, and itertools<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>, where pyplot<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> was then used to project COVID-19 statistics:</p>
-<p>```python #Valid columns are: ‘Confirmed’, ‘Recovered’, ‘Deaths’ def barGraphPerCountry(self, c_frame, column): fig, ax = plt.subplots(figsize = (12, 6))<br />
-fig = sns.barplot(x = list(c_frame.index), y = column, data = c_frame, orient = ‘v’) ax.set_xticklabels([])</p>
-<p>def mapPlot(self, c_frame, column, save = 1): date = c_frame.columns.levels[0][0] cf = c_frame.copy(deep = True) cf.columns = cf.columns.droplevel(0) #Filter coordinates from US cases outside mainland (excluding Alaska) cf = cf[(cf[cf.columns[0]].between(-130, -55) &amp; cf[cf.columns[1]].between(26, 50))]</p>
-<pre><code>&#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;
-lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
-confirmed, color = cf[&#39;Confirmed&#39;].values, cf[column].values 
-max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Valid columns are: &#39;Confirmed&#39;, &#39;Recovered&#39;, &#39;Deaths&#39;</span>
+<span class="kw">def</span> barGraphPerCountry(<span class="va">self</span>, c_frame, column):
+    fig, ax <span class="op">=</span> plt.subplots(figsize <span class="op">=</span> (<span class="dv">12</span>, <span class="dv">6</span>))    
+    fig <span class="op">=</span> sns.barplot(x <span class="op">=</span> <span class="bu">list</span>(c_frame.index),
+                  y <span class="op">=</span> column,
+                  data <span class="op">=</span> c_frame,
+                  orient <span class="op">=</span> <span class="st">&#39;v&#39;</span>)
+    ax.set_xticklabels([])
 
-&#39;&#39;&#39;Draw map&#39;&#39;&#39;
-fig = plt.figure(figsize = (20, 20))
-m = Basemap(projection = &#39;lcc&#39;, resolution = &#39;h&#39;,
-    width = 5E6, height = 4E6, 
-    lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
-m.shadedrelief()
-m.drawcoastlines(color = &#39;gray&#39;)
-m.drawcountries(color = &#39;black&#39;)
-m.drawstates(color = &#39;gray&#39;)
+<span class="kw">def</span> mapPlot(<span class="va">self</span>, c_frame, column, save <span class="op">=</span> <span class="dv">1</span>):
+    date <span class="op">=</span> c_frame.columns.levels[<span class="dv">0</span>][<span class="dv">0</span>]
+    cf <span class="op">=</span> c_frame.copy(deep <span class="op">=</span> <span class="va">True</span>)
+    cf.columns <span class="op">=</span> cf.columns.droplevel(<span class="dv">0</span>)
+    <span class="co">#Filter coordinates from US cases outside mainland (excluding Alaska)</span>
+    cf <span class="op">=</span> cf[(cf[cf.columns[<span class="dv">0</span>]].between(<span class="op">-</span><span class="dv">130</span>, <span class="dv">-55</span>) <span class="op">&amp;</span> cf[cf.columns[<span class="dv">1</span>]].between(<span class="dv">26</span>, <span class="dv">50</span>))]
 
-&#39;&#39;&#39;Scatter&#39;&#39;&#39;
-cNorm = plt.Normalize(vmin = 0, vmax = max_col.max())
-m.scatter(x = lon, y = lat, latlon = True,
-      s = confirmed,
-      c = color, cmap = plt.get_cmap(&#39;jet&#39;),
-      norm = cNorm,
-      alpha = 0.5)
+    <span class="co">&#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;</span>
+    lon, lat <span class="op">=</span> cf[cf.columns[<span class="dv">0</span>]].values, cf[cf.columns[<span class="dv">1</span>]].values
+    confirmed, color <span class="op">=</span> cf[<span class="st">&#39;Confirmed&#39;</span>].values, cf[column].values
+    max_col <span class="op">=</span> <span class="va">self</span>.country[<span class="va">self</span>.cDates[<span class="op">-</span><span class="dv">1</span>]][<span class="va">self</span>.cDates[<span class="op">-</span><span class="dv">1</span>]][column].values
 
-cbar = plt.colorbar(label = column, shrink = 0.60)    
+    <span class="co">&#39;&#39;&#39;Draw map&#39;&#39;&#39;</span>
+    fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">20</span>, <span class="dv">20</span>))
+    m <span class="op">=</span> Basemap(projection <span class="op">=</span> <span class="st">&#39;lcc&#39;</span>, resolution <span class="op">=</span> <span class="st">&#39;h&#39;</span>,
+        width <span class="op">=</span> <span class="fl">5E6</span>, height <span class="op">=</span> <span class="fl">4E6</span>,
+        lat_1 <span class="op">=</span> <span class="fl">26.</span>, lat_2 <span class="op">=</span> <span class="dv">50</span>, lat_0 <span class="op">=</span> <span class="dv">35</span>, lon_0 <span class="op">=</span> <span class="dv">-98</span>)
+    m.shadedrelief()
+    m.drawcoastlines(color <span class="op">=</span> <span class="st">&#39;gray&#39;</span>)
+    m.drawcountries(color <span class="op">=</span> <span class="st">&#39;black&#39;</span>)
+    m.drawstates(color <span class="op">=</span> <span class="st">&#39;gray&#39;</span>)
 
-plt.ylabel(&#39;Latitude&#39;, fontsize = 14)
-plt.xlabel(&#39;Longitude&#39;, fontsize = 14)
-plt.title(&#39;Confirmed Cases for {}: {}&#39;.format(date, int(confirmed.sum())), fontsize = 20)
+    <span class="co">&#39;&#39;&#39;Scatter&#39;&#39;&#39;</span>
+    cNorm <span class="op">=</span> plt.Normalize(vmin <span class="op">=</span> <span class="dv">0</span>, vmax <span class="op">=</span> max_col.<span class="bu">max</span>())
+    m.scatter(x <span class="op">=</span> lon, y <span class="op">=</span> lat, latlon <span class="op">=</span> <span class="va">True</span>,
+          s <span class="op">=</span> confirmed,
+          c <span class="op">=</span> color, cmap <span class="op">=</span> plt.get_cmap(<span class="st">&#39;jet&#39;</span>),
+          norm <span class="op">=</span> cNorm,
+          alpha <span class="op">=</span> <span class="fl">0.5</span>)
 
-#Size legend
-for a in [10, 100, 500]:
-    plt.scatter([], [], c = &#39;k&#39;, alpha = 0.9, s = a,
-            label = str(a) + &#39; Confirmed&#39;)
-plt.legend(loc = 3, fontsize = 16)
+    cbar <span class="op">=</span> plt.colorbar(label <span class="op">=</span> column, shrink <span class="op">=</span> <span class="fl">0.60</span>)    
 
-if not save:
-    plt.show()
-    
-else:
-    if not os.path.exists(&#39;Progress&#39;):
-    os.makedirs(&#39;Progress&#39;)
-    plt.savefig(&quot;Progress/{}.png&quot;.format(date), bbox_inches = &#39;tight&#39;, dpi = 100)
-    plt.clf()
-    plt.close()</code></pre>
-<p>```</p>
+    plt.ylabel(<span class="st">&#39;Latitude&#39;</span>, fontsize <span class="op">=</span> <span class="dv">14</span>)
+    plt.xlabel(<span class="st">&#39;Longitude&#39;</span>, fontsize <span class="op">=</span> <span class="dv">14</span>)
+    plt.title(<span class="st">&#39;Confirmed Cases for </span><span class="sc">{}</span><span class="st">: </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(date, <span class="bu">int</span>(confirmed.<span class="bu">sum</span>())), fontsize <span class="op">=</span> <span class="dv">20</span>)
+
+    <span class="co">#Size legend</span>
+    <span class="cf">for</span> a <span class="kw">in</span> [<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">500</span>]:
+        plt.scatter([], [], c <span class="op">=</span> <span class="st">&#39;k&#39;</span>, alpha <span class="op">=</span> <span class="fl">0.9</span>, s <span class="op">=</span> a,
+                label <span class="op">=</span> <span class="bu">str</span>(a) <span class="op">+</span> <span class="st">&#39; Confirmed&#39;</span>)
+    plt.legend(loc <span class="op">=</span> <span class="dv">3</span>, fontsize <span class="op">=</span> <span class="dv">16</span>)
+
+    <span class="cf">if</span> <span class="kw">not</span> save:
+        plt.show()
+
+    <span class="cf">else</span>:
+        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="st">&#39;Progress&#39;</span>):
+        os.makedirs(<span class="st">&#39;Progress&#39;</span>)
+        plt.savefig(<span class="st">&quot;Progress/</span><span class="sc">{}</span><span class="st">.png&quot;</span>.<span class="bu">format</span>(date), bbox_inches <span class="op">=</span> <span class="st">&#39;tight&#39;</span>, dpi <span class="op">=</span> <span class="dv">100</span>)
+        plt.clf()
+        plt.close()</code></pre></div>
 <p>COVID-19 cases within the US from each date was passed into the method above to produce each graph:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mpl.use(<span class="st">&#39;Agg&#39;</span>)
 <span class="cf">for</span> i, date <span class="kw">in</span> <span class="bu">enumerate</span>(df.country.keys()):
@@ -689,7 +700,7 @@ else:
     size <span class="op">=</span> (width, height)
     files <span class="op">=</span> [cv2.resize(<span class="bu">file</span>, size) <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files]
 
-    out <span class="op">=</span> cv2.VideoWriter(<span class="st">&#39;ConfirmedvsDeaths.avi&#39;</span>, cv2.VideoWriter_fourcc(<span class="op">*</span><span class="st">&#39;XVID&#39;</span>), <span class="dv">60</span>, size) 
+    out <span class="op">=</span> cv2.VideoWriter(<span class="st">&#39;ConfirmedvsDeaths.avi&#39;</span>, cv2.VideoWriter_fourcc(<span class="op">*</span><span class="st">&#39;XVID&#39;</span>), <span class="dv">60</span>, size)
     <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files:
         <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):
             out.write(<span class="bu">file</span>)

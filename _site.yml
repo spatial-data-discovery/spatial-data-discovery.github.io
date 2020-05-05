@@ -24,6 +24,8 @@ navbar:
             - text: "Example"
             - text: "Breathing of the Biosphere"
               href: project_dtwoods.html
+            - text: "Previous Projects"
+              href: projects.html
             - text: "---------"
             - text: "Spring 2020"
             - text: "Climate Change As Seen In Oceans"
@@ -58,9 +60,6 @@ navbar:
               href: project_aburke01.html
             - text: "UNICEF and the Third SDG"
               href: project_abgaddi.html
-            - text: "---------"
-            - text: "Previous Projects"
-              href: projects.html
         - text: "About"
           menu:
             - text: "The Coder Pages"

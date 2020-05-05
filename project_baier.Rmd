@@ -2,15 +2,32 @@
 title: Philippines School Chooser
 ---
 
+<a href="https://heather-baier.shinyapps.io/schoolChooser/">
+	<img src = "https://live.staticflickr.com/65535/49858701063_bf1824169c_b.jpg">
+</a>
 
-## Overview
+##  Overview
 
+There are over 42,000 public schools in the Philippines with many being located in far flung and hard to reach areas. Students, especially those on remote islands and those who are required to cross a body of water to get to school, are a at a distinct educational disadvantage. The Philippines Department of Education does not assign students to schools, are therefore it is up to the parents to decide where their child should receive their education. With little publicly available data and knowledge on where school are located, parents are left with very little information about where to send their child. 
+  
+The application above is a platform designed for parents to learn about and compare the schools nearest to their homes. It provides them with data on how long it will take to walk or drive to a selected school within a 5km radius from the center of their baranguay (a baranguay is the smallest administrative unit int he Philippines, roughly equivalent to a U.S. neighborhood).
 
+## Directions to use the application:
+1. Begin by choosing a region (regions are labeled on the upper right map)
+2. Continue to narrow in on you baranguay by choosing your province and municipality. 
+3. Once you choose your baranguay, the application will find all of the schools within a 5km distance for the center of your baranguay.
+4. The bottom of the page has a table that compares resource availability and conditions and each school. The bottom map at the top of the page will should walking or driving directions from the center of your baranguay to the currently selected school. Click on the route to see travel time and distance. 
+  
 
-## Data Description
+##  Data Description
 
+The region, municipality and province shapes were taken from geoBundaries.org. The baranguay shapefile is from PhilGIS.org. The data on schools resources and conditions shown in the bottom table was acquired through a series of Freedom of Information requests to the Philippines Department of Education Educational Management Information Systems Division. 
+  
 
-<div class="credit-line">
+<div  class="credit-line">
+
 Author: Heather Baier
+
 Last edited: 2020-05-05.
+
 </div>
