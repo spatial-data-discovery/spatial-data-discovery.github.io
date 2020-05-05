@@ -9,36 +9,39 @@ title: Out of Site Out of Mind, New Jersey's Stunted Superfund Cleanup
   </video>
 </div>
 
-> *"Why is New Jersey called the Garden State?"*
-> *"Because "Oil and Petrochemical Refinery State" wouldn't fit on a license plate?"*
-> *Gracie Hart, Miss Congeniality c.2000*
+> *"Why is New Jersey called the Garden State?" "Because "Oil and Petrochemical Refinery State" wouldn't fit on a license plate?"* -- Gracie Hart, Miss Congeniality c.2000
 
 ## Overview
 
 Driving on the New Jersey Turnpike, most individuals notice the towering chemical manufacturing plants and dark grey smoke billowing into the air.
-What they may not know, is that New Jersey has another serious environmental and health concern--the most Superfund Sites on the National Priorities List than any other State.
+What they may not know, is that New Jersey has another serious environmental and health concern---more Superfund Sites on the National Priorities List than any other State.
 The National Priorities List (NLP) comes from the CERLA (Comprehensive Environmental Response, Compensation and Liability Act) passed in 1980 under President Jimmy Carter. ("What Is Superfund?," 2018)
 
 Since its passage, countless sites have been proposed and rated on the Hazard Ranking System, with the ultimate goal of being deleted.
 The "EPA may delete a final NPL site if it determines that no further response is required to protect human health or the environment.” ("Superfund: National," 2018)
-Unfortunately, some sites have been re-added to the list at a later date due to community outcry and the rate of deletion has been seen as in-efficient at best throughout this law’s 40-year history. ("The Return," 2010, p. 18).
+Unfortunately, some sites have been re-added to the list at a later date due to community outcry and the rate of deletion has been seen as in-efficient at best throughout this law’s 40-year history. ("Not so Super," 1994, p. 16)
 For example, the "Cornell Dubilier Electronics plant in South Plainfield. The E.P.A., which began work on the site in 1997, said the cleanup would not be completed until 2034." (Holmberg, 2008)
-Some of the challenges facing the EPA include the way the law itself is constructed. One of its original aims was to force the responsible party to be financially liable for the cleanup. ("Superfund: National," 2018)
 
-A fund, paid for by taxes on chemical corporations called the Orphan Fund, would pay for the sites where an owner could not be identified.
+Some of the challenges facing the EPA include the way the law itself is constructed.
+One of its original aims was to force the responsible party to be financially liable for the cleanup. ("Superfund: National," 2018)
+A fund, paid for by taxes on corporations called the Orphan Fund, would pay for the sites where an owner could not be identified.
 However, a significant number of these sites are considered Orphan Sites.
 Since 1995 when the Orphan Fund lost its tax funding, the EPA has had to depend on appropriations from Congress to fund these remediations. ("The Return," 2010, p. 18)
 This funding is often unpredictable since it is dependent on the leanings of the current administration.
-Additionally, some local governments, specifically in the New Jersey area, have stated that remediation efforts by the EPA are not efficient, actually increase levels of pollution in their air, water and soil, and negatively affect property prices. ("Not so Super," 1994, p. 16).
+Additionally, some local governments, specifically in the New Jersey area, have stated that remediation efforts by the EPA are not efficient, potentially increase levels of pollution in their air, water and soil, and negatively affect property prices. ("Not so Super," 1994, p. 16).
 
-As you can see in the above visualization in 2019 there remains 113 sites considered active. 
-A total of 36 have been deleted over 40 years of this law being in place, making the rate of deletion for New Jersey about 0.9 sites per year.
-Furthermore, 73 of the 113 sites still considered active, have been on the National Priorities List since the 1980s.
+As you can see in the above visualization, there are 113 active sites in 2019.
+A total of 36 have been deleted over 40 years of CERLA being in place, making the rate of deletion for New Jersey about 0.9 sites per year.
+Furthermore, of the 113 sites still considered active, 73 have been on the National Priorities List since the 1980s.
 
+Contaminated sites hold real environmental and health consequences for those living near them.
+Even though remediation is an extremely time consuming and expensive endeavor, the impacts of toxic waste cannot be ignored or delayed.
+The longer the EPA and individual states wait for funding, the longer people are living in unsafe conditions, breathing polluted air and drinking contaminated water.
+Without action, the rate of deletion will continue to be low, and the National Priorities List will continue to be long.
 
 
 ## Data Description
-* The original dataset for the above visualizations can be found
+* The original dataset for the above visualization can be found
 at https://www.arcgis.com/apps/webappviewer/index.html?id=33cebcdfdd1b4c3a8b51d416956c41f1
 
 * To access the CSV files, zoom out of the map and click on
@@ -53,40 +56,48 @@ the up-arrow at the bottom of the screen and export to CSV.
 
 * More information about attributes can be
 found at https://www.epa.gov/superfund/superfund-national-priorities-list-npl
-This data was found on the Environmental Protection Agency's website. There is a link to see the full CSV file visualized using ARCGIS.
+This data was found on the United States Environmental Protection Agency's website.
+There is a link to see the full CSV file visualized using ARCGIS.
 
-My script takes the 1,810 entries and separates New Jersey
-entries into a file called NJ_SupfundSites.csv.
-It then creates four CSV files based on four time periods:
-1980-1989, 1990-1999, 2000-2009 and 2010-2019.
+My script takes the 1,810 total entries and separates New Jersey entries into a file called NJ_SupfundSites.csv.
+It then creates eight CSV files based on four time periods:1980-1989, 1990-1999, 2000-2009 and 2010-2019.
 
-These CSV files contain the entries that have a Listing Date up to the time frame
-but that don't have a Deletion Date earlier than the time period. Thus, the
-entries in the individual time periods represent the superfund sites that were active
-at those times. The count CSV files contain the sites that were deleted off the list
-for a given time frame. This data is used for the counts visible on the PNG files and the visualization.
+Each CSV file contains entries that have a Listing Date up to the time frame but don't have a Deletion Date earlier than the time frame.
+Thus, the entries in the individual time periods represent the superfund sites that were active
+at those times.
+The count CSV files contain the sites that were deleted off the list during a given time frame.
+This data is used for the counts visible on the PNG files and the visualization.
 
 For each time frame, the CSV files of the Superfund sites were visualized in QGIS[^qgis] and layered over a New Jersey County Boundary shape-file from the NJ Department of GIS website https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey::county-boundaries-of-nj.
 
-For each of the four time periods shown on the visualization, the green dots are Superfund sites that have been deleted from the National Priorities List, while the red dots are active sites. Each of the maps created for the time periods were then exported to PNG files from QGIS[^qgis], resized using GIMP[^gimp], and downloaded into GIPHY[^giphy]. The GIF file was then exported as a video encoded in MPEG-4[^mpeg4].
+For each of the four time periods shown on the visualization, the green dots are superfund sites that have been deleted from the National Priorities List, while the red dots are active sites.
+Each of the maps created for the time periods were then exported to PNG files from QGIS[^qgis], resized using GIMP[^gimp], and uploaded onto GIPHY[^giphy].
+The GIF file was then exported as a video encoded in MPEG-4[^mpeg4] and downloaded.
 
 
 <div class="credit-line">
 Author: Alexandra Burke.
 Last edited: 2020-05-04.
 </div>
+
+
 ## Works Cited
+
+
 Holmberg, D. (2008, January 20). At Some Superfund Sites, Toxic Legacies Linger. The New York Times.
-     Retrieved from https://www.nytimes.com/2008/01/20/nyregion/nyregionspecial2/
-     20Rsuperfund.html?searchResultPosition=58
-Not So Super Superfund. (1994, February 7). The New York Times, sec. A, p. 16. Retrieved from
-     https://www.nytimes.com/1994/02/07/opinion/not-so-super-superfund.html?searchResultPosition=19
-The Return of Superfund. (2010, June 27). The New York Times, sec. A, p. 18. Retrieved from
-     https://www.nytimes.com/2010/06/28/opinion/28mon2.html?searchResultPosition=4
-Superfund: National Priorities List Deletion. (2018, November 29). Retrieved May 4, 2020, from
-     https://www.epa.gov/superfund/superfund-national-priorities-list-deletion
-What is Superfund? (2018, November 30). Retrieved May 4, 2020, from https://www.epa.gov/superfund/
-     what-superfund
+Retrieved from https://www.nytimes.com/2008/01/20/nyregion/nyregionspecial2/20Rsuperfund.html?searchResultPosition=58
+
+Not So Super Superfund. (1994, February 7). The New York Times, sec. A, p. 16.
+Retrieved from https://www.nytimes.com/1994/02/07/opinion/not-so-super-superfund.html?searchResultPosition=19
+
+The Return of Superfund. (2010, June 27). The New York Times, sec. A, p. 18.
+Retrieved from https://www.nytimes.com/2010/06/28/opinion/28mon2.html?searchResultPosition=4
+
+Superfund: National Priorities List Deletion. (2018, November 29).
+Retrieved May 4, 2020, from https://www.epa.gov/superfund/superfund-national-priorities-list-deletion
+
+What is Superfund? (2018, November 30).
+Retrieved May 4, 2020, from https://www.epa.gov/superfund/what-superfund
 
 [^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-02. Online: https://www.gimp.org/
 [^giphy]: GIPHY Website that changes PNG files into GIF and Mp4 files. Online: https://giphy.com
