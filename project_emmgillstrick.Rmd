@@ -16,7 +16,7 @@ The data visualized above is the Land Cover Climate Modeling Grid collected by t
 
 ## Data Conversion Process
 MODIS Land Cover Type data sets were downloaded in HDF[^hdf]format (specifically hdf4) from the Land Processes Distributed Active Archive Center ([LP DAAC](https://lpdaac.usgs.gov/products/mcd12c1v006/)) for each year from 2001-2018.
-Each HDF4 file contained multiple subdatasets, data from "Majority_Land_Cover_Type_1" variable were extracted from each file and put into yearly raster files (.txt) in ASCII format with a computer program written in Python[^python] with the assistance of gdal[^gdal]. These arrays of data were also put into a new HDF5 file that can be easily viewed, each year a different dataset, as the original files were large and contained excess information not relevant to this project. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.
+Each HDF4 file contained multiple subdatasets, data from "Majority_Land_Cover_Type_1" variable were extracted from each file and put into yearly raster files (.txt) in ASCII format with a computer program written in Python[^python] with the assistance of gdal[^gdal]. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.
 
 For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG[^png] image format. Each image was loaded into GIMP[^gimp], zoomed in onto Asia and exported as an animated GIF[^gif]. This GIF was then converted to a .mp4 using FFmpeg[^mpeg].
 
@@ -47,7 +47,7 @@ For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG
 | Land Cover Type                | Raster Value |
 | ------------------------------ | ------------ |
 | Water                          | 0            |
-| Undeveloped Land (1-11, 14-15) | 1            |
+| Undeveloped Land (1-11, 14-16) | 1            |
 | Croplands                      | 2            |
 | Urban and Built-up             | 3            |
 
@@ -62,7 +62,7 @@ Last edited: 2020-04-28
 [^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Online: https://www.gimp.org/
 [^hdf]: Hierarchical Data Format. Copyright 2006--2019. The HDF Group. Online: https://www.hdfgroup.org/
 [^mpeg]: Moving Picture Experts Group Standard 4 (MPEG-4). Online: https://mpeg.chiariglione.org/
-[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2019-10-28. Online: http://www.libpng.org/pub/png/
 [^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Online: http://www.libpng.org/pub/png/
 [^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Online: https://www.qgis.org
 [^terra]: About Terra. NASA.gov. Online: https://terra.nasa.gov/about
