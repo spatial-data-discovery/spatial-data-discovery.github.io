@@ -1,22 +1,28 @@
 ---
-title: UNICEF and the third SDG
+title: "UNICEF and the third SDG"
 subtitle: An exploration of UNICEF's progress towards reaching Good Health & Well-Being
 ---
 
+![](https://drdavis.space/teaching/ds/sdd/media/2020/05/changefinal.png "percent change")
+
 ## Overview
-In 2015, the UN created the Sustainable Development Goals (SDGs) with their strategies for reducing the overall global poverty in the future.  
+In 2015, the UN created the Sustainable Development Goals (SDGs)[^sdg] with their strategies for reducing the overall global poverty in the future.  
 As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.  
 For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF’s progress.  
 Looking around on their website, there is already a lot of subjective progress and analysis on the collected data.
 However, there are seventeen SDGs and the methodology that is used is too complex to look at briefly and understand right away.
-So, I narrowed down the analysis to just look at the third goal, Good Health and Well-Being, partly because of current events.
+So, I narrowed down the analysis to just look at UNICEFs goal that 'every child survives and thrives', which falls within the third SDG for Good Health and Well-Being.
+And with the current events, I felt this could relevant in a larger scale.
 Out of all the indicators used to measure this goal, the three quantitative indicators that had the most data were neonatal mortality rate, under age five mortality rate, and the percentage of infants who received the third dose of a DTP vaccine.
 The map above shows a simple representation of whether or not a country has improved since the SDGs were created (in green) or has worsened over the years (red).
+A breakdown of the class breaks and how they were chosen can be found below.
 Although the positive percent changes are relatively small, it is still an improvement that should not discredit UNICEFs efforts in reaching this difficult goal for better overall health.
 Furthermore, every developing country has its own unique needs and might measure its success differently than the standards in more developed countries.
 
-The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators. 
-An explanation of how this was calculated can be found in the Data Description below.  
+![](https://drdavis.space/teaching/ds/sdd/media/2020/05/comparisons.png "comparisons")
+
+The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators[^health]. 
+An explanation of how this was calculated can be found in the Data Description below along with the class breaks.  
 On one hand it seems that majority of the countries that have met the goal or are above the goal, which are represented in blue, are the developed countries.
 On the other hand, a lot of the countries that are far below the goal, which are represented by the light yellow/green, are mostly in Africa.
 Looking closer at the indicators of these countries, it shows there is still a significant disparity between developing and developed countries that need more focus before coming close to UNICEFs goal.
@@ -24,50 +30,55 @@ In addition to this, looking through the available data from the UNICEF Data War
 This is also emphasized by the fact that the most recent information is from two years ago.
 
 ## Data Description
-All the data used is taken from the UNICEF Data Warehouse.
-The python script takes this CSV and splits the data based on the indicators and recombines them so that each country shows each indicator in one row rather than multiple rows for one country.
+All the data used is taken from the UNICEF Data Warehouse[^UNICEF].
+A python[^python] script was used to take this CSV and split the data based on the indicators, then recombines them so that each country shows each indicator in one row rather than multiple rows for one country.
 Afterwards, the script produces a CSV with calculations that can be displayed in a GIS with an existing countries shapefile.
 
-For the purpose of analysis, a goal 'score' was calculated by using the numerical goals that UNICEF established for each indicator.
+For the purpose of analysis, a goal 'score' was calculated by using the numerical goals that UNICEF established for each indicator under their progress report.
 The goal for neonatal mortality rate is 12, for under-five mortality rate 15, and 95% of children with the DTP vaccine.
-The mortality rates represent the probability the child would survive past the given age.
+The mortality rates represent the probability the child would survive past the given age[^indicator].
 All three indicators were changed into a decimal, and the percent of children with the vaccine was subtracted from 1 to represent the percent of children who were not vaccinated.
 Assuming all events are independent, the probabilities were then multiplied and subtracted from 1 to represent the goal 'score' which is essentially the probability of survival for a child.
 This goal was 99.85%.
-Using this idea, the script creates a column and calculates the scores for each country in both 2015 and 2018.
+Using this idea, a script was used to a column and calculate the scores for each country in both 2015 and 2018.
 Then, a z-score column for each year to represent how many standard deviations the country is away from the goal probability.
-Finally, the script creates a column to calculate the percent change of the scores from 2015 to 2018.
+Finally, the script created a column to calculate the percent change of the scores from 2015 to 2018.
+The Pandas[^pandas] package was used to create all the columns as well as the calculations.
 
-The data was visualised by using the join table tool in ArcGIS Pro with the created CSV and a Countries shape-file from ESRI.
-Classifications for each map do not have an equal interval since they were based off of the percentiles of where the data fell for the 2015 score and percent change. The goal comparison map for 2018 used the same class breaks as the map for 2015.
-The breakdown can be found below.
+The data was visualised by using the join table tool in ArcGIS Pro[^arcgis] with the created CSV and a Countries shapefile from ArcGIS Hub[^archub].
+Classifications for each map do not have an equal interval since they were based off of the percentiles, found using the Pandas package, of where the data fell for the 2015 score and percent change. The goal comparison map for 2018 used the same class breaks as the map for 2015, and the breakdown can be found below.
 
-### classification breakdown
+### Classification Breakdown
 
-<div id="way_table">
-|Colour        | Percent Change  |
-|--------------|:---------------:|
-| Light Green  |  < -0.23%       |
-| Green        |  < -0.01%       |
-| Yellow       |  < 0.00%        |
-| Orange       |  < 0.17%        |
-| Red          |  < 10.0%        |
-</div>
-
-<div id="way_table">
-|Colour          | Z - Score  |
-|----------------|:----------:|
-| Lightest Green |  < -3.00   |
-| Light Green    |  < -2.00   |
-| Green          |  < 0.00    |
-| Blue           |  < 0.07    |
-| Dark Blue      |  < 0.30    |
+<div style="width:400px">
+| Percent map  |            |        Z-Score|            |
+|--------------|------------|---------------|------------|
+|*Colour*      | *Value*    |*Colour*       | *Value*    |
+| Light Green  |  < -0.23%  | Yellow/Green  |  < -3.00   |
+| Green        |  < -0.01%  |Light Green    |  < -2.00   |
+| Yellow       |  < 0.00%   |Green          |  < 0.00    |
+| Orange       |  < 0.17%   |Blue           |  < 0.07    |
+| Red          |  < 10.0%   |Dark Blue      |  < 0.30    |
 </div>
 
 
 <div class="credit-line">
 Author: Abby Gaddi
-Last edited: 2020-05-03
+Last edited: 2020-05-04
 
 </div>
-sources
+[^sdg]: UNICEF and the Sustainable Development Goals. Accessed 2020-04-23. Online: https://www.unicef.org/sdgs
+
+[^health]: Measuring Progress by UNICEF. Online: https://data.unicef.org/wp-content/uploads/2018/03/Progress-for-Every-Child-ANNEXES-03.06.2018.pdf
+
+[^indicator]: Indicator Profiles used by UNICEF. Accessed 2020-04-23. Online: https://data.unicef.org/indicator-profile/
+
+[^UNICEF]: UNICEF Data Warehouse. Accessed 2020-04-28. Online: https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.CME_MRM0+CME_MRY0T4+IM_DTP3._T.&startPeriod=2015&endPeriod=2020
+
+[^archub]: ArcGIS Hub. Countries in WGS 84 Shapefile. Accessed 2020-05-03. Online: https://hub.arcgis.com/datasets/a21fdb46d23e4ef896f31475217cbb08_1
+
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2020-05-03. Online: https://www.python.org/
+
+[^pandas]: Pandas Python Package Version 1.0.3 Released 2020-03-18. Accessed 2020-05-03. Online: https://pandas.pydata.org/
+
+[^arcgis]: ArcGIS Pro 2.4.1. Copyright (C) 2019 Environmental Systems Research Institute (ESRI). Licensing through College of William & Mary. Accessed 2020-05-03. Online: https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview
