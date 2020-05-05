@@ -36,6 +36,8 @@ navbar:
               href: project_grluisi.html
             - text: "Google Trends & Vaccine Rates"
               href: project_gnmaniaci.html
+            - text: "Hidden in the Light"
+              href: project_pulakraj.html
             - text: "Opioid Epidemic"
               href: project_jlollen.html
             - text: "Pollen Index"

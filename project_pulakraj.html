@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Audrey Way" />
 
 
-<title>Children’s Hospitals in the US</title>
+<title>Eastern and Central Asia Hidden in the Light</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,66 +24,6 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #0000ff; } /* Keyword */
-code > span.ch { color: #008080; } /* Char */
-code > span.st { color: #008080; } /* String */
-code > span.co { color: #008000; } /* Comment */
-code > span.ot { color: #ff4000; } /* Other */
-code > span.al { color: #ff0000; } /* Alert */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #008000; font-weight: bold; } /* Warning */
-code > span.cn { } /* Constant */
-code > span.sc { color: #008080; } /* SpecialChar */
-code > span.vs { color: #008080; } /* VerbatimString */
-code > span.ss { color: #008080; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { } /* Variable */
-code > span.cf { color: #0000ff; } /* ControlFlow */
-code > span.op { } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #ff4000; } /* Preprocessor */
-code > span.do { color: #008000; } /* Documentation */
-code > span.an { color: #008000; } /* Annotation */
-code > span.cv { color: #008000; } /* CommentVar */
-code > span.at { } /* Attribute */
-code > span.in { color: #008000; } /* Information */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -507,108 +446,49 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Children’s Hospitals in the US</h1>
-<h3 class="subtitle">An examination of the number of children’s hospitals per state</h3>
+<h1 class="title toc-ignore">Eastern and Central Asia Hidden in the Light</h1>
 
 </div>
 
 
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/final_rendering.mp4" type="video/mp4" > </video></p>
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" > </video></p>
 </div>
+<blockquote>
+<p><em>“At least when it comes to light pollution what happens in Vegas does not stay in Vegas”</em> – Paul Bogard</p>
+</blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<div id="way_table">
-<table>
-<thead>
-<tr class="header">
-<th>State</th>
-<th align="center">Number of Children’s Hospitals</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TX</td>
-<td align="center">16</td>
-</tr>
-<tr class="even">
-<td>CA</td>
-<td align="center">11</td>
-</tr>
-<tr class="odd">
-<td>FL, CO</td>
-<td align="center">5</td>
-</tr>
-<tr class="even">
-<td>NJ, GA , MA, VA</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td>TN, WA, NE, AL</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td>IL, HI, OK, UT, LA, MI, NY, PR</td>
-<td align="center">2</td>
-</tr>
-<tr class="odd">
-<td>CT, MI, AR, MT, KS, KT, SD</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td>Other 23 states</td>
-<td align="center">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Health care in the United States isn’t bad; on the contrary, it’s quite good. We have access to technology and medicine that assists with a range of illnesses and disabilities and we are always making advances in healthcare. However, our system is severely biased and that significantly impacts the accessibility of care for those in need. This map is a basic exploration into how biased our healthcare system truly is. It shows the number of children’s hospitals per state, with the height of the state indicating the total children’s hospitals. Texas has the most children’s hospitals, totaling at 16, while California has the second most at 11. However, several states have no children’s hospital at all, making it difficult for a child to receive care when they need it. This creates disadvantaged populations in these states in particular, however, even in states where there are hospitals, much of the population is still disadvantaged.</p>
-<div class="figure">
-<img src="https://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png" />
-
-</div>
-<p>In states where there are children’s hospitals, they tend to be centralized in one area. For example, in Texas, where there are the most hospitals, they are all located in one place. Considering the size of the state, they should be more dispersed to provide equal access, however, the heatmap above shows that they are mostly located in the north east of the state, around Dallas, a major city. The cities that are displayed on this map have populations of 250,000 or greater, meaning that rural populations are still at a disadvantage for accessing children’s care. Areas that are dark green show a higher density of children’s hospitals, while lighter areas show a lower density. White areas show an absence of hospitals all together.</p>
+<p>Plants are often described as the lungs of the earth—taking in carbon dioxide and releasing oxygen into the atmosphere. It is a simple fact that we sometimes take for granted. As the seasons change to autumn in Virginia and we reach for a rake to begin cleaning up the yard, we are reminded of just how many leaves are produced by the trees above us.</p>
+<p>Trees are dropping their leaves as a response to the changes we feel outside such as the reduction in daylight and cooler temperatures. But, as autumn fades to winter in the northern hemisphere, it is the dawn of spring for those living south of the equator where plants are now beginning to grow. The change in the seasons creates this constant growing and dying of plant life. This cycle is important for our understanding of the global carbon cycle: a property used in studies to understand and predict Earth’s future climate.</p>
+<p>Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons—called the “breathing of the terrestrial biosphere<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>”—as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and contains information about children’s hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children’s hospital information, which was then uploaded and visualized using QGIS[^qgis]. Three-dimensional (3D) rendering was used to show the number of hospitals per state and a video was taken of the rendering. Ffmpeg<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> was used to crop the video to a size appropriate for the website. The data for the cities with populations greater than 250,000 was produced by Natural Earth[^naturalearth], which provides data of populated areas on a global scale. This data was narrowed down to only include cities in the USA with a population greater or equal to 250,000 using QGIS.</p>
-<div id="data-organization" class="section level3">
-<h3>Data Organization</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Author: Audrey Way</span>
-<span class="co"># Last edited: 2019-12-16</span>
-
-<span class="im">import</span> os
-<span class="im">import</span> os.path
-<span class="im">import</span> pandas <span class="im">as</span> pd
-
-my_dir <span class="op">=</span> <span class="st">&quot;.&quot;</span>
-
-my_file <span class="op">=</span> <span class="st">&quot;Hospitals.csv&quot;</span>
-file_path <span class="op">=</span> os.path.join(my_dir, my_file)
-
-<span class="co"># Creating the data frame</span>
-df <span class="op">=</span> pd.read_csv(<span class="st">&#39;Hospitals.csv&#39;</span>)
-
-<span class="co"># Getting children and state</span>
-gk <span class="op">=</span> df.groupby(<span class="st">&#39;NAICS_DESC&#39;</span>)
-gkk <span class="op">=</span> gk.get_group(<span class="st">&quot;CHILDREN&#39;S HOSPITALS, GENERAL&quot;</span>)
-
-<span class="co"># sorting values by state in ascending order</span>
-gkk.sort_values(by<span class="op">=</span>[<span class="st">&#39;STATE&#39;</span>], inplace<span class="op">=</span><span class="va">True</span>)
-
-<span class="co"># send data frame to csv file (load into QGIS)</span>
-gkk.to_csv(<span class="vs">r&#39;.\state_childrens2.csv&#39;</span>)</code></pre></div>
-<p>[^naturalearth] Natural Earth. Accessed 2019-12-18. Online: <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/" class="uri">https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/</a> [^python]: Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a> [^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-2-1. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a></p>
+<p>The data visualized above is the enhanced vegetation index (EVI), which is created by combining specific energy bands collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> satellite orbiting the earth about 16 times each day. EVI ranges between zero and one, represented by the varying brightness of green where zero (white) represents an absence of vegetation and one (dark green) represents a dense vegetation cover.</p>
+<p>Terra MODIS EVI data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>) for each month in the year 2002. The data were extracted using a computer program written in the Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> programming language with the help of the scientific dataset application program interface provided by the <a href="http://fhs.github.io/pyhdf/">pyhdf</a> package<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>.</p>
+<p>A script was used to scale the original data from 0.05 degree resolution (about five square kilometers) to 0.5 degree resolution (about 50 square kilometers) using the arithmetic means of valid EVI points within each 10 by 10 grid in the original data<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
+<p>For each month, the data were visualized in QGIS<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> using the same mapping properties and exported to PNG<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> image format. The image files were loaded into GIMP<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, optimized and exported as an animated GIF<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. The animated GIF was converted to a video (encoded in MPEG-4<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>) using FFmpeg<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>.</p>
 <div class="credit-line">
-<p>Author: Audrey Way Last edited: 2019-12-17.</p>
-</div>
+<p>Author: Tyler W. Davis. Last edited: 2019-10-28.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>HIFLD. Homeland Infrastructure Foundation-Level Data. Accessed 2019-12-1. Online: <a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27">https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1–6, 2008.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>About Terra. NASA.gov. Accessed 2019-10-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA’s Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: <a href="https://www.hdfeos.org/software/pyhdf.php" class="uri">https://www.hdfeos.org/software/pyhdf.php</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: <a href="https://bitbucket.org/labprentice/gepisat" class="uri">https://bitbucket.org/labprentice/gepisat</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref12">↩</a></p></li>
 </ol>
 </div>
 
