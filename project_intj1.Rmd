@@ -13,8 +13,8 @@ title: Projecting COVID-19 Cases Under No Intervention Measures
 <!----Overview--->
 ## Overview
 
-As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States [^COVID]. 
-With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures. 
+As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States [^COVID].
+With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures.
 
 While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
 
@@ -38,17 +38,17 @@ Where:
 
 - $\tau$ is the delay constant from incubation period to infection: $S(t) = S,\ S(t - \tau) = S_\tau...$ and so on.
 
-One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process. 
+One main assumption is that the total population remains constant, such that $S + I + R = N$. Also notice that the initial number of infected must be $\ge 1$ for there to be any movement at all. For the model, Recovered and Deaths were combined to R to facilitate MCMC process.
 
 From this model, the parameters, $\beta$ and $\gamma$, were estimated by MCMC[^MCMC] and available COVID-19 cases. Adaptive Metroplis Hastings and Delayed Rejection [^DRAM] was used for 10000 simulations. The likelihood function was assumed to be normal, with cost function being the sum of squared errors. All of these will not be possible without pymcmcstat[^PYMCMCSTAT]. Here were the assumptions and initial conditions for projection:
 
 - Basic state projection has an average population of about 6 million (US population / 50 states).
 
-- Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed. 
+- Susceptible population is the average population - (latest confirmed number  / 50 states) - latest removed.
 
 - Removed is (current recovered + current deaths) / 50 states.
 
-- The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date. 
+- The parameters from MCMC are used to project the number of infected cases 365 days into the future, starting from the latest available date.
 
 - Parameters $\beta$ and $\gamma$ are tuned within MCMC settings so that the reproduction rate cannot exceed $2.1$.
 
@@ -66,9 +66,9 @@ Based on the projection, for an "average state" of 6 million people, the number 
 
 The entire data aquisition and processing can be found [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/process.ipynb), with automated script [here](https://github.com/spatial-data-discovery/ay1920-2/blob/master/project/intj1/Map_generation_projection_script.py).
 
-The video above shows the number of COVID-19 cases (confirmed and deaths) to location over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population. 
+The video above shows the number of COVID-19 cases (confirmed and deaths) to location over the past two months. Notice the shift in scatter plot locations from March 9th to March 10th, where cases recorded are grouped from local-wise to state-wise. This state-wise report is once again reverted back to be more granular from March 21st to 22nd. Obvious hotspots of COVID-19 cases include NewYork, California, Wisconsin, and almost anywhere with highly dense population.
 
-[Johns Hopkins CSSEGIS](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports) offers detailed data about COVID-19 cases all over the world.  One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases. 
+[Johns Hopkins CSSEGIS](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports) offers detailed data about COVID-19 cases all over the world.  One major flaw of this database is its inconsistent formatting, especially in the "Recovered" column being all zeroes for regions within the US. This is a problem that the data collection team has to fix. Fortunately, MCMC simulations only relies on the number of confirmed cases.
 
 A class was created to extract and reorganize relevant information for mappings: dates, column filters, etc.
 
@@ -81,15 +81,15 @@ class preProcess():
         self.coords_format = {'Latitude', 'Longitude', 'Lat', 'Long_'}
         self.s_format = {'Province/State', 'Province_State'}
         self.__countries = sorted({country for d in self.__dates for country in self.__df[d][(self.c_format & set(self.__df[d].columns)).pop()]})
-        
+
         #1
         self.__cDates = sorted({i for i in self.dates if country in set(self.df[i][(self.c_format & set(self.df[i].columns)).pop()])} &
                                {j for j in self.dates if len(set(self.df[j][(self.coords_format & set(self.df[j].columns))]))})
 
         #2
         self.__country = self.countryBreakDown(country)
-        
-        #3 
+
+        #3
         self.__states = self.statesBreakDown()...        
 ```
 Where reusable variables are important in making the structure easier to identify for the users:
@@ -98,9 +98,9 @@ Where reusable variables are important in making the structure easier to identif
 #Break down stats by State/Province
 def countryBreakDown(self, country):
     #Data processing is getting more difficult than I though. Let's hope that they stop changing the data format as the day goes on.
-    pre_df = {d: self.df[d][self.df[d][(self.c_format & set(self.df[d].columns)).pop()] == country][[(self.s_format & set(self.df[d].columns)).pop(), 
+    pre_df = {d: self.df[d][self.df[d][(self.c_format & set(self.df[d].columns)).pop()] == country][[(self.s_format & set(self.df[d].columns)).pop(),
                                        sorted(self.coords_format & set(self.df[d].columns))[-1],
-                                       sorted(self.coords_format & set(self.df[d].columns))[0], 
+                                       sorted(self.coords_format & set(self.df[d].columns))[0],
                                        'Confirmed', 'Recovered', 'Deaths']].set_index((self.s_format & set(self.df[d].columns)).pop()) for d in self.cDates}
     #Add multi-Index
     for k, v in pre_df.items():
@@ -113,7 +113,7 @@ def countryBreakDown(self, country):
 #Statesbreak down. PASS IN self.country
 def statesBreakDown(self):
         statesdict = {"D.C":"District of Columbia","AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"}
-        DPfilter = {'Unassigned Location (From Diamond Princess)','Grand Princess Cruise Ship'} 
+        DPfilter = {'Unassigned Location (From Diamond Princess)','Grand Princess Cruise Ship'}
         #Use latest date as scheme for merge. This relies heavily on the latest date contains coords
         latest = self.cDates[-1]
         dff = self.country[latest].groupby(self.country[latest].index).sum()
@@ -129,7 +129,7 @@ def statesBreakDown(self):
             #before merging, filter state/province columns from previous dates
             if len(set(df.index) & DPfilter):
                 df.drop(index = list(set(df.index) & DPfilter), inplace = True)
-            filtered = [re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)[0] for x in df.index if len(re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)) == 1] 
+            filtered = [re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)[0] for x in df.index if len(re.findall(r'([A-Z]{2}|[A\.-Z]{3})', x)) == 1]
             if len(set(statesdict) & set(filtered)):
                 df.index = [statesdict[s] for s in filtered]
                 df = df.groupby(df.index).sum()
@@ -138,21 +138,20 @@ def statesBreakDown(self):
         #Depending on new locations, might need to add or remove from below
         dff.drop(index = ['Recovered','Virgin Islands', 'Northern Mariana Islands', 'Grand Princess', 'Diamond Princess', 'Puerto Rico'], inplace = True)
         dff.fillna(0, inplace = True) #Fill na for states whose values don't exist from previous dates
-        return dff 
+        return dff
 ```
 Overall, script functionality is contingent on the data collection teams and their willingness to be consistent.
 
-##Data Visualization
+## Data Visualization
 
 During this process, high performance processing modules like pandas[^PD], numpy[^NP], re[^RE], and itertools[^ITER] were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap[^BASEMAP], where pyplot[^PLT] was then used to project COVID-19 statistics:
 
-```python
-
-#Valid columns are: 'Confirmed', 'Recovered', 'Deaths'
+```{python, eval=FALSE}
+# Valid columns are: 'Confirmed', 'Recovered', 'Deaths'
 def barGraphPerCountry(self, c_frame, column):
 	fig, ax = plt.subplots(figsize = (12, 6))    
-	fig = sns.barplot(x = list(c_frame.index), 
-		          y = column, 
+	fig = sns.barplot(x = list(c_frame.index),
+		          y = column,
 		          data = c_frame,
 		          orient = 'v')
 	ax.set_xticklabels([])
@@ -166,13 +165,13 @@ def mapPlot(self, c_frame, column, save = 1):
 
 	'''Bookkeeping'''
 	lon, lat = cf[cf.columns[0]].values, cf[cf.columns[1]].values
-	confirmed, color = cf['Confirmed'].values, cf[column].values 
+	confirmed, color = cf['Confirmed'].values, cf[column].values
 	max_col = self.country[self.cDates[-1]][self.cDates[-1]][column].values
 
 	'''Draw map'''
 	fig = plt.figure(figsize = (20, 20))
 	m = Basemap(projection = 'lcc', resolution = 'h',
-	    width = 5E6, height = 4E6, 
+	    width = 5E6, height = 4E6,
 	    lat_1 = 26., lat_2 = 50, lat_0 = 35, lon_0 = -98)
 	m.shadedrelief()
 	m.drawcoastlines(color = 'gray')
@@ -201,7 +200,7 @@ def mapPlot(self, c_frame, column, save = 1):
 
 	if not save:
 	    plt.show()
-	    
+
 	else:
 	    if not os.path.exists('Progress'):
 		os.makedirs('Progress')
@@ -218,7 +217,7 @@ for i, date in enumerate(df.country.keys()):
 	print("Creating map for {}.........{}/{}".format(date, i + 1, len(df.country.keys())))
 	df.mapPlot(df.country[date], 'Deaths', 1)
 
-``` 
+```
 Then cv2[^CV] was used to stitch the graphs together. "Agg" mode was invoked to prevent matplotlib from outputing each graph it created:
 
 ```python
@@ -230,12 +229,12 @@ Then cv2[^CV] was used to stitch the graphs together. "Agg" mode was invoked to 
     size = (width, height)
     files = [cv2.resize(file, size) for file in files]
 
-    out = cv2.VideoWriter('ConfirmedvsDeaths.avi', cv2.VideoWriter_fourcc(*'XVID'), 60, size) 
+    out = cv2.VideoWriter('ConfirmedvsDeaths.avi', cv2.VideoWriter_fourcc(*'XVID'), 60, size)
     for file in files:
         for _ in range(15):
             out.write(file)
     out.release()
-``` 
+```
 
 
 <div class = "credit-line">
@@ -246,9 +245,9 @@ Last edited: 2020-05-04
 [^COVID]:"Coronavirus (COVID-19).” Google News, Google, news.google.com/covid19/map?hl=en-US&amp;gl=US&amp;ceid=US%3Aen.
 [^FLU]:“Disease Burden of Influenza.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/index.html.
 [^REOPEN]:“2019-2020 U.S. Flu Season: Preliminary Burden Estimates.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 17 Apr. 2020, www.cdc.gov/flu/about/burden/preliminary-in-season-estimates.htm.
-[^SIR]:Zhang, Zhi-yu, et al. “Analysis of a Delayed SIR Model with Nonlinear Incidence Rate.” Discrete Dynamics in Nature and Society, Hindawi, 27 Jan. 2009, www.hindawi.com/journals/ddns/2008/636153/. 
-[^MCMC]: Shaver, Ben. “A Zero-Math Introduction to Markov Chain Monte Carlo Methods.” Medium, Towards Data Science, 24 Dec. 2017, towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50. 
-[^DRAM]:Laine, M., et al. “Delayed Rejection Adaptive Metropolis.” DRAM, 2011, helios.fmi.fi/~lainema/dram/. 
+[^SIR]:Zhang, Zhi-yu, et al. “Analysis of a Delayed SIR Model with Nonlinear Incidence Rate.” Discrete Dynamics in Nature and Society, Hindawi, 27 Jan. 2009, www.hindawi.com/journals/ddns/2008/636153/.
+[^MCMC]: Shaver, Ben. “A Zero-Math Introduction to Markov Chain Monte Carlo Methods.” Medium, Towards Data Science, 24 Dec. 2017, towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50.
+[^DRAM]:Laine, M., et al. “Delayed Rejection Adaptive Metropolis.” DRAM, 2011, helios.fmi.fi/~lainema/dram/.
 [^PYMCMCSTAT]: https://pypi.org/project/pymcmcstat/
 [^PD]: https://pandas.pydata.org/
 [^NP]: https://numpy.org/
