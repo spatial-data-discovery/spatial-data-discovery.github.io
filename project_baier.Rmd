@@ -1,13 +1,10 @@
-
 ---
-
 title: Philippines School Chooser
-
 ---
 
 <a href="https://heather-baier.shinyapps.io/schoolChooser/">
 	<img src = "https://live.staticflickr.com/65535/49858701063_bf1824169c_b.jpg">
-<a>
+</a>
 
 ##  Overview
 
