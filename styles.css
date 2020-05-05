@@ -113,6 +113,7 @@ footer {
     display: inline-block;
     text-align: center;
     max-width: 910px;
+    width: 100%
 }
 
 .video-fr-wrapper {
@@ -125,6 +126,12 @@ footer {
 #scaledvideo {
     width: 100%;
     height: auto;
+}
+
+#burkevideo {
+    width: 100%;
+    height: auto;
+    max-width: 478px;
 }
 
 #way_table {

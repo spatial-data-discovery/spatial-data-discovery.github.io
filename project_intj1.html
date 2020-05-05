@@ -367,6 +367,9 @@ $(document).ready(function () {
     <li>
       <a href="project_dtwoods.html">Breathing of the Biosphere</a>
     </li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
@@ -416,10 +419,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_abgaddi.html">UNICEF and the Third SDG</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="projects.html">Previous Projects</a>
     </li>
   </ul>
 </li>
@@ -627,7 +626,11 @@ $(document).ready(function () {
 <div id="data-visualization" class="section level2">
 <h2>Data Visualization</h2>
 <p>During this process, high performance processing modules like pandas<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, numpy<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, re<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, and itertools<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> were helpful in data manipulation and multiIndexing during reformat. With the spread sheets organized, Map creation was made easy with basemap<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>, where pyplot<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> was then used to project COVID-19 statistics:</p>
-<p>```python #Valid columns are: ‘Confirmed’, ‘Recovered’, ‘Deaths’ def barGraphPerCountry(self, c_frame, column): fig, ax = plt.subplots(figsize = (12, 6))<br />
+<p>```python</p>
+</div>
+<div id="valid-columns-are-confirmed-recovered-deaths" class="section level1">
+<h1>Valid columns are: ‘Confirmed’, ‘Recovered’, ‘Deaths’</h1>
+<p>def barGraphPerCountry(self, c_frame, column): fig, ax = plt.subplots(figsize = (12, 6))<br />
 fig = sns.barplot(x = list(c_frame.index), y = column, data = c_frame, orient = ‘v’) ax.set_xticklabels([])</p>
 <p>def mapPlot(self, c_frame, column, save = 1): date = c_frame.columns.levels[0][0] cf = c_frame.copy(deep = True) cf.columns = cf.columns.droplevel(0) #Filter coordinates from US cases outside mainland (excluding Alaska) cf = cf[(cf[cf.columns[0]].between(-130, -55) &amp; cf[cf.columns[1]].between(26, 50))]</p>
 <pre><code>&#39;&#39;&#39;Bookkeeping&#39;&#39;&#39;

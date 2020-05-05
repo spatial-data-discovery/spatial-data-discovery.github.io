@@ -4,7 +4,7 @@ title: Out of Site Out of Mind, New Jersey's Stunted Superfund Cleanup
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+  <video id="burkevideo" controls preload="true" autoplay loop muted>
     <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/NewJerseyNationalPrioritiesList.mp4" type="video/mp4" >
   </video>
 </div>
@@ -31,7 +31,7 @@ Since 1995 when the Orphan Fund lost its tax funding, the EPA has had to depend 
 This funding is often unpredictable since it is dependent on the leanings of the current administration.
 Additionally, some local governments, specifically in the New Jersey area, have stated that remediation efforts by the EPA are not efficient, actually increase levels of pollution in their air, water and soil, and negatively affect property prices. ("Not so Super," 1994, p. 16).
 
-As you can see in the above visualization in 2019 there remains 113 sites considered active. 
+As you can see in the above visualization in 2019 there remains 113 sites considered active.
 A total of 36 have been deleted over 40 years of this law being in place, making the rate of deletion for New Jersey about 0.9 sites per year.
 Furthermore, 73 of the 113 sites still considered active, have been on the National Priorities List since the 1980s.
 
