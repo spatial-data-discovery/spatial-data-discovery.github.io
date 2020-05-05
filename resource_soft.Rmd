@@ -53,6 +53,9 @@ title: "Resources | Software"
 [exifread](https://github.com/ianare/exif-py)
 :   Python package for reading exchangeable image file format (EXIF) metadata.[^exif19]
 
+[geopy](https://geopy.readthedocs.io/en/stable/)
+:   A Python client for several popular geocoding web services.
+
 [gpsphoto](https://pypi.org/project/gpsphoto/)
 :   Return, modify, or remove GPS data from JPEG or TIFF Exif data.[^jessgwiii]
     Requires ExifRead, piexif, and PIL.
