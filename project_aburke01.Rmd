@@ -100,7 +100,7 @@ Retrieved May 4, 2020, from https://www.epa.gov/superfund/what-superfund
 
 <div class="credit-line">
 Author: Alexandra Burke.
-Last edited: 2020-05-04.
+Last edited: 2020-05-05.
 </div>
 
 [^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-02. Online: https://www.gimp.org/
