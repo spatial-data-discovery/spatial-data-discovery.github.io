@@ -40,6 +40,8 @@ navbar:
               href: project_gnmaniaci.html
             - text: "Hidden in the Light"
               href: project_pulakraj.html
+            - text: "Land Development in Asia"
+              href: project_emmgillstrick.html
             - text: "Opioid Epidemic"
               href: project_jlollen.html
             - text: "Philippines School Chooser"
@@ -52,8 +54,6 @@ navbar:
               href: project_rhan9.html
             - text: "Spread of COVID-19 in the USA"
               href: project_mkcusick.html
-            - text: "Spread of Urbanization"
-              href: project_emmgillstrick.html
             - text: "Strictness of COVID-19 Policies"
               href: project_msuri.html
             - text: "Stunted Superfund Cleanup"
