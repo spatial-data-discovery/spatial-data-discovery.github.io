@@ -23,8 +23,8 @@ What they may not know, is that New Jersey has another serious environmental and
 The National Priorities List (NPL) comes from the CERLA (Comprehensive Environmental Response, Compensation and Liability Act) passed in 1980 under President Jimmy Carter. ("What Is Superfund?," 2018)
 
 Since its passage, countless sites have been proposed and rated on the Hazard Ranking System, with the ultimate goal of being deleted.
-The "EPA may delete a final NPL site if it determines that no further response is required to protect human health or the environment.” ("Superfund: National," 2018)
-Unfortunately, some sites have been re-added to the list at a later date due to community outcry and the rate of deletion has been seen as in-efficient at best throughout this law’s 40-year history. ("Not so Super," 1994, p. 16)
+The "EPA may delete a final NPL site if it determines that no further response is required to protect human health or the environment." ("Superfund: National," 2018)
+Unfortunately, some sites have been re-added to the list at a later date due to community outcry and the rate of deletion has been seen as in-efficient at best throughout this law's 40-year history. ("Not so Super," 1994, p. 16)
 For example, the "Cornell Dubilier Electronics plant in South Plainfield. The E.P.A., which began work on the site in 1997, said the cleanup would not be completed until 2034." (Holmberg, 2008)
 
 Some of the challenges facing the EPA include the way the law itself is constructed.
@@ -35,9 +35,15 @@ Since 1995 when the Orphan Fund lost its tax funding, the EPA has had to depend 
 This funding is often unpredictable since it is dependent on the leanings of the current administration.
 Additionally, some local governments have stated that remediation efforts by the EPA are not efficient, potentially increase levels of pollution in their air, water and soil, and negatively affect property prices. (Schneider, 1993, p. 7)
 
+<<<<<<< HEAD
 As you can see in the above visualization, there were 114 active sites in 2019.
 A total of 35 have been deleted over 40 years of CERLA being in place, making the rate of deletion for New Jersey about 0.875 sites per year.
 Furthermore, of the 114 sites still considered active, over 70 have been on the National Priorities List since the 1980s.
+=======
+As you can see in the above visualization, there were 113 active sites in 2019.
+A total of 36 have been deleted over 40 years of CERLA being in place, making the rate of deletion for New Jersey about 0.9 sites per year.
+Furthermore, of the 113 sites still considered active, 74 have been on the National Priorities List since the 1980s.
+>>>>>>> cc2de7445705ac404ecb911f02a40bfaa3d7eabe
 
 Contaminated sites hold real environmental and health consequences for those living near them.
 Even though remediation is an extremely time consuming and expensive endeavor, the impacts of toxic waste cannot be ignored or delayed.

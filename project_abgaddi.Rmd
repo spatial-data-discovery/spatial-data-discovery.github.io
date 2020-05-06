@@ -55,7 +55,7 @@ Classifications for each map do not have an equal interval since they were based
 |--------------|------------|---------------|------------|
 |*Colour*      | *Value*    |*Colour*       | *Value*    |
 | Light Green  |  < -0.23%  | Yellow/Green  |  < -3.00   |
-| Green        |  < -0.01%  |Light Green    |  < -2.00   |
+| Green        |  < -0.01%  |Light Green    |  < -1.50   |
 | Yellow       |  < 0.00%   |Green          |  < 0.00    |
 | Orange       |  < 0.17%   |Blue           |  < 0.07    |
 | Red          |  < 10.0%   |Dark Blue      |  < 0.30    |

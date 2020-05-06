@@ -11,7 +11,7 @@
 
 
 
-<title>Spread of Urbanization</title>
+<title>Spread of Land Development in Asia</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -331,6 +331,9 @@ $(document).ready(function () {
       <a href="project_pulakraj.html">Hidden in the Light</a>
     </li>
     <li>
+      <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
     </li>
     <li>
@@ -347,9 +350,6 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_mkcusick.html">Spread of COVID-19 in the USA</a>
-    </li>
-    <li>
-      <a href="project_emmgillstrick.html">Spread of Urbanization</a>
     </li>
     <li>
       <a href="project_msuri.html">Strictness of COVID-19 Policies</a>
@@ -448,21 +448,27 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Spread of Urbanization</h1>
+<h1 class="title toc-ignore">Spread of Land Development in Asia</h1>
 
 </div>
 
 
+<div class="video-wrapper">
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/project_emmgillstrick.mp4" type="video/mp4" > </video></p>
+</div>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>will add</p>
+<p>As the human population continues to grow exponentially we develop more and more natural land to build cities, factories, croplands, and numerous other man-made structures. Since 2001 the population in Asia alone has grown by more than a billion people, with 50% of people living in urban areas. It is important to be able to visualize this human impact on the natural world as we move towards a future where more and more resources and space will be necessary to keep up with the growing population. In the animation above we can see this human encroachment in Asia (with urban areas and cropland represented by red and green respectively) on undeveloped land (in white) throughout 2001-2018.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>The data visualized above is the Land Cover Climate Modeling Grid collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and Aqua<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> satellites. Terra passes from north to south across the equator each morning, while Aqua passes south to north over the equator each afternoon. The data contains values representing different land cover types ranging from 0 to 15.</p>
-<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. The data were extracted and put into yearly raster files with a computer program written in Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
-<p>For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG image format.</p>
-<p>Original Data Set Values:</p>
+<p>The data visualized above is the Land Cover Climate Modeling Grid collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and Aqua<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> satellites. Terra passes from north to south across the equator each morning, while Aqua passes south to north over the equator each afternoon. The data contains values representing different land cover types ranging from 0 to 16.</p>
+</div>
+<div id="data-conversion-process" class="section level2">
+<h2>Data Conversion Process</h2>
+<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>format (specifically hdf4) from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. Each HDF4 file contained multiple subdatasets, data from “Majority_Land_Cover_Type_1” variable were extracted from each file and put into yearly raster files (.txt) in ASCII format with a computer program written in Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> with the assistance of gdal<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
+<p>For each raster file, the data was visualized in QGIS<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> and exported to PNG<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> image format. Each image was loaded into GIMP<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, zoomed in onto Asia and exported as an animated GIF<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>. This GIF was then converted to a .mp4 using FFmpeg<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
+<p><strong>Original Data Set Values:</strong></p>
 <table>
 <thead>
 <tr class="header">
@@ -528,16 +534,20 @@ $(document).ready(function () {
 <td>13</td>
 </tr>
 <tr class="odd">
-<td>Snow and Ice</td>
+<td>Natural Vegetation Mosaic</td>
 <td>14</td>
 </tr>
 <tr class="even">
-<td>Barren or Sparsely Vegetated</td>
+<td>Snow and Ice</td>
 <td>15</td>
+</tr>
+<tr class="odd">
+<td>Barren or Sparsely Vegetated</td>
+<td>16</td>
 </tr>
 </tbody>
 </table>
-<p>Modified Data Set Values:</p>
+<p><strong>Modified Data Set Values:</strong></p>
 <table>
 <thead>
 <tr class="header">
@@ -551,7 +561,7 @@ $(document).ready(function () {
 <td>0</td>
 </tr>
 <tr class="even">
-<td>Undeveloped Land (1-11, 14-15)</td>
+<td>Undeveloped Land (1-11, 14-16)</td>
 <td>1</td>
 </tr>
 <tr class="odd">
@@ -571,10 +581,16 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>About Terra. NASA.gov. Accessed 2019-04-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>About Terra. NASA.gov. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>About Aqua. Nasa.gov. Accessed 2020-04-28. Online: <a href="https://eospso.nasa.gov/missions/aqua" class="uri">https://eospso.nasa.gov/missions/aqua</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4">↩</a></p></li>
+<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Translator library for raster and vector geospatial data format. Online: <a href="https://gdal.org/" class="uri">https://gdal.org/</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref10">↩</a></p></li>
 </ol>
 </div>
 
