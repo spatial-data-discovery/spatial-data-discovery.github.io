@@ -466,8 +466,8 @@ $(document).ready(function () {
 </div>
 <div id="data-conversion-process" class="section level2">
 <h2>Data Conversion Process</h2>
-<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>format (specifically hdf4) from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. Each HDF4 file contained multiple subdatasets, data from “Majority_Land_Cover_Type_1” variable were extracted from each file and put into yearly raster files (.txt) in ASCII format with a computer program written in Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> with the assistance of gdal<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>. These arrays of data were also put into a new HDF5 file that can be easily viewed, each year a different dataset, as the original files were large and contained excess information not relevant to this project. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
-<p>For each raster file, the data was visualized in QGIS[^qgis] and exported to PNG<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> image format. Each image was loaded into GIMP<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>, zoomed in onto Asia and exported as an animated GIF<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. This GIF was then converted to a .mp4 using FFmpeg<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
+<p>MODIS Land Cover Type data sets were downloaded in HDF<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>format (specifically hdf4) from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/products/mcd12c1v006/">LP DAAC</a>) for each year from 2001-2018. Each HDF4 file contained multiple subdatasets, data from “Majority_Land_Cover_Type_1” variable were extracted from each file and put into yearly raster files (.txt) in ASCII format with a computer program written in Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> with the assistance of gdal<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>. To better show urbanization and development of land, all undeveloped land cover types were reclassified as value 1, cropland as value 2, and urban land cover as 3. Water remained the same as 0.</p>
+<p>For each raster file, the data was visualized in QGIS<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> and exported to PNG<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> image format. Each image was loaded into GIMP<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, zoomed in onto Asia and exported as an animated GIF<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>. This GIF was then converted to a .mp4 using FFmpeg<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
 <p><strong>Original Data Set Values:</strong></p>
 <table>
 <thead>
@@ -561,7 +561,7 @@ $(document).ready(function () {
 <td>0</td>
 </tr>
 <tr class="even">
-<td>Undeveloped Land (1-11, 14-15)</td>
+<td>Undeveloped Land (1-11, 14-16)</td>
 <td>1</td>
 </tr>
 <tr class="odd">
@@ -586,10 +586,11 @@ $(document).ready(function () {
 <li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4">↩</a></p></li>
 <li id="fn5"><p>Translator library for raster and vector geospatial data format. Online: <a href="https://gdal.org/" class="uri">https://gdal.org/</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9">↩</a></p></li>
+<li id="fn6"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref10">↩</a></p></li>
 </ol>
 </div>
 
