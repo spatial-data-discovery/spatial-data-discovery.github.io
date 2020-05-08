@@ -54,5 +54,5 @@ Last edited: 2020-05-08.
 [^python]: Python. Copyright (C) 2001--2020. Python Software Foundation. Accessed 2019-05-03. Online: https://www.python.org/
 [^pandas]: Pandas Python Package Version 1.0.3 Released 2020-03-18. Accessed 2020-05-07. Online: https://pandas.pydata.org/
 [^matplotlib]: J. D. Hunter, "Matplotlib: A 2D Graphics Environment", Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, 2007. Accessed 2020-05-07
-[^tutorial]: Savvas Tjortjoglous's Python tutorial to create basketball court. Accessed 2020-0505 Online: http://savvastjortjoglou.com/nba-shot-sharts.html
+[^tutorial]: Savvas Tjortjoglous's Python tutorial to create basketball court. Accessed 2020-05-03 Online: http://savvastjortjoglou.com/nba-shot-sharts.html
 [^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2020-05-08. Online: http://www.libpng.org/pub/png/
