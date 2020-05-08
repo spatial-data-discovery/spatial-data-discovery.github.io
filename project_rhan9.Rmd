@@ -32,17 +32,17 @@ I thought it would be a good idea to display Antetokounmpo's shots, because he h
 
 In order to create the shot charts, I first needed to draw a court. This was done by using the python package matplotlib[^matplotlib],[NBA basketball court dimensions](http://sportsknowhow.com/basketball/dimensions/nba-basketball-court-dimensions.html), and following Savvas Tjortjoglou's basketball court tutorial[^tutorial]. The tutorial established dimensions of the court by creating a scatter plot of all the shots using the x and y data. From there the center of the hoop was determined to be the origin (0,0) and about 10 units of the (x,y) data represented 1 foot of shot distance. For example, a shot taken from the left side of the court with a shot distance of 2 feet with a 'x' location of -15 would be considered to be taken from about 1.5 feet to the left of the hoop.
 
-After the court was created, I used to plot all shots using the x,y locations from each year's Pandas dataframe.
+After the court was created, I used matplotlib to plot all shots using the x,y locations from each year's Pandas dataframe.
 The completed images were exported to PNG[^png] image format.
 
 For the charts, the green circles represent made shots and the tan circles represent missed shots. These colors were chosen because they are the primary colors of Giannis's team, the Milwaukee [Bucks](https://teamcolorcodes.com/milwaukee-bucks-color-codes/).
-The fill colors were removed so the overlapping circles are a bit easier to see.
+The fill colors were removed so the overlapping circles would be easier to see.
 
 From the shot charts, you can clearly tell the growth Giannis has had since he entered the league in 2013-2014. The sheer volume of shots is totally different from his first season(13-14) to his most current season (19-20). There are clear differences in the number of outside shots taken in his first 3 seasons (13-15) compared to his past 3 nba seasons (16-19).
 As he has gotten older, he has become more comfortable with shooting from the 3 point arc. This can be seen starting from the 17-18 shot chart.
 
 His MVP Year(18-19) shotchart shows his maturity as a scorer, as he was able to score consistently from all over the court.
-Even though the 19-20 season ended prematurely, Giannis was on record to attempt and make more shots than he had in all previous seasons.
+Even though the 19-20 season ended prematurely, Giannis was on pace to attempt and make more shots than he had in all previous seasons.
 The hoop is barely visible in these charts, because his favorite shot has always been a layup or dunk near the basket.
 
 <div class="credit-line">
