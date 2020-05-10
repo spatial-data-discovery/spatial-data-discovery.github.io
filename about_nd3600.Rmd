@@ -15,7 +15,7 @@ date: "Edited: 2020-13-2"
 - I was born in The Netherlands
 
 - I have a Yorkie
-![This is a picture of the Celtics Starting Lineup](https://mk0slamonlinensgt39k.kinstacdn.com/wp-content/uploads/2020/01/Celtics-1040x700-Web.jpg)
+![This is a picture of the Celtics Starting Lineup](https://fadeawayworld.net/wp-content/uploads/2019/08/2B9D83F7-BE51-4D87-8766-18CE40D25036.jpeg?x19193)
 
 ### Sample Script
 [keywords (.py)](scripts/keywords.py)
