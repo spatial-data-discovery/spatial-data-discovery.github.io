@@ -1,6 +1,7 @@
 import collections
 import pandas as pd0
 import argparse
+import sys
 if __name__ == "__main__":
     # Check command-line arguments
 
@@ -11,15 +12,23 @@ if __name__ == "__main__":
                         help='The point of this script is to help summarize long readings.It finds the most used words in a text and returns shorter and simpler articles which go over these concepts.')
     args=parser.parse_args()
 
-
-    file = open('NDFM.txt', encoding="utf8")#input file
+    try:
+        file = open("NDFM.txt")
+    except FileNotFoundError:
+        print('File does not exist')
+        sys.exit()
+    #file = open('NDFM.txt', encoding="utf8")#input file
     a= file.read()
 
 
     # Stopwords in text file
+    try:
+        stopwords = set(line.strip() for line in open('stopwords.txt'))
+        stopwords = stopwords.union(set(['mr','mrs','one','two','said']))
+    except FileNotFoundError:
+        print('File does not exist')
+        sys.exit()
 
-    stopwords = set(line.strip() for line in open('stopwords.txt'))
-    stopwords = stopwords.union(set(['mr','mrs','one','two','said']))
 
     wordcount = {}
     for word in a.lower().split():
