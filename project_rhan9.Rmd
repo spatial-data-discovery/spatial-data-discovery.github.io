@@ -22,23 +22,23 @@ When the National Basketball Association(NBA) [cancelled](https://www.nba.com/ar
 
 Inspired by posts by [Kirk Goldsberry](https://fivethirtyeight.com/features/how-mapping-shots-in-the-nba-changed-it-forever/) and a LA Times graphic about [Kobe Bryant's](https://graphics.latimes.com/kobe-every-shot-ever/) career shots, I decide to visualize the growth of an NBA player through his shot charts. I thought this project would help fill the void in my life caused by the lack of NBA basketball.
 
-In a reality without COVID NBA playoff games would be occuring right now.
+In a reality, without COVID, NBA playoff games would be occuring right now!
 
 ### Data Description
 The visualizations above are the shots attempted by [Giannis Antetokounmpo](https://en.wikipedia.org/wiki/Giannis_Antetokounmpo) during all his regular season games.
 
-The data used to create the visuals were extracted using a script written in the Python[^python] programming language with the help of a NBA API Client package called “nba_api”.
+The data used to create the visuals were extracted using a script written in the Python[^python] programming language with the help of a NBA API Client package called "nba_api".
 [nba_api](https://github.com/swar/nba_api/blob/master/README.md) is an API Client for the official NBA [website](www.nba.com) that contains various api endpoints that can provide specific NBA data to the user. More examples of usage can be found [here](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/examples.md).
 
-Specifically I used the endpoint ‘shotchartdetail’ to access my data. [Shotchardetail](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/shotchartdetail.md) allowed me to access NBA stats data,that had recorded shot locations and shot distances (units = ft.) for every shot a player took during a specific NBA season. With the help of the Pandas[^pandas] python package the same script was used to clean and extract the necessary shot location data columns (x,y) in the form of a Pandas DataFrame. I was lucky to have found this api, because most of the NBA datasets I found did not have location data
+Specifically I used the endpoint 'shotchartdetail' to access my data. [Shotchardetail](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/shotchartdetail.md) allowed me to access NBA stats data that had recorded shot locations and shot distances (units = ft.) for every shot a player took during a specific NBA season. With the help of the Pandas[^pandas] python package the same script was used to clean and extract the necessary shot location data columns (x,y) in the form of a Pandas DataFrame. I was lucky to have found this api, because most of the NBA datasets I found did not have location data.
 
 For accuracy purposes, the number of rows for each outputted DataFrame was cross referenced with Total Field Goal Attempts(FGA) via the official NBA stats [website](https://stats.nba.com/player/203507/?Season=2019-20&SeasonType=Regular%20Season&PerMode=Totals).
 
 
 ### Visualization Process
-I thought it would be a good idea to display Antetokounmpo's shots, because he has quickly gone from an unknown player in his first season, 2013-2014, to a superstar and the Most Valuable Player(MVP) of the NBA in his last complete season 2018-2019. He was the favorite to repeat as MVP for the 2019-2020 season.
+I thought it would be a good idea to display Antetokounmpo's shots, because he has quickly gone from an unknown player in his first season, 2013-2014, to a superstar and the Most Valuable Player (MVP) of the NBA in his last complete season 2018-2019. He was the favorite to repeat as MVP for the 2019-2020 season.
 
-In order to create the shot charts, I first needed to draw a court. This was done by using the python package matplotlib[^matplotlib],[NBA basketball court dimensions](http://sportsknowhow.com/basketball/dimensions/nba-basketball-court-dimensions.html), and following Savvas Tjortjoglou's basketball court tutorial[^tutorial]. The tutorial established dimensions of the court by creating a scatter plot of all the shots using the x and y data. From there the center of the hoop was determined to be the origin (0,0) and about 10 units of the (x,y) data represented 1 foot of shot distance. For example, a shot taken from the left side of the court with a shot distance of 2 feet with a 'x' location of -15 would be considered to be taken from about 1.5 feet to the left of the hoop.
+In order to create the shot charts, I first needed to draw a court. This was done by using the python package matplotlib[^matplotlib], [NBA basketball court dimensions](http://sportsknowhow.com/basketball/dimensions/nba-basketball-court-dimensions.html), and following Savvas Tjortjoglou's basketball court tutorial[^tutorial]. The tutorial established dimensions of the court by creating a scatter plot of all the shots using the x and y data. From there the center of the hoop was determined to be the origin (0,0) and about 10 units of the (x,y) data represented 1 foot of shot distance. For example, a shot taken from the left side of the court with a shot distance of 2 feet with a 'x' location of -15 would be considered to be taken from about 1.5 feet to the left of the hoop.
 
 After the court was created, I used matplotlib to plot all shots using the x,y locations from each year's Pandas dataframe.
 The completed images were exported to PNG[^png] image format.

@@ -13,8 +13,8 @@ title: Projecting COVID-19 Cases Under No Intervention Measures
 <!----Overview--->
 ## Overview
 
-As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) is reported within the United States [^COVID].
-With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], It is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures.
+As of April 28th, the number of confirmed COVID-19 cases world-wide rises to about 3.08 million, with one third of those cases (1.03 million) reported within the United States [^COVID].
+With the number of deaths exceeding that of the common flu [^FLU] within just a short period of time, and as some states are beginning to reopen [^REOPEN], it is important look back at the effectiveness of social distancing and lockdown by comparing the projection of infectives under no intervention measures.
 
 While there are many epidemiological models available, the bread and butter of modeling any infectious diseases will have to be SIR (Susceptible, Infectives, Removed). For this project, the simpler SIR model is modified to include a delay factor [^SIR]:
 

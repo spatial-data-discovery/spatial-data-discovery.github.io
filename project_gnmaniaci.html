@@ -11,8 +11,9 @@
 
 
 
-<title>Vaccination Coverage of the Measles Mumps Rubella Vaccine VS. Popularity of Google Searches Including Terms: MMR &amp; AUTISM</title>
+<title>Google Trends &amp; Vaccination Rates</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -313,16 +314,13 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
+      <a href="project_grluisi.html">Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
       <a href="project_nd3600.html">Fast Food and Obesity</a>
-    </li>
-    <li>
-      <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
@@ -332,6 +330,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
+      <a href="project_irthompson01.html">Oceans and Climate</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
@@ -448,7 +449,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Vaccination Coverage of the Measles Mumps Rubella Vaccine VS. Popularity of Google Searches Including Terms: “MMR” &amp; “AUTISM”</h1>
+<h1 class="title toc-ignore">Google Trends &amp; Vaccination Rates</h1>
 
 </div>
 
@@ -460,14 +461,14 @@ $(document).ready(function () {
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>The internet has the power to spread thoughts and ideas all over the world. Whether this information is true or false, it can spread like wildfire. Because of this, it is necessary to observe whether the internet has had an effect on differing pieces of society.</p>
-<p>One of the bigger issues circling the internet over the past decade has been whether vaccination causes autism. In 2007 Jenny McCarthy spoke out against vaccines when she was invited to talk on Oprah, stating that the Measles, Mumps, Rubella (MMR) Vaccine caused her child to develop autism <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. However, since that point many academic journals have claimed otherwise. In 2010 The Lancet retracted a major article published 12 years prior, which linked autism to the MMR Vaccine <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. A study done in 2015 found no link between the MMR Vaccine and Autism <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
-<p>It is likely that during the time each event occurred, a google search containing similar terms would produce the relevant article of that period. By looking at the popularity of Google searches including the terms “MMR” and “Autism”, we can see whether any of the events mentioned above have impacted vaccination coverage over time.</p>
+<p>One of the bigger issues circling the internet over the past decade has been whether vaccination causes autism. In 2007 Jenny McCarthy spoke out against vaccines when she was invited to talk on Oprah, stating that the Measles, Mumps, Rubella (MMR) Vaccine caused her child to develop autism. <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, since that point many academic journals have claimed otherwise. In 2010 The Lancet retracted a major article published 12 years prior, which linked autism to the MMR Vaccine. <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> A study done in 2015 found no link between the MMR Vaccine and Autism. <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>It is likely that during the time each event occurred, a google search containing similar terms would produce the relevant article of that period. By looking at the Google trend popularity (GTP) of searches including the terms “MMR” and “Autism,” we can see whether any of the events mentioned above have impacted vaccination coverage over time.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
 <p>The data visualized above shows the behavior of two variables in relation to each other; MMR vaccination coverage and popularity of Google search terms. Magnitude is not visualized.</p>
-<p>The Google search term data was downloaded from Google Trends<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> and the vaccination coverage was downloaded from the Center for Disease Control (CDC). The Google trends data was downloaded in 50 different CSVs, one for each state, and had monthly data, when yearly data was what needed to be compared. A Python<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> Script was used to average the monthly data for each year and reformat it into one CSV so it could be easily compared with the vaccination coverage data. Once both data were in the same format percent change was calculated between each year using the following formula in excel<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>: <span class="math display">\[(x_2 - x_1)/|x_1|\]</span>. Zero was inputted as the no data value. In order to avoid divide by zero errors, all zeros were replaced by 0.00000001. Once this information was established, another python script was built to compare the behaviors of the 2 functions and sorted them on whether they were increasing, decreasing, or there was no change/no data available. Because changing all the zeros to 0.00000001 would have caused the percent change formula to produce a huge number if this number was used as X_1, the script counted all these inputs as no data.</p>
-<p>For each change in years, the data was visualized in QGIS<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> using the same mapping properties and exported to png<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> format. The image files were loaded into GIMP<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, optimized and exported as an animated GIF<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. The animated gif was converted to a video using an ezgif<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> an online video converter.</p>
+<p>The Google search term data was downloaded from Google Trends<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> and the vaccination coverage was downloaded from the Center for Disease Control (CDC). The Google trends data was downloaded in 50 different CSVs, one for each state, and had monthly data, when yearly data was what needed to be compared. A Python<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Script was used to average the monthly data for each year and reformat it into one CSV so it could be easily compared with the vaccination coverage data. Once both data were in the same format percent change was calculated between each year using the following formula in excel<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>: <span class="math display">\[(x_2 - x_1)/|x_1|\]</span> Zero was inputted as the no data value. In order to avoid divide by zero errors, all zeros were replaced by 0.00000001. Once this information was established, another python script was built to compare the behaviors of the 2 functions and sorted them on whether they were increasing, decreasing, or there was no change/no data available. Because changing all the zeros to 0.00000001 would have caused the percent change formula to produce a huge number if this number was used as <span class="math inline">\(X_1\)</span>, the script counted all these inputs as no data.</p>
+<p>For each change in years, the data was visualized in QGIS<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> using the same mapping properties and exported to png<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> format. The image files were loaded into GIMP<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>, optimized and exported as an animated GIF<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. The animated gif was converted to a video using an ezgif<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> an online video converter.</p>
 <div class="credit-line">
 <p>Author: Gianna N. Maniaci. Last edited: 2020-05-04.</p>
 </div>
@@ -475,17 +476,17 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>New York Times. Online: <a href="https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html" class="uri">https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25562790" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/25562790</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Google Trends Data. Accessed 2020-04-15. Online: <a href="https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=mmr%20autism">https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=mmr%20autism</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Accessed 2020-04. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Microsoft Excel. Copyright (C) 2020. Accessed 2020-04. Online: <a href="https://www.microsoft.com/en-us/microsoft-365/excel" class="uri">https://www.microsoft.com/en-us/microsoft-365/excel</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Portable Network Graphics (PNG). Copyright 1995–2020 Greg Roelofs. Accessed 2020-04. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-01. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2020-05-01. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref10">↩</a></p></li>
-<li id="fn11"><p>EZGIF. Accessed: 2020-05-01. Online: <a href="https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif" class="uri">https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif</a><a href="#fnref11">↩</a></p></li>
+<li id="fn1"><p>New York Times. Online: <a href="https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html" class="uri">https://www.nytimes.com/2014/04/22/opinion/bruni-autism-and-the-agitator.html</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2831678/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>PubMed US National Library of Medicine National Institute of Health. Accessed 2020-04-15. Online: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25562790" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/25562790</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Google Trends Data. Accessed 2020-04-15. Online: <a href="https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=mmr%20autism" class="uri">https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=mmr%20autism</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Accessed 2020-04. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Microsoft Excel. Copyright (C) 2020. Accessed 2020-04. Online: <a href="https://www.microsoft.com/en-us/microsoft-365/excel" class="uri">https://www.microsoft.com/en-us/microsoft-365/excel</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-04. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Portable Network Graphics (PNG). Copyright 1995–2020 Greg Roelofs. Accessed 2020-04. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-01. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2020-05-01. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>EZGIF. Accessed: 2020-05-01. Online: <a href="https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif" class="uri">https://ezgif.com/gif-to-mp4/ezgif-4-f6774f2a7211.gif</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

@@ -1,5 +1,5 @@
 ---
-title: Global Earthquake Frequency
+title: Earthquake Frequency
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

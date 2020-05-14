@@ -6,14 +6,16 @@ subtitle: An exploration of UNICEF's progress towards reaching Good Health & Wel
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/changefinal.png "percent change")
 
 ## Overview
-In 2015, the UN created the Sustainable Development Goals (SDGs)[^sdg] with their strategies for reducing the overall global poverty in the future.  
-As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.  
-For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF’s progress.  
+In 2015, the UN created the Sustainable Development Goals (SDGs)[^sdg] with their strategies for reducing the overall global poverty in the future.
+As UNICEF is an agency under the UN, the organization is also working to fulfill these goals specifically for the children.
+For previous classes, I have looked at the SDGs and scholarly articles related to them, and since it has been five years from when this initiative began, I was curious to see UNICEF's progress.
+
 Looking around on their website, there is already a lot of subjective progress and analysis on the collected data.
 However, there are seventeen SDGs and the methodology that is used is too complex to look at briefly and understand right away.
 So, I narrowed down the analysis to just look at UNICEFs goal that 'every child survives and thrives', which falls within the third SDG for Good Health and Well-Being.
 And with the current events, I felt this could relevant in a larger scale.
 Out of all the indicators used to measure this goal, the three quantitative indicators that had the most data were neonatal mortality rate, under age five mortality rate, and the percentage of infants who received the third dose of a DTP vaccine.
+
 The map above shows a simple representation of whether or not a country has improved since the SDGs were created (in green) or has worsened over the years (red).
 A breakdown of the class breaks and how they were chosen can be found below.
 Although the positive percent changes are relatively small, it is still an improvement that should not discredit UNICEFs efforts in reaching this difficult goal for better overall health.
@@ -21,8 +23,8 @@ Furthermore, every developing country has its own unique needs and might measure
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/comparisons.png "comparisons")
 
-The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators[^health]. 
-An explanation of how this was calculated can be found in the Data Description below along with the class breaks.  
+The two maps above go a bit more in depth by showing where the countries stand in terms of UNICEF’s selected goal for the indicators[^health].
+An explanation of how this was calculated can be found in the Data Description below along with the class breaks.
 On one hand it seems that majority of the countries that have met the goal or are above the goal, which are represented in blue, are the developed countries.
 On the other hand, a lot of the countries that are far below the goal, which are represented by the light yellow/green, are mostly in Africa.
 Looking closer at the indicators of these countries, it shows there is still a significant disparity between developing and developed countries that need more focus before coming close to UNICEFs goal.
@@ -73,7 +75,7 @@ Last edited: 2020-05-04
 
 [^indicator]: Indicator Profiles used by UNICEF. Accessed 2020-04-23. Online: https://data.unicef.org/indicator-profile/
 
-[^UNICEF]: UNICEF Data Warehouse. Accessed 2020-04-28. Online: https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.CME_MRM0+CME_MRY0T4+IM_DTP3._T.&startPeriod=2015&endPeriod=2020
+[^UNICEF]: UNICEF Data Warehouse. Accessed 2020-04-28. Online: [https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.CME_MRM0+CME_MRY0T4+IM_DTP3._T.&startPeriod=2015&endPeriod=2020](https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.CME_MRM0+CME_MRY0T4+IM_DTP3._T.&startPeriod=2015&endPeriod=2020)
 
 [^archub]: ArcGIS Hub. Countries in WGS 84 Shapefile. Accessed 2020-05-03. Online: https://hub.arcgis.com/datasets/a21fdb46d23e4ef896f31475217cbb08_1
 

@@ -1,6 +1,6 @@
 ---
 title: Monitoring Climate Change Through the Ocean
-author: Ian R. Thompson
+author-meta: Ian R. Thompson
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
@@ -9,28 +9,30 @@ author: Ian R. Thompson
     <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst_08_19.mp4" >
   </video>
 </div>
-> El Niño is the warm phase of the El Niño–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean. -- Wikipedia
+> El Ni&ntilde;o is the warm phase of the El Ni&ntilde;o–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean. -- Wikipedia
 
 ## Overview
 
 The ocean makes up roughly 71% of the earth's surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.
 
-Changes in sea surface temperature influence weather and climate patterns globally. The El Niño-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.
+Changes in sea surface temperature influence weather and climate patterns globally.
+The El Ni&ntilde;o-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.
 
-El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click [here](https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina)
+El Ni&ntilde;o and La Ni&ntilde;a are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Ni&ntilde;o and La Ni&ntilde;a occur every 2-7 years.
+For more information on El Ni&ntilde;o and La Ni&ntilde;a, click [here](https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina).
 
-The animation above shows the patterns of El Niño from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.
+The animation above shows the patterns of El Ni&ntilde;o from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.
 
 ## Data Conversion
 
-The world map animation above is monthly sea surface temperature (SST) for 2019. Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus' Climate Change Service[^Copernicus]. It was downloaded [here](https://cds.climate.copernicus.eu/cdsapp#!/home) from the Climate Data Store.
+The world map animation above is monthly sea surface temperature (SST). Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus' Climate Change Service[^Copernicus]. It was downloaded [here](https://cds.climate.copernicus.eu/cdsapp#!/home) from the Climate Data Store.
 
-SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26°F - 91°F
+SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26 &deg;F - 91 &deg;F.
 
 The data was extracted and reformatted using a Python[^python] script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy[^arcpy] and numpy[^numpy].
 This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.
 
-```
+```python
 import arcpy
 
 ...
@@ -41,7 +43,7 @@ def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
                                                     lower_left_corner = lowerLeft,
                                                     x_cell_size = 0.25)
 
-    file_path = os.path.join(dir, var + '_raster_'+ str(year)+ '.tif')#'./output/' +
+    file_path = os.path.join(dir, var + '_raster_'+ str(year)+ '.tif') # './output/' +
     time_slice.save(file_path)
 
 ...

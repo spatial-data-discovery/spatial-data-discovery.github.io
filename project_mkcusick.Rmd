@@ -1,6 +1,6 @@
 ---
 title: The Spread of COVID-19 Throughout the Contiguous United States
-author: Matthew Cusick
+author-meta: Matthew Cusick
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
@@ -12,11 +12,11 @@ author: Matthew Cusick
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/Legend.png 'Legend')
 
-</br> 
+<br />
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/CasesDeaths.png 'Cases and Deaths Plot')
 
-</br>
+<br />
 
 > *"This thing's not going to stop until it infects 60 to 70 percent of people. The idea that this is going to be done soon defies microbiology."* -- Mike Osterholm, Director of CIDRAP
 
@@ -37,7 +37,7 @@ These two datasets can be merged together in ArcGIS Pro via their shared FIPS va
 
 This script is written in Python[^python].
 
-```
+```python
 import arcpy # See notice
 import os
 import urllib.request

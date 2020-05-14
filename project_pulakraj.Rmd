@@ -32,7 +32,7 @@ This data looks at incoming light from Earth during nighttime.
 The lights are filtered to account for clouds, stray lights, fire, etc. and the higher the density and brightness of the light observed, the more white a pixel is in the visualization above.
 The units for the pixel values is nanoWatts/cm2/sr.
 
-The rasters come from [The National Oceanic and Atmospheric Administration](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) in the GeoTIFF format[^tiff].
+The rasters come from [Earth Observing Group, NOAA National Centers for Environmental Information (NCEI)](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) in the GeoTIFF format[^tiff].
 The data downloaded included January and July data from 2013 to 2018.
 In order to produce annual data, the January and July rasters were averaged using the below script produced in Python[^python] and new annual rasters were exported in the same GeoTiff format.
 The script must be run in the OSGeo4W Shell[^OSGeo4W] to use the gdal package.
@@ -51,11 +51,14 @@ The visualization was created in ArcGIS Pro using the Animation tool and was exp
 import gdal
 
 # Input files
-january_files = ["Asia_2013_1.tif", "Asia_2014_1.tif", "Asia_2015_1.tif", "Asia_2016_1.tif", "Asia_2017_1.tif", "Asia_2018_1.tif"]
-july_files = ["Asia_2013_7.tif", "Asia_2014_7.tif", "Asia_2015_7.tif", "Asia_2016_7.tif", "Asia_2017_7.tif", "Asia_2018_7.tif"]
+january_files = ["Asia_2013_1.tif", "Asia_2014_1.tif", "Asia_2015_1.tif",
+                 "Asia_2016_1.tif", "Asia_2017_1.tif", "Asia_2018_1.tif"]
+july_files = ["Asia_2013_7.tif", "Asia_2014_7.tif", "Asia_2015_7.tif",
+              "Asia_2016_7.tif", "Asia_2017_7.tif", "Asia_2018_7.tif"]
 
 #Output files
-new_files = ["Asia_2013.tif", "Asia_2014.tif", "Asia_2015.tif", "Asia_2016.tif", "Asia_2017.tif", "Asia_2018.tif"]
+new_files = ["Asia_2013.tif", "Asia_2014.tif", "Asia_2015.tif",
+             "Asia_2016.tif", "Asia_2017.tif", "Asia_2018.tif"]
 
 for i in range(0, 6):
     # Extracts January Arrays

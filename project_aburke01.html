@@ -13,6 +13,7 @@
 
 <title>Out of Site Out of Mind, New Jersey’s Stunted Superfund Cleanup</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -313,16 +314,13 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
+      <a href="project_grluisi.html">Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
       <a href="project_nd3600.html">Fast Food and Obesity</a>
-    </li>
-    <li>
-      <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
@@ -332,6 +330,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
+      <a href="project_irthompson01.html">Oceans and Climate</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
@@ -475,18 +476,18 @@ $(document).ready(function () {
 <ul>
 <li><p>The original dataset for the above visualization can be found at <a href="https://www.arcgis.com/apps/webappviewer/index.html?id=33cebcdfdd1b4c3a8b51d416956c41f1" class="uri">https://www.arcgis.com/apps/webappviewer/index.html?id=33cebcdfdd1b4c3a8b51d416956c41f1</a></p></li>
 <li><p>To access the CSV files, zoom out of the map and click on the up-arrow at the bottom of the screen and export to CSV.</p></li>
-<li>Attributes used to separate the CSV files:</li>
-<li>State</li>
-<li>Latitude</li>
-<li>Longitude</li>
-<li>Listing Date: Date that the site was added to the National Priorities List</li>
+<li><p>Attributes used to separate the CSV files:</p></li>
+<li><p>State</p></li>
+<li><p>Latitude</p></li>
+<li><p>Longitude</p></li>
+<li><p>Listing Date: Date that the site was added to the National Priorities List</p></li>
 <li><p>Deletion Date: Date that the site was removed from the National Priorities List</p></li>
 <li><p>More information about attributes can be found at <a href="https://www.epa.gov/superfund/superfund-national-priorities-list-npl" class="uri">https://www.epa.gov/superfund/superfund-national-priorities-list-npl</a> This data was found on the United States Environmental Protection Agency’s website. There is a link to see the full CSV file visualized using ARCGIS.</p></li>
 </ul>
 <p>My script takes the 1,810 total entries and separates New Jersey entries into a file called NJ_SupfundSites.csv. It then creates eight CSV files based on four time periods:1980-1989, 1990-1999, 2000-2009 and 2010-2019.</p>
 <p>Each CSV file contains entries that have a Listing Date up to the time frame but don’t have a Deletion Date earlier than the time frame. Thus, the entries in the individual time periods represent the superfund sites that were active at those times. The count CSV files contain the sites that were deleted off the list during a given time frame. This data is used for the counts visible on the PNG files and the visualization.</p>
-<p>For each time frame, the CSV files of the Superfund sites were visualized in QGIS<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and layered over a New Jersey County Boundary shape-file from the NJ Department of GIS website <a href="https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey" class="uri">https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey</a>::county-boundaries-of-nj.</p>
-<p>For each of the four time periods shown on the visualization, the green dots are superfund sites that have been deleted from the National Priorities List, while the red dots are active sites. Each of the maps created for the time periods were then exported to PNG files from QGIS<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, resized using GIMP<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, and uploaded onto GIPHY<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. The GIF file was then exported as a video encoded in MPEG-4<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> and downloaded.</p>
+<p>For each time frame, the CSV files of the Superfund sites were visualized in QGIS<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and layered over a New Jersey County Boundary shape-file from the NJ Department of GIS <a href="https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey::county-boundaries-of-nj">website</a>.</p>
+<p>For each of the four time periods shown on the visualization, the green dots are superfund sites that have been deleted from the National Priorities List, while the red dots are active sites. Each of the maps created for the time periods were then exported to PNG files from QGIS<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, resized using GIMP<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, and uploaded onto GIPHY<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. The GIF file was then exported as a video encoded in MPEG-4<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> and downloaded.</p>
 </div>
 <div id="works-cited" class="section level2">
 <h2>Works Cited</h2>
@@ -503,11 +504,11 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-05-02. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-05-02. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-02. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>GIPHY Website that changes PNG files into GIF and Mp4 files. Online: <a href="https://giphy.com" class="uri">https://giphy.com</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-05-02. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref5">↩</a></p></li>
+<li id="fn1"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-05-02. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-05-02. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-02. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>GIPHY Website that changes PNG files into GIF and Mp4 files. Online: <a href="https://giphy.com" class="uri">https://giphy.com</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-05-02. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

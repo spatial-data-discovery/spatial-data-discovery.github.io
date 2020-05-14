@@ -28,20 +28,20 @@ navbar:
               href: projects.html
             - text: "---------"
             - text: "Spring 2020"
-            - text: "Climate Change As Seen In Oceans"
-              href: project_irthompson01.html
+            - text: "Earthquake Frequency"
+              href: project_grluisi.html
             - text: "Electronic Content In Libraries"
               href: project_jrgarst.html
             - text: "Fast Food and Obesity"
               href: project_nd3600.html
-            - text: "Global Earthquake Frequency"
-              href: project_grluisi.html
             - text: "Google Trends & Vaccine Rates"
               href: project_gnmaniaci.html
             - text: "Hidden in the Light"
               href: project_pulakraj.html
             - text: "Land Development in Asia"
               href: project_emmgillstrick.html
+            - text: "Oceans and Climate"
+              href: project_irthompson01.html
             - text: "Opioid Epidemic"
               href: project_jlollen.html
             - text: "Philippines School Chooser"

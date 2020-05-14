@@ -74,7 +74,7 @@ at those times.
 The count CSV files contain the sites that were deleted off the list during a given time frame.
 This data is used for the counts visible on the PNG files and the visualization.
 
-For each time frame, the CSV files of the Superfund sites were visualized in QGIS[^qgis] and layered over a New Jersey County Boundary shape-file from the NJ Department of GIS website https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey::county-boundaries-of-nj.
+For each time frame, the CSV files of the Superfund sites were visualized in QGIS[^qgis] and layered over a New Jersey County Boundary shape-file from the NJ Department of GIS [website](https://gisdata-njdep.opendata.arcgis.com/datasets/newjersey::county-boundaries-of-nj).
 
 For each of the four time periods shown on the visualization, the green dots are superfund sites that have been deleted from the National Priorities List, while the red dots are active sites.
 Each of the maps created for the time periods were then exported to PNG files from QGIS[^qgis], resized using GIMP[^gimp], and uploaded onto GIPHY[^giphy].

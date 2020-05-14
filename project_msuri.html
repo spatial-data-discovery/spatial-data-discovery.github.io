@@ -13,6 +13,7 @@
 
 <title>The Strictness of COVID-19 Policy by State</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -313,16 +314,13 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
+      <a href="project_grluisi.html">Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
       <a href="project_nd3600.html">Fast Food and Obesity</a>
-    </li>
-    <li>
-      <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
@@ -332,6 +330,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
+      <a href="project_irthompson01.html">Oceans and Climate</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
@@ -453,14 +454,11 @@ $(document).ready(function () {
 </div>
 
 
-<div class="figure">
-<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png" />
-
-</div>
+<p><img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png" /></p>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>We are currently in unprecedented times amidst a global pandemic due to COVID-19. COVID-19 is known to be a flu-like virus that is extremely contagious. Since it was discovered in late 2019, there is no known vaccination for COVID-19.</p>
-<p>Some countries, such as Italy<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and Spain<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> have experienced extreme hardship in the healthcare system where they do not have enough hospital beds. In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures. After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.</p>
+<p>Some countries, such as Italy<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and Spain<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> have experienced extreme hardship in the healthcare system where they do not have enough hospital beds. In order to prevent as similar situation, US healthcare officials are urging that US residents adopt social distancing measures. After a few weeks of reccomendations, US states have enacted their own policies to ensure social distancing and prevent the spread of COVID-19 and potentially the collapse of the healthcare system.</p>
 <p>I thought it would be interesting to see how strict different states are during the crisis to see if other people are in similar situations as I am.</p>
 <dl>
 <dt>The above map takes into account the following social distancing policies:</dt>
@@ -480,8 +478,8 @@ $(document).ready(function () {
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>The data was found on the Kaiser Family Foundation[^KFF] website. However, I was less interested in the individual policies than I was in the strictness of the policies as a whole. As such, I created my own scale to measure the how strict the social distancing measures were for each state.</p>
-<p>The website produced a .csv file which I then loaded into a Python<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> package called pandas<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. I used pandas to preprocess the data and create the strictness measures.</p>
+<p>The data was found on the Kaiser Family Foundation<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> website. However, I was less interested in the individual policies than I was in the strictness of the policies as a whole. As such, I created my own scale to measure the how strict the social distancing measures were for each state.</p>
+<p>The website produced a .csv file which I then loaded into a Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> package called pandas<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. I used pandas to preprocess the data and create the strictness measures.</p>
 <p>I went through each category of the different measures and assigned them a point value. The stricter the policy, the higher the point value was. If the state did not have a policy in place for that particular category, a value of 0 was assigned. If the the state was easing up on the social distancing measures, a negative point value was assigned.</p>
 <p>A breakdown of the point values are seen below:</p>
 <div id="state-is-easing-social-distancing-measures" class="section level4">
@@ -799,7 +797,7 @@ $(document).ready(function () {
 </table>
 </div>
 <p><em>A * indicates that the state has eased a more restricitve social distancing measure.</em></p>
-<p>After creating the point system, I added up all the points for each state and used the Python package plotly<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> to create a chloropleth map of the data. I then exported the visualization as a .png<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> file.</p>
+<p>After creating the point system, I added up all the points for each state and used the Python package plotly<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> to create a chloropleth map of the data. I then exported the visualization as a .png<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> file.</p>
 <div class="credit-line">
 <p>Author: Mallika Suri. Last edited: 2020-05-04</p>
 </div>
@@ -808,12 +806,13 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>COVID-19 in Italy. Online: <a href="https://www.nejm.org/doi/full/10.1056/NEJMp2005492" class="uri">https://www.nejm.org/doi/full/10.1056/NEJMp2005492</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>COVID-19 in Spain. Online: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11149196" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/11149196</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Online: <a href="https://www.python.org" class="uri">https://www.python.org</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Pandas. Copyright (C) 2020. Online: <a href="https://pandas.pydata.org" class="uri">https://pandas.pydata.org</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Plotly. Copyright (C) 2020. Online: <a href="https://plotly.com" class="uri">https://plotly.com</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn1"><p>COVID-19 in Italy. Online: <a href="https://www.nejm.org/doi/full/10.1056/NEJMp2005492" class="uri">https://www.nejm.org/doi/full/10.1056/NEJMp2005492</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>COVID-19 in Spain. Online: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11149196" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/11149196</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Kaiser Family Foundation website. Online: <a href="https://www.kff.org" class="uri">https://www.kff.org</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Online: <a href="https://www.python.org" class="uri">https://www.python.org</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Pandas. Copyright (C) 2020. Online: <a href="https://pandas.pydata.org" class="uri">https://pandas.pydata.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Plotly. Copyright (C) 2020. Online: <a href="https://plotly.com" class="uri">https://plotly.com</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

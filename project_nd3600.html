@@ -13,6 +13,7 @@
 
 <title>The Connection Between Fast Food and Obesity</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -313,16 +314,13 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
+      <a href="project_grluisi.html">Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
       <a href="project_nd3600.html">Fast Food and Obesity</a>
-    </li>
-    <li>
-      <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
@@ -332,6 +330,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
+      <a href="project_irthompson01.html">Oceans and Climate</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
@@ -453,23 +454,18 @@ $(document).ready(function () {
 </div>
 
 
-<div class="figure">
-<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png" alt="Visualization" />
-<p class="caption">Visualization</p>
-</div>
-<div class="figure">
-<img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png" alt="Visualization" />
-<p class="caption">Visualization</p>
-</div>
+<p><img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png" /></p>
+<p><img src="https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png" /></p>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>The United States has more fast food restaurants than anywhere else in the world. In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States No matter what type of food you want to eat there is a fast food version available. While fast food is tasty, cheap, and convenient it is obviously not the healthiest.</p>
+<p>The United States has more fast food restaurants than anywhere else in the world. In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States.<br />
+No matter what type of food you want to eat there is a fast food version available. While fast food is tasty, cheap, and convenient it is obviously not the healthiest.</p>
 <p>The United states also has a global reputation for being one of the most obese countries in the world. Unfortunately this is well deserved with over 36% of the population being considered obese and another 33% of the population being overweight. Naturally many people tend to believe the amount of fast food restaurants tends to have a direct correlation with obesity in the United States.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>In order to do this project I needed three data sets. These were state by state obesity rates, state population rates, and a dataset of all the fast food restaurants in The United States. Originally I wanted to get fast food data for the past 10 years. The goal was to show the increase in restaurants in one animation, and the increase in obesity rates in the other. The obesity data for the past 10 years is easily available in csv format from data.gov. However reliable restaurant data is very difficult to find due to this not being public data published by the government or NGOs. In order to obtain a reliable data set for the past decade it would have costed me at least 100 dollars</p>
-<p>As a result I had to change my game plan. The largest free and reliable fast food data set I could find contains 10,000 entrees. While this is far less than the actual amount of fast food restaurants in the United States, it is still a reliable metric. The reason for this is these 10,000 restaurants are a random subset taken from a larger dataset which costs money. I realized I would need a way to standardize my data. For example let’s say California and Virginia have the same amount of fast food restaurants it doesn’t mean anything. This is because California’s population is over 4.5 times that of Virginia. As a result I had to get population data to standardize all the results. I got this data from census.gov. I got the restaurant’s data from Kaggle.</p>
+<p>In order to do this project I needed three data sets. These were state by state obesity rates, state population rates, and a dataset of all the fast food restaurants in The United States. Originally I wanted to get fast food data for the past 10 years. The goal was to show the increase in restaurants in one animation, and the increase in obesity rates in the other. The obesity data for the past 10 years is easily available in csv format from data.gov. However reliable restaurant data is very difficult to find due to this not being public data published by the government or NGOs. In order to obtain a reliable data set for the past decade it would have costed me at least 100 dollars.</p>
+<p>As a result I had to change my game plan. The largest free and reliable fast food data set I could find contains 10,000 entrees. While this is far less than the actual amount of fast food restaurants in the United States, it is still a reliable metric. The reason for this is these 10,000 restaurants are a random subset taken from a larger dataset that costs money. I realized I would need a way to standardize my data. For example let’s say California and Virginia have the same amount of fast food restaurants it doesn’t mean anything. This is because California’s population is over 4.5 times that of Virginia. As a result I had to get population data to standardize all the results. I got this data from census.gov. I got the restaurant’s data from Kaggle.</p>
 </div>
 <div id="visualization-process" class="section level2">
 <h2>Visualization Process</h2>

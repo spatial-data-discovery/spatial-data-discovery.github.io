@@ -28,7 +28,7 @@ The above map takes into account the following social distancing policies:
 
 ## Data Description
 
-The data was found on the Kaiser Family Foundation[^KFF] website.
+The data was found on the Kaiser Family Foundation[^kff] website.
 However, I was less interested in the individual policies than I was in the strictness of the policies as a whole.
 As such, I created my own scale to measure the how strict the social distancing measures were for each state.
 

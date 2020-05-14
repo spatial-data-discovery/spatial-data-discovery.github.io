@@ -14,6 +14,7 @@
 
 <title>Monitoring Climate Change Through the Ocean</title>
 
+<script src="site_libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -25,6 +26,93 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -314,16 +402,13 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Spring 2020</li>
     <li>
-      <a href="project_irthompson01.html">Climate Change As Seen In Oceans</a>
+      <a href="project_grluisi.html">Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_jrgarst.html">Electronic Content In Libraries</a>
     </li>
     <li>
       <a href="project_nd3600.html">Fast Food and Obesity</a>
-    </li>
-    <li>
-      <a href="project_grluisi.html">Global Earthquake Frequency</a>
     </li>
     <li>
       <a href="project_gnmaniaci.html">Google Trends &amp; Vaccine Rates</a>
@@ -333,6 +418,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="project_emmgillstrick.html">Land Development in Asia</a>
+    </li>
+    <li>
+      <a href="project_irthompson01.html">Oceans and Climate</a>
     </li>
     <li>
       <a href="project_jlollen.html">Opioid Epidemic</a>
@@ -450,7 +538,6 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Monitoring Climate Change Through the Ocean</h1>
-<h4 class="author">Ian R. Thompson</h4>
 
 </div>
 
@@ -466,36 +553,35 @@ $(document).ready(function () {
 <h2>Overview</h2>
 <p>The ocean makes up roughly 71% of the earth’s surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.</p>
 <p>Changes in sea surface temperature influence weather and climate patterns globally. The El Niño-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.</p>
-<p>El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click <a href="https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina">here</a></p>
+<p>El Niño and La Niña are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Niño and La Niña occur every 2-7 years. For more information on El Niño and La Niña, click <a href="https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina">here</a>.</p>
 <p>The animation above shows the patterns of El Niño from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.</p>
 </div>
 <div id="data-conversion" class="section level2">
 <h2>Data Conversion</h2>
-<p>The world map animation above is monthly sea surface temperature (SST) for 2019. Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus’ Climate Change Service<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. It was downloaded <a href="https://cds.climate.copernicus.eu/cdsapp#!/home">here</a> from the Climate Data Store.</p>
-<p>SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26°F - 91°F</p>
-<p>The data was extracted and reformatted using a Python<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> and numpy<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.</p>
-<pre><code>import arcpy
-
-...
-
-def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
-    &quot;&quot;&quot;Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)&quot;&quot;&quot;
-    time_slice = arcpy.NumPyArrayToRaster(np_array, value_to_nodata = no_data,
-                                                    lower_left_corner = lowerLeft,
-                                                    x_cell_size = 0.25)
-
-    file_path = os.path.join(dir, var + &#39;_raster_&#39;+ str(year)+ &#39;.tif&#39;)#&#39;./output/&#39; +
-    time_slice.save(file_path)
-
-...
-
-</code></pre>
+<p>The world map animation above is monthly sea surface temperature (SST). Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus’ Climate Change Service<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. It was downloaded <a href="https://cds.climate.copernicus.eu/cdsapp#!/home">here</a> from the Climate Data Store.</p>
+<p>SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26 °F - 91 °F.</p>
+<p>The data was extracted and reformatted using a Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and numpy<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>...</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">def</span> createRaster(np_array, no_data, lowerLeft, xcell, year, var):</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co">&quot;&quot;&quot;Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)&quot;&quot;&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    time_slice <span class="op">=</span> arcpy.NumPyArrayToRaster(np_array, value_to_nodata <span class="op">=</span> no_data,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>                                                    lower_left_corner <span class="op">=</span> lowerLeft,</span>
+<span id="cb1-9"><a href="#cb1-9"></a>                                                    x_cell_size <span class="op">=</span> <span class="fl">0.25</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    file_path <span class="op">=</span> os.path.join(<span class="bu">dir</span>, var <span class="op">+</span> <span class="st">&#39;_raster_&#39;</span><span class="op">+</span> <span class="bu">str</span>(year)<span class="op">+</span> <span class="st">&#39;.tif&#39;</span>) <span class="co"># &#39;./output/&#39; +</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>    time_slice.save(file_path)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a>...</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span></code></pre></div>
 </div>
 <div id="visualization-process" class="section level2">
 <h2>Visualization Process</h2>
-<p>For each month, the data were visualized in QGIS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> using the same saved layout and exported to a PNG<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> image.</p>
-<p>The PNG files produced by each raster were imported into GIMP<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>, optimized and exported as an animated GIF<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>.</p>
-<p>The GIF was then uploaded and converted to a video (MP4<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>) using EzGif<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
+<p>For each month, the data were visualized in QGIS<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> using the same saved layout and exported to a PNG<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> image.</p>
+<p>The PNG files produced by each raster were imported into GIMP<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>, optimized and exported as an animated GIF<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+<p>The GIF was then uploaded and converted to a video (MP4<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>) using EzGif<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
 <div class="credit-line">
 <p>Author: Ian Thompson</p>
 <p>Last edited: 2020-05-04.</p>
@@ -504,16 +590,16 @@ def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10">↩</a></p></li>
+<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
