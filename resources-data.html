@@ -23,6 +23,56 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script>
+
+function search(items, terms) {
+  // Check that each search term is found within list of items:
+  var found = true;
+  for (var i = 0; i < terms.length; i++) {
+    var sresults = [];
+    for (var j = 0; j < items.length; j++) {
+      sresults.push(items[j].indexOf(terms[i]) > -1);
+    }
+    found = (found && sresults.includes(true));
+  }
+  return found;
+}
+
+
+function updateSheet() {
+  // Declare variables
+  var txtValue;
+  var dd;
+  var dt;
+  var input = document.getElementById("myInput");
+  var filterText = input.value.toLowerCase();
+  var filter = filterText.split(" ");
+  var dl = document.getElementsByTagName("dl")[0];
+  var dts = dl.getElementsByTagName('dt');
+  var dds = dl.getElementsByTagName('dd');
+
+  // Loop through all terms and definitions
+  // and hide those who don't match the search query
+  for (var i = 0; i < dds.length; i++) {
+    dd = dds[i];
+    dt = dts[i];
+    if (dt) {
+      txtValue = dt.textContent || dt.innerText;
+      txtValue += " ";
+      txtValue += dd.textContent || dd.innerText;
+      txtValue = txtValue.toLowerCase().replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g,"");
+
+      if ((filterText == '') || (search(txtValue.split(" "), filter))) {
+        dd.style.display = "";
+        dt.style.display = "";
+      } else {
+        dd.style.display = "none";
+        dt.style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 
 
@@ -356,9 +406,27 @@ $(document).ready(function () {
 </div>
 
 
+<hr />
+<!--
+      Search bar
+                      -->
+<div class="search-bar" style="border:1px solid #DDD; width:396px; margin-bottom:15px;">
+<p style="margin:5px;">
+<i class="icon fa fa-search"></i> <input type="text" id="myInput" onkeyup="updateSheet()" placeholder="Search..." style="border:none; padding:0; width:365px;">
+</p>
+</div>
+<!--
+      Definition List
+                        -->
 <dl>
-<dt><a href="https://data.census.gov/cedsci">Census Data</a></dt>
-<dd>The leading source of quality data about the US’s people and economy.
+<dt><a href="https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/">ArcGIS Living Atlas - Indicators of the Planet</a></dt>
+<dd>See the latest in global issues with links to their respective open data portals.
+</dd>
+<dt><a href="https://ava.jpl.nasa.gov/">ASTER Volcano Archive</a></dt>
+<dd>The world’s largest specialty archive of volcano data, including publicly available high-resolution multispectral ASTER data.
+</dd>
+<dt><a href="https://www.ncdc.noaa.gov/cdo-web/search">Climate Data Online Search</a></dt>
+<dd>Find past weather and climate data provided by NOAA’s National Centers for Environmental Information (NCDC).
 </dd>
 <dt><a href="https://www.data.gov/">Data.gov</a></dt>
 <dd>The home of the U.S. Government’s open data.
@@ -370,13 +438,16 @@ $(document).ready(function () {
 <dd>Access thousands of unique data products in NASA’s Earth Observing System Data and Information System (EOSDIS) collection from a variety of sources including the International Space Station, satellites, airborne campaigns, field campaigns, in-situ instruments, and model outputs.
 </dd>
 <dt><a href="https://earthexplorer.usgs.gov/">EarthExplorer</a></dt>
-<dd>Search, download, and order satellite images, aerial photographs, and cartographic products.
+<dd>An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.
 </dd>
 <dt><a href="https://earthworks.stanford.edu/">EarthWorks</a></dt>
 <dd>Search, download, and explore geospatial data shared across a multi-academic consortium.
 </dd>
 <dt><a href="https://mappingsupport.com/p/surf_gis/list-federal-state-county-city-GIS-servers.pdf">Elfelt Server List</a></dt>
-<dd>(PDF) List of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
+<dd>(PDF) list of 50+ federal, 150+ state, 200+ county, and 200+ city GIS servers in the United States.
+</dd>
+<dt><a href="https://esdac.jrc.ec.europa.eu/themes/landslides">European Commission Joint Research Centre - ESDAC</a></dt>
+<dd>European landslide inventory.
 </dd>
 <dt><a href="http://www.fao.org/geonetwork/srv/en/main.home">FAO GeoNetwork</a></dt>
 <dd>Provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
@@ -388,56 +459,66 @@ $(document).ready(function () {
 <dd>Name search for feature locations from all over the world.
 </dd>
 <dt><a href="https://www.geoplatform.gov/">GeoPlatform</a></dt>
-<dd>Uses collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
+<dd>Using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
 </dd>
 <dt><a href="http://geo.aiddata.org/query/#!/">GeoQuery</a></dt>
-<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+<dd>Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software (<a href="https://doi.org/10.1016/j.cageo.2018.10.009">Goodman et al., 2019</a>).
 </dd>
 <dt><a href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a></dt>
 <dd>Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 </dd>
+<dt><a href="https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/">Harmonized World Soil Database v 1.2</a></dt>
+<dd>Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.
+</dd>
 <dt><a href="https://data.humdata.org/">Humanitarian Data Exchange (HDX)</a></dt>
 <dd>Find, share and use humanitarian data all in one place.
 </dd>
-<dt><a href="https://www.mrlc.gov/index.php">National Land Cover Database</a></dt>
+<dt><a href="https://www.isric.org/projects/soil-and-terrain-soter-database-programme">ISRIC SOTER Database</a></dt>
+<dd>Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
+</dd>
+<dt><a href="https://www.kaggle.com/datasets">Kaggle</a></dt>
+<dd>Explore, analyze, and share quality data in an accessible, non-proprietary format where each dataset is a community where you can discuss data, discover public code and techniques, and create your own projects.
+</dd>
+<dt><a href="https://www.mrlc.gov/index.php">National Land Cover Database (NLDC)</a></dt>
 <dd>Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
 </dd>
-<dt><a href="https://www.naturalearthdata.com/">Natural Earth</a></dt>
-<dd>A public-domain map dataset at 1:10m, 1:50m, and 1:110 million scales featuring tightly integrated vector and raster data for making a variety of visually pleasing, well-crafted maps.
+<dt><a href="http://www.naturalearthdata.com/">Natural Earth</a></dt>
+<dd>A public domain map dataset featuring vector and raster data.
 </dd>
 <dt><a href="https://opentopography.org/">OpenTopography</a></dt>
-<dd>Aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
+<dd>OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
 </dd>
-<dt><a href="http://www.publicamundi.eu/">Publica Mundi</a></dt>
-<dd>Scalable, reusable open geospatial data; checkout their GeoJSON files on their <a href="https://github.com/PublicaMundi/MappingAPI/tree/master/data/geojson">GitHub site</a>.
-</dd>
-<dt><a href="http://www.sharkattackfile.net/">Shark Attack File</a></dt>
+<dt><a href="http://www.sharkattackfile.net/">Global Shark Attack File</a></dt>
 <dd>A time-stamped semi-geolocated incident log of global shark attacks.
 </dd>
 <dt><a href="http://dwtkns.com/srtm30m/">SRTM 30-m DEM</a></dt>
 <dd>Derek Watkins’s interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.
 </dd>
+<dt><a href="https://tandemx-science.dlr.de/">TanDEM-X Science Server</a></dt>
+<dd>Global 12, 30, and 90 m digital elevation models.
+</dd>
 <dt><a href="http://thematicmapping.org/downloads/world_borders.php">Thematic Mapping World Borders</a></dt>
-<dd>Esri shapefile of the world’s country borders in two resolutions.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+<dd>Esri shapefile of the world’s country borders in two resolutions. CC BY-SA 3.0 by <a href="https://thematicmapping.org/">Bjørn Sandvik</a> 2009.
 </dd>
 <dt><a href="https://ngmdb.usgs.gov/topoview/">TopoView</a></dt>
-<dd>A digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program), and 2006.
+<dd>A digital repository of USGS 1:250,000 scale and larger (more detailed) maps printed between 1884 (the inception of the topographic mapping program) and 2006.
+</dd>
+<dt><a href="https://data.census.gov/cedsci">US Census Bureau</a></dt>
+<dd>The leading source of quality data about the US’s people and economy.
+</dd>
+<dt><a href="https://websoilsurvey.sc.egov.usda.gov/App/HomePage.htm">USDA Web Soil Survey</a></dt>
+<dd>Soil data for the US and its territories.
 </dd>
 <dt><a href="https://pubs.usgs.gov/of/2006/1187/basemaps/continents/">USGS Continents</a></dt>
-<dd>Esri shapefile for the major continent boundaries.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+<dd>Esri shapefile for the major continent boundaries provided from the Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0 (<a href="http://pubs.usgs.gov/of/2006/1187/">Buczkowski &amp; Kelsey, 2007</a>).
 </dd>
-<dt><a href="https://vgin.maps.arcgis.com/home/index.html">VA GIS Clearinghouse</a></dt>
-<dd>Hosted by the Virginia Geographic Information Network (VGIN), the GIS Clearinghouse is a repository of geospatial data produced and used by state agencies in Virginia, localities in Virginia, Federal Government partners, non-profits, and colleges and universities across Virginia.
+<dt><a href="https://www.usgs.gov/core-science-systems/ngp/tnm-delivery/">USGS The National Map</a></dt>
+<dd>GIS data download and visualization services provided by the U.S. Geological Survey.
+</dd>
+<dt><a href="https://vgin.maps.arcgis.com/home/index.html">Virginia GIS Clearinghouse</a></dt>
+<dd>A repository of geospatial data produced and used by state agencies in Virginia (see Virginia Geospatial Clearinghouse Nodes for open data portals of every available county or municipality in VA).
 </dd>
 </dl>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Goodman, S., BenYishay, A., Lv, Z., &amp; Runfola, D. (2019). GeoQuery: Integrating HPC systems and public web-based geospatial data tools. Computers &amp; Geosciences, 122, 103-112.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Data provided under a CC BY-SA 3.0 license. Copyright © 2009 Bjørn Sandvik. <a href="https://thematicmapping.org/" class="uri">https://thematicmapping.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Buczkowski, B.J., and Kelsey, S.A., 2007, Archival Policies and Collections Database for the Woods Hole Science Center’s Marine Sediment Samples: U.S. Geological Survey Open-File Report 2006-1187, version 1.0. Online at <a href="http://pubs.usgs.gov/of/2006/1187/" class="uri">http://pubs.usgs.gov/of/2006/1187/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
 
 <footer class="myfoot">
     <div class="foot-text">

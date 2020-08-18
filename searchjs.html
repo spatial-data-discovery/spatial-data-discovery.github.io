@@ -1,0 +1,50 @@
+<script>
+
+function search(items, terms) {
+  // Check that each search term is found within list of items:
+  var found = true;
+  for (var i = 0; i < terms.length; i++) {
+    var sresults = [];
+    for (var j = 0; j < items.length; j++) {
+      sresults.push(items[j].indexOf(terms[i]) > -1);
+    }
+    found = (found && sresults.includes(true));
+  }
+  return found;
+}
+
+
+function updateSheet() {
+  // Declare variables
+  var txtValue;
+  var dd;
+  var dt;
+  var input = document.getElementById("myInput");
+  var filterText = input.value.toLowerCase();
+  var filter = filterText.split(" ");
+  var dl = document.getElementsByTagName("dl")[0];
+  var dts = dl.getElementsByTagName('dt');
+  var dds = dl.getElementsByTagName('dd');
+
+  // Loop through all terms and definitions
+  // and hide those who don't match the search query
+  for (var i = 0; i < dds.length; i++) {
+    dd = dds[i];
+    dt = dts[i];
+    if (dt) {
+      txtValue = dt.textContent || dt.innerText;
+      txtValue += " ";
+      txtValue += dd.textContent || dd.innerText;
+      txtValue = txtValue.toLowerCase().replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g,"");
+
+      if ((filterText == '') || (search(txtValue.split(" "), filter))) {
+        dd.style.display = "";
+        dt.style.display = "";
+      } else {
+        dd.style.display = "none";
+        dt.style.display = "none";
+      }
+    }
+  }
+}
+</script>
