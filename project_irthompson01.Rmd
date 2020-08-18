@@ -1,0 +1,89 @@
+---
+title: Monitoring Climate Change Through the Ocean
+author-meta: Ian R. Thompson
+semester: "Spring 2020"
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/05/sst_08_19.mp4" >
+  </video>
+</div>
+> El Ni&ntilde;o is the warm phase of the El Ni&ntilde;o–Southern Oscillation (ENSO). The ENSO is the cycle of warm and cold sea surface temperature (SST) of the tropical central and eastern Pacific Ocean. -- Wikipedia
+
+## Overview
+
+The ocean makes up roughly 71% of the earth's surface and its temperature is critical with regards to its effects towards the atmosphere, climate, and marine wildlife. Global warming and its consequences take over the news headlines quite frequently, and one of the concerns of all the pollution and heat from green house gases being trapped in the atmosphere, is if they are being absorbed by the oceans.
+
+Changes in sea surface temperature influence weather and climate patterns globally.
+The El Ni&ntilde;o-Southern Oscillation (ENSO) cycle is a term that refers to the fluctuation in temperature between the atmosphere and the ocean in east-central Equatorial Pacific.
+
+El Ni&ntilde;o and La Ni&ntilde;a are the warm and cold cycles of ESNO respectively, an episode typically lasts for about one year, and on average El Ni&ntilde;o and La Ni&ntilde;a occur every 2-7 years.
+For more information on El Ni&ntilde;o and La Ni&ntilde;a, click [here](https://www.americangeosciences.org/critical-issues/faq/what-are-el-nino-and-la-nina).
+
+The animation above shows the patterns of El Ni&ntilde;o from 2008 - 2019, highlighted by the influx of warmer water in the equatorial Pacific.
+
+## Data Conversion
+
+The world map animation above is monthly sea surface temperature (SST). Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus' Climate Change Service[^Copernicus]. It was downloaded [here](https://cds.climate.copernicus.eu/cdsapp#!/home) from the Climate Data Store.
+
+SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26 &deg;F - 91 &deg;F.
+
+The data was extracted and reformatted using a Python[^python] script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy[^arcpy] and numpy[^numpy].
+This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.
+
+```python
+import arcpy
+
+...
+
+def createRaster(np_array, no_data, lowerLeft, xcell, year, var):
+    """Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)"""
+    time_slice = arcpy.NumPyArrayToRaster(np_array, value_to_nodata = no_data,
+                                                    lower_left_corner = lowerLeft,
+                                                    x_cell_size = 0.25)
+
+    file_path = os.path.join(dir, var + '_raster_'+ str(year)+ '.tif') # './output/' +
+    time_slice.save(file_path)
+
+...
+
+
+```
+
+## Visualization Process
+
+For each month, the data were visualized in QGIS[^qgis] using the same saved layout and exported to a PNG[^png] image.
+
+The PNG files produced by each raster were imported into GIMP[^gimp], optimized and exported as an animated GIF[^gif].
+
+The GIF was then uploaded and converted to a video (MP4[^mpeg4]) using EzGif[^ezgif].
+
+<div class="credit-line">
+
+Author: Ian Thompson
+
+Last edited: 2020-05-04.
+
+</div>
+
+[^arcpy]: ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm
+
+[^Copernicus]: Copernicus is the European Union's Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: https://www.copernicus.eu/en/about-copernicus
+
+[^ezgif]: EzGif  is an online GIF maker and image editor. Accessed 2020-04-12. Online: https://ezgif.com/gif-to-mp4
+
+[^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-10-28. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: https://www.gimp.org/
+
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: https://mpeg.chiariglione.org/
+
+[^numpy]: Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: https://numpy.org/
+
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2019-10-28. Online: http://www.libpng.org/pub/png/
+
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-10-28. Online: https://www.python.org/
+
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
