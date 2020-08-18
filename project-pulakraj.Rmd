@@ -1,5 +1,7 @@
 ---
 title: Central and Eastern Asia Hidden in the Light
+author-meta: Pulak Raj
+semester: Spring 2020
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

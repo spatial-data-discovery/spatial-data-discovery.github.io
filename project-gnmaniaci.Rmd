@@ -1,5 +1,7 @@
 ---
 title: 'Google Trends & Vaccination Rates'
+author-meta: Gianna N. Maniaci
+semester: Spring 2020
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

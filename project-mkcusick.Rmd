@@ -1,6 +1,7 @@
 ---
 title: The Spread of COVID-19 Throughout the Contiguous United States
 author-meta: Matthew Cusick
+semester: Spring 2020
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

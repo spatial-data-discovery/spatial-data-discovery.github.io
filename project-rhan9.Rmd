@@ -1,5 +1,7 @@
 ---
 title: The Rise of a Superstar
+author-meta: Ryan Han
+semester: Spring 2020
 ---
 
 [![13-14 Season, Age: 19][1314Season]][1314Season] [![14-15 Season, Age: 20][1415Season]][1415Season] [![15-16 Season, Age: 21][1516Season]][1516Season] [![16-17 Season, Age: 22][1617Season]][1617Season]

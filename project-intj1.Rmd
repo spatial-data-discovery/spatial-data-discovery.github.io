@@ -1,5 +1,7 @@
 ---
 title: Projecting COVID-19 Cases Under No Intervention Measures
+author-meta: Tinh Son
+semester: Spring 2020
 ---
 
 <!----Map------>

@@ -5,7 +5,7 @@ date: "Updated: `r format(Sys.time(), '%B %d, %Y')`"
 
 ```{r echo = FALSE, results = 'asis'}
 library(knitr)
-myfiles <- list.files(pattern = "^about_.*html$")
+myfiles <- list.files(pattern = "^about-.*html$")
 coders <- c()
 for (f in myfiles){
     ghuser <- sub(pattern = "about_(.*)\\..*$", replacement= "\\1", f)

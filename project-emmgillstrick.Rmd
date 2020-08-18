@@ -1,5 +1,7 @@
 ---
 title: Land Development in Asia
+author-meta: Emma Strickland
+semester: Spring 2020
 ---
 
 <div class="video-wrapper">

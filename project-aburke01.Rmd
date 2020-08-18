@@ -1,5 +1,7 @@
 ---
 title: Out of Site Out of Mind, New Jersey's Stunted Superfund Cleanup
+author-meta: Alexandra Burke
+semester: Spring 2020
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

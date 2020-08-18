@@ -1,5 +1,7 @@
 ---
 title: Earthquake Frequency
+author-meta: Grant Luisi
+semester: Spring 2020
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

@@ -1,5 +1,7 @@
 ---
 title: "The Strictness of COVID-19 Policy by State"
+author-meta: "Mallika Suri"
+semester: "Spring 2020"
 ---
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/05/strictness_visualization.png)

@@ -28,7 +28,7 @@ get.content <- function(my.file){
 
 ```{r echo = FALSE, results = 'asis', comment = NA}
 # TODO: group by semester; sort by title
-myfiles <- list.files(pattern = "^project_.*Rmd$", ignore.case = TRUE)
+myfiles <- list.files(pattern = "^project-.*Rmd$", ignore.case = TRUE)
 for (f in myfiles){
     f.out <- get.content(f)
     writeLines(f.out)

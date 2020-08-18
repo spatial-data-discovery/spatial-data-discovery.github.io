@@ -1,6 +1,7 @@
 ---
 title: Monitoring Climate Change Through the Ocean
 author-meta: Ian R. Thompson
+semester: "Spring 2020"
 ---
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->

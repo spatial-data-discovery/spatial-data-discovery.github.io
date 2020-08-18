@@ -10,56 +10,24 @@ navbar:
         - text: Resources
           menu:
             - text: "Data"
-              href: resource_data.html
+              href: resource-data.html
             - text: "Links"
-              href: resource_link.html
+              href: resource-link.html
             - text: "Methods"
-              href: resource_meth.html
+              href: resource-meth.html
             - text: "Software"
-              href: resource_soft.html
+              href: resource-soft.html
             - text: Syllabus
               href: https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/
         - text: Spatial Discovery
           menu:
             - text: "Example"
             - text: "Breathing of the Biosphere"
-              href: project_dtwoods.html
+              href: project-dtwoods.html
             - text: "Previous Projects"
               href: projects.html
             - text: "---------"
-            - text: "Spring 2020"
-            - text: "Earthquake Frequency"
-              href: project_grluisi.html
-            - text: "Electronic Content In Libraries"
-              href: project_jrgarst.html
-            - text: "Fast Food and Obesity"
-              href: project_nd3600.html
-            - text: "Google Trends & Vaccine Rates"
-              href: project_gnmaniaci.html
-            - text: "Hidden in the Light"
-              href: project_pulakraj.html
-            - text: "Land Development in Asia"
-              href: project_emmgillstrick.html
-            - text: "Oceans and Climate"
-              href: project_irthompson01.html
-            - text: "Opioid Epidemic"
-              href: project_jlollen.html
-            - text: "Philippines School Chooser"
-              href: project_baier.html
-            - text: "Pollen Index"
-              href: project_leanlow.html
-            - text: "Projecting COVID-19 Cases"
-              href: project_intj1.html
-            - text: "Rise of a Superstar"
-              href: project_rhan9.html
-            - text: "Spread of COVID-19 in the USA"
-              href: project_mkcusick.html
-            - text: "Strictness of COVID-19 Policies"
-              href: project_msuri.html
-            - text: "Stunted Superfund Cleanup"
-              href: project_aburke01.html
-            - text: "UNICEF and the Third SDG"
-              href: project_abgaddi.html
+            - text: "Fall 2020"
         - text: "About"
           menu:
             - text: "The Coder Pages"
@@ -67,43 +35,43 @@ navbar:
             - text: "------"
             - text: "Spring 2020 Team"
             - text: "abgaddi"
-              href: about_abgaddi.html
+              href: about-abgaddi.html
             - text: "aburke01"
-              href: about_aburke01.html
+              href: about-aburke01.html
             - text: "dt-woods"
-              href: about_dtwoods.html
+              href: about-dtwoods.html
             - text: "elkelthen"
-              href: about_elkelthen.html
+              href: about-elkelthen.html
             - text: "emmgillstrick"
-              href: about_emmgillstrick.html
+              href: about-emmgillstrick.html
             - text: "gnmaniaci"
-              href: about_gnmaniaci.html
+              href: about-gnmaniaci.html
             - text: "grluisi"
-              href: about_grluisi.html
+              href: about-grluisi.html
             - text: "hmbaier"
-              href: about_hmbaier.html
+              href: about-hmbaier.html
             - text: "intj1"
-              href: about_intj1.html
+              href: about-intj1.html
             - text: "irthompson01"
-              href: about_irthompson01.html
+              href: about-irthompson01.html
             - text: "jlollen"
-              href: about_jlollen.html
+              href: about-jlollen.html
             - text: "jpcasale"
-              href: about_jpcasale.html
+              href: about-jpcasale.html
             - text: "leanlow"
-              href: about_leanlow.html
+              href: about-leanlow.html
             - text: "luhuynh"
-              href: about_luhuynh.html
+              href: about-luhuynh.html
             - text: "mallikasuri"
-              href: about_mallikasuri.html
+              href: about-mallikasuri.html
             - text: "matt-kc"
-              href: about_matt-kc.html
+              href: about-matt-kc.html
             - text: "nd3600"
-              href: about_nd3600.html
+              href: about-nd3600.html
             - text: "pulakraj"
-              href: about_pulakraj.html
+              href: about-pulakraj.html
             - text: "rhan9"
-              href: about_rhan9.html
+              href: about-rhan9.html
         - icon: fa-github
           href: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io
 

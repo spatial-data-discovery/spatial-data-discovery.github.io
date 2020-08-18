@@ -1,5 +1,7 @@
 ---
 title: The Opioid Epidemic
+author-meta: Jenna Ollen
+semester: Spring 2020
 ---
 
 <div class="video-wrapper">
@@ -10,15 +12,15 @@ title: The Opioid Epidemic
 
 > *"128 People Die Every Day from an Opioid Overdose."* -- Centers for Disease Control and Prevention [^cdc]
 
-## Overview 
+## Overview
 
-Before the Coronavirus, there was another public health emergency: the opioid epidemic. 
+Before the Coronavirus, there was another public health emergency: the opioid epidemic.
 While the opioid epidemic may seem like a recent problem, it has been a public health problem for the last 20 years, and we are in the thick of the third wave.
 
 The CDC classifies the opioid epidemic into three different waves [^cdc].
 The first wave of the opioid epidemic began in the 90s with the introduction of prescription opioids like OxyContin.
 As the state and federal governments started to crack down on the misuse of prescription opioids, more opioid users turned to heroin during the second wave of the epidemic [^fedfund].
-The third wave of the opioid epidemic is characterized by the rise in use of synthetic opioids, like fentanyl [^cdc]. 
+The third wave of the opioid epidemic is characterized by the rise in use of synthetic opioids, like fentanyl [^cdc].
 As seen in the visualization at the top of the page, some of the hardest hit states during this third wave are Ohio, West Virginia, Pennsylvania, Maryland, Delaware, New Jersey, Massachusetts, Connecticut, and Rhode Island.
 
 There are bipartisan efforts to combat the opioid epidemic.
@@ -39,7 +41,7 @@ I used the monthly drug overdose deaths counts from the Indicator column as a pr
 Then, I normalized those drug overdose death counts by dividing them by the yearly state population estimates from the United States Census Bureau [^pop].
 I multiplied the normalized death counts by 100,000 so the data was easier to read.
 As a result, the units of the data in the first map are the number of opioid deaths/state population multiplied by 100,000.
-Thus, the specific counts on the map are not that informative. Instead, the important part of the map is the relative intensity of cases in each state as indicated by the depth of the red hue on the map. 
+Thus, the specific counts on the map are not that informative. Instead, the important part of the map is the relative intensity of cases in each state as indicated by the depth of the red hue on the map.
 
 The data for the State Opioid Response Grants map comes from the U.S. Department of Health & Human Services [^sor].
 The units of the State Opioid Response Grant data is millions (USD).
@@ -51,7 +53,7 @@ The data was visualized using QGIS [^qgis].
 To visualize each month in the opioid death counts dataset, I loaded the final .csv into QGIS as a delimited text file and filtered the dataset by the specific year and month.
 Then, I joined the filtered dataset with the U.S. States Boundary shapefiles from the United States Census Bureau [^shape].
 Once the individual map layers were assembled, they were exported to a PNG image format [^png].
-The map images were compiled into an animated Gif[^gif] using GIMP [^gimp] and then converted into a MPEG-4 video format [^mpg4] using FFmpeg [^ffmpeg]. 
+The map images were compiled into an animated Gif[^gif] using GIMP [^gimp] and then converted into a MPEG-4 video format [^mpg4] using FFmpeg [^ffmpeg].
 
 <div class="credit-line">
 Author: Jenna Ollen.
@@ -73,4 +75,3 @@ Last edited: 2020-05-05.
 [^gimp]: GNU Image Manipulation Program (GIMP). Version 2.10. Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-05-04. Online: https://www.gimp.org/
 [^mpg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-05-04. Online: https://mpeg.chiariglione.org/
 [^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Version 4.2.2. Accessed 2020-05-04. Online: https://ffmpeg.org/
-
