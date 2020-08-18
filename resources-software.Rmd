@@ -38,6 +38,7 @@ title: "Resources | Software"
 [QGIS 3](https://www.qgis.org/en/site/)
 :   A free and open-source geographic information system.
 
+***
 
 ### Programming Languages
 
@@ -47,6 +48,7 @@ title: "Resources | Software"
 [R](https://cran.r-project.org/)
 :   A freely available language and environment for statistical computing and graphics.
 
+***
 
 ### Python Packages
 
@@ -78,6 +80,8 @@ title: "Resources | Software"
 [Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 :   Provides 32- and 64-bit Windows (unofficial) binaries of many scientific open-source extension packages for the official CPython distribution of the Python programming language.
     A few binaries are available for the PyPy distribution.[^gohlke19]
+
+***
 
 ### R Packages
 
