@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Nikhil Daga"
 date: "Edited: 2020-13-2"
+semester: "Spring 2020"
 ---
 
 **Bio**

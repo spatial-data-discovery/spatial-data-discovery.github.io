@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Tina Chen"
 date: "Edited: 2019-09-07"
+semester: "Fall 2019"
 ---
 
 **Bio**

@@ -2,7 +2,9 @@
 title: "About the Coder"
 author: "Jenna Ollen"
 date: "Edited: 2020-02-10"
+semester: "Spring 2020"
 ---
+
 ![](https://www.thesprucepets.com/thmb/Mn97CATmMX-N5qkl1aHC0ZbWhu8=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/19933184_104417643500613_5541725731421159424_n-5ba0548546e0fb0050edecc0.jpg 'Jenna Ollen'){width=150 height=150}
 
 Bio
@@ -14,7 +16,7 @@ Favorite Recipes at the Moment:
 
 ***
 
-### Sample Script 
+### Sample Script
 
 [Movie Script Scraper (.py)](scripts/movie_script_scraper.py)
 

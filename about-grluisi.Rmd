@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Grant Luisi"
 date: "2020-01-30"
+semester: "Spring 2020"
 ---
 
 ![](https://static.wixstatic.com/media/057dbf_8934bdaa47114405ba4a10619311c98b.jpg/v1/crop/x_0,y_577,w_3144,h_1637/fill/w_511,h_301,al_c,q_80,usm_0.66_1.00_0.01/057dbf_8934bdaa47114405ba4a10619311c98b.webp 'Skyhawk N2838L. Williamsburg Flight Center.')

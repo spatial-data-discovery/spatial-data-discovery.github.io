@@ -528,12 +528,12 @@ $(document).ready(function () {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">#from Linked_List import Linked_List   &lt;----- This has been commented out because I added the </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">#from Linked_List import Linked_List   &lt;----- This has been commented out because I added the</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>                                              <span class="co">#linked list class into this document</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="im">import</span> argparse</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="kw">def</span> Josephus(ll):</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>  <span class="co">#Prints the linked list after each time it rotates left and </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>  <span class="co">#Prints the linked list after each time it rotates left and</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>  <span class="co">#removes the first value</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>  <span class="cf">while</span> (<span class="bu">len</span>(ll) <span class="op">!=</span> <span class="dv">1</span>):</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>    ll.rotate_left()</span>
@@ -545,9 +545,9 @@ $(document).ready(function () {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a><span class="kw">class</span> Linked_List:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>  </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>  <span class="kw">class</span> __Node:</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>    </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>    <span class="co">#defines a node</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val):</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>      <span class="va">self</span>.val <span class="op">=</span> val</span>
@@ -600,138 +600,137 @@ $(document).ready(function () {
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true"></a>        new_element.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span>.prev <span class="op">=</span> new_element</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> new_element</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true"></a>        </span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true"></a>      <span class="co">#otherwise inserts the value at the given index</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true"></a>      <span class="cf">else</span>:</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true"></a>          <span class="cf">if</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true"></a>            pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true"></a>        new_element.prev <span class="op">=</span> pointer</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true"></a>        new_element.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true"></a>        pointer.<span class="bu">next</span>.prev <span class="op">=</span> new_element</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true"></a>        pointer.<span class="bu">next</span> <span class="op">=</span> new_element</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true"></a>      <span class="co">#increases size by 1</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true"></a>      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true"></a>  <span class="co">#if index is out of bounds it will raise an error</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true"></a>  <span class="co">#removes element at given value</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true"></a>  <span class="kw">def</span> remove_element_at(<span class="va">self</span>, index):</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true"></a>    pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true"></a>    <span class="co">#makes sure index given is in bounds</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true"></a>    <span class="cf">if</span>(index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true"></a>      <span class="co">#removes element at index 0 if index given is 0 </span></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true"></a>      <span class="cf">if</span> (index <span class="op">==</span> <span class="dv">0</span>):</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>.<span class="bu">next</span></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span>.prev <span class="op">=</span> <span class="va">self</span>.__header</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true"></a>      <span class="co">#removes the last item in the list if user indicated this index</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true"></a>      <span class="cf">elif</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true"></a>        <span class="va">self</span>.__trailer.prev <span class="op">=</span> <span class="va">self</span>.__trailer.prev.prev</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true"></a>        <span class="va">self</span>.__trailer.prev.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true"></a></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true"></a>      <span class="co">#otherwise removes the value at the given index</span></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true"></a>      <span class="cf">else</span>:</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true"></a>          pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true"></a>        pointer.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span>.<span class="bu">next</span></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true"></a>        pointer.<span class="bu">next</span>.prev <span class="op">=</span> pointer</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true"></a>      <span class="co">#decreases size by 1</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true"></a>      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true"></a>    <span class="co">#raises error if index is out of bounds</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true"></a>      </span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true"></a></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true"></a>  <span class="co">#returns the value stored in a given index</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true"></a>  <span class="kw">def</span> get_element_at(<span class="va">self</span>, index):</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true"></a></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true"></a>    <span class="co">#makes sure index given is in bounds</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true"></a>    <span class="cf">if</span> (index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true"></a>      <span class="co">#if the user wants the last item in the list implement this:</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true"></a>      <span class="cf">if</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true"></a>        pointer <span class="op">=</span> <span class="va">self</span>.__trailer.prev</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true"></a>        <span class="cf">return</span> (pointer.val)</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true"></a>      <span class="co">#finds correct index location and returns the value</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true"></a>      pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true"></a>      location <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true"></a>      <span class="cf">while</span> (location <span class="op">!=</span> index):</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true"></a>        location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true"></a>        pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true"></a>      <span class="cf">return</span> (pointer.val)</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true"></a>    <span class="co">#raises an index error if index is out of bounds</span></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true"></a>    </span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true"></a>  <span class="co">#removes first element in the list and appends it to the end</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true"></a>  <span class="kw">def</span> rotate_left(<span class="va">self</span>):</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true"></a>    first_number <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="dv">0</span>)</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true"></a>    <span class="va">self</span>.remove_element_at(<span class="dv">0</span>)</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true"></a>    <span class="va">self</span>.append_element(first_number)</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true"></a>    </span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true"></a>    <span class="co">#returns an empty list if there is nothing in the linked list</span></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="va">self</span>.__size <span class="op">==</span> <span class="dv">0</span>):</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true"></a>      <span class="cf">return</span> <span class="st">&#39;[]&#39;</span></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true"></a>    <span class="co">#if the linked list is not empty it adds one value at a time</span></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true"></a>    <span class="co">#to a new string and returns it.</span></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true"></a>      current <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true"></a>      print_this <span class="op">=</span> (<span class="st">&quot;[ &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val))</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true"></a>    <span class="cf">while</span> (current.<span class="bu">next</span> <span class="op">!=</span> <span class="va">self</span>.__trailer):</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true"></a>      current <span class="op">=</span> current.<span class="bu">next</span></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true"></a>      print_this <span class="op">+=</span> <span class="st">&quot;, &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val)</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true"></a>    <span class="cf">return</span> (print_this <span class="op">+</span> <span class="st">&quot; ]&quot;</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true"></a>      <span class="co">#otherwise inserts the value at the given index</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true"></a>      <span class="cf">else</span>:</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true"></a>          <span class="cf">if</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true"></a>            pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true"></a>        new_element.prev <span class="op">=</span> pointer</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true"></a>        new_element.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true"></a>        pointer.<span class="bu">next</span>.prev <span class="op">=</span> new_element</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true"></a>        pointer.<span class="bu">next</span> <span class="op">=</span> new_element</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true"></a>      <span class="co">#increases size by 1</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true"></a>      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true"></a>  <span class="co">#if index is out of bounds it will raise an error</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true"></a>  <span class="co">#removes element at given value</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true"></a>  <span class="kw">def</span> remove_element_at(<span class="va">self</span>, index):</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true"></a>    pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true"></a>    <span class="co">#makes sure index given is in bounds</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true"></a>    <span class="cf">if</span>(index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true"></a>      <span class="co">#removes element at index 0 if index given is 0</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true"></a>      <span class="cf">if</span> (index <span class="op">==</span> <span class="dv">0</span>):</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span>.<span class="bu">next</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true"></a>        <span class="va">self</span>.__header.<span class="bu">next</span>.prev <span class="op">=</span> <span class="va">self</span>.__header</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true"></a>      <span class="co">#removes the last item in the list if user indicated this index</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true"></a>      <span class="cf">elif</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true"></a>        <span class="va">self</span>.__trailer.prev <span class="op">=</span> <span class="va">self</span>.__trailer.prev.prev</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true"></a>        <span class="va">self</span>.__trailer.prev.<span class="bu">next</span> <span class="op">=</span> <span class="va">self</span>.__trailer</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true"></a>      <span class="co">#otherwise removes the value at the given index</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true"></a>      <span class="cf">else</span>:</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true"></a>        location <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true"></a>        <span class="cf">while</span> (location <span class="op">!=</span> (index<span class="op">-</span><span class="dv">1</span>)):</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true"></a>          location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true"></a>          pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true"></a>        pointer.<span class="bu">next</span> <span class="op">=</span> pointer.<span class="bu">next</span>.<span class="bu">next</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true"></a>        pointer.<span class="bu">next</span>.prev <span class="op">=</span> pointer</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true"></a>      <span class="co">#decreases size by 1</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true"></a>      <span class="va">self</span>.__size <span class="op">=</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true"></a>    <span class="co">#raises error if index is out of bounds</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true"></a>  <span class="co">#returns the value stored in a given index</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true"></a>  <span class="kw">def</span> get_element_at(<span class="va">self</span>, index):</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true"></a>    <span class="co">#makes sure index given is in bounds</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true"></a>    <span class="cf">if</span> (index <span class="op">&lt;</span> <span class="va">self</span>.__size <span class="kw">and</span> index <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true"></a>      <span class="co">#if the user wants the last item in the list implement this:</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true"></a>      <span class="cf">if</span> (index <span class="op">==</span> <span class="va">self</span>.__size <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true"></a>        pointer <span class="op">=</span> <span class="va">self</span>.__trailer.prev</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true"></a>        <span class="cf">return</span> (pointer.val)</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true"></a>      <span class="co">#finds correct index location and returns the value</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true"></a>      pointer <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true"></a>      location <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true"></a>      <span class="cf">while</span> (location <span class="op">!=</span> index):</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true"></a>        location <span class="op">=</span> location <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true"></a>        pointer <span class="op">=</span> pointer.<span class="bu">next</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true"></a>      <span class="cf">return</span> (pointer.val)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true"></a>    <span class="co">#raises an index error if index is out of bounds</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">IndexError</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true"></a>  <span class="co">#removes first element in the list and appends it to the end</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true"></a>  <span class="kw">def</span> rotate_left(<span class="va">self</span>):</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true"></a>    first_number <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="dv">0</span>)</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true"></a>    <span class="va">self</span>.remove_element_at(<span class="dv">0</span>)</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true"></a>    <span class="va">self</span>.append_element(first_number)</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true"></a>    <span class="co">#returns an empty list if there is nothing in the linked list</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="va">self</span>.__size <span class="op">==</span> <span class="dv">0</span>):</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true"></a>      <span class="cf">return</span> <span class="st">&#39;[]&#39;</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true"></a>    <span class="co">#if the linked list is not empty it adds one value at a time</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true"></a>    <span class="co">#to a new string and returns it.</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true"></a>      current <span class="op">=</span> <span class="va">self</span>.__header.<span class="bu">next</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true"></a>      print_this <span class="op">=</span> (<span class="st">&quot;[ &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val))</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true"></a>    <span class="cf">while</span> (current.<span class="bu">next</span> <span class="op">!=</span> <span class="va">self</span>.__trailer):</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true"></a>      current <span class="op">=</span> current.<span class="bu">next</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true"></a>      print_this <span class="op">+=</span> <span class="st">&quot;, &quot;</span> <span class="op">+</span> <span class="bu">str</span>(current.val)</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true"></a>    <span class="cf">return</span> (print_this <span class="op">+</span> <span class="st">&quot; ]&quot;</span>)</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true"></a></span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true"></a></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true"></a></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true"></a>    <span class="co">#tells the iterator where to start</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true"></a>    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true"></a>    <span class="cf">return</span> <span class="va">self</span></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true"></a></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__next__</span>(<span class="va">self</span>):</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true"></a>    <span class="co"># fetch the next value and return it. If there are no more </span></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true"></a>    <span class="co"># values to fetch, raise a StopIteration exception.</span></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="va">self</span>.<span class="fu">__iter__</span> <span class="op">==</span> <span class="va">self</span>.__size):</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">StopIteration</span></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true"></a>    to_return <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="va">self</span>.__iter_index)</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true"></a>    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="va">self</span>.__iter_index <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true"></a>    <span class="cf">return</span> to_return</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true"></a>    <span class="co">#tells the iterator where to start</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true"></a>    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true"></a>    <span class="cf">return</span> <span class="va">self</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true"></a>  <span class="kw">def</span> <span class="fu">__next__</span>(<span class="va">self</span>):</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true"></a>    <span class="co"># fetch the next value and return it. If there are no more</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true"></a>    <span class="co"># values to fetch, raise a StopIteration exception.</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="va">self</span>.<span class="fu">__iter__</span> <span class="op">==</span> <span class="va">self</span>.__size):</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true"></a>      <span class="cf">raise</span> <span class="pp">StopIteration</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true"></a>    to_return <span class="op">=</span> <span class="va">self</span>.get_element_at(<span class="va">self</span>.__iter_index)</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true"></a>    <span class="va">self</span>.__iter_index <span class="op">=</span> <span class="va">self</span>.__iter_index <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true"></a>    <span class="cf">return</span> to_return</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true"></a></span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true"></a></span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true"></a></span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true"></a></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true"></a></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true"></a></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true"></a>  p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Josephus Finds the Surviving Individual&quot;</span>)</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true"></a>  args <span class="op">=</span> p.parse_args()</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true"></a></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true"></a>  <span class="co">#asks user for n value</span></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true"></a>  n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Input the total number of people: &quot;</span>))</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true"></a>  <span class="co">#creates linked list</span></span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true"></a>  ll <span class="op">=</span> Linked_List()</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true"></a>  <span class="co">#adds n values to the linked list</span></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true"></a>  i <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true"></a>  <span class="cf">while</span> (i <span class="op">&lt;</span> n <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true"></a>    ll.append_element(i) </span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true"></a>    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true"></a>  <span class="co">#prints the initial list</span></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true"></a>  <span class="bu">print</span>(<span class="st">&quot;Initial order:&quot;</span>, ll)</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true"></a>  <span class="co">#calls the function</span></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true"></a>  Josephus(ll)</span></code></pre></div>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true"></a>  p <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Josephus Finds the Surviving Individual&quot;</span>)</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true"></a>  args <span class="op">=</span> p.parse_args()</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true"></a>  <span class="co">#asks user for n value</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true"></a>  n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Input the total number of people: &quot;</span>))</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true"></a>  <span class="co">#creates linked list</span></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true"></a>  ll <span class="op">=</span> Linked_List()</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true"></a>  <span class="co">#adds n values to the linked list</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true"></a>  i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true"></a>  <span class="cf">while</span> (i <span class="op">&lt;</span> n <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true"></a>    ll.append_element(i)</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true"></a>    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true"></a>  <span class="co">#prints the initial list</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true"></a>  <span class="bu">print</span>(<span class="st">&quot;Initial order:&quot;</span>, ll)</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true"></a>  <span class="co">#calls the function</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true"></a>  Josephus(ll)</span></code></pre></div>
 </div>
 
 <footer class="myfoot">

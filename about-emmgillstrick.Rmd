@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Emma Strickland"
 date: "Edited: 2020-02-03"
+semester: "Spring 2020"
 ---
 
 Bio

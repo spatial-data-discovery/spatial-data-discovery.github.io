@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Abby Gaddi"
 date: "Edited: 2020-19-02"
+semester: "Spring 2020"
 ---
 
 ![](https://data.whicdn.com/images/315745282/original.jpg "panda eating ramen")
@@ -67,7 +68,7 @@ def playSlots(machine):
 
 
 def calculate_UCB(balance,N):
-    
+
     #VARIABLES
     #number of slot machines
     d = 20
@@ -110,7 +111,7 @@ def calculate_UCB(balance,N):
         award_record.append(award)
         balance = balance - 1 + award
         return('You won: $' + str(round(balance,2))+'\n Machine ' + str(sum_of_rewards.index(max(sum_of_rewards))) +' won you the most money' )
-        
+
 
 #MAIN
 if __name__ == '__main__':

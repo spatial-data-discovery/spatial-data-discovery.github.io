@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Lu Huynh"
 date: "Edited: 2/3/20"
+semester: "Spring 2020"
 ---
 
 ![](https://vignette.wikia.nocookie.net/dilbert/images/b/b4/Saint_dogbert.jpg/revision/latest?cb=20090512153756 'life is filled with irony'){width=173 height=184}
@@ -75,7 +76,7 @@ with open (data_file, 'r', newline = '' ) as data:
             tip_angle_ex.append(float(x['tipangle']))
             pbt_ex.append(float(x['petiole_by_total']))
             lbw_ex.append(float(x['length_by_width']))
-            
+
         if x['species'] == 'syriaca':  
             leaf_width_syr.append(100 * (float(x['wlength'])/float(x['tlength'])))
             leaf_length_syr.append(100 * (float(x['llength'])/float(x['tlength'])))
@@ -83,7 +84,7 @@ with open (data_file, 'r', newline = '' ) as data:
             tip_angle_syr.append(float(x['tipangle']))
             pbt_syr.append(float(x['petiole_by_total']))
             lbw_syr.append(float(x['length_by_width']))
-            
+
         if x['species'] == 'speciosa':  
             leaf_width_sp.append(100 * (float(x['wlength'])/float(x['tlength'])))
             leaf_length_sp.append(100 * (float(x['llength'])/float(x['tlength'])))
@@ -98,7 +99,7 @@ width_vector = leaf_width_ex + leaf_width_syr + leaf_width_sp
 b_angle_vector = basal_angle_ex + basal_angle_syr + basal_angle_sp
 tip_angle_vector = tip_angle_ex + tip_angle_syr + tip_angle_sp
 pbt_vector = pbt_ex + pbt_syr + pbt_sp
-lbw_vector = lbw_ex + lbw_syr + lbw_sp 
+lbw_vector = lbw_ex + lbw_syr + lbw_sp
 
 #adding lists to the master list of lists to convert to array
 feed_to_PCA.append(length_vector)
@@ -132,7 +133,7 @@ final_df2 = pd.concat([final_df, ID_df], axis = 1)
 final_df2.to_csv('finalDF.csv')
 
 
-#scatterplot of 
+#scatterplot of
 pyplot.figure(1)    
 pyplot.scatter(leaf_width_ex, leaf_length_ex, c = 'y', marker = 's', label = 'exaltata', s = 10)
 pyplot.scatter(leaf_width_syr, leaf_length_syr, c = 'b', label = 'syriaca', s = 10)

@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "LeAnn Lo"
 date: "Edited 1/30/2020"
+semester: "Spring 2020"
 ---
 
 ![ Not my dog but I really want one ]( https://www.holidogtimes.com/wp-content/uploads/2018/02/two-shiba-inus-cute-1.png )
@@ -10,11 +11,11 @@ date: "Edited 1/30/2020"
 I am part of the Class of 2020! I am from northern Virginia and majoring in CAMS (computational applied math & statistics) and minoring in Computer Science. Hopefully working in Data Science in the future!
 
 
-### About Me (TMI): 
+### About Me (TMI):
 - I love eating and going out to new restaurants (but I'm a terrible cook).
 - My favorite movies are **Parasite** (Picture of the year! Let's go!), HER, and Rush Hour.
 - I am trying to teach myself the guitar but don't know anything about music theory (also trying to learn that)
-    
+
 
 ### Sample script
 [Extracting Column from csv Files (.py)](scripts/extract_column.py)
@@ -41,7 +42,7 @@ import sys, csv, os, argparse
 
 def main(fName,column,dirName = None):
 	#with open(dirName + fName, 'r') as reader:
-	with open(fName, 'r') as reader: 
+	with open(fName, 'r') as reader:
 		data = [row for row in csv.reader(reader)]
 
 	#with open(dirName + fName + '_names.txt', 'w') as writer:
@@ -54,7 +55,7 @@ def main(fName,column,dirName = None):
 	print("Wrote", count, "rows")
 
 
-""" 
+"""
 #this function is used if you want to run on a directory
 def runOnDir(dirName):
 	filenames = next(os.walk(dirName))[2]
@@ -64,7 +65,7 @@ def runOnDir(dirName):
 """
 
 if __name__ == "__main__":
-	
+
 	"""    for running on a directory
 	dirName = sys.argv[1]
 	if (dirName[-1] != '/'):
@@ -81,4 +82,3 @@ if __name__ == "__main__":
 	#fName = sys.argv[1]    #without argsparse
 	main(args.file,args.column)
 ```
-

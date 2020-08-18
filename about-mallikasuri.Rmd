@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Mallika Suri"
 date: "Edited: 2020-02-10"
+semester: "Spring 2020"
 ---
 
 ![](https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-09-at-5.37.37-PM.jpg?w=1200&ssl=1 'https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-09-at-5.37.37-PM.jpg?w=1200&ssl=1'){width=175 height=150}
@@ -16,7 +17,7 @@ date: "Edited: 2020-02-10"
 	- I love **traveling** - I have been to over 30 countries
 	- I have been **scuba diving** for 5 years
 	- I am a **dog** lover
-	
+
 ### Sample script
 [Magic 8 Ball (.py)](scripts/magic8ball.py)
 

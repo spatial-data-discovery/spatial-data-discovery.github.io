@@ -1,8 +1,8 @@
-
 ---
 title: "John Garst: The Culmination of Human Evolution"
 author: "John R. Garst, not a PhD"
 date: "Edited: 1/30/2020"
+semester: "Spring 2020"
 ---
 
 **Bio**

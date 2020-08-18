@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Ryan Han"
 date: "Edited 2020-02-10"  
+semester: "Spring 2020"
 ---
 
 ![ I am a big fan of basketball ](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/300px-Basketball_pictogram.svg.png "Basketball"){width=150 height=150}

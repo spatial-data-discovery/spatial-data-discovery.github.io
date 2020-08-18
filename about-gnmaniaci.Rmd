@@ -2,13 +2,14 @@
 title: "About the Coder"
 author: "Gianna Maniaci"
 date: "January 30, 2020"
+semester: "Spring 2020"
 ---
 
 Bio:
-:    Hi! 
-     My name is Gianna, and I am a junior at the college majoring in data science and minoring in public health. 
-     I love to travel, one of my goals is to go to all of the national parks in the US. 
-     I have currently been to _9 parks_. 
+:    Hi!
+     My name is Gianna, and I am a junior at the college majoring in data science and minoring in public health.
+     I love to travel, one of my goals is to go to all of the national parks in the US.
+     I have currently been to _9 parks_.
      The most recent park I visited was the Grand Canyon.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/a/aa/Dawn_on_the_S_rim_of_the_Grand_Canyon_%288645178272%29.jpg  'Grand Canyon'){width=150 height=150}
@@ -22,12 +23,12 @@ Other Interests:
 ### Sample Script
 [Josephus (.py)](scripts/josephus.py)
 
-My sample script is something I had to complete for a prior class, Computer Science 241. 
+My sample script is something I had to complete for a prior class, Computer Science 241.
 I did change it slightly by adding a help description the utility script assignment.
-This script demonstrates the way linked lists work as well as adding a fun game to the mix! 
-Josephus takes any number inputted by the user and makes a linked list of 1 to that number. 
-It will then rotate the linked list so the first value becomes the last and then removes the new first value. 
-It will continue to do this until there is only one number left, this is the survivor! 
+This script demonstrates the way linked lists work as well as adding a fun game to the mix!
+Josephus takes any number inputted by the user and makes a linked list of 1 to that number.
+It will then rotate the linked list so the first value becomes the last and then removes the new first value.
+It will continue to do this until there is only one number left, this is the survivor!
 
 ```{python josephus, eval=FALSE}
 #Gianna Maniaci
@@ -41,12 +42,12 @@ It will continue to do this until there is only one number left, this is the sur
 
 
 
-#from Linked_List import Linked_List   <----- This has been commented out because I added the 
+#from Linked_List import Linked_List   <----- This has been commented out because I added the
                                               #linked list class into this document
 import argparse
 
 def Josephus(ll):
-  #Prints the linked list after each time it rotates left and 
+  #Prints the linked list after each time it rotates left and
   #removes the first value
   while (len(ll) != 1):
     ll.rotate_left()
@@ -58,9 +59,9 @@ def Josephus(ll):
 
 
 class Linked_List:
-  
+
   class __Node:
-    
+
     #defines a node
     def __init__(self, val):
       self.val = val
@@ -113,7 +114,7 @@ class Linked_List:
         new_element.next = self.__header.next
         self.__header.next.prev = new_element
         self.__header.next = new_element
-        
+
 
       #otherwise inserts the value at the given index
       else:
@@ -141,7 +142,7 @@ class Linked_List:
 
     #makes sure index given is in bounds
     if(index < self.__size and index >= 0):
-      #removes element at index 0 if index given is 0 
+      #removes element at index 0 if index given is 0
       if (index == 0):
         self.__header.next = self.__header.next.next
         self.__header.next.prev = self.__header
@@ -166,7 +167,7 @@ class Linked_List:
     #raises error if index is out of bounds
     else:
       raise IndexError
-      
+
 
   #returns the value stored in a given index
   def get_element_at(self, index):
@@ -189,13 +190,13 @@ class Linked_List:
     #raises an index error if index is out of bounds
     else:
       raise IndexError
-    
+
   #removes first element in the list and appends it to the end
   def rotate_left(self):
     first_number = self.get_element_at(0)
     self.remove_element_at(0)
     self.append_element(first_number)
-    
+
   def __str__(self):
     #returns an empty list if there is nothing in the linked list
     if (self.__size == 0):
@@ -217,7 +218,7 @@ class Linked_List:
     return self
 
   def __next__(self):
-    # fetch the next value and return it. If there are no more 
+    # fetch the next value and return it. If there are no more
     # values to fetch, raise a StopIteration exception.
     if (self.__iter__ == self.__size):
       raise StopIteration
@@ -240,7 +241,7 @@ if __name__ == '__main__':
   #adds n values to the linked list
   i = 1
   while (i < n + 1):
-    ll.append_element(i) 
+    ll.append_element(i)
     i = i + 1
   #prints the initial list
   print("Initial order:", ll)

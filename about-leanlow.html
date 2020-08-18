@@ -533,7 +533,7 @@ $(document).ready(function () {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="kw">def</span> main(fName,column,dirName <span class="op">=</span> <span class="va">None</span>):</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    <span class="co">#with open(dirName + fName, &#39;r&#39;) as reader:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>    <span class="cf">with</span> <span class="bu">open</span>(fName, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> reader: </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>    <span class="cf">with</span> <span class="bu">open</span>(fName, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> reader:</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>        data <span class="op">=</span> [row <span class="cf">for</span> row <span class="kw">in</span> csv.reader(reader)]</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>    <span class="co">#with open(dirName + fName + &#39;_names.txt&#39;, &#39;w&#39;) as writer:</span></span>
@@ -546,7 +546,7 @@ $(document).ready(function () {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Wrote&quot;</span>, count, <span class="st">&quot;rows&quot;</span>)</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a><span class="co">&quot;&quot;&quot; </span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a><span class="co">#this function is used if you want to run on a directory</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a><span class="co">def runOnDir(dirName):</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a><span class="co">    filenames = next(os.walk(dirName))[2]</span></span>
@@ -556,7 +556,7 @@ $(document).ready(function () {
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>    </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;    for running on a directory</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a><span class="co">    dirName = sys.argv[1]</span></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a><span class="co">    if (dirName[-1] != &#39;/&#39;):</span></span>

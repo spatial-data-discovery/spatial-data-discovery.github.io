@@ -2,12 +2,13 @@
 title: "About the Coder"
 author: "Jonah Casale, Student"
 date: "Edited: 2020-03-02"
+semester: "Spring 2020"
 ---
 
 ![ALT TEXT](https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg 'Jonah Casale')
 
 Bio
-:   I am from Redmond, WA, and I am a student at the College of William and Mary.  I enjoy many activities, including drawing, singing, games, and weight lifting; I especially enjoy **acting**.  What I do _not_ like?  I'd say jogging, useless Apple products, and hot weather. 
+:   I am from Redmond, WA, and I am a student at the College of William and Mary.  I enjoy many activities, including drawing, singing, games, and weight lifting; I especially enjoy **acting**.  What I do _not_ like?  I'd say jogging, useless Apple products, and hot weather.
 
 CODING LANGUAGES I'VE WORKED WITH
 
@@ -17,7 +18,7 @@ CODING LANGUAGES I'VE WORKED WITH
 - A tiny bit of Pascal
 - A tiny bit of SQL
 
-## Sample Python Script 
+## Sample Python Script
 [caloric_needs_calculator.py](/scripts/caloric_needs_calculator.py) This is a script that calculates your daily caloric needs.
 
 ```{python, eval=FALSE}
@@ -38,7 +39,7 @@ import argparse
 
 # First determine the person's BMR using Harris-Benedict formula.
 # Adult male: 66 + (6.3 x body weight in lbs.) + (12.9 x height in inches) - (6.8 x age in years) = BMR
-# Adult female: 655 + (4.3 x weight in lbs.) + (4.7 x height in inches) - (4.7 x age in years) = BMR 
+# Adult female: 655 + (4.3 x weight in lbs.) + (4.7 x height in inches) - (4.7 x age in years) = BMR
 userBodyWeight = input("Please enter your body weight (lbs.): \n")
 userHeight = input("Please enter your height (in inches): \n")
 userSex = input("Please enter your sex: type M for male or F for female: \n")
@@ -54,10 +55,10 @@ if (float(userBodyWeight) < 0) or (float(userHeight) < 0) or (float(userAge) < 0
 else :
     # Determine formula based on sex to calculate BMR.
     if (userSex == "M") or (userSex == "m") :
-        userBMR = 66 + (6.3 * userBodyWeight) + (12.9 * userHeight) - (6.8 * userAge) 
+        userBMR = 66 + (6.3 * userBodyWeight) + (12.9 * userHeight) - (6.8 * userAge)
     if (userSex == "F") or (userSex == "f") :
-        userBMR = 655 + (4.3 * userBodyWeight) + (4.7 * userHeight) - (4.7 * userAge) 
-        
+        userBMR = 655 + (4.3 * userBodyWeight) + (4.7 * userHeight) - (4.7 * userAge)
+
     # Now ask for user's activity level.
     print("Would you say that you are: \n")
     print("sedentary (little or no exercise at all)")
@@ -65,9 +66,9 @@ else :
     print("moderately_active (moderate exercise/sports 3-5 days/week)")
     print("very_active (hard exercise/sports 6-7 days a week)")
     print("extremely_active (we're talking elite athletes here!)")
-    
+
     activityLevel = input("Please type your activity level (sedentary, lightly_active, moderately_active, very_active, extremely_active): \n")
-    
+
     if activityLevel == "sedentary" :
         caloricNeeds = userBMR * 1.2
     elif activityLevel == "lightly_active" :
@@ -80,16 +81,12 @@ else :
         caloricNeeds == userBMR * 1.9
     else :
         print("You inputed your activity level incorrectly.  Start over and try again.")
-        
+
     print(" ")
     print("Based on the information you have inputted, your APPROXIMATE caloric needs are " + str(caloricNeeds) + " calories per day to maintain your current weight.")
-    
-    
+
+
 p = argparse.ArgumentParser(description="Calculates your daily caloric needs")
 
 
 ```
-
-
-
-

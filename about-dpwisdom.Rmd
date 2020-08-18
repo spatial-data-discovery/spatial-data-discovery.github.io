@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "David Wisdom"
 date: "Edited: 2019-09-22"
+semester: "Fall 2019"
 ---
 My name is David and I like to sail. I worked at a sailing school teaching dinghy sailing for a few years (*see below for a picture*).
 

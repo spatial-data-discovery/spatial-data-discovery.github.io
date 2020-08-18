@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Audrey Way"
 date: "Edited: 2019-09-2"
+semester: "Fall 2019"
 ---
 **Bio**
 : I'm a Data Science and Sociology with a focus in Criminology double major, senior, and from Arlington VA.
