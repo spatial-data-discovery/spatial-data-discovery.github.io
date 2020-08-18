@@ -10,13 +10,13 @@ navbar:
         - text: Resources
           menu:
             - text: "Data"
-              href: resource-data.html
+              href: resources-data.html
             - text: "Links"
-              href: resource-link.html
+              href: resources-links.html
             - text: "Methods"
-              href: resource-meth.html
+              href: resources-methods.html
             - text: "Software"
-              href: resource-soft.html
+              href: resources-software.html
             - text: Syllabus
               href: https://drdavis.space/teaching/ds/sdd/syllabus/2020/spring/
         - text: Spatial Discovery
