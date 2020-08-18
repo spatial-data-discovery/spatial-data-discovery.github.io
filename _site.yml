@@ -24,10 +24,9 @@ navbar:
             - text: "Example"
             - text: "Breathing of the Biosphere"
               href: project-dtwoods.html
+            - text: "---------"
             - text: "Previous Projects"
               href: projects.html
-            - text: "---------"
-            - text: "Fall 2020"
         - text: "About"
           menu:
             - text: "About the Professor"
