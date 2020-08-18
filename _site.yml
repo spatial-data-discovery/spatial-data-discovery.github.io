@@ -30,48 +30,15 @@ navbar:
             - text: "Fall 2020"
         - text: "About"
           menu:
+            - text: "About the Professor"
+              href: about-dtwoods.html
             - text: "The Coder Pages"
               href: about.html
             - text: "------"
             - text: "Spring 2020 Team"
-            - text: "abgaddi"
-              href: about-abgaddi.html
-            - text: "aburke01"
-              href: about-aburke01.html
-            - text: "dt-woods"
-              href: about-dtwoods.html
-            - text: "elkelthen"
-              href: about-elkelthen.html
-            - text: "emmgillstrick"
-              href: about-emmgillstrick.html
-            - text: "gnmaniaci"
-              href: about-gnmaniaci.html
-            - text: "grluisi"
-              href: about-grluisi.html
-            - text: "hmbaier"
-              href: about-hmbaier.html
-            - text: "intj1"
-              href: about-intj1.html
-            - text: "irthompson01"
-              href: about-irthompson01.html
-            - text: "jlollen"
-              href: about-jlollen.html
-            - text: "jpcasale"
-              href: about-jpcasale.html
-            - text: "leanlow"
-              href: about-leanlow.html
-            - text: "luhuynh"
-              href: about-luhuynh.html
-            - text: "mallikasuri"
-              href: about-mallikasuri.html
-            - text: "matt-kc"
-              href: about-matt-kc.html
-            - text: "nd3600"
-              href: about-nd3600.html
-            - text: "pulakraj"
-              href: about-pulakraj.html
-            - text: "rhan9"
-              href: about-rhan9.html
+              href: development-team-spring-2020.html
+            - text: "Fall 2019 Team"
+              href: development-team-fall-2019.html
         - icon: fa-github
           href: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io
 

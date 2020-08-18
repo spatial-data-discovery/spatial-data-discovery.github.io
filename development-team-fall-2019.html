@@ -11,7 +11,7 @@
 
 
 
-<title>The Breathing of the Terrestrial Biosphere</title>
+<title>The GitHub Development Team</title>
 
 <script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -352,51 +352,47 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">The Breathing of the Terrestrial Biosphere</h1>
+<h1 class="title toc-ignore">The GitHub Development Team</h1>
+<h3 class="subtitle">Fall 2019</h3>
 
 </div>
 
 
-<!-- VIDEO ON LOOP: see styles.css for formatting -->
-<div class="video-wrapper">
-<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" > </video></p>
-</div>
-<blockquote>
-<p><em>“If the Earth had lungs, they would be the Amazon rainforest.”</em> – Pavan Sukhdev</p>
-</blockquote>
-<div id="overview" class="section level2">
-<h2>Overview</h2>
-<p>Plants are often described as the lungs of the earth—taking in carbon dioxide and releasing oxygen into the atmosphere. It is a simple fact that we sometimes take for granted. As the seasons change to autumn in Virginia and we reach for a rake to begin cleaning up the yard, we are reminded of just how many leaves are produced by the trees above us.</p>
-<p>Trees are dropping their leaves as a response to the changes we feel outside such as the reduction in daylight and cooler temperatures. But, as autumn fades to winter in the northern hemisphere, it is the dawn of spring for those living south of the equator where plants are now beginning to grow. The change in the seasons creates this constant growing and dying of plant life. This cycle is important for our understanding of the global carbon cycle: a property used in studies to understand and predict Earth’s future climate.</p>
-<p>Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons—called the “breathing of the terrestrial biosphere<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>”—as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.</p>
-</div>
-<div id="data-description" class="section level2">
-<h2>Data Description</h2>
-<p>The data visualized above is the enhanced vegetation index (EVI), which is created by combining specific energy bands collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> satellite orbiting the earth about 16 times each day. EVI ranges between zero and one, represented by the varying brightness of green where zero (white) represents an absence of vegetation and one (dark green) represents a dense vegetation cover.</p>
-<p>Terra MODIS EVI data sets were downloaded in HDF<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> from the Land Processes Distributed Active Archive Center (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>) for each month in the year 2002. The data were extracted using a computer program written in the Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> programming language with the help of the scientific dataset application program interface provided by the <a href="http://fhs.github.io/pyhdf/">pyhdf</a> package<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
-<p>A script was used to scale the original data from 0.05 degree resolution (about five square kilometers) to 0.5 degree resolution (about 50 square kilometers) using the arithmetic means of valid EVI points within each 10 by 10 grid in the original data<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<p>For each month, the data were visualized in QGIS<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> using the same mapping properties and exported to PNG<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> image format. The image files were loaded into GIMP<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>, optimized and exported as an animated GIF<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. The animated GIF was converted to a video (encoded in MPEG-4<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>) using FFmpeg<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.</p>
-<div class="credit-line">
-<p>Author: Tyler W. Davis. Last edited: 2019-10-28.</p>
-</div>
-</div>
-<div class="footnotes">
 <hr />
-<ol>
-<li id="fn1"><p>Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1–6, 2008.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>About Terra. NASA.gov. Accessed 2019-10-28. Online: <a href="https://terra.nasa.gov/about" class="uri">https://terra.nasa.gov/about</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Hierarchical Data Format. Copyright 2006–2019. The HDF Group. Accessed 2019-10-28. Online: <a href="https://www.hdfgroup.org/" class="uri">https://www.hdfgroup.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA’s Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: <a href="https://www.hdfeos.org/software/pyhdf.php" class="uri">https://www.hdfeos.org/software/pyhdf.php</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: <a href="https://bitbucket.org/labprentice/gepisat" class="uri">https://bitbucket.org/labprentice/gepisat</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref12" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Team Member</th>
+<th align="left">Coder Page</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Audrey Way</td>
+<td align="left"><a href="about-alway1.html">alway1</a></td>
+</tr>
+<tr class="even">
+<td align="left">David Wisdom</td>
+<td align="left"><a href="about-dpwisdom.html">dpwisdom</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Liz Rosen</td>
+<td align="left"><a href="about-ithacalr.html">ithacalr</a></td>
+</tr>
+<tr class="even">
+<td align="left">Tina Chen</td>
+<td align="left"><a href="about-jiayingchen0307.html">jiayingchen0307</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Morgan Brickey</td>
+<td align="left"><a href="about-mbrickey.html">mbrickey</a></td>
+</tr>
+<tr class="even">
+<td align="left">Yaw Ofori-Addae</td>
+<td align="left"><a href="about-oforiaddaejnr.html">oforiaddaejnr</a></td>
+</tr>
+</tbody>
+</table>
 
 <footer class="myfoot">
     <div class="foot-text">
