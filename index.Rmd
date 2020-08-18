@@ -1,5 +1,5 @@
 ---
-title: "DATA 440 - Spatial Data Discovery"
+title: "DATA 431 - Spatial Data Discovery"
 ---
 
 <div class="banner"><div class="banner-img"></div></div>
