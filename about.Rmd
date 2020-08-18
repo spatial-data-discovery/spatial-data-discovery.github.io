@@ -8,7 +8,7 @@ library(knitr)
 myfiles <- list.files(pattern = "^about-.*html$")
 coders <- c()
 for (f in myfiles){
-    ghuser <- sub(pattern = "about_(.*)\\..*$", replacement= "\\1", f)
+    ghuser <- sub(pattern = "about-(.*)\\..*$", replacement= "\\1", f)
     mylink <- paste(c("[", ghuser, "](", f, ")"), collapse = "")
     coders <- c(coders, mylink)
 }
