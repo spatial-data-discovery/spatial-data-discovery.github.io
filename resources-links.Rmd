@@ -5,6 +5,12 @@ title: "Resources | Links"
 [\&what\;](http://www.amp-what.com/unicode/search/)
 :   A quick, interactive reference of 14,500 HTML character entities and common Unicode characters, 8859-1 characters, quotation marks, punctuation marks, accented characters, symbols, mathematical symbols, and Greek letters, icons, and markup-significant & internationalization characters.
 
+[Colorgorical](http://vrl.cs.brown.edu/color)
+:   A tool featuring a series of adjustable sliders for customizing a color palette based on perceptual distance between hues, the differences between hue names, how close together the hues are on the color wheel, and the specificity of hue names.
+
+[ColorMoves](https://sciviscolor.org/home/colormoves/)
+:   An interactive colormap construction tool for visualizing scientific data in a colorful, artistic and transformative way.
+
 [Command Line Basics | Windows](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands)
 :   A tutorial by Codrut Neagu on some basic Windows CMD commands to help you get around the Command Prompt.
 
