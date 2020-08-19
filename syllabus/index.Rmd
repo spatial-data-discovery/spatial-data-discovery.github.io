@@ -473,7 +473,15 @@ Less-than-satisfactory achievement
 
 Course Calendar
 ===============
-This class meets twice a week for 80 minutes each meeting.
+In this abbreviated twelve week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "sandbox challenge" assignment.
+These assignments are meant to stimulate your creativity and problem-solving skills that will help you with addressing the graded assignments and final project.
+
+Students are expected to complete three additional hours of coursework.
+These tasks include:
+
+* Learning Git and Version Control
+* Learning QGIS for Data Visualization
+* Making Animations for the Web
 
 The schedule for discussion meetings, lectures, and assignments will be posted online.
 The dates in the calendar are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service.
