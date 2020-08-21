@@ -44,6 +44,9 @@ title: "Resources | Links"
 [Perl Regular Expressions](https://perldoc.perl.org/perlre.html#Metacharacters)
 :   Link to metacharacters used in Perl regular expressions.
 
+[Properly Installing Python](https://docs.python-guide.org/starting/installation/)
+:   The hitchhiker's guide to properly install Python on Windows, Mac and Linux as well as how to setup virtual environments for your own individual projects or classes.
+
 [QGIS Print Layout](https://docs.qgis.org/3.4/en/docs/training_manual/map_composer/map_composer.html)
 :   Link to a lesson using the QGIS print composer for creating map layouts with titles, legends, scalebars, etc.
 
