@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Andrew Caietti"
 date: "Edited: 2020-08-25"
+semester: "Fall 2020"
 ---
 
 ![](https://scripps.ucsd.edu/sites/scripps.ucsd.edu/files/resources-and-facilities/field_page_top_image/2013/siocommA_ScrippsCampus_Aerials_20080718_004.jpg 'Scripps Pier, La Jolla')
