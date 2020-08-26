@@ -65,6 +65,9 @@ title: "Resources | Software"
 [h5py](https://www.h5py.org/)
 :   Python package for reading and writing in the HDF5 binary data format.
 
+[numpy](https://numpy.org/)
+:   The fundamental Python package for scientific computing.
+
 [pandas](https://pandas.pydata.org/)
 :   A fast, powerful, flexible and easy to use open source data analysis and manipulation tool.
 
