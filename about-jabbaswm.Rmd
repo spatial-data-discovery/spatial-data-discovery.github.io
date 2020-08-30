@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Jamil Abbas"
+date: "Edited: 2020-08-29"
+semester: "Fall 2020"
+---
+
+![](https://www.spalding.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-masterCatalog_SPALDING/default/dwd21974bc/images/hi-res/74876E_FRONT.jpg?sw=555&sh=689&sm=cut&sfrm=jpg){width=150 height=150}
+
+Bio
+:   I am a senior CAMS major hoping to pursue a career in data analysis. I was born in San Diego CA, but grew up in Prague CZ.
+
+
+*Some of my hobbies*
+:   - Basketball
+    - Video games
+    - Listening to music

@@ -1,0 +1,20 @@
+---
+title: "About the Coder"
+author: "Andrew Caietti"
+date: "Edited: 2020-08-25"
+semester: "Fall 2020"
+---
+
+![](https://scripps.ucsd.edu/sites/scripps.ucsd.edu/files/resources-and-facilities/field_page_top_image/2013/siocommA_ScrippsCampus_Aerials_20080718_004.jpg 'Scripps Pier, La Jolla')
+
+**Bio**
+:   My name is *Andrew Caietti* and I'm from [San Diego, CA](https://en.wikipedia.org/wiki/San_Diego)! I am a senior at William and Mary, majoring in Applied Mathematics with a focus on Probability and Operations Research.
+
+Hobbies and Interests:
+:   - Surfing
+    - Biking
+    - Research in Data Science/Math
+    - Aviation
+ 
+
+

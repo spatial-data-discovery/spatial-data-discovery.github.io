@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "John Hennin"
+date: "August 25th, 2020"
+semester: "Fall 2020"
+---
+
+![John Hennin](https://www.wm.edu/as/data-science/researchlabs/geolab/images/spring-2020/hennin_john)
+
+**Bio**
+: My name is John Hennin and I am a data science major at the College of William and Mary, where I participate in geoLab and Philosophy Club.
+
+*Websites*
+
+* https://github.com/johnhennin
+* https://www.linkedin.com/in/johnhennin/

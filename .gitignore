@@ -22,3 +22,5 @@ venv/
 
 # Python compilations
 __pycache__
+
+desktop.ini
