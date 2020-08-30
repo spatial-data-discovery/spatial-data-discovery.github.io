@@ -10,8 +10,8 @@ semester: "Fall 2020"
 **Bio**
 :   My name is *Andrew Caietti* and I'm from [San Diego, CA](https://en.wikipedia.org/wiki/San_Diego)! I am a senior at William and Mary, majoring in Applied Mathematics with a focus on Probability and Operations Research.
 
-**Hobbies and Interests**:
-    * Surfing
+**Hobbies and Interests**
+:	* Surfing
     * Research in Mathematics/Data Science
     * Biking 
     * Aviation
