@@ -14,4 +14,3 @@ semester: "Fall 2020"
 :   - Dogs (fostered 4 this past summer)
     - Baking
     - Running
-
