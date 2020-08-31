@@ -1,0 +1,95 @@
+---
+title: Children's Hospitals in the US
+subtitle: An examination of the number of children's hospitals per state
+author-meta: "Audrey Way"
+semester: "Fall 2019"
+---
+
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/final_rendering.mp4" type="video/mp4" >
+  </video>
+</div>
+
+## Overview
+<div id="way_table">
+| State         | Number of Children's Hospitals  |
+|---------------|:---------------------------------:|
+| TX       | 16                              |
+| CA    | 11                              |
+| FL, CO       |  5                              |
+| NJ, GA , MA, VA    |  4                             |
+| TN, WA, NE, AL   |  3                             |
+| IL, HI, OK, UT, LA, MI, NY, PR    |  2                   |
+| CT, MI, AR, MT, KS, KT, SD| 1|
+| Other 23 states | 0|
+</div>
+
+Health care in the United States isn't bad; on the contrary, it's quite good.
+We have access to technology and medicine that assists with a range of illnesses and disabilities and we are always making advances in healthcare.
+However, our system is severely biased and that significantly impacts the  accessibility of care for those in need.
+This map is a basic exploration into how biased our healthcare system truly is.
+It shows the number of children’s hospitals per state, with the height of the state indicating the total children’s hospitals.
+Texas has the most children’s hospitals, totaling at 16, while California has the second most at 11.
+However, several states have no children’s hospital at all, making it difficult for a child to receive care when they need it.
+This creates disadvantaged populations in these states in particular, however, even in states where there are hospitals, much of the population is still disadvantaged.
+
+![](https://drdavis.space/teaching/ds/sdd/media/2019/12/childrens_hospitals_heatmap.png)
+
+In states where there are children’s hospitals, they tend to be centralized in one area.
+For example, in Texas, where there are the most hospitals, they are all located in one place.
+Considering the size of the state, they should be more dispersed to provide equal access, however, the heatmap above shows that they are mostly located in the north east of the state, around Dallas, a major city.
+The cities that are displayed on this map have populations of 250,000 or greater, meaning that rural populations are still at a disadvantage for accessing children’s care.
+Areas that are dark green show a higher density of children’s hospitals, while lighter areas show a lower density.
+White areas show an absence of hospitals all together.
+
+## Data Description
+The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)[^hifld] and contains information about children's hospitals in the United States.
+This data was extracted from a database of general hospital information using the script below.
+Various state department and federal sources contributed to this general database.
+This script produced an output CSV file containing only children's hospital information, which was then uploaded and visualized using QGIS[^qgis].
+Three-dimensional (3D) rendering was used to show the number of hospitals per state and a video was taken of the rendering.
+Ffmpeg[^ffmpeg] was used to crop the video to a size appropriate for the website.
+The data for the cities with populations greater than 250,000 was produced by Natural Earth[^naturalearth], which provides data of populated areas on a global scale.
+This data was narrowed down to only include cities in the USA with a population greater or equal to 250,000 using QGIS.
+
+
+### Data Organization
+```python
+# Author: Audrey Way
+# Last edited: 2019-12-16
+
+import os
+import os.path
+import pandas as pd
+
+my_dir = "."
+
+my_file = "Hospitals.csv"
+file_path = os.path.join(my_dir, my_file)
+
+# Creating the data frame
+df = pd.read_csv('Hospitals.csv')
+
+# Getting children and state
+gk = df.groupby('NAICS_DESC')
+gkk = gk.get_group("CHILDREN'S HOSPITALS, GENERAL")
+
+# sorting values by state in ascending order
+gkk.sort_values(by=['STATE'], inplace=True)
+
+# send data frame to csv file (load into QGIS)
+gkk.to_csv(r'.\state_childrens2.csv')
+```
+
+
+[^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: https://ffmpeg.org/
+[^hifld]: HIFLD. Homeland Infrastructure Foundation-Level Data. Accessed 2019-12-1. Online: https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27
+[^naturalearth] Natural Earth. Accessed 2019-12-18. Online: https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-10-28. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-2-1. Online: https://www.qgis.org
+
+<div class="credit-line">
+Author: Audrey Way
+Last edited: 2019-12-17.
+</div>

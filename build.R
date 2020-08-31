@@ -1,0 +1,5 @@
+library("rmarkdown")
+library("reticulate")
+setwd("./")
+render_site()
+#render("about-davis.Rmd", output_format="html_document")

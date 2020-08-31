@@ -1,0 +1,151 @@
+/* Definition list */
+dd {
+    margin-bottom: 10px;
+}
+
+/* Blockquotes */
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+
+  /*Font*/
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  text-align: center;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote a{
+  text-decoration: none;
+  background: #eee;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #626262;
+}
+
+blockquote a:hover{
+ color: #666;
+}
+
+blockquote em{
+  font-style: italic;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.myfoot {
+    width: 100%;
+    color: #ffffff;
+    background-color: #222222;
+    padding-top: 10px;
+}
+
+.foot-text {
+    text-align: center;
+}
+
+.banner {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0px;
+}
+.banner-img {
+    background: #ffffc3 url('images/banner_940x267.png') 50% 50% no-repeat;
+    min-height: 200px;
+}
+
+.suri {
+    max-width: 500px;
+}
+.suri table {
+    width: 100%;
+}
+.suri td:nth-child(1){
+    width: 66%;
+}
+.suri td:nth-child(2){
+    width: 33%;
+    text-align: right;
+}
+.suri .header th:nth-child(2){
+    text-align: right;
+}
+
+@media only screen and (max-width: 750px) {
+    .banner-img {
+        background: url('images/banner_500x500.png') 50% 50% no-repeat;
+        min-height: 500px;
+    }
+}
+
+.semester {
+  margin: 0;
+  font-size: 1.1em;
+  color: #626463;
+}
+
+.main-container {
+    margin-bottom: 40px;
+}
+
+.credit-line {
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.credit-line p {
+    margin: 0;
+}
+
+.video-wrapper {
+    display: inline-block;
+    text-align: center;
+    max-width: 910px;
+    width: 100%
+}
+
+.video-fr-wrapper {
+    display: inline-block;
+    float: right;
+    max-width: 500px;
+    margin: 0px 15px;
+}
+
+#scaledvideo {
+    width: 100%;
+    height: auto;
+}
+
+#burkevideo {
+    width: 100%;
+    height: auto;
+    max-width: 478px;
+}
+
+#way_table {
+    display: inline-block;
+    float: right;
+    max-width: 500px;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 660px) {
+    #way_table {
+        float: none;
+        width: 100%;
+        max-width: 660px;
+        margin-left: 0px;
+    }
+}

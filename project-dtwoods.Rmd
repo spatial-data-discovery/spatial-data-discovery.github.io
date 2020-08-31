@@ -1,0 +1,55 @@
+---
+title: The Breathing of the Terrestrial Biosphere
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/videos/evi.mp4" type="video/mp4" >
+  </video>
+</div>
+
+> *"If the Earth had lungs, they would be the Amazon rainforest."* -- Pavan Sukhdev
+
+## Overview
+Plants are often described as the lungs of the earth---taking in carbon dioxide and releasing oxygen into the atmosphere.
+It is a simple fact that we sometimes take for granted.
+As the seasons change to autumn in Virginia and we reach for a rake to begin cleaning up the yard, we are reminded of just how many leaves are produced by the trees above us.
+
+Trees are dropping their leaves as a response to the changes we feel outside such as the reduction in daylight and cooler temperatures.
+But, as autumn fades to winter in the northern hemisphere, it is the dawn of spring for those living south of the equator where plants are now beginning to grow.
+The change in the seasons creates this constant growing and dying of plant life.
+This cycle is important for our understanding of the global carbon cycle: a property used in studies to understand and predict Earth's future climate.
+
+Examining this phenomenon at the global scale, we see this pattern of plant life migrating with the seasons---called the "breathing of the terrestrial biosphere[^baldocchi]"---as shown by the movement of green in the animation above, which shows where plant life is located on Earth for each month looped over one year.
+
+## Data Description
+The data visualized above is the enhanced vegetation index (EVI), which is created by combining specific energy bands collected by the Moderate Resolution Imaging Spectroradiometer (MODIS) sensor that is onboard the Terra[^terra] satellite orbiting the earth about 16 times each day.
+EVI ranges between zero and one, represented by the varying brightness of green where zero (white) represents an absence of vegetation and one (dark green) represents a dense vegetation cover.
+
+Terra MODIS EVI data sets were downloaded in HDF[^hdf] from the Land Processes Distributed Active Archive Center ([LP DAAC](https://lpdaac.usgs.gov/)) for each month in the year 2002.
+The data were extracted using a computer program written in the Python[^python] programming language with the help of the scientific dataset application program interface provided by the [pyhdf](http://fhs.github.io/pyhdf/) package[^pyhdf].
+
+A script was used to scale the original data from 0.05 degree resolution (about five square kilometers) to 0.5 degree resolution (about 50 square kilometers) using the arithmetic means of valid EVI points within each 10 by 10 grid in the original data[^gepisat].
+
+For each month, the data were visualized in QGIS[^qgis] using the same mapping properties and exported to PNG[^png] image format.
+The image files were loaded into GIMP[^gimp], optimized and exported as an animated GIF[^gif].
+The animated GIF was converted to a video (encoded in MPEG-4[^mpeg4]) using FFmpeg[^ffmpeg].
+
+<div class="credit-line">
+Author: Tyler W. Davis.
+Last edited: 2019-10-28.
+</div>
+
+[^baldocchi]: Baldocchi et al., Australian Journal of Botany, vol. 56, pp. 1--6, 2008.
+[^ffmpeg]: FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-10-28. Online: https://ffmpeg.org/
+[^gepisat]: Python script (modis_hdf) was developed as a part of the Global ecosystem Production in Space and Time (GePiSaT) project funded by Imperial College London. Copyright (C) 2017 Prentice Lab. Accessed 2019-10-28. Online: https://bitbucket.org/labprentice/gepisat
+[^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-10-28. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: https://www.gimp.org/
+[^hdf]: Hierarchical Data Format. Copyright 2006--2019. The HDF Group. Accessed 2019-10-28. Online: https://www.hdfgroup.org/
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: https://mpeg.chiariglione.org/
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2019-10-28. Online: http://www.libpng.org/pub/png/
+[^pyhdf]: HDF - EOS Tools and Information Center. The HDF Group in collaboration with NASA's Earth Science Data and Information System (ESDIS) Project. Accessed 2019-10-28. Online: https://www.hdfeos.org/software/pyhdf.php
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2019-10-28. Online: https://www.python.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
+[^terra]: About Terra. NASA.gov. Accessed 2019-10-28. Online: https://terra.nasa.gov/about

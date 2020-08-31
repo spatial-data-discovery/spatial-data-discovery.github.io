@@ -1,0 +1,708 @@
+---
+title: "Spatial Data Discovery | Syllabus"
+author: "Data Science | William &amp; Mary"
+date: "Fall 2020"
+---
+
+****
+
+Course Description
+===========================
+
+Most, if not all, of today's grand challenges (e.g., food, water and energy security) can be described spatially from regional to global scales and, while several individual disciplines contend to address these challenges, there is one key factor that they all have in common: the need for data.
+Despite our being in an age rich in data, many of the critical datasets needed for our understanding and prediction of our world are, in fact, quite limited.
+
+In this capstone course, you will get the opportunity to utilize your Python programming skills (writing scripts and creating subroutines) to connect to various types of data (e.g., GeoJSON, ASC, HDF5 and NetCDF), synthesize these data to unlock new understanding (using methods such as spatial scaling and gap-filling), create visualizations using open-source GIS software, and present to the world your own story of spatial data discovery professionally written for the web.
+I will take you through my own journey of data discovery, provide you with the know-how for accessing large data repositories, demonstrate methods for data harmonizing, processing, modeling and visualizing, and challenge you to think spatially.
+
+Catalog Number
+
+:   - DATA 431
+    - Section 1/2
+    - CRN 14948/15432
+
+Prerequisites
+
+:   - CSCI 140/141 or DATA 140/141
+
+Semester
+
+:   - Fall 2020 (19 August 2020--24 November 2020)
+
+Location
+
+:   - [Integrated Science Center](https://www.wm.edu/about/visiting/campusmap/location/isc-1.php) Room 3280
+
+        \*_classes will likely be held remotely_
+
+Class Times
+
+:   - MW 1400-1520
+
+Instructor
+
+:   - Dr. Tyler W. Davis
+    - Email: twdavis@wm.edu
+    - Office: Center for Geospatial Analysis, Swem Library Rm 213
+    - Phone: 757-221-6449
+
+Office Hours
+
+:   - Mon 1100--1300, 1530--1600, 1700--2000
+    - Wed 1100--1130, 1530--1700
+    - Fri 1100-1200
+    - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
+    - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
+
+Delivery
+
+:   - This class is labeled as MIX/RSOF, which means that the class meets remotely at a synchronous class time.
+        There may be optional in-class/in-person scheduled meetings, but is unlikely.
+
+Final Exam
+
+:   - Semester-long project due on or before 24 November 2020
+
+Minimum Passing Grade
+
+:   - D
+
+Communication
+
+:   - Instant messaging using [GroupMe](https://groupme.com/)
+        - For quick delivery of content or for questions that need quick responses
+        - *Please create an account using your W&M email*
+    - Discussion posts and issue tracking using [GitHub](https://github.com/)
+        - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
+        - *You must create a GitHub account, if you do not already have one.*
+    - Video conferencing ([Zoom](https://cwm.zoom.us/))
+        - Video conferencing is for class meetings, office hours, video chats, and any other meetings where "face-to-face" communication or screen sharing is required
+    - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
+        - The new snail mail; use this for personal communication or whenever sharing with the class is inappropriate
+    - Blackboard (https://blackboard.wm.edu)
+        - For course schedule and assessment
+    - Organization Website (https://spatial-data-discovery.github.io/)
+        - The public-facing organization site for Spatial Data Discovery class; you will be added to the GitHub Development Team as a Coder and have your final project displayed.
+        - This site is maintained by your instructor, but you will submit three assignments to the linked repository (see The Organization Repository)
+    - GitHub Team Website (https://github.com/orgs/spatial-data-discovery/teams/f20-developers)
+        - Our team website with discussion boards for posting assignments and prompts for class
+    - Repositories
+        - The Organization Repository (https://github.com/spatial-data-discovery/spatial-data-discovery.github.io)
+            - This stores all the website content, including the Coder Pages, Utility Scripts and Semester Projects
+            - Includes an Issue tracker for any/all problems associated with this repository
+        - The Semester Repository (https://github.com/spatial-data-discovery/ay2021-1)
+            - This stores semester-specific files
+            - Includes an Issue tracker for any/all problems associated with this repository
+    - Videos ([YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMNGq7UuLlbSeqIHR32R_Pcc))
+        - Complimentary to course content and used when audio/video is the better communication medium
+
+    See [**Code of Conduct**](#the-code-of-conduct) regarding how these communication platforms are (and should be) used.
+
+Textbook
+
+:   - Today's data science textbook is the World Wide Web itself
+
+Course Materials
+
+:   - Laptop/Desktop (*required*)
+
+        \* _Your laptop should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux)._
+    - GitHub account (*required*)
+
+Technology
+
+:   - Announcements, discussions, course calendar, grades, etc., will be related to you through the university's [Blackboard](https://blackboard.wm.edu); please make certain you have access to it.
+    - Assignments should be submitted using [Git](https://git-scm.com/) to one of two repositories found on the class's [GitHub Page](https://github.com/spatial-data-discovery).
+
+        \* _You will need to create a GitHub account, if you do not already have one._
+    - Scripting assignments will be tested and graded using [Python 3.7](https://www.python.org/) or later; please be sure you have a recent version installed.
+    - Web development assignments will be requested in [Markdown syntax](https://daringfireball.net/projects/markdown/basics); your instructor will compile your Markdown using the latest releases of [R](https://cran.r-project.org/) and [pandoc](https://pandoc.org).
+    - Geographic visualizations will be rendered using either the latest stable release or the university's current installed version of [QGIS](https://www.qgis.org/en/site/) or [Panoply](https://www.giss.nasa.gov/tools/panoply/).
+        Please indicate the software versions you install to your professor.
+
+        \* _All software used in this class are available for all major OSs (e.g., Linux, macOS, and Windows) and are available under free software licenses._
+        _QGIS is available in select campus computer labs (check for availability)._
+
+---
+
+Course Objectives
+=================
+The College 400 capstone experience requires students to take initiative in synthesis and critical analysis, to solve problems in an applied and/or academic setting, to create original material or original scholarship, and to communicate effectively with a diversity of audiences.
+In this capstone course, students will take on these challenges through the lens of spatial data science.
+
+Students will learn how to access, read, and parse disparate data sources from a variety of open-access international, governmental, and private organizational databases and will learn about the broad challenges associated with spatial data.
+Students will have an opportunity to tackle these issues using a variety of analytical and statistical techniques.
+Students will communicate their findings through the web by creating a visualization accompanied by a written summary.
+
+
+Learning Outcomes
+-----------------
+1. To enhance proficiency working with disparate data sources and formats (e.g., EXIF, JSON, CSV, ASC, HDF, NETCDF)
+1. To improve data literacy through data exploration and metadata analysis
+1. To become a self-sufficient data scientist
+1. To assign meaning to spatial data using spatial analytics
+1. To take initiative in synthesis and critical analysis (*COLL 400 LE1*)
+1. To become more familiar with topics, challenges, and solutions to real-world data science problems (*COLL 400 LE2*)
+1. To communicate spatial data using original methods and visualizations (*COLL 400 LE3*)
+1. To better communicate your science with peers and the general public (*COLL 400 LE4*)
+
+> Never be afraid to show your colleagues your work. If you are afraid to, that's probably the bigger sign that something is wrong with your code and that you already know it.&rdquo;
+>
+> -- <cite>N. Schweitzer (2008), Software Consultant, Wauwatosa, WI.</cite>
+
+Topics
+------
+The following are the proposed topics to be covered in this class along with some example discussions.
+
+* Spatial data: what it is and why it is important
+* Form and function: a look at different data file types
+* Data access: discovering online repositories
+* Data discovery: the true purpose of metadata
+* Data analysis: statistical analysis, modeling, and optimization
+* Data visualization: geographic information systems as a tool
+
+
+Class Structure
+---------------
+This class structure will be twofold:
+
+1. I will take you on my journey through spatial data discovery from the perspective of one of my active research projects.
+    You will experience real world data and be challenged to think critically and to find analytical and/or programmatic solutions to professional research-grade questions.
+2. You will be given the task to discover data in your own way---making the best use of the resources and methods presented to you---and relay your methods and findings with a web-based presentation that includes a succinct message for a broad audience as well as a meaningful visualization of your data.
+
+
+---
+
+Assessment
+==========
+> Anytime you devote to practice, you haven't lost. You're a winner.&rdquo;
+>
+> <cite>-- Bob Ross</cite>
+
+Course Requirements
+-------------------
+This course will consist of the following tasks.
+
+1. Attendance
+1. Classroom Discussions [[LO \#1,6,8](#learning-outcomes)]
+1. Assignments [[LO \#1,2,4,5](#learning-outcomes)]
+1. Report [[LO \#3](#learning-outcomes)]
+1. Project [[LO \#7,8](#learning-outcomes)]
+
+The completion (or attempted completion) of all these tasks will result in *at least* a passing grade (D).
+A failure of any one of these tasks will result in a failing grade (F) for the course.
+
+### Failure Criteria
+The following definitions will be used to determine a failure status for any task listed under the [Course Requirements](#course-requirements).
+
+Attendance
+
+:   Attendance will be loosely defined as the "weekly interaction with the instructor."
+    If a student goes two or more weeks without interacting with the instructor (i.e., does not come to class, does not email, does not post to online discussions), then a failing grade will be assigned to that student.
+    Extraordinary circumstances may forgive extended absences and will be determine at the discretion of the instructor.
+
+Classroom Discussions
+
+:   Discussions will be held, on average, once a week.
+    A student that misses 50% or more of the discussions (e.g., six or more) will receive a failing grade.
+
+Assignments
+
+:   A student that misses two or more assignments following the last day of classes will receive a failing grade for the class.
+
+    *Caveat: the PEP8 assignment, if chosen as the final project script, will have the same due date as the final project.*
+
+
+Reports
+
+:   Students are required to keep a changelog (i.e., history report) for their computer for the duration of this class.
+    A student that fails to turn in a changelog by the last day of class will receive a failing grade for the class.
+
+Project
+
+:   All students are required to complete a data discovery project.
+    A student that does not turn in a project or turns in a project that meets less than 50% of the project's requirements will receive a failing grade for the class.
+
+Grading Components
+------------------
+This course is graded on a 100-point scale.
+The distribution of these points are awarded across the following categories.
+
+1. **Discussion Meetings** (24 points): Approximately once a week, class will meet to discuss a topic related to geospatial data science.
+    Each week, we will choose a topic, reading, video, data set, or code snippet along with one or more discussion questions to contemplate and deliberate.
+    The purpose of these discussions is to address a variety of topics surrounding the challenges of data science, data transformation, visualization, spatial analysis, communicating with the public, etc.
+
+    - The discussion rubric for full credit responses is given below
+    - Attendance without participation may result in zero points for that discussion.
+    - Participation without attendance (i.e., providing a timely, distinctive, relevant post with authoritative sources remotely) makes up for absence (see [Rework Policy](#rework-policy))
+    - At about the two-thirds mark through the semester, weekly discussions will become project progress reports.
+        Correct and relevant submissions will be judged on your ability to answer these questions: (1) what have worked on? (2) what are your plans moving forward? (3) what challenges are you currently faced with?
+
+    > Most thinking involves collaborating with other people. That's why scientists have lab meetings, why doctors consult with specialists, and why it's important to have someone to talk to when you're confused or upset. [...] A little social support can generate a lot of confidence.&rdquo;
+    >
+    > <cite>-- Steven Sloman, Professor of cognitive, linguistic and psychological sciences at Brown University</cite>
+
+:   **Table 1**. The discussion rubric.
+
++--------------------------------------------+--------+---------+---------+
+| Criteria                                   | Full   | Partial | Low     |
+|                                            | Marks  | Marks   | Marks   |
++============================================+========+=========+=========+
+| Correct and relevant                       | 30%    | 22%     | 15%     |
+|                                            |        |         |         |
+| *The post addresses one or more*           |        |         |         |
+| *questions in the discussion assignment*   |        |         |         |
+| *and provides accurate information that*   |        |         |         |
+| *advances the class's understanding of*    |        |         |         |
+| *the topic.*                               |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Timeliness                                 | 30%    | 22%     | 15%     |
+|                                            |        |         |         |
+| *In the art of communicating, timing is*   |        |         |         |
+| *everything. You are requested to post*    |        |         |         |
+| *your thoughts, opinions, and ideas*       |        |         |         |
+| *to share with the class. The maximum*     |        |         |         |
+| *benefit is achieved only if you*          |        |         |         |
+| *participate on or before our in-class*    |        |         |         |
+| *discussion.*                              |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Authoritative sources                      | 20%    | 15%     | 10%     |
+|                                            |        |         |         |
+| *Post utilizes only trustworthy*           |        |         |         |
+| *sources and any uncertainties*            |        |         |         |
+| *are disclosed.*                           |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Distinction                                | 20%    | 15%     | 10%     |
+|                                            |        |         |         |
+| *The post is substantively different*      |        |         |         |
+| *from others and adds new sources,*        |        |         |         |
+| *facts, and/or perspective to the*         |        |         |         |
+| *discussion. Commentary or accolades*      |        |         |         |
+| *to peers' work can be distinctive*        |        |         |         |
+| *if they add insight.*                     |        |         |         |
++--------------------------------------------+--------+---------+---------+
+
+2. **Assignments** (30 points): Students are asked to complete the six (6) graded assignments described below.
+    Additional assignments may be requested by the instructor; however, their quality of completion will not count towards or against the students' final grade.
+    Unless otherwise noted, all file names should adhere to the following guidelines: (a) use lowercase letters; (b) avoid special characters (e.g., ',",/,\\,(,),!,@,\#,\$,\%,\^,\&,\*); (c) avoid spaces (use dot, dash, or underscore).
+
+    - The "About" Page (5 points)
+
+        Students will create an "About the Coder" page to be used in conjunction with their utility script that will be rendered by the instructor to HTML using Rmarkdown and pandoc.
+        Students should submit their markdown file to the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) at the root level.
+        See previous student submissions for examples.
+    - The Utility Script (5 points)
+
+        Students may share any script they have written and transcribed to the Python programming language (runs in Python 3.6 or later).
+        Students should submit their Python script to the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) in the scripts folder.
+        Scripts must include an entry in the accompanying README file (following the basic formatting guidelines).
+        Utility scripts must have some *utility* (the condition of being useful)---the broader the utility the better.
+        You are to share your utility script (along with a link to it) on your "About the Coder" page (see previous student submissions for examples).
+    - The Sparse Data Challenge (5 points)
+
+        In groups, students will be presented with a sparse dataset that is geographically significant and will be asked to brainstorm and develop a gap-filling method to complete the data set.
+        Groups will share and discuss their methods to determine which is best suited for the application.
+        The dataset(s) will be available on the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1) and here students should submit their answers.
+    - The Conversion Scripts (10 points)
+
+        Students will be asked to create two scripts that perform data extraction, creation and conversion between spatial data formats (e.g., ASC, NetCDF and HDF5).
+        For both assignments, there will be a list of requirements that your code must complete.
+        Points are awarded based on the successful completion of all required tasks.
+        Submissions that do not fully meet the requirements or expectations for submissions may be reworked and resubmitted for regrading (see [Rework Policy](#rework-policy)).
+
+        > Keep in mind when you are looking for data for the final project that you may need to convert your data to different file formats and you may need either this conversion script or something similar to do so.&rdquo;
+        >
+        > <cite>-- Anonymous student review, William & Mary</cite>
+
+    - The PEP8 Assignment (5 points)
+
+        Similar to driving a car, programmers tend to develop their own methodology of writing code, which is acceptable so long as it gets the job done.
+        However, just as one has to pass the driver's license examination with an in-the-car demonstration, coders should be able to demonstrate their competency and mastery of coding syntax guidelines, including consistency, readability, and structure.
+        Students may choose any one of their scripts (i.e., utility script, conversion script, sparse data challenge script, sandbox challenge script, or project script) to be graded based on Python's [PEP8](https://www.python.org/dev/peps/pep-0008/) syntax guidelines.
+        Students should submit their work to the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1), tagging their submission to the PEP8 issue on GitHub.
+
+        > Obviously, correctness contributes to clear communication, in the same way that following traffic rules help a driver arrive safely at a destination. But the purpose of driving is not to obey the rules---it's to get somewhere. The same is true of writing.&rdquo;
+        >
+        > <cite>-- Rob Jenkins, Associate Professor, Georgia State University</cite>
+
+3. **Report** (24 points): Students are asked to keep a changelog for their computer for the duration of the semester that consists of a chronologically ordered list of all major software changes (i.e., installs and uninstalls), system updates, configuration setup/changes, virtual environments, hardware changes, and other notable modifications.
+    *This is not a class work log.*
+    Software installs and updates should include version numbers and a URL for any downloaded files.
+    Entries should be dated using the ISO date format (i.e., YYYY-MM-DD).
+    The changelog should *not* include any user names or passwords.
+    The report grade will be based on your final submission; however, you will receive (or you may request to receive) periodic grading of your reports to help you make necessary changes for the final report.
+    An example report is provided for you in the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
+
+:   **Table 2**. The report rubric.
+
++--------------------------------------------+--------+---------+---------+
+| Criteria                                   | Full   | Partial | Low     |
+|                                            | Marks  | Marks   | Marks   |
++============================================+========+=========+=========+
+| Plain text (.txt)                          | 10%    | 7.5%    | 5%      |
+|                                            |        |         |         |
+| *Changelogs should be in plain text*       |        |         |         |
+| *format; the filename should include a*    |        |         |         |
+| *datestamp and your last name (lowercase)* |        |         |         |
+| *and contain no spaces or special*         |        |         |         |
+| *characters (e.g.,*                        |        |         |         |
+|  `changelog_davis_20200821.txt`).          |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Whitespace                                 | 10%    | 7.5%    | 5%      |
+|                                            |        |         |         |
+| *Changelogs should utilize blank spaces*   |        |         |         |
+| *and indentation formatting in a*          |        |         |         |
+| *consistent manner. Maximum line length*   |        |         |         |
+| *should adhere to 80 characters.*          |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Readability                                | 15%    | 11.25%  | 7.5%    |
+|                                            |        |         |         |
+| *Changelogs should be human readable*      |        |         |         |
+| *with minimal typos (use an editor with*   |        |         |         |
+| *a spell checker).*                        |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Chronological                              | 15%    | 11.25%  | 7.5%    |
+|                                            |        |         |         |
+| *Changelogs should be chronologically*     |        |         |         |
+| *ordered (typically with the most recent*  |        |         |         |
+| *changes located at the top; however,*     |        |         |         |
+| *either top-to-bottom or bottom-to-top*    |        |         |         |
+| *ordering will be accepted).*              |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Detailed                                   | 16%    | 12.5%   | 8.3%    |
+|                                            |        |         |         |
+| *Changelogs should include an appropriate* |        |         |         |
+| *level of detail, including software*      |        |         |         |
+| *version numbers, URLs for downloaded*     |        |         |         |
+| *files, important configuration settings*  |        |         |         |
+| *or environment variables, etc.*           |        |         |         |
++--------------------------------------------+--------+---------+---------+
+| Weekly                                     | 33%    | 25%     | 16.7%   |
+|                                            |        |         |         |
+| *Changelogs will be requested weekly;*     | (<2)   | (2--3)  | (>3)    |
+| *while you may not have notable changes*   |        |         |         |
+| *for every week, they should still be*     |        |         |         |
+| *submitted. Numbers in parentheses are*    |        |         |         |
+| *allowable number of missed reports.*      |        |         |         |
++--------------------------------------------+--------+---------+---------+
+
+4. **Project** (22 points): Students are to create content for a public-facing website that shares their discovery of data using various sources, methods, and visualization techniques.
+    Goals of this project include:
+
+    - Finding new data that excites you
+    - Applying any processes/algorithms to the data necessary for your visualization; *note that all processes and algorithms must be accompanied by a description of methods sufficient for reproducibility*
+    - Create a visualization of the data
+    - Share your data with the general public, explaining where you found it, why you find it exciting, how you manipulated it for this project
+
+    The final score of the project is based on a quantitative (files and reproducible processes) and qualitative (visualization and creative approach) assessment.
+
+    - **45%** Front-end (markdown script, image file)
+    - **30%** Back-end (python script, data files, and reproducible process)
+    - **25%** Web visualization & creativity
+
+    Students will be required to submit parts of their final project by email and to both the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) and [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
+    Information about what materials should be submitted and how are given in the README of the project folder in the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
+
+
+Grading Scale
+-------------
+The final letter grade is based on the point total of completed [Grading Components](#grading-components).
+The range for each letter grade is given in the following table.
+The expectations of students for selected grade levels are also described below.
+
+The instructor reserves the right to adjust a student's final grade by one-half step (e.g., a student that received a score that would give them a C, it could be raised to a C+ or lowered to a C--), so long as the final grade is not lowered below a D or raised higher than an F.
+
+---------------------------------------------------
+Letter    Quantitative   Qualitative
+------  --------------   --------------------------
+A             >93.0%     Superior mastery
+
+A--       90.0--92.99
+
+B+        87.0--89.99
+
+B         83.0--86.99    Good mastery
+
+B--       80.0--82.99
+
+C+        77.0--79.99
+
+C         73.0--76.99    Satisfactory
+                         achievement
+
+C--       70.0--72.99
+
+D+        67.0--69.99
+
+D         60.0--66.99    Less-than-satisfactory
+                         achievement
+
+F              <60.0     Unsatisfactory
+                         achievement
+---------------------------------------------------
+
+Superior mastery
+
+:   - not only attends every class, but actively engages with both the instructor and other students
+    - cares about their own learning as well as the learning of their fellow students
+    - asks questions
+    - seeks knowledge outside of the classroom
+    - demonstrates comprehension of course material
+    - communicates clearly and understandably
+    - challenges the knowledge of the instructor and fellow students
+    - does more than the minimum requirements outlined in class
+
+Satisfactory achievement
+
+:   - attends the majority of classes
+    - participates in classroom discussions
+    - completes most to all weekly reports
+    - occasionally asks questions to clarify concepts
+    - completes all or most coursework demonstrating basic competency of the material
+
+Less-than-satisfactory achievement
+
+:   - minimal contact with the instructor
+    - pays some attention during class
+    - does not complete all the readings or assignments
+    - participates little to not at all in classroom discussions
+    - demonstrates minimal effort with assignments
+    - term project is incomplete
+
+---
+
+Course Calendar
+===============
+In this abbreviated twelve week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "sandbox challenge" assignment.
+These assignments are meant to stimulate your creativity and problem-solving skills that will help you with addressing the graded assignments and final project.
+
+Students are expected to complete three additional hours of coursework.
+These tasks include:
+
+* Learning Git and Version Control
+* Learning QGIS for Data Visualization
+* Making Animations for the Web
+
+The schedule for discussion meetings, lectures, and assignments will be posted online.
+The dates in the calendar are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service.
+Students are responsible for ensuring an awareness of any such announcements. In other words: *you must read your campus email and check Blackboard regularly!*
+
+
+Important Dates
+---------------
+First day of term
+:   - 19 August 2020
+
+Add/drop deadline
+:   - 28 August 2020
+
+Withdraw deadline
+:   - 12 October 2020
+
+Last day of term
+:   - 13 November 2020
+
+Last day of exams
+:   - 24 November 2020
+
+---
+
+Standards & Policies
+====================
+
+The Code of Conduct
+-------------------
+By the basis in which this class is designed, these things hold true:
+
+1. This class utilizes several forms of communication (e.g., instant messaging, discussion boards, wikis, emails, audio/video conferencing), of which not all can be monitored by the instructor at all times.
+2. You are responsible for how you interact with each other.
+
+Remember these things as you work together:
+
+1. "Don't ascribe maliciousness to that which can be explained by inadvertence."
+
+    This comes from the fact that it is almost impossible to portray our feelings or intended meaning behind typed text.
+    If something offends you, take a breath, be cordial and ask for clarification before unleashing your wrath (BTW: you shouldn't unleash your wrath).
+    That being said, also do not be a silent witness.
+    If something offends you, let everyone know.
+    We will never learn from our mistakes if our mistakes are never pointed out.
+    If malicious actions continue, the instructor will manage it.
+2. "There is no innovation and creativity without failure. Period."
+
+    You are a college student registered in a college class.
+    You are not expected to know everything.
+    The entire purpose of this exercise is for you to gain knowledge, so make an effort.
+    If you want to try something, try it and let everyone know what you are up to.
+    Best case scenario, your innovations spark new insight.
+    Worst case scenario, we all learn something from your efforts.
+    It's better to aim high for something that will make a difference rather than to play it safe with something easy.
+3. Ask lots of questions.
+
+    Questions are cheap, so ask a lot of them.
+    When asking questions, remember to always strive for clarity.
+    If you don't know something or your aren't sure, just ask.
+    Sometimes, knowing the right question to ask is just as difficult as finding the answer.
+    When you find yourself here, please send up a flare or simply say "I'm lost."
+    We will get you back on track.
+4. Focus on opportunities.
+
+    Remember: this is not a race and you are not a judge, so don't get caught up with critiquing or competing with each other.
+    Provide your opinions and perspectives and then actually take the time to read the opinions and perspectives of others.
+    Challenge yourself to see things differently and try things differently.
+    Ignore your desire to be correct or to correct someone else and try not to contradict people; they don't like it and biologically it shuts down their ability to see things logically.
+5. Document and share everything.
+
+    Reproducible science should not be an afterthought and neither should the reproducibility of your coursework.
+    While it may feel natural to keep your work private, in the real world projects really thrive when you document your process publicly.
+    Have you ever searched for answers on the internet?
+    Did it help?
+    By writing things down and sharing them, more people can participate along the way and you might get help on something you didn't even know you needed.
+    This leads to more things being documented, which produces a better project roadmap, which leads to better transparency and feedback, which leads to good decision making and faster/better results.
+6. Everyone is bound to uphold a policy of respect for their instructor and their peers.
+    Students should be open-minded to new ideas and participate in collegiate debate, the sharing of ideas, and the receiving of feedback without defamatory remarks.
+    Students should help maintain a healthy learning environment by refraining from negative behavior, such as harmful remarks, quibbling over trivial matters, creating unnecessary debates, or bullying.
+
+    **There is zero tolerance for negative behavior. Failure to uphold this policy will result in punitive action and/or removing the offending student from access to all or part of the class.**
+
+
+
+Engagement Policy
+-----------------
+- *Weekly engagement is required.*
+
+In this class, engagement is defined loosely as your interaction with the instructor using one or more of the communication tools listed above (see Communication).
+
+It is expected that you interact at a minimum of once a week through posted discussions, chats, issues, emails, and/or video conferencing.
+Failure to do so may influence your final grade (see [Failure Criteria](#failure-criteria)).
+
+Please make any and all planned absences (e.g., field trips, vacations, athletic events) that would result in you not being able to meet this minimum interaction known to your instructor at the earliest possible time.
+
+
+Coursework Policy
+-----------------
+- *You are bound by the honor code.*
+
+By accepting admission to the College, you have made a commitment to understand, support, and abide by the [Honor Code](https://www.wm.edu/honor).
+**Violations, whether attempted or successful, will result in consequences ranging from a grade of zero for the assignment up to a failing grade for the class**.
+
+Misconduct may include, but is not limited to, the following:
+
+- cheating or using unauthorized materials on assignments
+- fabrication, forgery, alteration, or destruction of documents; hacking unauthorized resources; intimidating or bribing peers; improper collaboration or colluding; plagiarizing; or lying in order to obtain academic advantage
+- assisting others in misconduct
+- attempting misconduct
+
+
+Instant Messaging Policy
+------------------------
+- *The instant messaging app should be used for communication that either: (1) needs to reach people quickly or (2) needs a quick response.*
+
+You are free (and encouraged) to create your own GroupMe groups with classmates for better/faster communication.
+Do not use the instant messenger for spamming, soliciting or otherwise disrupting the peace.
+
+
+Email Policy
+------------
+- *All personal correspondence should be made to the instructor's W&M email address ([see above](#course-syllabus)) and include the class title in the subject line.*
+
+Please post questions related to assignments, discussions, and the project to the course's discussion board.
+For specific questions, raise an issue on GitHub.
+For private inquiries, please email the instructor; the instructor will confirm each email received.
+If you do not receive a confirmation message from the instructor within 12 hours of sending, you may send a follow-up email.
+
+
+Rework Policy
+--------------
+- *Due dates are posted for each assignment. If you need more time, ask before the due date has passed. Assignments turned in on time that do not receive full credit may be reworked and resubmitted for making up points missed. Assignments turned in late without extension can be expected to receive at maximum half credit.*
+
+Students will be expected to complete certain assignments and a project during the semester.
+Due dates will be posted online.
+If, for whatever reason, a student (or students) require additional time to complete a given graded task, they may submit a request for up to one week extensions.
+Requests must be submitted before the original assignment's due date has passed.
+
+To encourage growth, learning and responsibility in the classroom, coursework submitted for grading that does not receive full credit may be reworked and resubmitted by the approval of the instructor.
+
+**Directions for Regrading**:
+
+- Add and commit your original file to the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1) tagging the Regrade Issue with your commit message and including text such as "original file".
+- Then make changes and resubmit (add/commit/push) again tagging the Regrade Issue in your commit message and include text describing your changes.
+
+**Assessing Re-work**
+
+You can receive up to full marks on a re-worked assignment, unless any of the following apply in which case the maximum score possible is reduced by the number in parentheses.
+
+* original assignment was late without excuse (-1)
+* reworked assignment took longer than one week or agreed upon time frame to be resubmitted (-1)
+* reworked assignment is incomplete or otherwise falls short of expectations (-1)
+
+The weekly discussions will be posted online.
+Points lost due to absence from discussion meetings may be partially made up by participating in the on-line discussion.
+
+
+Electronics Policy
+------------------
+- *Personal electronics use that is not directly related to the learning objectives of the class is not permitted.*
+
+Should in-person classes resume...
+
+Students may keep cellular phones on, but they should be kept in silent mode (please note that vibrate is not silent).
+In the case of an emergency, students are requested to quietly excuse themselves from the classroom to make and/or receive telephone calls.
+Please abstain from any disruptive behavior, the definition of which is at the discretion of the instructor and may include but is not limited to playing video games, listening to music, trolling the internet, or any other activity whereby the sight or sound interrupts the attention of those around you.
+
+Disruptive behavior will be handled in accordance to the [engagement policy](#engagement-policy).
+Multiple offenders may be asked to leave the classroom and will be considered equivalent to an unexcused absence.
+
+
+Digital Recording Policy
+------------------------
+- *Identifying photos or videos of people are not permitted without just cause.*
+
+Due to privacy laws/concerns, the recording of people and/or their voices during class meetings in any form is prohibited except in documented cases from the Academic Support office that require compliance with the ADA.
+
+
+Computer Policy
+---------------
+- *You are required to have a laptop computer that runs a modern operating system; netbooks and tablets need not apply.*
+
+
+Standards for Written Work
+--------------------------
+- Written work should be in English and follow, to the best of your abilities, the rules of the English language (see [Strunk & White](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)).
+- Written work should be neat, thorough, legible, and logically organized.
+- All submitted work should include your name, date, and description.
+- Filenames should be in all lowercase and contain only alphanumeric, underscore, hyphen, and/or period characters.
+- Sketches and figures should be drawn using a straight-edge; plots and graphs should be done using a computer, where appropriate.
+- Tables, figures and images from online sources should include a citation (including the author/publisher, date created/accessed, and URL).
+- All in-text citations and references should be formatted to APA standards unless otherwise indicated.
+- Plagiarism will be taken seriously; *if you write something that is not your own original idea or in your own words, then it must be cited!* See [here](https://ctl.yale.edu/writing/using-sources/understanding-and-avoiding-plagiarism) for information on plagiarism and how to avoid it.
+- Unless otherwise stated, typed electronic files may be in one of the following acceptable open formats:
+    * [Office Open XML Document](https://en.wikipedia.org/wiki/Office_Open_XML) (.docx)
+    * [OpenDocument Text](https://en.wikipedia.org/wiki/OpenDocument) (.odt)
+    * [Portable Document Format](https://en.wikipedia.org/wiki/PDF) (.pdf)
+    * [Markdown](https://en.wikipedia.org/wiki/Markdown) (.md/.Rmd)
+    * [Markup](https://en.wikipedia.org/wiki/Markup_language) (.html/.tex)
+    * [Plain Text](https://en.wikipedia.org/wiki/Plain_text) (.txt)
+
+
+---
+
+Statements and Resources
+========================
+
+ADA Statement
+-------------
+William & Mary accommodates students with disabilities in accordance with federal laws and university policy.
+Any student who feels they may need an accommodation based on the impact of a learning, psychiatric, physical, or chronic health diagnosis should contact Student Accessibility Services staff at 757-221-2512 or at sas@wm.edu to determine if accommodations are warranted and to obtain an official letter of accommodation.
+For more information, please see https://www.wm.edu/sas.
+
+
+Academic Support Services
+-------------------------
+- [Student Accessibility Services](https://www.wm.edu/sas)
+- [Tribe TutorZone](https://www.wm.edu/offices/deanofstudents/services/academicenrichment/tutors/)
+- [Writing Resources Center](https://www.wm.edu/as/wrc/)
+
+
+Copyright Statement
+-------------------
+Your enrollment in this class means that you grant a "no rights reserved" license to the instructor, the department/program, and the university on all works submitted towards the completion of this class.

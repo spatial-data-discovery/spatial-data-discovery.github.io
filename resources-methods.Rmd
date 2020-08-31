@@ -1,0 +1,173 @@
+---
+title: "Resources | Methods"
+---
+
+***
+
+### Setting Environment Variables
+For convenience, I have included a check in my example scripts for an environment variable called "DS_WORKSPACE" that is used for reading from and saving to a designated workspace folder on your computer.
+If this variable does not exist, the scripts assume you want to read and write to the working folder (i.e., the same folder that your script lives in).
+To create and define your workspace folder, please follow these instructions.
+
+#### On Windows
+* On your keyboard, type "Win + s" to open the search bar.
+* Type "environ" in the search bar and select "Edit environment variables for your account"
+* Under "User variables for 'user'", click "New..."
+* For Variable name, type `DS_WORKSPACE`
+* For Variable value, type an absolute path to your directory (e.g., "C:\\Workspace"); you may use the "Browse Directory..." button to navigate to your folder of choice.
+* Click OK and click OK again.
+
+
+#### On macOS / Linux
+Run the following command in the terminal or save it to your `~/.bash_profile` to run it every time you open a terminal.
+
+* `export DS_WORKSPACE=~/Workspace`
+
+
+***
+
+### Installing Wheel Files
+[Python wheel](https://pythonwheels.com/) files (.whl) are the new distribution standard for Python packages.
+You may come across wheel files (especially those of you trying to install numpy on Windows) because they can come with precompiled C code, which you would otherwise have to compile on your machine.
+You can install a .whl package using pip.
+
+For example, download a wheel package ("package-0.10.2-cp37-cp37m-win_amd64.whl"), open a terminal and `cd` to folder where it was downloaded, and run `pip install package-0.10.2-cp37-cp37m-win_amd64.whl`.
+
+***
+
+### Linking Images to Markdown Files
+In order for images to appear on your web page that is rendered from markdown, you need a publicly accessible URL for the image.
+
+Two popular cloud-based storage options are Dropbox and Google Drive.
+You may also find public domain or CC-BY-SA images on Wikimedia Commons.
+If you want to access images that are saved in one of these locations, try the steps outlined below.
+
+#### Dropbox
+1. Create a shareable link to a media file (e.g., https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?dl=0).
+2. Change the `?dl=0` to `?raw=1`
+
+```
+![Example link to image stored on Dropbox.](https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1){width=150 height=150}
+```
+
+![Example link to image stored on Dropbox.](https://www.dropbox.com/s/pqtsip7582dc3bk/logo.png?raw=1){width=150 height=150}
+
+
+#### Drive
+1. Create a shareable link to a media file (e.g., https://drive.google.com/file/d/11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4/view?usp=sharing)
+2. Identify the file ID.
+    It appears after the `/file/d` and before the `/view?` in the URL (i.e., `11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4` from the example URL above).
+3. Take the file ID and place it in a URL formatted as: `https://drive.google.com/uc?export=view&id=` and append the file ID at the end.
+
+```
+![Example link to image stored in Drive](https://drive.google.com/uc?export=view&id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4){width=150 height=150}
+```
+
+![Example link to image stored in Drive](https://drive.google.com/uc?export=view&id=11YjM3ua8DXZvhhfEFaG1LPUupnoj2qB4){width=150 height=150}
+
+#### Wikimedia
+1. Find an image you want to link to on https://commons.wikimedia.com
+2. Notice that the preview image page is not the actual image and will not work in markdown.
+    Check out the difference between these two links (yes, both URLs appear to end with .png, but only the second one is an actual image; you can scroll down the page on the first link and find the "More Details" button)
+    * [Preview page](https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg#/media/File:Albert_Einstein_Head.jpg)
+    * [Image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+
+```
+![Example link to image stored on Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+```
+
+![Example link to image stored on Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/180px-Albert_Einstein_Head.jpg)
+
+
+***
+
+### Making Markdown Tables
+Do you dread making tables in markdown?
+Try using an R data frame and let knitr do the work for you!
+Here's an example R code chunk and the web table it produces:
+
+```{r}
+library(knitr)
+my.data <- data.frame(
+    months = c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+    days_in_month = c(31, 28, 31, 30, 31, 30,
+                      31, 31, 30, 31, 30, 31)
+    )
+knitr::kable(my.data, col.names = c("Months", "Number of Days"))
+```
+
+More on R's data.frame object can be found [here](https://www.tutorialspoint.com/r/r_data_frames.htm).
+
+***
+
+### Hacking ArcGIS Pro's Python
+[https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm](https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm)
+
+- Clone ArcGIS Pro python environment and name it (e.g., 'sdd')
+- Create user environment that points to `...\Program Files\ArcGIS\Pro\bin\Python\Scripts\`
+- Open terminal, type `activate sdd`
+
+
+***
+
+### Converting Images to Animations
+Based on Davis's MODIS EVI example using [GIMP](https://www.gimp.org/) and FFmpeg (FFmpeg installed with [Imagemagick](https://imagemagick.org/index.php)).
+
+1. Load spatial data into QGIS
+    - Create symbology (save symbology to text file so you can open it and apply it to all your other layers; saves time selecting color ramps and ranges each time)
+    - Create layout (save layout in case you need to come back to it)
+    - Add map(s), legend(s), and text to layout
+    - Update and export maps to images (PNG) for each visualization
+1. Load images into GIMP
+    - Open one PNG in GIMP
+    - Open as layers the remaining images (order most recent layer at the top)
+    - Crop image to selection (use Rectangle Select Tool (shortcut key `r`) to draw a box around what you want, then use Image &#8594; Crop to Selection)
+    - Optimize your layers for GIF animation (Filters &#8594; Animation &#8594; Optimize for GIF)
+1. Save your layers as an animated GIF (Export &#8594; GIF)
+    - Check [x] As animation
+    - Loop forever
+    - Delay between frames (e.g., 150 ms)
+    - Use delay entered above for all frames
+1. From the command line, convert exported GIF to video format ([reference](https://gist.github.com/ingramchen/e2af352bf8b40bb88890fba4f47eccd0))
+
+    Update the `-i` input file name and `.mp4` output file name
+
+    ```
+    ffmpeg -f gif -i Untitled.gif -pix_fmt yuv420p -c:v libx264 -movflags +faststart -filter:v crop='floor(in_w/2)*2:floor(in_h/2)*2' Untitled.mp4
+    ```
+
+***
+
+### Locating Your Google Places
+1. In Google Maps, save locations to starred places
+    - [Google Maps Help](https://support.google.com/maps/answer/3184808?co=GENIE.Platform%3DDesktop&hl=en)
+1. Open [Google Takeout](https://takeout.google.com/)
+1. Unselect everything except for **Maps (your places)**
+1. Choose your delivery method (e.g., email link) and file type (e.g., compressed zip)
+1. Archive will save as GeoJSON
+1. Open GeoJSON in a GIS or other geospatial application
+    - [Adding and Viewing GeoJSON in QGIS and ArcGIS (open.gis.lab)](https://opengislab.com/blog/2018/11/8/adding-and-viewing-geojson-in-qgis-and-arcgis)
+    - [JSON to Features (Esri ArcGIS Pro)](https://pro.arcgis.com/en/pro-app/tool-reference/conversion/json-to-features.htm)
+
+***
+
+### Interpolating
+Let's say you are given two pairs of information (\(x_1, y_1\)) and (\(x_2, y_2\)).
+These, for example, may represent elevations at two given locations or rainfall values at two given dates.
+Regardless of what they represent, let's say you are interested in finding the value \(u\) that lies somewhere between \(y_1\) and \(y_2\), which occurs at a location \(k\) between \(x_1\) and \(x_2\).
+In table format, it looks something like this:
+
+| X     | Y     | Description |
+|:-----:|:-----:|:------------|
+| $x_1$ | $y_1$ | Known $x,y$ pair just below the value you are looking for |
+| $k$   | $u$   | The pair you want the $y$-value for |
+| $x_2$ | $y_2$ | Known $x,y$ pair just above the value you are looking for |
+
+By linear interpolation, the rule of equal ratios applies, which states the following:
+
+$$\frac{k - x_1}{x_2 - x_1} = \frac{u - y_1}{y_2 - y_1}$$
+
+and can be solved for the unknown value, \(u\), represented by the following:
+
+$$u = \frac{\left(y_2 - y_1\right) \left(k - x_1\right)}{x_2 - x_1} + y_1$$

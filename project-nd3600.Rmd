@@ -1,0 +1,36 @@
+---
+title: The Connection Between Fast Food and Obesity
+author-meta: Nikhil Daga
+semester: Spring 2020
+---
+![](https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_4.png)
+
+![](https://drdavis.space/teaching/ds/sdd/media/2020/05/newplot_5.png)
+
+## Overview
+The United States has more fast food restaurants than anywhere else in the world.
+In fact according to some predictions, there may be as many as 250,000 fast food restaurants in the United States.  
+No matter what type of food you want to eat there is a fast food version available.
+While fast food is tasty, cheap, and convenient it is obviously not the healthiest.
+
+The United states also has a global reputation for being one of the most obese countries in the world.
+Unfortunately this is well deserved with over 36% of the population being considered obese and another 33% of the population being overweight.
+Naturally many people tend to believe the amount of fast food restaurants tends to have a direct correlation with obesity in the United States.
+
+
+## Data Description
+In order to do this project I needed three data sets. These were state by state obesity rates, state population rates, and a dataset of all the fast food restaurants in The United States. Originally I wanted to get fast food data for the past 10 years. The goal was to show the increase in restaurants in one animation, and the increase in obesity rates in the other. The obesity data for the past 10 years is easily available in csv format from data.gov. However reliable restaurant data is very difficult to find due to this not being public data published by the government or NGOs. In order to obtain a reliable data set for the past decade it would have costed me at least 100 dollars.
+
+As a result I had to change my game plan. The largest free and reliable fast food data set I could find contains 10,000 entrees. While this is far less than the actual amount of fast food restaurants in the United States, it is still a reliable metric. The reason for this is these 10,000 restaurants are a random subset taken from a larger dataset that costs money. I realized I would need a way to standardize my data. For example let's say California and Virginia have the same amount of fast food restaurants it doesn't mean anything. This is because California's population is over 4.5 times that of Virginia. As a result I had to get population data to standardize all the results. I got this data from census.gov. I got the restaurant's data from Kaggle.
+
+## Visualization Process
+I wrote two scripts for this project. The first script reads the obesity, fast food, and population csv files using pandas. It also standardizes the data to only include US states, and all use state abbreviations in the name column. In addition it calculates fast food restaurants per person in each state. Finally all the data is returned in a csv file. The second script takes in the csv created by the previous script. It utilizes the python library plotly to make state by state heat maps for obesity and fast food restaurants per person.
+
+
+<div class="credit-line">
+Author: Nikhil Daga.
+Last edited: 2020-05-04.
+</div>
+
+[^png]: Portable Network Graphics (PNG). Copyright 1995--2019 Greg Roelofs. Accessed 2020-05-02. Online: http://www.libpng.org/pub/png/
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2020-05-04. Online: https://www.python.org/

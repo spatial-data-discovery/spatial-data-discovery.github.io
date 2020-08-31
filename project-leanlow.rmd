@@ -1,0 +1,114 @@
+---
+title: Pollen and Hay Fever During the Transition to Summer/Late Spring
+author-meta: "LeAnn Lo"
+semester: "Spring 2020"
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id = "scaledvideo" controls preload = "true" autoplay loop muted>
+    <source src= "https://drdavis.space/teaching/ds/sdd/media/2020/05/project_leanlow.mp4" type = "video/mp4" >
+  </video>
+</div>
+
+> *"Hay Fever affects between 10 and 30 percent of all adults in the U.S.
+...
+and 40 percent of children."* -- Healthline [^healthline]
+
+## Overview
+Hay Fever is also known as seasonal allergies and nearly 40% of adults report experiencing symptoms during peak pollen seasons from late March to Early April.
+The symptoms for hay fever can include a runny nose, sore throat, sneezing, watery eyes, and many more uncomfortable symptoms.
+It is typically triggered by several different types of pollen from various trees such as Oak, Cedar, or Maple, and many various plants and fungi such as ragweed.
+The allergic response to something so seemingly mundane is due to the body's response to the pollen.
+For some people, their Immunoglobulin E (IgE) antibodies[^SummerHayFever] can view the pollen as a threat and release histamines which trigger the immune system to emit more fluids to "wash out" the pollen and other potential threats.
+While this is an inconvenience for most people, it can exacerbate other conditions such as asthma, bronchitis, and immunosuppressed diseases.
+
+
+While allergies can last year-round, hay fever and seasonal allergies are most active during late March and early May which is the peak bloom of many trees and plants.
+Towards the end of this season, there is usually an increase of rain which can significantly decrease the amount of pollen in the air.
+Since the symptoms of allergies are very similar to many more serious illnesses, it is important to be aware of when these symptoms are more prevalent and know when to be concerned about certain symptoms.
+Hay Fever can be treated with over the counter antihistamines and nasal sprays, but may have unfavorable side effects such as drowsiness, mucus dryness, and nausea.
+With the current prevalence of COVID-19, it is important to be able to distinguish these symptoms from more concerning ones.
+For example, a dry cough is not a symptom of allergies which generates more mucus or discharge, but is a symptom for COVID-19.
+
+
+The visualization above shows the pollen index for each county in Florida (although some counties in grey did not have data for specific days).
+The pollen index is calculated based on the number of pollen grains in a cubic meter of air, the proportion is measured on a scale of 0 to 10 where 0 has no pollen and 10 is a very high number of particles.
+As the days approach May, there is a lower pollen index throughout the state, and based on weather information, there was an increase in rainfall.
+At the beginning of the video, we are in peak pollen season and can observe higher indexes during that time.
+It is also notable that the north area of Florida is more likely to have high pollen indexes compared to Southern areas which are closer to the gulf and ocean, and likely has a lower density of pollen particles due to winds from the sea.
+
+
+## Data Description
+Pollen Index levels from all counties in Florida were scraped from Pollen.com using [pyiqvia](https://github.com/bachya/pyiqvia), an open source API available on GitHub[^pyiqvia].
+Zip codes are given to the library which was translated from the Federal Information Processing Standard Publication (FIPS) code that is given to every county within the U.S, the dictionary was built from metadata files pulled from data.world[^FIPSdata].
+FIPS, county name data, and geospatial coordinates were retrieved from builtin R library, "counties".
+
+```python
+import asyncio
+
+from aiohttp import ClientSession
+
+from pyiqvia import Client
+
+async def main(nums) -> None:
+
+    zipcode = fipsdict.get(nums)
+    async with ClientSession() as websession:
+        client = Client(zipcode, websession)
+
+        # Get historic allergen information:
+        historicdata = (await client.allergens.historic())
+        locationdata = (historicdata['Location'])
+        timedata = locationdata['periods']
+        for i in timedata:
+            j=i['Period'].split("T")
+            k=i['Index']
+            inlist = [nums, j[0],k]
+            completelist.append(inlist)
+            print(len(completelist))
+
+completelist=[]
+for i in fipsdict.keys():
+    await main(str(i))
+```
+
+All pollen indexes from a 30-day historical range (only from current day) were pulled and transposed into a csv file.
+This data file was then piped into R Studio for processing and visualization.
+The "urbnmapr" library[^urbnmapr] within R was used to get shapefiles for counties within Florida.
+Builtin libraries "sf" was used for plotting and defining the counties, "dplyr" was used for data wrangling, and "ggplot2" was for gradient scale coloring.
+
+```R
+pollen = read.csv("~/Downloads/output.csv")
+pollen <- data.frame(lapply(pollen, as.character), stringsAsFactors=FALSE)
+pollen = transform(pollen, pollen_index = as.numeric(pollen_index))
+
+pollen %>%
+  filter(date =="4/5/20") %>%
+  left_join(counties, by = "county_fips") %>%
+  filter(state_name =="Florida") %>%
+  ggplot(mapping = aes(long, lat, group = group, fill = pollen_index)) +
+  scale_fill_continuous(type = "viridis", limits = c(0,10)) +
+  geom_polygon(color = "#ffffff", size = .25) +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  labs(fill = "Pollen Index", y = "Latitude", x = "Longitude")+
+  ggtitle("Pollen Index in Florida for 4/5/2020")
+```
+
+All graphs were exported into .tiff format in R Studio for high resolution imaging (although this is unnecessary), and were imported into GIMP[^GIMP] to transform images into a GIF, and then converted into a video (.mp4) with the ffmpeg[^ffmpeg] library.
+
+
+<div class="credit-line">
+Author: LeAnn Lo.
+Last edited: 2020-05-04.
+</div>
+
+
+[^healthline]: What are the Symptoms of Hay Fever? Jacquelyn Cafasso and Ana Gotter. https://www.healthline.com/health/hay-fever-symptoms. Accessed 05/05/2020.
+[^SummerHayFever]: Durham S. (1998). ABC of allergies. Summer hay fever. BMJ (Clinical research ed.), 316(7134), 843–845. https://doi.org/10.1136/bmj.316.7134.843
+[^python]: Python. Copyright (C) 2001--2019. Python Software Foundation. Accessed 2020-04-30. Online: https://www.python.org/
+[^pyiqvia]: Aaron Bach, pyiqvia, (2019), GitHub repository, https://github.com/bachya/pyiqvia
+[^FIPSdata]: Nic Colley, US Zipcode to County State to FIPS Look Up, https://data.world/niccolley/us-zipcode-to-county-state
+[^urbnmapr]: Urban Institute, (2019), GitHub repository, https://github.com/UrbanInstitute/urbnmapr
+[^GIMP]: https://www.gimp.org/downloads/oldstable/
+[^ffmpeg]: https://ffmpeg.org/ffmpeg.html

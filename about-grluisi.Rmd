@@ -1,0 +1,82 @@
+---
+title: "About the Coder"
+author: "Grant Luisi"
+date: "2020-01-30"
+semester: "Spring 2020"
+---
+
+![](https://static.wixstatic.com/media/057dbf_8934bdaa47114405ba4a10619311c98b.jpg/v1/crop/x_0,y_577,w_3144,h_1637/fill/w_511,h_301,al_c,q_80,usm_0.66_1.00_0.01/057dbf_8934bdaa47114405ba4a10619311c98b.webp 'Skyhawk N2838L. Williamsburg Flight Center.')
+
+Bio
+:   My name is Grant and I am a junior at the College of William and Mary.
+    I am majoring in Computational and Applied Mathematics and Statistics (CAMS) with a minor in Classical Studies.
+
+About me:
+:   - I am studying to be a pilot.
+      I fly Cessna 172's (*see above*)
+    - I love hiking and skiing
+
+### Script
+[crosswind (.py)](scripts/crosswind.py)
+
+I wrote my sample script to help with initial decision making when I am flying.  
+Every runway is denoted by the direction it is pointing to divided by 10.
+For example taking off runway 9 would indicate we are traveling to the east (90 degrees).
+Every runway has an alternate runway offset by 180 degrees, so the same strip of pavement serves as runway 9 and 27.
+
+It is also important to take wind direction and speed into account.
+An aircraft should always be taking off into the wind, and never with a tailwind.
+The crosswind component is an important piece of information when determining if it is safe to takeoff or land on a particular runway.
+
+``` {python crosswind, eval = FALSE}
+# crosswind.py
+#
+# Author: Grant Luisi
+#
+# Date: 2020-02-07
+#
+# This script calculates which runway should be used based
+# on the wind and calculates the crosswind component
+# Required Modules
+from math import sin, radians
+import argparse
+
+# Function
+
+def crosswind():
+    r = int(input('Enter a runway number (1-36): '))
+    d = int(input('Enter wind direction in degrees (1-360): '))
+    s = int(input('Enter wind velocity: '))
+    try:
+        # determining runways
+        first_runway = r
+        if first_runway <= 18:
+            second_runway = r+18
+        else:
+            second_runway = r-18
+        # determining the desired runway
+        first_runway = first_runway*10
+        second_runway = second_runway*10
+        first_runway_degree_crosswind = abs(d-first_runway)
+        second_runway_degree_crosswind = abs(d-second_runway)
+        if first_runway_degree_crosswind>second_runway_degree_crosswind:
+            desired_runway = second_runway
+        else:
+            desired_runway = first_runway
+        # Calculating crosswind component if intial runway is preferred
+        if desired_runway == first_runway:
+            crosswind_component = s*sin(radians(first_runway_degree_crosswind))
+            print('Use runway '+str(first_runway/10)+'. The crosswind component is '+str(crosswind_component))
+        # Calculating crosswind component if other runway is preferred
+        elif desired_runway == second_runway:
+            crosswind_component = s*sin(radians(second_runway_degree_crosswind))
+            print('Instead of your intial runway, use runway '+str(second_runway/10)+'. The crosswind_component is '+str(crosswind_component))
+    except ValueError:
+        print('Oops')
+
+if __name__ == "__main__":
+    p = argparse.ArgumentParser(
+        description="Calculates which runway to use and the associated crosswind component")
+    args = p.parse_args()
+    crosswind()
+```

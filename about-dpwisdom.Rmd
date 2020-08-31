@@ -1,0 +1,90 @@
+---
+title: "About the Coder"
+author: "David Wisdom"
+date: "Edited: 2019-09-22"
+semester: "Fall 2019"
+---
+My name is David and I like to sail. I worked at a sailing school teaching dinghy sailing for a few years (*see below for a picture*).
+
+![](https://danwoog.files.wordpress.com/2017/07/pic-longshore-sailing-school-amy-saperstein1.jpg 'Longshore Sailing School Beach')
+
+I taught kids to sail several different boats while I was a sailing instructor.
+
+**Bug**
+:    An 8ft monohull with one tiny sail
+
+**Hunter 140**
+:    A 14ft monohull with two tiny sails
+
+**Laser/RS Neo**
+:    An 11ft monohull with one normal-sized sail
+
+**Hobie Wave**
+:    A 13ft catamaran with one normal-sized sail
+
+**Hobie Getaway**
+:    A 17ft catamaran with two normal-sized sails  
+
+I also enjoy other activities:
+
+* Cooking
+* Hiking and backpacking
+* Reading fiction and poetry
+
+
+### Sample Script
+[Random Caps (.py)](scripts/random_caps.py)
+I wrote this script to randomly capitalize characters in a text file. I'm not
+sure whether there are any uses for this but it was a fun exercise. The code
+is below.
+
+```{python, eval=FALSE}
+import numpy.random as random
+
+# Define constants
+UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+LOWER = "abcdefghijklmnopqrstuvwxyz"
+
+
+def main(file_in: str, file_out: str = "./rand_caps.txt"):
+    """
+    Takes an input text file and randomly capitalizes the letters in it.
+    Writes the output to another text file.
+
+    :param file_in: Path to a text file containing letters to randomly capitalize
+    :param file_out: Path to a text file to write the new letters in
+                     Default: `./rand_caps.txt`
+    """
+    file_input = open(file_in, "r")
+    char_list = []
+    # Collect all the ASCII characters
+    for line in file_input:
+        for character in line:
+            char_list.append(character)
+
+    file_input.close()
+    output_file = open(file_out, 'w')
+    # Go through and randomly capitalize them
+    for character in char_list:
+        # Pick whether to change it
+        change_char = random.randint(0, 2)
+        # Change it from upper to lower or vice-versa
+        if change_char == 1 and character in UPPER:
+            output_file.write(character.lower())
+        elif change_char == 1 and character in LOWER:
+            output_file.write(character.upper())
+        else:
+            output_file.write(character)
+    output_file.close()
+
+
+if __name__ == "__main__":
+    import argparse
+
+    p = argparse.ArgumentParser()
+    p.add_argument("file", help="The file to read in letters from")
+    p.add_argument("-o", "--out", nargs="?", default="./rand_caps.txt", help="Path to a file to hold the output")
+    args = p.parse_args()
+
+    main(args.file, args.out)
+```
