@@ -1,0 +1,19 @@
+---
+title: "About the Coder"
+author: "Hannah Slevin"
+date: "Edited: 2020-08-31"
+semester: "Fall 2020"
+---
+
+
+![](https://ih1.redbubble.net/image.685590380.7353/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg){width=150 height=200}
+
+
+### Bio:
+I am a senior majoring in *Data Science and Government*.  Hopefully, I get to combine my passions for geospatial data and helping others in my future career.  I was born and raised in *Fairfax, VA*.  I got to spend the spring 2020 semester studying in Madrid, and I hope to get the chance to work abroad at some point in my life.  
+
+
+### Things I Like:
+- Collecting post cards
+- Using my espresso machine to make fun coffee drinks 
+- Trying new recipes
