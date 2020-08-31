@@ -11,6 +11,7 @@ semester: "Fall 2020"
   I am a senior at William & Mary double majoring in Computer Science and Data Science.
 
 **Likes:**
+
 - Dogs (fostered 4 this past summer)
 - Baking
 - Running
