@@ -5,7 +5,7 @@ date: 'Edited: 2020-08-25'
 semester: 'Fall 2020'
 ---
 
-![Komodo Dragon from the *Virginia Aquariam*.](Komodo_2.0.jpg "Mushu"){width=300 height=400}
+![Komodo Dragon from the *Virginia Aquariam*.](https://photos.google.com/photo/AF1QipNQAnscy1hZsUZYMSsItNphBLKIoGYxwoPk1h4g "Mushu"){width=300 height=400}
 
 
 **Bio**
