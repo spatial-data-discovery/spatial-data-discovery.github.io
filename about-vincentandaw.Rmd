@@ -1,0 +1,19 @@
+---
+title: "About the Coder"
+author: "Jonathan Vincent Tandaw"
+date: "2020-08-25"
+semester: "Fall 2020"
+---
+![](https://i.kym-cdn.com/photos/images/original/001/511/537/e08.png "He_Screams_For_He_Does_Not_Know"){width=500 height=500}
+
+*Bio*
+: My name is Vince, a Senior in the College of William and Mary studying Economics and Data Science
+
+*Things I enjoy doing*
+: - volleyball: right back, DS, libero
+  - chess: I play online (lichess.org), participated in two US Opens just for fun
+  - backpacks: unsure how I got into it, but I like backpacks. I sink a lot of hours watching and reading reviews of cool backpacks.
+  - travel: traveled extensively in every continent except Africa, and dreaming of the day I can go there as well as to Antarctica.
+  Synergizing with my backpack hobby, I travel with only one carryon backpack!
+  - coding: similar to how one can "enjoy" exercise - it hurts in the moment, and you wonder why you do it, but give it a couple days' time,
+  and you realize the experience was fun (sorta)!!             
