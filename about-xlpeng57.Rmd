@@ -5,7 +5,7 @@ date: "Edited: 2020-08-30"
 semester: "Fall 2020"
 ---
 
-![](https://drive.google.com/file/d/1GotUvy2Y1iovPpJ2HzIt09BE7U6eaK47/view?usp=sharing){width=150 height=150}
+![](https://drive.google.com/uc?export=view&id=1GotUvy2Y1iovPpJ2HzIt09BE7U6eaK47){width=150 height=150}
 *Hot pot is my favorite food!
 
 **Bio**
