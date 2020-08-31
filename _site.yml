@@ -34,8 +34,6 @@ navbar:
             - text: "The Coder Pages"
               href: about.html
             - text: "------"
-            - text: "Fall 2020 Team"
-              href: development-team-fall-2020.html
             - text: "Spring 2020 Team"
               href: development-team-spring-2020.html
             - text: "Fall 2019 Team"

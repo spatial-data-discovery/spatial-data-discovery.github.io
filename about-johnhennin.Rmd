@@ -11,6 +11,5 @@ semester: "Fall 2020"
 : My name is John Hennin and I am a data science major at the College of William and Mary, where I participate in geoLab and Philosophy Club.
 
 *Websites*
-
 * https://github.com/johnhennin
 * https://www.linkedin.com/in/johnhennin/
