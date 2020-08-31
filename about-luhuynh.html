@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Lu Huynh" />
+
+
+<title>About the Coder</title>
+
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Spatial Data Discovery</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning/netcdf/index.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resources-data.html">Data</a>
+    </li>
+    <li>
+      <a href="resources-links.html">Links</a>
+    </li>
+    <li>
+      <a href="resources-methods.html">Methods</a>
+    </li>
+    <li>
+      <a href="resources-software.html">Software</a>
+    </li>
+    <li>
+      <a href="syllabus/index.html">Syllabus</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Spatial Discovery
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Example</li>
+    <li>
+      <a href="project-dtwoods.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    About
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="about-dtwoods.html">About the Professor</a>
+    </li>
+    <li>
+      <a href="about.html">The Coder Pages</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="development-team-spring-2020.html">Spring 2020 Team</a>
+    </li>
+    <li>
+      <a href="development-team-fall-2019.html">Fall 2019 Team</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">About the Coder</h1>
+<h4 class="author">Lu Huynh</h4>
+<h4 class="date">Edited: 2/3/20</h4>
+
+</div>
+
+
+<p><img src="https://vignette.wikia.nocookie.net/dilbert/images/b/b4/Saint_dogbert.jpg/revision/latest?cb=20090512153756" title="life is filled with irony" width="173" height="184" /></p>
+<dl>
+<dt><strong>Bio</strong></dt>
+<dd>Fourth-year biology major. My passions include videography, fashion, and astronomy.
+</dd>
+<dt><strong>buy my posters and watch my videos!</strong>:</dt>
+<dd><ul>
+<li>SuburbanRefugee.redbubble.com</li>
+<li><a href="https://youtu.be/oQXfyILU_-4" class="uri">https://youtu.be/oQXfyILU_-4</a></li>
+</ul>
+</dd>
+</dl>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">#The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#IDE used: iPython (Anaconda)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="im">import</span> csv</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">#import matplotlib</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>data_file <span class="op">=</span> Path(<span class="st">&quot;leaf_data.csv&quot;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>leaf_width_ex <span class="op">=</span> []</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>leaf_length_ex <span class="op">=</span> []</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>leaf_width_syr <span class="op">=</span> []</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>leaf_length_syr <span class="op">=</span> []  </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>leaf_width_sp <span class="op">=</span> []</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>leaf_length_sp <span class="op">=</span> []</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>basal_angle_ex <span class="op">=</span> []</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>basal_angle_syr <span class="op">=</span> []</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>basal_angle_sp <span class="op">=</span> []</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>tip_angle_ex <span class="op">=</span> []</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>tip_angle_syr <span class="op">=</span> []</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>tip_angle_sp <span class="op">=</span> []</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>pbt_ex <span class="op">=</span> []</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>pbt_syr <span class="op">=</span> []</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a>pbt_sp <span class="op">=</span> []</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>lbw_ex <span class="op">=</span> []</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a>lbw_syr <span class="op">=</span> []</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>lbw_sp <span class="op">=</span> []</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>species_list <span class="op">=</span> []</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>ID_list <span class="op">=</span> []</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>var_list <span class="op">=</span> [<span class="st">&#39;leaf length&#39;</span>, <span class="st">&#39;leaf width&#39;</span>, <span class="st">&#39;basal angle&#39;</span>, <span class="st">&#39;tip angle&#39;</span>, <span class="st">&#39;petiole-total ratio&#39;</span>, <span class="st">&#39;length-width ratio&#39;</span>]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a><span class="co">#making master list of lists</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>feed_to_PCA <span class="op">=</span> []</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a><span class="co">#cleaning and conversion</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a><span class="cf">with</span> <span class="bu">open</span> (data_file, <span class="st">&#39;r&#39;</span>, newline <span class="op">=</span> <span class="st">&#39;&#39;</span> ) <span class="im">as</span> data:</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>    asc <span class="op">=</span> csv.DictReader(data)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> asc:</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>        species_list.append(x[<span class="st">&#39;species&#39;</span>])</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>        ID_list.append(x[<span class="st">&#39;ID&#39;</span>])</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;exaltata&#39;</span>:</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>            leaf_width_ex.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>            leaf_length_ex.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>            basal_angle_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>            tip_angle_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>            pbt_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a>            lbw_ex.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a>        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;syriaca&#39;</span>:  </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a>            leaf_width_syr.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>            leaf_length_syr.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true"></a>            basal_angle_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true"></a>            tip_angle_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true"></a>            pbt_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true"></a>            lbw_syr.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true"></a>        <span class="cf">if</span> x[<span class="st">&#39;species&#39;</span>] <span class="op">==</span> <span class="st">&#39;speciosa&#39;</span>:  </span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true"></a>            leaf_width_sp.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;wlength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true"></a>            leaf_length_sp.append(<span class="dv">100</span> <span class="op">*</span> (<span class="bu">float</span>(x[<span class="st">&#39;llength&#39;</span>])<span class="op">/</span><span class="bu">float</span>(x[<span class="st">&#39;tlength&#39;</span>])))</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true"></a>            basal_angle_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;bangle&#39;</span>]))</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true"></a>            tip_angle_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;tipangle&#39;</span>]))</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true"></a>            pbt_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;petiole_by_total&#39;</span>]))</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true"></a>            lbw_sp.append(<span class="bu">float</span>(x[<span class="st">&#39;length_by_width&#39;</span>]))</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true"></a><span class="co">#creating vectors to feed into matplotlib PCA object</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true"></a>length_vector <span class="op">=</span> leaf_length_ex <span class="op">+</span> leaf_length_syr <span class="op">+</span> leaf_length_sp</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true"></a>width_vector <span class="op">=</span> leaf_width_ex <span class="op">+</span> leaf_width_syr <span class="op">+</span> leaf_width_sp</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true"></a>b_angle_vector <span class="op">=</span> basal_angle_ex <span class="op">+</span> basal_angle_syr <span class="op">+</span> basal_angle_sp</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true"></a>tip_angle_vector <span class="op">=</span> tip_angle_ex <span class="op">+</span> tip_angle_syr <span class="op">+</span> tip_angle_sp</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true"></a>pbt_vector <span class="op">=</span> pbt_ex <span class="op">+</span> pbt_syr <span class="op">+</span> pbt_sp</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true"></a>lbw_vector <span class="op">=</span> lbw_ex <span class="op">+</span> lbw_syr <span class="op">+</span> lbw_sp</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true"></a><span class="co">#adding lists to the master list of lists to convert to array</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true"></a>feed_to_PCA.append(length_vector)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true"></a>feed_to_PCA.append(width_vector)</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true"></a>feed_to_PCA.append(b_angle_vector)</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true"></a>feed_to_PCA.append(tip_angle_vector)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true"></a>feed_to_PCA.append(pbt_vector)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true"></a>feed_to_PCA.append(lbw_vector)</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true"></a><span class="co">#conversion to numpy array (unnecessary but useful if needed for matplotlib PCA)</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true"></a>array <span class="op">=</span> np.array(feed_to_PCA)</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true"></a>array_scaled <span class="op">=</span> preprocessing.scale(array) <span class="co">#scaling data before running PCA</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true"></a>df_scaled <span class="op">=</span> pd.DataFrame(array_scaled) <span class="co">#converting NumPy array to Pandas data frame</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true"></a>df_tp <span class="op">=</span> df_scaled.transpose() <span class="co"># transposing because scikit PCA reads differently from matplotlib PCA</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true"></a>species_df <span class="op">=</span> pd.DataFrame(species_list) <span class="co">#adding species as its own data frame</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true"></a>species_df.columns <span class="op">=</span> [<span class="st">&quot;Species&quot;</span>] <span class="co">#giving the species data frame a column title</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true"></a>ID_df <span class="op">=</span> pd.DataFrame(ID_list)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true"></a>ID_df.columns <span class="op">=</span> [<span class="st">&quot;ID Number&quot;</span>]</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true"></a>var_df <span class="op">=</span> pd.DataFrame(var_list)</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true"></a>var_df.columns <span class="op">=</span> [<span class="st">&#39;Features&#39;</span>]</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true"></a><span class="co">#creating PCA object</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true"></a>myPCA <span class="op">=</span> PCA(n_components <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true"></a>principal_comps <span class="op">=</span> myPCA.fit_transform(df_tp) <span class="co">#fit AND transform</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true"></a>principal_df <span class="op">=</span> pd.DataFrame(data <span class="op">=</span> principal_comps, columns <span class="op">=</span> [<span class="st">&quot;PC1&quot;</span>, <span class="st">&quot;PC2&quot;</span>])  </span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true"></a>feat_df <span class="op">=</span> pd.DataFrame(np.transpose(myPCA.components_))</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true"></a><span class="co">#final data frame for merging/plotting</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true"></a>final_df <span class="op">=</span> pd.concat([principal_df, species_df], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true"></a>final_df2 <span class="op">=</span> pd.concat([final_df, ID_df], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true"></a>final_df2.to_csv(<span class="st">&#39;finalDF.csv&#39;</span>)</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true"></a><span class="co">#scatterplot of</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true"></a>pyplot.figure(<span class="dv">1</span>)    </span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true"></a>pyplot.scatter(leaf_width_ex, leaf_length_ex, c <span class="op">=</span> <span class="st">&#39;y&#39;</span>, marker <span class="op">=</span> <span class="st">&#39;s&#39;</span>, label <span class="op">=</span> <span class="st">&#39;exaltata&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true"></a>pyplot.scatter(leaf_width_syr, leaf_length_syr, c <span class="op">=</span> <span class="st">&#39;b&#39;</span>, label <span class="op">=</span> <span class="st">&#39;syriaca&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true"></a>pyplot.scatter(leaf_width_sp, leaf_length_sp, c <span class="op">=</span> <span class="st">&#39;g&#39;</span>, marker <span class="op">=</span> <span class="st">&#39;d&#39;</span>, label <span class="op">=</span> <span class="st">&#39;speciosa&#39;</span>, s <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true"></a>pyplot.legend(loc <span class="op">=</span> <span class="st">&#39;upper left&#39;</span>)</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true"></a>pyplot.title(<span class="st">&quot;Milkweed leaf length vs. width by species&quot;</span>)</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true"></a>pyplot.xlabel(<span class="st">&quot;Leaf width (mm)&quot;</span>)</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true"></a>pyplot.ylabel(<span class="st">&quot;Leaf length (mm)&quot;</span>)</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true"></a>pyplot.show()</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true"></a><span class="co">#plotting frequency distribution of basal angle by species</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true"></a>pyplot.figure(<span class="dv">2</span>)</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true"></a>sns.distplot(basal_angle_ex, color <span class="op">=</span> <span class="st">&quot;yellow&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Exaltata&quot;</span>)</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true"></a>sns.distplot(basal_angle_syr, color <span class="op">=</span> <span class="st">&quot;skyblue&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Syriaca&quot;</span>)</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true"></a>sns.distplot(basal_angle_sp, color <span class="op">=</span> <span class="st">&#39;green&#39;</span>, label   <span class="op">=</span> <span class="st">&#39;Speciosa&#39;</span>)</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true"></a>pyplot.legend(loc <span class="op">=</span> <span class="st">&quot;upper right&quot;</span>)</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true"></a>pyplot.title(<span class="st">&quot;Frequency distribution of basal angle by species&quot;</span>)</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true"></a>pyplot.xlabel(<span class="st">&quot;Basal angle (degrees)&quot;</span>)</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true"></a>pyplot.ylabel(<span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true"></a>pyplot.show()</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true"></a><span class="co">#plotting frequency distribution of tip angle by species</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true"></a>sns.distplot(tip_angle_ex, color <span class="op">=</span> <span class="st">&quot;yellow&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Exaltata&quot;</span>)</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true"></a>sns.distplot(tip_angle_syr, color <span class="op">=</span> <span class="st">&quot;skyblue&quot;</span>, label <span class="op">=</span> <span class="st">&quot;Syriaca&quot;</span>)</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true"></a>sns.distplot(tip_angle_sp, color <span class="op">=</span> <span class="st">&quot;green&quot;</span>, label <span class="op">=</span> <span class="st">&#39;Speciosa&#39;</span>)</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true"></a>pyplot.legend(loc <span class="op">=</span> <span class="st">&quot;upper right&quot;</span>)</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true"></a>pyplot.title(<span class="st">&quot;Frequency distribution of tip angle by species&quot;</span>)</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true"></a>pyplot.xlabel(<span class="st">&quot;Tip angle (degrees)&quot;</span>)    </span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true"></a>pyplot.ylabel(<span class="st">&quot;Frequency&quot;</span>)</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true"></a>pyplot.show()</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true"></a><span class="co">#visualizing Principal Component Analysis of the 3 asclepias species</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true"></a>pyplot.figure(<span class="dv">4</span>)</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true"></a>colors <span class="op">=</span> [<span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;skyblue&#39;</span>, <span class="st">&#39;green&#39;</span>]</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true"></a>species_names <span class="op">=</span> [<span class="st">&#39;exaltata&#39;</span>, <span class="st">&#39;syriaca&#39;</span>, <span class="st">&#39;speciosa&#39;</span>]</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true"></a><span class="cf">for</span> sp, color <span class="kw">in</span> <span class="bu">zip</span>(species_names, colors):</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true"></a>    keep_this_index <span class="op">=</span> final_df2[<span class="st">&quot;Species&quot;</span>] <span class="op">==</span> sp</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true"></a>    pc1 <span class="op">=</span> final_df2.loc[keep_this_index, <span class="st">&#39;PC1&#39;</span>]</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true"></a>    pc2 <span class="op">=</span> final_df2.loc[keep_this_index, <span class="st">&#39;PC2&#39;</span>]</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true"></a>    pc1_scale <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (pc1.<span class="bu">max</span>() <span class="op">-</span> pc1.<span class="bu">min</span>()) <span class="co"># SCALE IT AGAIN!</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true"></a>    pc2_scale <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> (pc2.<span class="bu">max</span>() <span class="op">-</span> pc2.<span class="bu">min</span>())</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true"></a>    pyplot.scatter(pc1 <span class="op">*</span> pc1_scale, pc2 <span class="op">*</span> pc2_scale, c <span class="op">=</span> color, alpha <span class="op">=</span> <span class="fl">0.6</span>)</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true"></a>pyplot.legend(species_names)</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true"></a>pyplot.xlabel(<span class="st">&quot;Principal Component 1&quot;</span>)</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true"></a>pyplot.ylabel(<span class="st">&quot;Principal Component 2&quot;</span>)</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true"></a>pyplot.grid()</span></code></pre></div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>Data Science at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

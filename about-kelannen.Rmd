@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Katherine Lannen"
+date: "2020-08-29"
+semester: "Fall 2020"
+---
+
+![](https://i.pinimg.com/736x/ce/53/c5/ce53c5bcd350ba856e5c53c343376fb2.jpg)
+
+**Bio:**
+  I am a senior at William & Mary double majoring in Computer Science and Data Science.
+
+**Likes:**
+
+- Dogs (fostered 4 this past summer)
+- Baking
+- Running

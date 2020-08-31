@@ -1,0 +1,51 @@
+name: "spatial-data-discovery"
+output_dir: "."
+navbar:
+    title: "Spatial Data Discovery"
+    right:
+        - text: Learning
+          menu:
+            - text: "NetCDF"
+              href: learning/netcdf/index.html
+        - text: Resources
+          menu:
+            - text: "Data"
+              href: resources-data.html
+            - text: "Links"
+              href: resources-links.html
+            - text: "Methods"
+              href: resources-methods.html
+            - text: "Software"
+              href: resources-software.html
+            - text: Syllabus
+              href: syllabus/index.html
+        - text: Spatial Discovery
+          menu:
+            - text: "Example"
+            - text: "Breathing of the Biosphere"
+              href: project-dtwoods.html
+            - text: "---------"
+            - text: "Previous Projects"
+              href: projects.html
+        - text: "About"
+          menu:
+            - text: "About the Professor"
+              href: about-dtwoods.html
+            - text: "The Coder Pages"
+              href: about.html
+            - text: "------"
+            - text: "Spring 2020 Team"
+              href: development-team-spring-2020.html
+            - text: "Fall 2019 Team"
+              href: development-team-fall-2019.html
+        - icon: fa-github
+          href: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io
+
+output:
+    html_document:
+        toc: false
+        theme: cosmo
+        highlight: haddock
+        css: "styles.css"
+        include:
+            after_body: footer.html

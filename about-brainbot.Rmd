@@ -1,0 +1,21 @@
+---
+title: "About the Coder"
+author: "Brian Wu"
+date: 'Edited: 2020-08-25'
+semester: 'Fall 2020'
+---
+
+![Komodo Dragon from the *Virginia Aquariam*.](Komodo_2.0.jpg "Mushu"){width=300 height=400}
+
+
+**Bio**
+: I'm a junior majoring in Computer Science and minoring in Data Science. Born and raised in *Virginia* my whole life.  
+<br>
+
+**Likes**
+ : 
+ - Action/comedy movies and shows
+- Junk foods
+- Partner Dancing
+- Multiplayer videogames
+

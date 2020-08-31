@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Ben Ralston"
+date: "Edited: 2020-08-30"
+semester: "Fall 2020"
+---
+
+![](https://images.squarespace-cdn.com/content/v1/587e4e68e58c62775cb96032/1531320055110-HPW0SRRQSJIVT7F6GR2T/ke17ZwdGBToddI8pDm48kM8Vf053lk4qDTwkC_qlIIcUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcwfsSY8sxRWHNUhPlxlTo-kIWdY8bRZKVj_3rt_9uwuj0MSHd7AyfjuvwEVVGNdNb/image-asset.png?format=2500w 'Rage, the Flower Thrower'){width=431 height=285}
+
+### Bio:
+Hi! I'm a senior majoring in **CAMS Biology** and minoring in **Math**.
+
+### Things I Enjoy Doing:
+
+- Rock climbing (indoor and outdoor)
+- Mountain biking
+- Coding

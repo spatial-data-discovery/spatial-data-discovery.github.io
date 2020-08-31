@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "Sylvia Shea"
+date: "Edited: 2020-08-26"
+semester: "Fall 2020"
+---
+
+![](https://i.pinimg.com/originals/bc/f4/e5/bcf4e51b6bb5789ac7ce83a80fd73e23.jpg 'happy face'){width=150 height=150}
+
+**Bio**
+:   I'm a senior at the College pursuing a major in Data Science & GIS and a minor in Marketing.
+
+**Things I enjoy**
+:   - My dog, Ronan
+    - Caring for my carnivorous plants 
+    - Painting

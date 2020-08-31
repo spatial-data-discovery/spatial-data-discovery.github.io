@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="David Wisdom" />
+
+
+<title>Presidential Election Margins of Victory</title>
+
+<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Spatial Data Discovery</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning/netcdf/index.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resources-data.html">Data</a>
+    </li>
+    <li>
+      <a href="resources-links.html">Links</a>
+    </li>
+    <li>
+      <a href="resources-methods.html">Methods</a>
+    </li>
+    <li>
+      <a href="resources-software.html">Software</a>
+    </li>
+    <li>
+      <a href="syllabus/index.html">Syllabus</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Spatial Discovery
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Example</li>
+    <li>
+      <a href="project-dtwoods.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="projects.html">Previous Projects</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    About
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="about-dtwoods.html">About the Professor</a>
+    </li>
+    <li>
+      <a href="about.html">The Coder Pages</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="development-team-spring-2020.html">Spring 2020 Team</a>
+    </li>
+    <li>
+      <a href="development-team-fall-2019.html">Fall 2019 Team</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Presidential Election Margins of Victory</h1>
+
+</div>
+
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2019/12/cloud.mp4"type="video/mp4" > </video></p>
+</div>
+<p>Margin of victory by county for US presidential elections. Red indicates the Republican candidate and blue indicates the Democratic candidate. Black indicates no data.</p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>I spend a good amount of my time searching out fun or interesting visualizations of data. Recently, I saw an article<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> about plotting election data from the 2016 presidential election in the United States based on both the margin of victory in an area and the population of an area. One of the most challenging aspects of data visualization is the fact that we only have a few dimensions to work with on the page. Squeezing a lot of information into only a few dimensions is where data visualization is at its most creative. The author of the article managed to create a 2-dimensional color scale that he could apply to a map in order to show both the margin of victory in a county and the total population in a county using only one color.</p>
+<p>This project was my attempt to recreate that color scale and apply it to other presidential elections. I intended to whip up a quick Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> script to figure out the color for each county and then use QGIS<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> to see those colors on a map of the United States. Half of that plan went pretty well.</p>
+<p>I have a bit of experience munging data in Python<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> with Pandas,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> so I was able to calculate the colors I needed in each county for the 2000, 2004, 2008, 2012, and 2016 United States presidential elections. I haven’t spent much time with QGIS,<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, so I had a lot of trouble getting the colors I had calculated to show up on the map. In the end, I had to settle for a simpler color scheme and only show margins of victory in each county. I think this project was still a good exercise in creating a visualization from a dataset, even if it didn’t turn out exactly the way I had envisioned it.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>The county-level election data comes from the MIT Election Data Science Lab’s<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> GitHub repository<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. The data has votes for every candidate that ran in a county in a given year, so there are more people than just the Republican and Democrat who were running that year.</p>
+<p>This visualization takes that data and looks at the margin of victory in each county to determine what the color of that county should be. The color calculation is based on the calculation in the original article<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> that inspired me, but it is only 1-dimensional instead of the full 2-dimensional one that the author created.</p>
+<p>I created the visual portion of the project with QGIS<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, turned it into an animated GIF with GIMP<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, and used an online tool<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> to turn the GIF into a video.</p>
+<div class="credit-line">
+<p>Author: David Wisdom. Last edited: 2019-12-18.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Weru, Larry. “Muddy America: Color Balancing the Election Map.” Accessed 2019-12-18. Online: <a href="https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/" class="uri">https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-18. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-12-18. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Pandas. Accessed 2019-12-18. Online: <a href="https://pandas.pydata.org/" class="uri">https://pandas.pydata.org/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>MIT Election Data Science Lab. Accessed 2019-12-18. Online: <a href="https://electionlab.mit.edu/" class="uri">https://electionlab.mit.edu/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>MEDSL GitHub Repository. Accessed 2019-12-18. Online: <a href="https://github.com/MEDSL/county-returns/" class="uri">https://github.com/MEDSL/county-returns/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Weru, Larry. “Muddy America: Color Balancing the Election Map.” Accessed 2019-12-18. Online: <a href="https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/" class="uri">https://stemlounge.com/muddy-america-color-balancing-trumps-election-map-infographic/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-12-18. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-12-18. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>Cloudconvert. Accessed 2019-12-18. Online: <a href="https://cloudconvert.com/gif-to-mp4" class="uri">https://cloudconvert.com/gif-to-mp4</a><a href="#fnref12" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>Data Science at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
