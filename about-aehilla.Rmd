@@ -1,0 +1,18 @@
+---
+title: "About the Coder Assignment"
+author: "Amy Hilla"
+date: "August 21, 2020"
+fontfamily: times
+semester: "Fall 2020"
+---
+
+![Picture of me in when I was studying abroad in Thailand](IMG_4535.jpg)
+
+Bio
+:  I'm Amy Hilla, and I'm from Arlington VA. I'm a senior, majoring in Economics and minoring in Data Science. I'm on the club sailing team and I'm in Tri Delt.
+
+*Things I'm interested in:*
+- International elections and election data
+- Sailing
+- Baking
+- watching really bad TV shows
