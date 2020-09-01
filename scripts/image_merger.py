@@ -6,6 +6,7 @@ import tkinter as tk
 from tkinter import filedialog
 from shutil import rmtree
 from PIL import Image
+from platform import system as platform
 try:
     import pyheif
     pyheif_imported = True
@@ -263,9 +264,19 @@ def requirements():
     sys.exit()
 
 
+def focus_window(window):
+    if platform() == 'Darwin':  # How Mac OS X is identified by Python
+        os.system('''/usr/bin/osascript -e 'tell app "Finder" to set frontmost of process "Python" to true' ''')
+    else:
+        window.focus_force()
+        window.focus_set()
+        window.focus()
+        window.lift()
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Merges image files of different formats to a multi-page PDF.")
+             description="Merges image files of different formats to a multi-page PDF.")
     parser.add_argument("-r", "--requirements", action='store_true', default=False,
                         help="display all required packages and exit")
 
@@ -274,6 +285,7 @@ def main():
         requirements()
 
     window = MainWindow()
+    focus_window(window)
     window.mainloop()
 
 
