@@ -38,7 +38,7 @@ class MainWindow(tk.Tk):
         my_scrollbar.pack(side="right", fill="y")
 
         self.canvas.create_window((0, 0), window=self.inner_frame, anchor='nw', width=350)
-        self.inner_frame.bind("<Configure>", self.my_function)
+        self.inner_frame.bind("<Configure>", self.configure_scroll)
 
         self.right_frame = tk.Frame(self, width=200, height=600)
         self.right_frame.place(x=400, y=0)
@@ -82,10 +82,10 @@ class MainWindow(tk.Tk):
         self.folder_label.config(text=text)
 
     def merge_files(self):
-        if self.folder is not None:
+        if self.file_class.files and self.folder:
             FileMerger(self.file_class.files, self.folder)
 
-    def my_function(self, event):
+    def configure_scroll(self, event):
         self.canvas.configure(scrollregion=self.canvas.bbox("all"), width=350, height=460)
 
 
