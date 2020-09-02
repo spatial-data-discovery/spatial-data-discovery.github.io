@@ -52,6 +52,10 @@ This folder contains utility and general functionality scripts.
 ### hdf_write.py
 * This script creates a new and edits an existing HDF5 file using h5py.
 
+### image_merger.py
+* This script allows users to select image files (supports most file types) from their computer,
+  organize them, and then merge them into a multi-page PDF.
+
 ### josephus.py
 * This script demonstrates the way linked lists work as well as adding a fun game to the mix!
   Josephus takes any number inputted by the user and makes a linked list of 1 to that number.
