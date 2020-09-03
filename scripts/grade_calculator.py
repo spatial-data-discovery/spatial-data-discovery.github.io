@@ -21,6 +21,12 @@ import argparse
 ###################
 if __name__ == '__main__':
     
+    # --help command line description
+    parser = argparse.ArgumentParser(
+    description = "This script will calculate your final grade based on the percentage grades that you input for each assignment.")
+    args = parser.parse_args()
+
+    
     ################################
     # Calculating Percentage Grade #
     ################################
@@ -126,8 +132,3 @@ if __name__ == '__main__':
         print("Final Letter Grade: F")
         print("Unfortunately, your performance is not satisfactory")
         print("You will need to retake this course")
-
-    # --help command line description
-    parser = argparse.ArgumentParser(
-    description = "This script will calculate your final grade based on the percentage grades that you input for each assignment.")
-    args = parser.parse_args()
