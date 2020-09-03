@@ -107,6 +107,9 @@ This folder contains utility and general functionality scripts.
 ### README.md
 * This readme file.
 
+### sentiment_analysis.py
+* This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
+
 ### slot_machine.py
 * This script simulates how upper confidence bound reinforcement learning works with a slot machine and prompts the user for the beginning balance and how many times to play.
 
