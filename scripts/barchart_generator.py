@@ -1,3 +1,15 @@
+# barchart_generator.py
+
+# By: Sylvia Shea
+
+# Version 1.0
+
+# Last Edit: 2020-09-03
+
+# Purpose: This script takes a .csv file and allows the 
+# user to specify the x and y variables to be plotted.
+# It saves the figure as a .png. 
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import argparse
