@@ -39,6 +39,9 @@ This folder contains utility and general functionality scripts.
 ### first_word_counter.py
 * This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
     Test using mbox-short.txt.
+    
+### grade_calculator.py
+* This script takes each grade from the Spatial Data Discovery course as a user input and outputs a final percentage and letter grade.
 
 ### hangman.py
 * This script uses the dictionary, american, to play Hangman in command prompt.
