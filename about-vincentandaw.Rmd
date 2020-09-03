@@ -16,4 +16,8 @@ semester: "Fall 2020"
   - travel: traveled extensively in every continent except Africa, and dreaming of the day I can go there as well as to Antarctica.
   Synergizing with my backpack hobby, I travel with only one carryon backpack!
   - coding: similar to how one can "enjoy" exercise - it hurts in the moment, and you wonder why you do it, but give it a couple days' time,
-  and you realize the experience was fun (sorta)!!             
+  and you realize the experience was fun (sorta)!!
+
+# SAMPLE SCRIPT: SIMPLE SINGLE-PAGE WEBPAGE SCRAPER #
+
+             
