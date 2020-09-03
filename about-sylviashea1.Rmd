@@ -34,7 +34,6 @@ It saves the plot as a .png.
 # user to specify the x and y variables to be plotted.
 # It saves the figure as a .png. 
 
-
 ####################
 # Required Modules #
 ####################
@@ -63,7 +62,6 @@ def generate_barchart(df,x_col,y_col,title):
     ax.bar(x=df[x_col], height=df[y_col], color=color)
     ax.set_title(title,fontsize=20,fontname=fontname)
     plt.savefig(title, bbox_inches='tight', dpi=1000)
-
 
 def main():    
     res = 'y'
@@ -98,7 +96,6 @@ def main():
         print('\n-------------------'
                 'Generating Plot'
                 '-------------------')
-                # must fix group and add proc inputs here
         generate_barchart(df,x_col,y_col,title) 
         print('\n-------------------'
                 'Plot Generated!'
