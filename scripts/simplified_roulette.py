@@ -124,7 +124,7 @@ def spin(total):
 
     return total
 
-#As soon as "python SimplifiedRoulette.py" is entered, clear the screen for game
+#As soon as "python simplified_roulette.py" is entered, clear the screen for game
 wipescreen()
 
 #Main game code
