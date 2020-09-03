@@ -69,6 +69,9 @@ This folder contains utility and general functionality scripts.
 ### keywords.py
 * This script takes a text file, get the most commonly used words, and then googles for links related to these words.
 
+### live_aviation.py
+* This script retrieves live aviation data from an opensource API, and then allows the user to save said file to their machine.
+
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would.
 
