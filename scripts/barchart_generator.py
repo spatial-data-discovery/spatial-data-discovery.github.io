@@ -31,7 +31,6 @@ def generate_barchart(df,x_col,y_col,title):
     ax.set_title(title,fontsize=20,fontname=fontname)
     plt.savefig(title, bbox_inches='tight', dpi=1000)
 
-
 def main():    
     res = 'y'
     while res == 'y':
@@ -65,7 +64,6 @@ def main():
         print('\n-------------------'
                 'Generating Plot'
                 '-------------------')
-                # must fix group and add proc inputs here
         generate_barchart(df,x_col,y_col,title) 
         print('\n-------------------'
                 'Plot Generated!'
