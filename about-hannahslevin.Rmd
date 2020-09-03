@@ -20,3 +20,145 @@ I got to spend the spring 2020 semester studying in Madrid, and I hope to get th
 - Collecting post cards
 - Using my espresso machine to make fun coffee drinks 
 - Trying new recipes
+
+[grade_calculator (.py)](scripts/grade_calculator.py)
+
+This script takes each grade from the Spatial Data Discovery course as a user input and outputs a final percentage and letter grade.
+
+``` {python slots, eval=FALSE}
+
+
+#Calculate Course grade
+#Hannah Slevin
+#
+#grade_calculator.py
+#
+#VERSION 1.0
+#
+#LAST EDIT: 2020-09-03
+#
+#This code requires users to input their percentage grade for each of the graded course assingments without the percentage sign.
+#The program will collect each percentage grade and turn them into points that sum up to 100 and output a final percentage and letter grade for the course.
+#
+#######################
+#  REQUIRED MODULES   #
+#######################
+import argparse
+
+
+###################
+#      Main       #
+###################
+if __name__ == '__main__':
+    
+    # --help command line description
+    parser = argparse.ArgumentParser(
+    description = "This script will calculate your final grade based on the percentage grades that you input for each assignment.")
+    args = parser.parse_args()
+
+    
+    ################################
+    # Calculating Percentage Grade #
+    ################################
+
+    #This program will calculate your Semester grade based on entering percentages from each assingment
+    #
+    #Create a list to store each grade
+    grades = []
+    #
+    #Before each section a line will print distinguishing which section of the grade is being taken as an input
+    #
+    print('Section 1: Discussion Grade')
+    #
+    #The user is prompted to enter a grade for each assingment
+    #The percentage grade will be cast as an integer an assinged to a variable 
+    #Each percentage will be recalculated from percent to point, then appended to the grades list
+    #
+    #Discussion Grade
+    discuss = int(input("Enter percentage grade for your Discussion Meetings: "))
+    discuss = (discuss/100)*24
+    grades.append(discuss)
+    #
+    #
+    print('Section 2: Assignments')
+    #
+    #About the Coder Grade
+    atc = int(input("Enter percentage grade for the About the Coder assingment: "))
+    atc = (atc/100)*5
+    grades.append(atc)
+    #
+    #Utility Script Grade
+    us = int(input("Enter percentage grade for the Utility Script assingment: "))
+    us = (us/100)*5
+    grades.append(us)
+    #
+    #Sparse Data Challenge Grade
+    sdc = int(input("Enter percentage grade for the Sparse Data Challenge assingment: "))
+    sdc = (sdc/100)*5
+    grades.append(sdc)
+    #
+    #Conversion Script Grade
+    cs = int(input("Enter percentage grade for The Conversion Scripts assingment: "))
+    cs = (cs/100)*10
+    grades.append(cs)
+    #
+    #PEP8 Assignment grade
+    pep8 = int(input("Enter percentage grade for The PEP8 assingment: "))
+    pep8 = (pep8/100)*5
+    grades.append(pep8)
+    #
+    #
+    print('Section 3: Reports')
+    #Reports grade    
+    reports = int(input("Enter percentage grade for your reports: "))
+    reports = (reports/100)*24
+    grades.append(reports)
+    #
+    #Print Section four
+    print('Section 4: Project')
+    #
+    #Project Grade
+    proj = int(input("Enter percentage grade for your project: "))
+    proj = (proj/100)*22
+    grades.append(proj)
+    #
+    #print(grades) #uncomment to check that program correctly appended grades to grade list
+    #
+    #Calculate the sum of points for each assignment
+    total_pcnt = sum(grades)
+    #Print final perentage grade
+    print("Final Grade (in percentage points):",total_pcnt,"%")
+    #
+    #
+    ############################
+    # Calculating Letter Grade #
+    ############################
+    #Calculate letter grade based on grade distribution found in syllabus using a series of if statements
+    if total_pcnt > 93.0:
+        print("Final Letter Grade: A")
+        print("Congratulations on Superior Mastery!")
+    elif (total_pcnt >= 90) & (total_pcnt <= 92.99):
+        print("Final Letter Grade: A-")
+    elif (total_pcnt >= 87) & (total_pcnt <= 89.99):
+        print("Final Letter Grade: B+")
+    elif (total_pcnt >= 83) & (total_pcnt <= 86.99):
+        print("Final Letter Grade: B")
+        print("Congratulations on Good Mastery!")
+    elif (total_pcnt >= 80) & (total_pcnt <= 82.99):
+        print("Final Letter Grade: B-")
+    elif (total_pcnt >= 77) & (total_pcnt <= 79.99):
+        print("Final Letter Grade: C+")
+    elif (total_pcnt >= 73) & (total_pcnt <= 77.99):
+        print("Final Letter Grade: C")
+        print("Your performance is satisfactory")
+    elif (total_pcnt >= 70) & (total_pcnt <= 72.99):
+        print("Final Letter Grade: C-")
+    elif (total_pcnt >= 67) & (total_pcnt <= 69.99):
+        print("Final Letter Grade: D+")
+    elif (total_pcnt >= 60) & (total_pcnt <= 66.99):
+        print("Final Letter Grade: D")
+        print("Unfortunately, your performance is less-than-satisfactory")
+    elif total_pcnt <60:
+        print("Final Letter Grade: F")
+        print("Unfortunately, your performance is not satisfactory")
+        print("You will need to retake this course")
