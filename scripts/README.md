@@ -115,6 +115,9 @@ removes all files of that type within that directory.
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them, and writes them out to a new text file.
 
+### ranking_calculator.py
+* This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores. 
+
 ### README.md
 * This readme file.
 
