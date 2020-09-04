@@ -36,6 +36,11 @@ This folder contains utility and general functionality scripts.
 ### extract_column.py
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
 
+### file_remover.py
+* This script takes in the path to a directory from which you want to delete all 
+files of a certain type and what that type/extension is (e.g. .py or .ini) and 
+removes all files of that type within that directory.
+
 ### first_word_counter.py
 * This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
     Test using mbox-short.txt.
