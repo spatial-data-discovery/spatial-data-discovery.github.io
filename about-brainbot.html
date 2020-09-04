@@ -363,7 +363,7 @@ $(document).ready(function () {
 
 
 <div class="figure">
-<img src="https://photos.google.com/photo/AF1QipNQAnscy1hZsUZYMSsItNphBLKIoGYxwoPk1h4g" title="Mushu" width="300" height="400" alt="" />
+<img src="https://i.imgur.com/5W3ydah.jpg" title="Mushu" width="300" height="400" alt="" />
 <p class="caption">Komodo Dragon from the <em>Virginia Aquariam</em>.</p>
 </div>
 <dl>
@@ -380,6 +380,44 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample Script</h3>
+<p><a href="scripts/change_calculator.py">Change Calculator (.py)</a></p>
+<p>My sample script is from a project did I did in a computer science class a couple years ago. I modified a little bit by importing <strong>argparse</strong> and adding in a useful <em>help</em> message. This script takes an integer that represents a number of cents as an input and uses an algorithm to determine the best combination of common American coins that would be needed to generate this number, using as few coins as possible. This script is perfect for determining how to make exact change for any positive number of cents.</p>
+<p>Format to run the script:</p>
+<pre><code>python change_calculator.py integerOfYourChoice
+</code></pre>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser(description=&#39;Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.&#39;)
+parser.add_argument(&#39;amount&#39;, type=int, help=&quot;The total number of cents (integer)&quot;)
+args = parser.parse_args()
+
+
+def change(amount):
+    if amount &lt; 0:
+        raise ValueError(&#39;It\&#39;s impossible to have a negative number of cents. Please try again.&#39;)
+    #The amount can&#39;t be negative
+
+    change_count = dict() #This dictionary keeps track of the number of each American coin
+    quarters = int(amount/25)
+    amount-=(quarters * 25)
+    dimes = int(amount/10)
+    amount-=(dimes * 10)
+    nickels = int(amount/5)
+    amount-=(nickels * 5)
+    pennies = amount
+
+    change_count[&#39;Quarters&#39;] = quarters
+    change_count[&#39;Dimes&#39;] = dimes
+    change_count[&#39;Nickels&#39;] = nickels
+    change_count[&#39;Pennies&#39;] = pennies
+    return change_count
+
+if __name__ == &#39;__main__&#39;:
+    print(&quot;The number of quarters, dimes, nickels, and pennies needed to generate exact change: &quot;, change(args.amount))
+</code></pre>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
