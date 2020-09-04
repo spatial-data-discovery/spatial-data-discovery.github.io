@@ -30,7 +30,7 @@ python change_calculator.py integerOfYourChoice
 
 ```
 
-```
+``` {python change_calculator, eval = FALSE}
 import argparse
 
 parser = argparse.ArgumentParser(description='Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.')
