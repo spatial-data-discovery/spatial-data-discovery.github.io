@@ -143,4 +143,4 @@ removes all files of that type within that directory.
 * This script takes the url for the WM CS website and extracts info about the department and courses offered.
 
 ### what_to_watch.py
-* This script takes movie or show titles input by the user and outputs one for the user to watch next.
+* This script takes movie or show titles input by the user and outputs one for the user to watch next. The user is also given the option to re-pick.
