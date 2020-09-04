@@ -39,7 +39,7 @@ This folder contains utility and general functionality scripts.
 ### first_word_counter.py
 * This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
     Test using mbox-short.txt.
-    
+
 ### grade_calculator.py
 * This script takes each grade from the Spatial Data Discovery course as a user input and outputs a final percentage and letter grade.
 
@@ -117,13 +117,16 @@ This folder contains utility and general functionality scripts.
 * This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
 
 ### simplified_roulette.py
-* This script simulates a simplified (only color bets and straight bets) version of roulette with three different roulette wheels (No Zero, French/Single Zero, and American/Double Zero). 
+* This script simulates a simplified (only color bets and straight bets) version of roulette with three different roulette wheels (No Zero, French/Single Zero, and American/Double Zero).
 
 ### slot_machine.py
 * This script simulates how upper confidence bound reinforcement learning works with a slot machine and prompts the user for the beginning balance and how many times to play.
 
 ### spreadsheet_cleaner.py
 * This script removes leading, trailing, and double whitespace from Excel spreadsheets.
+
+### statistical_overview.py
+* Prints a statistical overview of numerical data read in through a text file.
 
 ### text.txt
 * A test file for random_caps.py.
