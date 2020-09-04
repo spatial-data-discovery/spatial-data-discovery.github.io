@@ -18,6 +18,9 @@ This folder contains utility and general functionality scripts.
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
+### change_calculator.py
+* This script determines the simplest way to generate exact change of a given number of cents (represented by an integer), using quarters, dimes, nickels, and pennies. Will generate an error if the given number of cents is negative or not an integer.
+
 ### changelog_generator.py
 * This script generates a changelog (Hopefully) to the professors specs programmatically; it requires a PowerShell script (p.ps1) and an old change log (oldchangelog.txt).
 
