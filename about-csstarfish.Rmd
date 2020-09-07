@@ -15,3 +15,599 @@ semester: "Fall 2020"
 1. Oysters
 2. Fried shrimp
 3. Macaroni & Cheese
+
+### Sample Script
+[Emotion Detection (.py)](scripts/emotion_detection.py)
+
+My sample script is a file I wrote for a final project in my Applied Machine Learning class.
+It accepts video streams from either a webcam or pre-recorded video files, and then utilizes a convolutional neural network to classify the person in the video's facial expression as one of the seven basic emotions: happy, sad, angry, fearful, disgusted, surprised, and neutral.
+I thought that this could be useful for those who are visually-impaired, who may have difficulty reading facial expressions while they are speaking with someone.
+This file provides a real-time indicator of the emotional state of the person they are communicating with through audio and visual outputs of the person's emotional state.
+
+
+``` python
+#The corresponding video files used towards the end of the file are saved to my public Machine Learning repository
+import cv2
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
+import os
+from gtts import gTTS
+import numpy as np
+
+
+training_path = 'Training Data (Final Project)'
+train_happy_dir = os.path.join(training_path, 'Happy')  # directory with our training happy pictures
+train_sad_dir = os.path.join(training_path, 'Sad')  # directory with our training sad pictures
+train_anger_dir = os.path.join(training_path, 'Anger')  # directory with our training angry pictures
+train_fear_dir = os.path.join(training_path, 'Fear')  # directory with our training fear pictures
+train_surprise_dir = os.path.join(training_path, 'Surprise')  # directory with our training surprise pictures
+train_disgust_dir = os.path.join(training_path, 'Disgust')  # directory with our training disgust pictures
+train_neutral_dir = os.path.join(training_path, 'Neutral')  # directory with our training neutral pictures
+training_datagen = ImageDataGenerator(rescale=1./255, horizontal_flip=True)
+training_gen = training_datagen.flow_from_directory(training_path, target_size=(48,48), batch_size=64, color_mode="grayscale", class_mode='categorical')
+
+
+testing_path = 'Testing Data (Final Project)'
+test_happy_dir = os.path.join(testing_path, 'Happy')  # directory with our testing happy pictures
+test_sad_dir = os.path.join(testing_path, 'Sad')  # directory with our testing sad pictures
+test_anger_dir = os.path.join(testing_path, 'Anger')  # directory with our testing angry pictures
+test_fear_dir = os.path.join(testing_path, 'Fear')  # directory with our testing fear pictures
+test_surprise_dir = os.path.join(testing_path, 'Surprise')  # directory with our testing surprise pictures
+test_disgust_dir = os.path.join(testing_path, 'Disgust')  # directory with our testing disgust pictures
+test_neutral_dir = os.path.join(testing_path, 'Neutral')  # directory with our testing neutral pictures
+testing_datagen = ImageDataGenerator(rescale=1./255, horizontal_flip=True)
+testing_gen = testing_datagen.flow_from_directory(testing_path, target_size=(48,48), batch_size=64, color_mode="grayscale", class_mode='categorical')
+
+#Count how many images there are in each directory
+num_happy_tr = len(os.listdir(train_happy_dir))
+#print(num_happy_tr)
+num_sad_tr = len(os.listdir(train_sad_dir))
+#print(num_sad_tr)
+num_anger_tr = len(os.listdir(train_anger_dir))
+#print(num_anger_tr)
+num_fear_tr = len(os.listdir(train_fear_dir))
+#print(num_fear_tr)
+num_surprise_tr = len(os.listdir(train_surprise_dir))
+#print(num_surprise_tr)
+num_disgust_tr = len(os.listdir(train_disgust_dir))
+#print(num_disgust_tr)
+num_neutral_tr = len(os.listdir(train_neutral_dir))
+#print(num_neutral_tr)
+
+for emotion in os.listdir(training_path + '/'):
+    print(str(len(os.listdir(training_path + '/' + emotion))) + ' ' + emotion + ' Faces in the training dataset.')
+
+
+
+num_happy_tst = len(os.listdir(test_happy_dir))
+#print(num_happy_tst)
+num_sad_tst = len(os.listdir(test_sad_dir))
+#print(num_sad_tst)
+num_anger_tst = len(os.listdir(test_anger_dir))
+#print(num_anger_tst)
+num_fear_tst = len(os.listdir(test_fear_dir))
+#print(num_fear_tst)
+num_surprise_tst = len(os.listdir(test_surprise_dir))
+#print(num_surprise_tst)
+num_disgust_tst = len(os.listdir(test_disgust_dir))
+#print(num_disgust_tst)
+num_neutral_tst = len(os.listdir(test_neutral_dir))
+#print(num_neutral_tst)
+
+for emotion in os.listdir(testing_path + '/'):
+    print(str(len(os.listdir(testing_path + '/' + emotion))) + ' ' + emotion + ' Faces in the testing dataset.')
+
+
+
+total_train = num_happy_tr + num_sad_tr + num_anger_tr + num_fear_tr + num_surprise_tr + num_disgust_tr + num_neutral_tr
+print(str(total_train) + ' faces in the training dataset.')
+total_test = num_happy_tst + num_sad_tst + num_anger_tst + num_fear_tst + num_surprise_tst + num_disgust_tst + num_neutral_tst
+print(str(total_test) + ' faces in the testing dataset.')
+
+#Create the model
+model = Sequential([
+    Conv2D(64, (3,3), activation='relu', padding='same', input_shape=(48,48,1)),
+    MaxPooling2D((2,2)),
+    Conv2D(128, (3,3), activation='relu', padding='same'),
+    MaxPooling2D((2,2)),
+    Conv2D(256, (3,3), activation='relu', padding='same'),
+    MaxPooling2D((2,2)),
+    Flatten(),
+    Dense(256, activation='relu'),
+    Dense(64, activation='relu'),
+    Dense(7, activation='softmax')
+])
+
+model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.001), metrics=['accuracy'])
+history = model.fit(training_gen, steps_per_epoch=(total_train//64), epochs=30,
+                    validation_data=testing_gen, validation_steps=(total_test//64))
+model.summary()
+
+acc = history.history['accuracy']
+train_acc = history.history['val_accuracy']
+
+loss = history.history['loss']
+train_loss = history.history['val_loss']
+
+epochs_range = range(30)
+
+plt.figure(figsize=(8, 8))
+plt.subplot(1, 2, 1)
+plt.plot(epochs_range, acc, label='Training Accuracy')
+plt.plot(epochs_range, train_acc, label='Validation Accuracy')
+plt.legend(loc='lower right')
+plt.title('Training and Validation Accuracy')
+
+plt.subplot(1, 2, 2)
+plt.plot(epochs_range, loss, label='Training Loss')
+plt.plot(epochs_range, train_loss, label='Validation Loss')
+plt.legend(loc='upper right')
+plt.title('Training and Validation Loss')
+plt.show()
+
+#Read video camera stream
+cv2.ocl.setUseOpenCL(False)
+emotions = ["Happy", "Sad", "Angry", "Scared", "Surprised", "Disgusted", "Neutral"]
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y), cv2.FONT_HERSHEY_SIMPLEX, 4, (0, 128, 128), 6)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 128, 128), 2)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200,860), interpolation=cv2.INTER_CUBIC))
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+
+cap = cv2.VideoCapture('happy.mp4')
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 8, (0, 200, 255), 8)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 200, 255), 8)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200,860), interpolation=cv2.INTER_CUBIC))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+
+cap = cv2.VideoCapture('angry.mp4')
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 8, (100, 0, 255), 8)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 0, 255), 6)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+
+cap = cv2.VideoCapture('sad.mp4')
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 8, (200, 0, 0), 8)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (200, 0, 0), 6)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+
+
+cap = cv2.VideoCapture('neutral.mp4')
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 8, (100, 100, 0), 8)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 100, 0), 6)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+
+
+cap = cv2.VideoCapture('SeveralEmotions.mpg')
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    face_scan = cv2.CascadeClassifier('C:/Python38/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    gray_fr = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_scan.detectMultiScale(gray_fr, 1.3, 5)
+
+    for (x, y, w, h) in faces:
+        fc = gray_fr[y:y+h, x:x+w]
+
+        roi = cv2.resize(fc, (48, 48))
+        prediction = model.predict(roi[np.newaxis, :, :, np.newaxis])
+        index = np.argmax(prediction)
+
+        cv2.putText(frame, emotions[index], (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 8, (100, 0, 225), 8)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 0, 225), 6)
+
+    cv2.imshow('Video', cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        current_index = index
+        cap.release()
+        cv2.destroyAllWindows()
+        if current_index == 0:
+            pred_text = 'This person looks happy!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 1:
+            pred_text = 'This person looks sad.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 2:
+            pred_text = 'This person looks angry.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 3:
+            pred_text = 'This person looks scared!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 4:
+            pred_text = 'This person looks disgusted.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 5:
+            pred_text = 'This person looks surprised!'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+        elif current_index == 6:
+            pred_text = 'This person looks neutral.'
+            language = 'en'
+            speech = gTTS(text=pred_text, lang=language, slow=False)
+            speech.save('emotion.mp3')
+            os.system('emotion.mp3')
+            break
+```
