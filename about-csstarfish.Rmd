@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Caroline Freshcorn"
+date: "Edited: 2019-09-07"
+semester: "Fall 2020"
+---
+
+![Starfish](https://images.squarespace-cdn.com/content/v1/5647d67ce4b05d303b88deb0/1474003748170-RV0GR7VOHOR0IYFS2OHU/ke17ZwdGBToddI8pDm48kPyxK6AB3zgGizbLyl3cQLF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryA1F0gmNLmEt4Nikyd91URavr8Aoi-yShiL3L-0iJr14g/image-asset.jpeg?format=2500w 'Starfish')
+*To fit with the starfish theme from my username (CSStarfish), here's a picture of a starfish relaxing on the beach :)*
+
+**Bio:**
+:   Hi, I'm Caroline and I'm double-majoring in Business Analytics and Data Science. I'm ***excited*** to learn more about spatial data over the course of the semester!
+
+**Favorite Foods:**
+1. Oysters
+2. Fried shrimp
+3. Macaroni & Cheese
