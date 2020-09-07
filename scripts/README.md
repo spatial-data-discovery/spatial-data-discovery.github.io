@@ -36,6 +36,9 @@ This folder contains utility and general functionality scripts.
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
+### emotion_detection.py
+* This script uses a convolutional neural network to classify a person's emotion based on their facial expressions in a video stream.
+
 ### extract_column.py
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
 
