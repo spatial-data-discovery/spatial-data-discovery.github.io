@@ -43,8 +43,8 @@ This folder contains utility and general functionality scripts.
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
 
 ### file_remover.py
-* This script takes in the path to a directory from which you want to delete all 
-files of a certain type and what that type/extension is (e.g. .py or .ini) and 
+* This script takes in the path to a directory from which you want to delete all
+files of a certain type and what that type/extension is (e.g. .py or .ini) and
 removes all files of that type within that directory.
 
 ### first_word_counter.py
@@ -122,10 +122,14 @@ removes all files of that type within that directory.
 * This script takes a text file of ASCII characters, randomly capitalizes them, and writes them out to a new text file.
 
 ### ranking_calculator.py
-* This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores. 
+* This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores.
 
 ### README.md
 * This readme file.
+
+### rename.py
+* This script renames files in a folder based on a regular expression.
+    The script is set to rename all files of a given type by replacing an underscore (\_) in the filename with a hyphen (-).
 
 ### sentiment_analysis.py
 * This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
