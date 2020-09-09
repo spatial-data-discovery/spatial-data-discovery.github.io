@@ -23,5 +23,5 @@ venv/
 # Python compilations
 __pycache__
 
-# The hunt is on for removing these meddling files!
-# desktop.ini
+# Avoid this cantankerous infection
+desktop.ini
