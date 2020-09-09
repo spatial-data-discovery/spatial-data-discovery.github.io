@@ -12,6 +12,9 @@ This folder contains utility and general functionality scripts.
 ### american
 * Line-separated words (>300k); this data file is needed for hangman.py.
 
+### barchart_generator.py
+* This script takes a .csv file and generates a barchart as a .png. It allows the user to specify the columns for the x and y axes. 
+
 ### Book_keeping.py
 * This script takes in two excel files and compares them to update inventory.  
 
