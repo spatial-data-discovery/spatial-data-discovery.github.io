@@ -51,14 +51,14 @@ def American(bet):
         elif pocket==38:
             pocket=0.0
     elif bet in colors:
-        pock=np.random.randint(39)
+        pock=np.random.randint(38)
         if pock in np.arange(1,37,2):
             pocket="R"
         elif pock in np.arange(2,37,2):
             pocket="B"
-        elif pock==37:
+        elif pock==0:
             pocket=0
-        elif pock==38:
+        else:
             pocket=0.0
     return pocket
 
