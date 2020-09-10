@@ -34,6 +34,8 @@ def generate_barchart(df,x_col,y_col,title):
 def main():    
     res = 'y'
     while res == 'y':
+        sys.stdout.write('Notice: Output is the same name as title and placed in working directory')
+        sys.stdout.write('\n---------------------------')
         sys.stdout.write('Input CSV name (include .csv) ')
         sys.stdout.flush()
         path = input()
@@ -57,7 +59,7 @@ def main():
         y_key = int(float(input())) - 1
         y_col = columns[y_key]
 
-        sys.stdout.write('Input title')
+        sys.stdout.write('Input title (will also be the name of the .png file) ')
         title = str(input())
 
         # Plot 
