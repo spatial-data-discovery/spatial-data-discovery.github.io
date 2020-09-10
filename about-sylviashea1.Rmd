@@ -15,7 +15,7 @@ semester: "Fall 2020"
     - Caring for my carnivorous plants 
     - Painting
 
-### Utility Script:
+### Sample Script:
 [barchart generator (.py)](scripts/barchart_generator.py)
 
 This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot.
