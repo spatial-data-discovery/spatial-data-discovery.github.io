@@ -149,6 +149,9 @@ removes all files of that type within that directory.
 ### statistical_overview.py
 * Prints a statistical overview of numerical data read in through a text file.
 
+### test_ranking_calculater.csv
+* A test csv file for rankings calculator.py.
+
 ### text.txt
 * A test file for random_caps.py.
 
