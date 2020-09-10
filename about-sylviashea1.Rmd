@@ -19,7 +19,7 @@ semester: "Fall 2020"
 [barchart generator (.py)](scripts/barchart_generator.py)
 
 This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot.
-It saves the plot as a .png.
+It saves the plot as a .png in the working directory.
 
 ```{python barchart_generator, eval = FALSE}
 # barchart_generator.py
