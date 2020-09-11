@@ -417,9 +417,10 @@ class FileMerger:
                 output_path = os.path.join(self.output_folder, output_name)
 
         merger.write(output_path)
+        merger.close()  # Clears memory usage and frees PDFs to be deleted.
 
     def delete_temp(self):
-        # Deletes tmp_path directory and all of its contents.
+        # Deletes temp_path directory and all of its contents.
         rmtree(self.temp_path)
 
     @staticmethod
