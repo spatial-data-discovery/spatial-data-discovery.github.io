@@ -437,7 +437,6 @@ def requirements():
     package_list = [
         'Pillow',
         'PyPDF2',
-        'tkinter',
         'pyheif (only if you need to convert .HEIF files)'
     ]
     print('Required packages:')
