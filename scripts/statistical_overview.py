@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     filename = input("Enter the Path to the File:")
     with open(filename) as f:
-        numbers = [int(x) for x in f.read().split()]
+        numbers = [float(x) for x in f.read().split()]
 
     numbers_np = np.array(numbers)
 
