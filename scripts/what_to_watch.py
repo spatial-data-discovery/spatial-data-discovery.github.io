@@ -1,29 +1,4 @@
----
-title: "About the Coder"
-author: "Natalie Larsen"
-date: "Edited: 2020-08-29"
-semester: "Fall 2020"
----
-
-![](https://images.theconversation.com/files/350851/original/file-20200803-22-dfm95n.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop){width=200 height=200}
-
-**Bio**
-:   I'm from Blacksburg, VA, and I am a senior at W&M double majoring in Biology and Data Science.
-
-**Things that make me happy:**
-:   - my labradoodle Lua
-    - breakfast sandwiches
-    - the National Zoo panda cam
-    - baking
-    - knitting
-
-### Sample script
-[What to Watch (.py)](scripts/what_to_watch.py)
-
-I always have trouble deciding what to watch next, so I wanted to create a useful script that would choose for me.
-
-```{python moviemagic, eval=FALSE}
-#what_to_watch.py
+﻿#what_to_watch.py
 #
 # Author: Natalie Larsen
 #
@@ -84,4 +59,3 @@ if __name__ == "__main__":
 
     pick_title()
     new_title()
-```

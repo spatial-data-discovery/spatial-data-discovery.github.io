@@ -12,11 +12,17 @@ This folder contains utility and general functionality scripts.
 ### american
 * Line-separated words (>300k); this data file is needed for hangman.py.
 
+### barchart_generator.py
+* This script takes a .csv file and generates a barchart as a .png. It allows the user to specify the columns for the x and y axes. Saves .png in working directory.
+
 ### Book_keeping.py
 * This script takes in two excel files and compares them to update inventory.  
 
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
+
+### change_calculator.py
+* This script determines the simplest way to generate exact change of a given number of cents (represented by an integer), using quarters, dimes, nickels, and pennies. Will generate an error if the given number of cents is negative or not an integer.
 
 ### changelog_generator.py
 * This script generates a changelog (Hopefully) to the professors specs programmatically; it requires a PowerShell script (p.ps1) and an old change log (oldchangelog.txt).
@@ -33,12 +39,23 @@ This folder contains utility and general functionality scripts.
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
+### emotion_detection.py
+* This script uses a convolutional neural network to classify a person's emotion based on their facial expressions in a video stream.
+
 ### extract_column.py
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
+
+### file_remover.py
+* This script takes in the path to a directory from which you want to delete all
+files of a certain type and what that type/extension is (e.g. .py or .ini) and
+removes all files of that type within that directory.
 
 ### first_word_counter.py
 * This script takes .txt or .md files and a word of your choice and returns each sentence/sentences where the specified word is the first word.
     Test using mbox-short.txt.
+
+### grade_calculator.py
+* This script takes each grade from the Spatial Data Discovery course as a user input and outputs a final percentage and letter grade.
 
 ### hangman.py
 * This script uses the dictionary, american, to play Hangman in command prompt.
@@ -65,6 +82,9 @@ This folder contains utility and general functionality scripts.
 
 ### keywords.py
 * This script takes a text file, get the most commonly used words, and then googles for links related to these words.
+
+### live_aviation.py
+* This script retrieves live aviation data from an opensource API, and then allows the user to save said file to their machine.
 
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would.
@@ -94,6 +114,9 @@ This folder contains utility and general functionality scripts.
 ### oldchangelog.txt
 * Empty file for starting changelog_generator.py.
 
+### parsehtml.py
+* parses a simple html page to get all the text (with tag <p>), and saves it to txt file
+
 ### Pdf_Converter.py
 * This script converts files between different formats.
     It is currently hardcoded to convert .docx to .pdf.
@@ -104,14 +127,33 @@ This folder contains utility and general functionality scripts.
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them, and writes them out to a new text file.
 
+### ranking_calculator.py
+* This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores.
+
 ### README.md
 * This readme file.
+
+### rename.py
+* This script renames files in a folder based on a regular expression.
+    The script is set to rename all files of a given type by replacing an underscore (\_) in the filename with a hyphen (-).
+
+### sentiment_analysis.py
+* This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
+
+### simplified_roulette.py
+* This script simulates a simplified (only color bets and straight bets) version of roulette with three different roulette wheels (No Zero, French/Single Zero, and American/Double Zero).
 
 ### slot_machine.py
 * This script simulates how upper confidence bound reinforcement learning works with a slot machine and prompts the user for the beginning balance and how many times to play.
 
 ### spreadsheet_cleaner.py
 * This script removes leading, trailing, and double whitespace from Excel spreadsheets.
+
+### statistical_overview.py
+* Prints a statistical overview of numerical data read in through a text file.
+
+### test_ranking_calculater.csv
+* A test csv file for rankings calculator.py.
 
 ### text.txt
 * A test file for random_caps.py.
@@ -121,3 +163,6 @@ This folder contains utility and general functionality scripts.
 
 ### webscraper.py
 * This script takes the url for the WM CS website and extracts info about the department and courses offered.
+
+### what_to_watch.py
+* This script takes movie or show titles input by the user and outputs one for the user to watch next. The user is also given the option to re-pick.

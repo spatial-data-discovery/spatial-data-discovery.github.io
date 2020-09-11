@@ -1,36 +1,14 @@
----
-title: "About the Coder"
-author: "Xianglu Peng"
-date: "Edited: 2020-08-30"
-semester: "Fall 2020"
----
-
-![](https://drive.google.com/uc?export=view&id=1GotUvy2Y1iovPpJ2HzIt09BE7U6eaK47){width=150 height=150}
-*Hot pot is my favorite food!
-
-**Bio**
-:   I am a junior, double majoring in Applied Math and Computer Science.
-
-**The things I like:**
-:   - Cooking and Eating
-    - Music
-    - Chili
-    - Harry Potter
-
-### Sample script
-[Rankings Calculator (.py)](scripts/ranking_calculator.py)
-
-```
 # Xianglu Peng
 #
 # ranking_calculator.py
 #
 # Recent Edit: 2020-09-04
 #
-# This script calculates the ranking of a list of players/students
-# (or anything you want to rank) based on their scores.
-# The file you provide should only include two columns
+# This script calculates the ranking of a list of players/students 
+# (or anything you want to rank) based on their scores. 
+# The file you provide should only include two columns 
 # and edit it with exactly the same column names : name, score
+
 
 ##################
 # MODULES NEEDED #
@@ -50,7 +28,7 @@ def calculator(datafile,min,num,order):
     #datafile - the path of your data
     #min - the minimum number of rounds in order to be displayed in the ranking
     #num - the number of best scores to be calculated in the average
-    #order - acsending or descending order
+    #order - acsending or descending order 
 
     #read the file and get the name of the players
     scores = pd.read_csv(datafile)
@@ -65,7 +43,7 @@ def calculator(datafile,min,num,order):
             score_dic[scores.loc[i]['name']] = [scores.loc[i]['score']]
 
 
-    #find and delete the data of players that have not played at least n number of rounds
+    #find and delete the data of players that have not played at least n number of rounds 
     less_than_any = [key for key in score_dic if len(score_dic[key])< int(min)]
     for key in less_than_any:
         del score_dic[key]
@@ -102,7 +80,7 @@ def calculator(datafile,min,num,order):
             print(str(n+1) + "  " + compare[n][0] + "    " + str(compare[n][1]))
 
 
-
+    
 ##########
 #  Main  #
 ##########
@@ -118,5 +96,3 @@ if __name__ == "__main__":
     num = input("The number of best scores you want to be calculated in the average (CANNOT be greater than the min number you have entered):  ")
     order = input("The order of you want calculate the rankings(Enter A or D):  ")
     calculator(filename,min,num,order)
-
-```

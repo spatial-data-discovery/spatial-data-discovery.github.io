@@ -1,32 +1,3 @@
----
-title: "About the Coder"
-author: "Tyler W. Davis, PhD"
-date: "Edited: 2019-09-05"
----
-
-![](https://drdavis.space/photos/danger_250x250.png 'Tyler W. Davis'){width=150 height=150}
-
-Bio
-:   Engineer, programmer, educator.
-    I enjoy playing guitar, baking bread, and writing application-based computer programs in Perl, R, C++, Arduino, and Python.
-
-Websites:
-:   - https://drdavis.space
-    - https://bitbucket.org/twdavis/
-
-
-### Sample script
-[rename (.py)](scripts/rename.py)
-
-I wrote this script because I made a mistake naming all the files in the organization repository with underscores.
-It seems the world-wide web actually prefers dashes between words.
-I had an old Perl script that could do this and I wanted to try my hand at transcribing it to Python, so here we go!
-
-See also my [Music Randomizer (.py)](scripts/music_randomizer.py) for those in need of a better MP3 shuffle.
-
-Enjoy!
-
-```{python rename, eval=FALSE}
 #!/usr/bin/env python3
 #
 # rename.py
@@ -118,5 +89,3 @@ if __name__ == "__main__":
 
     if not args.test:
         print("... complete!")
-
-```

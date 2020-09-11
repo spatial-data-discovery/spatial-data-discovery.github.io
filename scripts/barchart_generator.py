@@ -1,27 +1,3 @@
----
-title: "About the Coder"
-author: "Sylvia Shea"
-date: "Edited: 2020-08-26"
-semester: "Fall 2020"
----
-
-![](https://i.pinimg.com/originals/bc/f4/e5/bcf4e51b6bb5789ac7ce83a80fd73e23.jpg 'happy face'){width=150 height=150}
-
-**Bio**
-:   I'm a senior at the College pursuing a major in Data Science & GIS and a minor in Marketing.
-
-**Things I enjoy**
-:   - My dog, Ronan
-    - Caring for my carnivorous plants 
-    - Painting
-
-### Sample Script:
-[barchart generator (.py)](scripts/barchart_generator.py)
-
-This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot.
-It saves the plot as a .png in the working directory.
-
-```{python barchart_generator, eval = FALSE}
 # barchart_generator.py
 
 # By: Sylvia Shea
@@ -34,18 +10,10 @@ It saves the plot as a .png in the working directory.
 # user to specify the x and y variables to be plotted.
 # It saves the figure as a .png. 
 
-####################
-# Required Modules #
-####################
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import argparse
 import sys
-
-####################
-#     Function     #
-####################
 
 def generate_barchart(df,x_col,y_col,title):
     fontname = 'Sathu'
@@ -106,12 +74,8 @@ def main():
         sys.stdout.flush()
         res = input()
 
-####################
-#       Main       #
-####################
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Make a barchart from CSV')
     args = parser.parse_args()
     main()
-```

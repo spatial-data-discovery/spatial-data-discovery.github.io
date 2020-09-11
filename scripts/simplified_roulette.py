@@ -1,26 +1,3 @@
----
-title: "About the Coder"
-author: "John Hennin"
-date: "August 25th, 2020"
-semester: "Fall 2020"
----
-
-![John Hennin](https://www.wm.edu/as/data-science/researchlabs/geolab/images/spring-2020/hennin_john)
-
-**Bio**
-: My name is John Hennin and I am a data science major at the College of William and Mary, where I participate in geoLab and Philosophy Club.
-
-*Websites*
-
-* https://github.com/johnhennin
-* https://www.linkedin.com/in/johnhennin/
-
-### Sample Script
-[simplified_roulette.py](scripts/simplified_roulette.py)
-
-The script simulates a simplified version of the game roulette, in which you can only place color bets (red or black) and straight bets (any number between and including 1-36). If you win a color bet, you get two times the amount of money you bet, since there are two color options. If you win a straight bet, you get 36 times the amount of money you bet, since there are 36 numerical options. Each player begins with $1000 and they can choose between No Zero roulette (36 total pockets, 36 possible winning pockets), French/Single Zero roulette (37 total pockets, 36 possible winning pockets), or American/Double Zero roulette (38 total pockets, 36 possible winning pockets). It serves as a simple and quick game to help fight boredom.
-
-``` {python simplified_roulette, eval=FALSE}
 import numpy as np
 import os
 import sys
@@ -147,7 +124,7 @@ def spin(total):
 
     return total
 
-#As soon as "python SimplifiedRoulette.py" is entered, clear the screen for game
+#As soon as "python simplified_roulette.py" is entered, clear the screen for game
 wipescreen()
 
 #Main game code
@@ -171,4 +148,4 @@ if initiate=="y":
 elif initiate=="n":
     print("Okay, have a great day!")
     sys.exit()
-```
+

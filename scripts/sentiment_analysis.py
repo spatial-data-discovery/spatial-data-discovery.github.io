@@ -1,33 +1,3 @@
----
-title: "About the Coder Assignment"
-author: "Amy Hilla"
-date: "August 21, 2020"
-fontfamily: times
-semester: "Fall 2020"
----
-
-![Picture of me when I was studying abroad in Thailand](IMG_4535.jpg)
-
-Bio
-:  I'm Amy Hilla, and I'm from Arlington VA. I'm a senior, majoring in Economics and minoring in Data Science.
-I'm on the club sailing team and I'm in Tri Delt.
-
-*Things I'm interested in:*
-- International elections and election data
-- Sailing
-- Baking
-- watching really bad TV shows
-
-### Sample script:
-
-[sentiment analysis (.py)](scripts/sentiment_analysis.py)
-
-This script takes .csv files with text data and analyzes the text in each row.
-It assigns two sentiment scores, assessing subjectivity and polarity.
-The sentiment scores are added to the .csv as a new column,
-then the .csv with sentiment scores is exported as a new file.
-
-``` {python slots, eval=FALSE}
 # sentiment_analysis.py
 
 # By: Amy Hilla
@@ -111,4 +81,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     sentiment_scores()
-```

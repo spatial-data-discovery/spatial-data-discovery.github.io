@@ -1,28 +1,3 @@
----
-title: "About the Coder"
-author: "Jamil Abbas"
-date: "Edited: 2020-08-29"
-semester: "Fall 2020"
----
-
-![](https://www.spalding.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-masterCatalog_SPALDING/default/dwd21974bc/images/hi-res/74876E_FRONT.jpg?sw=555&sh=689&sm=cut&sfrm=jpg){width=150 height=150}
-
-Bio
-:   I am a senior CAMS major hoping to pursue a career in data analysis. I was born in San Diego CA, but grew up in Prague CZ.
-
-
-*Some of my hobbies*
-:   - Basketball
-    - Video games
-    - Listening to music
-
-
-### Sample Script
-[Statistical Overview (.py)](scripts/statistical_overview.py)
-
-My utility script is a simple program that reads in numerical data from a text file and provides a brief statistical overview. This includes the mean, median, mode, variance, standard deviation, skewness, and kurtosis of the data.  
-
-```{python musicman, eval=FALSE}
 #Created by Jamil Abbas
 
 #09-03-2020
@@ -68,7 +43,7 @@ if __name__ == "__main__":
 
     filename = input("Enter the Path to the File:")
     with open(filename) as f:
-        numbers = [int(x) for x in f.read().split()]
+        numbers = [float(x) for x in f.read().split()]
 
     numbers_np = np.array(numbers)
 
@@ -78,5 +53,3 @@ if __name__ == "__main__":
     _ = plt.xlabel("Range")
     _ = plt.ylabel("Frequency")
     plt.show()
-
-```

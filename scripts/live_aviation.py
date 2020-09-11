@@ -1,30 +1,3 @@
----
-title: "About the Coder"
-author: "Andrew Caietti"
-date: "Edited: 2020-08-25"
-semester: "Fall 2020"
----
-
-![](https://scripps.ucsd.edu/sites/scripps.ucsd.edu/files/resources-and-facilities/field_page_top_image/2013/siocommA_ScrippsCampus_Aerials_20080718_004.jpg 'Scripps Pier, La Jolla')
-
-**Bio**
-:   My name is *Andrew Caietti* and I'm from [San Diego, CA](https://en.wikipedia.org/wiki/San_Diego)! I am a senior at William and Mary, majoring in Applied Mathematics with a focus on Probability and Operations Research.
-
-Hobbies and Interests:
-:   - Surfing
-    - Biking
-    - Research in Data Science/Math
-    - Aviation
- 
- 
-### Sample Script 
-[Live Aviation Data (.py)](scripts/live_aviation.py)
- 
-I enjoy tracking and visualizing aviation data, as there is so much going on above us that we do not see as we go about our daily lives. Thus, I wrote this script to be able to access and store open source aviation data through [OpenSky Network](https://opensky-network.org/). I have used this data to visualize and learn more about what aircraft are flying above us. 
-
-I hope you too find interest in this dataset! 
-
-```{python live_aviation, eval=FALSE}
 # Andrew Caietti
 #
 # live_aviation.py
@@ -50,6 +23,7 @@ from tkinter.filedialog import askdirectory
 ###############
 #  Functions  #
 ###############
+
 
 # Generate the a 2-dimensional array where each sub-array is an individual aircraft
 def RetrievePlaneData(): 
@@ -85,18 +59,22 @@ def PlaneDatatoCSV(path_name,data):
     df.columns = ['icao24','Callsign','Origin Country','Time Position','Last Contact','Longitude','Latitude','Baro Altitude','Velocity','Heading','Vertical Rate','On Ground','Sensors','Geo Altitude','Squawk','Spi','Position Source']
     ts = strftime(r'%Y_%m_%d__%H_%M_%S') # Record current time to time-stamp the file
     df.to_csv(path_name+r"\Aviation_Data__"+ts+r'.csv',index=False,header=True)
-
-##########
-## MAIN ##
-##########
+    
 
 if __name__ =='__main__':
     parser = argparse.ArgumentParser(description="Retrieve live, open-source aviation data about what planes are flying where in the world.")
     parser.add_argument('--link', default = 'https://opensky-network.org/', help='Link to the API (datasource).')
     args = parser.parse_args()
-
     current_data = RetrievePlaneData()
     my_path = askdirectory(title='Select Folder') # Allow user to choose what folder to save data in
     PlaneDatatoCSV(my_path,current_data)
 
-```
+
+        
+ 
+
+
+
+
+
+

@@ -1,31 +1,3 @@
----
-title: "About the Coder"
-author: "Katherine Lannen"
-date: "2020-08-29"
-semester: "Fall 2020"
----
-
-![](https://i.pinimg.com/736x/ce/53/c5/ce53c5bcd350ba856e5c53c343376fb2.jpg)
-
-**Bio:**
-: I am a senior at William & Mary double majoring in Computer Science and Data Science.
-
-**Likes:**
-
-- Dogs (fostered 4 this past summer)
-- Baking
-- Running
-
-### Sample script:
-
-[file remover (.py)](scripts/file_remover.py)
-
-This script takes in the path to a directory from which you want to delete all
-files of a certain type and what that type/extension is (e.g. .py or .ini) and 
-removes all files of that type within that directory.
-
-``` {python file_remover, eval=FALSE}
-
 # file_remover.py
 
 # By: Katherine Lannen
