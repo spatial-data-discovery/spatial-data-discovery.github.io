@@ -114,6 +114,9 @@ removes all files of that type within that directory.
 ### oldchangelog.txt
 * Empty file for starting changelog_generator.py.
 
+### parsehtml.py
+* parses a simple html page to get all the text (with tag <p>), and saves it to txt file
+
 ### Pdf_Converter.py
 * This script converts files between different formats.
     It is currently hardcoded to convert .docx to .pdf.
