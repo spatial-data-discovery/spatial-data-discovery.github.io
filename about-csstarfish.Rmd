@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Caroline Freshcorn"
-date: "Edited: 2019-09-07"
+date: "Edited: 2019-09-13"
 semester: "Fall 2020"
 ---
 
