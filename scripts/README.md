@@ -39,9 +39,6 @@ This folder contains utility and general functionality scripts.
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
-### emotion_detection.py
-* This script uses a convolutional neural network to classify a person's emotion based on their facial expressions in a video stream.
-
 ### extract_column.py
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
 
@@ -88,6 +85,9 @@ removes all files of that type within that directory.
 
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would.
+
+### make_art.py
+* This script uses TensorFlow's DeepDream model to create whimsical artwork out of a user-provided image by enhancing patterns detected within the picture.
 
 ### mbox-short.txt
 * Data file for testing first_word_counter.py.
