@@ -1,5 +1,5 @@
 #
-# MakeArtpy
+# make_art.py
 #
 # LAST EDIT: 2020-09-13
 #
