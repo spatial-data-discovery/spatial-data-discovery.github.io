@@ -17,7 +17,7 @@ def parsehtml(url):
     review_txt = " ".join(review_cleaned) #make list into one long str to be written in
     with open("Output.txt", "w") as txtfile:
         txtfile.write(review_txt)
-    return "done!"
+    return "done"
 
 if __name__ == '__main__':
     
