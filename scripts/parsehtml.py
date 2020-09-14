@@ -1,10 +1,6 @@
 import urllib.request, json, re, argparse #re needed to replace whitespace down the line
 from bs4 import BeautifulSoup
 
-parser = argparse.ArgumentParser(description='scrape a simple html website by adding the url after py file name. You MUST have bs4 installed!')
-parser.add_argument('website',type=str, metavar='',help='input your website here')
-args = parser.parse_args()
-
 def parsehtml(url):
     with urllib.request.urlopen(url) as req:
         contents = req.read() #this will be all the text
@@ -21,6 +17,12 @@ def parsehtml(url):
     review_txt = " ".join(review_cleaned) #make list into one long str to be written in
     with open("Output.txt", "w") as txtfile:
         txtfile.write(review_txt)
+    return "done!"
 
 if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser(description='scrape a simple html website by adding the url after py file name. You MUST have bs4 installed!')
+    parser.add_argument('website',type=str, metavar='',help='input your website here')
+    args = parser.parse_args()
+
     print(parsehtml(args.website))
