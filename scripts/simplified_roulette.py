@@ -6,11 +6,6 @@ import argparse
 #Options for color bets
 colors=["R","B"]
 
-#Help message
-if __name__ == "__main__":
-    parser= argparse.ArgumentParser(description="This is a simplified version of standard roulette. You can only place straight bets and color bets. Follow the prompts and enjoy!")
-    args = parser.parse_args()
-
 #Clears screen (purely aesthetics)
 def wipescreen():
     if sys.platform=="darwin" or sys.platform=="linux" or sys.platform=="linux2":
@@ -127,25 +122,32 @@ def spin(total):
 #As soon as "python simplified_roulette.py" is entered, clear the screen for game
 wipescreen()
 
-#Main game code
-initiate=input("Hi! Would you like to play roulette? [y/n] ")
-if initiate=="y":
-    total=spin(1000)
-    b=0
-    while b!=1:
-        yesorno=input("Would you like to play again? [y/n] ")
-        if yesorno=="y":
-            wipescreen()
-            if total<=0:
-                print("Sorry, looks like you ran out of money. Better luck next time!")
+#Help message + main game code
+if __name__ == "__main__":
+    parser= argparse.ArgumentParser(description="This is a simplified version of standard roulette. You can only place straight bets and color bets. Follow the prompts and enjoy!")
+    args = parser.parse_args()
+
+    #Main game code
+    initiate=input("Hi! Would you like to play roulette? [y/n] ")
+    if initiate=="y":
+        total=spin(1000)
+        b=0
+        while b!=1:
+            yesorno=input("Would you like to play again? [y/n] ")
+            if yesorno=="y":
+                wipescreen()
+                if total<=0:
+                    print("Sorry, looks like you ran out of money. Better luck next time!")
+                    sys.exit()
+                else:
+                    total=spin(total)
+            elif yesorno=="n":
+                b=b+1
+                print("Okay, have a great day!")
                 sys.exit()
-            else:
-                total=spin(total)
-        elif yesorno=="n":
-            b=b+1
-            print("Okay, have a great day!")
-            sys.exit()
-elif initiate=="n":
-    print("Okay, have a great day!")
-    sys.exit()
+    elif initiate=="n":
+        print("Okay, have a great day!")
+        sys.exit()
+
+
 

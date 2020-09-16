@@ -13,10 +13,11 @@ def parsehtml(url):
         else:
             review.append(i.get_text(strip=True)) #if not h2, do nothing
     review_cleaned = [re.sub("\s+"," ",rev) for rev in review] #changes all whitespace to single space
-    review_cleaned = review_cleaned[:-5] #the last elements are not important: "thanks for reading" etc
+    #review_cleaned = review_cleaned[:-5] #the last elements are not important: "thanks for reading" etc
     review_txt = " ".join(review_cleaned) #make list into one long str to be written in
     with open("Output.txt", "w") as txtfile:
         txtfile.write(review_txt)
+	txtfile.write('\n')
     return "done"
 
 if __name__ == '__main__':

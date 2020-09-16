@@ -6,17 +6,20 @@ fontfamily: times
 semester: "Fall 2020"
 ---
 
-![Picture of me when I was studying abroad in Thailand](IMG_4535.jpg)
+![Picture of me when I was studying abroad in Thailand](https://drive.google.com/file/d/1N0p_F9XertXy_5O2jaCnE4s3kgBxItSv/view?usp=sharing)
 
 Bio
 :  I'm Amy Hilla, and I'm from Arlington VA. I'm a senior, majoring in Economics and minoring in Data Science.
 I'm on the club sailing team and I'm in Tri Delt.
 
+
 *Things I'm interested in:*
+
 - International elections and election data
 - Sailing
 - Baking
 - watching really bad TV shows
+
 
 ### Sample script:
 
