@@ -462,10 +462,10 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
-<div id="utility-script" class="section level3">
-<h3>Utility Script:</h3>
+<div id="sample-script" class="section level3">
+<h3>Sample Script:</h3>
 <p><a href="scripts/barchart_generator.py">barchart generator (.py)</a></p>
-<p>This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot. It saves the plot as a .png.</p>
+<p>This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot. It saves the plot as a .png in the working directory.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># barchart_generator.py</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># By: Sylvia Shea</span></span>
@@ -510,52 +510,54 @@ $(document).ready(function () {
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a><span class="kw">def</span> main():    </span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>    res <span class="op">=</span> <span class="st">&#39;y&#39;</span></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>    <span class="cf">while</span> res <span class="op">==</span> <span class="st">&#39;y&#39;</span>:</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input CSV name (include .csv) &#39;</span>)</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>        sys.stdout.flush()</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>        path <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>        <span class="cf">try</span>: </span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a>            df <span class="op">=</span> pd.read_csv(path)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>        <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="st">&#39;File not found!&#39;</span>)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Here are your columns: &#39;</span>)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">---------------------------&#39;</span>)</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>        columns <span class="op">=</span> <span class="bu">list</span>(df.columns)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>        [<span class="bu">print</span>(<span class="bu">str</span>(i <span class="op">+</span> <span class="dv">1</span>) <span class="op">+</span> <span class="st">&#39;: &#39;</span> <span class="op">+</span> col) <span class="cf">for</span> i,col <span class="kw">in</span> <span class="bu">enumerate</span>(columns)]</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input number for x value &#39;</span>)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a>        sys.stdout.flush()</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a>        x_key <span class="op">=</span> <span class="bu">int</span>(<span class="bu">float</span>(<span class="bu">input</span>())) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a>        x_col <span class="op">=</span> columns[x_key]</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input number for y value &#39;</span>)</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true"></a>        sys.stdout.flush()</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true"></a>        y_key <span class="op">=</span> <span class="bu">int</span>(<span class="bu">float</span>(<span class="bu">input</span>())) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true"></a>        y_col <span class="op">=</span> columns[y_key]</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input title&#39;</span>)</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true"></a>        title <span class="op">=</span> <span class="bu">str</span>(<span class="bu">input</span>())</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true"></a>        <span class="co"># Plot </span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true"></a>                <span class="st">&#39;Generating Plot&#39;</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true"></a>                <span class="st">&#39;-------------------&#39;</span>)</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true"></a>        generate_barchart(df,x_col,y_col,title) </span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true"></a>                <span class="st">&#39;Plot Generated!&#39;</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true"></a>                <span class="st">&#39;-------------------&#39;</span>)</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">Continue? (y/n): &#39;</span>)</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true"></a>        sys.stdout.flush()</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true"></a>        res <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true"></a><span class="co">####################</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true"></a><span class="co">#       Main       #</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Notice: Output is the same name as title and placed in working directory&#39;</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">---------------------------&#39;</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input CSV name (include .csv) &#39;</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a>        sys.stdout.flush()</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>        path <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>        <span class="cf">try</span>: </span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>            df <span class="op">=</span> pd.read_csv(path)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>        <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="st">&#39;File not found!&#39;</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Here are your columns: &#39;</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">---------------------------&#39;</span>)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>        columns <span class="op">=</span> <span class="bu">list</span>(df.columns)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a>        [<span class="bu">print</span>(<span class="bu">str</span>(i <span class="op">+</span> <span class="dv">1</span>) <span class="op">+</span> <span class="st">&#39;: &#39;</span> <span class="op">+</span> col) <span class="cf">for</span> i,col <span class="kw">in</span> <span class="bu">enumerate</span>(columns)]</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input number for x value &#39;</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a>        sys.stdout.flush()</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a>        x_key <span class="op">=</span> <span class="bu">int</span>(<span class="bu">float</span>(<span class="bu">input</span>())) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>        x_col <span class="op">=</span> columns[x_key]</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input number for y value &#39;</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true"></a>        sys.stdout.flush()</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true"></a>        y_key <span class="op">=</span> <span class="bu">int</span>(<span class="bu">float</span>(<span class="bu">input</span>())) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true"></a>        y_col <span class="op">=</span> columns[y_key]</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;Input title (will also be the name of the .png file) &#39;</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true"></a>        title <span class="op">=</span> <span class="bu">str</span>(<span class="bu">input</span>())</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true"></a>        <span class="co"># Plot </span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true"></a>                <span class="st">&#39;Generating Plot&#39;</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true"></a>                <span class="st">&#39;-------------------&#39;</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true"></a>        generate_barchart(df,x_col,y_col,title) </span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true"></a>                <span class="st">&#39;Plot Generated!&#39;</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true"></a>                <span class="st">&#39;-------------------&#39;</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true"></a>        sys.stdout.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">Continue? (y/n): &#39;</span>)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true"></a>        sys.stdout.flush()</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true"></a>        res <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true"></a></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true"></a><span class="co">####################</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&#39;Make a barchart from CSV&#39;</span>)</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true"></a>    args <span class="op">=</span> parser.parse_args()</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true"></a>    main()</span></code></pre></div>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true"></a><span class="co">#       Main       #</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true"></a><span class="co">####################</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&#39;Make a barchart from CSV&#39;</span>)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true"></a>    args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true"></a>    main()</span></code></pre></div>
 </div>
 
 <footer class="myfoot">

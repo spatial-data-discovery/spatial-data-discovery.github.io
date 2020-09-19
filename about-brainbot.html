@@ -476,33 +476,32 @@ $(document).ready(function () {
 </code></pre>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="im">import</span> argparse</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&#39;Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.&#39;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>parser.add_argument(<span class="st">&#39;amount&#39;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The total number of cents (integer)&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>args <span class="op">=</span> parser.parse_args()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="kw">def</span> change(amount):</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    <span class="cf">if</span> amount <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s impossible to have a negative number of cents. Please try again.&#39;</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>    <span class="co">#The amount can&#39;t be negative</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>    change_count <span class="op">=</span> <span class="bu">dict</span>() <span class="co">#This dictionary keeps track of the number of each American coin</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>    quarters <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">25</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    amount<span class="op">-=</span>(quarters <span class="op">*</span> <span class="dv">25</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>    dimes <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">10</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>    amount<span class="op">-=</span>(dimes <span class="op">*</span> <span class="dv">10</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>    nickels <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">5</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>    amount<span class="op">-=</span>(nickels <span class="op">*</span> <span class="dv">5</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>    pennies <span class="op">=</span> amount</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>    change_count[<span class="st">&#39;Quarters&#39;</span>] <span class="op">=</span> quarters</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>    change_count[<span class="st">&#39;Dimes&#39;</span>] <span class="op">=</span> dimes</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a>    change_count[<span class="st">&#39;Nickels&#39;</span>] <span class="op">=</span> nickels</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a>    change_count[<span class="st">&#39;Pennies&#39;</span>] <span class="op">=</span> pennies</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a>    <span class="cf">return</span> change_count</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;The number of quarters, dimes, nickels, and pennies needed to generate exact change: &quot;</span>, change(args.amount))</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="kw">def</span> change(amount):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="cf">if</span> amount <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s impossible to have a negative number of cents. Please try again.&#39;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="co">#The amount can&#39;t be negative</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    change_count <span class="op">=</span> <span class="bu">dict</span>() <span class="co">#This dictionary keeps track of the number of each American coin</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>    quarters <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">25</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>    amount<span class="op">-=</span>(quarters <span class="op">*</span> <span class="dv">25</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>    dimes <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">10</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>    amount<span class="op">-=</span>(dimes <span class="op">*</span> <span class="dv">10</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>    nickels <span class="op">=</span> <span class="bu">int</span>(amount<span class="op">/</span><span class="dv">5</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    amount<span class="op">-=</span>(nickels <span class="op">*</span> <span class="dv">5</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>    pennies <span class="op">=</span> amount</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>    change_count[<span class="st">&#39;Quarters&#39;</span>] <span class="op">=</span> quarters</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>    change_count[<span class="st">&#39;Dimes&#39;</span>] <span class="op">=</span> dimes</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>    change_count[<span class="st">&#39;Nickels&#39;</span>] <span class="op">=</span> nickels</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>    change_count[<span class="st">&#39;Pennies&#39;</span>] <span class="op">=</span> pennies</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>    <span class="cf">return</span> change_count</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&#39;Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.&#39;</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a>    parser.add_argument(<span class="st">&#39;amount&#39;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>, <span class="bu">help</span><span class="op">=</span><span class="st">&quot;The total number of cents (integer)&quot;</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a>    args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;The number of quarters, dimes, nickels, and pennies needed to generate exact change: &quot;</span>, change(args.amount))</span></code></pre></div>
 </div>
 
 <footer class="myfoot">

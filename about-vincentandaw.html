@@ -380,12 +380,33 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
-<div id="sample-script-simple-single-page-webpage-scraper" class="section level1">
-<h1>SAMPLE SCRIPT: SIMPLE SINGLE-PAGE WEBPAGE SCRAPER</h1>
-<p>import urllib.request, json, re, argparse #re needed to replace whitespace down the line from bs4 import BeautifulSoup</p>
-<p>parser = argparse.ArgumentParser(description=‘scrape a simple html website by adding the url after py file name. You MUST have bs4 installed!’) parser.add_argument(‘website’,type=str, metavar=’‘,help=’input your website here’) args = parser.parse_args()</p>
-<p>def parsehtml(url): with urllib.request.urlopen(url) as req: contents = req.read() #this will be all the text soup = BeautifulSoup(contents, features=‘html.parser’) text = soup.find_all([‘p’,‘h2’]) #I want all text in paragraphs (p) and headings (h2) review = [] for i in text: if i.name == ‘h2’: #I want a colon after every heading to make sentences clearer. review.append(i.get_text(strip=True)+‘:’) #get_text() gives a str, which allows concat with “:” else: review.append(i.get_text(strip=True)) #if not h2, do nothing review_cleaned = [re.sub(“+”," ",rev) for rev in review] #changes all whitespace to single space review_cleaned = review_cleaned[:-5] #the last elements are not important: “thanks for reading” etc review_txt = " “.join(review_cleaned) #make list into one long str to be written in with open(”Output.txt“,”w") as txtfile: txtfile.write(review_txt)</p>
-<p>if <strong>name</strong> == ‘<strong>main</strong>’: print(parsehtml(args.website))</p>
+<div id="sample-script" class="section level1">
+<h1>SAMPLE SCRIPT:</h1>
+<p><a href="scripts/parsehtml.py">parsehtml (.py)</a> ~~~ { import urllib.request, json, re, argparse #re needed to replace whitespace down the line from bs4 import BeautifulSoup</p>
+<pre><code>parser = argparse.ArgumentParser(description=&#39;scrape a simple html website by adding the url after py file name. You MUST have bs4 installed!&#39;)
+parser.add_argument(&#39;website&#39;,type=str, metavar=&#39;&#39;,help=&#39;input your website here&#39;)
+args = parser.parse_args()
+
+def parsehtml(url):
+        with urllib.request.urlopen(url) as req:
+            contents = req.read() #this will be all the text
+        soup = BeautifulSoup(contents, features=&#39;html.parser&#39;) 
+        text = soup.find_all([&#39;p&#39;,&#39;h2&#39;]) #I want all text in paragraphs (p) and headings (h2)
+        review = []
+        for i in text:
+    if i.name == &#39;h2&#39;: #I want a colon after every heading to make sentences clearer.
+        review.append(i.get_text(strip=True)+&#39;:&#39;) #get_text() gives a str, which allows concat with &quot;:&quot;
+    else:
+        review.append(i.get_text(strip=True)) #if not h2, do nothing
+        review_cleaned = [re.sub(&quot;\s+&quot;,&quot; &quot;,rev) for rev in review] #changes all whitespace to single space
+        review_cleaned = review_cleaned[:-5] #the last elements are not important: &quot;thanks for reading&quot; etc
+        review_txt = &quot; &quot;.join(review_cleaned) #make list into one long str to be written in
+    with open(&quot;Output.txt&quot;, &quot;w&quot;) as txtfile:
+        txtfile.write(review_txt)
+
+if __name__ == &#39;__main__&#39;:
+    print(parsehtml(args.website))</code></pre>
+<p>} ~~~</p>
 </div>
 
 <footer class="myfoot">
