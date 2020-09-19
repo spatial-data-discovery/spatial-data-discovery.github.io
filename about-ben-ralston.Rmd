@@ -10,11 +10,10 @@ semester: "Fall 2020"
 ### Bio:
 Hi! I'm a senior majoring in **CAMS Biology** and minoring in **Math**.
 
-### Things I Enjoy Doing:
-
-- Rock climbing (indoor and outdoor)
-- Mountain biking
-- Coding
+Things I Enjoy Doing:
+: Rock climbing (indoor and outdoor)
+: Mountain biking
+: Coding
 
 ### Sample script
 [Image Merger (.py)](scripts/image_merger.py)

@@ -13,7 +13,7 @@ This folder contains utility and general functionality scripts.
 * Line-separated words (>300k); this data file is needed for hangman.py.
 
 ### barchart_generator.py
-* This script takes a .csv file and generates a barchart as a .png. It allows the user to specify the columns for the x and y axes. 
+* This script takes a .csv file and generates a barchart as a .png. It allows the user to specify the columns for the x and y axes. Saves .png in working directory.
 
 ### Book_keeping.py
 * This script takes in two excel files and compares them to update inventory.  
@@ -38,9 +38,6 @@ This folder contains utility and general functionality scripts.
 
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
-
-### emotion_detection.py
-* This script uses a convolutional neural network to classify a person's emotion based on their facial expressions in a video stream.
 
 ### extract_column.py
 * This script takes a csv file and an option argument -c for which column needs to be extracted from the file. It will output a text file containing the column without the header.
@@ -89,6 +86,9 @@ removes all files of that type within that directory.
 ### magic8ball.py
 * This script asks the user a question and then gives them the response a Magic 8 ball would.
 
+### make_art.py
+* This script uses TensorFlow's DeepDream model to create whimsical artwork out of a user-provided image by enhancing patterns detected within the picture.
+
 ### mbox-short.txt
 * Data file for testing first_word_counter.py.
 
@@ -113,6 +113,9 @@ removes all files of that type within that directory.
 
 ### oldchangelog.txt
 * Empty file for starting changelog_generator.py.
+
+### parsehtml.py
+* parses a simple html page to get all the text (with tag <p>), and saves it to txt file
 
 ### Pdf_Converter.py
 * This script converts files between different formats.
@@ -148,6 +151,9 @@ removes all files of that type within that directory.
 
 ### statistical_overview.py
 * Prints a statistical overview of numerical data read in through a text file.
+
+### test_ranking_calculater.csv
+* A test csv file for rankings calculator.py.
 
 ### text.txt
 * A test file for random_caps.py.

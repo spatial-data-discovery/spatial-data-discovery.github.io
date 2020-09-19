@@ -17,7 +17,7 @@ Hobbies and Interests:
     - Aviation
  
  
- ### Sample Script 
+### Sample Script 
 [Live Aviation Data (.py)](scripts/live_aviation.py)
  
 I enjoy tracking and visualizing aviation data, as there is so much going on above us that we do not see as we go about our daily lives. Thus, I wrote this script to be able to access and store open source aviation data through [OpenSky Network](https://opensky-network.org/). I have used this data to visualize and learn more about what aircraft are flying above us. 
@@ -95,8 +95,8 @@ if __name__ =='__main__':
     parser.add_argument('--link', default = 'https://opensky-network.org/', help='Link to the API (datasource).')
     args = parser.parse_args()
 
-current_data = RetrievePlaneData()
-my_path = askdirectory(title='Select Folder') # Allow user to choose what folder to save data in
-PlaneDatatoCSV(my_path,current_data)
+    current_data = RetrievePlaneData()
+    my_path = askdirectory(title='Select Folder') # Allow user to choose what folder to save data in
+    PlaneDatatoCSV(my_path,current_data)
 
 ```

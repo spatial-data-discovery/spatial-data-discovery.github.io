@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Caroline Freshcorn"
-date: "Edited: 2019-09-07"
+date: "Edited: 2019-09-13"
 semester: "Fall 2020"
 ---
 
@@ -12,6 +12,7 @@ semester: "Fall 2020"
 :   Hi, I'm Caroline and I'm double-majoring in Business Analytics and Data Science. I'm ***excited*** to learn more about spatial data over the course of the semester!
 
 **Favorite Foods:**
+
 1. Oysters
 2. Fried shrimp
 3. Macaroni & Cheese

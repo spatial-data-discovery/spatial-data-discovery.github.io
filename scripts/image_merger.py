@@ -417,9 +417,10 @@ class FileMerger:
                 output_path = os.path.join(self.output_folder, output_name)
 
         merger.write(output_path)
+        merger.close()  # Clears memory usage and frees PDFs to be deleted.
 
     def delete_temp(self):
-        # Deletes tmp_path directory and all of its contents.
+        # Deletes temp_path directory and all of its contents.
         rmtree(self.temp_path)
 
     @staticmethod
@@ -436,8 +437,7 @@ def requirements():
     package_list = [
         'Pillow',
         'PyPDF2',
-        'tkinter',
-        'pyheif (only if you need to convert .HEIF files)'
+        'pyheif (only if you need to convert .HEIC/HEIF files)'
     ]
     print('Required packages:')
     for package in package_list:

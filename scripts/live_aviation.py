@@ -65,10 +65,9 @@ if __name__ =='__main__':
     parser = argparse.ArgumentParser(description="Retrieve live, open-source aviation data about what planes are flying where in the world.")
     parser.add_argument('--link', default = 'https://opensky-network.org/', help='Link to the API (datasource).')
     args = parser.parse_args()
-
-current_data = RetrievePlaneData()
-my_path = askdirectory(title='Select Folder') # Allow user to choose what folder to save data in
-PlaneDatatoCSV(my_path,current_data)
+    current_data = RetrievePlaneData()
+    my_path = askdirectory(title='Select Folder') # Allow user to choose what folder to save data in
+    PlaneDatatoCSV(my_path,current_data)
 
 
         
