@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2020-03-04
+# LAST EDIT: 2020-09-19
 #
 # This script reads an HDF5 file.
 #
@@ -21,69 +21,69 @@ import h5py
 ###############################################################################
 # MAIN
 ###############################################################################
-# def get_attr(hf, attr, group_path):
-#         """
-#         Name:     get_attr
-#         Features: Returns the given attribute for the given path
-#         Inputs:   - open h5py file object (hf)
-#                   - str, attribute name (attr)
-#                   - str, group path (group_path)
-#         Outputs:  str, attribute value (val)
-#         """
-#         if group_path in hf:
-#             if attr in hf[group_path].attrs.keys():
-#                 try:
-#                     tmp = hf[group_path].attrs[attr]
+def get_attr(hf, attr, group_path):
+        """
+        Name:     get_attr
+        Features: Returns the given attribute for the given path
+        Inputs:   - open h5py file object (hf)
+                  - str, attribute name (attr)
+                  - str, group path (group_path)
+        Outputs:  str, attribute value (val)
+        """
+        if group_path in hf:
+            if attr in hf[group_path].attrs.keys():
+                try:
+                    tmp = hf[group_path].attrs[attr]
 
-#                     if isinstance(tmp, str):
-#                         val = tmp
-#                     elif isinstance(tmp, numpy.ndarray):
-#                         val = tmp
-#                     else:
-#                         try:
-#                             val = tmp.decode('UTF-8')
-#                         except:
-#                             val = tmp
-#                 except KeyError:
-#                     print("'%s' has no attribute '%s'" % (group_path, attr))
-#                     val = "UNDEFINED"
-#                 except:
-#                     print(
-#                         ("attribute '%s' could not be retrieved "
-#                          "from path '%s'!") % (attr, group_path))
-#                     val = "UNDEFINED"
-#             else:
-#                 print("'%s' has no attribute '%s'" % (group_path, attr))
-#                 val = "UNDEFINED"
-#         else:
-#             print('path not defined!')
-#             val = "UNDEFINED"
+                    if isinstance(tmp, str):
+                        val = tmp
+                    elif isinstance(tmp, numpy.ndarray):
+                        val = tmp
+                    else:
+                        try:
+                            val = tmp.decode('UTF-8')
+                        except:
+                            val = tmp
+                except KeyError:
+                    print("'%s' has no attribute '%s'" % (group_path, attr))
+                    val = "UNDEFINED"
+                except:
+                    print(
+                        ("attribute '%s' could not be retrieved "
+                         "from path '%s'!") % (attr, group_path))
+                    val = "UNDEFINED"
+            else:
+                print("'%s' has no attribute '%s'" % (group_path, attr))
+                val = "UNDEFINED"
+        else:
+            print('path not defined!')
+            val = "UNDEFINED"
 
-#         return val
+        return val
 
 
-# def get_object_attrs(hf, obj_path):
-#         """
-#         Name:     get_object_attrs
-#         Features: Returns dictionary of group/dataset attributes
-#         Inputs:   - open h5py file object (hf)
-#                   - str, object path (obj_path)
-#         Outputs:  dict, session attributes (attrs_dict)
-#         """
-#         attr_dict = {}
-#         if obj_path is not None and obj_path in hf:
-#             for key in hf[obj_path].attrs.keys():
-#                 val = hf[obj_path].attrs[key]
-#                 if isinstance(val, bytes):
-#                     attr_dict[key] = val.decode('UTF-8')
-#                 else:
-#                     attr_dict[key] = val
-#         else:
-#             print(
-#                 "could not get attributes for %s; object does not exist!",
-#                 obj_path)
+def get_object_attrs(hf, obj_path):
+        """
+        Name:     get_object_attrs
+        Features: Returns dictionary of group/dataset attributes
+        Inputs:   - open h5py file object (hf)
+                  - str, object path (obj_path)
+        Outputs:  dict, session attributes (attrs_dict)
+        """
+        attr_dict = {}
+        if obj_path is not None and obj_path in hf:
+            for key in hf[obj_path].attrs.keys():
+                val = hf[obj_path].attrs[key]
+                if isinstance(val, bytes):
+                    attr_dict[key] = val.decode('UTF-8')
+                else:
+                    attr_dict[key] = val
+        else:
+            print(
+                "could not get attributes for %s; object does not exist!",
+                obj_path)
 
-#         return attr_dict
+        return attr_dict
 
 def list_objects(hf, parent_path):
         """
@@ -159,12 +159,12 @@ if os.path.isfile(hdf_path):
             for my_obj in my_objects:
                 print(">", my_obj)
 
-    # # Read attributes
-    # print("Attributes:")
-    # for my_group in my_groups:
-    #     print_attrs(hdfile, my_group)
+    # Read attributes
+    print("Attributes:")
+    for my_group in my_groups:
+        print_attrs(hdfile, my_group)
 
-    # print_attrs(hdfile, "/data/raster")
+    print_attrs(hdfile, "/data/raster")
     # print_attrs(hdfile, "/data/assignment")
 
     hdfile.close()

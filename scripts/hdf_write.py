@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2020-03-04
+# LAST EDIT: 2020-09-20
 #
 # This script writes an HDF5 file.
 
@@ -86,7 +86,7 @@ else:
 # Writing root attributes
 if False:
     set_attr(hdfile, "author", "Tyler W. Davis", "/")
-    set_attr(hdfile, "date", "2020-02-25", "/")
+    set_attr(hdfile, "date", "2020-09-19", "/")
     set_attr(hdfile, "affiliation", "William & Mary", "/")
 
 # Create a group
