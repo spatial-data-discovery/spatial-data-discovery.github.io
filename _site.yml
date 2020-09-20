@@ -5,6 +5,8 @@ navbar:
     right:
         - text: Learning
           menu:
+            - text: "HDF"
+              href: learning/hdf/index.html
             - text: "NetCDF"
               href: learning/netcdf/index.html
         - text: Resources
