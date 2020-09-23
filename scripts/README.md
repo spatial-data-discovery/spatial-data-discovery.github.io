@@ -111,6 +111,9 @@ removes all files of that type within that directory.
 ### netCDF_mean.py
 * This script reads in a netCDF file and writes out the average of the variables to a new file.
 
+### numberconverter.py
+* This script takes in a decimal integer and converts it into binary, octal, and hexadecimal formats. 
+
 ### oldchangelog.txt
 * Empty file for starting changelog_generator.py.
 
