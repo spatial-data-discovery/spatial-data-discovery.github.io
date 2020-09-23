@@ -10,7 +10,7 @@ semester: "Fall 2020"
 **Bio**
 :  Hiker, Biker. Wannabe Skateboarder, Bassist, and Coder.
 
-##Top Corona Virus Time-Wasters So Far
+## Top Corona Virus Time-Wasters So Far
 
 - Dominion (Card Game)
 
@@ -18,7 +18,7 @@ semester: "Fall 2020"
 
 - Buying Clothes Online
 
-##Top Listened Bands from July 2020 (According to Last.Fm)
+## Top Listened Bands from July 2020 (According to Last.Fm)
 
 1. Lil Uzi Vert
 
@@ -30,3 +30,25 @@ semester: "Fall 2020"
 
 5. Crystal Castles
 
+## Sample Script:
+
+	import argparse
+
+	#this simple utility script uses the Python argparse library to convert a decimal integer into binary, octal, and hexadecimal.
+	#this utility script is based on the code hosted by Programiz at the following URL, author unknown
+	#https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal
+
+	def integerConverter(int):
+		print("The decimal value of", int, "is:")
+		print(bin(int), "in binary.")
+		print(oct(int), "in octal.")
+		print(hex(int), "in hexadecimal.")
+		return
+
+	parser = argparse.ArgumentParser(description='Convert a decimal integer to binary, octal, and hexadecimal.')
+	parser.add_argument('integer', type=int, help='the decimal integer to be converted')
+	args = parser.parse_args()
+
+	integerConverter(args.integer)
+
+Link to Script File: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io/issues/68
