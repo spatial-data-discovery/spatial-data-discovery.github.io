@@ -375,13 +375,16 @@ $(document).ready(function () {
 <dd>Hiker, Biker. Wannabe Skateboarder, Bassist, and Coder.
 </dd>
 </dl>
-<p>##Top Corona Virus Time-Wasters So Far</p>
+<div id="top-corona-virus-time-wasters-so-far" class="section level2">
+<h2>Top Corona Virus Time-Wasters So Far</h2>
 <ul>
 <li><p>Dominion (Card Game)</p></li>
 <li><p>Super Smash Brothers: <em>Melee</em> (My hands hurt)</p></li>
 <li><p>Buying Clothes Online</p></li>
 </ul>
-<p>##Top Listened Bands from July 2020 (According to Last.Fm)</p>
+</div>
+<div id="top-listened-bands-from-july-2020-according-to-last.fm" class="section level2">
+<h2>Top Listened Bands from July 2020 (According to Last.Fm)</h2>
 <ol style="list-style-type: decimal">
 <li><p>Lil Uzi Vert</p></li>
 <li><p>Alice In Chains</p></li>
@@ -389,6 +392,29 @@ $(document).ready(function () {
 <li><p>M.I.A.</p></li>
 <li><p>Crystal Castles</p></li>
 </ol>
+</div>
+<div id="sample-script" class="section level2">
+<h2>Sample Script:</h2>
+<pre><code>import argparse
+
+#this simple utility script uses the Python argparse library to convert a decimal integer into binary, octal, and hexadecimal.
+#this utility script is based on the code hosted by Programiz at the following URL, author unknown
+#https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal
+
+def integerConverter(int):
+    print(&quot;The decimal value of&quot;, int, &quot;is:&quot;)
+    print(bin(int), &quot;in binary.&quot;)
+    print(oct(int), &quot;in octal.&quot;)
+    print(hex(int), &quot;in hexadecimal.&quot;)
+    return
+
+parser = argparse.ArgumentParser(description=&#39;Convert a decimal integer to binary, octal, and hexadecimal.&#39;)
+parser.add_argument(&#39;integer&#39;, type=int, help=&#39;the decimal integer to be converted&#39;)
+args = parser.parse_args()
+
+integerConverter(args.integer)</code></pre>
+<p>Link to Script File: <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io/issues/68" class="uri">https://github.com/spatial-data-discovery/spatial-data-discovery.github.io/issues/68</a></p>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
