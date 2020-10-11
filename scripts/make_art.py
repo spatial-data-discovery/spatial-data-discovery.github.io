@@ -1,7 +1,7 @@
 #
 # make_art.py
 #
-# LAST EDIT: 2020-09-13
+# LAST EDIT: 2020-10-11
 #
 # This script uses the DeepDream model in TensorFlow to create a stylized work of art from pictures provided to it.
 #
@@ -10,6 +10,10 @@
 # It will also probably take awhile to run, so I recommend using Google Colaboratory and selecting Google's GPU runtime to make it process a little more quickly.
 #
 # Thanks, and have fun making art!
+
+# Comment out the following lines if running in Google Colab or other online notebook server.
+parse = argparse.ArgumentParser(description="Uses TensorFlow neural networks to enhance the patterns detected in a picture and create artwork.")
+argument = parse.parse_args()
 
 import tensorflow as tf
 
@@ -146,7 +150,3 @@ def run_deep_dream_simple(img, steps=100, step_size=0.01):
 
 
 dream_img = run_deep_dream_simple(img=original_img, steps=100, step_size=0.01)
-
-# Comment out the following lines if running in Google Colab or other online notebook server.
-parse = argparse.ArgumentParser(description="Uses TensorFlow neural networks to enhance the patterns detected in a picture and create artwork.")
-argument = parse.parse_args()
