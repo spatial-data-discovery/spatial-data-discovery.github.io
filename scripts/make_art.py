@@ -11,10 +11,6 @@
 #
 # Thanks, and have fun making art!
 
-# Comment out the following lines if running in Google Colab or other online notebook server.
-parse = argparse.ArgumentParser(description="Uses TensorFlow neural networks to enhance the patterns detected in a picture and create artwork.")
-argument = parse.parse_args()
-
 import tensorflow as tf
 
 import numpy as np
@@ -27,6 +23,11 @@ import PIL.Image
 from tensorflow.keras.preprocessing import image
 
 import argparse
+
+# Comment out the following lines if running in Google Colab or other online notebook server.
+parse = argparse.ArgumentParser(description="Uses TensorFlow neural networks to enhance the patterns detected in a picture and create artwork.")
+argument = parse.parse_args()
+
 
 url = 'https://neologisms.blogs.wm.edu/files/2016/04/sunken-garden-at-william-and-mary-jerry-gammon.jpg'
 
