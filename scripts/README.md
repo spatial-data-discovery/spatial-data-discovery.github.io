@@ -87,7 +87,7 @@ removes all files of that type within that directory.
 * This script asks the user a question and then gives them the response a Magic 8 ball would.
 
 ### make_art.py
-* This script uses TensorFlow's DeepDream model to create whimsical artwork out of a user-provided image by enhancing patterns detected within the picture.
+* This script uses TensorFlow's DeepDream model to create whimsical artwork out of a user-provided image by enhancing patterns detected within the picture.  Note: This file should be run in a Python notebook environment (works well in both Jupyter and Google Colab, which offers GPU run-time capabilities).  The way the file has been written thus far only allows the input and output image to be displayed within Python notebooks, and the images will not be visibly displayed when running as a typical, stand-alone script.
 
 ### mbox-short.txt
 * Data file for testing first_word_counter.py.
