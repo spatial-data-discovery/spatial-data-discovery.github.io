@@ -118,7 +118,7 @@ removes all files of that type within that directory.
 * Empty file for starting changelog_generator.py.
 
 ### parsehtml.py
-* parses a simple html page to get all the text (with tag <p>), and saves it to txt file
+* parses a page from packhacker.com to get all the text (with tag <p>), and saves it to txt file, e.g. https://packhacker.com/travel-gear/heimplanet/neck-pouch-a5/
 
 ### Pdf_Converter.py
 * This script converts files between different formats.
