@@ -22,7 +22,7 @@ def parsehtml(url):
 
 if __name__ == '__main__':
     
-    parser = argparse.ArgumentParser(description='scrape a page from packhacker.com by adding the url after py file name. You MUST have bs4 installed!')
+    parser = argparse.ArgumentParser(description='scrape a packhacker.com page by adding the url after py file name. You MUST have bs4 installed!')
     parser.add_argument('website',type=str, metavar='',help='input your website here')
     args = parser.parse_args()
     print(parsehtml(args.website))
