@@ -32,6 +32,7 @@ semester: "Fall 2020"
 
 ## Sample Script:
 
+	'''
 	import argparse
 
 	#this simple utility script uses the Python argparse library to convert a decimal integer into binary, octal, and hexadecimal.
@@ -50,5 +51,8 @@ semester: "Fall 2020"
 	args = parser.parse_args()
 
 	integerConverter(args.integer)
+	'''
 
-Link to Script File: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io/issues/68
+this simple utility script uses the Python argparse library to convert a decimal integer into binary, octal, and hexadecimal. I chose this script because doing these sorts of operations was a common task in a Computer Science course I took two semesters ago, and having this script to check your work could come in handy.
+
+Link to Script File: [numberconverter.py](scripts/numberconverter.py)
