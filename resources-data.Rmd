@@ -23,6 +23,10 @@ output:
       Definition List
                         -->
 
+[500 Cities Project](https://www.cdc.gov/500cities/)
+:   Provides city- and census tract-level small area estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500 cities in the United States.
+    Includes an interactive map and data portal.
+
 [ArcGIS Living Atlas - Indicators of the Planet](https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/)
 :   See the latest in global issues with links to their respective open data portals.
 
@@ -34,6 +38,13 @@ output:
 
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
+
+[Data.gov.uk](https://data.gov.uk/)
+:   UK's Find Open Data service providing data published by central government, local authorities and public bodies with links to download data files.
+
+[Defra Data Services Platform](https://environment.data.gov.uk/)
+:   The Department for Environment, Food & Rural Affairs make environmental data (e.g., LIDAR, photography, bathymetry, multispectral) openly available to a wide range of users available for download in commonly used formats.
+    Click "Surveys" in the menu at the top to open a web-based mapping interface.
 
 [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog)
 :   Public data catalog that includes a variety of standard Earth science raster datasets.
@@ -53,6 +64,9 @@ output:
 [European Commission Joint Research Centre - ESDAC](https://esdac.jrc.ec.europa.eu/themes/landslides)
 :   European landslide inventory.
 
+[Facebook Data for Good](https://dataforgood.fb.com/)
+:   Using data to address some of the world's greatest humanitarian issues.
+
 [FAO GeoNetwork](http://www.fao.org/geonetwork/srv/en/main.home)
 :   Provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
 
@@ -61,6 +75,12 @@ output:
 
 [Fuzzy Gazeteer](http://isodp.hof-university.de/fuzzyg/query/)
 :   Name search for feature locations from all over the world.
+
+[GADM maps and data](https://gadm.org/)
+:   Provides maps and spatial data for all countries and their sub-divisions, including over 300,000 administrative areas in vector format.
+
+[geoBoundaries](https://www.geoboundaries.org/)
+:   The world's largest open, free and research-ready database of political administrative boundaries.
 
 [GeoPlatform](https://www.geoplatform.gov/)
 :   Using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
@@ -82,6 +102,12 @@ output:
 
 [Kaggle](https://www.kaggle.com/datasets)
 :   Explore, analyze, and share quality data in an accessible, non-proprietary format where each dataset is a community where you can discuss data, discover public code and techniques, and create your own projects.
+
+[knoema](https://knoema.com/)
+:   Free data, statistics, analysis, visualization and sharing.
+
+[List of GIS data sources](https://en.wikipedia.org/wiki/List_of_GIS_data_sources)
+:   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
 
 [National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
