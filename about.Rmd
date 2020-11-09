@@ -5,14 +5,24 @@ date: "Updated: `r format(Sys.time(), '%B %d, %Y')`"
 
 ```{r echo = FALSE, results = 'asis'}
 library(knitr)
+library(rmarkdown)
+
 myfiles <- list.files(pattern = "^about-.*html$")
 coders <- c()
+semester <- c()
 for (f in myfiles){
+    rfile <- paste(c(sub(pattern="(about-.*\\.)html", replacement = "\\1", f), "Rmd"), collapse="")
+    mymeta <- rmarkdown::yaml_front_matter(rfile)
+    if (! is.null(mymeta$semester)) {
+        semester <- c(semester, mymeta$semester)
+    } else {
+        semester <- c(semester, "&nbsp;")
+    }
     ghuser <- sub(pattern = "about-(.*)\\..*$", replacement= "\\1", f)
     mylink <- paste(c("[", ghuser, "](", f, ")"), collapse = "")
     coders <- c(coders, mylink)
 }
-mydata <- data.frame(coders)
-names(mydata) <- c("The Coder Pages")
+mydata <- data.frame(coders, semester)
+colnames(mydata) <- c("The Coder Pages", "Semester")
 kable(mydata)
 ```
