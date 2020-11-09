@@ -27,6 +27,8 @@ navbar:
             - text: "Breathing of the Biosphere"
               href: project-dtwoods.html
             - text: "---------"
+            - text: "Current Projects"
+              href: current-projects.html
             - text: "Previous Projects"
               href: projects.html
         - text: "About"
