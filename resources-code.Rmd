@@ -1,0 +1,19 @@
+---
+title: "Resources | Code"
+---
+
+### Code Snippets
+The following code snippets provide quick tutorials on specific tools, datasets, or concepts.
+The snippets are written in Python using a Jupyter Notebook hosted on a cloud environment provided by [Google Colab](https://colab.research.google.com/).
+A Google account is required to connect and run these snippets.
+
+
+[GeoTiff](https://colab.research.google.com/drive/1JjcfIEMJzl90cD49REsHELyUzXgSeJ8d?usp=sharing)
+:   GeoTIFF is based on TIFF (Tagged Image File Format) and is used as an interchange format for georeferenced raster imagery.
+    The GeoTIFF file format is in widespread use worldwide and there is strong software support in both the open source and commercial GIS and spatial data analysis software products.
+    This tutorial shows you how to read GeoTIFF raster files using both `gdal` and `rasterio` Python packages.
+
+[Regex](https://colab.research.google.com/drive/1BkAjz5rR-KTMDvjahNtksdqZxODKCSi7?usp=sharing)
+:   Regex, or regular expressions, are algorithms that utilize a special syntax to characterize patterns within plain text.
+    When it comes to web scraping, regex is one of the best tools in a data scientist's toolbelt.
+    This tutorial shows you some examples of regular expressions from scrubbed Wikipedia pages using the `re` Python package.
