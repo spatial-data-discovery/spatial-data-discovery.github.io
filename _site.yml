@@ -11,6 +11,8 @@ navbar:
               href: learning/netcdf/index.html
         - text: Resources
           menu:
+            - text: "Code"
+              href: resources-code.html
             - text: "Data"
               href: resources-data.html
             - text: "Links"
