@@ -21,3 +21,8 @@ A Google account is required to connect and run these snippets.
 :   Regex, or regular expressions, are algorithms that utilize a special syntax to characterize patterns within plain text.
     When it comes to web scraping, regex is one of the best tools in a data scientist's toolbelt.
     This tutorial shows you some examples of regular expressions from scrubbed Wikipedia pages using the `re` Python package.
+
+[Table Join](https://colab.research.google.com/drive/1GZlA45aSjI6hO4rD7cgkNv5PuiVZgB2k?usp=sharing)
+:   Table joins are a practical method for combining tabular data to a spatial data set.
+    Oftentimes this requires some data engineering to get the required table fields to match, but the added enhancement to your spatial data is worth the effort.
+    This tutorial shows you how to do a simple table join between a CSV and a feature collection of polygons in GeoJSON.
