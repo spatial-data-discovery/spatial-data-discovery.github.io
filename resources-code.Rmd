@@ -12,6 +12,12 @@ A Google account is required to connect and run these snippets.
 :   Shapefiles are a ubiquitous data format for storing vector (point, line and polygon) data.
     This tutorial shows you how to extract data from a shapefile and save it in GeoJSON format.
 
+[Geocode](https://colab.research.google.com/drive/1YglykEC_S_GXshlqNNZ9MQaQg02qRZ8D?usp=sharing)
+:   Occasionally, your data consists of addresses or location descriptions rather than geographic coordinates.
+    Luckily, there is a process that translates one into the other.
+    Remember that translations inherently have some uncertainty associated with them; so, when it comes to accuracy, consider what your application actually requires (i.e., how close is close enough?).
+    This tutorial demonstrates one method of using the `geopy` package to backend into the ArcGIS World Geocoding service.
+
 [GeoTiff](https://colab.research.google.com/drive/1JjcfIEMJzl90cD49REsHELyUzXgSeJ8d?usp=sharing)
 :   GeoTIFF is based on TIFF (Tagged Image File Format) and is used as an interchange format for georeferenced raster imagery.
     The GeoTIFF file format is in widespread use worldwide and there is strong software support in both the open source and commercial GIS and spatial data analysis software products.
