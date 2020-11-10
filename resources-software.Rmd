@@ -24,6 +24,9 @@ title: "Resources | Software"
 [ImageMagick](https://imagemagick.org/)
 :   A free cross-platform software to create, edit, compose, or convert bitmap images.
 
+[kepler.gl](https://kepler.gl/)
+:   A powerful open source geospatial analysis tool for large-scale data sets.
+
 [OSGeo4W](https://trac.osgeo.org/osgeo4w/)
 :   A binary distribution of a broad set of open-source geospatial software (e.g., QGIS, GDAL/OGR, GRASS) for Windows environments.
 
@@ -73,6 +76,9 @@ title: "Resources | Software"
 
 [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
 :   A friendly PIL (Python Imaging Library) fork by [Alex Clark and Contributors](https://github.com/python-pillow/Pillow/graphs/contributors).
+
+[plotly](https://plotly.com/python/)
+:   Free and open-source Python graphing library to make interactive, publication-quality graphs.
 
 [pyhdf](https://www.hdfeos.org/software/pyhdf.php)
 :   Python package for reading HDF4 (HDF-EOS) files.
