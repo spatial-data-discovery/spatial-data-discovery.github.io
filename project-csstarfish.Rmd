@@ -1,7 +1,7 @@
 ---
-Title: "Stabilizing Sturgeon"
-Author-meta: Caroline Freshcorn
-Semester: Fall 2020
+title: "Stabilizing Sturgeon"
+author-meta: Caroline Freshcorn
+semester: Fall 2020
 ---
 
 ## Topic Summary
