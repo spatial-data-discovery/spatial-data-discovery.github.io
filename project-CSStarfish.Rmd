@@ -1,8 +1,11 @@
 ---
-title: "Stabilizing Sturgeon"
-author-meta: Caroline Freshcorn
-semester: Fall 2020
+Title: "Stabilizing Sturgeon"
+Author-meta: Caroline Freshcorn
+Semester: Fall 2020
 ---
 
-## Overview
+## Topic Summary
 (I will be adding more detail about this soon)
+
+## Dataset Summary
+**Link:** [NOAA Fisheries Green Sturgeon Acoustic Monitoring](https://noaa-fisheries-swfsc.data.socrata.com/Species/Green-Sturgeon-Acoustic-Monitoring/cbdw-sw7g)
