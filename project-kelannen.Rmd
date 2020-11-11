@@ -3,3 +3,11 @@ title: "Pending"
 author-meta: Katherine Lannen
 semester: Fall 2020
 ---
+
+
+
+
+<div class="credit-line">
+Author: Katherine Lannen
+Last edited: 2020-11-11
+</div>
