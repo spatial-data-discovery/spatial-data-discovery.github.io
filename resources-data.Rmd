@@ -58,6 +58,9 @@ output:
 [EarthExplorer](https://earthexplorer.usgs.gov/)
 :   An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.
 
+[EarthStat](http://www.earthstat.org/)
+:   Cutting-edge data on the global food system to help others make science-based decisions.
+
 [EarthWorks](https://earthworks.stanford.edu/)
 :   Search, download, and explore geospatial data shared across a multi-academic consortium.
 
@@ -91,6 +94,9 @@ output:
 [GeoQuery](http://geo.aiddata.org/query/#!/)
 :   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software ([Goodman et al., 2019](https://doi.org/10.1016/j.cageo.2018.10.009)).
 
+[Global Dataset of Historic Yield](https://doi.pangaea.de/10.1594/PANGAEA.909132)
+:   Offers annual time series data of 0.5-degree grid-cell yield estimates of major crops worldwide for the period 1981-2016.
+
 [Global Forest Watch](https://data.globalforestwatch.org/)
 :   Committed to providing the highest-quality data on the world's forests.
 
@@ -102,6 +108,9 @@ output:
 
 [Humanitarian Data Exchange (HDX)](https://data.humdata.org/)
 :   Find, share and use humanitarian data all in one place.
+
+[International Best Track Archive for Climate Stewardship (IBTrACS)](https://www.ncdc.noaa.gov/ibtracs/)
+:   Tropical cyclone (TC) best track data already exist as individual storm tracks at other agencies and IBTrACS merges these data sets into a worldwide TC database available in netCDF, CSV, and shapefile formats.
 
 [ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
 :   Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
