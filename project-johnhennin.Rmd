@@ -6,10 +6,10 @@ semester: Fall 2020
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-  <video width="200" height="200" id="scaledvideo" controls preload="true" autoplay loop muted>
+  <video width="200" height="200" controls preload="true" autoplay loop muted>
     <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-north.mp4" type="video/mp4" >
   </video>
-  <video width="200" height="200" id="scaledvideo" controls preload="true" autoplay loop muted>
+  <video width="200" height="200" controls preload="true" autoplay loop muted>
     <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-south.mp4" type="video/mp4" >
   </video>
 </div>
@@ -46,7 +46,7 @@ The images pulled from QGIS were then made into two GIFs[^gif] (one for the Arct
 
 <div class="credit-line">
 Author: John Hennin.
-Last edited: 2020-11-10.
+Last edited: 2020-11-16.
 </div>
 
 [^noaa]: US Department of Commerce, National Oceanic and Atmospheric Administration. “How Does Sea Ice Affect Global Climate?” Accessed 2020-11-10. https://oceanservice.noaa.gov/facts/sea-ice-climate.html.
