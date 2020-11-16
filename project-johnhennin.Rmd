@@ -17,7 +17,7 @@ semester: Fall 2020
 > *"Ice, ice, baby."* -- Vanilla Ice
 
 ## Overview
-Too many people utilize an "out of sight, out of mind" approach when it comes to the gradually diminishing sea ice of the North and South Poles.
+Too many people utilize an "out of sight, out of mind" approach when it comes to the gradually diminishing sea ice of the North (left animation) and South (right animation) Poles.
 These people may either reason that melting sea ice just isn't as calamitous as others believe it to be or they deny that the Earth's sea ice is melting at all.
 For those that fall in the latter category, it's crucial to understand sea ice for what it is: Earth's natural reflector.
 
@@ -36,8 +36,8 @@ The raster data used in the animations above was provided by the NSIDC[^nsidcdat
 The data describes the sea ice extent or "the expanse covered by ice at greater than 15 percent monthly mean concentration[^nsidcdataquote]" in the Arctic and Antarctic for every 5 years from July, 1980 to July, 2020.
 This means that each cell in white depicts a 25km by 25km area that was at least 15% sea ice (on average for July of that year).
 
-Using the Python[^python] programming language and the package rasterio[^rasterio], the GeoTIFFs were converted to ASCII[^ascii] raster files to allow for easier future manipulation and analysis.
-To preserve the Coordinate Reference System information in each GeoTIFF, the script pulled the relevant information from the file and reproduced it in a supplementary PRJ[^prj] file.
+Using the Python[^python] programming language and the package rasterio[^rasterio], the GeoTIFFs were converted to ASCII raster files to allow for easier future manipulation and analysis.
+To preserve the Coordinate Reference System information in each GeoTIFF, the script pulled the relevant information from the file and reproduced it in a supplementary PRJ file.
 The script also produced a text file describing the amount of cells in each raster file that belonged to a unique value.
 In this case, since every cell that contained at least 15% sea ice was given the same value of 1, the percent change of sea ice between certain years could be easily calculated using the count provided by the text file.
 
