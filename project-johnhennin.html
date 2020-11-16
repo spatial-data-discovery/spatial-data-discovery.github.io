@@ -376,7 +376,7 @@ $(document).ready(function () {
 
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-<p><video width="200" height="200" id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-north.mp4" type="video/mp4" > </video> <video width="200" height="200" id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-south.mp4" type="video/mp4" > </video></p>
+<p><video width="400" height="400" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-north.mp4" type="video/mp4" > </video> <video width="400" height="400" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-south.mp4" type="video/mp4" > </video></p>
 </div>
 <blockquote>
 <p><em>“Ice, ice, baby.”</em> – Vanilla Ice</p>
@@ -393,7 +393,7 @@ $(document).ready(function () {
 <p>Using the Python<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> programming language and the package rasterio<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>, the GeoTIFFs were converted to ASCII[^ascii] raster files to allow for easier future manipulation and analysis. To preserve the Coordinate Reference System information in each GeoTIFF, the script pulled the relevant information from the file and reproduced it in a supplementary PRJ[^prj] file. The script also produced a text file describing the amount of cells in each raster file that belonged to a unique value. In this case, since every cell that contained at least 15% sea ice was given the same value of 1, the percent change of sea ice between certain years could be easily calculated using the count provided by the text file.</p>
 <p>For each year that was downloaded, the data was visualized and colored (so green represented land, white represented sea ice, and blue represented sea water) using QGIS<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> and each raster was exported to the PNG<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> format. The images pulled from QGIS were then made into two GIFs<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> (one for the Arctic and one for the Antarctic) using GIMP<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> and the GIFs were converted to the MPEG-4<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> format using FFmpeg<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.</p>
 <div class="credit-line">
-<p>Author: John Hennin. Last edited: 2020-11-10.</p>
+<p>Author: John Hennin. Last edited: 2020-11-16.</p>
 </div>
 </div>
 <div class="footnotes">
