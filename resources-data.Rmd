@@ -23,6 +23,13 @@ output:
       Definition List
                         -->
 
+[500 Cities Project](https://www.cdc.gov/500cities/)
+:   Provides city- and census tract-level small area estimates for chronic disease risk factors, health outcomes, and clinical preventive service use for the largest 500 cities in the United States.
+    Includes an interactive map and data portal.
+
+[Alaska Hydrography Database](http://akhydro.uaa.alaska.edu/)
+:   Provides updated hydrography (surface water such as streams, rivers and watershed areas) data that meet statewide and national standards.
+
 [ArcGIS Living Atlas - Indicators of the Planet](https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/)
 :   See the latest in global issues with links to their respective open data portals.
 
@@ -35,6 +42,13 @@ output:
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
 
+[Data.gov.uk](https://data.gov.uk/)
+:   UK's Find Open Data service providing data published by central government, local authorities and public bodies with links to download data files.
+
+[Defra Data Services Platform](https://environment.data.gov.uk/)
+:   The Department for Environment, Food & Rural Affairs make environmental data (e.g., LIDAR, photography, bathymetry, multispectral) openly available to a wide range of users available for download in commonly used formats.
+    Click "Surveys" in the menu at the top to open a web-based mapping interface.
+
 [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog)
 :   Public data catalog that includes a variety of standard Earth science raster datasets.
 
@@ -43,6 +57,9 @@ output:
 
 [EarthExplorer](https://earthexplorer.usgs.gov/)
 :   An online search, discovery, and ordering tool developed by the United States Geological Survey (USGS) that supports the searching of satellite, aircraft, and other remote sensing inventories through interactive and textual-based queries.
+
+[EarthStat](http://www.earthstat.org/)
+:   Cutting-edge data on the global food system to help others make science-based decisions.
 
 [EarthWorks](https://earthworks.stanford.edu/)
 :   Search, download, and explore geospatial data shared across a multi-academic consortium.
@@ -53,6 +70,9 @@ output:
 [European Commission Joint Research Centre - ESDAC](https://esdac.jrc.ec.europa.eu/themes/landslides)
 :   European landslide inventory.
 
+[Facebook Data for Good](https://dataforgood.fb.com/)
+:   Using data to address some of the world's greatest humanitarian issues.
+
 [FAO GeoNetwork](http://www.fao.org/geonetwork/srv/en/main.home)
 :   Provides interactive maps, satellite imagery and related spatial databases for sustainable development and decision making in agriculture, forestry, fisheries and food security.
 
@@ -62,11 +82,23 @@ output:
 [Fuzzy Gazeteer](http://isodp.hof-university.de/fuzzyg/query/)
 :   Name search for feature locations from all over the world.
 
+[GADM maps and data](https://gadm.org/)
+:   Provides maps and spatial data for all countries and their sub-divisions, including over 300,000 administrative areas in vector format.
+
+[geoBoundaries](https://www.geoboundaries.org/)
+:   The world's largest open, free and research-ready database of political administrative boundaries.
+
 [GeoPlatform](https://www.geoplatform.gov/)
 :   Using collaboration, common data, services, applications and shared infrastructure to address national and regional issues and priorities (The Federal Geographic Data Committee).
 
 [GeoQuery](http://geo.aiddata.org/query/#!/)
 :   Enables individuals and organizations of all skill levels to freely find and aggregate satellite, economic, health, conflict, and other spatial data into a single, simple-to-use file compatible with Microsoft Excel and other common software ([Goodman et al., 2019](https://doi.org/10.1016/j.cageo.2018.10.009)).
+
+[Global Dataset of Historic Yield](https://doi.pangaea.de/10.1594/PANGAEA.909132)
+:   Offers annual time series data of 0.5-degree grid-cell yield estimates of major crops worldwide for the period 1981-2016.
+
+[Global Forest Watch](https://data.globalforestwatch.org/)
+:   Committed to providing the highest-quality data on the world's forests.
 
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
@@ -77,11 +109,20 @@ output:
 [Humanitarian Data Exchange (HDX)](https://data.humdata.org/)
 :   Find, share and use humanitarian data all in one place.
 
+[International Best Track Archive for Climate Stewardship (IBTrACS)](https://www.ncdc.noaa.gov/ibtracs/)
+:   Tropical cyclone (TC) best track data already exist as individual storm tracks at other agencies and IBTrACS merges these data sets into a worldwide TC database available in netCDF, CSV, and shapefile formats.
+
 [ISRIC SOTER Database](https://www.isric.org/projects/soil-and-terrain-soter-database-programme)
 :   Soil and terrain maps for South America, Africa (parts), Europe (parts), and Asia (parts) from 1986 to 2016.
 
 [Kaggle](https://www.kaggle.com/datasets)
 :   Explore, analyze, and share quality data in an accessible, non-proprietary format where each dataset is a community where you can discuss data, discover public code and techniques, and create your own projects.
+
+[knoema](https://knoema.com/)
+:   Free data, statistics, analysis, visualization and sharing.
+
+[List of GIS data sources](https://en.wikipedia.org/wiki/List_of_GIS_data_sources)
+:   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
 
 [National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
@@ -94,6 +135,11 @@ output:
 
 [Global Shark Attack File](http://www.sharkattackfile.net/)
 :   A time-stamped semi-geolocated incident log of global shark attacks.
+
+[Socioeconomic Data and Applications Center (sedac)](https://sedac.ciesin.columbia.edu/)
+:   One of the Distributed Active Archive Centers (DAACs) in the Earth Observing System Data and Information System (EOSDIS) that focuses on human interactions in the environment.
+    _Requires an EARTHDATA account._
+    _Registration is free._
 
 [SRTM 30-m DEM](http://dwtkns.com/srtm30m/)
 :   Derek Watkins's interactive map for easily downloading Shuttle Radar Topography Mission (SRTM) thirty meter (30 m) resolution elevation tiles from NASA servers.

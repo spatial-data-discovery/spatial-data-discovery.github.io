@@ -13,7 +13,7 @@
 
 <title>Spatial Data Discovery Projects</title>
 
-<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -21,8 +21,19 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -284,6 +295,9 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="resources-code.html">Code</a>
+    </li>
+    <li>
       <a href="resources-data.html">Data</a>
     </li>
     <li>
@@ -313,7 +327,10 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="projects.html">Previous Projects</a>
+      <a href="current-projects.html">Current Projects</a>
+    </li>
+    <li>
+      <a href="projects.html">All Projects</a>
     </li>
   </ul>
 </li>
@@ -327,18 +344,12 @@ $(document).ready(function () {
     <li>
       <a href="about-dtwoods.html">About the Professor</a>
     </li>
-    <li>
-      <a href="about.html">The Coder Pages</a>
-    </li>
     <li class="divider"></li>
     <li>
-      <a href="development-team-fall-2020.html">Fall 2020 Team</a>
+      <a href="development-team-fall-2020.html">Current Developers</a>
     </li>
     <li>
-      <a href="development-team-spring-2020.html">Spring 2020 Team</a>
-    </li>
-    <li>
-      <a href="development-team-fall-2019.html">Fall 2019 Team</a>
+      <a href="about.html">All Developers</a>
     </li>
   </ul>
 </li>
@@ -388,6 +399,18 @@ by Audrey Way | Fall 2019
 by Heather Baier | Spring 2020
 </p>
 <h3>
+<a href='project-brainbot.html'>TBD</a>
+</h3>
+<p class="semester">
+by Brian Wu | Fall 2020
+</p>
+<h3>
+<a href='project-csstarfish.html'>Stabilizing Sturgeon</a>
+</h3>
+<p class="semester">
+by Caroline Freshcorn | Fall 2020
+</p>
+<h3>
 <a href='project-dpwisdom.html'>Presidential Election Margins of Victory</a>
 </h3>
 <p class="semester">
@@ -410,6 +433,12 @@ by Gianna N. Maniaci | Spring 2020
 </h3>
 <p class="semester">
 by Grant Luisi | Spring 2020
+</p>
+<h3>
+<a href='project-hannahslevin.html'>Pending</a>
+</h3>
+<p class="semester">
+by Hannah Slevin | Fall 2020
 </p>
 <h3>
 <a href='project-intj1.html'>Projecting COVID-19 Cases Under No Intervention Measures</a>
@@ -442,10 +471,22 @@ by Jiaying Chen | Fall 2019
 by Jenna Ollen | Spring 2020
 </p>
 <h3>
+<a href='project-johnhennin.html'>Arctic and Antarctic Sea Ice Over Time</a>
+</h3>
+<p class="semester">
+by John Hennin | Fall 2020
+</p>
+<h3>
 <a href='project-jrgarst.html'>US Libraries and Electronic content Use</a>
 </h3>
 <p class="semester">
 by John Garst | Spring 2020
+</p>
+<h3>
+<a href='project-kelannen.html'>Pending</a>
+</h3>
+<p class="semester">
+by Katherine Lannen | Fall 2020
 </p>
 <h3>
 <a href='project-leanlow.html'>Pollen and Hay Fever During the Transition to Summer/Late Spring</a>
@@ -472,6 +513,12 @@ by Matthew Cusick | Spring 2020
 by Mallika Suri | Spring 2020
 </p>
 <h3>
+<a href='project-natallzl.html'>TBD</a>
+</h3>
+<p class="semester">
+by Natalie Larsen | Fall 2020
+</p>
+<h3>
 <a href='project-nd3600.html'>The Connection Between Fast Food and Obesity</a>
 </h3>
 <p class="semester">
@@ -495,6 +542,12 @@ by Pulak Raj | Spring 2020
 <p class="semester">
 by Ryan Han | Spring 2020
 </p>
+<h3>
+<a href='project-sylviashea1.html'>PENDING</a>
+</h3>
+<p class="semester">
+by Sylvia Shea | Fall 2020
+</p>
 
 <footer class="myfoot">
     <div class="foot-text">
@@ -510,7 +563,7 @@ by Ryan Han | Spring 2020
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

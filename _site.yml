@@ -11,6 +11,8 @@ navbar:
               href: learning/netcdf/index.html
         - text: Resources
           menu:
+            - text: "Code"
+              href: resources-code.html
             - text: "Data"
               href: resources-data.html
             - text: "Links"
@@ -27,21 +29,20 @@ navbar:
             - text: "Breathing of the Biosphere"
               href: project-dtwoods.html
             - text: "---------"
-            - text: "Previous Projects"
+            - text: "Current Projects"
+              href: current-projects.html
+            - text: "All Projects"
               href: projects.html
         - text: "About"
           menu:
             - text: "About the Professor"
               href: about-dtwoods.html
-            - text: "The Coder Pages"
-              href: about.html
             - text: "------"
-            - text: "Fall 2020 Team"
+            - text: "Current Developers"
               href: development-team-fall-2020.html
-            - text: "Spring 2020 Team"
-              href: development-team-spring-2020.html
-            - text: "Fall 2019 Team"
-              href: development-team-fall-2019.html
+            - text: "All Developers"
+              href: about.html
+
         - icon: fa-github
           href: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io
 

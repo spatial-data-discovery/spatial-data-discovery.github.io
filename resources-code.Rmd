@@ -1,0 +1,34 @@
+---
+title: "Resources | Code"
+---
+
+### Code Snippets
+The following code snippets provide quick tutorials on specific tools, datasets, or concepts.
+The snippets are written in Python using a Jupyter Notebook hosted on a cloud environment provided by [Google Colab](https://colab.research.google.com/).
+A Google account is required to connect and run these snippets.
+
+
+[Esri Shapefile](https://colab.research.google.com/drive/1cpGqlV0KQlqRO6MugpJKc9xsycZ9Iqyb?usp=sharing)
+:   Shapefiles are a ubiquitous data format for storing vector (point, line and polygon) data.
+    This tutorial shows you how to extract data from a shapefile and save it in GeoJSON format.
+
+[Geocode](https://colab.research.google.com/drive/1YglykEC_S_GXshlqNNZ9MQaQg02qRZ8D?usp=sharing)
+:   Occasionally, your data consists of addresses or location descriptions rather than geographic coordinates.
+    Luckily, there is a process that translates one into the other.
+    Remember that translations inherently have some uncertainty associated with them; so, when it comes to accuracy, consider what your application actually requires (i.e., how close is close enough?).
+    This tutorial demonstrates one method of using the `geopy` package to backend into the ArcGIS World Geocoding service.
+
+[GeoTiff](https://colab.research.google.com/drive/1JjcfIEMJzl90cD49REsHELyUzXgSeJ8d?usp=sharing)
+:   GeoTIFF is based on TIFF (Tagged Image File Format) and is used as an interchange format for georeferenced raster imagery.
+    The GeoTIFF file format is in widespread use worldwide and there is strong software support in both the open source and commercial GIS and spatial data analysis software products.
+    This tutorial shows you how to read GeoTIFF raster files using both `gdal` and `rasterio` Python packages.
+
+[Regex](https://colab.research.google.com/drive/1BkAjz5rR-KTMDvjahNtksdqZxODKCSi7?usp=sharing)
+:   Regex, or regular expressions, are algorithms that utilize a special syntax to characterize patterns within plain text.
+    When it comes to web scraping, regex is one of the best tools in a data scientist's toolbelt.
+    This tutorial shows you some examples of regular expressions from scrubbed Wikipedia pages using the `re` Python package.
+
+[Table Join](https://colab.research.google.com/drive/1GZlA45aSjI6hO4rD7cgkNv5PuiVZgB2k?usp=sharing)
+:   Table joins are a practical method for combining tabular data to a spatial data set.
+    Oftentimes this requires some data engineering to get the required table fields to match, but the added enhancement to your spatial data is worth the effort.
+    This tutorial shows you how to do a simple table join between a CSV and a feature collection of polygons in GeoJSON.

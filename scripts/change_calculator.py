@@ -1,9 +1,5 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.')
-parser.add_argument('amount', type=int, help="The total number of cents (integer)")
-args = parser.parse_args()
-
 
 def change(amount):
     if amount < 0:
@@ -26,4 +22,7 @@ def change(amount):
     return change_count
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Find the combination of the smallest number of common American coins (quarters, dimes, nickels, and pennies) that add up to the given number of cents. The number of cents needs to be represented by an integer and must be positive.')
+    parser.add_argument('amount', type=int, help="The total number of cents (integer)")
+    args = parser.parse_args()
     print("The number of quarters, dimes, nickels, and pennies needed to generate exact change: ", change(args.amount))
