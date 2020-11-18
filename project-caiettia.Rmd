@@ -1,0 +1,118 @@
+---
+title: "Fly Like the Wind: How Wind Patterns Affect Bird Migration"
+---
+
+
+
+> *"When you can't change the direction of the wind - adjust your sails."* -- H. Jackson Brown, Jr.
+
+## Project Info
+Swainson's Hawk has one of the longest migration routes in the world. My initial interest in the bird came from seeing the hawks migrating in and around my hometown of San Diego, CA. 
+Yet in terms of migratory patterns, Swainson's Hawk has one of the longest migrations in terms of distance covered, spanning from the North Western United States down to South Eastern Argentina[^hawkinfo].
+Not only is the distance covered by their migration interesting, but also the indicator for when the birds decide to migrate. 
+The hawks begin their migration in the Fall[^hawkmig]. 
+Specifically, their migration is theorized to begin when the surface wind blows south in their region[^hawkwind]. 
+I found the specificity of this interesting and wanted to combine migratory and surface wind vector data to see this in action. 
+
+## Relevance
+Aside from having an interesting migratory pattern, Swainson's Hawk has been considered an endangered species[^endang]. 
+The nature of their long distance migration makes their ecosystem much more fragile, as changes in any region along their migratory path carry implications to the survivability of the hawk. 
+For example, pesticides used by farmers in Argentina to control local pests[^pesticides] had resulted in a significant number of these hawks being poisoned. 
+It is important to understand the fragility of the ecosystems that live around us. 
+The Swainson's Hawk is particularly a good example of how far-reaching ecosystems are, spanning beyond our own locale. 
+If anything, it is important to have a heightened awareness of the implications of our actions. 
+So, there is an importance to observing migratory patterns such as the Swainson's Hawk.
+
+
+## Data Sources
+### Migration Data
+Firstly, my migratory data came from MoveBank[^movebank], an opensource platform that allows researchers to archive and analyze animal movement data. 
+From MoveBank, I was able to successfully identify the Swainson's Hawk dataset. Originally, the dataset was composed for a study[^hawkstudy] of "migration routes, length of migration, and duration of migration" for Swainson's Hawks in 1998. 
+Each bird was radio tracked using the ARGOS satellite system[^argos], a satellite telemtery service for "scientificand environmental applications." 
+The dataset identifies each individual bird with a unique individual indentifier (i.e SW1, SW2, etc.), and provides time-stamped coordinates tracking the hawk's movement. 
+
+With this datasource, intial exploration of the data allowed me to see the movement of a hawk overtime by seeing each given bird's location over time. 
+So, my goal was to aggregate my data by individual identifier (SW1, SW2, ...) and map their migratory path over time using the Python[^py] programming language. 
+I needed to create shapes beyond the POINT shapes I currently had. 
+So, I found LineStrings. 
+In a GeoJSON[^geojson] object, LineStrings are shape objects constructed by a series of coordinate pairs. 
+The LineString will then create line shapes between the points.
+Initially, I had made LineStrings mapping out the paths of each individual bird using Shapely[^shapely]. 
+However, I realized that for animation's sake, it would be more helpful for the user to be able to see the path of the bird develop overtime. 
+So, I rewrote my script to create LineStrings that are timestamped. 
+
+To visualize this data, I took advantage of an open source tool called Kepler-gl[^kepler], a tool for geospatial data analysis that I think particularly excels at visualizing time series data. 
+I was able to simply import my dataset in GeoJSON format to the WebGL component of Kepler-gl. 
+There, I was able to use a timestamp filter to create the animation of the bird migration over time. 
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+<style>
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+</style>
+  <video width=450 height=443 controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/bird_migration.mp4" type="video/mp4" >
+  </video>
+  <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/migration_routes_2.png" alt = "Migration Routes" style = "width:450px;height:443px;">
+</div>
+
+### Wind Vector Data
+For my wind vector data, the biggest challenge was finding surface wind data that covered the time period of my migration dataset; 1995 - 1998. 
+I found the wind vector data, titled NCEP Reanalysis provided by NOAA/OAR/ESRL PSL[^winddata], which had surface wind vector data from 1948 to the present. 
+As such, I downloaded two datasets filtered from 1995-1998. 
+The first is called Zonal Velocity (u) which is horizontal wind velocity at coordinate points. 
+The second dataset is called Meridional Velocity (v), which is vertical wind[^windvect]. 
+With this, I was able to create vectors in Panoply[^pano] by loading both datasets, then creating a merged plot which created a wind vector (as an arrow) by the formula below. 
+
+$$vector = \sqrt{u^2 + v^2}$$
+
+So, each day has its own array of Meridional and Zonal datasets, with vectors calculated between both arrays. 
+Below, you are able to see the average direction of the wind for each day between 1996-07-01 to 1997-07-07.
+
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video width =  controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/wind_vector_map.mp4" type="video/mp4" >
+  </video>
+</div>
+
+
+<div class="credit-line">
+Author: Andrew Caietti.
+Last edited: 2020-11-18.
+</div>
+
+# Attributions
+[^windvect]: Department of Eart & Climate Sciences, San FRancsico State Universty. Accessed 2020-10-30, Online: http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html 
+[^winddata]: Kalnay et al.,The NCEP/NCAR 40-year reanalysis project, Bull. Amer. Meteor. Soc., 77, 437-470, 1996. Online: https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.surface.html
+[^kepler]: Kepler-gl. Open-source geospatial software. Accessed 2020-10-30. Online: https://docs.kepler.gl/docs/api-reference
+[^argos]: About ARGOS. Collecte Localisation Satellite (CLS). Accessed 2020-10-17. Online: https://www.argos-system.org/argos/who-we-are/international-cooperation/
+[^movebank]: Wikelski M, Davidson SC, Kays R 2020. Movebank: archive, analysis and sharing of animal movement data. Hosted by the Max Planck Institute of Animal Behavior. www.movebank.org, accessed on 2020-10-28. Online: https://www.movebank.org/cms/movebank-content/about-movebank
+[^hawkstudy]: Kochert, Michael N et al. “MIGRATION PATTERNS, USE OF STOPOVER AREAS, AND AUSTRAL SUMMER MOVEMENTS OF SWAINSON'S HAWKS.” The Condor vol. 113,1 (2011): 89-106. doi:10.1525/cond.2011.090243
+[^pesticides]: Goldstein, M.I., T.E. Lacher Jr, B. Woodbridge, M.J. Bechard, S.B. Canavelli, M.E. Zaccagnini, G.P. Cobb, E.J. Scollon, R. Tribolet, and M.J. Hooper.  1999.  Monocrotophos-induced mass mortality of Swainson's hawks in Argentina, 1995-96.  Ecotoxicology 8: 201-214.
+[^geojson]: GeoJSON. Accessed 2020-11-06. Online: https://geojson.org/
+[^hawkinfo]: Global Raptor Information Network. 2020. Species account: Swainson's Hawk Buteo swainsoni. Downloaded from http://www.globalraptors.org on 18 Nov. 2020
+[^endang]: Wildlife Heritage Foundation. Accessed 2020-10-28. Online: https://www.wildlifeheritage.org/gallery/swainsons-hawk/
+[^pano]: Panoply. Developed at NASA Goddard Institute for Space Studies. Accessed 2020-11-08. Online: https://www.giss.nasa.gov/tools/panoply/
+[^shapely]: Shapely: manipulation and analysis of geometric objects. Writted by Sean Gillies and others (2007), toblerity.org. Online: https://github.com/Toblerity/Shapely
+[^py]: Van Rossum, G., & Drake, F. L. (2009). Python 3 Reference Manual. Scotts Valley, CA: CreateSpace Online: https://www.python.org/
+[^hawkmig]: Fuller, M.R., Seegar, W.S., Schueck, L.S., 1998. Routes and Travel Rates of Migrating Peregrine Falcons Falco peregrinus and 
+[^hawkwind]: Hawk Migration Association of North America. Copyright(c) 2019 HMANA. Accessed 2020-10-30. Online: https://www.hmana.org/new-to-hawkwatching/
+
+
+
+
+![WindVectorMathematics](http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html)
+
+        Swainson's Hawks Buteo swainsoni in the Western Hemisphere. Journal of Avian Biology 29:433-440.
+
+
+### Wind Data
+To successfully visualize the wind data, one first needs to use Panoply. Import both the of the wind data files (uwnd_data.nc, vwnd_data.nc), then create a combined plot of both files. Lastly, select "vector magnitude" in how the two arrays are calculated to be visualized. 
+![MigrationData](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study204253)
+
+![equation](http://www.sciweavers.org/upload/Tex2Img_1605305106/render.png)
