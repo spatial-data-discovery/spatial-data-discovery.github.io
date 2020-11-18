@@ -103,16 +103,3 @@ Last edited: 2020-11-18.
 [^hawkmig]: Fuller, M.R., Seegar, W.S., Schueck, L.S., 1998. Routes and Travel Rates of Migrating Peregrine Falcons Falco peregrinus and 
 [^hawkwind]: Hawk Migration Association of North America. Copyright(c) 2019 HMANA. Accessed 2020-10-30. Online: https://www.hmana.org/new-to-hawkwatching/
 
-
-
-
-![WindVectorMathematics](http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html)
-
-        Swainson's Hawks Buteo swainsoni in the Western Hemisphere. Journal of Avian Biology 29:433-440.
-
-
-### Wind Data
-To successfully visualize the wind data, one first needs to use Panoply. Import both the of the wind data files (uwnd_data.nc, vwnd_data.nc), then create a combined plot of both files. Lastly, select "vector magnitude" in how the two arrays are calculated to be visualized. 
-![MigrationData](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study204253)
-
-![equation](http://www.sciweavers.org/upload/Tex2Img_1605305106/render.png)
