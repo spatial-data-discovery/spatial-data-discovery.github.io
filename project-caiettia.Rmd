@@ -65,9 +65,8 @@ I found the wind vector data, titled NCEP Reanalysis provided by NOAA/OAR/ESRL P
 As such, I downloaded two datasets filtered from 1995-1998. 
 The first is called Zonal Velocity (u) which is horizontal wind velocity at coordinate points. 
 The second dataset is called Meridional Velocity (v), which is vertical wind[^windvect]. 
-With this, I was able to create vectors in Panoply[^pano] by loading both datasets, then creating a merged plot which created a wind vector (as an arrow) by the formula below. 
+With this, I was able to create vectors in Panoply[^pano] by loading both datasets, then creating a merged plot which created a wind vector (as an arrow).
 
-$$vector = \sqrt{u^2 + v^2}$$
 
 So, each day has its own array of Meridional and Zonal datasets, with vectors calculated between both arrays. 
 Below, you are able to see the average direction of the wind for each day between 1996-07-01 to 1997-07-07.
