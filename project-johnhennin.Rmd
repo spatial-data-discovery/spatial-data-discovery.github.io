@@ -7,10 +7,10 @@ semester: Fall 2020
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
   <video class="video-4x4mw" controls preload="true" autoplay loop muted>
-    <source src="sea-ice-north2.mp4" type="video/mp4" >
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-north.mp4" type="video/mp4" >
   </video>
   <video class="video-4x4mw" controls preload="true" autoplay loop muted>
-    <source src="sea-ice-south2.mp4" type="video/mp4" >
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/sea-ice-south.mp4" type="video/mp4" >
   </video>
 </div>
 
