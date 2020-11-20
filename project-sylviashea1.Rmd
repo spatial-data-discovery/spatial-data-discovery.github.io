@@ -30,7 +30,11 @@ The organization's attorneys analyze the gun legislation in all 50 states and as
 The data was scraped from the website and put into csv format, one file for each year.
 To get the spatial component, each csv was merged with a United States shapefile[^shp], acquired from the United States Census Bureau.
 
-The data were visualized in python with matplotlib[^mpl] and geopandas[^gpd]. For each year, the corresponding gun law grades are plotted as a choropleth visualization. For each month within that year, the mass shootings that occurred on that date are selected and plotted on top of the choropleth map. A plot for each month and year between January 2009 and September 2020 was generated. Each plot functioned as a frame in the animation. 
+The data were visualized in python with matplotlib[^mpl] and geopandas[^gpd].
+For each year, the corresponding gun law grades are plotted as a choropleth visualization.
+For each month within that year, the mass shootings that occurred on that date are selected and plotted on top of the choropleth map.
+A plot for each month and year between January 2009 and September 2020 was generated.
+Each plot functioned as a frame in the animation. 
 
 <div class="credit-line">
 Author: Sylvia Shea.
