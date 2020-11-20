@@ -18,10 +18,10 @@ semester: Fall 2020
 
 ## Overview
 Agriculture and its transformation plays a role in the economy and development process of countries and can affect the general wellbeing and poverty level of individuals
-within those countries.[^agricultureinfo] The types and amount of crops grown can also be used to infer information about that countries development, wellbeing, and even
+within those countries.[^agricultureinfo] The types and amount of crops grown can also be used to infer information about that country's development, wellbeing, and even
 predict how it will continue to grow due to agriculture having high correlation with other variables.
 
-Crop Yields represent the harvested production per unit of harvested area for crop products and are typically recorded in hectogramme (100 grammes) per
+Crop Yields represent the harvested production per unit of harvested area for crop products and are typically recorded in hectograms (100 grammes) per
 hectare (HG/HA).[^cropyields] Crop yields typically increase with the use of better tools and methods of farming along with improved crop varieties. These larger crop
 yields translate into the farmers being able to sell more surplus crops and thus boosting the economy and supporting more development. However, crop yields also are
 affected by the weather and climate they are growing in these factors have been changing due to climate change and global warming. As such the agricultural sector has
@@ -29,10 +29,10 @@ to moderate the impacts of climate change while producing their crops. "A number
 the region in the coming decades due to global warming."[^cropproduction]
 
 As agriculture and crop yields can help with the understanding and prediction of a variety of factors, it is helpful to see how crop yields have changed over time to
-see if general patterns exist. I decided to create an animation showing the changes in crop yields across different countries in Africa where a lot of developement
+see if general patterns exist. I decided to create an animation showing the changes in crop yields across different countries in Africa where a lot of development
 has been happening between the years of 1961 and 2018. This animation can help with general understandings of certain trends and can be referenced when trying to study
 specific cases of growth. To also give a basic start to looking at how climate change has potentially impacted countries I included precipitation data for approximately
-every 5 years for those samecountries in Africa.
+every 5 years for those same countries in Africa.
 
 ## Data Description
 There are three different datasets used for this project and animation. These three datasets combined contain the overall information of the geometry of the different
@@ -50,9 +50,9 @@ I am more familiar with how to use and plot sf objects in R than I am for geojso
 The second dataset was where the majority of the information for this project came from. It was from the Food and Agriculture Organization of the United Nations and I
 was able to download crop yield information for each year from 1961-2018 in all African countries from the bulk downloads Africa for crop production.[^cropyields] This
 file contained more variables than the others with Area Code, Area (Country name), Item Code, Item (Crop type), Element (area harvest, crop yield, production, unit
-(ha, hg/ha, tonnes), a variable to represent each year and another to contain any flags for that particular year. However I only ended up using Area, Item, Element,
-Unit and and the variables that represented the values for each year (I did not use the flags). For this dataset I did have to do some formatting after reading in the
-csv file. The first thing I did was change all the N/A values to zero. The next couple of things I did were filtering the data so that I only had rows whoose element
+(ha, hg/ha, tonnes), a variable to represent each year and another to contain any flags for that particular year. However, I only ended up using Area, Item, Element,
+Unit and the variables that represented the values for each year (I did not use the flags). For this dataset I did have to do some formatting after reading in the
+csv file. The first thing I did was change all the N/A values to zero. The next couple of things I did were filtering the data so that I only had rows whose element
 was crop yields, this in turn also made it so unit was all in hg/ha. I also got rid of the columns that I wasn't going to be using at all. After that I decided to do two  different things for the data the first being aggregating the data so that I had the total crop yields for all of the different crops per year for each country. This was
 so I could see overall changes in agriculture. The second thing was filtering the item (crop type) so that I only was aggregating the crop yields per country for each
 year for groundnuts, wheat, cereals, cassava, millet, and maize. I selected these particular crop types as they are some of the major crops grown in Africa.[^importantcrops]  From there I also altered the Area (country names) to match that of the first dataset and then I merged the two different versions of crop yields to that data set so
@@ -60,21 +60,21 @@ I could show the yields on the map of Africa.
 
 The third dataset was a xlsx file I downloaded from The World Bank after filtering the data on their website to include all the years it had the data for and all the
 countries that I was looking at for this project.[^precipitation] This file contained the names of the countries and the average precipitation data in mm for each year.
-Though I was using this data for the full time frame of 1961 - 2018, this data set only had the values for about every 5 years of that timeframe. As such I decided to
+Though I was using this data for the full-time frame of 1961 - 2018, this data set only had the values for about every 5 years of that timeframe. As such I decided to
 show the precipitation data for the year that it was first recorded and update it whenever it changed values. I did do some manual editing of this file before loading it
-into R but it was mainly deleting uneeded rows or things similar to that. I did finish formatting this file after I read it into R by finishing slecting only the
-columns that had data and updating the names of the countries to match how it was in the geometry and crop yields datasets. Finally I merged this information into
+into R but it was mainly deleting unneeded rows or things similar to that. I did finish formatting this file after I read it into R by finishing selecting only the
+columns that had data and updating the names of the countries to match how it was in the geometry and crop yields datasets. Finally, I merged this information into
 both versions of the crop yields and geometry data frame.
 
 After formatting and combining the above data sets into two different versions (total_crop_yield and selected_crop_yield) I moved onto the visualization. For the
 visualization I decided to go with an animation that showed the changes in crop yields and precipitation data for each year. As the focus of this project is on crop
 yields, I decided to create a graph for each year that plotted the geometry of the Africa countries and shaded them based off a crop yield scale.[^scalegradient] For
 this scale I decided to preset the limits (min and max) as well as the midpoint so that the shading and key would be consistent across the years and comparing
-different year's graphs would therfore also be easier. I determine what these values should be I looked at the two different versions and their respective values.
-The next thing I added was labels that identified which country was what and also noted the average precipitation levels in mm underneath those names. Finally I used
-the animation package to create an HTML file (and its assciated files and folders) that animated the different graphs across the years. Due to those associated
-files and folders to see each version based off the html file you do need to rerun that part of the script when switching back and forth.[^animation] However to
-create the videos you see above I just screen recorded the html animation and then edited out parts of the video in an editor. Thank you to Professor Davis who
+different year's graphs would therefore also be easier. I determine what these values should be I looked at the two different versions and their respective values.
+The next thing I added was labels that identified which country was what and also noted the average precipitation levels in mm underneath those names. Finally, I used
+the animation package to create an HTML file (and its associated files and folders) that animated the different graphs across the years. Due to those associated
+files and folders to see each version based off the html file you do need to rerun that part of the script when switching back and forth.[^animation] However, to
+create the videos you see above, I just screen recorded the html animation and then edited out parts of the video in an editor. Thank you to Professor Davis who
 finished cropping off some extra parts of the screen in the recording so you don't see the browser's search bar.
 
 <div class="credit-line">
