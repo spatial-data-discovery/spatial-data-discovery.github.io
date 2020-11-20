@@ -1,13 +1,16 @@
 ---
-title: "Pending"
+title: Crop Yields in Africa 1961 - 2018
 author-meta: Katherine Lannen
 semester: Fall 2020
 ---
 
+## Overview
 
+
+## Data Description
 
 
 <div class="credit-line">
 Author: Katherine Lannen
-Last edited: 2020-11-11
+Last edited: 2020-11-20
 </div>
