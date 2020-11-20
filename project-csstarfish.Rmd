@@ -4,7 +4,9 @@ author-meta: Caroline Freshcorn
 semester: Fall 2020
 ---
 
-##### Animated video and still image visualizations will be posted after receiving links to media, but for now I'll attach links to each visualization from my project folder within the Dataset Summary.
+## Animated Visualization:
+   ![Shrimp Population Animation](https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4)
+   **Changes in Shrimp Population Distribution Between 1977 and 2019**
 
 ## Topic Summary
 For my final project, I decided to analyze and plot shrimp population distributions over time to determine if any substantive patterns have emerged.
@@ -32,13 +34,13 @@ This was an especially interesting plot to create because it highlighted the clu
 
 
 
-**Scatter Plot:** [Latitude vs. Year](https://github.com/spatial-data-discovery/ay2021-1/blob/master/project/CSSTARFISH/LatitudeVsTime.PNG)
+**Scatter Plot:** ![Latitude vs. Year](https://drdavis.space/teaching/ds/sdd/media/2020/11/latitude_vs_time.png)
 
 
-**Trend Line:** [Latitude Trends Over Time](https://github.com/spatial-data-discovery/ay2021-1/blob/master/project/CSSTARFISH/TrendLine.png)
+**Trend Line:** ![Latitude Trends Over Time](https://drdavis.space/teaching/ds/sdd/media/2020/11/trendline.png)
 
 
-**Link to video:** [Shrimp Population Animation](https://github.com/spatial-data-discovery/ay2021-1/blob/master/project/CSSTARFISH/Shrimp%20Population%20Animation.mp4)
+**Link to video:** [Shrimp Population Animation](https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4)
 
 
 
