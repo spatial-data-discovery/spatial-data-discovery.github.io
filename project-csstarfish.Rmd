@@ -40,7 +40,7 @@ While the trendline would be highly inaccurate, as seen by the miniscule R-squar
 Lastly, I uploaded the data from the same "cleaned_shrimpdata.csv" file into kepler.gl and filtered the location data by year (beginning with 1977 and ending with 2019).  
 I also selected a satellite imagery basemap and chose to plot the coordinates on a heatmap scale, with blue indicating a low population density and red indicating a high population density.  
 After applying these aesthetics, I took a screenshot of the map when each additional year's-worth of location data were added to the visualization in order to establish a time series of images.  
-Lastly, using Microsoft Video Editor, I labeled each image with the year they represented and compiled them into a .mp4 video file that shows how shrimp population distributions have moved and grown over time. 
+Lastly, using Microsoft Video Editor, I labeled each image with the year they represented and compiled them into a .mp4 video file that shows how shrimp population distributions have moved and grown over time.  Not only have shrimp populations continued to grow farther south, but they have also concentrated in certain locations along the coastlines.  Earlier on, shrimp were largely clustered along the Alaskan coastline.  Shortly therafter, there was a high concentration of shrimp along the coast of the Carolinas and Georgia.  It wasn't until relatively recently that strong concentrations began to appear in the Gulf of Mexico and Pacific Northwest.
 
 
 
