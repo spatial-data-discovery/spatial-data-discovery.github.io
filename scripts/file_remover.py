@@ -4,24 +4,35 @@
 
 # Version 1.0
 
-# Last Edit: 2020-09-03
+# Last Edit: 2020-11-20
 
-# This script takes in the path to a directory from which you want to delete all
-# files of a certain type and what that type/extension is (e.g. .py or .ini) and 
-# removes all files of that type within that directory.
+# Purpose: This script takes in the path to a directory from which you want to
+# delete all files of a certain type and what that type/extension is (e.g. .py
+# or .ini) and removes all files of that type within that directory 
+# recursively.
 
-####################
-# Required Modules  #
-####################
+##############################################################################
+# Required Modules  
+##############################################################################
 import argparse
 import os
 
-####################
-#    Function      #
-####################
+##############################################################################
+#    Function      
+##############################################################################
 def file_remover():
-    path = input('Enter the path to a directory you want to delete a file type from: ')
-    file_type = input('Enter the extension you want to remove (ex: .py or .ini): ')
+    """
+    Name:       file_remover()
+    Inputs:     No parameters, there are 2 user inputs during runtime
+                - str representing the path to a desired directory
+                - str representing the desired extension to be removed
+    Outputs:    Prints the removed files' paths
+    Features:   Delete files with the specified extension recursively within
+                the given directory
+    """
+
+    path = input('Enter the path to a directory you want to delete from: ')
+    file_type = input('Enter the extension you want to remove (.py, .ini): ')
 
     if os.path.exists(path):
         if os.path.isdir(path):
@@ -37,10 +48,16 @@ def file_remover():
     else:
         print("Path is not valid")
 
-##################
-#      Main       #
-###################
+##############################################################################
+#      Main       
+##############################################################################
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='This script takes in the path to a directory from which you want to delete all files of a certain type and what that type/extension is (e.g. .py or .ini) and removes all files of that type within that directory.')
+    description = """This script takes in the path to a directory from which\n
+    you want to delete all files of a certain type and what that \n
+    type/extension is (e.g. .py or .ini) and recursively removes all files \n
+    of that type within that directory."""
+    
+    parser = argparse.ArgumentParser(description=description)
     args = parser.parse_args()
+
     file_remover()
