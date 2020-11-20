@@ -61,4 +61,4 @@ Lastly, using Microsoft Video Editor, I labeled each image with the year they re
 _________________
 
 ### Resources
- * [Converting DataFrame to GeoDataFrame](https://goodboychan.github.io/chans_jupyter/python/datacamp/visualization/2020/07/01/02-Creating-and-joining-GeoDataFrames.html#Construct-a-GeoDataFrame-from-a-DataFrame)
+* [Converting DataFrame to GeoDataFrame](https://goodboychan.github.io/chans_jupyter/python/datacamp/visualization/2020/07/01/02-Creating-and-joining-GeoDataFrames.html#Construct-a-GeoDataFrame-from-a-DataFrame)
