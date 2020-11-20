@@ -1,5 +1,7 @@
 ---
 title: "Fly Like the Wind: How Wind Patterns Affect Bird Migration"
+author-meta: Andrew Caietti
+semester: Fall 2020
 ---
 
 
