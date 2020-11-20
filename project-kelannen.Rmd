@@ -65,9 +65,9 @@ year for groundnuts, wheat, cereals, cassava, millet, and maize. I selected thes
 I could show the yields on the map of Africa.
 
 The third dataset was a xlsx file I downloaded from The World Bank after filtering the data on their website to include all the years it had the data for and all the 
-countries that I was looking at for this project. This file contained the names of the countries and the average precipitation data in mm for each year. Though I was 
-using this data for the full time frame of 1961 - 2018, this data set only had the values for about every 5 years of that timeframe. As such I decided to show the 
-precipitation data for the year that it was first recorded and update it whenever it changed values. I did do some manual editing of this file before loading it 
+countries that I was looking at for this project.[^precipitation] This file contained the names of the countries and the average precipitation data in mm for each year. 
+Though I was using this data for the full time frame of 1961 - 2018, this data set only had the values for about every 5 years of that timeframe. As such I decided to 
+show the precipitation data for the year that it was first recorded and update it whenever it changed values. I did do some manual editing of this file before loading it 
 into R but it was mainly deleting uneeded rows or things similar to that. I did finish formatting this file after I read it into R by finishing slecting only the 
 columns that had data and updating the names of the countries to match how it was in the geometry and crop yields datasets. Finally I merged this information into 
 both versions of the crop yields and geometry data frame.
