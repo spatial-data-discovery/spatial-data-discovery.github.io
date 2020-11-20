@@ -13,7 +13,6 @@ In order to prevent tragedies like these in the future, thorough research into s
 However, this research came to a standstill in 1996 [^washingtonpost] when Republican lawmakers (backed by the National Rifle Association) threatened to halt funding for the Centers for Disease Control and Prevention unless it stopped pursuing research into gun injuries and deaths.
 While researchers are not sure if nationwide gun control will prevent mass shootings, no one can determine what *will* work unless the issue is studied.
 
-
 The animation above explores and visualizes the relationship between mass shootings and gun control laws in the United States.
 While this animation is not conclusive evidence that gun control laws will or will not prevent mass shootings, it suggests that states with stronger gun laws tend to have lower gun death rates.
 However, evidence will not be conclusive until consistent policies are implemented nationwide to a) test the effects of more strict access laws and b) reduce the movement of guns between states. 
