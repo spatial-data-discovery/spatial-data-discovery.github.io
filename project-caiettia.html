@@ -394,13 +394,7 @@ $(document).ready(function () {
 <p>To visualize this data, I took advantage of an open source tool called Kepler-gl<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>, a tool for geospatial data analysis that I think particularly excels at visualizing time series data. I was able to simply import my dataset in GeoJSON format to the WebGL component of Kepler-gl. There, I was able to use a timestamp filter to create the animation of the bird migration over time.</p>
 <!-- VIDEO ON LOOP: see styles.css for formatting -->
 <div class="video-wrapper">
-<style>
-video {
-  max-width: 100%;
-  max-height: 100%;
-}
-</style>
-<p><video width=450 height=443 controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/bird_migration.mp4" type="video/mp4" > </video> <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/migration_routes_2.png" alt = "Migration Routes" style = "width:450px;height:443px;"></p>
+<p><video class="max-width-100" width="437" height="430" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/bird_migration.mp4" type="video/mp4" > </video> <img class="max-width-100" id="caiettiaimg" align="top" width="446" height="430" src="https://drdavis.space/teaching/ds/sdd/media/2020/11/migration_routes_2.png" alt = "Migration Routes"></p>
 </div>
 </div>
 <div id="wind-vector-data" class="section level3">

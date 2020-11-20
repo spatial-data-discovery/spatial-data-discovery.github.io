@@ -123,6 +123,22 @@ footer {
     margin: 0px 15px;
 }
 
+.video-4x4mw {
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+}
+
+.max-width-100 {
+    display: inline-block;
+    max-width: 100%;
+}
+
+#caiettiaimg {
+    display: inline-block;
+    float: right;
+}
+
 #scaledvideo {
     width: 100%;
     height: auto;
@@ -139,6 +155,12 @@ footer {
     float: right;
     max-width: 500px;
     margin-left: 20px;
+}
+
+@media only screen and (max-width: 913px) {
+    #caiettiaimg {
+        float: none;
+    }
 }
 
 @media only screen and (max-width: 660px) {
