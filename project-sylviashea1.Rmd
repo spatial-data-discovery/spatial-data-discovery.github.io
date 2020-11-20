@@ -30,6 +30,7 @@ The organization's attorneys analyze the gun legislation in all 50 states and as
 The data was scraped from the website and put into csv format, one file for each year.
 To get the spatial component, each csv was merged with a United States shapefile[^shp], acquired from the United States Census Bureau.
 
+The data were visualized in python with matplotlib[^mpl] and geopandas[^gpd]. For each year, the corresponding gun law grades are plotted as a choropleth visualization. For each month within that year, the mass shootings that occurred on that date are selected and plotted on top of the choropleth map. A plot for each month and year between January 2009 and September 2020 was generated. Each plot functioned as a frame in the animation. 
 
 <div class="credit-line">
 Author: Sylvia Shea.
@@ -41,3 +42,5 @@ Last edited: 2020-11-20.
 [^congress] Congressional Research Service. "Mass Murder with Firearms: Incidents and Victims, 1999-2013". Accessed 2020-11-20. https://fas.org/sgp/crs/misc/R44126.pdf
 [^giffords] Giffords Law Center. Annual Gun Law Scorecard (from 2014 to 2019). Last updated 2019. Accessed 2020-11-12. https://giffords.org/lawcenter/resources/scorecard/#rankings
 [^shp] The United States Census Bureau. Cartographic Boundary Files - Shapefile. Last updated 2018. https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+[^mpl] Matplotlib. License: Python Software Foundation License. https://pypi.org/project/matplotlib/
+[^gpd] Geopandas. License: BSD. https://pypi.org/project/geopandas/
