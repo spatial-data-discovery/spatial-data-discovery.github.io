@@ -14,7 +14,7 @@ semester: Fall 2020
 > *"Here I am. Rock you like a hurricane."* - Scorpions, 1984
 
 ## Overview
-202 has seen a record-breaking number of hurricanes in the North Atlantic, so I was interested in looking at historical hurricane frequency.
+2020 has seen a record-breaking number of hurricanes in the North Atlantic, so I was interested in looking at historical hurricane frequencies.
 The animation above visualizes the global number of tropical cyclones every year from 1980 to today, and where in the world these storms formed.
 
 A tropical cyclone is a rotating storm system of clouds and thunderstorms that originates over warm tropical or subtropical oceans.[^nhc]
@@ -41,7 +41,7 @@ As of November 20, 2020, the latest tropical cyclone in the Atlantic was Hurrica
 
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/11/cyclone_na_plot.png)
 
-An above-average season was predicted, largely due to the development of La Nina.
+An above-average season was actually predicted for 2020, largely due to the development of La Nina.
 La Nina typically brings cooler-than-average sea surface temperatures across the Pacific and weakens the wind shear over the Atlantic, making hurricane formation much more likely in the Atlantic.[^nina]
 
 Because it was a well above-average season, and from the above graph it appears that perhaps hurricane frequency may be increasing, we have to wonder if climate change is playing a role.
