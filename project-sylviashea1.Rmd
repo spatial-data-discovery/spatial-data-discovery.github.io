@@ -1,14 +1,30 @@
 ---
-title: PENDING
+title: The Relationship Between Gun Control and Mass Shootings
 author-meta: Sylvia Shea
 semester: Fall 2020
 ---
 
 ## Overview
+Over the past 50 years, mass shootings in the United States have become more frequent and more deadly. Despite this trend, some lawmakers and special interest groups are insistent on upholding the constitutional right to bear arms and reject any measures to control access. While teachers are conducting active shooter drills in elementary schools, many states still allow citizens to freely and openly carry long guns. 
+
+In order to prevent tragedies like these in the future, thorough research into shooting prevention is essential. However, this research came to a standstill in 1996 [^washingtonpost] when Republican lawmakers (backed by the National Rifle Association) threatened to halt funding for the Centers for Disease Control and Prevention unless it stopped pursuing research into gun injuries and deaths. While researchers are not sure if nationwide gun control will prevent mass shootings, no one can determine what *will* work unless the issue is studied.
+
+
+The animation above explores and visualizes the relationship between mass shootings and gun control laws in the United States. While this animation is not conclusive evidence that gun control laws will or will not prevent mass shootings, it suggests that states with stronger gun laws tend to have lower gun death rates. However, evidence will not be conclusive until consistent policies are implemented nationwide to a) test the effects of more strict access laws and b) reduce the movement of guns between states. 
 
 ## Data Description
+The mass shootings data in the animation were acquired from Everytown for Gun Safety[^everytown] in csv format. The dataset includes every mass shooting in the United States from January 2009 to September 2020. The data are represented by the blue markers, which show their exact location and the total number of people shot. The organization defines mass shootings as "any event in which four or more victims (not including the shooter) are murdered in a public location with firearms" [^congress]. In terms of preprocessing, the dataset was geocoded and the date field was re-formatted for extracting points by by month and year.
+
+The gun control data were provided by the Giffords Law Center[^giffords]. The organization's attorneys analyze the gun legislation in all 50 states and assign a grade based on their gun control law strength. The data was scraped from the website and put into csv format, one file for each year. To get the spatial component, each csv was merged with a United States shapefile[^shp], acquired from the United States Census Bureau.
+
 
 <div class="credit-line">
 Author: Sylvia Shea.
-Last edited: 2020-11-11.
+Last edited: 2020-11-20.
 </div>
+
+[^washingtonpost] The Washington Post. "Why gun violence research has been shut down for 20 years" Accessed 2020-11-20. https://www.washingtonpost.com/news/wonk/wp/2017/10/04/gun-violence-research-has-been-shut-down-for-20-years/
+[^everytown] Everytown for Gun Safety. All Mass Shootings 2009-Present. Last updated September 2020. Accessed 2020-11-12. https://maps.everytownresearch.org/massshootingsreports/mass-shootings-in-america-2009-2019/
+[^congress] Congressional Research Service. "Mass Murder with Firearms: Incidents and Victims, 1999-2013". Accessed 2020-11-20. https://fas.org/sgp/crs/misc/R44126.pdf
+[^giffords] Giffords Law Center. Annual Gun Law Scorecard (from 2014 to 2019). Last updated 2019. Accessed 2020-11-12. https://giffords.org/lawcenter/resources/scorecard/#rankings
+[^shp] The United States Census Bureau. Cartographic Boundary Files - Shapefile. Last updated 2018. https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
