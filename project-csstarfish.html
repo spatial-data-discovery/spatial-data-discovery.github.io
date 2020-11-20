@@ -12,7 +12,7 @@
 <meta name="author" content="Caroline Freshcorn" />
 
 
-<title>Stabilizing Sturgeon</title>
+<title>Shrimply Amazing</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -369,18 +369,29 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Stabilizing Sturgeon</h1>
+<h1 class="title toc-ignore">Shrimply Amazing</h1>
 
 </div>
 
 
 <div id="topic-summary" class="section level2">
 <h2>Topic Summary</h2>
-<p>(I will be adding more detail about this soon)</p>
+<p>For my final project, I decided to analyze and plot shrimp population distributions over time to determine if any substantive patterns have emerged. Throughout my research into the subject, I discovered that many fish species’ populations have slowly migrated farther northward over time as habitats have been damaged by rising water temperatures. For example, the helpful charts below were created by the Environmental Protection Agency (EPA) and show how marine life have been moving in an upward trend since the 1980’s, as carbon dioxide emissions have continued to rise too.</p>
+<p>I was especially interested in investigating marine life because I am a big fan of the beach, so I really appreciate the beauty of ocean life and am in awe of the complexity of marine ecosystems.<br />
+From there, I decided to further delve into shrimp population distributions because I have my own shrimp aquarium (I will be posting a picture of my Hawaiian Red Shrimp below shortly) and am interested in learning more about shrimp conditions out in the wild.</p>
+<div class="figure">
+<img src="https://www.epa.gov/sites/production/files/styles/large/public/2016-07/marine-species-figure1-2016.png" alt="" />
+<p class="caption">Species Distribution</p>
+</div>
+<div class="figure">
+<img src="https://www.epa.gov/sites/production/files/styles/large/public/2017-04/fossil_fuels_1.png" alt="" />
+<p class="caption">Carbon Dioxide</p>
+</div>
 </div>
 <div id="dataset-summary" class="section level2">
 <h2>Dataset Summary</h2>
-<p><strong>Link:</strong> <a href="https://noaa-fisheries-swfsc.data.socrata.com/Species/Green-Sturgeon-Acoustic-Monitoring/cbdw-sw7g">NOAA Fisheries Green Sturgeon Acoustic Monitoring</a></p>
+<p>Upon accessing the Ocean Adapt data, I downloaded the full dataset as a CSV file that contains the attributes “Year”, “Region”, “Species”, “Latitude”, “Latitude_std_err”, “Longitude”, and “Longitude_std_err”. In short, the file contains annual data entries recording the coordinates and region in which a particular species was located at that time. I then wrote a Python script to read the CSV file and convert it into a Pandas DataFrame containing only the columns pertaining to the year, latitude, and longitude attributes, as these would be the most useful for creating spatial data visualizations. From there, I converted the DataFrame into a GeoPandas DataFrame that contained the same attributes as the original DataFrame, plus an additional column that stored the coordinate point geometry based on the latitude and longitude values from the initial DataFrame. (I will be adding more detail about how I created my visualizations shortly)</p>
+<p><strong>Link:</strong> <a href="https://oceanadapt.rutgers.edu/">Ocean Adapt by NOAA &amp; Rutgers University</a></p>
 </div>
 
 <footer class="myfoot">
