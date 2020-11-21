@@ -1,0 +1,73 @@
+---
+title: 'The Unemployment Crisis During COVID-19'
+author-meta: Ben Ralston
+semester: Fall 2020
+---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/pandemic_unemployment.mp4" >
+  </video>
+</div>
+
+## Overview
+
+The COVID-19 pandemic has affected nearly everyone across the world in ways no one could have imagined a year ago.
+It has already claimed the lives of more than 1.3 million people, while sickening tens of millions of others.[^JHU]
+But for many, one of the most pressing issues is the economy and the prospect (or harsh reality) of losing one’s job.
+
+In April, the national unemployment rate in the U.S. reached 14.7%, the highest it had ever been since the Bureau of Labor and Statistics began reporting monthly unemployment rates more than 70 years ago.[^CNN]
+Since then, the unemployment rate has decreased each month, but recently it appears that joblessness may be increasing again, as cases spike across the nation.[^NYTIMES]
+With these current events in mind, I created a visualization showing unemployment rates and monthly new COVID-19 cases per capita, beginning in January 2020 and going until September.
+(September is the most recent month for which unemployment data has been released.)
+
+As shown by the visualization, there hasn’t been a very direct correlation between unemployment rates and COVID-19 cases, with the greatest levels of unemployment occurring in April even as monthly cases have continued to increase for most of the year.
+However, I think this visualization does an excellent job showing how lackluster the U.S.’s pandemic response has been, both in terms of public health measures aimed at curtailing COVID-19 cases but also in providing support to workers and businesses who are trying to navigate one of the most tumultuous economic periods in the last century.
+
+## Data Description
+
+For this project, I used two main datasets.
+The first was monthly employment data separated by state, which I downloaded from the U.S. Bureau of Labor and Statistics website.[^USBLS]
+This dataset was in .xlsx format and was organized each combination of month and state on a different row (i.e. there are 50 rows of data for the first month, 50 rows for the second, and so on).
+To make the data a bit easier to work when creating my visualization, I reformatted it so that every month was a column and every state was a row.
+
+My second main dataset was a .csv file created and maintained by the CDC.[^CDC]
+It contained daily COVID-19 case numbers separated by state, organized in a similar fashion to the unemployment data with each day for each state on a separate row.
+Because I was looking for monthly new case totals, I iterated through each row of the data and added up the daily new cases for each month/state and saved them to a new dataset.
+I arranged this dataset almost identically to my unemployment dataset, arranging months as columns and states as rows.
+
+However, these COVID-19 monthly case numbers were the raw numbers, but what I really wanted was population-adjusted cases, as that allows for comparison between states that may have wildly different populations.
+To accomplish this, I used one more dataset containing population by state.
+I downloaded the data from the Census Bureau as another .csv file.[^CENSUS]
+Luckily, there wasn’t much manipulation I had to do for this dataset as it already had each state in a separate row and various population metrics as columns.
+Next, I went through my COVID-19 dataset and divided each row by the corresponding state population.
+I also multiplied all values by one-hundred thousand, yielding me with monthly COVID-19 cases per 100K people for each state.
+
+## Data Visualization
+
+For my visualization, I decided to create an R script.[^R]
+I initially tried creating a visualization in Python without much luck, but as I was looking online for a good method I found a tutorial[^MAP_TUT] using the usmap R package[^USMAP] which seemed perfect for what I was trying to accomplish.
+As the name suggests, this package makes it very easy to plot data on a map of the US.
+I first loaded in the datasets I had created and saved as .csv files from Python.
+Because I wanted to show data starting January 2020 and ending September 2020, I created a loop to iterate through the different months.
+Within the loop, I called functions from usmap and ggplot2[^GGPLOT] to display unemployment rate as a color gradient painted on to each state and COVID-19 cases as differently sized circles projected above their corresponding state.
+I then exported each of these plots as TIFF images.
+Finally, to convert these individual images into an animation, I created another Python script and used the imageio package[^IMIO] to read in each TIFF image and combine them into a single GIF.
+
+<div class="credit-line">
+Author: Ben Ralston
+Last edited: 2020-11-20.
+</div>
+
+[^JHU]: Johns Hopkins University. Accessed 2020-11-20. Online: https://coronavirus.jhu.edu/map.html
+[^CNN]: CNN. Online: https://www.cnn.com/2020/05/08/economy/april-jobs-report-2020-coronavirus/index.html
+[^NYTIMES]: The New York Times. Online: https://www.nytimes.com/2020/11/19/business/economy/unemployment-claims.html
+[^USBLS]: U.S. Bureau of Labor Statistics. Accessed 2020-11-15. Online: https://www.bls.gov/
+[^CDC]: Centers for Disease Control and Prevention. Accessed 2020-11-18. Online: https://data.cdc.gov/
+[^CENSUS]: U.S. Census Bureau. Accessed 2020-11-18. Online: https://www.census.gov/en.html
+[^R]: R. Online: https://www.r-project.org/about.html
+[^MAP_TUT]: Paolo Di Lorenzo. "Mapping the US". Online: https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html
+[^USMAP]: Usmap. Online: https://usmap.dev/
+[^GGPLOT]: Ggplot2. Online: https://ggplot2.tidyverse.org/
+[^IMIO]: Imageio. Copyright (C) 2014-2020 Almar Klein. Online: https://pypi.org/project/imageio/
