@@ -4,9 +4,10 @@ author-meta: Caroline Freshcorn
 semester: Fall 2020
 ---
 
-## Animated Visualization:
+## Animated Visualization
 **Changes in Shrimp Population Distribution Between 1977 and 2019**
-![Shrimp Population Animation](https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4){width=175 height=175}
+
+![Shrimp Population Animation](https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4){width=500 height=500}
   
 
 ## Topic Summary
@@ -17,10 +18,10 @@ For example, the helpful charts below were created by the Environmental Protecti
 I was especially interested in investigating marine life because I am a big fan of the beach, so I really appreciate the beauty of ocean life and am in awe of the complexity of marine ecosystems.  
 From there, I decided to further delve into shrimp population distributions because I have my own shrimp aquarium with four Hawaiian Red Shrimp and am interested in learning more about shrimp conditions out in the wild.
 
-![Species Distribution](https://www.epa.gov/sites/production/files/styles/large/public/2016-07/marine-species-figure1-2016.png){width=150 height=150}
+![](https://www.epa.gov/sites/production/files/styles/large/public/2016-07/marine-species-figure1-2016.png){width=575 height=500}
 
 
-![Carbon Dioxide](https://www.epa.gov/sites/production/files/styles/large/public/2017-04/fossil_fuels_1.png){width=150 height=150}
+![](https://www.epa.gov/sites/production/files/styles/large/public/2017-04/fossil_fuels_1.png){width=575 height=500}
 
 
 
@@ -37,11 +38,11 @@ Lastly, I uploaded the data from the same "cleaned_shrimpdata.csv" file into kep
 
 
 **Scatter Plot:** 
-![Latitude vs. Year](https://drdavis.space/teaching/ds/sdd/media/2020/11/latitude_vs_time.png){width=150 height=150}
+![Latitude vs. Year](https://drdavis.space/teaching/ds/sdd/media/2020/11/latitude_vs_time.png){width=575 height=500}
 
 
 **Trend Line:** 
-![Latitude Trends Over Time](https://drdavis.space/teaching/ds/sdd/media/2020/11/trendline.png){width=150 height=150}
+![Latitude Trends Over Time](https://drdavis.space/teaching/ds/sdd/media/2020/11/trendline.png){width=575 height=500}
 
 
 **Link to video:** [Shrimp Population Animation](https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4)
