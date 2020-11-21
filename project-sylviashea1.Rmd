@@ -4,15 +4,29 @@ author-meta: Sylvia Shea
 semester: Fall 2020
 ---
 
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+<style>
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+</style>
+  <video width=960 height=540 controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/gun_laws_shooting_final.mp4" type="video/mp4" >
+  </video>
+</div>
+
+> *"Thoughts and prayers won't stop a speeding bullet."* -- DaShanne Stokes
+
 ## Overview
 Over the past 50 years, mass shootings in the United States have become more frequent and more deadly.
 Despite this trend, some lawmakers and special interest groups are insistent on upholding the constitutional right to bear arms and reject any measures to control access.
 While teachers are conducting active shooter drills in elementary schools, many states still allow citizens to freely and openly carry long guns. 
 
 In order to prevent tragedies like these in the future, thorough research into shooting prevention is essential.
-However, this research came to a standstill in 1996 [^washingtonpost] when Republican lawmakers (backed by the National Rifle Association) threatened to halt funding for the Centers for Disease Control and Prevention unless it stopped pursuing research into gun injuries and deaths.
+However, this research came to a standstill in 1996[^washingtonpost] when Republican lawmakers (backed by the National Rifle Association) threatened to halt funding for the Centers for Disease Control and Prevention unless it stopped pursuing research into gun injuries and deaths.
 While researchers are not sure if nationwide gun control will prevent mass shootings, no one can determine what *will* work unless the issue is studied.
-
 
 The animation above explores and visualizes the relationship between mass shootings and gun control laws in the United States.
 While this animation is not conclusive evidence that gun control laws will or will not prevent mass shootings, it suggests that states with stronger gun laws tend to have lower gun death rates.
@@ -22,7 +36,7 @@ However, evidence will not be conclusive until consistent policies are implement
 The mass shootings data in the animation were acquired from Everytown for Gun Safety[^everytown] in csv format.
 The dataset includes every mass shooting in the United States from January 2009 to September 2020.
 The data are represented by the blue markers, which show their exact location and the total number of people shot.
-The organization defines mass shootings as "any event in which four or more victims (not including the shooter) are murdered in a public location with firearms" [^congress].
+The organization defines mass shootings as "any event in which four or more victims (not including the shooter) are murdered in a public location with firearms"[^congress].
 In terms of preprocessing, the dataset was geocoded and the date field was re-formatted for extracting points by by month and year.
 
 The gun control data were provided by the Giffords Law Center[^giffords].
@@ -30,17 +44,31 @@ The organization's attorneys analyze the gun legislation in all 50 states and as
 The data was scraped from the website and put into csv format, one file for each year.
 To get the spatial component, each csv was merged with a United States shapefile[^shp], acquired from the United States Census Bureau.
 
-The data were visualized in python with matplotlib[^mpl] and geopandas[^gpd]. For each year, the corresponding gun law grades are plotted as a choropleth visualization. For each month within that year, the mass shootings that occurred on that date are selected and plotted on top of the choropleth map. A plot for each month and year between January 2009 and September 2020 was generated. Each plot functioned as a frame in the animation. 
+The data were visualized in python with matplotlib[^mpl] and geopandas[^gpd].
+For each year, the corresponding gun law grades were plotted as a choropleth map.
+For each month within that year, the mass shootings that occurred on that date were selected and plotted as graduated symbols on top of the choropleth map.
+A plot for each month and year between January 2009 and September 2020 was generated and each plot for a given month and year functioned as a frame in the animation.
+
+From cleaning the data to creating the animations, I learned to pay attention to detail and thinking ahead.
+When reformatting the data, I had to think about how to change the data structure so it would be easy to manipulate when it was time to actually generate the visualization.
+Because I had to generate over 140 plots for the animation, I had to make sure that the data extraction process for each date was smooth, relatively fast, and compatible with all potential cases (i.e. no shooting occurrences for a given date).
+When designing the visualization, I learned that simplicity and straightforwardness were best for this project.
+I wanted to make sure that the plots weren't overly busy, especially because each plot was displayed for one second in the video.
+I fiddled with the legend, text, colors, fonts, and layout several times before I decided on the final product, all to ensure that the plot was easy to read and straight to the point.
+The trial and error process for generating the visualization made me understand the importance of stepping back, reevaluating my work, and making the necessary changes - even if I was "attached" to a certain design element, I had to objectively decide if the element was useful or not.
+If not, that element didn't need to be in the plot.
+Overall, this project was a great exercise in creating a visualization from start to finish.
+Having to collect, clean, and visualize the data on my own allowed me to apply all the skills I've learned in my programming and cartography classes, and pick up new ones on the way.
 
 <div class="credit-line">
 Author: Sylvia Shea.
 Last edited: 2020-11-20.
 </div>
 
-[^washingtonpost] The Washington Post. "Why gun violence research has been shut down for 20 years" Accessed 2020-11-20. https://www.washingtonpost.com/news/wonk/wp/2017/10/04/gun-violence-research-has-been-shut-down-for-20-years/
-[^everytown] Everytown for Gun Safety. All Mass Shootings 2009-Present. Last updated September 2020. Accessed 2020-11-12. https://maps.everytownresearch.org/massshootingsreports/mass-shootings-in-america-2009-2019/
-[^congress] Congressional Research Service. "Mass Murder with Firearms: Incidents and Victims, 1999-2013". Accessed 2020-11-20. https://fas.org/sgp/crs/misc/R44126.pdf
-[^giffords] Giffords Law Center. Annual Gun Law Scorecard (from 2014 to 2019). Last updated 2019. Accessed 2020-11-12. https://giffords.org/lawcenter/resources/scorecard/#rankings
-[^shp] The United States Census Bureau. Cartographic Boundary Files - Shapefile. Last updated 2018. https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
-[^mpl] Matplotlib. License: Python Software Foundation License. https://pypi.org/project/matplotlib/
-[^gpd] Geopandas. License: BSD. https://pypi.org/project/geopandas/
+[^washingtonpost]: The Washington Post. "Why gun violence research has been shut down for 20 years" Accessed 2020-11-20. https://www.washingtonpost.com/news/wonk/wp/2017/10/04/gun-violence-research-has-been-shut-down-for-20-years/
+[^everytown]: Everytown for Gun Safety. All Mass Shootings 2009-Present. Last updated September 2020. Accessed 2020-11-12. https://maps.everytownresearch.org/massshootingsreports/mass-shootings-in-america-2009-2019/
+[^congress]: Congressional Research Service. "Mass Murder with Firearms: Incidents and Victims, 1999-2013". Accessed 2020-11-20. https://fas.org/sgp/crs/misc/R44126.pdf
+[^giffords]: Giffords Law Center. Annual Gun Law Scorecard (from 2014 to 2019). Last updated 2019. Accessed 2020-11-12. https://giffords.org/lawcenter/resources/scorecard/#rankings
+[^shp]: The United States Census Bureau. Cartographic Boundary Files - Shapefile. Last updated 2018. https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+[^mpl]: Matplotlib. License: Python Software Foundation License. https://pypi.org/project/matplotlib/
+[^gpd]: Geopandas. License: BSD. https://pypi.org/project/geopandas/

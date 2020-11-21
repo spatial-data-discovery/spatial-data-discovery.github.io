@@ -1,5 +1,104 @@
 ---
-title: TBD
+title: "Rock You Like a Hurricane: Hurricane Frequency From the 80s to Today"
 author-meta: Natalie Larsen
 semester: Fall 2020
 ---
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/hurricane_form_loc.mp4" type="video/mp4" >
+  </video>
+</div>
+
+> *"Here I am. Rock you like a hurricane."* - Scorpions, 1984
+
+## Overview
+2020 has seen a record-breaking number of hurricanes in the North Atlantic, so I was interested in looking at historical hurricane frequencies.
+The animation above visualizes the global number of tropical cyclones every year from 1980 to today, and where in the world these storms formed.
+
+A tropical cyclone is a rotating storm system of clouds and thunderstorms that originates over warm tropical or subtropical oceans.[^nhc]
+In the North Atlantic and eastern North Pacific oceans, tropical cyclones are called hurricanes.
+In the western North Pacific they are called typhoons, and in the western South Pacific and Indian oceans they are called cyclones.[^britannica]
+A tropical cyclone is characterized by high winds, heavy rain, and low atmospheric pressure.
+Factors that support development of tropical cyclones include warm water, thunderstorm activity, and low wind shear.[^form]
+When tropical cyclones make landfall, they bring heavy rain, wind, and storm surge, which make them a serious concern for coastal areas in the tropics and subtropics.
+
+The naming of these storms occurs when the cyclone reaches tropical storm strength, or 34 knots (39 mph/63 kph).
+Naming first began in order to quickly identify storms in warning messages and make reporting easier.
+The World Meteorological Organization [^wmo] maintains a list of names for all tropical cyclones, and each list of names repeats every few years.
+Below is a bar plot of the number of named cyclones by ocean basin and by season, from 1980 to today.
+
+![](https://drdavis.space/teaching/ds/sdd/media/2020/11/cyclone_plot.png)
+
+Because 2020 is breaking some records in the Atlantic hurricane season, I also wanted to take a look at hurricane frequency in the North Atlantic only.
+Below is a bar plot of the number of named cyclones by season for the North Atlantic.
+The Atlantic hurricane season typically occurs from June 1st to November 30th.
+This season began early, with the first storm, Arthur, forming on May 16.
+Then, on September 18, the alphabet was exhausted and we had to move on to the Greek alphabet.
+On November 10, 2020, Hurricane Theta formed, becoming the 29th named storm of the season and breaking the previous record of 28 storms in 2005.[^noaa]
+As of November 20, 2020, the latest tropical cyclone in the Atlantic was Hurricane Iota, the second hurricane in history in the month of November to reach Category 5.[^wapo]
+
+![](https://drdavis.space/teaching/ds/sdd/media/2020/11/cyclone_na_plot.png)
+
+An above-average season was actually predicted for 2020, largely due to the development of La Nina.
+La Nina typically brings cooler-than-average sea surface temperatures across the Pacific and weakens the wind shear over the Atlantic, making hurricane formation much more likely in the Atlantic.[^nina]
+
+Because it was a well above-average season, and from the above graph it appears that perhaps hurricane frequency may be increasing, we have to wonder if climate change is playing a role.
+Since 1970, sea surface temperatures have increased by about 0.1 degrees Celsius per decade, particularly in the North Atlantic.[^uscusa]
+However--perhaps surprisingly--in general, climate change isn't expected to have much of an effect on the number of hurricanes that form each year.[^sciamerican]
+It should be noted that there are conflicting studies and models, with some showing an increase in frequency and and others suggesting that the frequency of storms may even decrease.[^c2es]
+Thus, the connection between climate change and hurricane frequency is not very straightforward; though the most recent studies are showing that climate change will cause fewer storms to form, and they will be much more intense.
+
+So, the greatest anticipated impact of climate change is that hurricanes will be stronger and more destructive.
+This means that a greater proportion of storms will turn into major hurricanes, and they will become intense more quickly.
+This project explores hurricane frequency. Next steps to build upon this might include visualizing intensity of these storms to get an even better look at the big picture.
+
+## Data Description
+Visualized in the animation above is the location of formation of tropical cyclones from 1980 to November 2020 (ending with Iota in the North Atlantic).
+The data come from the IBTrACS (International Best Track Archive for Climate Stewardship), which is managed by NOAA ([National Oceanic and Atmospheric Administration](https://www.noaa.gov/)).
+Here, IBTrACS version 4 was used, specifically tropical cyclone track data since 1980.
+The dataset is updated twice every week, and it was last downloaded on November 15, 2020.
+
+The dataset, which contains track data for every tropical cyclone in the world from 1980 to November 2020, was downloaded in CSV[^csv] format from IBTrACS.[^ibtracs]
+The data were read in to a python[^python] script which turned them into a dataframe using the pandas[^pandas] library.
+Then, the desired variables - storm id, season, basin, name, latitude, and longitude - were filtered for.
+The first row of the dataset was dropped, as it contained information on units and not actual data.
+Additionally, python read the "NA" (for North Atlantic) as a null value, so the script fixed this as well by replacing the values back to "NA."
+Finally, for each tropical cyclone, the first row of data was selected to get the location of formation of the storm.
+
+The script then created a new CSV file which only contained formation location data.
+This CSV was visualized in QGIS[^qgis] by season (year).
+Then, image files for each season were saved from QGIS and loaded into GIMP,[^gimp] where the images were exported as an animated GIF.[^gif]
+The GIF was converted to an MPEG-4[^mpeg4] video using Ezgif.[^ezgif]
+
+The script also utilized pandas to further process the data to obtain seasonal counts of the number of storms.
+Then, Matplotlib[^matplotlib] library was used to create the two bar plots: a count of all named tropical cyclones for every ocean basin and season, and a count of all named tropical cyclones in the North Atlantic basin by season.
+The two plots were saved to the local directory in the PNG[^png] image format.
+
+<div class="credit-line">
+Author: Natalie Larsen.
+Last edited: 2020-11-20.
+</div>
+
+[^nhc]: Tropical Cyclone Climatology. National Hurricane Center. Accessed 2020-11-20. Online: https://www.nhc.noaa.gov/climo/
+[^britannica]: Tropical Cyclone. Britannica. Accessed 2020-11-20. Online: https://www.britannica.com/science/tropical-cyclone
+[^form]: How do hurricanes form?. NOAA. Accessed 2020-11-20. Online: https://oceanservice.noaa.gov/facts/how-hurricanes-form.html
+[^wmo]: Tropical Cyclone Naming. World Meterological Organization. Accessed 2020-11-20. Online: https://public.wmo.int/en/our-mandate/focus-areas/natural-hazards-and-disaster-risk-reduction/tropical-cyclones/Naming
+[^noaa]: 2020 Atlantic Hurricane Season takes infamous top spot for busiest on record. NOAA. Accessed 2020-11-20. Online: https://www.noaa.gov/news/2020-atlantic-hurricane-season-takes-infamous-top-spot-for-busiest-on-record
+[^wapo]: Hurricane Iota explosively intensifies to Category 5 as it bears down on Nicaragua. Washington Post. Accessed 2020-11-20. Online: https://www.washingtonpost.com/weather/2020/11/16/iota-nicaragua-honduras-category-five/
+[^nina]: La Nina develops during peak hurricane season. NOAA. Accessed 2020-11-20. Online: https://www.noaa.gov/news/la-nina-develops-during-peak-hurricane-season.
+[^uscusa]: Hurricanes and Climate Change. Union of Concerned Scientists. Accessed 2020-11-20. Online: https://www.ucsusa.org/resources/hurricanes-and-climate-change.
+[^sciamerican]: Climate Change May Cause More Storms to Rapidly Intensify as Delta Did. Scientific American. Accessed 2020-11-20. Online: https://www.scientificamerican.com/article/climate-change-may-cause-more-storms-to-rapidly-intensify-as-delta-did/
+[^c2es]: Hurricanes and Climate Change. Center for Climate and Energy Solutions. Accessed 2020-11-20. Online: https://www.c2es.org/content/hurricanes-and-climate-change/.
+[^csv]: Spreadsheet File Formats; CSV. FileFormat. Copyright 2001--2020 Aspose Pty Ltd. Accessed 2020-11-20. Online: https://docs.fileformat.com/spreadsheet/csv/  
+[^ibtracs]: IBTrACS version 4. World Data Center for Meteorology, Asheville; NOAA. Accessed 2020-11-20. Online: https://www.ncdc.noaa.gov/ibtracs/index.php?name=ib-v4-access
+[^python]: Python. Copyright (C) 2001--2020. Python Software Foundation. Accessed 2020-11-20. Online: https://www.python.org/
+[^pandas]: Pandas. Pandas is a fiscally sponsored project of NumFOCUS. Accessed 2020-11-20. Online: https://pandas.pydata.org/
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
+[^gimp]: GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2020-11-20. Online: https://www.gimp.org/
+[^gif]: Image File Formats; GIF. FileFormat. Copyright 2001--2020 Aspose Pty Ltd. Accessed 2020-11-20. Online: https://docs.fileformat.com/image/gif/
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2020-11-20. Online: https://mpeg.chiariglione.org/
+[^ezgif]: EzGIF. Accessed 2020-11-20. Online: https://ezgif.com/
+[^matplotlib]: Matplotlib. Copyright 2002--2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012--2020 The Matplotlib development team. Accessed 2020-11-20. Online: https://matplotlib.org/
+[^png]: Image File Formats; PNG. FileFormat. Copyright 2001--2020 Aspose Pty Ltd. Accessed 2020-11-20. Online: https://docs.fileformat.com/image/png/
