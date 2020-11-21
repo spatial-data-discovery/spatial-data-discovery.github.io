@@ -1,0 +1,161 @@
+---
+title: "United States Crisis Monitor"
+author-meta: Jamil Abbas
+semester: Fall 2020
+---
+
+> *"If there is no struggle, there is no progress."* -- Frederick Douglass
+
+## Project Significance
+The purpose behind visualizing the United States crisis data was to help illustrate the magnitude of unrest that occurred throughout 2020, and the possible severity of the ramifications.
+The Armed Conflict Location and Event Data Project (ACLED)[^ACLED] has labeled this the "crisis" dataset which seems severe at first.
+Recalling the simultaneous downfalls resulting from a contracting economy in the midst of the COVID-19 pandemic, and from having a presidential election in a very divided setting, it seems justifiable to label this period of time a crisis.
+Visualizing the scope of turnout for political violence and demonstration through this era of heightened risk and an ongoing pandemic is also an opportunity to showcase the benefits of visualizing spatial data.
+
+## Data Visualization
+
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+  <video id="scaledvideo" controls preload="true" autoplay loop muted>
+    <source src="TBA" type="video/mp4" >
+  </video>
+</div>
+
+## Data Summary
+The data was collected from the US Crisis Monitor dataset that was collected by the ACLED^[ACLED].
+They describe political violence and demonstrations as either: battles, protests, riots, strategic developments, or violence against civilians.
+The data set records all instances of violence or demonstration in addition with their longitude and latitude points and some notes given the specifics of the event.
+This made the visualization easier as all the manipulations would be done to the data set, and let the programs generate the maps.
+First off, the original data set is given as an Excel spreadsheet^[Excel].
+It was best to convert the data set to a comma separated variable (CSV)[^CSV] data set, so that the manipulations could be done utilizing pandas[^pandas] in python.
+After converting to a CSV, the next step was to create data sets that contained parts of the total data set so that separate maps could be created and put together to create the final animation.
+Utilizing datetime[^datetime], the script written writes new CSV files containing 40 day increasing increments of the date, since the total data set spans over 160 days there is a total of 4 new data files written.
+
+After having the data files, the next step is to create heat maps of the partitioned data sets.
+Given that the data contained longitude and latitude points already, QGIS[^QGIS] can create a heatmap of the data set.
+Given the nature of the data set, assigning an equal weight to all the events and simply illustrating the volume of events was the most efficient metric.
+There is an argument to be made that peaceful protests should hold a lesser weight than protests that turned violent, or some other metric should be involved to account for the severity of the event.
+One of the possible metrics was fatalities, as fatalities is a variable in the data set.
+Assigning a higher weight to events that incurred higher fatalities would have done essentially nothing to the final visualization as all events incurred less than 3 fatalities, with a large majority incurring 0.
+The specifics of this data set lead us to understand that the most value we will get from the visualization is illustrating the magnitude at which these events took place.
+
+Once the heatmaps were created in QGIS, and saved as images (.png).
+The images are taken into GIMP [^GIMP] in which they are turned into a .gif[^gif].
+After GIMP exports the gif file, an MP4[^mpeg4] is generated using an online converter[^convert].
+
+## Code
+``` python
+# Author: Jamil Abbas
+# Last Updated: 2020-11-08
+#
+#Script Description:
+#
+#This script takes in the US Crisis Monitor data as a .csv file and writes 4 new .csv
+#files each containing the total data points by increasing 40 day intervals.
+#The first file written includes the datapoints corresponding to the first 40 days of the data,
+#the next file includes datapoints corresponding to the first 80 days of the data and so on.
+
+#####################
+# REQUIRED MODULES  #
+#####################
+from datetime import datetime, timedelta
+
+import pandas as pd
+import argparse
+
+#####################
+# Global Variables  #
+#####################
+
+
+def split_write_csv(fpath):
+    '''
+    Name: split_write_csv
+    Inputs: str, absolute filepath to the .csv dataset (fpath)
+    Objective: Imports the .csv dataset as a pandas dataframe and then manipulates the data
+    dataframe and timedelta object to write four new .csv files containing the total data based on
+    40 day increments.
+    '''
+    if fpath.endswith('.csv') == True: #Error handling
+
+        #Import the data as a pandas dataframe
+        rawdata = pd.read_csv(fpath)
+
+        #Adjust the dates in the dataframe to follow the format that datetime uses (YYYY-MM-DD)
+        for i in range(len(rawdata)):
+            date_arr = rawdata.loc[i , "EVENT_DATE"]
+            date_arr = date_arr.split('-')
+            if date_arr[1] == 'May':
+                date_arr[1] = '5'
+            if date_arr[1] == 'June':
+                date_arr[1] = '6'
+            if date_arr[1] == 'July':
+                date_arr[1] = '7'
+            if date_arr[1] == 'August':
+                date_arr[1] = '8'
+            if date_arr[1] == 'September':
+                date_arr[1] = '9'
+            if date_arr[1] == 'October':
+                date_arr[1] = '10'
+
+            adj_date = date_arr[2] + '-' + date_arr[1] + '-' + date_arr[0]
+            rawdata["EVENT_DATE"][i] = adj_date
+
+        #Seperate data into segments by 40 days and create a raster containing the total
+        #data until that segment
+
+        print('---------------------Processing Data---------------------')
+
+        for k in range(1,5):
+            end_date = datetime(2020,10,31) #Set datetime variable for the last date of the data
+            temp_frame = rawdata.copy()
+            x=0
+            for i in range(len(rawdata)):
+                temp_date = rawdata["EVENT_DATE"][i].split('-')
+                for j in range(len(temp_date)):
+                    temp_date[j] = int(temp_date[j])
+                temp_date = datetime(2020 , temp_date[1], temp_date[2])
+                date_diff = end_date - temp_date
+                if date_diff >= timedelta(days=160-(40*k)):
+                    x = x + 1
+            temp_frame = temp_frame.iloc[0:x, :]
+            file_name = '40_day_segment' + str(k) + '.csv'
+            temp_frame.to_csv(file_name, header=True)
+
+
+        print('---------------------Data Files Successfully Created---------------------')
+
+    else:
+        raise TypeError('Invalid file input. Filetype must be <.csv>')
+
+
+#########
+# Main  #
+#########
+if __name__ == '__main__':
+
+    description = "This script takes in the US Crisis Monitor data as a .csv file and writes 4 new \n .csv files each containing the total data points by increasing 40 day intervals. The \n first file written includes the datapoints corresponding to the first 40 days of the data, \n the next file includes datapoints corresponding to the first 80 days of the data and so on."
+
+    parser = argparse.ArgumentParser(description=description)
+    args = parser.parse_args()
+
+    filepath = input('Enter the aboslute filepath to the Armed Conflict dataset: ')
+    #Example filepath:
+    #C:\Repositories\sdd\ay2021-1\project\jabbas\data\USA_2020_Oct31.csv
+
+    split_write_csv(filepath)
+
+```      
+
+## References
+[^ACLED]: Armed Conflict Location and Event Data Project, "US Crisis Monitor", Accessed 2020-10-30, Online: https://acleddata.com/special-projects/us-crisis-monitor/
+[^QGIS]: QGIS tutorials, "Creating Heatmaps (QGIS3)", Accessed 2020-11-06, Online: https://www.qgistutorials.com/en/docs/3/creating_heatmaps.html
+[^Animate]: Spatial Data Discovery, Tyler W. Davis, "Animating Data", Accessed 2020-11-17, Online: https://www.youtube.com/watch?v=XvkAhf-U-mg
+[^GIMP]: GIMP, Accessed 2020-11-20, Online: https://www.gimp.org/downloads/
+[^Excel]: Excel, Accessed 2020-11-20, Online: https://www.microsoft.com/en-us/microsoft-365/excel
+[^CSV]: CSV, Accessed 2020-11-20, Online: https://docs.fileformat.com/spreadsheet/csv/
+[^pandas]: pandas, Accessed 2020-11-20, Online: https://pandas.pydata.org/
+[^datetime]: datetime, Accessed 2020-11-20, Online: https://docs.python.org/3/library/datetime.html
+[^gif]: Graphics Interchange Format (GIF). Copyright 1987--1990 CompuServe. Accessed 2019-11-20. Online: https://www.w3.org/Graphics/GIF/spec-gif89a.txt
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-11-20. Online: https://mpeg.chiariglione.org/
+[^convert]: ezgif, Accessed 2020-11-20, Online: https://ezgif.com/gif-to-mp4
