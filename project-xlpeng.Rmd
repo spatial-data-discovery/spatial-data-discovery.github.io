@@ -1,0 +1,18 @@
+---
+title: In This Pandemic: The Confirmed COVID-19 Cases within the U.S.
+author-meta: Xianglu Peng
+semester: Fall 2020
+---
+
+> *"We’re all in this together."* -- UNDGC
+
+## Overview
+
+## Data Description
+
+
+
+<div class="credit-line">
+Author: Xianglu Peng.
+Last edited: 2020-11-21.
+</div>
