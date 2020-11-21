@@ -13,10 +13,7 @@ semester: Fall 2020
 ## Topic Summary
 For my final project, I decided to analyze and plot shrimp population distributions over time to determine if any substantive patterns have emerged.
 Throughout my research into the subject, I discovered that many fish species' populations have slowly migrated farther northward over time as habitats have been damaged by rising water temperatures. 
-For example, the helpful charts below were created by the Environmental Protection Agency (EPA) and show how marine life have been moving in an upward trend since the 1980's, as carbon dioxide emissions have continued to rise too.
-
-I was especially interested in investigating marine life because I am a big fan of the beach, so I really appreciate the beauty of ocean life and am in awe of the complexity of marine ecosystems.  
-From there, I decided to further delve into shrimp population distributions because I have my own shrimp aquarium with four Hawaiian Red Shrimp and am interested in learning more about shrimp conditions out in the wild.
+For example, the helpful charts below were created by the Environmental Protection Agency (EPA) and show how marine life have been moving in an upward trend since the 1980's, as carbon dioxide emissions have continued to rise too.  I was especially interested in investigating marine life because I am a big fan of the beach, so I really appreciate the beauty of ocean life and am in awe of the complexity of marine ecosystems.  From there, I decided to further delve into shrimp population distributions because I have my own shrimp aquarium with four Hawaiian Red Shrimp and am interested in learning more about shrimp conditions out in the wild.
 
 ![](https://www.epa.gov/sites/production/files/styles/large/public/2016-07/marine-species-figure1-2016.png){width=575 height=500}
 
