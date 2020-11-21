@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Ben Ralston" />
 
 
-<title>Current Projects</title>
+<title>The Unemployment Crisis During COVID-19</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -368,66 +369,50 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Current Projects</h1>
+<h1 class="title toc-ignore">The Unemployment Crisis During COVID-19</h1>
 
 </div>
 
 
+<!-- VIDEO ON LOOP: see styles.css for formatting -->
+<div class="video-wrapper">
+<p><video id="scaledvideo" controls preload="true" autoplay loop muted> <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/pandemic_unemployment.mp4" > </video></p>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The COVID-19 pandemic has affected nearly everyone across the world in ways no one could have imagined a year ago. It has already claimed the lives of more than 1.3 million people, while sickening tens of millions of others.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> But for many, one of the most pressing issues is the economy and the prospect (or harsh reality) of losing one’s job.</p>
+<p>In April, the national unemployment rate in the U.S. reached 14.7%, the highest it had ever been since the Bureau of Labor and Statistics began reporting monthly unemployment rates more than 70 years ago.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Since then, the unemployment rate has decreased each month, but recently it appears that joblessness may be increasing again, as cases spike across the nation.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> With these current events in mind, I created a visualization showing unemployment rates and monthly new COVID-19 cases per capita, beginning in January 2020 and going until September. (September is the most recent month for which unemployment data has been released.)</p>
+<p>As shown by the visualization, there hasn’t been a very direct correlation between unemployment rates and COVID-19 cases, with the greatest levels of unemployment occurring in April even as monthly cases have continued to increase for most of the year. However, I think this visualization does an excellent job showing how lackluster the U.S.’s pandemic response has been, both in terms of public health measures aimed at curtailing COVID-19 cases but also in providing support to workers and businesses who are trying to navigate one of the most tumultuous economic periods in the last century.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>For this project, I used two main datasets. The first was monthly employment data separated by state, which I downloaded from the U.S. Bureau of Labor and Statistics website.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> This dataset was in .xlsx format and was organized each combination of month and state on a different row (i.e. there are 50 rows of data for the first month, 50 rows for the second, and so on). To make the data a bit easier to work when creating my visualization, I reformatted it so that every month was a column and every state was a row.</p>
+<p>My second main dataset was a .csv file created and maintained by the CDC.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> It contained daily COVID-19 case numbers separated by state, organized in a similar fashion to the unemployment data with each day for each state on a separate row. Because I was looking for monthly new case totals, I iterated through each row of the data and added up the daily new cases for each month/state and saved them to a new dataset. I arranged this dataset almost identically to my unemployment dataset, arranging months as columns and states as rows.</p>
+<p>However, these COVID-19 monthly case numbers were the raw numbers, but what I really wanted was population-adjusted cases, as that allows for comparison between states that may have wildly different populations. To accomplish this, I used one more dataset containing population by state. I downloaded the data from the Census Bureau as another .csv file.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> Luckily, there wasn’t much manipulation I had to do for this dataset as it already had each state in a separate row and various population metrics as columns. Next, I went through my COVID-19 dataset and divided each row by the corresponding state population. I also multiplied all values by one-hundred thousand, yielding me with monthly COVID-19 cases per 100K people for each state.</p>
+</div>
+<div id="data-visualization" class="section level2">
+<h2>Data Visualization</h2>
+<p>For my visualization, I decided to create an R script.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> I initially tried creating a visualization in Python without much luck, but as I was looking online for a good method I found a tutorial<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> using the usmap R package<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> which seemed perfect for what I was trying to accomplish. As the name suggests, this package makes it very easy to plot data on a map of the US. I first loaded in the datasets I had created and saved as .csv files from Python. Because I wanted to show data starting January 2020 and ending September 2020, I created a loop to iterate through the different months. Within the loop, I called functions from usmap and ggplot2<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> to display unemployment rate as a color gradient painted on to each state and COVID-19 cases as differently sized circles projected above their corresponding state. I then exported each of these plots as TIFF images. Finally, to convert these individual images into an animation, I created another Python script and used the imageio package<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> to read in each TIFF image and combine them into a single GIF.</p>
+<div class="credit-line">
+<p>Author: Ben Ralston Last edited: 2020-11-20.</p>
+</div>
+</div>
+<div class="footnotes">
 <hr />
-<h3>
-<a href='project-ben-ralston.html'>The Unemployment Crisis During COVID-19</a>
-</h3>
-<p class="semester">
-by Ben Ralston | Fall 2020
-</p>
-<h3>
-<a href='project-brainbot.html'>TBD</a>
-</h3>
-<p class="semester">
-by Brian Wu | Fall 2020
-</p>
-<h3>
-<a href='project-caiettia.html'>Fly Like the Wind: How Wind Patterns Affect Bird Migration</a>
-</h3>
-<p class="semester">
-by Andrew Caietti | Fall 2020
-</p>
-<h3>
-<a href='project-csstarfish.html'>Shrimp-ly Amazing</a>
-</h3>
-<p class="semester">
-by Caroline Freshcorn | Fall 2020
-</p>
-<h3>
-<a href='project-hannahslevin.html'>Pending</a>
-</h3>
-<p class="semester">
-by Hannah Slevin | Fall 2020
-</p>
-<h3>
-<a href='project-johnhennin.html'>Arctic and Antarctic Sea Ice Over Time</a>
-</h3>
-<p class="semester">
-by John Hennin | Fall 2020
-</p>
-<h3>
-<a href='project-kelannen.html'>Crop Yields in Africa 1961 - 2018</a>
-</h3>
-<p class="semester">
-by Katherine Lannen | Fall 2020
-</p>
-<h3>
-<a href='project-natallzl.html'>Rock You Like a Hurricane: Hurricane Frequency From the 80s to Today</a>
-</h3>
-<p class="semester">
-by Natalie Larsen | Fall 2020
-</p>
-<h3>
-<a href='project-sylviashea1.html'>The Relationship Between Gun Control and Mass Shootings</a>
-</h3>
-<p class="semester">
-by Sylvia Shea | Fall 2020
-</p>
+<ol>
+<li id="fn1"><p>Johns Hopkins University. Accessed 2020-11-20. Online: <a href="https://coronavirus.jhu.edu/map.html" class="uri">https://coronavirus.jhu.edu/map.html</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>CNN. Online: <a href="https://www.cnn.com/2020/05/08/economy/april-jobs-report-2020-coronavirus/index.html" class="uri">https://www.cnn.com/2020/05/08/economy/april-jobs-report-2020-coronavirus/index.html</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>The New York Times. Online: <a href="https://www.nytimes.com/2020/11/19/business/economy/unemployment-claims.html" class="uri">https://www.nytimes.com/2020/11/19/business/economy/unemployment-claims.html</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>U.S. Bureau of Labor Statistics. Accessed 2020-11-15. Online: <a href="https://www.bls.gov/" class="uri">https://www.bls.gov/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Centers for Disease Control and Prevention. Accessed 2020-11-18. Online: <a href="https://data.cdc.gov/" class="uri">https://data.cdc.gov/</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>U.S. Census Bureau. Accessed 2020-11-18. Online: <a href="https://www.census.gov/en.html" class="uri">https://www.census.gov/en.html</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>R. Online: <a href="https://www.r-project.org/about.html" class="uri">https://www.r-project.org/about.html</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Paolo Di Lorenzo. “Mapping the US”. Online: <a href="https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html" class="uri">https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Usmap. Online: <a href="https://usmap.dev/" class="uri">https://usmap.dev/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Ggplot2. Online: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>Imageio. Copyright (C) 2014-2020 Almar Klein. Online: <a href="https://pypi.org/project/imageio/" class="uri">https://pypi.org/project/imageio/</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
