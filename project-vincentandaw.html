@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Jonathan V Tandaw" />
 
 
-<title>Spatial Data Discovery Projects</title>
+<title>Forest Loss 2001-2015</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -368,216 +369,39 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Spatial Data Discovery Projects</h1>
+<h1 class="title toc-ignore">Forest Loss 2001-2015</h1>
 
 </div>
 
 
+<p><img src="https://drive.google.com/file/d/1oIrAZ4HuJwciOeYIaIpgUxyhJElmcttW/view?usp=sharing%22%20Hansen_et.al_Temporal_Forest_Loss.png%22" width="637" height="900" /></p>
+<blockquote>
+<p>Crop Yields are in hg/ha. The specified crops are groundnuts, wheat, cereals, cassava, millet, and maize.</p>
+</blockquote>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Climate change will be the fight of my generation, and as compute power increases in the future, data-driven approaches to conservation such as the kind displayed here will ever be crucial to sustainably caring for the Earth. Hansen et al. forest cover data <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> is a very useful dataset for conservationists as it provides accurate rasters on forest cover, forest gained, forest lost, and other useful spatial data. Hansen et al. note that global forest loss from 2000 to 2012 was 2.8 million square kilometers and global forest gain in the same time period was only 0.8 million square kilometers; Brazil’s reduction in deforestation was unfortunately offset by more deforestation in countries such as Indonesia and Bolivia.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>This function will take gross forest cover, subtract it with forest lost, add forest gained, and multiplied by a binary mask showing mappable land surfaces to create approximate forest loss rasters of Mesoamerican forests. The two tiles I will be using which cover Mesoamerica are tiles with 20N90W and 20N100W as the top-left-most point, and they will have values that represent a temporal aspect of when the forests are lost.</p>
+</div>
+<div id="data-description" class="section level2">
+<h2>Data Description</h2>
+<p>The data provided by me is downloaded from <a href="http://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.7.html" class="uri">http://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.7.html</a>. Hansen et al. splits the world into 10-by-10 degree tile rasters, containing unsigned 8-bit values with a spatial resolution of 1 arc-second, or approximately 30 squared meters at the equator. Specific URLs I used to download the data, which can be found on their “simple” API will be provided below.</p>
+<p>I downloaded four kinds of data: forest cover rasters, forest gain rasters, forest loss-year rasters, and data masks. Forest cover rasters represent the remote sensed forest cover across the globe in 2001; these layers will represent our “baseline”. Forest gain rasters represent pixels of forest that have grown in the time of study; these layers represent additions to the forest cover layers. Forest loss-year rasters represent pixels of forest lost in the time of study; we will subtract this from our consolidated forest cover estimate. Lastly, to ensure that we map only mappable land masses, the datamask rasters provide a way for us to filter out all points save for the forests we want to measure.</p>
+<p>Forest cover rasters range from 0-100, as a percent of forest canopy in any given forest area represented by a pixel. Forest gain rasters have 0 as no gain and a value of 1 for gain in 2001-2015. The forest loss-year raster has values from 0-15, where 0 represents no loss at all during 2001-2015, 1 for forest loss in 2001, 2 for forest loss in 2002, and so on. The datamask layers have a value of 0 for NoData, 1 for mappable land masses and 2 for permanent bodies of water. To get all the rasters on the same scale, the forest cover rasters will be reclassed such that forest canopy cover percentage 70% will be classified as a 0, whereas anything above 70% will be reclassed as 1. This value I received during my work with the Wildlife Conservation Society with Dr. Jeremy Radachowsky and others with whom I have been working, who themselves are informed by experts in the field. Next, I reclassed 0 and 2 from the datamasks into 0s, such that now I have a layer of 0 that represents “not-mappable land” and 1 that represents mappable land. Thus it must be remembered thateven though the values of 0 and 1 in terms of forest cover may mean very little, a value of 1 here actually represents forest canopy cover percentage of 70% or greater, which is a better metric by which to determine forest health.</p>
+<p>The raster calculations are simply: (ForestCover + ForestGain - ForestLoss) x Datamask, with spatial extent set to maximum of all inputs. We would get output rasters that represent what year a given pixel’s worth of forest is lost: 1 for no loss at all, 0 for loss in 2001, -1 for loss in 2002, and so on.</p>
+<p>Specific URLs: <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_treecover2000_20N_090W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_treecover2000_20N_090W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_gain_20N_090W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_gain_20N_090W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_lossyear_20N_090W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_lossyear_20N_090W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_datamask_20N_090W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_datamask_20N_090W.tif</a></p>
+<p><a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_treecover2000_20N_100W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_treecover2000_20N_100W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_gain_20N_100W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_gain_20N_100W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_lossyear_20N_100W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_lossyear_20N_100W.tif</a> <a href="https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_datamask_20N_100W.tif" class="uri">https://storage.googleapis.com/earthenginepartners-hansen/GFC-2019-v1.7/Hansen_GFC-2019-v1.7_datamask_20N_100W.tif</a></p>
+<div class="credit-line">
+<p>Author: Jonathan V Tandaw Last edited: 2020-11-21</p>
+</div>
+</div>
+<div class="footnotes">
 <hr />
-<h3>
-<a href='project-abgaddi.html'>UNICEF and the third SDG</a>
-</h3>
-<p class="semester">
-by Abby Gaddi | Spring 2020
-</p>
-<h3>
-<a href='project-aburke01.html'>Out of Site Out of Mind, New Jersey’s Stunted Superfund Cleanup</a>
-</h3>
-<p class="semester">
-by Alexandra Burke | Spring 2020
-</p>
-<h3>
-<a href='project-alway1.html'>Children’s Hospitals in the US</a>
-</h3>
-<p class="semester">
-by Audrey Way | Fall 2019
-</p>
-<h3>
-<a href='project-baier.html'>Philippines School Chooser</a>
-</h3>
-<p class="semester">
-by Heather Baier | Spring 2020
-</p>
-<h3>
-<a href='project-ben-ralston.html'>The Unemployment Crisis During COVID-19</a>
-</h3>
-<p class="semester">
-by Ben Ralston | Fall 2020
-</p>
-<h3>
-<a href='project-brainbot.html'>Moving (Not Sitting) Ducks</a>
-</h3>
-<p class="semester">
-by Brian Wu | Fall 2020
-</p>
-<h3>
-<a href='project-caiettia.html'>Fly Like the Wind: How Wind Patterns Affect Bird Migration</a>
-</h3>
-<p class="semester">
-by Andrew Caietti | Fall 2020
-</p>
-<h3>
-<a href='project-csstarfish.html'>Shrimp-ly Amazing</a>
-</h3>
-<p class="semester">
-by Caroline Freshcorn | Fall 2020
-</p>
-<h3>
-<a href='project-dpwisdom.html'>Presidential Election Margins of Victory</a>
-</h3>
-<p class="semester">
-by David Wisdom | Fall 2019
-</p>
-<h3>
-<a href='project-emmgillstrick.html'>Land Development in Asia</a>
-</h3>
-<p class="semester">
-by Emma Strickland | Spring 2020
-</p>
-<h3>
-<a href='project-gnmaniaci.html'>Google Trends &amp; Vaccination Rates</a>
-</h3>
-<p class="semester">
-by Gianna N. Maniaci | Spring 2020
-</p>
-<h3>
-<a href='project-grluisi.html'>Earthquake Frequency</a>
-</h3>
-<p class="semester">
-by Grant Luisi | Spring 2020
-</p>
-<h3>
-<a href='project-hannahslevin.html'>Pending</a>
-</h3>
-<p class="semester">
-by Hannah Slevin | Fall 2020
-</p>
-<h3>
-<a href='project-intj1.html'>Projecting COVID-19 Cases Under No Intervention Measures</a>
-</h3>
-<p class="semester">
-by Tinh Son | Spring 2020
-</p>
-<h3>
-<a href='project-irthompson01.html'>Monitoring Climate Change Through the Ocean</a>
-</h3>
-<p class="semester">
-by Ian R. Thompson | Spring 2020
-</p>
-<h3>
-<a href='project-ithacalr.html'>Climate Change and Conflict in Africa</a>
-</h3>
-<p class="semester">
-by Liz Rosen | Fall 2019
-</p>
-<h3>
-<a href='project-jabbaswm.html'>United States Crisis Monitor</a>
-</h3>
-<p class="semester">
-by Jamil Abbas | Fall 2020
-</p>
-<h3>
-<a href='project-jiayingchen0307.html'>Amazon’s Last-Mile Delivery Network</a>
-</h3>
-<p class="semester">
-by Jiaying Chen | Fall 2019
-</p>
-<h3>
-<a href='project-jlollen.html'>The Opioid Epidemic</a>
-</h3>
-<p class="semester">
-by Jenna Ollen | Spring 2020
-</p>
-<h3>
-<a href='project-johnhennin.html'>Arctic and Antarctic Sea Ice Over Time</a>
-</h3>
-<p class="semester">
-by John Hennin | Fall 2020
-</p>
-<h3>
-<a href='project-jrgarst.html'>US Libraries and Electronic content Use</a>
-</h3>
-<p class="semester">
-by John Garst | Spring 2020
-</p>
-<h3>
-<a href='project-kelannen.html'>Crop Yields in Africa 1961 - 2018</a>
-</h3>
-<p class="semester">
-by Katherine Lannen | Fall 2020
-</p>
-<h3>
-<a href='project-leanlow.html'>Pollen and Hay Fever During the Transition to Summer/Late Spring</a>
-</h3>
-<p class="semester">
-by LeAnn Lo | Spring 2020
-</p>
-<h3>
-<a href='project-mbrickey.html'>Tornadoes and Our Warming Climate</a>
-</h3>
-<p class="semester">
-by Morgan E. Brickey | Fall 2019
-</p>
-<h3>
-<a href='project-mkcusick.html'>The Spread of COVID-19 Throughout the Contiguous United States</a>
-</h3>
-<p class="semester">
-by Matthew Cusick | Spring 2020
-</p>
-<h3>
-<a href='project-msuri.html'>The Strictness of COVID-19 Policy by State</a>
-</h3>
-<p class="semester">
-by Mallika Suri | Spring 2020
-</p>
-<h3>
-<a href='project-natallzl.html'>Rock You Like a Hurricane: Hurricane Frequency From the 80s to Today</a>
-</h3>
-<p class="semester">
-by Natalie Larsen | Fall 2020
-</p>
-<h3>
-<a href='project-nd3600.html'>The Connection Between Fast Food and Obesity</a>
-</h3>
-<p class="semester">
-by Nikhil Daga | Spring 2020
-</p>
-<h3>
-<a href='project-oforiaddaejnr.html'>Encroachment of Humans Into Natural Areas</a>
-</h3>
-<p class="semester">
-by Yaw Ofori-Addae | Fall 2019
-</p>
-<h3>
-<a href='project-pulakraj.html'>Central and Eastern Asia Hidden in the Light</a>
-</h3>
-<p class="semester">
-by Pulak Raj | Spring 2020
-</p>
-<h3>
-<a href='project-rhan9.html'>The Rise of a Superstar</a>
-</h3>
-<p class="semester">
-by Ryan Han | Spring 2020
-</p>
-<h3>
-<a href='project-sylviashea1.html'>The Relationship Between Gun Control and Mass Shootings</a>
-</h3>
-<p class="semester">
-by Sylvia Shea | Fall 2020
-</p>
-<h3>
-<a href='project-vincentandaw.html'>Forest Loss 2001-2015</a>
-</h3>
-<p class="semester">
-by Jonathan V Tandaw | Fall 2020
-</p>
-<h3>
-<a href='project-xlpeng.html'>In This Pandemic: The Confirmed COVID-19 Cases within the U.S.</a>
-</h3>
-<p class="semester">
-by Xianglu Peng | Fall 2020
-</p>
+<ol>
+<li id="fn1"><p>Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342 (15 November): 850–53. Data available online from: <a href="http://earthenginepartners.appspot.com/science-2013-global-forest" class="uri">http://earthenginepartners.appspot.com/science-2013-global-forest</a>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://science.sciencemag.org/content/342/6160/850" class="uri">https://science.sciencemag.org/content/342/6160/850</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
