@@ -382,6 +382,8 @@ $(document).ready(function () {
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
+<p>The data I used to create the visualization comes from the GitHub repository of the New York Times. The data file, originally in CSV format, contains the cumulative counts of coronavirus cases and deaths for each state. Each row of data reports the date, the state, the state’s FIP codes, and the cumulative number of coronavirus cases and deaths based on the best reporting up to the moment it has updated.</p>
+<p>For the data processing, I created a Python script to load the original data file. Since I intended to get the number of confirmed cases for each state every 20 days from late January to late November, I created a list that contains all the dates I want and loop through the data to get 16 separate CSV files. For each of the newly created files, the data was visualized on QGIS by combining it with a cartographic boundary shapefile, downloaded from the website of the U.S. Census Bureau. Then, each images was exported to a PNG format and converted to a animiated GIF by using GIMP.</p>
 <div class="credit-line">
 <p>Author: Xianglu Peng. Last edited: 2020-11-21.</p>
 </div>
