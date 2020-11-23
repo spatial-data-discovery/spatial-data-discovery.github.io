@@ -5,7 +5,13 @@ semester: Fall 2020
 ---
 
 ## Project Information
-4.22% of the global population lives in the United States of America, but 20% of prisoners in the world are incarcerated in the U.S.A.  The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
+4.22% of the global population lives in the United States of America, but 20% of prisoners in the world are incarcerated in the U.S.A^1.  The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
 
 ## Data Sources
 In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care".  In this report, the authors surveyed 45 out of 50 states to see what type of health care facilities were offered at a state level.  
+
+
+
+## References
+[^1]: Peter Wagner and Wanda Bertram, "What percent of the U.S. is incarcerated? (And other ways to measure mass incarceration)", Prison Policy Initative, Accessed 2020-11-22, Online: https://www.prisonpolicy.org/blog/2020/01/16/percent-incarcerated/
+[^2]: QGIS tutorials, "Creating Heatmaps (QGIS3)", Accessed 2020-11-06, Online: https://www.qgistutorials.com/en/docs/3/creating_heatmaps.html
