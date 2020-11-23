@@ -1,5 +1,5 @@
 ---
-title: In This Pandemic: The Confirmed COVID-19 Cases within the U.S.
+title: "In This Pandemic: The Confirmed COVID-19 Cases within the U.S."
 author-meta: Xianglu Peng
 semester: Fall 2020
 ---
