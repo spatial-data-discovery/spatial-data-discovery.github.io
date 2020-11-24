@@ -1,5 +1,5 @@
 ---
-title: "In This Pandemic: The Confirmed COVID-19 Cases within the U.S."
+title: In This Pandemic: The Confirmed COVID-19 Cases within the U.S.
 author-meta: Xianglu Peng
 semester: Fall 2020
 ---
@@ -8,10 +8,16 @@ semester: Fall 2020
 
 ## Overview
 
-## Data Description
-The data I used to create the visualization comes from the GitHub repository of the New York Times. The data file, originally in CSV format, contains the cumulative counts of coronavirus cases and deaths for each state. Each row of data reports the date, the state, the state's FIP codes, and the cumulative number of coronavirus cases and deaths based on the best reporting up to the moment it has updated.
+As the first year of the second decade of the twentieth century is drawing to a close, the whole country’s daily new cases of the coronavirus are as high as it has ever been. From the New York Times post, the number is now over 171,000, the most rapid growth happening all over the world. There are nine states in this country reported more than twice as many new confirmed cases each day as they did two weeks ago.[^nyt]
 
-For the data processing, I created a Python script to load the original data file. Since I intended to get the number of confirmed cases for each state every 20 days from late January to late November, I created a list that contains all the dates I want and loop through the data to get 16 separate CSV files. For each of the newly created files, the data was visualized on QGIS by combining it with a cartographic boundary shapefile, downloaded from the website of the U.S. Census Bureau. Then, each images was exported to a PNG format and converted to a animiated GIF by using GIMP.
+This project aims to visualize the spread of COVID-19 within the United States. The animation begins from Jan.25 and updates every twenty days through Nov.18. The visualization treats each state as an individual polygon and colors each of the polygon based on the numbers of cases. As the color blue gets darker, the numbers increase. The detailed data processing procedures are in the Data Description section. This pandemic affects every individual on the world, and thus it is worth paying more attention to analyze the pattern of the confirmed cases.
+
+
+## Data Description
+
+The data that was used to create the visualization comes from the GitHub repository of the New York Times[^nytimes]. The data file, originally in CSV[^csv] format, contains the cumulative counts of coronavirus cases and deaths for each state. Each row of data contains the information of the date, the state, the state's FIP codes, and the cumulative number of coronavirus cases and deaths based on the best reporting up to the moment it has published.
+
+For the data processing, a Python conversion script is created to load and read the original data file[^python]. Since the data visualization needs the number of confirmed cases for every 20 days from late January to late November, the python script is intended to create a list that contains all the dates needed and loop through the original csv file to produce 16 separate CSV data files. For each of the newly created files, the data was visualized on QGIS[^qgis] by combining it with a cartographic boundary shape file, downloaded from the website of the U.S. Census Bureau[^shp]. Each images was then exported to a PNG[^png] format and converted to an animated GIF[^gif] by using EZGIF[^ezgif]. Finally, the GIF was converted to the MPEG-4[^mpeg4] format by using EZGIF[^giftomp4] again.
 
 
 
@@ -19,5 +25,15 @@ For the data processing, I created a Python script to load the original data fil
 Author: Xianglu Peng.
 Last edited: 2020-11-21.
 </div>
+
+[^nyt]: "Covid-19 Live Updates." The New York Times. https://www.nytimes.com/live/2020/11/23/world/covid-19-coronavirus
+[^nytimes]: COVID-19-Data. https://github.com/nytimes/covid-19-data
 [^python]: Python. Copyright (C) 2001--2020. Python Software Foundation. Accessed 2020-11-22. Online: https://www.python.org/
-[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: https://www.qgis.org
+[^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-11-22. Online: https://www.qgis.org
+[^ezgif]: EZGIF Online Tool. Accessed 2020-11-23. Online: https://ezgif.com/maker
+[^ezgifmp4]: EZGIF MPEG-4 Converter. Accessed 2020-11-23. Online:https://ezgif.com/gif-to-mp4
+[^png]: Portable Network Graphics (PNG). Accessed 2020-11-23. Online: http://www.libpng.org/pub/png/
+[^csv]: CSV. Accessed 2020-11-23, Online: https://docs.fileformat.com/spreadsheet/csv/
+[^shp]: U.S. Census Bureau. Accessed 2020-11-23. Online: https://www.census.gov/en.html
+[^gif]: GIF. Accessed 2020-11-23. Online: https://docs.fileformat.com/image/gif/
+[^mpeg4]: Moving Picture Experts Group Standard 4 (MPEG-4). Accessed 2020-11-23. Online: https://mpeg.chiariglione.org/
