@@ -8,7 +8,7 @@ semester: Fall 2020
 4.22% of the global population lives in the United States of America, but 20% of prisoners in the world are incarcerated in the U.S.A^[1].  The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
 
 ## Prison Admission Screenings by State
-![](https://drdavis.space/teaching/ds/sdd/media/2020/11/total_screenings.png){width=1115 height=855}
+![](https://drdavis.space/teaching/ds/sdd/media/2020/11/total_screenings.png){width=371.66 height=285}
 
 This map shows how many total health conditions that each state's prisons screen for.  The 9 total conditions that are screened federally include Hepatitis A, Hepatitis B, Hepatitis C, Tuberculosis, Elevated lipids, High blood pressure, Electrocardiogram, Mental health, Suicide risk, and Traumatic brain injury.  The darker green color that the state is, the more conditions that state's prisons screen for, as noted in the legend.  States that are denoted as zero either screen for 0 conditions or there was no data available.  
 
