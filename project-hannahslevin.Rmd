@@ -9,7 +9,7 @@ semester: Fall 2020
 The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
 
 The data represented in the project shows which states screen for prexisting conditions upon admission.  
-It is important that prisons in jails in the US screen their incoming population for medical conditions.    
+It is important that prisons and jails in the US screen their incoming population for medical conditions, because the prisons and jails that hold the incarcerated are responsible for taking care of the health of their population.    
 
 ## Prison Admission Screenings by State
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/11/total_screenings.png){width=557.5 height=427.5}
@@ -36,7 +36,8 @@ This is problematic because prisoners do not have the same access to health care
 ## Data Sources
 In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care".  
 In this report, the authors surveyed 45 out of 50 states to see what type of health care facilities were offered at a state level.  
-There were 5 tables in the document that reported information collected in the surveys.  The first table, which is what is represented in the maps above, represented which states screened for 10 prexisting health conditions.  
+There were 5 tables in the document that reported information collected in the surveys.  
+The first table, which is what is represented in the maps above, represented which states screened for 10 prexisting health conditions.  
 
 ### References
 Peter Wagner and Wanda Bertram, "What percent of the U.S. is incarcerated? (And other ways to measure mass incarceration)", Prison Policy Initative, Accessed 2020-11-22, Online: https://www.prisonpolicy.org/blog/2020/01/16/percent-incarcerated/
