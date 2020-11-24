@@ -12,7 +12,7 @@
 <meta name="author" content="Xianglu Peng" />
 
 
-<title>In This Pandemic: The Confirmed COVID-19 Cases within the U.S.</title>
+<title>In This Pandemic: The Confirmed COVID-19 Cases Within the U.S.</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -369,7 +369,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">In This Pandemic: The Confirmed COVID-19 Cases within the U.S.</h1>
+<h1 class="title toc-ignore">In This Pandemic: The Confirmed COVID-19 Cases Within the U.S.</h1>
 
 </div>
 
@@ -379,14 +379,31 @@ $(document).ready(function () {
 </blockquote>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
+<p>As the first year of the second decade of the twentieth century is drawing to a close, the whole country’s daily new cases of the coronavirus are as high as it has ever been. From the New York Times post, the number is now over 171,000, the most rapid growth happening all over the world. There are nine states in this country reported more than twice as many new confirmed cases each day as they did two weeks ago.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>This project aims to visualize the spread of COVID-19 within the United States. The animation begins from Jan.25 and updates every twenty days through Nov.18. The visualization treats each state as an individual polygon and colors each of the polygon based on the numbers of cases. As the color blue gets darker, the numbers increase. The detailed data processing procedures are in the Data Description section. This pandemic affects every individual on the world, and thus it is worth paying more attention to analyze the pattern of the confirmed cases.</p>
 </div>
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
-<p>The data I used to create the visualization comes from the GitHub repository of the New York Times. The data file, originally in CSV format, contains the cumulative counts of coronavirus cases and deaths for each state. Each row of data reports the date, the state, the state’s FIP codes, and the cumulative number of coronavirus cases and deaths based on the best reporting up to the moment it has updated.</p>
-<p>For the data processing, I created a Python script to load the original data file. Since I intended to get the number of confirmed cases for each state every 20 days from late January to late November, I created a list that contains all the dates I want and loop through the data to get 16 separate CSV files. For each of the newly created files, the data was visualized on QGIS by combining it with a cartographic boundary shapefile, downloaded from the website of the U.S. Census Bureau. Then, each images was exported to a PNG format and converted to a animiated GIF by using GIMP.</p>
+<p>The data that was used to create the visualization comes from the GitHub repository of the New York Times<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. The data file, originally in CSV<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> format, contains the cumulative counts of coronavirus cases and deaths for each state. Each row of data contains the information of the date, the state, the state’s FIP codes, and the cumulative number of coronavirus cases and deaths based on the best reporting up to the moment it has published.</p>
+<p>For the data processing, a Python conversion script is created to load and read the original data file<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Since the data visualization needs the number of confirmed cases for every 20 days from late January to late November, the python script is intended to create a list that contains all the dates needed and loop through the original csv file to produce 16 separate CSV data files. For each of the newly created files, the data was visualized on QGIS<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> by combining it with a cartographic boundary shape file, downloaded from the website of the U.S. Census Bureau<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Each images was then exported to a PNG<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> format and converted to an animated GIF<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> by using EZGIF<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>. Finally, the GIF was converted to the MPEG-4<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> format by using EZGIF[^giftomp4] again.</p>
 <div class="credit-line">
 <p>Author: Xianglu Peng. Last edited: 2020-11-21.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>“Covid-19 Live Updates.” The New York Times. <a href="https://www.nytimes.com/live/2020/11/23/world/covid-19-coronavirus" class="uri">https://www.nytimes.com/live/2020/11/23/world/covid-19-coronavirus</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>COVID-19-Data. <a href="https://github.com/nytimes/covid-19-data" class="uri">https://github.com/nytimes/covid-19-data</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>CSV. Accessed 2020-11-23, Online: <a href="https://docs.fileformat.com/spreadsheet/csv/" class="uri">https://docs.fileformat.com/spreadsheet/csv/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Python. Copyright (C) 2001–2020. Python Software Foundation. Accessed 2020-11-22. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-11-22. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>U.S. Census Bureau. Accessed 2020-11-23. Online: <a href="https://www.census.gov/en.html" class="uri">https://www.census.gov/en.html</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Portable Network Graphics (PNG). Accessed 2020-11-23. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>GIF. Accessed 2020-11-23. Online: <a href="https://docs.fileformat.com/image/gif/" class="uri">https://docs.fileformat.com/image/gif/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>EZGIF Online Tool. Accessed 2020-11-23. Online: <a href="https://ezgif.com/maker" class="uri">https://ezgif.com/maker</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Accessed 2020-11-23. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 <footer class="myfoot">
