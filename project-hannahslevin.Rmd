@@ -27,16 +27,17 @@ States that are denoted as zero either screen for 0 conditions or there was no d
 
 We see that every state with data screens for Tuberculosis (TB).  
 TB is very contagious, so it makes sense that it is tested in every state.  
-Additionally, suicide risk, mental health, and high blood pressure.  
+Additionally, suicide risk, mental health, and high blood pressure are screened for in every state.  
 However, the remainder of prexisting conditions are not screened in every state.
 For example, traumatic brain injury appears to be screened in the fewest amount of states, even though police brutality during arrest is covered more than ever in the media.
 State and federal prisons and jails are not doing their due diligence when they do not screen incoming prisoners for all possible health conditions.
 This is problematic because prisoners do not have the same access to health care that free citizens do, so it is important to understand the needs of a prisoner, before they are incarcerated.  
 
 ## Data Sources
-In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care"[^SurveyPrisonHealthCare].  
+In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care".  
 In this report, the authors surveyed 45 out of 50 states to see what type of health care facilities were offered at a state level.  
+There were 5 tables in the document that reported information collected in the surveys.  The first table, which is what is represented in the maps above, represented which states screened for 10 prexisting health conditions.  
 
 ### References
-[^WagnerAndBertram]: Peter Wagner and Wanda Bertram, "What percent of the U.S. is incarcerated? (And other ways to measure mass incarceration)", Prison Policy Initative, Accessed 2020-11-22, Online: https://www.prisonpolicy.org/blog/2020/01/16/percent-incarcerated/
-[^SurveyPrisonHealthCare]: Karishma A. Chari, M.P.H., Alan E. Simon, M.D., Carol J. DeFrances, Ph.D., "National Survey of Prison Health Care: Selected Findings", National center for Health Statistics, Accessed 2020-11-23, Online: https://www.cdc.gov/nchs/data/nhsr/nhsr096.pdf
+Peter Wagner and Wanda Bertram, "What percent of the U.S. is incarcerated? (And other ways to measure mass incarceration)", Prison Policy Initative, Accessed 2020-11-22, Online: https://www.prisonpolicy.org/blog/2020/01/16/percent-incarcerated/
+Karishma A. Chari, M.P.H., Alan E. Simon, M.D., Carol J. DeFrances, Ph.D., "National Survey of Prison Health Care: Selected Findings", National center for Health Statistics, Accessed 2020-11-23, Online: https://www.cdc.gov/nchs/data/nhsr/nhsr096.pdf
