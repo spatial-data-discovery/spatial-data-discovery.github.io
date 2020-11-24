@@ -1,0 +1,55 @@
+---
+title: "Final Project: Rain on Election Day"
+author: "Amy Hilla"
+date: "November 2020"
+semester: "Fall 2020"
+---
+
+<div class="video-wrapper">
+  <video class="video-4x4mw" controls preloaded="true" autoplay loop muted>
+    <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/animation.mp4">
+  </video>
+</div>
+
+
+## Description
+In the field of political science, it is common knowledge that voter turnout can have huge impacts on elections[^gomez2].
+But voter turnout is unpredictable. One known factor that can heavily influence turnout is weather, particularly rainfall.
+Rain on election day can significantly depress voter turnout and affect election results[^gomez].
+This project visualizes rainfall on each US election day from 1980 to 2018 for midterm and presidential elections.
+By visualizing which areas of the country tend to experience precipitation on election days, it can be seen where voter turnout might be consistently lower across elections and which might make good targets for 'Get Out The Vote' campaigns in the future.
+
+
+## Data Description and Process
+The precipitation data used in this visualization came from the [WFDEI Meteorological Forcing Data](https://rda.ucar.edu/datasets/ds314.2/)which has monthly global rainfall datasets for 1979-2018[^wfdei].
+First, to obtain a list of the exact date of each US election, I created a webscraper Python script that used the Wikipedia API[^wiki] and dateutil.parse[^date] to parse election dates from the Wikipedia pages on each election.
+Then I downloaded the WFDEI data for every November during an election year from 1980 to 2018 and selecting data from election day, I was able to visualize the rain that fell over the continental United States on every election day for this almost 40 year period.
+The original precipitation files are netCDF format, so I created a script which uses the arcpy package from ArcGIS Pro[^arc] to convert the files to ASCII as well as limit the data to just election day (using the election date file output from the webscraper script) and to just the United States.
+I then used QGIS[^qgis] to convert the ASCII files to PNG images, and strung all the images together into a .gif animation using GIMP[^gimp].
+Lastly, I converted the .gif animation to a .mp4 using ffmpeg[^ffmpeg]. 
+
+<div class="credit-line">
+Author: Amy Hilla.
+Last Edited: 2020-11-23
+</div>
+
+
+### References
+
+[^gomez2]HANSFORD, THOMAS G., and BRAD T. GOMEZ. “Estimating the Electoral Effects of Voter Turnout.” The American Political Science Review, vol. 104, no. 2, 2010, pp. 268–288. JSTOR, www.jstor.org/stable/40863720. Accessed 23 Nov. 2020.
+
+[^gomez]Gomez, Brad T., et al. “The Republicans Should Pray for Rain: Weather, Turnout, and Voting in U.S. Presidential Elections.” The Journal of Politics, vol. 69, no. 3, 2007, pp. 649–663. JSTOR, www.jstor.org/stable/10.1111/j.1468-2508.2007.00565.x. Accessed 23 Nov. 2020.
+
+[^wfdei]Weedon, G. P., G. Balsamo, N. Bellouin, S. Gomes, M. J. Best, and P. Viterbo. 2018. The WFDEI Meteorological Forcing Data. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. https://doi.org/10.5065/486N-8109. Accessed 23 Nov. 2020.
+
+[^wiki] Wikipedia Python Library, Copyright 2013 Jonathan Goldsmith. Accessed 23 Nov. 2020, Online: https://pypi.org/project/wikipedia/ 
+
+[^date] Dateutil Python Libary, Accessed 23 Nov. 2020, Online: https://pypi.org/project/python-dateutil/ 
+
+[^arc] Esri, ArcGIS Pro 2.6, Accessed 23 Nov. 2020, Online: https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview
+
+[^qgis] QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2020-11-10. Online: https://www.qgis.org/en/site/
+
+[^gimp] GIMP 2.10, Accessed 23 Nov. 2020 Online: https://www.gimp.org/ 
+
+[^ffmpeg] ffmpeg 4.2, Accessed 23 Nov. 2020 Online: https://ffmpeg.org/
