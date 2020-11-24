@@ -5,16 +5,19 @@ semester: Fall 2020
 ---
 
 ## Project Information
-4.22% of the global population lives in the United States of America, but 20% of prisoners in the world are incarcerated in the U.S.A^[1].  The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
+4.22% of the global population lives in the United States of America, but 20% of prisoners in the world are incarcerated in the U.S.A[WagnerAndBertram].  
+The United States imprisons people at a disproportiantly high rate, so isn't it important that we understand what health care looks like for the 2.3 million people who are incarcerated in our country?  
 
-The data represented in the project shows which states screen for prexisting conditions upon admission.  It is important that prisons in jails in the US screen their incoming population for medical conditions.    
+The data represented in the project shows which states screen for prexisting conditions upon admission.  
+It is important that prisons in jails in the US screen their incoming population for medical conditions.    
 
 ## Prison Admission Screenings by State
 ![](https://drdavis.space/teaching/ds/sdd/media/2020/11/total_screenings.png){width=557.5 height=427.5}
 
-This map shows how many total health conditions that each state's prisons screen for.  The 9 total conditions that are screened federally include Hepatitis A, Hepatitis B, Hepatitis C, Tuberculosis, Elevated lipids, High blood pressure, Electrocardiogram, Mental health, Suicide risk, and Traumatic brain injury.  The darker green color that the state is, the more conditions that state's prisons screen for, as noted in the legend.  States that are denoted as zero either screen for 0 conditions or there was no data available.  
-
-We see that every state with data screens for Tuberculosis (TB).  TB is very contagious, so it makes sense that it is tested in every state.  However, most other prexisting conditions are not screened in every state.  This is problematic because prisoners do not have the same access to health care that free citizens do, so it is important to understand the needs of a prisoner, before they are incarcerated.  
+This map shows how many total health conditions that each state's prisons screen for.  
+The 10 total conditions that are screened federally include Hepatitis A, Hepatitis B, Hepatitis C, Tuberculosis, Elevated lipids, High blood pressure, Electrocardiogram (EKG), Mental health, Suicide risk, and Traumatic brain injury.  
+The darker green color that the state is, the more conditions that state's prisons screen for, as noted in the legend.  
+States that are denoted as zero either screen for 0 conditions or there was no data available.  
 
 <div class="video-wrapper">
   <video id="scaledvideo" controls preload="true" autoplay loop muted>
@@ -22,11 +25,15 @@ We see that every state with data screens for Tuberculosis (TB).  TB is very con
   </video>
 </div>
 
+We see that every state with data screens for Tuberculosis (TB).  
+TB is very contagious, so it makes sense that it is tested in every state.  
+Additionally, suicide risk, mental health, and high blood pressure.  
+However, the remainder of prexisting conditions are not screened in every state.  
+This is problematic because prisoners do not have the same access to health care that free citizens do, so it is important to understand the needs of a prisoner, before they are incarcerated.  
 
 ## Data Sources
-In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care"^[2].  In this report, the authors surveyed 45 out of 50 states to see what type of health care facilities were offered at a state level.  
-
-
+In 2016, the National Center for Health Statistics, a subsidary of the CDC, published a report called the "National Survey of Prison Health Care"[^SurveyPrisonHealthCare].  
+In this report, the authors surveyed 45 out of 50 states to see what type of health care facilities were offered at a state level.  
 
 ### References
 [^WagnerAndBertram]: Peter Wagner and Wanda Bertram, "What percent of the U.S. is incarcerated? (And other ways to measure mass incarceration)", Prison Policy Initative, Accessed 2020-11-22, Online: https://www.prisonpolicy.org/blog/2020/01/16/percent-incarcerated/
