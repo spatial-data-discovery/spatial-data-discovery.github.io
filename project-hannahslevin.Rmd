@@ -28,7 +28,9 @@ States that are denoted as zero either screen for 0 conditions or there was no d
 We see that every state with data screens for Tuberculosis (TB).  
 TB is very contagious, so it makes sense that it is tested in every state.  
 Additionally, suicide risk, mental health, and high blood pressure.  
-However, the remainder of prexisting conditions are not screened in every state.  
+However, the remainder of prexisting conditions are not screened in every state.
+For example, traumatic brain injury appears to be screened in the fewest amount of states, even though police brutality during arrest is covered more than ever in the media.
+State and federal prisons and jails are not doing their due diligence when they do not screen incoming prisoners for all possible health conditions.
 This is problematic because prisoners do not have the same access to health care that free citizens do, so it is important to understand the needs of a prisoner, before they are incarcerated.  
 
 ## Data Sources
