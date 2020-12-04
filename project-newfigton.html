@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Ciaran Lowell" />
+
+
+<title>Spatial Smash Brothers: Melee</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Spatial Data Discovery</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning/hdf/index.html">HDF</a>
+    </li>
+    <li>
+      <a href="learning/netcdf/index.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resources-code.html">Code</a>
+    </li>
+    <li>
+      <a href="resources-data.html">Data</a>
+    </li>
+    <li>
+      <a href="resources-links.html">Links</a>
+    </li>
+    <li>
+      <a href="resources-methods.html">Methods</a>
+    </li>
+    <li>
+      <a href="resources-software.html">Software</a>
+    </li>
+    <li>
+      <a href="syllabus/index.html">Syllabus</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Spatial Discovery
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Example</li>
+    <li>
+      <a href="project-dtwoods.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="current-projects.html">Current Projects</a>
+    </li>
+    <li>
+      <a href="projects.html">All Projects</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    About
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="about-dtwoods.html">About the Professor</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="development-team-fall-2020.html">Current Developers</a>
+    </li>
+    <li>
+      <a href="about.html">All Developers</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Spatial Smash Brothers: Melee</h1>
+
+</div>
+
+
+<div class="figure">
+<img src="https://i.imgur.com/g9WgiFn.png" alt="" />
+<p class="caption">Two decades into Melee’s lifespan, both programmers and players are breaking new ground</p>
+</div>
+<p>Almost 20 years after the release of <em>Super Smash Brothers: Melee</em>, the popular Nintendo Gamecube title still enjoys unlikely popularity. Initially released as a party game, <em>Melee’s</em> family-friendly exterior hides a surprisingly deep competitive fighting game that’s still played in tournaments alongside the likes of <em>Tekken 7</em> and <em>Street Fighter 5.</em></p>
+<p>Yet, despite the tens of thousands of people who have entered <em>Melee</em> tournaments in the past two decades, the roster of top level competition has remained surprisingly stable. For years, 5 players reigned supreme over all competitors, leading to their deification as “The Gods of <em>Melee</em>.” No matter how many thousands of competitors entered bracket, one of the Five Gods of <em>Melee</em> won every major tournament hosted from 2008 to 2014 in dominant fashion. Though 3 of the 5 Gods have retired from tournament competition, the remaining 2- Californian Mang0 and Florida’s Hungrybox- continue to jockey for dominance, ranking 3rd and 1st in the world in 2019.</p>
+<p>In particular, Juan “Hungrybox” Debiedma, #1 ranked <em>Melee</em> player for an unprecedented 3 years in a row (2017, 2018, and 2019) has maintained a formidable record against the field.</p>
+<p>Hungrybox is an outlier not only for his impressive number of tournament victories, but because of his unusual character choice. While most <em>Melee</em> pros opt for <em>Star Fox</em> representatives such as Fox or Falco, or <em>Fire Emblem’s</em> Marth, Hungrybox is the lone Jigglypuff in the Top 30 ranked players. In Debiedma’s hands, the cute and cuddly Pokemon becomes a fearsome bracket force.</p>
+<p>For years, conventional wisdom held that the best way to defeat Hungrybox was to use Fox. Formerly world #1 Armada, known for being the game’s best Princess Peach player, declared it impossible to beat Jigglypuff with Peach. Results seemed to prove him correct. From 2009 to 2020, Hungrybox didn’t lose a single <em>game</em> to a Peach player.</p>
+<p><a href="https://www.youtube.com/watch?v=VxGJCIHpCZY">So, when Hungrybox squared off against William and Mary alum Arjun ‘lloD’ Malhotra in July 2020</a>, no one expected much of lloD’s Peach. When lloD won 3-1, the shocking upset ended one of Melee’s longest running streaks of dominance. How did lloD manage to win a matchup formerly considered impossible?</p>
+<div id="the-data" class="section level1">
+<h1>The Data</h1>
+<p>lloD’s victory over Hungrybox is certainly worthy analysis. But how can we generate statistics on the games without time-consuming video analysis? That’s where Slippi comes in.</p>
+<div id="slippi" class="section level2">
+<h2><a href="https://slippi.gg/">Slippi</a></h2>
+<p>When <em>Melee</em> released in 2001, it released without online functionality. The only way to play was in person, on a bulky CRT television.</p>
+<p><strong>Slippi</strong> is a fan-made coding project that implements rollback netcode into the <a href="https://dolphin-emu.org/">Dolphin</a> emulator. Not only does Slippi allow users to play lagless matches with opponents across the world, it also saves information about each game, opening up a new universe of analytical possibilities.</p>
+</div>
+<div id="processing-the-.slp-files" class="section level2">
+<h2>Processing the .slp Files</h2>
+<p>Slippi saves files as a series of controller inputs, letting users store replays of their games without saving large video files. To view the replay, Slippi replays the controller inputs in sequence through an emulator, replicating the saved match.</p>
+<p>What this method of storage means is that to process Slippi files, my code needed to iterate over each file to work through each frame of every game. I use the <a href="https://github.com/hohav/py-slippi">Slippi Python Parser</a> to read most of the input from the files.</p>
+<p>First, my code stores each .slp file into a Pandas dataframe, with fields for the characters in the match, the stage, and the filename location for easy access. It also standardizes the files, making sure that Jigglypuff is always player 1, and Peach is always player 2.</p>
+<p>Next, the code records the positions of each character every half-second (30 frames). It keeps this information in stage-specific lists, which we’ll use for visualization later.</p>
+<p>The code next iterates through each game again, examining how each character attacks its opponent. In <em>Melee,</em> players jockey for position, weaving in and out of range while trying to bait their opponent to understand. This back-and-forth dance to land a hit is known as <strong>the neutral game.</strong> I use <a href="https://swoodivarius.github.io/Final.html">Swoodivarius’</a> definition of a neutral win to create a “neutral_wins” list that stores when and where a neutral win happened, as well as what move was used to hit the opponent. This code runs twice, once for Jigglypuff, and once for Peach.</p>
+</div>
+</div>
+<div id="visualization" class="section level1">
+<h1>Visualization</h1>
+<p>My code generates two different visualizations, each with their own data and purpose. The background pictures of each stage are pulled from <a href="http://ikneedata.com/">Schmooblidon’s IKneeData resource</a> and are included in the GitHub folder for my code.</p>
+<div id="position-heatmaps" class="section level2">
+<h2>Position Heatmaps</h2>
+<p>These graphics were generated using <a href="https://seaborn.pydata.org/generated/seaborn.kdeplot.html">Seaborne’s Kernel Density Estimate plot</a> in a similar fashion to the position heatmaps generated by Swoodivarius’ GitHub referenced earlier. Each graphic shows where characters spent time on the stage using the half-second sample intervals we gathered earlier. Noteworthy is the small bubble under Dreamland visible on the Peach visualization. When lloD had assured victory in the last game of the set, he ran the clock out by floating underneath Dreamland for the last seconds of the game.</p>
+<div id="puff" class="section level3">
+<h3>Puff</h3>
+<div class="figure">
+<video src="https://i.imgur.com/hIOYn5S.mp4" controls=""><a href="https://i.imgur.com/hIOYn5S.mp4"></a></video>
+<p class="caption">Jigglypuff Position Heatmaps</p>
+</div>
+</div>
+<div id="peach" class="section level3">
+<h3>Peach</h3>
+<div class="figure">
+<video src="https://i.imgur.com/dOyTLRJ.mp4" controls=""><a href="https://i.imgur.com/dOyTLRJ.mp4"></a></video>
+<p class="caption">Princess Peach Position Heatmaps</p>
+</div>
+</div>
+</div>
+<div id="neutral-win-locations" class="section level2">
+<h2>Neutral Win Locations</h2>
+<p>These visualizations show the points where each character won a neutral exchange. The points are colorcoded to represent which move that character won the exchange using. The points represent the position of the attacking character when their move hit, with the exception of Peach’s turnip points. Peach’s turnips are thrown projectiles, and each turnip point represents where Peach’s opponent was when they were hit by a turnip.</p>
+<p>Spectators of the lloD vs. Hungrybox set remarked on lloD’s excellent usage of turnips to control space. Note how the placement of the turnip points shows lloD successfully cornering Hungrybox.</p>
+<div id="puff-1" class="section level3">
+<h3>Puff</h3>
+<div class="figure">
+<video src="https://i.imgur.com/kBjjF4u.mp4" controls=""><a href="https://i.imgur.com/kBjjF4u.mp4"></a></video>
+<p class="caption">Jigglypuff Neutral Win Points</p>
+</div>
+</div>
+<div id="peach-1" class="section level3">
+<h3>Peach</h3>
+<div class="figure">
+<video src="https://i.imgur.com/EtwHwfG.mp4" controls=""><a href="https://i.imgur.com/EtwHwfG.mp4"></a></video>
+<p class="caption">Peach Neutral Win Points</p>
+</div>
+</div>
+</div>
+</div>
+<div id="future-research" class="section level1">
+<h1>Future Research</h1>
+<p>A large part of my hours spent on this project went towards creating an image library for each character’s moveset. My idea was to create scatterplots of neutral wins similar to the ones above, but with partially-transparent pictures of the characters performing the moves. This way, the scatterplots would do a better job visually displaying their information, and would also show what area each move was threatening. This method of display would also account for which direction a character was facing when it won neutral. This would allow more detailed analysis of how the characters interact based on their stage positioning. Additionally, since the goal of <em>Melee</em> is to knock the opponent offstage, the direction your hit sends the opponent is a significant factor in judging risk and reward. Unfortunately, I was unable to find a python package that satisfactorily allowed me to implement this idea.</p>
+<div id="combined" class="section level2">
+<h2>Combined</h2>
+<p>The two graphics above are interesting, but the hope of this project was to garner a more detailed analysis of how and where lloD won neutral against Hungrybox. There’s many reasons a character might spend more time on one side of the stage than the other, including personal preference, controller ergonomics, or respawn point location. All else being equal, we would expect a character’s position heatmap and neutral win positions to roughly mirror each other. Overlaying the two is a rudimentary way to analyze if a character disproportionately wins neutral in certain areas of the stage. Creating and analyzing these overlays will be my next step on the project.</p>
+<p>These graphics were created using a combination of Seaborn’s Scatterplot function and Seaborn’s KDE Plot function.</p>
+<p>I hope to continue to work on this project in the future, with the eventual goal of accepting user input and creating custom graphics from large libraries of game files. Thank you for reading, and congratulations lloD!</p>
+</div>
+</div>
+<div id="sources-and-thanks" class="section level1">
+<h1>Sources and Thanks</h1>
+<p>Thank you to <a href="https://github.com/hohav/py-slippi">Hohav and his Slippi Python Parser</a>, without whom this project would not have been possible</p>
+<p>Thank you to <a href="https://swoodivarius.github.io/Final.html">Swoodivarius</a>, who’s code I frequently consulted to learn how to work with the .slp file format, and who’s project inspired mine. I used his code to find and save neutral wins.</p>
+<p>Thank you to <a href="www.slippi.gg">Fizzi and the Slippi Team</a> for creating and releasing amazing free software.</p>
+<p>And thank you to Professor Tyler Davis for indulging me in such a whacky application of Spatial Data!</p>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>Data Science at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,74 +1,78 @@
-
-# Spatial Smash Brothers: Melee
+---
+title: "Spatial Smash Brothers: Melee"
+author-meta: Ciaran Lowell
+semester: Fall 2020
+---
 
 ![Two decades into Melee's lifespan, both programmers and players are breaking new ground](https://i.imgur.com/g9WgiFn.png)
 
-Almost 20 years after the release of *Super Smash Brothers: Melee*, the popular Nintendo Gamecube title still enjoys unlikely popularity. Initially released as a party game, *Melee's* family-friendly exterior hides a surprisingly deep competitive fighting game that's still played in tournaments alongside the likes of *Tekken 7* and *Street Fighter 5.* 
+Almost 20 years after the release of *Super Smash Brothers: Melee*, the popular Nintendo Gamecube title still enjoys unlikely popularity. Initially released as a party game, *Melee's* family-friendly exterior hides a surprisingly deep competitive fighting game that's still played in tournaments alongside the likes of *Tekken 7* and *Street Fighter 5.*
 
-Yet, despite the tens of thousands of people who have entered *Melee* tournaments in the past two decades, the roster of top level competition has remained surprisingly stable. 
-For years, 5 players reigned supreme over all competitors, leading to their deification as "The Gods of *Melee*." 
-No matter how many thousands of competitors entered bracket, one of the Five Gods of *Melee* won every major tournament hosted from 2008 to 2014 in dominant fashion. 
+Yet, despite the tens of thousands of people who have entered *Melee* tournaments in the past two decades, the roster of top level competition has remained surprisingly stable.
+For years, 5 players reigned supreme over all competitors, leading to their deification as "The Gods of *Melee*."
+No matter how many thousands of competitors entered bracket, one of the Five Gods of *Melee* won every major tournament hosted from 2008 to 2014 in dominant fashion.
 Though 3 of the 5 Gods have retired from tournament competition, the remaining 2- Californian Mang0 and Florida's Hungrybox- continue to jockey for dominance, ranking 3rd and 1st in the world in 2019.
 
-In particular, Juan "Hungrybox" Debiedma, #1 ranked *Melee* player for an unprecedented 3 years in a row (2017, 2018, and 2019) has maintained a formidable record against the field. 
+In particular, Juan "Hungrybox" Debiedma, #1 ranked *Melee* player for an unprecedented 3 years in a row (2017, 2018, and 2019) has maintained a formidable record against the field.
 
-Hungrybox is an outlier not only for his impressive number of tournament victories, but because of his unusual character choice. 
-While most *Melee* pros opt for *Star Fox* representatives such as Fox or Falco, or *Fire Emblem's* Marth, Hungrybox is the lone Jigglypuff in the Top 30 ranked players. 
-In Debiedma's hands, the cute and cuddly Pokemon becomes a fearsome bracket force. 
+Hungrybox is an outlier not only for his impressive number of tournament victories, but because of his unusual character choice.
+While most *Melee* pros opt for *Star Fox* representatives such as Fox or Falco, or *Fire Emblem's* Marth, Hungrybox is the lone Jigglypuff in the Top 30 ranked players.
+In Debiedma's hands, the cute and cuddly Pokemon becomes a fearsome bracket force.
 
-For years, conventional wisdom held that the best way to defeat Hungrybox was to use Fox. 
+For years, conventional wisdom held that the best way to defeat Hungrybox was to use Fox.
 Formerly world #1 Armada, known for being the game's best Princess Peach player, declared it impossible to beat Jigglypuff with Peach.
-Results seemed to prove him correct. From 2009 to 2020, Hungrybox didn't lose a single *game* to a Peach player. 
+Results seemed to prove him correct. From 2009 to 2020, Hungrybox didn't lose a single *game* to a Peach player.
 
-[So, when Hungrybox squared off against William and Mary alum Arjun 'lloD' Malhotra in July 2020](https://www.youtube.com/watch?v=VxGJCIHpCZY), no one expected much of lloD's Peach. 
-When lloD won 3-1, the shocking upset ended one of Melee's longest running streaks of dominance. 
+[So, when Hungrybox squared off against William and Mary alum Arjun 'lloD' Malhotra in July 2020](https://www.youtube.com/watch?v=VxGJCIHpCZY), no one expected much of lloD's Peach.
+When lloD won 3-1, the shocking upset ended one of Melee's longest running streaks of dominance.
 How did lloD manage to win a matchup formerly considered impossible?
+
 # The Data
 
-lloD's victory over Hungrybox is certainly worthy analysis. 
-But how can we generate statistics on the games without time-consuming video analysis? That's where Slippi comes in. 
+lloD's victory over Hungrybox is certainly worthy analysis.
+But how can we generate statistics on the games without time-consuming video analysis? That's where Slippi comes in.
 
 ## [Slippi](https://slippi.gg/)  
 
 
-When *Melee* released in  2001, it released without online functionality. 
-The only way to play was in person, on a bulky CRT television. 
+When *Melee* released in  2001, it released without online functionality.
+The only way to play was in person, on a bulky CRT television.
 
-**Slippi** is a fan-made coding project that implements rollback netcode into the [Dolphin](https://dolphin-emu.org/) emulator. 
+**Slippi** is a fan-made coding project that implements rollback netcode into the [Dolphin](https://dolphin-emu.org/) emulator.
 Not only does Slippi allow users to play lagless matches with opponents across the world, it also saves information about each game, opening up a new universe of analytical possibilities.
 
 ## Processing the .slp Files
 
-Slippi saves files as a series of controller inputs, letting users store replays of their games without saving large video files. 
-To view the replay, Slippi replays the controller inputs in sequence through an emulator, replicating the saved match. 
+Slippi saves files as a series of controller inputs, letting users store replays of their games without saving large video files.
+To view the replay, Slippi replays the controller inputs in sequence through an emulator, replicating the saved match.
 
-What this method of storage means is that to process Slippi files, my code needed to iterate over each file to work through each frame of every game. 
-I use the [Slippi Python Parser](https://github.com/hohav/py-slippi) to read most of the input from the files. 
+What this method of storage means is that to process Slippi files, my code needed to iterate over each file to work through each frame of every game.
+I use the [Slippi Python Parser](https://github.com/hohav/py-slippi) to read most of the input from the files.
 
-First, my code stores each .slp file into a Pandas dataframe, with fields for the characters in the match, the stage, and the filename location for easy access. 
-It also standardizes the files, making sure that Jigglypuff is always player 1, and Peach is always player 2. 
+First, my code stores each .slp file into a Pandas dataframe, with fields for the characters in the match, the stage, and the filename location for easy access.
+It also standardizes the files, making sure that Jigglypuff is always player 1, and Peach is always player 2.
 
-Next, the code records the positions of each character every half-second (30 frames). 
-It keeps this information in stage-specific lists, which we'll use for visualization later. 
+Next, the code records the positions of each character every half-second (30 frames).
+It keeps this information in stage-specific lists, which we'll use for visualization later.
 
-The code next iterates through each game again, examining how each character attacks its opponent. 
-In *Melee,* players jockey for position, weaving in and out of range while trying to bait their opponent to understand. 
-This back-and-forth dance to land a hit is known as **the neutral game.** 
-I use [Swoodivarius'](https://swoodivarius.github.io/Final.html) definition of a neutral win to create a "neutral_wins" list that stores when and where a neutral win happened, as well as what move was used to hit the opponent. 
-This code runs twice, once for Jigglypuff, and once for Peach. 
+The code next iterates through each game again, examining how each character attacks its opponent.
+In *Melee,* players jockey for position, weaving in and out of range while trying to bait their opponent to understand.
+This back-and-forth dance to land a hit is known as **the neutral game.**
+I use [Swoodivarius'](https://swoodivarius.github.io/Final.html) definition of a neutral win to create a "neutral_wins" list that stores when and where a neutral win happened, as well as what move was used to hit the opponent.
+This code runs twice, once for Jigglypuff, and once for Peach.
 
 # Visualization
 
 
-My code generates two different visualizations, each with their own data and purpose. 
+My code generates two different visualizations, each with their own data and purpose.
 The background pictures of each stage are pulled from [Schmooblidon's IKneeData resource](http://ikneedata.com/) and are included in the GitHub folder for my code.
 
 ## Position Heatmaps
 
-These graphics were generated using [Seaborne's Kernel Density Estimate plot](https://seaborn.pydata.org/generated/seaborn.kdeplot.html) in a similar fashion to the position heatmaps generated by Swoodivarius' GitHub referenced earlier. 
+These graphics were generated using [Seaborne's Kernel Density Estimate plot](https://seaborn.pydata.org/generated/seaborn.kdeplot.html) in a similar fashion to the position heatmaps generated by Swoodivarius' GitHub referenced earlier.
 Each graphic shows where characters spent time on the stage using the half-second sample intervals we gathered earlier.
 Noteworthy is the small bubble under Dreamland visible on the Peach visualization.
-When lloD had assured victory in the last game of the set, he ran the clock out by floating underneath Dreamland for the last seconds of the game. 
+When lloD had assured victory in the last game of the set, he ran the clock out by floating underneath Dreamland for the last seconds of the game.
 
 ### Puff
 ![Jigglypuff Position Heatmaps](https://i.imgur.com/hIOYn5S.mp4)
@@ -79,13 +83,13 @@ When lloD had assured victory in the last game of the set, he ran the clock out 
 
 ## Neutral Win Locations
 
-These visualizations show the points where each character won a neutral exchange. 
-The points are colorcoded to represent which move that character won the exchange using. 
-The points represent the position of the attacking character when their move hit, with the exception of Peach's turnip points. 
-Peach's turnips are thrown projectiles, and each turnip point represents where Peach's opponent was when they were hit by a turnip. 
+These visualizations show the points where each character won a neutral exchange.
+The points are colorcoded to represent which move that character won the exchange using.
+The points represent the position of the attacking character when their move hit, with the exception of Peach's turnip points.
+Peach's turnips are thrown projectiles, and each turnip point represents where Peach's opponent was when they were hit by a turnip.
 
-Spectators of the lloD vs. Hungrybox set remarked on lloD's excellent usage of turnips to control space. 
-Note how the placement of the turnip points shows lloD successfully cornering Hungrybox. 
+Spectators of the lloD vs. Hungrybox set remarked on lloD's excellent usage of turnips to control space.
+Note how the placement of the turnip points shows lloD successfully cornering Hungrybox.
 
 ### Puff
 ![Jigglypuff Neutral Win Points](https://i.imgur.com/kBjjF4u.mp4)
@@ -96,18 +100,19 @@ Note how the placement of the turnip points shows lloD successfully cornering Hu
 # Future Research
 
 A large part of my hours spent on this project went towards creating an image library for each character's moveset. My idea was to create scatterplots of neutral wins similar to the ones above, but with partially-transparent pictures of the characters performing the moves. This way, the scatterplots would do a better job visually displaying their information, and would also show what area each move was threatening. This method of display would also account for which direction a character was facing when it won neutral. This would allow more detailed analysis of how the characters interact based on their stage positioning. Additionally, since the goal of *Melee* is to knock the opponent offstage, the direction your hit sends the opponent is a significant factor in judging risk and reward. Unfortunately, I was unable to find a python package that satisfactorily allowed me to implement this idea.
+
 ## Combined
 
 The two graphics above are interesting, but the hope of this project was to garner a more detailed analysis of how and where lloD won neutral against Hungrybox. There's many reasons a character might spend more time on one side of the stage than the other, including personal preference, controller ergonomics, or respawn point location. All else being equal, we would expect a character's position heatmap and neutral win positions to roughly mirror each other. Overlaying the two is a rudimentary way to analyze if a character disproportionately wins neutral in certain areas of the stage. Creating and analyzing these overlays will be my next step on the project.
 
-These graphics were created using a combination of Seaborn's Scatterplot function and Seaborn's KDE Plot function. 
+These graphics were created using a combination of Seaborn's Scatterplot function and Seaborn's KDE Plot function.
 
 I hope to continue to work on this project in the future, with the eventual goal of accepting user input and creating custom graphics from large libraries of game files. Thank you for reading, and congratulations lloD!
 
 # Sources and Thanks
 Thank you to [Hohav and his Slippi Python Parser](https://github.com/hohav/py-slippi), without whom this project would not have been possible
 
-Thank you to [Swoodivarius](https://swoodivarius.github.io/Final.html), who's code I frequently consulted to learn how to work with the .slp file format, and who's project inspired mine. I used his code to find and save neutral wins. 
+Thank you to [Swoodivarius](https://swoodivarius.github.io/Final.html), who's code I frequently consulted to learn how to work with the .slp file format, and who's project inspired mine. I used his code to find and save neutral wins.
 
 Thank you to [Fizzi and the Slippi Team](www.slippi.gg) for creating and releasing amazing free software.
 
