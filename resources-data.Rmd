@@ -124,6 +124,9 @@ output:
 [List of GIS data sources](https://en.wikipedia.org/wiki/List_of_GIS_data_sources)
 :   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
 
+[Movebank](https://www.movebank.org/cms/movebank-main)
+:   Hosted by the Max Planck Institute of Animal Behavior in coordination with the North Carolina Museum of Natural Sciences, the Ohio State University and the University of Konstanz, Movebank is a free online platform that helps researchers manage, share, analyze and archive animal movement data.
+
 [National Land Cover Database (NLDC)](https://www.mrlc.gov/index.php)
 :   Provides spatial reference and descriptive data for characteristics of the land surface such as thematic class (for example, urban, agriculture, and forest), percent impervious surface, and percent tree canopy cover.
 
