@@ -10,6 +10,7 @@ library(knitr)
 myfiles <- list.files(pattern = "^about-.*Rmd$", ignore.case = TRUE)
 coders <- c()
 mdlinks <- c()
+prlinks <- c()
 semester <- c()
 
 for (f in myfiles){
@@ -25,8 +26,21 @@ for (f in myfiles){
     } else {
         semester <- c(semester, "&nbsp;")
     }
+    projrmd <- list.files(pattern=paste("project-", ghuser, ".Rmd", sep=""), ignore.case = TRUE)
+    if (length(projrmd) == 1) {
+        projhtml <- sub("Rmd", "html", projrmd[1], ignore.case = TRUE)
+        projmeta <- rmarkdown::yaml_front_matter(projrmd[1])
+        if (! is.null(projmeta$title)){
+            projlink <- paste(c("[", projmeta$title, "](", projhtml, ")"), collapse = "")
+        } else {
+            projlink <- paste(c("[Untitled](", projhtml, ")"), collapse = "")
+        }
+    } else {
+        projlink <- "&nbsp;"
+    }
+    prlinks <- c(prlinks, projlink)
 }
-mydata <- data.frame(coders, mdlinks, semester)
-names(mydata) <- c("Team Member", "Coder Page", "Semester")
+mydata <- data.frame(coders, semester, mdlinks, prlinks)
+names(mydata) <- c("Team Member&nbsp;&nbsp;&nbsp;&nbsp;", "Semester&nbsp;&nbsp;&nbsp;&nbsp;", "About Page", "Project")
 kable(mydata)
 ```
