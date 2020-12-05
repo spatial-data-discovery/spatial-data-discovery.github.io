@@ -5,18 +5,18 @@ semester: Fall 2020
 ---
 
 <div class="video-wrapper">
-  <video class="video-4x4mw" controls preloaded="true" autoplay loop muted>
+  <video id="scaledvideo" controls preloaded="true" autoplay loop muted>
     <source src="https://drdavis.space/teaching/ds/sdd/media/2020/11/duck_movement.mp4">
   </video>
 </div>
 ## Project Description
-During self-quarantine, I picked up a new hobby: bird-watching. Since then, my interest in birds has dramatically increased, which is exactly why I decided to find a data set about birds. Over the past few months, I noticed that some birds that usually came to my bird feeders suddenly vanished. I soon learned that this was because some birds migrated due to changes in the seasons, while others did not. This is why I decided to find a dataset that keeps track of bird movement, which will help determine whether a certain species of birds follows a specific migration pattern. 
+During self-quarantine, I picked up a new hobby: bird-watching. Since then, my interest in birds has dramatically increased, which is exactly why I decided to find a data set about birds. Over the past few months, I noticed that some birds that usually came to my bird feeders suddenly vanished. I soon learned that this was because some birds migrated due to changes in the seasons, while others did not. This is why I decided to find a dataset that keeps track of bird movement, which will help determine whether a certain species of birds follows a specific migration pattern.
 
-In this project, I found a CSV file on Pacific Sea Duck Migration, copied bits of it into a new CSV file using Python[^python], and visualized it using QGIS[^qgis]. By looking at the animation I created, it is safe to say that pacific sea ducks migrate from Southern British Columbia to northern Canada every spring. 
+In this project, I found a CSV file on Pacific Sea Duck Migration, copied bits of it into a new CSV file using Python[^python], and visualized it using QGIS[^qgis]. By looking at the animation I created, it is safe to say that pacific sea ducks migrate from Southern British Columbia to northern Canada every spring.
 
 ## Data Description and Process
 The csv data file that contains the specific locations of the individual birds came from MoveBank.org[^movebank], which is an online database for animal tracking data.
-I created my animation by following a procedure done by a jouranlist named Anita Graser[^agraser]. This involved adding a CSV file to QGIS as a Delimited Text Layer and running TimeManager to create a visualization. I tested out the original csv file that I found and decided to perform the visualization procedure on it. However, the visualization turned out to be very messy, because it contained too many visual data points, and QGIS crashed as a result. This is why I decided to write a Python script to obtain information on only 20 individual ducks (identified by distinct tag numbers). The information that I obtained included the Time Stamp (date where data was recorded), longitude location, latitude location, and the specific tag numbers of each individual duck. I also decided to only obtain data that was collected on May 2014 to simply the data visualization process. 
+I created my animation by following a procedure done by a jouranlist named Anita Graser[^agraser]. This involved adding a CSV file to QGIS as a Delimited Text Layer and running TimeManager to create a visualization. I tested out the original csv file that I found and decided to perform the visualization procedure on it. However, the visualization turned out to be very messy, because it contained too many visual data points, and QGIS crashed as a result. This is why I decided to write a Python script to obtain information on only 20 individual ducks (identified by distinct tag numbers). The information that I obtained included the Time Stamp (date where data was recorded), longitude location, latitude location, and the specific tag numbers of each individual duck. I also decided to only obtain data that was collected on May 2014 to simply the data visualization process.
 
 To visualize this data, I started by adding the original CSV file into my QGIS project as a delimited text layer and configured Time Manager. Then, I exported the animation video and converted it into a gif using EXGIF[^ezgif].
 
