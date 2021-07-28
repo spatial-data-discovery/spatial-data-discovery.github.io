@@ -30,6 +30,9 @@ output:
 [Alaska Hydrography Database](http://akhydro.uaa.alaska.edu/)
 :   Provides updated hydrography (surface water such as streams, rivers and watershed areas) data that meet statewide and national standards.
 
+[American Panorama](https://dsl.richmond.edu/panorama/)
+:   A historical atlas of the United States for the twenty-first century combining cutting-edge research with innovative interactive mapping techniques, designed to appeal to anyone with an interest in American history or a love of maps.
+
 [ArcGIS Living Atlas - Indicators of the Planet](https://experience.arcgis.com/experience/003f05cc447b46dc8818640c38b69b83/)
 :   See the latest in global issues with links to their respective open data portals.
 
@@ -38,6 +41,12 @@ output:
 
 [Climate Data Online Search](https://www.ncdc.noaa.gov/cdo-web/search)
 :   Find past weather and climate data provided by NOAA's National Centers for Environmental Information (NCDC).
+
+[Copernicus Land Monitoring Service](https://land.copernicus.eu/)
+:   [Copernicus](https://www.copernicus.eu/en) is the European Union's Earth observation programme that draws from satellite and in-situ (non-space) data.
+    Information from this programme is provided through six thematic services: land, marine, atmosphere, climate change, emergency management and security.
+    All information is free and openly accessible to all users.
+    The Land Monitoring Service provides access to bio-geophysical products, land cover and land use, environmental hotspots, and satellite imagery.
 
 [Data.gov](https://www.data.gov/)
 :   The home of the U.S. Government's open data.
@@ -100,6 +109,11 @@ output:
 [Global Forest Watch](https://data.globalforestwatch.org/)
 :   Committed to providing the highest-quality data on the world's forests.
 
+[Global Shoreline Dataset](https://dnc.nga.mil/PrototypeGSD.php)
+:   The NGA Office of Global Navigation, Maritime Domain is in the process of developing a new version of World Vector Shoreline (WVS) and in support of this effort has acquired a satellite-derived Global Shoreline Data set.
+    This new Global Shoreline Data (GSD) set is an approximation of the High Water Line; it is NOT a Mean High Water Line.
+    Continuous shoreline data, approximately between 60 degrees north and 56 degrees south, are being made available.
+
 [Google Dataset Search](https://toolbox.google.com/datasetsearch)
 :   Find datasets stored hosted in thousands of repositories across the Web through simple keyword search.
 
@@ -109,6 +123,10 @@ output:
 
 [Harmonized World Soil Database v 1.2](https://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/)
 :   Global elevation, slope, and aspect data in 5 min and 30 arc second resolutions.
+
+[Homeland Infrastructure Foundation-Level Data (HIFLD)](https://hifld-geoplatform.opendata.arcgis.com/)
+:   This site provides national foundation-level geospatial data within the open public domain that can be useful to support community preparedness, resiliency, research, and more.
+    The data is available for download as CSV, KML, Shapefile, and accessible via web services to support application development and data visualization.
 
 [Humanitarian Data Exchange (HDX)](https://data.humdata.org/)
 :   Find, share and use humanitarian data all in one place.
@@ -133,6 +151,10 @@ output:
 [List of GIS data sources](https://en.wikipedia.org/wiki/List_of_GIS_data_sources)
 :   Wikipedia guide of GIS data sources (including some geoportals) that provide information that can be used in GIS and spatial databases for purposes of geospatial analysis and cartographic mapping.
 
+[Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/)
+:   The Home Owners' Loan Corporation (HOLC), between 1935 and 1940, created thousands of area descriptions using data and evaluations organized by local real estate professionals, such that, in each city, grades could be assigned to residential neighborhoods that reflect their "mortgage security" that would then be visualized on color-coded maps.
+    These data, under CC-BY-NC-SA, are now available to download in GIS data formats (e.g., Shapefile, GeoJSON, and imagery).
+
 [Movebank](https://www.movebank.org/cms/movebank-main)
 :   Hosted by the Max Planck Institute of Animal Behavior in coordination with the North Carolina Museum of Natural Sciences, the Ohio State University and the University of Konstanz, Movebank is a free online platform that helps researchers manage, share, analyze and archive animal movement data.
 
@@ -142,8 +164,15 @@ output:
 [Natural Earth](http://www.naturalearthdata.com/)
 :   A public domain map dataset featuring vector and raster data.
 
+[Open Data Inception](https://opendatainception.io/#)
+:   An interactive map of 2k+ open data portals from around the world.
+    Opendatasoft's mission is to support organizations by helping people access data and make sense of it and they offer market-leading data sharing solutions that allow you to easily publish, manage, combine, analyze, visualize, and share data in a variety of formats on a single platform.
+
 [OpenTopography](https://opentopography.org/)
 :   OpenTopography aims to democratize access to high-resolution topographic data in a manner that serves users with varied expertise, application domains, and computing resources.
+
+[PRISM Climate Group](https://www.prism.oregonstate.edu/)
+:   A gathering of climate observations from a wide range of monitoring networks available at multiple spatial/temporal resolutions, covering the period from 1895 to the present.
 
 [Global Shark Attack File](http://www.sharkattackfile.net/)
 :   A time-stamped semi-geolocated incident log of global shark attacks.
@@ -180,3 +209,8 @@ output:
 
 [Virginia GIS Clearinghouse](https://vgin.maps.arcgis.com/home/index.html)
 :   A repository of geospatial data produced and used by state agencies in Virginia (see Virginia Geospatial Clearinghouse Nodes for open data portals of every available county or municipality in VA).
+
+[World Vector Shoreline](https://shoreline.noaa.gov/data/datasheets/wvs.html)
+:   The original World Vector Shoreline (WVS) was a digital data file containing the shorelines, international boundaries, and country names of the world.
+    WVS data were processed into the National Geospatial-Intelligence Agency (NGA) Vector Product Format in 1995, resulting in the highest resolution demarcation of coastline globally available, the World Vector Shoreline Plus (now a pay-for service).
+    A free and easy-to-use interface is available for the Global Shoreline Dataset (GSD) at the NGA's website: https://dnc.nga.mil/PrototypeGSD.php.
