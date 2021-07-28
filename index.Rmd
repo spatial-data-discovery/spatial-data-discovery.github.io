@@ -8,7 +8,6 @@ title: "DATA 431 - Spatial Data Discovery"
 Most, if not all, of today's grand challenges (e.g., food, water and energy security) can be described spatially from regional to global scales and, while several individual disciplines contend to address these challenges, there is one key factor that they all have in common: the need for data.
 Despite our being in an age rich in data, many of the critical datasets needed for our understanding and prediction of our world are, in fact, quite limited.
 
-In this capstone course, you will get the opportunity to utilize your Python programming skills (writing scripts and creating subroutines) to connect to various types of data (e.g., ASCII raster, GeoJSON, HDF5, and NetCDF), synthesize these data to unlock new understanding (using methods such as spatial scaling, outlier identification, and gap-filling), and create visualizations using open-source GIS software.
-You will present to the world your own story of spatial data discovery using R-based markdown to write professionally for the web.
+In this capstone course, you will get the opportunity to utilize your Python programming skills (writing scripts and creating subroutines) to connect to various types of data (e.g., GeoJSON, ASC, HDF5 and NetCDF), synthesize these data to unlock new understanding (using methods such as spatial scaling and gap-filling), create visualizations using open-source GIS software, and present to the world your own story of spatial data discovery professionally written for the web.
 
 I will take you through my own journey of data discovery, provide you with the know-how for accessing large data repositories, demonstrate methods for data harmonizing, processing, modeling and visualizing, and challenge you to think spatially.
