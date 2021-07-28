@@ -25,6 +25,12 @@ It accepts video streams from either a webcam or pre-recorded video files, and t
 I thought that this could be useful for those who are visually-impaired, who may have difficulty reading facial expressions while they are speaking with someone.
 This file provides a real-time indicator of the emotional state of the person they are communicating with through audio and visual outputs of the person's emotional state.
 
+See also my script called [Make Art (.py)](scripts/make_art.py).
+
+<audio controls>
+<source src="audio/make_art.mp3">
+</audio>
+
 
 ``` python
 #The corresponding video files used towards the end of the file are saved to my public Machine Learning repository

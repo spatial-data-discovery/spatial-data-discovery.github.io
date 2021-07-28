@@ -22,6 +22,10 @@ Bio
 
 My utility script is a simple program that reads in numerical data from a text file and provides a brief statistical overview. This includes the mean, median, mode, variance, standard deviation, skewness, and kurtosis of the data.  
 
+<audio controls>
+<source src="audio/statistical_overview.mp3">
+</audio>
+
 ```{python musicman, eval=FALSE}
 #Created by Jamil Abbas
 

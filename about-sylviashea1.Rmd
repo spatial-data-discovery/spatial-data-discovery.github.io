@@ -12,7 +12,7 @@ semester: "Fall 2020"
 
 **Things I enjoy**
 :   - My dog, Ronan
-    - Caring for my carnivorous plants 
+    - Caring for my carnivorous plants
     - Painting
 
 ### Sample Script:
@@ -20,6 +20,10 @@ semester: "Fall 2020"
 
 This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot.
 It saves the plot as a .png in the working directory.
+
+<audio controls>
+<source src="audio/barchart_generator.mp3">
+</audio>
 
 ```{python barchart_generator, eval = FALSE}
 # barchart_generator.py
@@ -30,9 +34,9 @@ It saves the plot as a .png in the working directory.
 
 # Last Edit: 2020-09-03
 
-# Purpose: This script takes a .csv file and allows the 
+# Purpose: This script takes a .csv file and allows the
 # user to specify the x and y variables to be plotted.
-# It saves the figure as a .png. 
+# It saves the figure as a .png.
 
 ####################
 # Required Modules #
@@ -53,12 +57,12 @@ def generate_barchart(df,x_col,y_col,title):
     # Fig specs
     fig, ax = plt.subplots()
     ax.set_ylabel(y_col,fontsize=16,fontname=fontname)
-    ax.set_xlabel(x_col,fontsize=16,fontname=fontname) 
+    ax.set_xlabel(x_col,fontsize=16,fontname=fontname)
     ax.tick_params(axis='x',labelsize=12)
     ax.tick_params(axis='y',labelsize=12)
     for i in ['top','right']:
         ax.spines[i].set_visible(False)
-    # Bar plot 
+    # Bar plot
     ax.bar(x=df[x_col], height=df[y_col], color=color)
     ax.set_title(title,fontsize=20,fontname=fontname)
     plt.savefig(title, bbox_inches='tight', dpi=1000)
@@ -72,7 +76,7 @@ def main():
         sys.stdout.flush()
         path = input()
 
-        try: 
+        try:
             df = pd.read_csv(path)
         except FileNotFoundError:
             print('File not found!')
@@ -94,11 +98,11 @@ def main():
         sys.stdout.write('Input title (will also be the name of the .png file) ')
         title = str(input())
 
-        # Plot 
+        # Plot
         print('\n-------------------'
                 'Generating Plot'
                 '-------------------')
-        generate_barchart(df,x_col,y_col,title) 
+        generate_barchart(df,x_col,y_col,title)
         print('\n-------------------'
                 'Plot Generated!'
                 '-------------------')

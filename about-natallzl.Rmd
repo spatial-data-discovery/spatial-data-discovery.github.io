@@ -22,6 +22,10 @@ semester: "Fall 2020"
 
 I always have trouble deciding what to watch next, so I wanted to create a useful script that would choose for me.
 
+<audio controls>
+<source src="audio/what_to_watch.mp3">
+</audio>
+
 ```{python moviemagic, eval=FALSE}
 #what_to_watch.py
 #

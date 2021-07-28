@@ -23,6 +23,10 @@ organize them, and then merge them into a multi-page PDF. I wrote this script be
 through this process manually when submitting assignments, and I figured I could save some time by writing
 a program to do it.
 
+<audio controls>
+<source src="audio/image_merger.mp3">
+</audio>
+
 ```{python merger, eval=FALSE}
 import os
 import sys

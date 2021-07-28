@@ -359,6 +359,9 @@ $(document).ready(function () {
 <div id="sample-script" class="section level1">
 <h1>SAMPLE SCRIPT:</h1>
 <p><a href="scripts/parsehtml.py">parsehtml (.py)</a></p>
+<audio controls>
+<source src="audio/parsehtml.mp3">
+</audio>
 <pre><code>{
     #works with packhacker.com, e.g. https://packhacker.com/travel-gear/heimplanet/neck-pouch-a5/
     import urllib.request, json, re, argparse #re needed to replace whitespace down the line
@@ -367,7 +370,7 @@ $(document).ready(function () {
     def parsehtml(url):
         with urllib.request.urlopen(url) as req:
             contents = req.read() #this will be all the text
-        soup = BeautifulSoup(contents, features=&#39;html.parser&#39;) 
+        soup = BeautifulSoup(contents, features=&#39;html.parser&#39;)
         text = soup.find_all([&#39;p&#39;,&#39;h2&#39;]) #I want all text in paragraphs (p) and headings (h2)
         review = []
         for i in text:
@@ -382,7 +385,7 @@ $(document).ready(function () {
         return &quot;done&quot;
 
     if __name__ == &#39;__main__&#39;:
-    
+
         parser = argparse.ArgumentParser(description=&#39;scrape a packhacker.com page by adding the url after py file name. You MUST have bs4 installed!&#39;)
         parser.add_argument(&#39;website&#39;,type=str, metavar=&#39;&#39;,help=&#39;input your website here&#39;)
         args = parser.parse_args()

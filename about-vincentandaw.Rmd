@@ -22,6 +22,11 @@ semester: "Fall 2020"
 
 # SAMPLE SCRIPT:
 [parsehtml (.py)](scripts/parsehtml.py)
+
+<audio controls>
+<source src="audio/parsehtml.mp3">
+</audio>
+
 ```
 {
 	#works with packhacker.com, e.g. https://packhacker.com/travel-gear/heimplanet/neck-pouch-a5/
@@ -31,7 +36,7 @@ semester: "Fall 2020"
 	def parsehtml(url):
 		with urllib.request.urlopen(url) as req:
 			contents = req.read() #this will be all the text
-		soup = BeautifulSoup(contents, features='html.parser') 
+		soup = BeautifulSoup(contents, features='html.parser')
 		text = soup.find_all(['p','h2']) #I want all text in paragraphs (p) and headings (h2)
 		review = []
 		for i in text:
@@ -46,7 +51,7 @@ semester: "Fall 2020"
 		return "done"
 
 	if __name__ == '__main__':
-    
+
 		parser = argparse.ArgumentParser(description='scrape a packhacker.com page by adding the url after py file name. You MUST have bs4 installed!')
 		parser.add_argument('website',type=str, metavar='',help='input your website here')
 		args = parser.parse_args()

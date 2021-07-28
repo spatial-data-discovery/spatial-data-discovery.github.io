@@ -30,6 +30,10 @@ It assigns two sentiment scores, assessing subjectivity and polarity.
 The sentiment scores are added to the .csv as a new column,
 then the .csv with sentiment scores is exported as a new file.
 
+<audio controls>
+<source src="audio/sentiment_analysis.mp3">
+</audio>
+
 ``` {python slots, eval=FALSE}
 # sentiment_analysis.py
 

@@ -18,7 +18,7 @@ semester: "Fall 2020"
 
 ### Things I Like:
 - Collecting post cards
-- Using my espresso machine to make fun coffee drinks 
+- Using my espresso machine to make fun coffee drinks
 - Trying new recipes
 
 
@@ -27,6 +27,10 @@ semester: "Fall 2020"
 [grade_calculator (.py)](scripts/grade_calculator.py)
 
 This script takes each grade from the Spatial Data Discovery course as a user input and outputs a final percentage and letter grade.
+
+<audio controls>
+<source src="audio/grade_calculator.mp3">
+</audio>
 
 ``` {python slots, eval=FALSE}
 
@@ -53,13 +57,13 @@ import argparse
 #      Main       #
 ###################
 if __name__ == '__main__':
-    
+
     # --help command line description
     parser = argparse.ArgumentParser(
     description = "This script will calculate your final grade based on the percentage grades that you input for each assignment.")
     args = parser.parse_args()
 
-    
+
     ################################
     # Calculating Percentage Grade #
     ################################
@@ -74,7 +78,7 @@ if __name__ == '__main__':
     print('Section 1: Discussion Grade')
     #
     #The user is prompted to enter a grade for each assingment
-    #The percentage grade will be cast as an integer an assinged to a variable 
+    #The percentage grade will be cast as an integer an assinged to a variable
     #Each percentage will be recalculated from percent to point, then appended to the grades list
     #
     #Discussion Grade

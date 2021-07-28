@@ -21,8 +21,12 @@ semester: "Fall 2020"
 [file remover (.py)](scripts/file_remover.py)
 
 This script takes in the path to a directory from which you want to delete all
-files of a certain type and what that type/extension is (e.g. .py or .ini) and 
+files of a certain type and what that type/extension is (e.g. .py or .ini) and
 removes all files of that type within that directory.
+
+<audio controls>
+<source src="audio/file_remover.mp3">
+</audio>
 
 ``` {python file_remover, eval=FALSE}
 
@@ -35,7 +39,7 @@ removes all files of that type within that directory.
 # Last Edit: 2020-09-03
 
 # This script takes in the path to a directory from which you want to delete all
-# files of a certain type and what that type/extension is (e.g. .py or .ini) and 
+# files of a certain type and what that type/extension is (e.g. .py or .ini) and
 # removes all files of that type within that directory.
 
 ####################

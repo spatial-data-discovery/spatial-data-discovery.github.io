@@ -26,6 +26,10 @@ See also my [Music Randomizer (.py)](scripts/music_randomizer.py) for those in n
 
 Enjoy!
 
+<audio controls>
+<source src="audio/rename.mp3">
+</audio>
+
 ```{python rename, eval=FALSE}
 #!/usr/bin/env python3
 #

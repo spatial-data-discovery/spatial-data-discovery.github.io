@@ -445,15 +445,18 @@ $(document).ready(function () {
 <p><a href="scripts/live_aviation.py">Live Aviation Data (.py)</a></p>
 <p>I enjoy tracking and visualizing aviation data, as there is so much going on above us that we do not see as we go about our daily lives. Thus, I wrote this script to be able to access and store open source aviation data through <a href="https://opensky-network.org/">OpenSky Network</a>. I have used this data to visualize and learn more about what aircraft are flying above us.</p>
 <p>I hope you too find interest in this dataset!</p>
+<audio controls>
+<source src="audio/live_aviation.mp3">
+</audio>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Andrew Caietti</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co">#</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co"># live_aviation.py</span></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="co">#</span></a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="co"># Recent Edit: 2020-09-03</span></a>
 <a class="sourceLine" id="cb1-6" title="6"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co"># This script calls an opensource API from OpenSkyNetwork.com. </span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># This script calls an opensource API from OpenSkyNetwork.com.</span></a>
 <a class="sourceLine" id="cb1-8" title="8"><span class="co"># The data can then be saved as a CSV or worked with in its converted two-dimensional</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># array format. Each sub-array represents an individual aircraft with </span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># array format. Each sub-array represents an individual aircraft with</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="co"># 17 total fields.</span></a>
 <a class="sourceLine" id="cb1-11" title="11"></a>
 <a class="sourceLine" id="cb1-12" title="12"></a>
@@ -462,7 +465,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-15" title="15"><span class="co"># MODULES NEEDED #</span></a>
 <a class="sourceLine" id="cb1-16" title="16"><span class="co">##################</span></a>
 <a class="sourceLine" id="cb1-17" title="17"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="im">from</span> opensky_api <span class="im">import</span> OpenSkyApi </a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="im">from</span> opensky_api <span class="im">import</span> OpenSkyApi</a>
 <a class="sourceLine" id="cb1-19" title="19"><span class="im">import</span> argparse</a>
 <a class="sourceLine" id="cb1-20" title="20"><span class="im">from</span> time <span class="im">import</span> gmtime, strftime</a>
 <a class="sourceLine" id="cb1-21" title="21"><span class="im">from</span> tkinter.filedialog <span class="im">import</span> askdirectory</a>
@@ -472,7 +475,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-25" title="25"><span class="co">###############</span></a>
 <a class="sourceLine" id="cb1-26" title="26"></a>
 <a class="sourceLine" id="cb1-27" title="27"><span class="co"># Generate the a 2-dimensional array where each sub-array is an individual aircraft</span></a>
-<a class="sourceLine" id="cb1-28" title="28"><span class="kw">def</span> RetrievePlaneData(): </a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="kw">def</span> RetrievePlaneData():</a>
 <a class="sourceLine" id="cb1-29" title="29">    api <span class="op">=</span> OpenSkyApi()  <span class="co"># Call the API</span></a>
 <a class="sourceLine" id="cb1-30" title="30">    states <span class="op">=</span> api.get_states()</a>
 <a class="sourceLine" id="cb1-31" title="31">    main_array <span class="op">=</span> []</a>
@@ -490,7 +493,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-43" title="43">        temp_array[<span class="dv">9</span>]<span class="op">=</span>s.heading</a>
 <a class="sourceLine" id="cb1-44" title="44">        temp_array[<span class="dv">10</span>]<span class="op">=</span>s.vertical_rate</a>
 <a class="sourceLine" id="cb1-45" title="45">        temp_array[<span class="dv">11</span>]<span class="op">=</span>s.on_ground</a>
-<a class="sourceLine" id="cb1-46" title="46">        temp_array[<span class="dv">12</span>]<span class="op">=</span>s.sensors </a>
+<a class="sourceLine" id="cb1-46" title="46">        temp_array[<span class="dv">12</span>]<span class="op">=</span>s.sensors</a>
 <a class="sourceLine" id="cb1-47" title="47">        temp_array[<span class="dv">13</span>]<span class="op">=</span>s.geo_altitude</a>
 <a class="sourceLine" id="cb1-48" title="48">        temp_array[<span class="dv">14</span>]<span class="op">=</span>s.squawk</a>
 <a class="sourceLine" id="cb1-49" title="49">        temp_array[<span class="dv">15</span>]<span class="op">=</span>s.spi   </a>
@@ -501,7 +504,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-54" title="54"></a>
 <a class="sourceLine" id="cb1-55" title="55"><span class="co"># Pass a path name, where you would like to save the file, and the data you called from RetrievePlaneData, to generate a CSV file on your desktop.</span></a>
 <a class="sourceLine" id="cb1-56" title="56"><span class="kw">def</span> PlaneDatatoCSV(path_name,data):</a>
-<a class="sourceLine" id="cb1-57" title="57">    df <span class="op">=</span> pd.DataFrame(data) </a>
+<a class="sourceLine" id="cb1-57" title="57">    df <span class="op">=</span> pd.DataFrame(data)</a>
 <a class="sourceLine" id="cb1-58" title="58">    df.columns <span class="op">=</span> [<span class="st">&#39;icao24&#39;</span>,<span class="st">&#39;Callsign&#39;</span>,<span class="st">&#39;Origin Country&#39;</span>,<span class="st">&#39;Time Position&#39;</span>,<span class="st">&#39;Last Contact&#39;</span>,<span class="st">&#39;Longitude&#39;</span>,<span class="st">&#39;Latitude&#39;</span>,<span class="st">&#39;Baro Altitude&#39;</span>,<span class="st">&#39;Velocity&#39;</span>,<span class="st">&#39;Heading&#39;</span>,<span class="st">&#39;Vertical Rate&#39;</span>,<span class="st">&#39;On Ground&#39;</span>,<span class="st">&#39;Sensors&#39;</span>,<span class="st">&#39;Geo Altitude&#39;</span>,<span class="st">&#39;Squawk&#39;</span>,<span class="st">&#39;Spi&#39;</span>,<span class="st">&#39;Position Source&#39;</span>]</a>
 <a class="sourceLine" id="cb1-59" title="59">    ts <span class="op">=</span> strftime(<span class="vs">r&#39;%Y_%m_</span><span class="sc">%d</span><span class="vs">__%H_%M_%S&#39;</span>) <span class="co"># Record current time to time-stamp the file</span></a>
 <a class="sourceLine" id="cb1-60" title="60">    df.to_csv(path_name<span class="op">+</span><span class="vs">r&quot;\Aviation_Data__&quot;</span><span class="op">+</span>ts<span class="op">+</span><span class="vs">r&#39;.csv&#39;</span>,index<span class="op">=</span><span class="va">False</span>,header<span class="op">=</span><span class="va">True</span>)</a>

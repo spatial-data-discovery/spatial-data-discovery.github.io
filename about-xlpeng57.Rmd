@@ -20,6 +20,10 @@ semester: "Fall 2020"
 ### Sample script
 [Rankings Calculator (.py)](scripts/ranking_calculator.py)
 
+<audio controls>
+<source src="audio/ranking_calculator.mp3">
+</audio>
+
 ```
 # Xianglu Peng
 #

@@ -443,6 +443,9 @@ $(document).ready(function () {
 <h3>Sample Script:</h3>
 <p><a href="scripts/barchart_generator.py">barchart generator (.py)</a></p>
 <p>This script takes a .csv file and allows the user to specify which columns will be the x and y variables in the plot. It saves the plot as a .png in the working directory.</p>
+<audio controls>
+<source src="audio/barchart_generator.mp3">
+</audio>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># barchart_generator.py</span></a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co"># By: Sylvia Shea</span></a>
@@ -451,9 +454,9 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-6" title="6"></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="co"># Last Edit: 2020-09-03</span></a>
 <a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># Purpose: This script takes a .csv file and allows the </span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co"># Purpose: This script takes a .csv file and allows the</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="co"># user to specify the x and y variables to be plotted.</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co"># It saves the figure as a .png. </span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co"># It saves the figure as a .png.</span></a>
 <a class="sourceLine" id="cb1-12" title="12"></a>
 <a class="sourceLine" id="cb1-13" title="13"><span class="co">####################</span></a>
 <a class="sourceLine" id="cb1-14" title="14"><span class="co"># Required Modules #</span></a>
@@ -474,12 +477,12 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-29" title="29">    <span class="co"># Fig specs</span></a>
 <a class="sourceLine" id="cb1-30" title="30">    fig, ax <span class="op">=</span> plt.subplots()</a>
 <a class="sourceLine" id="cb1-31" title="31">    ax.set_ylabel(y_col,fontsize<span class="op">=</span><span class="dv">16</span>,fontname<span class="op">=</span>fontname)</a>
-<a class="sourceLine" id="cb1-32" title="32">    ax.set_xlabel(x_col,fontsize<span class="op">=</span><span class="dv">16</span>,fontname<span class="op">=</span>fontname) </a>
+<a class="sourceLine" id="cb1-32" title="32">    ax.set_xlabel(x_col,fontsize<span class="op">=</span><span class="dv">16</span>,fontname<span class="op">=</span>fontname)</a>
 <a class="sourceLine" id="cb1-33" title="33">    ax.tick_params(axis<span class="op">=</span><span class="st">&#39;x&#39;</span>,labelsize<span class="op">=</span><span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb1-34" title="34">    ax.tick_params(axis<span class="op">=</span><span class="st">&#39;y&#39;</span>,labelsize<span class="op">=</span><span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb1-35" title="35">    <span class="cf">for</span> i <span class="kw">in</span> [<span class="st">&#39;top&#39;</span>,<span class="st">&#39;right&#39;</span>]:</a>
 <a class="sourceLine" id="cb1-36" title="36">        ax.spines[i].set_visible(<span class="va">False</span>)</a>
-<a class="sourceLine" id="cb1-37" title="37">    <span class="co"># Bar plot </span></a>
+<a class="sourceLine" id="cb1-37" title="37">    <span class="co"># Bar plot</span></a>
 <a class="sourceLine" id="cb1-38" title="38">    ax.bar(x<span class="op">=</span>df[x_col], height<span class="op">=</span>df[y_col], color<span class="op">=</span>color)</a>
 <a class="sourceLine" id="cb1-39" title="39">    ax.set_title(title,fontsize<span class="op">=</span><span class="dv">20</span>,fontname<span class="op">=</span>fontname)</a>
 <a class="sourceLine" id="cb1-40" title="40">    plt.savefig(title, bbox_inches<span class="op">=</span><span class="st">&#39;tight&#39;</span>, dpi<span class="op">=</span><span class="dv">1000</span>)</a>
@@ -493,7 +496,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-48" title="48">        sys.stdout.flush()</a>
 <a class="sourceLine" id="cb1-49" title="49">        path <span class="op">=</span> <span class="bu">input</span>()</a>
 <a class="sourceLine" id="cb1-50" title="50"></a>
-<a class="sourceLine" id="cb1-51" title="51">        <span class="cf">try</span>: </a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="cf">try</span>:</a>
 <a class="sourceLine" id="cb1-52" title="52">            df <span class="op">=</span> pd.read_csv(path)</a>
 <a class="sourceLine" id="cb1-53" title="53">        <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</a>
 <a class="sourceLine" id="cb1-54" title="54">            <span class="bu">print</span>(<span class="st">&#39;File not found!&#39;</span>)</a>
@@ -515,11 +518,11 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-70" title="70">        sys.stdout.write(<span class="st">&#39;Input title (will also be the name of the .png file) &#39;</span>)</a>
 <a class="sourceLine" id="cb1-71" title="71">        title <span class="op">=</span> <span class="bu">str</span>(<span class="bu">input</span>())</a>
 <a class="sourceLine" id="cb1-72" title="72"></a>
-<a class="sourceLine" id="cb1-73" title="73">        <span class="co"># Plot </span></a>
+<a class="sourceLine" id="cb1-73" title="73">        <span class="co"># Plot</span></a>
 <a class="sourceLine" id="cb1-74" title="74">        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></a>
 <a class="sourceLine" id="cb1-75" title="75">                <span class="st">&#39;Generating Plot&#39;</span></a>
 <a class="sourceLine" id="cb1-76" title="76">                <span class="st">&#39;-------------------&#39;</span>)</a>
-<a class="sourceLine" id="cb1-77" title="77">        generate_barchart(df,x_col,y_col,title) </a>
+<a class="sourceLine" id="cb1-77" title="77">        generate_barchart(df,x_col,y_col,title)</a>
 <a class="sourceLine" id="cb1-78" title="78">        <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">-------------------&#39;</span></a>
 <a class="sourceLine" id="cb1-79" title="79">                <span class="st">&#39;Plot Generated!&#39;</span></a>
 <a class="sourceLine" id="cb1-80" title="80">                <span class="st">&#39;-------------------&#39;</span>)</a>

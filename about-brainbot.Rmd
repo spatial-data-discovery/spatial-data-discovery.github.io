@@ -13,18 +13,22 @@ semester: 'Fall 2020'
 <br>
 
 **Likes**
- : 
- - Action/comedy movies and shows
-- Junk foods
-- Partner Dancing
-- Multiplayer videogames
+:   - Action/comedy movies and shows
+    - Junk foods
+    - Partner Dancing
+    - Multiplayer videogames
 
 ### Sample Script
 [Change Calculator (.py)](scripts/change_calculator.py)
 
-My sample script is from a project did I did in a computer science class a couple years ago. I modified a little bit by importing **argparse** and adding in a useful *help* message. This script takes an integer that represents a number of cents as an input and uses an algorithm to determine the best combination of common American coins that would be needed to generate this number, using as few coins as possible. This script is perfect for determining how to make exact change for any positive number of cents. 
+My sample script is from a project did I did in a computer science class a couple years ago. I modified a little bit by importing **argparse** and adding in a useful *help* message. This script takes an integer that represents a number of cents as an input and uses an algorithm to determine the best combination of common American coins that would be needed to generate this number, using as few coins as possible. This script is perfect for determining how to make exact change for any positive number of cents.
+
+<audio controls>
+<source src="audio/change_calculator.mp3">
+</audio>
 
 Format to run the script:
+
 ```
 python change_calculator.py integerOfYourChoice
 

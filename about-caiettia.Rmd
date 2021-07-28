@@ -15,14 +15,18 @@ Hobbies and Interests:
     - Biking
     - Research in Data Science/Math
     - Aviation
- 
- 
-### Sample Script 
-[Live Aviation Data (.py)](scripts/live_aviation.py)
- 
-I enjoy tracking and visualizing aviation data, as there is so much going on above us that we do not see as we go about our daily lives. Thus, I wrote this script to be able to access and store open source aviation data through [OpenSky Network](https://opensky-network.org/). I have used this data to visualize and learn more about what aircraft are flying above us. 
 
-I hope you too find interest in this dataset! 
+
+### Sample Script
+[Live Aviation Data (.py)](scripts/live_aviation.py)
+
+I enjoy tracking and visualizing aviation data, as there is so much going on above us that we do not see as we go about our daily lives. Thus, I wrote this script to be able to access and store open source aviation data through [OpenSky Network](https://opensky-network.org/). I have used this data to visualize and learn more about what aircraft are flying above us.
+
+I hope you too find interest in this dataset!
+
+<audio controls>
+<source src="audio/live_aviation.mp3">
+</audio>
 
 ```{python live_aviation, eval=FALSE}
 # Andrew Caietti
@@ -31,9 +35,9 @@ I hope you too find interest in this dataset!
 #
 # Recent Edit: 2020-09-03
 #
-# This script calls an opensource API from OpenSkyNetwork.com. 
+# This script calls an opensource API from OpenSkyNetwork.com.
 # The data can then be saved as a CSV or worked with in its converted two-dimensional
-# array format. Each sub-array represents an individual aircraft with 
+# array format. Each sub-array represents an individual aircraft with
 # 17 total fields.
 
 
@@ -42,7 +46,7 @@ I hope you too find interest in this dataset!
 # MODULES NEEDED #
 ##################
 import pandas as pd
-from opensky_api import OpenSkyApi 
+from opensky_api import OpenSkyApi
 import argparse
 from time import gmtime, strftime
 from tkinter.filedialog import askdirectory
@@ -52,7 +56,7 @@ from tkinter.filedialog import askdirectory
 ###############
 
 # Generate the a 2-dimensional array where each sub-array is an individual aircraft
-def RetrievePlaneData(): 
+def RetrievePlaneData():
     api = OpenSkyApi()  # Call the API
     states = api.get_states()
     main_array = []
@@ -70,7 +74,7 @@ def RetrievePlaneData():
         temp_array[9]=s.heading
         temp_array[10]=s.vertical_rate
         temp_array[11]=s.on_ground
-        temp_array[12]=s.sensors 
+        temp_array[12]=s.sensors
         temp_array[13]=s.geo_altitude
         temp_array[14]=s.squawk
         temp_array[15]=s.spi   
@@ -81,7 +85,7 @@ def RetrievePlaneData():
 
 # Pass a path name, where you would like to save the file, and the data you called from RetrievePlaneData, to generate a CSV file on your desktop.
 def PlaneDatatoCSV(path_name,data):
-    df = pd.DataFrame(data) 
+    df = pd.DataFrame(data)
     df.columns = ['icao24','Callsign','Origin Country','Time Position','Last Contact','Longitude','Latitude','Baro Altitude','Velocity','Heading','Vertical Rate','On Ground','Sensors','Geo Altitude','Squawk','Spi','Position Source']
     ts = strftime(r'%Y_%m_%d__%H_%M_%S') # Record current time to time-stamp the file
     df.to_csv(path_name+r"\Aviation_Data__"+ts+r'.csv',index=False,header=True)
