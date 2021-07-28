@@ -31,6 +31,8 @@ get.content <- function(my.file){
 myfiles <- list.files(pattern = "^project-.*Rmd$", ignore.case = TRUE)
 for (f in myfiles){
     f.out <- get.content(f)
-    writeLines(f.out)
+    #writeLines(f.out)
 }
 ```
+
+Coming Soon.

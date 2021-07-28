@@ -14,16 +14,22 @@
 
 <title>Shrimp-ly Amazing</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -39,32 +45,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -75,10 +56,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -95,40 +72,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -156,7 +106,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -168,7 +118,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -179,10 +129,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -194,7 +157,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -347,7 +309,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="development-team-fall-2020.html">Current Developers</a>
+      <a href="current-development-team.html">Current Developers</a>
     </li>
     <li>
       <a href="about.html">All Developers</a>
@@ -365,7 +327,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -376,7 +338,7 @@ $(document).ready(function () {
 
 <div id="changes-in-shrimp-population-distribution-between-1977-and-2019" class="section level3">
 <h3><strong>Changes in Shrimp Population Distribution Between 1977 and 2019</strong></h3>
-<p><video src="https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4" width="580" height="500" controls=""><a href="https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4">Video</a></video></p>
+<p><embed src="https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4" width="580" height="500" /></p>
 </div>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
@@ -389,8 +351,8 @@ $(document).ready(function () {
 <p>Upon accessing the Ocean Adapt data, I downloaded the full dataset as a CSV file that contains the attributes “Year”, “Region”, “Species”, “Latitude”, “Latitude_std_err”, “Longitude”, and “Longitude_std_err”. In short, the file contains annual data entries recording the coordinates and region in which a particular species was located at that time. I then wrote a Python script to read the CSV file and convert it into a Pandas DataFrame containing only the columns pertaining to the year, latitude, and longitude attributes. I selected these columns, in particular, because they would be the most useful for creating spatial data visualizations. From there, I converted the DataFrame into a GeoPandas DataFrame that contained the same attributes as the original DataFrame, plus an additional column that stored the coordinate point geometry based on the latitude and longitude values from the initial DataFrame.</p>
 <p>I first created the scatter plot below by using the MatplotLib library with the “Year” and “Latitude” columns from the final filtered Pandas DataFrame plotted along the X and Y axes, respectively. Because the data was recorded for shrimp populations surrounding North America, the latitude measurements are all positive and represent degrees North. This was an especially interesting plot to create because it highlighted the clustering of shrimp populations around certain degrees of latitude. However, it wasn’t very clear if there were any trends northward over the past few decades, so I opened the CSV file output (“cleaned_shrimpdata.csv”) and used the data table in Excel to create a line plot of the latitude over time. I originally attempted this with MatplotLib, but the wide variation in latitude made the line difficult to read. After creating the line plot in Excel, it became more clear that the northern-most latitudes have stayed mostly constant over time. However, the southern-most latitudes have continued reaching further south. This indicates that shrimp have been migrating closer to warmer waters over the past few decades, in contrast to the overall trend of marine life having moved northward during a similar time span. While the trendline would be highly inaccurate, as seen by the miniscule R-squared value of just under 0.1, it is still a helpful guide to show that shrimp populations have indeed moved south over time.</p>
 <p>Lastly, I uploaded the data from the same “cleaned_shrimpdata.csv” file into kepler.gl and filtered the location data by year (beginning with 1977 and ending with 2019). I also selected a satellite imagery basemap and chose to plot the coordinates on a heatmap scale, with blue indicating a low population density and red indicating a high population density. After applying these aesthetics, I took a screenshot of the map when each additional year’s-worth of location data were added to the visualization in order to establish a time series of images. Lastly, using Microsoft Video Editor, I labeled each image with the year they represented and compiled them into a .mp4 video file that shows how shrimp population distributions have moved and grown over time. Not only have shrimp populations continued to grow farther south, but they have also concentrated in certain locations along the coastlines. Earlier on, shrimp were largely clustered along the Alaskan coastline. Shortly therafter, there was a high concentration of shrimp along the coast of the Carolinas and Georgia. It wasn’t until relatively recently that strong concentrations began to appear in the Gulf of Mexico and Pacific Northwest.</p>
-<p><strong>Scatter Plot:</strong> <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/latitude_vs_time.png" width="575" height="500" alt="Latitude vs. Year" /></p>
-<p><strong>Trend Line:</strong> <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/trendline.png" width="575" height="500" alt="Latitude Trends Over Time" /></p>
+<p><strong>Scatter Plot:</strong> <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/latitude_vs_time.png" alt="Latitude vs. Year" width="575" height="500" /></p>
+<p><strong>Trend Line:</strong> <img src="https://drdavis.space/teaching/ds/sdd/media/2020/11/trendline.png" alt="Latitude Trends Over Time" width="575" height="500" /></p>
 <p><strong>Link to video:</strong> <a href="https://drdavis.space/teaching/ds/sdd/media/2020/11/shrimp_population_animation.mp4">Shrimp Population Animation</a></p>
 <p><strong>Link:</strong> <a href="https://oceanadapt.rutgers.edu/">Ocean Adapt by NOAA &amp; Rutgers University</a></p>
 <hr />
@@ -434,7 +396,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

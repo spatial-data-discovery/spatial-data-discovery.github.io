@@ -14,16 +14,22 @@
 
 <title>Monitoring Climate Change Through the Ocean</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -37,29 +43,35 @@
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -68,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -119,39 +131,9 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -162,10 +144,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -182,40 +160,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -243,7 +194,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -255,7 +206,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -266,10 +217,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -281,7 +245,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -434,7 +397,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="development-team-fall-2020.html">Current Developers</a>
+      <a href="current-development-team.html">Current Developers</a>
     </li>
     <li>
       <a href="about.html">All Developers</a>
@@ -452,7 +415,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -480,21 +443,21 @@ $(document).ready(function () {
 <p>The world map animation above is monthly sea surface temperature (SST). Sea surface temperature is measured by deploying sensors on satellites, buoys, and ships. This data is from the Copernicus’ Climate Change Service<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. It was downloaded <a href="https://cds.climate.copernicus.eu/cdsapp#!/home">here</a> from the Climate Data Store.</p>
 <p>SST is measured in degrees Kelvin and varies from ~270K - 306K on this visual. For those of you who refuse to accept that the metric system is superior for science and research the range in fahrenheit is ~26 °F - 91 °F.</p>
 <p>The data was extracted and reformatted using a Python<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> script. The input netCDF file was read in using scipy.io.netcdf and ultimately converted to a TIFF file using arcpy<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and numpy<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This was a forced alternate approach to sandbox 6, which was to convert between to two file formats using gdal.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> arcpy</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>...</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">def</span> createRaster(np_array, no_data, lowerLeft, xcell, year, var):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)&quot;&quot;&quot;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    time_slice <span class="op">=</span> arcpy.NumPyArrayToRaster(np_array, value_to_nodata <span class="op">=</span> no_data,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>                                                    lower_left_corner <span class="op">=</span> lowerLeft,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>                                                    x_cell_size <span class="op">=</span> <span class="fl">0.25</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    file_path <span class="op">=</span> os.path.join(<span class="bu">dir</span>, var <span class="op">+</span> <span class="st">&#39;_raster_&#39;</span><span class="op">+</span> <span class="bu">str</span>(year)<span class="op">+</span> <span class="st">&#39;.tif&#39;</span>) <span class="co"># &#39;./output/&#39; +</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>    time_slice.save(file_path)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>...</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> arcpy</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">...</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">def</span> createRaster(np_array, no_data, lowerLeft, xcell, year, var):</a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="co">&quot;&quot;&quot;Takes in an array, no_data value, cell size, etc... and creates a raster(.tiff)&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    time_slice <span class="op">=</span> arcpy.NumPyArrayToRaster(np_array, value_to_nodata <span class="op">=</span> no_data,</a>
+<a class="sourceLine" id="cb1-8" title="8">                                                    lower_left_corner <span class="op">=</span> lowerLeft,</a>
+<a class="sourceLine" id="cb1-9" title="9">                                                    x_cell_size <span class="op">=</span> <span class="fl">0.25</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11">    file_path <span class="op">=</span> os.path.join(<span class="bu">dir</span>, var <span class="op">+</span> <span class="st">&#39;_raster_&#39;</span><span class="op">+</span> <span class="bu">str</span>(year)<span class="op">+</span> <span class="st">&#39;.tif&#39;</span>) <span class="co"># &#39;./output/&#39; +</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    time_slice.save(file_path)</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14">...</a>
+<a class="sourceLine" id="cb1-15" title="15"></a></code></pre></div>
 </div>
 <div id="visualization-process" class="section level2">
 <h2>Visualization Process</h2>
@@ -509,16 +472,16 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Copernicus is the European Union’s Earth Observation Program, looking at our planet and its environment for the ultimate benefit of all European citizens. Accessed 2019-04-09. Online: <a href="https://www.copernicus.eu/en/about-copernicus" class="uri">https://www.copernicus.eu/en/about-copernicus</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python. Accessed 2020-04-10. Online: <a href="https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm" class="uri">https://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Numpy is the fundamental package for scientific computing with Python. Accessed 2020-04-09. Online: <a href="https://numpy.org/" class="uri">https://numpy.org/</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-10-28. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a><a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Portable Network Graphics (PNG). Copyright 1995–2019 Greg Roelofs. Accessed 2019-10-28. Online: <a href="http://www.libpng.org/pub/png/" class="uri">http://www.libpng.org/pub/png/</a><a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>GNU Image Manipulation Program (GIMP). Software released through CC-BY-SA by The GIMP Development Team. Accessed 2019-10-28. Online: <a href="https://www.gimp.org/" class="uri">https://www.gimp.org/</a><a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Graphics Interchange Format (GIF). Copyright 1987–1990 CompuServe. Accessed 2019-10-28. Online: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt" class="uri">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a><a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Moving Picture Experts Group Standard 4 (MPEG-4). Standard developed by a working group of the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) joint technical committee. Accessed 2019-10-28. Online: <a href="https://mpeg.chiariglione.org/" class="uri">https://mpeg.chiariglione.org/</a><a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>EzGif is an online GIF maker and image editor. Accessed 2020-04-12. Online: <a href="https://ezgif.com/gif-to-mp4" class="uri">https://ezgif.com/gif-to-mp4</a><a href="#fnref10" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 
@@ -554,7 +517,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

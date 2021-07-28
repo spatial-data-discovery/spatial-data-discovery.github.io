@@ -14,16 +14,22 @@
 
 <title>Fly Like the Wind: How Wind Patterns Affect Bird Migration</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -39,32 +45,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -75,10 +56,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -95,40 +72,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -156,7 +106,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -168,7 +118,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -179,10 +129,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -194,7 +157,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -347,7 +309,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="development-team-fall-2020.html">Current Developers</a>
+      <a href="current-development-team.html">Current Developers</a>
     </li>
     <li>
       <a href="about.html">All Developers</a>
@@ -365,7 +327,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -416,21 +378,21 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Global Raptor Information Network. 2020. Species account: Swainson’s Hawk Buteo swainsoni. Downloaded from <a href="http://www.globalraptors.org" class="uri">http://www.globalraptors.org</a> on 18 Nov. 2020<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Fuller, M.R., Seegar, W.S., Schueck, L.S., 1998. Routes and Travel Rates of Migrating Peregrine Falcons Falco peregrinus and<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Hawk Migration Association of North America. Copyright(c) 2019 HMANA. Accessed 2020-10-30. Online: <a href="https://www.hmana.org/new-to-hawkwatching/" class="uri">https://www.hmana.org/new-to-hawkwatching/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Wildlife Heritage Foundation. Accessed 2020-10-28. Online: <a href="https://www.wildlifeheritage.org/gallery/swainsons-hawk/" class="uri">https://www.wildlifeheritage.org/gallery/swainsons-hawk/</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Goldstein, M.I., T.E. Lacher Jr, B. Woodbridge, M.J. Bechard, S.B. Canavelli, M.E. Zaccagnini, G.P. Cobb, E.J. Scollon, R. Tribolet, and M.J. Hooper. 1999. Monocrotophos-induced mass mortality of Swainson’s hawks in Argentina, 1995-96. Ecotoxicology 8: 201-214.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Wikelski M, Davidson SC, Kays R 2020. Movebank: archive, analysis and sharing of animal movement data. Hosted by the Max Planck Institute of Animal Behavior. www.movebank.org, accessed on 2020-10-28. Online: <a href="https://www.movebank.org/cms/movebank-content/about-movebank" class="uri">https://www.movebank.org/cms/movebank-content/about-movebank</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Kochert, Michael N et al. “MIGRATION PATTERNS, USE OF STOPOVER AREAS, AND AUSTRAL SUMMER MOVEMENTS OF SWAINSON’S HAWKS.” The Condor vol. 113,1 (2011): 89-106. <a href="doi:10.1525/cond.2011.090243" class="uri">doi:10.1525/cond.2011.090243</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>About ARGOS. Collecte Localisation Satellite (CLS). Accessed 2020-10-17. Online: <a href="https://www.argos-system.org/argos/who-we-are/international-cooperation/" class="uri">https://www.argos-system.org/argos/who-we-are/international-cooperation/</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Van Rossum, G., &amp; Drake, F. L. (2009). Python 3 Reference Manual. Scotts Valley, CA: CreateSpace Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>GeoJSON. Accessed 2020-11-06. Online: <a href="https://geojson.org/" class="uri">https://geojson.org/</a><a href="#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>Shapely: manipulation and analysis of geometric objects. Writted by Sean Gillies and others (2007), toblerity.org. Online: <a href="https://github.com/Toblerity/Shapely" class="uri">https://github.com/Toblerity/Shapely</a><a href="#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p>Kepler-gl. Open-source geospatial software. Accessed 2020-10-30. Online: <a href="https://docs.kepler.gl/docs/api-reference" class="uri">https://docs.kepler.gl/docs/api-reference</a><a href="#fnref12" class="footnote-back">↩︎</a></p></li>
-<li id="fn13"><p>Kalnay et al.,The NCEP/NCAR 40-year reanalysis project, Bull. Amer. Meteor. Soc., 77, 437-470, 1996. Online: <a href="https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.surface.html" class="uri">https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.surface.html</a><a href="#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>Department of Eart &amp; Climate Sciences, San FRancsico State Universty. Accessed 2020-10-30, Online: <a href="http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html" class="uri">http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html</a><a href="#fnref14" class="footnote-back">↩︎</a></p></li>
-<li id="fn15"><p>Panoply. Developed at NASA Goddard Institute for Space Studies. Accessed 2020-11-08. Online: <a href="https://www.giss.nasa.gov/tools/panoply/" class="uri">https://www.giss.nasa.gov/tools/panoply/</a><a href="#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Global Raptor Information Network. 2020. Species account: Swainson’s Hawk Buteo swainsoni. Downloaded from <a href="http://www.globalraptors.org" class="uri">http://www.globalraptors.org</a> on 18 Nov. 2020<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Fuller, M.R., Seegar, W.S., Schueck, L.S., 1998. Routes and Travel Rates of Migrating Peregrine Falcons Falco peregrinus and<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Hawk Migration Association of North America. Copyright(c) 2019 HMANA. Accessed 2020-10-30. Online: <a href="https://www.hmana.org/new-to-hawkwatching/" class="uri">https://www.hmana.org/new-to-hawkwatching/</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Wildlife Heritage Foundation. Accessed 2020-10-28. Online: <a href="https://www.wildlifeheritage.org/gallery/swainsons-hawk/" class="uri">https://www.wildlifeheritage.org/gallery/swainsons-hawk/</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Goldstein, M.I., T.E. Lacher Jr, B. Woodbridge, M.J. Bechard, S.B. Canavelli, M.E. Zaccagnini, G.P. Cobb, E.J. Scollon, R. Tribolet, and M.J. Hooper. 1999. Monocrotophos-induced mass mortality of Swainson’s hawks in Argentina, 1995-96. Ecotoxicology 8: 201-214.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Wikelski M, Davidson SC, Kays R 2020. Movebank: archive, analysis and sharing of animal movement data. Hosted by the Max Planck Institute of Animal Behavior. www.movebank.org, accessed on 2020-10-28. Online: <a href="https://www.movebank.org/cms/movebank-content/about-movebank" class="uri">https://www.movebank.org/cms/movebank-content/about-movebank</a><a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Kochert, Michael N et al. “MIGRATION PATTERNS, USE OF STOPOVER AREAS, AND AUSTRAL SUMMER MOVEMENTS OF SWAINSON’S HAWKS.” The Condor vol. 113,1 (2011): 89-106. <a href="doi:10.1525/cond.2011.090243" class="uri">doi:10.1525/cond.2011.090243</a><a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>About ARGOS. Collecte Localisation Satellite (CLS). Accessed 2020-10-17. Online: <a href="https://www.argos-system.org/argos/who-we-are/international-cooperation/" class="uri">https://www.argos-system.org/argos/who-we-are/international-cooperation/</a><a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Van Rossum, G., &amp; Drake, F. L. (2009). Python 3 Reference Manual. Scotts Valley, CA: CreateSpace Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>GeoJSON. Accessed 2020-11-06. Online: <a href="https://geojson.org/" class="uri">https://geojson.org/</a><a href="#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>Shapely: manipulation and analysis of geometric objects. Writted by Sean Gillies and others (2007), toblerity.org. Online: <a href="https://github.com/Toblerity/Shapely" class="uri">https://github.com/Toblerity/Shapely</a><a href="#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>Kepler-gl. Open-source geospatial software. Accessed 2020-10-30. Online: <a href="https://docs.kepler.gl/docs/api-reference" class="uri">https://docs.kepler.gl/docs/api-reference</a><a href="#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>Kalnay et al.,The NCEP/NCAR 40-year reanalysis project, Bull. Amer. Meteor. Soc., 77, 437-470, 1996. Online: <a href="https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.surface.html" class="uri">https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.surface.html</a><a href="#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>Department of Eart &amp; Climate Sciences, San FRancsico State Universty. Accessed 2020-10-30, Online: <a href="http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html" class="uri">http://tornado.sfsu.edu/geosciences/classes/m430/Wind/WindDirection.html</a><a href="#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>Panoply. Developed at NASA Goddard Institute for Space Studies. Accessed 2020-11-08. Online: <a href="https://www.giss.nasa.gov/tools/panoply/" class="uri">https://www.giss.nasa.gov/tools/panoply/</a><a href="#fnref15" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 
@@ -466,7 +428,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

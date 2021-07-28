@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Tyler W. Davis, PhD"
-date: "Edited: 2019-09-05"
+date: "Edited: 2021-07-28"
 ---
 
 ![](https://drdavis.space/photos/danger_250x250.png 'Tyler W. Davis'){width=150 height=150}
