@@ -4,13 +4,28 @@
 * ORGANIZATION: spatial-data-discovery
 * REPOSITORY: spatial-data-discovery.github.io/scripts
 
-## DESCRIPTION
-This folder contains utility and general functionality scripts.
+# DESCRIPTION
+This folder contains utility scripts as well as a selection of data files necessary for running certain scripts.
 
-## Files
+## Data Files
 
 ### american
 * Line-separated words (>300k); this data file is needed for hangman.py.
+
+### mbox-short.txt
+* Data file for testing first_word_counter.py.
+
+### oldchangelog.txt
+* Empty file for starting changelog_generator.py.
+
+### test_ranking_calculater.csv
+* A test csv file for rankings calculator.py.
+
+### text.txt
+* A test file for random_caps.py.
+
+
+## Script Files
 
 ### barchart_generator.py
 * This script takes a .csv file and generates a barchart as a .png. It allows the user to specify the columns for the x and y axes. Saves .png in working directory.
@@ -89,9 +104,6 @@ removes all files of that type within that directory.
 ### make_art.py
 * This script uses TensorFlow's DeepDream model to create whimsical artwork out of a user-provided image by enhancing patterns detected within the picture.  Note: This file should be run in a Python notebook environment (works well in both Jupyter and Google Colab, which offers GPU run-time capabilities).  The way the file has been written thus far only allows the input and output image to be displayed within Python notebooks, and the images will not be visibly displayed when running as a typical, stand-alone script.
 
-### mbox-short.txt
-* Data file for testing first_word_counter.py.
-
 ### milkweed_data.py
 * This script takes a .csv file of morphological data from three different species of milkweed: Asclepias exaltata, Asclepias syriaca, and Asclepias speciosa.
 * The script also conducts a principal component analysis using 6 appropriately scaled variables: leaf width, leaf length, basal angle, tip angle, ratio of petiole to tip, ratio of length by width.
@@ -112,10 +124,7 @@ removes all files of that type within that directory.
 * This script reads in a netCDF file and writes out the average of the variables to a new file.
 
 ### numberconverter.py
-* This script takes in a decimal integer and converts it into binary, octal, and hexadecimal formats. 
-
-### oldchangelog.txt
-* Empty file for starting changelog_generator.py.
+* This script takes in a decimal integer and converts it into binary, octal, and hexadecimal formats.
 
 ### parsehtml.py
 * this script parses a page from packhacker.com to get all the text (with tag <p>), and saves it to txt file, e.g. https://packhacker.com/travel-gear/heimplanet/neck-pouch-a5/
@@ -154,12 +163,6 @@ removes all files of that type within that directory.
 
 ### statistical_overview.py
 * Prints a statistical overview of numerical data read in through a text file.
-
-### test_ranking_calculater.csv
-* A test csv file for rankings calculator.py.
-
-### text.txt
-* A test file for random_caps.py.
 
 ### twoSum.py
 * Finds the index of two values in a list that adds up to the target number
