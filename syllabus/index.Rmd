@@ -1,7 +1,7 @@
 ---
 title: "Spatial Data Discovery | Syllabus"
 author: "Data Science | William &amp; Mary"
-date: "Fall 2020"
+date: "Fall 2021"
 ---
 
 ****
@@ -18,8 +18,8 @@ I will take you through my own journey of data discovery, provide you with the k
 Catalog Number
 
 :   - DATA 431
-    - Section 1/2
-    - CRN 14948/15432
+    - Section 1
+    - CRN 14948
 
 Prerequisites
 
@@ -27,13 +27,13 @@ Prerequisites
 
 Semester
 
-:   - Fall 2020 (19 August 2020--24 November 2020)
+:   - Fall 2021 (1 September 2021--21 December 2021)
 
 Location
 
-:   - [Integrated Science Center](https://www.wm.edu/about/visiting/campusmap/location/isc-1.php) Room 3280
+:   - [Integrated Science Center](https://www.wm.edu/about/visiting/campusmap/location/isc-1.php) Room 1111
 
-        \*_classes will likely be held remotely_
+        \*_some classes may be held remotely_
 
 Class Times
 
@@ -45,23 +45,23 @@ Instructor
     - Email: twdavis@wm.edu
     - Office: Center for Geospatial Analysis, Swem Library Rm 213
     - Phone: 757-221-6449
+    - Websites:
+        - https://drdavis.space
+        - https://spatial-data-discovery.github.io
 
 Office Hours
 
-:   - Mon 1100--1300, 1530--1600, 1700--2000
-    - Wed 1100--1130, 1530--1700
-    - Fri 1100-1200
+:   - Posted online and by appointment
     - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
     - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
 
 Delivery
 
-:   - This class is labeled as MIX/RSOF, which means that the class meets remotely at a synchronous class time.
-        There may be optional in-class/in-person scheduled meetings, but is unlikely.
+:   - This class is labeled as FS, which means that it meets predominantly in person (face-to-face) and predominantly synchronous (all meet at the same scheduled place at the same scheduled time).
 
 Final Exam
 
-:   - Semester-long project due on or before 24 November 2020
+:   - Semester-long project due on or before 21 December 2021
 
 Minimum Passing Grade
 
@@ -70,29 +70,30 @@ Minimum Passing Grade
 Communication
 
 :   - Instant messaging using [GroupMe](https://groupme.com/)
-        - For quick delivery of content or for questions that need quick responses
+        - For casual communication of content or for questions that need quick responses
         - *Please create an account using your W&M email*
     - Discussion posts and issue tracking using [GitHub](https://github.com/)
         - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
         - *You must create a GitHub account, if you do not already have one.*
     - Video conferencing ([Zoom](https://cwm.zoom.us/))
-        - Video conferencing is for class meetings, office hours, video chats, and any other meetings where "face-to-face" communication or screen sharing is required
+        - Video conferencing is for remote class meetings, office hours, video chats, and any other meetings when in-person communication is not possible
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
         - The new snail mail; use this for personal communication or whenever sharing with the class is inappropriate
     - Blackboard (https://blackboard.wm.edu)
         - For course schedule and assessment
     - Organization Website (https://spatial-data-discovery.github.io/)
-        - The public-facing organization site for Spatial Data Discovery class; you will be added to the GitHub Development Team as a Coder and have your final project displayed.
-        - This site is maintained by your instructor, but you will submit three assignments to the linked repository (see The Organization Repository)
-    - GitHub Team Website (https://github.com/orgs/spatial-data-discovery/teams/f20-developers)
+        - The public-facing organization site is for Spatial Data Discovery class; you will be added to the GitHub Development Team as a Coder and you will have your final project uploaded and displayed here.
+        - The content for site is maintained by your instructor, but you will also be granted editing privileges and may be required to upload files to the associated repository (see The Organization Repository)
+    - GitHub Team Website (https://github.com/orgs/spatial-data-discovery/teams/f21-developers)
         - Our team website with discussion boards for posting assignments and prompts for class
     - Repositories
         - The Organization Repository (https://github.com/spatial-data-discovery/spatial-data-discovery.github.io)
             - This stores all the website content, including the Coder Pages, Utility Scripts and Semester Projects
             - Includes an Issue tracker for any/all problems associated with this repository
-        - The Semester Repository (https://github.com/spatial-data-discovery/ay2021-1)
+        - The Semester Repository (https://github.com/spatial-data-discovery/sdd-2021)
             - This stores semester-specific files
             - Includes an Issue tracker for any/all problems associated with this repository
+            - This repository will be destroyed after final grades are submitted; if you wish to maintain a copy, be sure to create a backup
     - Videos ([YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMNGq7UuLlbSeqIHR32R_Pcc))
         - Complimentary to course content and used when audio/video is the better communication medium
 
@@ -108,15 +109,20 @@ Course Materials
 
         \* _Your laptop should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux)._
     - GitHub account (*required*)
+    - W\&M Blackboard (*required*)
 
 Technology
 
-:   - Announcements, discussions, course calendar, grades, etc., will be related to you through the university's [Blackboard](https://blackboard.wm.edu); please make certain you have access to it.
+:   - Announcements, discussions, course calendar, grades, etc., may be accessed through the university's [Blackboard](https://blackboard.wm.edu); please make certain you have access to it.
     - Assignments should be submitted using [Git](https://git-scm.com/) to one of two repositories found on the class's [GitHub Page](https://github.com/spatial-data-discovery).
 
         \* _You will need to create a GitHub account, if you do not already have one._
-    - Scripting assignments will be tested and graded using [Python 3.7](https://www.python.org/) or later; please be sure you have a recent version installed.
+
+        \* _You are granted write access to both the semester and organization repositories; with power comes responsibility---use it wisely!_
+    - Scripting assignments will be tested and graded using [Python 3.8](https://www.python.org/) or later; please be sure you have a recent version installed.
     - Web development assignments will be requested in [Markdown syntax](https://daringfireball.net/projects/markdown/basics); your instructor will compile your Markdown using the latest releases of [R](https://cran.r-project.org/) and [pandoc](https://pandoc.org).
+
+        \* _While you are not required to use R or pandoc, you may install these software packages to test your markdown pages before submitting._
     - Geographic visualizations will be rendered using either the latest stable release or the university's current installed version of [QGIS](https://www.qgis.org/en/site/) or [Panoply](https://www.giss.nasa.gov/tools/panoply/).
         Please indicate the software versions you install to your professor.
 
