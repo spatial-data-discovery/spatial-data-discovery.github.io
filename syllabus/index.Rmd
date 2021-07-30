@@ -57,11 +57,12 @@ Office Hours
 
 Delivery
 
-:   - This class is labeled as FS, which means that it meets predominantly in person (face-to-face) and predominantly synchronous (all meet at the same scheduled place at the same scheduled time).
+:   - This seminar style class has a labeled modality of __FS__, which means that it meets predominantly in person (face-to-face) and predominantly synchronous (all meet at the same scheduled place at the same scheduled time).
+    - As a seminar, class sizes are held to less than 20 students and are discussion intensive with a variety of typed, coded, and oral assignments.
 
 Final Exam
 
-:   - Semester-long project due on or before 21 December 2021
+:   - Blackboard-style assessment; opens at 14:00 (2 PM) 21 December 2021
 
 Minimum Passing Grade
 
@@ -69,9 +70,10 @@ Minimum Passing Grade
 
 Communication
 
-:   - Instant messaging using [GroupMe](https://groupme.com/)
+:   - Instant messaging using [Slack](https://slack.com/)
         - For casual communication of content or for questions that need quick responses
-        - *Please create an account using your W&M email*
+        - Slack workspace URL: https://spatialdatadiscovery.slack.com
+        - *You are not required to use Slack; however, this platform will provide you with direct messaging access to the instructor and your peers. If you are interested, please create an account using your W&M email. An invitation link to the workspace will be made available.*
     - Discussion posts and issue tracking using [GitHub](https://github.com/)
         - For sharing ideas, methods and content and asking/responding to questions, comments or concerns
         - *You must create a GitHub account, if you do not already have one.*
@@ -80,7 +82,7 @@ Communication
     - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
         - The new snail mail; use this for personal communication or whenever sharing with the class is inappropriate
     - Blackboard (https://blackboard.wm.edu)
-        - For course schedule and assessment
+        - A one-stop shop for course content, schedule and assessment; links may take you outside of Blackboard (e.g., to GitHub)
     - Organization Website (https://spatial-data-discovery.github.io/)
         - The public-facing organization site is for Spatial Data Discovery class; you will be added to the GitHub Development Team as a Coder and you will have your final project uploaded and displayed here.
         - The content for site is maintained by your instructor, but you will also be granted editing privileges and may be required to upload files to the associated repository (see The Organization Repository)
@@ -89,10 +91,10 @@ Communication
     - Repositories
         - The Organization Repository (https://github.com/spatial-data-discovery/spatial-data-discovery.github.io)
             - This stores all the website content, including the Coder Pages, Utility Scripts and Semester Projects
-            - Includes an Issue tracker for any/all problems associated with this repository
+            - Includes an issue tracker for any/all problems associated with this repository
         - The Semester Repository (https://github.com/spatial-data-discovery/sdd-2021)
             - This stores semester-specific files
-            - Includes an Issue tracker for any/all problems associated with this repository
+            - Includes an issue tracker for any/all problems associated with this repository
             - This repository will be destroyed after final grades are submitted; if you wish to maintain a copy, be sure to create a backup
     - Videos ([YouTube Playlist](https://www.youtube.com/playlist?list=PLbIkNQKCuzMNGq7UuLlbSeqIHR32R_Pcc))
         - Complimentary to course content and used when audio/video is the better communication medium
@@ -108,18 +110,21 @@ Course Materials
 :   - Laptop/Desktop (*required*)
 
         \* _Your laptop should have at least 500 MB of free disk space, have at least 8 GB of memory, and run a modern desktop OS (e.g,. PC, Mac, or Linux)._
+
+        \* _Note that you are also required to read, write and execute Python code, whether installed natively on your computer or via a cloud computing platform (e.g., JupyterHub or [Google Colaboratory](https://colab.research.google.com/))_
     - GitHub account (*required*)
     - W\&M Blackboard (*required*)
+    - Slack account (*recommended*)
 
 Technology
 
 :   - Announcements, discussions, course calendar, grades, etc., may be accessed through the university's [Blackboard](https://blackboard.wm.edu); please make certain you have access to it.
-    - Assignments should be submitted using [Git](https://git-scm.com/) to one of two repositories found on the class's [GitHub Page](https://github.com/spatial-data-discovery).
+    - Coding exercises, markdown documents and associated files should be submitted using [Git](https://git-scm.com/) to one of two repositories found on the class's [GitHub Page](https://github.com/spatial-data-discovery).
 
         \* _You will need to create a GitHub account, if you do not already have one._
 
-        \* _You are granted write access to both the semester and organization repositories; with power comes responsibility---use it wisely!_
-    - Scripting assignments will be tested and graded using [Python 3.8](https://www.python.org/) or later; please be sure you have a recent version installed.
+        \* _You are granted write access to both the semester and organization repositories; with power comes responsibility---please use it wisely!_
+    - Scripting assignments will be tested and graded using [Python 3.8](https://www.python.org/); please be sure you have a recent version installed.
     - Web development assignments will be requested in [Markdown syntax](https://daringfireball.net/projects/markdown/basics); your instructor will compile your Markdown using the latest releases of [R](https://cran.r-project.org/) and [pandoc](https://pandoc.org).
 
         \* _While you are not required to use R or pandoc, you may install these software packages to test your markdown pages before submitting._
@@ -141,16 +146,17 @@ Students will have an opportunity to tackle these issues using a variety of anal
 Students will communicate their findings through the web by creating a visualization accompanied by a written summary.
 
 
-Learning Outcomes
+Learning Expectations
 -----------------
 1. To enhance proficiency working with disparate data sources and formats (e.g., EXIF, JSON, CSV, ASC, HDF, NETCDF)
-1. To improve data literacy through data exploration and metadata analysis
-1. To become a self-sufficient data scientist
-1. To assign meaning to spatial data using spatial analytics
-1. To take initiative in synthesis and critical analysis (*COLL 400 LE1*)
-1. To become more familiar with topics, challenges, and solutions to real-world data science problems (*COLL 400 LE2*)
-1. To communicate spatial data using original methods and visualizations (*COLL 400 LE3*)
-1. To better communicate your science with peers and the general public (*COLL 400 LE4*)
+2. To improve data literacy through data exploration and metadata analysis
+3. To become a more self-sufficient data scientist
+4. To assign meaning to spatial data through spatial analytics
+5. To take initiative in synthesis and critical analysis (*COLL 400 LE1*)
+6. To become more familiar with topics, challenges, and solutions to real-world data science problems (*COLL 400 LE2*)
+7. To communicate spatial data using original methods and visualizations (*COLL 400 LE3*)
+8. To better communicate your science with peers and the general public (*COLL 400 LE4*)
+9. To develop and express ideas in writing that uses genres, styles, and technologies appropriate to the content and audience and incorporates texts, data, and images. (*COLL 400 LE5---Major Writing Requirement*)
 
 > Never be afraid to show your colleagues your work. If you are afraid to, that's probably the bigger sign that something is wrong with your code and that you already know it.&rdquo;
 >
@@ -161,8 +167,8 @@ Topics
 The following are the proposed topics to be covered in this class along with some example discussions.
 
 * Spatial data: what it is and why it is important
-* Form and function: a look at different data file types
-* Data access: discovering online repositories
+* Form and function: a look at different data file types and why they are used
+* Data access: the API movement and how it impacts us
 * Data discovery: the true purpose of metadata
 * Data analysis: statistical analysis, modeling, and optimization
 * Data visualization: geographic information systems as a tool
@@ -189,11 +195,10 @@ Course Requirements
 -------------------
 This course will consist of the following tasks.
 
-1. Attendance
-1. Classroom Discussions [[LO \#1,6,8](#learning-outcomes)]
-1. Assignments [[LO \#1,2,4,5](#learning-outcomes)]
-1. Report [[LO \#3](#learning-outcomes)]
-1. Project [[LO \#7,8](#learning-outcomes)]
+1. Discussions [[LE \#6,8](#learning-expectations)]
+1. Exam [[LE \#1,2,4,5](#learning-expectations)]
+1. Report [[LE \#3,8,9](#learning-expectations)]
+1. Project [[LE \#7,8,9](#learning-expectations)]
 
 The completion (or attempted completion) of all these tasks will result in *at least* a passing grade (D).
 A failure of any one of these tasks will result in a failing grade (F) for the course.
@@ -201,94 +206,35 @@ A failure of any one of these tasks will result in a failing grade (F) for the c
 ### Failure Criteria
 The following definitions will be used to determine a failure status for any task listed under the [Course Requirements](#course-requirements).
 
-Attendance
-
-:   Attendance will be loosely defined as the "weekly interaction with the instructor."
-    If a student goes two or more weeks without interacting with the instructor (i.e., does not come to class, does not email, does not post to online discussions), then a failing grade will be assigned to that student.
-    Extraordinary circumstances may forgive extended absences and will be determine at the discretion of the instructor.
-
 Classroom Discussions
-
 :   Discussions will be held, on average, once a week.
     A student that misses 50% or more of the discussions (e.g., six or more) will receive a failing grade.
 
-Assignments
+    > Most thinking involves collaborating with other people. That's why scientists have lab meetings, why doctors consult with specialists, and why it's important to have someone to talk to when you're confused or upset. [...] A little social support can generate a lot of confidence.&rdquo;
+    >
+    > <cite>-- Steven Sloman, Professor of cognitive, linguistic and psychological sciences at Brown University</cite>
 
-:   A student that misses two or more assignments following the last day of classes will receive a failing grade for the class.
+Work Journal
+:   Students are required to publish an up-to-date work journal throughout the semester.
+    A student that fails to do so by the last day of class will receive a failing grade for the class.
 
-    *Caveat: the PEP8 assignment, if chosen as the final project script, will have the same due date as the final project.*
-
-
-Reports
-
-:   Students are required to keep a changelog (i.e., history report) for their computer for the duration of this class.
-    A student that fails to turn in a changelog by the last day of class will receive a failing grade for the class.
-
-Project
-
+Discovery Project
 :   All students are required to complete a data discovery project.
     A student that does not turn in a project or turns in a project that meets less than 50% of the project's requirements will receive a failing grade for the class.
+
+Final Exam
+:   Students are required to complete the final exam on or before the scheduled exam period (see Course Calendar).
+    A student that does not attempt the final exam will receive a failing grade for the class.
+
+Weekly Quizzes
+:   Weekly (ungraded) Blackboard quizzes are assigned to assist you with the completion of the final exam; each missed (scoring <60%) or skipped quiz reduces your final grade by 1/2 step; therefore, by definition, if you miss or skip more than 10 quizzes, your maximum score is an F.
 
 Grading Components
 ------------------
 This course is graded on a 100-point scale.
 The distribution of these points are awarded across the following categories.
 
-1. **Discussion Meetings** (24 points): Approximately once a week, class will meet to discuss a topic related to geospatial data science.
-    Each week, we will choose a topic, reading, video, data set, or code snippet along with one or more discussion questions to contemplate and deliberate.
-    The purpose of these discussions is to address a variety of topics surrounding the challenges of data science, data transformation, visualization, spatial analysis, communicating with the public, etc.
-
-    - The discussion rubric for full credit responses is given below
-    - Attendance without participation may result in zero points for that discussion.
-    - Participation without attendance (i.e., providing a timely, distinctive, relevant post with authoritative sources remotely) makes up for absence (see [Rework Policy](#rework-policy))
-    - At about the two-thirds mark through the semester, weekly discussions will become project progress reports.
-        Correct and relevant submissions will be judged on your ability to answer these questions: (1) what have worked on? (2) what are your plans moving forward? (3) what challenges are you currently faced with?
-
-    > Most thinking involves collaborating with other people. That's why scientists have lab meetings, why doctors consult with specialists, and why it's important to have someone to talk to when you're confused or upset. [...] A little social support can generate a lot of confidence.&rdquo;
-    >
-    > <cite>-- Steven Sloman, Professor of cognitive, linguistic and psychological sciences at Brown University</cite>
-
-:   **Table 1**. The discussion rubric.
-
-+--------------------------------------------+--------+---------+---------+
-| Criteria                                   | Full   | Partial | Low     |
-|                                            | Marks  | Marks   | Marks   |
-+============================================+========+=========+=========+
-| Correct and relevant                       | 30%    | 22%     | 15%     |
-|                                            |        |         |         |
-| *The post addresses one or more*           |        |         |         |
-| *questions in the discussion assignment*   |        |         |         |
-| *and provides accurate information that*   |        |         |         |
-| *advances the class's understanding of*    |        |         |         |
-| *the topic.*                               |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Timeliness                                 | 30%    | 22%     | 15%     |
-|                                            |        |         |         |
-| *In the art of communicating, timing is*   |        |         |         |
-| *everything. You are requested to post*    |        |         |         |
-| *your thoughts, opinions, and ideas*       |        |         |         |
-| *to share with the class. The maximum*     |        |         |         |
-| *benefit is achieved only if you*          |        |         |         |
-| *participate on or before our in-class*    |        |         |         |
-| *discussion.*                              |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Authoritative sources                      | 20%    | 15%     | 10%     |
-|                                            |        |         |         |
-| *Post utilizes only trustworthy*           |        |         |         |
-| *sources and any uncertainties*            |        |         |         |
-| *are disclosed.*                           |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Distinction                                | 20%    | 15%     | 10%     |
-|                                            |        |         |         |
-| *The post is substantively different*      |        |         |         |
-| *from others and adds new sources,*        |        |         |         |
-| *facts, and/or perspective to the*         |        |         |         |
-| *discussion. Commentary or accolades*      |        |         |         |
-| *to peers' work can be distinctive*        |        |         |         |
-| *if they add insight.*                     |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-
-2. **Assignments** (30 points): Students are asked to complete the six (6) graded assignments described below.
+2. **Assignments** (75 points): Students are asked to complete the six (6) graded assignments described below.
     Additional assignments may be requested by the instructor; however, their quality of completion will not count towards or against the students' final grade.
     Unless otherwise noted, all file names should adhere to the following guidelines: (a) use lowercase letters; (b) avoid special characters (e.g., ',",/,\\,(,),!,@,\#,\$,\%,\^,\&,\*); (c) avoid spaces (use dot, dash, or underscore).
 
@@ -413,7 +359,7 @@ The distribution of these points are awarded across the following categories.
 Grading Scale
 -------------
 The final letter grade is based on the point total of completed [Grading Components](#grading-components).
-The range for each letter grade is given in the following table.
+The range for each letter grade is given in the following table (_three-point ranges for intermediate steps and four-point ranges for whole letter grades_).
 The expectations of students for selected grade levels are also described below.
 
 The instructor reserves the right to adjust a student's final grade by one-half step (e.g., a student that received a score that would give them a C, it could be raised to a C+ or lowered to a C--), so long as the final grade is not lowered below a D or raised higher than an F.
@@ -421,7 +367,9 @@ The instructor reserves the right to adjust a student's final grade by one-half 
 ---------------------------------------------------
 Letter    Quantitative   Qualitative
 ------  --------------   --------------------------
-A             >93.0%     Superior mastery
+A+             >97.0%
+
+A         93.0--96.99    Superior mastery
 
 A--       90.0--92.99
 
