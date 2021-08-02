@@ -158,7 +158,8 @@ Learning Expectations
 8. To better communicate your science with peers and the general public (*COLL 400 LE4*)
 9. To develop and express ideas in writing that uses genres, styles, and technologies appropriate to the content and audience and incorporates texts, data, and images. (*COLL 400 LE5---Major Writing Requirement*)
 
-> Never be afraid to show your colleagues your work. If you are afraid to, that's probably the bigger sign that something is wrong with your code and that you already know it.&rdquo;
+> Never be afraid to show your colleagues your work.
+> If you are afraid to, that's probably the bigger sign that something is wrong with your code and that you already know it.&rdquo;
 >
 > -- <cite>N. Schweitzer (2008), Software Consultant, Wauwatosa, WI.</cite>
 
@@ -195,10 +196,10 @@ Course Requirements
 -------------------
 This course will consist of the following tasks.
 
-1. Discussions [[LE \#6,8](#learning-expectations)]
-1. Exam [[LE \#1,2,4,5](#learning-expectations)]
-1. Report [[LE \#3,8,9](#learning-expectations)]
-1. Project [[LE \#7,8,9](#learning-expectations)]
+1. Classroom Discussions [[LE \#6,8](#learning-expectations)]
+1. Work Journal [[LE \#3,8,9](#learning-expectations)]
+1. Quizzes and Exam [[LE \#1,2,4,5](#learning-expectations)]
+1. Discovery Project [[LE \#7,8,9](#learning-expectations)]
 
 The completion (or attempted completion) of all these tasks will result in *at least* a passing grade (D).
 A failure of any one of these tasks will result in a failing grade (F) for the course.
@@ -216,144 +217,60 @@ Classroom Discussions
 
 Work Journal
 :   Students are required to publish an up-to-date work journal throughout the semester.
-    A student that fails to do so by the last day of class will receive a failing grade for the class.
-
-Discovery Project
-:   All students are required to complete a data discovery project.
-    A student that does not turn in a project or turns in a project that meets less than 50% of the project's requirements will receive a failing grade for the class.
+    A student that fails to submit even one journal entry by the last day of class will receive a failing grade for the class.
 
 Final Exam
 :   Students are required to complete the final exam on or before the scheduled exam period (see Course Calendar).
     A student that does not attempt the final exam will receive a failing grade for the class.
 
 Weekly Quizzes
-:   Weekly (ungraded) Blackboard quizzes are assigned to assist you with the completion of the final exam; each missed (scoring <60%) or skipped quiz reduces your final grade by 1/2 step; therefore, by definition, if you miss or skip more than 10 quizzes, your maximum score is an F.
+:   Weekly Blackboard quizzes are assigned to assist you with the completion of the final exam.
+    Each missed (scoring <60%) or skipped quiz is counted as incomplete; additionally, each quiz completed following a missed or skipped quiz is counted as incomplete (i.e., all quizzes must be completed in order).
+    A student with more than 10 incomplete quizzes will receive a failing grade.
+
 
 Grading Components
 ------------------
 This course is graded on a 100-point scale.
 The distribution of these points are awarded across the following categories.
 
-2. **Assignments** (75 points): Students are asked to complete the six (6) graded assignments described below.
-    Additional assignments may be requested by the instructor; however, their quality of completion will not count towards or against the students' final grade.
-    Unless otherwise noted, all file names should adhere to the following guidelines: (a) use lowercase letters; (b) avoid special characters (e.g., ',",/,\\,(,),!,@,\#,\$,\%,\^,\&,\*); (c) avoid spaces (use dot, dash, or underscore).
+1. **Final Exam** (75%): Students are asked to complete a singe-submission comprehensive final exam on Blackboard, which is due no later than at the end of the scheduled exam period determined by the university registrar.
+2. **Weekly Quizzes** (15%): Students are asked to complete the 15 weekly quizzes, which are designed as preparation for the final exam (i.e., quiz 16).
+    Each quiz is a cumulative assessment (it takes into consideration each previous quiz) and is assessed with equal weighting.
+    The due date for all quizzes is the end of final exam period.
+    Each quiz may be attempted multiple times, allowing for practice and/or improvement, where the highest grade from all attempts is recorded.
+    A grade of at least 60% must be achieved for a quiz to be considered completed.
+    All quizzes must be completed in order (no skipping).
+3. **Classroom Discussions** (3.33%): Students are asked to engage in weekly discussions, where various topics, methods, theories, approaches and ideas are debated and discussed.
+    In most cases, discussions will take place during class and they will also be made available online for anyone who misses class or has something more to add to the conversation.
+    Participation is loosely defined as engaging in either the classroom or online discussion post.
+    Primary discussion posts should be made within 10 working days of the discussion's original posting; follow-ups, clarifications, or additions may be submitted at any time.
+    Students that participate in at least 12 discussions receive credit for this task.
+4. **Work Journal** (3.33%): Students are asked to keep a semester-long journal of both their in and out of class activities.
+    This type of journal is intended to improve organization and time management skills and is often utilized in industry for the completion of time sheets or billable hours.
+    Students are asked to submit weekly updates of their work journal, which should include at minimum:
 
-    - The "About" Page (5 points)
+    * summary of activities (e.g., bullet list)
+    * explanation of activities (more thorough details than summary)
+    * calendar or checklist or prioritized list of upcoming tasks
 
-        Students will create an "About the Coder" page to be used in conjunction with their utility script that will be rendered by the instructor to HTML using Rmarkdown and pandoc.
-        Students should submit their markdown file to the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) at the root level.
-        See previous student submissions for examples.
-    - The Utility Script (5 points)
-
-        Students may share any script they have written and transcribed to the Python programming language (runs in Python 3.6 or later).
-        Students should submit their Python script to the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) in the scripts folder.
-        Scripts must include an entry in the accompanying README file (following the basic formatting guidelines).
-        Utility scripts must have some *utility* (the condition of being useful)---the broader the utility the better.
-        You are to share your utility script (along with a link to it) on your "About the Coder" page (see previous student submissions for examples).
-    - The Sparse Data Challenge (5 points)
-
-        In groups, students will be presented with a sparse dataset that is geographically significant and will be asked to brainstorm and develop a gap-filling method to complete the data set.
-        Groups will share and discuss their methods to determine which is best suited for the application.
-        The dataset(s) will be available on the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1) and here students should submit their answers.
-    - The Conversion Scripts (10 points)
-
-        Students will be asked to create two scripts that perform data extraction, creation and conversion between spatial data formats (e.g., ASC, NetCDF and HDF5).
-        For both assignments, there will be a list of requirements that your code must complete.
-        Points are awarded based on the successful completion of all required tasks.
-        Submissions that do not fully meet the requirements or expectations for submissions may be reworked and resubmitted for regrading (see [Rework Policy](#rework-policy)).
-
-        > Keep in mind when you are looking for data for the final project that you may need to convert your data to different file formats and you may need either this conversion script or something similar to do so.&rdquo;
-        >
-        > <cite>-- Anonymous student review, William & Mary</cite>
-
-    - The PEP8 Assignment (5 points)
-
-        Similar to driving a car, programmers tend to develop their own methodology of writing code, which is acceptable so long as it gets the job done.
-        However, just as one has to pass the driver's license examination with an in-the-car demonstration, coders should be able to demonstrate their competency and mastery of coding syntax guidelines, including consistency, readability, and structure.
-        Students may choose any one of their scripts (i.e., utility script, conversion script, sparse data challenge script, sandbox challenge script, or project script) to be graded based on Python's [PEP8](https://www.python.org/dev/peps/pep-0008/) syntax guidelines.
-        Students should submit their work to the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1), tagging their submission to the PEP8 issue on GitHub.
-
-        > Obviously, correctness contributes to clear communication, in the same way that following traffic rules help a driver arrive safely at a destination. But the purpose of driving is not to obey the rules---it's to get somewhere. The same is true of writing.&rdquo;
-        >
-        > <cite>-- Rob Jenkins, Associate Professor, Georgia State University</cite>
-
-3. **Report** (24 points): Students are asked to keep a changelog for their computer for the duration of the semester that consists of a chronologically ordered list of all major software changes (i.e., installs and uninstalls), system updates, configuration setup/changes, virtual environments, hardware changes, and other notable modifications.
-    *This is not a class work log.*
-    Software installs and updates should include version numbers and a URL for any downloaded files.
-    Entries should be dated using the ISO date format (i.e., YYYY-MM-DD).
-    The changelog should *not* include any user names or passwords.
-    The report grade will be based on your final submission; however, you will receive (or you may request to receive) periodic grading of your reports to help you make necessary changes for the final report.
-    An example report is provided for you in the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
-
-:   **Table 2**. The report rubric.
-
-+--------------------------------------------+--------+---------+---------+
-| Criteria                                   | Full   | Partial | Low     |
-|                                            | Marks  | Marks   | Marks   |
-+============================================+========+=========+=========+
-| Plain text (.txt)                          | 10%    | 7.5%    | 5%      |
-|                                            |        |         |         |
-| *Changelogs should be in plain text*       |        |         |         |
-| *format; the filename should include a*    |        |         |         |
-| *datestamp and your last name (lowercase)* |        |         |         |
-| *and contain no spaces or special*         |        |         |         |
-| *characters (e.g.,*                        |        |         |         |
-|  `changelog_davis_20200821.txt`).          |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Whitespace                                 | 10%    | 7.5%    | 5%      |
-|                                            |        |         |         |
-| *Changelogs should utilize blank spaces*   |        |         |         |
-| *and indentation formatting in a*          |        |         |         |
-| *consistent manner. Maximum line length*   |        |         |         |
-| *should adhere to 80 characters.*          |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Readability                                | 15%    | 11.25%  | 7.5%    |
-|                                            |        |         |         |
-| *Changelogs should be human readable*      |        |         |         |
-| *with minimal typos (use an editor with*   |        |         |         |
-| *a spell checker).*                        |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Chronological                              | 15%    | 11.25%  | 7.5%    |
-|                                            |        |         |         |
-| *Changelogs should be chronologically*     |        |         |         |
-| *ordered (typically with the most recent*  |        |         |         |
-| *changes located at the top; however,*     |        |         |         |
-| *either top-to-bottom or bottom-to-top*    |        |         |         |
-| *ordering will be accepted).*              |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Detailed                                   | 16%    | 12.5%   | 8.3%    |
-|                                            |        |         |         |
-| *Changelogs should include an appropriate* |        |         |         |
-| *level of detail, including software*      |        |         |         |
-| *version numbers, URLs for downloaded*     |        |         |         |
-| *files, important configuration settings*  |        |         |         |
-| *or environment variables, etc.*           |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-| Weekly                                     | 33%    | 25%     | 16.7%   |
-|                                            |        |         |         |
-| *Changelogs will be requested weekly;*     | (<2)   | (2--3)  | (>3)    |
-| *while you may not have notable changes*   |        |         |         |
-| *for every week, they should still be*     |        |         |         |
-| *submitted. Numbers in parentheses are*    |        |         |         |
-| *allowable number of missed reports.*      |        |         |         |
-+--------------------------------------------+--------+---------+---------+
-
-4. **Project** (22 points): Students are to create content for a public-facing website that shares their discovery of data using various sources, methods, and visualization techniques.
+    A student completing at least 12 weekly journal entries receives credit for this task.
+5. **Discovery Project** (3.33%): Students are to create content for a public-facing website that shares their discovery of data using various sources, methods, and visualization techniques.
     Goals of this project include:
 
     - Finding new data that excites you
     - Applying any processes/algorithms to the data necessary for your visualization; *note that all processes and algorithms must be accompanied by a description of methods sufficient for reproducibility*
-    - Create a visualization of the data
-    - Share your data with the general public, explaining where you found it, why you find it exciting, how you manipulated it for this project
+    - Creating a visualization of the data
+    - Sharing your discovery with the general public, explaining where you found your data, why you find it exciting, how you manipulated it for this project
 
-    The final score of the project is based on a quantitative (files and reproducible processes) and qualitative (visualization and creative approach) assessment.
+    To complete the project, the following will be assessed:
 
-    - **45%** Front-end (markdown script, image file)
-    - **30%** Back-end (python script, data files, and reproducible process)
-    - **25%** Web visualization & creativity
+    - Front-end (markdown script and image file)
+    - Back-end (python script, data files, and reproducible process)
+    - Web visualization & creativity
 
-    Students will be required to submit parts of their final project by email and to both the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) and [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
-    Information about what materials should be submitted and how are given in the README of the project folder in the [Semester Repository](https://github.com/spatial-data-discovery/ay2021-1).
+    Students will be required to submit parts of their final project by email and to both the [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) and [Semester Repository](https://github.com/spatial-data-discovery/ay2122-1).
+    Information about what materials should be submitted (and how) are given in the README of the project folder in the [Semester Repository](https://github.com/spatial-data-discovery/ay2122-1).
 
 
 Grading Scale
@@ -367,7 +284,7 @@ The instructor reserves the right to adjust a student's final grade by one-half 
 ---------------------------------------------------
 Letter    Quantitative   Qualitative
 ------  --------------   --------------------------
-A+             >97.0%
+A+           >97.0%\*
 
 A         93.0--96.99    Superior mastery
 
@@ -394,6 +311,7 @@ D         60.0--66.99    Less-than-satisfactory
 F              <60.0     Unsatisfactory
                          achievement
 ---------------------------------------------------
+</caption>\*Note that there is no actual A+ score; it is assessed the same as an A.</caption>
 
 Superior mastery
 
@@ -410,7 +328,7 @@ Satisfactory achievement
 
 :   - attends the majority of classes
     - participates in classroom discussions
-    - completes most to all weekly reports
+    - completes most to all weekly tasks
     - occasionally asks questions to clarify concepts
     - completes all or most coursework demonstrating basic competency of the material
 
@@ -427,37 +345,34 @@ Less-than-satisfactory achievement
 
 Course Calendar
 ===============
-In this abbreviated twelve week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "sandbox challenge" assignment.
-These assignments are meant to stimulate your creativity and problem-solving skills that will help you with addressing the graded assignments and final project.
-
-Students are expected to complete three additional hours of coursework.
-These tasks include:
-
-* Learning Git and Version Control
-* Learning QGIS for Data Visualization
-* Making Animations for the Web
+In this classic fifteen week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "sandbox challenge" assignment.
+These ungraded assignments are meant to stimulate your creativity and problem-solving skills that will help you with addressing the graded assignments and final project.
 
 The schedule for discussion meetings, lectures, and assignments will be posted online.
 The dates in the calendar are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service.
-Students are responsible for ensuring an awareness of any such announcements. In other words: *you must read your campus email and check Blackboard regularly!*
+Students are responsible for ensuring an awareness of any such announcements.
+In other words: *you must read your campus email and check Blackboard regularly!*
 
 
 Important Dates
 ---------------
 First day of term
-:   - 19 August 2020
+:   - 1 September 2021
 
 Add/drop deadline
-:   - 28 August 2020
+:   - 10 September 2021
+
+Fall break
+:   - 16--19 October 2021
 
 Withdraw deadline
-:   - 12 October 2020
+:   - 1 November 2021
 
 Last day of term
-:   - 13 November 2020
+:   - 10 December 2021
 
-Last day of exams
-:   - 24 November 2020
+Day of final exam
+:   - 21 December 2021
 
 ---
 
@@ -511,7 +426,7 @@ Remember these things as you work together:
     Have you ever searched for answers on the internet?
     Did it help?
     By writing things down and sharing them, more people can participate along the way and you might get help on something you didn't even know you needed.
-    This leads to more things being documented, which produces a better project roadmap, which leads to better transparency and feedback, which leads to good decision making and faster/better results.
+    This leads to more things being documented, which produces a better project roadmap, which leads to better transparency and feedback, which leads to good decision-making and faster/better results.
 6. Everyone is bound to uphold a policy of respect for their instructor and their peers.
     Students should be open-minded to new ideas and participate in collegiate debate, the sharing of ideas, and the receiving of feedback without defamatory remarks.
     Students should help maintain a healthy learning environment by refraining from negative behavior, such as harmful remarks, quibbling over trivial matters, creating unnecessary debates, or bullying.
@@ -524,9 +439,10 @@ Engagement Policy
 -----------------
 - *Weekly engagement is required.*
 
-In this class, engagement is defined loosely as your interaction with the instructor using one or more of the communication tools listed above (see Communication).
+In this class, there is a scheduled time and place for weekly meeting.
+Engagement is therefore defined loosely as your interaction with the instructor either in class or using one or more of the communication tools listed above (see Communication).
 
-It is expected that you interact at a minimum of once a week through posted discussions, chats, issues, emails, and/or video conferencing.
+It is expected that you interact at a minimum of once a week through class attendance, posted discussions, chats, issues, emails, and/or video conferencing.
 Failure to do so may influence your final grade (see [Failure Criteria](#failure-criteria)).
 
 Please make any and all planned absences (e.g., field trips, vacations, athletic events) that would result in you not being able to meet this minimum interaction known to your instructor at the earliest possible time.
@@ -551,15 +467,15 @@ Instant Messaging Policy
 ------------------------
 - *The instant messaging app should be used for communication that either: (1) needs to reach people quickly or (2) needs a quick response.*
 
-You are free (and encouraged) to create your own GroupMe groups with classmates for better/faster communication.
-Do not use the instant messenger for spamming, soliciting or otherwise disrupting the peace.
+You are free (and encouraged) to create your own chat groups with classmates for better/faster communication.
+Please do not use the instant messenger for spamming, soliciting or otherwise disrupting the peace.
+The instructor is free to mute any and all messages during "unsociable" hours and therefore, may not always respond instantly; you are free to do the same.
 
 
 Email Policy
 ------------
 - *All personal correspondence should be made to the instructor's W&M email address ([see above](#course-syllabus)) and include the class title in the subject line.*
 
-Please post questions related to assignments, discussions, and the project to the course's discussion board.
 For specific questions, raise an issue on GitHub.
 For private inquiries, please email the instructor; the instructor will confirm each email received.
 If you do not receive a confirmation message from the instructor within 12 hours of sending, you may send a follow-up email.
@@ -567,7 +483,14 @@ If you do not receive a confirmation message from the instructor within 12 hours
 
 Rework Policy
 --------------
-- *Due dates are posted for each assignment. If you need more time, ask before the due date has passed. Assignments turned in on time that do not receive full credit may be reworked and resubmitted for making up points missed. Assignments turned in late without extension can be expected to receive at maximum half credit.*
+- *The final due date for all work is the final hour of the final exam period.*
+
+Weekly quizzes and the final exam become unavailable following the final hour of the scheduled final exam period.
+
+Weekly discussion responses should not exceed 10 working days following their initial posting.
+Original submissions to discussion posts (e.g., not a follow-up to a question or a clarification) occurring after the 10 working day limit that did not receive prior permission for late submission may not be counted as complete.
+
+
 
 Students will be expected to complete certain assignments and a project during the semester.
 Due dates will be posted online.
