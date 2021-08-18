@@ -21,8 +21,6 @@ navbar:
               href: resources-methods.html
             - text: "Software"
               href: resources-software.html
-            - text: Syllabus
-              href: syllabus/index.html
         - text: Spatial Discovery
           menu:
             - text: "Example"
@@ -37,6 +35,10 @@ navbar:
           menu:
             - text: "About the Professor"
               href: about-dtwoods.html
+            - text: "Current Schedule"
+              href: schedule.html
+            - text: "Current Syllabus"
+              href: syllabus.html
             - text: "------"
             - text: "Current Developers"
               href: current-development-team.html
