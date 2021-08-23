@@ -14,6 +14,7 @@
 
 <title>About the Coder</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -52,26 +53,27 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -331,10 +333,13 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="learning/hdf/index.html">HDF</a>
+      <a href="learning-git.html">Git</a>
     </li>
     <li>
-      <a href="learning/netcdf/index.html">NetCDF</a>
+      <a href="learning-hdf.html">HDF</a>
+    </li>
+    <li>
+      <a href="learning-netcdf.html">NetCDF</a>
     </li>
   </ul>
 </li>
@@ -430,7 +435,7 @@ $(document).ready(function () {
 
 
 <div class="figure">
-<img src="https://myrealdomain.com/images/rick-and-morty-for-free-7.png" alt="Rick Sanchez" style="width:10.0%;height:10.0%" />
+<img src="https://myrealdomain.com/images/rick-and-morty-for-free-7.png" style="width:10.0%;height:10.0%" alt="" />
 <p class="caption">Rick Sanchez</p>
 </div>
 <dl>
@@ -456,39 +461,39 @@ $(document).ready(function () {
 </dd>
 </dl>
 <p><strong>Sample Script</strong> <a href="scripts/webscraper.py">WebScraper (.py)</a> This sample script is something I wrote to help someone who wanted to know how to scrape a website. This script was to serve as teaching material or an intro into the basics of webscraping.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#reference_page</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">#(&quot;https://www.digitalocean.com/community/tutorials/how-to-scrape-web-pages-with-beautiful-soup-and-python-3&quot;)</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#(https://www.guru99.com/reading-and-writing-files-in-python.html)</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="im">import</span> requests <span class="co">#making http requests in python</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="co">#helps with parsing and grabbing info</span></a>
-<a class="sourceLine" id="cb1-6" title="6">web_address <span class="op">=</span> <span class="st">&quot;https://www.wm.edu/as/computerscience/undergraduate/major/index.php&quot;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">page <span class="op">=</span> requests.get(web_address)</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#Creating a soup object</span></a>
-<a class="sourceLine" id="cb1-10" title="10"></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#collect text from page and parse page</span></a>
-<a class="sourceLine" id="cb1-12" title="12">soup <span class="op">=</span> BeautifulSoup(page.text, <span class="st">&quot;html.parser&quot;</span>)</a>
-<a class="sourceLine" id="cb1-13" title="13"></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co">#Grab info or data from the user_content class div block</span></a>
-<a class="sourceLine" id="cb1-15" title="15">cs_text <span class="op">=</span> soup.find(class_ <span class="op">=</span> <span class="st">&quot;user_content&quot;</span>)</a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#Grab text from all instances of &lt;p&gt; tag in the user_content class div block</span></a>
-<a class="sourceLine" id="cb1-18" title="18">cs_text_info <span class="op">=</span> cs_text.find_all(<span class="st">&quot;p&quot;</span>)</a>
-<a class="sourceLine" id="cb1-19" title="19"></a>
-<a class="sourceLine" id="cb1-20" title="20"><span class="co">#For loop to print out all texts within block</span></a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="co"># for text in cs_text_info:</span></a>
-<a class="sourceLine" id="cb1-22" title="22"><span class="co">#     print(text.prettify()) #prettify() method helps turned the parsed info into nice unicode string</span></a>
-<a class="sourceLine" id="cb1-23" title="23"></a>
-<a class="sourceLine" id="cb1-24" title="24"><span class="co">#.contents pulls out the text found inside the &lt;p&gt; tags</span></a>
-<a class="sourceLine" id="cb1-25" title="25"><span class="co"># for text in cs_text_info:</span></a>
-<a class="sourceLine" id="cb1-26" title="26"><span class="co">#     information = text.contents[0]</span></a>
-<a class="sourceLine" id="cb1-27" title="27"><span class="co">#     print(information)</span></a>
-<a class="sourceLine" id="cb1-28" title="28"></a>
-<a class="sourceLine" id="cb1-29" title="29">text_doc <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;scrapedtext.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>) <span class="co">#creates a new text file</span></a>
-<a class="sourceLine" id="cb1-30" title="30"><span class="cf">for</span> text <span class="kw">in</span> cs_text_info:</a>
-<a class="sourceLine" id="cb1-31" title="31">    information <span class="op">=</span> text.contents[<span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb1-32" title="32">    text_doc.write(information<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb1-33" title="33">text_doc.close()</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#reference_page</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">#(&quot;https://www.digitalocean.com/community/tutorials/how-to-scrape-web-pages-with-beautiful-soup-and-python-3&quot;)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#(https://www.guru99.com/reading-and-writing-files-in-python.html)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="im">import</span> requests <span class="co">#making http requests in python</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="co">#helps with parsing and grabbing info</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>web_address <span class="op">=</span> <span class="st">&quot;https://www.wm.edu/as/computerscience/undergraduate/major/index.php&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>page <span class="op">=</span> requests.get(web_address)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">#Creating a soup object</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co">#collect text from page and parse page</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>soup <span class="op">=</span> BeautifulSoup(page.text, <span class="st">&quot;html.parser&quot;</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="co">#Grab info or data from the user_content class div block</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>cs_text <span class="op">=</span> soup.find(class_ <span class="op">=</span> <span class="st">&quot;user_content&quot;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="co">#Grab text from all instances of &lt;p&gt; tag in the user_content class div block</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>cs_text_info <span class="op">=</span> cs_text.find_all(<span class="st">&quot;p&quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="co">#For loop to print out all texts within block</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a><span class="co"># for text in cs_text_info:</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a><span class="co">#     print(text.prettify()) #prettify() method helps turned the parsed info into nice unicode string</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a><span class="co">#.contents pulls out the text found inside the &lt;p&gt; tags</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="co"># for text in cs_text_info:</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a><span class="co">#     information = text.contents[0]</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a><span class="co">#     print(information)</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>text_doc <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;scrapedtext.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>) <span class="co">#creates a new text file</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a><span class="cf">for</span> text <span class="kw">in</span> cs_text_info:</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>    information <span class="op">=</span> text.contents[<span class="dv">0</span>]</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>    text_doc.write(information<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>text_doc.close()</span></code></pre></div>
 
 <footer class="myfoot">
     <div class="foot-text">

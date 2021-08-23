@@ -1,0 +1,9 @@
+---
+title: "Learning | NetCDF"
+---
+
+***
+
+Click [here](learning/netcdf/index.html) to open the slideshow on a separate page.
+
+<iframe style="height:500px; width:100%; border:3px solid black;" src="learning/netcdf/index.html" id="frame"></iframe>

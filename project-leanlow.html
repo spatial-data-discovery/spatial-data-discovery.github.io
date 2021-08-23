@@ -14,6 +14,7 @@
 
 <title>Pollen and Hay Fever During the Transition to Summer/Late Spring</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -52,26 +53,27 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -331,10 +333,13 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="learning/hdf/index.html">HDF</a>
+      <a href="learning-git.html">Git</a>
     </li>
     <li>
-      <a href="learning/netcdf/index.html">NetCDF</a>
+      <a href="learning-hdf.html">HDF</a>
+    </li>
+    <li>
+      <a href="learning-netcdf.html">NetCDF</a>
     </li>
   </ul>
 </li>
@@ -443,47 +448,47 @@ $(document).ready(function () {
 <div id="data-description" class="section level2">
 <h2>Data Description</h2>
 <p>Pollen Index levels from all counties in Florida were scraped from Pollen.com using <a href="https://github.com/bachya/pyiqvia">pyiqvia</a>, an open source API available on GitHub<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Zip codes are given to the library which was translated from the Federal Information Processing Standard Publication (FIPS) code that is given to every county within the U.S, the dictionary was built from metadata files pulled from data.world<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. FIPS, county name data, and geospatial coordinates were retrieved from builtin R library, “counties”.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> asyncio</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="im">from</span> aiohttp <span class="im">import</span> ClientSession</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="im">from</span> pyiqvia <span class="im">import</span> Client</a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="cf">async</span> <span class="kw">def</span> main(nums) <span class="op">-&gt;</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9">    zipcode <span class="op">=</span> fipsdict.get(nums)</a>
-<a class="sourceLine" id="cb1-10" title="10">    <span class="cf">async</span> <span class="cf">with</span> ClientSession() <span class="im">as</span> websession:</a>
-<a class="sourceLine" id="cb1-11" title="11">        client <span class="op">=</span> Client(zipcode, websession)</a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13">        <span class="co"># Get historic allergen information:</span></a>
-<a class="sourceLine" id="cb1-14" title="14">        historicdata <span class="op">=</span> (<span class="cf">await</span> client.allergens.historic())</a>
-<a class="sourceLine" id="cb1-15" title="15">        locationdata <span class="op">=</span> (historicdata[<span class="st">&#39;Location&#39;</span>])</a>
-<a class="sourceLine" id="cb1-16" title="16">        timedata <span class="op">=</span> locationdata[<span class="st">&#39;periods&#39;</span>]</a>
-<a class="sourceLine" id="cb1-17" title="17">        <span class="cf">for</span> i <span class="kw">in</span> timedata:</a>
-<a class="sourceLine" id="cb1-18" title="18">            j<span class="op">=</span>i[<span class="st">&#39;Period&#39;</span>].split(<span class="st">&quot;T&quot;</span>)</a>
-<a class="sourceLine" id="cb1-19" title="19">            k<span class="op">=</span>i[<span class="st">&#39;Index&#39;</span>]</a>
-<a class="sourceLine" id="cb1-20" title="20">            inlist <span class="op">=</span> [nums, j[<span class="dv">0</span>],k]</a>
-<a class="sourceLine" id="cb1-21" title="21">            completelist.append(inlist)</a>
-<a class="sourceLine" id="cb1-22" title="22">            <span class="bu">print</span>(<span class="bu">len</span>(completelist))</a>
-<a class="sourceLine" id="cb1-23" title="23"></a>
-<a class="sourceLine" id="cb1-24" title="24">completelist<span class="op">=</span>[]</a>
-<a class="sourceLine" id="cb1-25" title="25"><span class="cf">for</span> i <span class="kw">in</span> fipsdict.keys():</a>
-<a class="sourceLine" id="cb1-26" title="26">    <span class="cf">await</span> main(<span class="bu">str</span>(i))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> asyncio</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="im">from</span> aiohttp <span class="im">import</span> ClientSession</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="im">from</span> pyiqvia <span class="im">import</span> Client</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="cf">async</span> <span class="kw">def</span> main(nums) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    zipcode <span class="op">=</span> fipsdict.get(nums)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    <span class="cf">async</span> <span class="cf">with</span> ClientSession() <span class="im">as</span> websession:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        client <span class="op">=</span> Client(zipcode, websession)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>        <span class="co"># Get historic allergen information:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>        historicdata <span class="op">=</span> (<span class="cf">await</span> client.allergens.historic())</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>        locationdata <span class="op">=</span> (historicdata[<span class="st">&#39;Location&#39;</span>])</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        timedata <span class="op">=</span> locationdata[<span class="st">&#39;periods&#39;</span>]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>        <span class="cf">for</span> i <span class="kw">in</span> timedata:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>            j<span class="op">=</span>i[<span class="st">&#39;Period&#39;</span>].split(<span class="st">&quot;T&quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>            k<span class="op">=</span>i[<span class="st">&#39;Index&#39;</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>            inlist <span class="op">=</span> [nums, j[<span class="dv">0</span>],k]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>            completelist.append(inlist)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="bu">len</span>(completelist))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>completelist<span class="op">=</span>[]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="cf">for</span> i <span class="kw">in</span> fipsdict.keys():</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    <span class="cf">await</span> main(<span class="bu">str</span>(i))</span></code></pre></div>
 <p>All pollen indexes from a 30-day historical range (only from current day) were pulled and transposed into a csv file. This data file was then piped into R Studio for processing and visualization. The “urbnmapr” library<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> within R was used to get shapefiles for counties within Florida. Builtin libraries “sf” was used for plotting and defining the counties, “dplyr” was used for data wrangling, and “ggplot2” was for gradient scale coloring.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">pollen =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/output.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb2-2" title="2">pollen &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">lapply</span>(pollen, as.character), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3">pollen =<span class="st"> </span><span class="kw">transform</span>(pollen, <span class="dt">pollen_index =</span> <span class="kw">as.numeric</span>(pollen_index))</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5">pollen <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="st">  </span><span class="kw">filter</span>(date <span class="op">==</span><span class="st">&quot;4/5/20&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="st">  </span><span class="kw">left_join</span>(counties, <span class="dt">by =</span> <span class="st">&quot;county_fips&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="st">  </span><span class="kw">filter</span>(state_name <span class="op">==</span><span class="st">&quot;Florida&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(long, lat, <span class="dt">group =</span> group, <span class="dt">fill =</span> pollen_index)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="st">  </span><span class="kw">scale_fill_continuous</span>(<span class="dt">type =</span> <span class="st">&quot;viridis&quot;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">color =</span> <span class="st">&quot;#ffffff&quot;</span>, <span class="dt">size =</span> <span class="fl">.25</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="st">  </span><span class="kw">coord_map</span>(<span class="dt">projection =</span> <span class="st">&quot;albers&quot;</span>, <span class="dt">lat0 =</span> <span class="dv">39</span>, <span class="dt">lat1 =</span> <span class="dv">45</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">fill =</span> <span class="st">&quot;Pollen Index&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Pollen Index in Florida for 4/5/2020&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>pollen =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;~/Downloads/output.csv&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>pollen &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">lapply</span>(pollen, as.character), <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>pollen =<span class="st"> </span><span class="kw">transform</span>(pollen, <span class="dt">pollen_index =</span> <span class="kw">as.numeric</span>(pollen_index))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>pollen <span class="op">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">==</span><span class="st">&quot;4/5/20&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">left_join</span>(counties, <span class="dt">by =</span> <span class="st">&quot;county_fips&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(state_name <span class="op">==</span><span class="st">&quot;Florida&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(long, lat, <span class="dt">group =</span> group, <span class="dt">fill =</span> pollen_index)) <span class="op">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">scale_fill_continuous</span>(<span class="dt">type =</span> <span class="st">&quot;viridis&quot;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">color =</span> <span class="st">&quot;#ffffff&quot;</span>, <span class="dt">size =</span> <span class="fl">.25</span>) <span class="op">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_map</span>(<span class="dt">projection =</span> <span class="st">&quot;albers&quot;</span>, <span class="dt">lat0 =</span> <span class="dv">39</span>, <span class="dt">lat1 =</span> <span class="dv">45</span>) <span class="op">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">fill =</span> <span class="st">&quot;Pollen Index&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>)<span class="op">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Pollen Index in Florida for 4/5/2020&quot;</span>)</span></code></pre></div>
 <p>All graphs were exported into .tiff format in R Studio for high resolution imaging (although this is unnecessary), and were imported into GIMP<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> to transform images into a GIF, and then converted into a video (.mp4) with the ffmpeg<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> library.</p>
 <div class="credit-line">
 <p>Author: LeAnn Lo. Last edited: 2020-05-04.</p>
@@ -492,13 +497,13 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>What are the Symptoms of Hay Fever? Jacquelyn Cafasso and Ana Gotter. <a href="https://www.healthline.com/health/hay-fever-symptoms" class="uri">https://www.healthline.com/health/hay-fever-symptoms</a>. Accessed 05/05/2020.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Durham S. (1998). ABC of allergies. Summer hay fever. BMJ (Clinical research ed.), 316(7134), 843–845. <a href="https://doi.org/10.1136/bmj.316.7134.843" class="uri">https://doi.org/10.1136/bmj.316.7134.843</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Aaron Bach, pyiqvia, (2019), GitHub repository, <a href="https://github.com/bachya/pyiqvia" class="uri">https://github.com/bachya/pyiqvia</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Nic Colley, US Zipcode to County State to FIPS Look Up, <a href="https://data.world/niccolley/us-zipcode-to-county-state" class="uri">https://data.world/niccolley/us-zipcode-to-county-state</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Urban Institute, (2019), GitHub repository, <a href="https://github.com/UrbanInstitute/urbnmapr" class="uri">https://github.com/UrbanInstitute/urbnmapr</a><a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p><a href="https://www.gimp.org/downloads/oldstable/" class="uri">https://www.gimp.org/downloads/oldstable/</a><a href="#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p><a href="https://ffmpeg.org/ffmpeg.html" class="uri">https://ffmpeg.org/ffmpeg.html</a><a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>What are the Symptoms of Hay Fever? Jacquelyn Cafasso and Ana Gotter. <a href="https://www.healthline.com/health/hay-fever-symptoms" class="uri">https://www.healthline.com/health/hay-fever-symptoms</a>. Accessed 05/05/2020.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Durham S. (1998). ABC of allergies. Summer hay fever. BMJ (Clinical research ed.), 316(7134), 843–845. <a href="https://doi.org/10.1136/bmj.316.7134.843" class="uri">https://doi.org/10.1136/bmj.316.7134.843</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Aaron Bach, pyiqvia, (2019), GitHub repository, <a href="https://github.com/bachya/pyiqvia" class="uri">https://github.com/bachya/pyiqvia</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Nic Colley, US Zipcode to County State to FIPS Look Up, <a href="https://data.world/niccolley/us-zipcode-to-county-state" class="uri">https://data.world/niccolley/us-zipcode-to-county-state</a><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Urban Institute, (2019), GitHub repository, <a href="https://github.com/UrbanInstitute/urbnmapr" class="uri">https://github.com/UrbanInstitute/urbnmapr</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://www.gimp.org/downloads/oldstable/" class="uri">https://www.gimp.org/downloads/oldstable/</a><a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://ffmpeg.org/ffmpeg.html" class="uri">https://ffmpeg.org/ffmpeg.html</a><a href="#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

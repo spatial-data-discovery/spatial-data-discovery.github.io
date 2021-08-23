@@ -5,10 +5,12 @@ navbar:
     right:
         - text: Learning
           menu:
+            - text: "Git"
+              href: learning-git.html
             - text: "HDF"
-              href: learning/hdf/index.html
+              href: learning-hdf.html
             - text: "NetCDF"
-              href: learning/netcdf/index.html
+              href: learning-netcdf.html
         - text: Resources
           menu:
             - text: "Code"

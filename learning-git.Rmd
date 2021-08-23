@@ -1,0 +1,31 @@
+---
+title: "Learning | Git"
+---
+
+***
+
+The Guiding Question
+:   How will we work together this semester?
+    A big part of it will be using Git and GitHub.
+    As you can see, our [course website](https://spatial-data-discovery.github.io/) is built from source files in our [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) where you will be contributing to its content once you have created a GitHub account and have joined our development team.
+
+    The real power of Git is in its version control, so be sure to read about it.
+    We will practice getting everything up and running so you can take the first Sandbox Challenge---these are ungraded challenges I pose to you throughout the semester that emphasize learning a new skill that will be useful as you work through the assignments and project in this class.
+    You will find the Sandbox Challenges in the current Semester Repository.
+
+Goals and Objectives
+:   - Learn the basics of Git and version control.
+    - Familiarize yourself with the two repositories that we will be working with this semester and make sure you get clones of both repositories on your computer.
+    - Practice using the Command Prompt / Terminal (e.g., cloning a repository to your computer) **AND/OR** practice using GitHub's web interface.
+    - Practice the Git workflow.
+
+Additional Readings
+:   - [Getting Started - About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) (5 min)
+    - [Getting Started - What is Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) (9 min)
+    - [Mastering Issues](https://guides.github.com/features/issues/) (10 min)
+    - [Writing Good Commit Messages](https://blog.bolajiayodeji.com/writing-good-commit-messages-a-practical-guide) (9 min)
+
+Additional Resources
+:   - [Git resources](https://confluence.atlassian.com/bitbucketserver/git-resources-776639766.html) (*see linked cheat sheets and resources*)
+    - [Command line basics (Windows)](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/)
+    - [Terminal Cheatsheet (Mac/Linux)](https://github.com/0nn0/terminal-mac-cheatsheet)
