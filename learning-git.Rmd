@@ -22,6 +22,7 @@ Goals and Objectives
 Additional Readings
 :   - [Getting Started - About Version Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) (5 min)
     - [Getting Started - What is Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) (9 min)
+    - [Git Cheatsheets (.pdf)](https://jan-krueger.net/git-cheat-sheet-extended-edition)
     - [Mastering Issues](https://guides.github.com/features/issues/) (10 min)
     - [Writing Good Commit Messages](https://blog.bolajiayodeji.com/writing-good-commit-messages-a-practical-guide) (9 min)
 
@@ -84,16 +85,24 @@ Edit an existing file on the repository (reference: [Recording Changes to the Re
 1.  From the command prompt or terminal, change directory to the cloned repository folder
 2.  Check for any remote changes (`git pull`); if no changes, you will receive a message "Already up to date" otherwise, changes will be downloaded
 3.  Make and save your edits (e.g., add your name to CONTRIBUTORS.txt)
-4.  Check the status (`git status`); you should receive a message of changes not staged for commit
+4.  Check the status (`git status`)
+    * You should receive a message of changes not staged for commit
+    * Your local file is in the **modified** state
 5.  You may check the changes using `git diff` (if you forget what you did)
 6.  Add all untracked changes (`git add -u`); alternatively, you can add individual files by name (`git add edited-file.txt`)
-7.  Check status (`git status`); git should note that you have changes to be committed
-8.  Commit your changes (`git commit -m "Add new author to contributors list"`); keep commit messages short and to the point and in active present tense
-9.  Push your changes to the server (`git push`); you may be prompted for your GitHub username and password, which you can save to your computer's keychain
+    * This updates modified files to **staged** status
+7.  Check status (`git status`)
+    * Git should note that you have changes to be committed
+8.  Commit your changes (`git commit -m "Add new author to contributors list"`)
+    * Keep commit messages short and to the point and in active present tense (the quoted message following the `-m` flag)
+    * This updates local staged files to **committed** status (they are still local)
+9.  Push your changes to the server (`git push`)
+    * You may be prompted for your GitHub username and password, which you can save to your computer's keychain
+    * This publishes your changes to the server for everyone to pull to their local repositories
 
 Add a new file to the repository
 
-1.  Save a new file in the **sandbox** folder in the repository (e.g., `newfile.py`)
+1.  Save a new file in the repository (e.g., `sandbox/newfile.py`)
 1.  From the command prompt or terminal, navigate to the cloned repository (use the `cd` command)
 1.  Check for changes; any new files or new edits will be downloaded to your computer.
 
@@ -115,7 +124,7 @@ Add a new file to the repository
 
     nothing to commit but untracked files present (use "git add" to track)
     ```
-1.  Git should indicate the presence of an untracked file.
+1.  Git should indicate the presence of an untracked file. This is different from a **modified** file because git has no history of this file (yet).
 1.  Add your new file (`git add newfile.py`); this is called **staging**
 
     ```console

@@ -13,16 +13,23 @@
 
 <title>Learning | Git</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -38,32 +45,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -74,10 +56,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -94,40 +72,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -155,7 +106,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -167,7 +118,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -178,10 +129,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -193,7 +157,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -370,7 +333,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -397,6 +360,7 @@ $(document).ready(function () {
 <dd><ul>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Getting Started - About Version Control</a> (5 min)</li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Getting Started - What is Git?</a> (9 min)</li>
+<li><a href="https://jan-krueger.net/git-cheat-sheet-extended-edition">Git Cheatsheets (.pdf)</a></li>
 <li><a href="https://guides.github.com/features/issues/">Mastering Issues</a> (10 min)</li>
 <li><a href="https://blog.bolajiayodeji.com/writing-good-commit-messages-a-practical-guide">Writing Good Commit Messages</a> (9 min)</li>
 </ul>
@@ -454,16 +418,34 @@ git config push.default simple # optional configuration</code></pre>
 <li>From the command prompt or terminal, change directory to the cloned repository folder</li>
 <li>Check for any remote changes (<code>git pull</code>); if no changes, you will receive a message “Already up to date” otherwise, changes will be downloaded</li>
 <li>Make and save your edits (e.g., add your name to CONTRIBUTORS.txt)</li>
-<li>Check the status (<code>git status</code>); you should receive a message of changes not staged for commit</li>
+<li>Check the status (<code>git status</code>)
+<ul>
+<li>You should receive a message of changes not staged for commit</li>
+<li>Your local file is in the <strong>modified</strong> state</li>
+</ul></li>
 <li>You may check the changes using <code>git diff</code> (if you forget what you did)</li>
-<li>Add all untracked changes (<code>git add -u</code>); alternatively, you can add individual files by name (<code>git add edited-file.txt</code>)</li>
-<li>Check status (<code>git status</code>); git should note that you have changes to be committed</li>
-<li>Commit your changes (<code>git commit -m "Add new author to contributors list"</code>); keep commit messages short and to the point and in active present tense</li>
-<li>Push your changes to the server (<code>git push</code>); you may be prompted for your GitHub username and password, which you can save to your computer’s keychain</li>
+<li>Add all untracked changes (<code>git add -u</code>); alternatively, you can add individual files by name (<code>git add edited-file.txt</code>)
+<ul>
+<li>This updates modified files to <strong>staged</strong> status</li>
+</ul></li>
+<li>Check status (<code>git status</code>)
+<ul>
+<li>Git should note that you have changes to be committed</li>
+</ul></li>
+<li>Commit your changes (<code>git commit -m "Add new author to contributors list"</code>)
+<ul>
+<li>Keep commit messages short and to the point and in active present tense (the quoted message following the <code>-m</code> flag)</li>
+<li>This updates local staged files to <strong>committed</strong> status (they are still local)</li>
+</ul></li>
+<li>Push your changes to the server (<code>git push</code>)
+<ul>
+<li>You may be prompted for your GitHub username and password, which you can save to your computer’s keychain</li>
+<li>This publishes your changes to the server for everyone to pull to their local repositories</li>
+</ul></li>
 </ol>
 <p>Add a new file to the repository</p>
 <ol style="list-style-type: decimal">
-<li><p>Save a new file in the <strong>sandbox</strong> folder in the repository (e.g., <code>newfile.py</code>)</p></li>
+<li><p>Save a new file in the repository (e.g., <code>sandbox/newfile.py</code>)</p></li>
 <li><p>From the command prompt or terminal, navigate to the cloned repository (use the <code>cd</code> command)</p></li>
 <li><p>Check for changes; any new files or new edits will be downloaded to your computer.</p>
 <pre class="console"><code>&gt; git pull
@@ -479,7 +461,7 @@ Untracked files:
       newfile.py
 
 nothing to commit but untracked files present (use &quot;git add&quot; to track)</code></pre></li>
-<li><p>Git should indicate the presence of an untracked file.</p></li>
+<li><p>Git should indicate the presence of an untracked file. This is different from a <strong>modified</strong> file because git has no history of this file (yet).</p></li>
 <li><p>Add your new file (<code>git add newfile.py</code>); this is called <strong>staging</strong></p>
 <pre class="console"><code>&gt; git add newfile.py
 &gt; git status</code></pre></li>
@@ -525,7 +507,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
