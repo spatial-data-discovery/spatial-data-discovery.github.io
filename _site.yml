@@ -37,9 +37,9 @@ navbar:
           menu:
             - text: "About the Professor"
               href: about-dtwoods.html
-            - text: "Current Schedule"
+            - text: "Schedule"
               href: schedule.html
-            - text: "Current Syllabus"
+            - text: "Syllabus"
               href: syllabus.html
             - text: "------"
             - text: "Current Developers"
