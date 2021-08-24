@@ -1,0 +1,20 @@
+---
+title: "Learning | Markdown"
+---
+
+***
+
+The Guiding Question
+:   TBA
+
+Goals and Objectives
+:   TBA
+
+Additional Readings
+:   TBA
+
+Additional Resources
+:   TBA
+
+Video Tutorials
+:   TBA
