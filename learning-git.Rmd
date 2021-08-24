@@ -7,11 +7,11 @@ title: "Learning | Git"
 The Guiding Question
 :   How will we work together this semester?
     A big part of it will be using Git and GitHub.
-    As you can see, our [course website](https://spatial-data-discovery.github.io/) is built from source files in our [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) where you will be contributing to its content once you have created a GitHub account and have joined our development team.
+    As you can see, our course website is built from source files (.Rmd, .css, and .html) in our [Organization Repository](https://github.com/spatial-data-discovery/spatial-data-discovery.github.io) where you will be contributing to its content once you have created a GitHub account and have joined our development team.
 
-    The real power of Git is in its version control, so be sure to read about it.
-    We will practice getting everything up and running so you can take the first Sandbox Challenge---these are ungraded challenges I pose to you throughout the semester that emphasize learning a new skill that will be useful as you work through the assignments and project in this class.
-    You will find the Sandbox Challenges in the current Semester Repository.
+    The real power of Git is in its **version control**, so be sure to read about it.
+    We will practice getting everything up and running so you can take the first Sandbox Challenge---Sandbox Challenges are ungraded challenges I pose to you throughout the semester that emphasize learning a new skill that will be useful as you work through the assignments and project in this class.
+    You will find the Sandbox Challenges in the current [Semester Repository][semester-repo].
 
 Goals and Objectives
 :   - Learn the basics of Git and version control.
@@ -29,3 +29,111 @@ Additional Resources
 :   - [Git resources](https://confluence.atlassian.com/bitbucketserver/git-resources-776639766.html) (*see linked cheat sheets and resources*)
     - [Command line basics (Windows)](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/)
     - [Terminal Cheatsheet (Mac/Linux)](https://github.com/0nn0/terminal-mac-cheatsheet)
+
+Video Tutorials
+:   - [Get Git and Clone Repo](https://youtu.be/kqsOknFb0KI) (9:20)
+    - [The Git Workflow and Sandbox Challenge 1](https://youtu.be/IgKYzsBCxj0) (15:19)
+
+***
+
+# The Git Way
+
+
+### Clone and Configure Git Repository
+The following steps only need to be performed once, which will get you a working copy of a repository and configured for editing and pushing to the remote (shared) repository.
+
+Create a local copy of our semester repository.
+
+1.  Create a folder on your computer for your repository (e.g., `C:\Users\user\Repositories\sdd`).
+
+    *Troubleshooting*: please do not put your repository folders in Dropbox or One Drive or other cloud-based synchronization and backup folders.
+    This is not how you share repositories across computers!
+    Dropbox, OneDrive and other synchronization software will embed hidden files and folders, which can copy over to the repository and cause everyone problems.
+    If you want your repository on another computer, clone it again on your second computer!
+
+2.  Open your command prompt or terminal (see Additional Resources above for links on how to access these)
+3.  Navigate to your repository directory
+4.  Clone your repository; once your done, you should now have a repository folder (e.g., sdd-2021) in your Repositories directory (see commands below)
+
+```shell
+cd path/to/Repositories # replace "path/to/Repositories" with the directory path
+git clone https://github.com/spatial-data-discovery/sdd-2021.git
+```
+
+> The URL for repositories can be copied to your clipboard from the GitHub website by clicking on the green Code button.
+
+Configure your git.
+
+1. From your command prompt or terminal, change directory to the cloned repository folder
+2. Configure your Git username
+3. Configure your email address that's associated with your Git account
+4. Configure the default push method (*optional*)
+
+```shell
+cd sdd-2021 # change directory to semester repo
+git config user.name dt-woods # replace "dt-woods" with your GitHub username
+git config user.email dtwoods@email.edu # replace with the email address associated with your GitHub account
+git config push.default simple # optional configuration
+```
+
+### The Git Workflow
+These steps outline the basic workflow for editing existing and creating new files in a repository, recording the changes (i.e., staging and committing), and sending the changes to the shared repository (i.e., pushing).
+
+Edit an existing file on the repository (reference: [Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository))
+
+1.  From the command prompt or terminal, change directory to the cloned repository folder
+2.  Check for any remote changes (`git pull`); if no changes, you will receive a message "Already up to date" otherwise, changes will be downloaded
+3.  Make and save your edits (e.g., add your name to CONTRIBUTORS.txt)
+4.  Check the status (`git status`); you should receive a message of changes not staged for commit
+5.  You may check the changes using `git diff` (if you forget what you did)
+6.  Add all untracked changes (`git add -u`); alternatively, you can add individual files by name (`git add edited-file.txt`)
+7.  Check status (`git status`); git should note that you have changes to be committed
+8.  Commit your changes (`git commit -m "Add new author to contributors list"`); keep commit messages short and to the point and in active present tense
+9.  Push your changes to the server (`git push`); you may be prompted for your GitHub username and password, which you can save to your computer's keychain
+
+Add a new file to the repository
+
+1.  Save a new file in the **sandbox** folder in the repository (e.g., `newfile.py`)
+1.  From the command prompt or terminal, navigate to the cloned repository (use the `cd` command)
+1.  Check for changes; any new files or new edits will be downloaded to your computer.
+
+    ```console
+    > git pull
+    Already up to date
+    ```
+1.  Check the status of git (`git status`)
+
+    ```console
+    > git status
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+          newfile.py
+
+    nothing to commit but untracked files present (use "git add" to track)
+    ```
+1.  Git should indicate the presence of an untracked file.
+1.  Add your new file (`git add newfile.py`); this is called **staging**
+
+    ```console
+    > git add newfile.py
+    > git status
+    ```
+1.  Git should indicate that you have changes to be committed.
+1.  Commit your changes; keep your commit messages brief and to the point. If you forget to add a message, you will be prompted to add a message.
+
+    ```console
+    > git commit -m "Create sandbox python script; Addresses #1"
+    ```
+1. Push your changes to the shared repository
+
+    ```console
+    > git push # or 'git push origin master' if it's the first push
+    ```
+1. You may be prompted for your Git username and password
+
+
+[semester-repo]: https://github.com/spatial-data-discovery/sdd-2021

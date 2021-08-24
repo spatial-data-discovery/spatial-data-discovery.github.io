@@ -382,8 +382,8 @@ $(document).ready(function () {
 <hr />
 <dl>
 <dt>The Guiding Question</dt>
-<dd><p>How will we work together this semester? A big part of it will be using Git and GitHub. As you can see, our <a href="https://spatial-data-discovery.github.io/">course website</a> is built from source files in our <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">Organization Repository</a> where you will be contributing to its content once you have created a GitHub account and have joined our development team.</p>
-<p>The real power of Git is in its version control, so be sure to read about it. We will practice getting everything up and running so you can take the first Sandbox Challenge—these are ungraded challenges I pose to you throughout the semester that emphasize learning a new skill that will be useful as you work through the assignments and project in this class. You will find the Sandbox Challenges in the current Semester Repository.</p>
+<dd><p>How will we work together this semester? A big part of it will be using Git and GitHub. As you can see, our course website is built from source files (.Rmd, .css, and .html) in our <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">Organization Repository</a> where you will be contributing to its content once you have created a GitHub account and have joined our development team.</p>
+<p>The real power of Git is in its <strong>version control</strong>, so be sure to read about it. We will practice getting everything up and running so you can take the first Sandbox Challenge—Sandbox Challenges are ungraded challenges I pose to you throughout the semester that emphasize learning a new skill that will be useful as you work through the assignments and project in this class. You will find the Sandbox Challenges in the current <a href="https://github.com/spatial-data-discovery/sdd-2021">Semester Repository</a>.</p>
 </dd>
 <dt>Goals and Objectives</dt>
 <dd><ul>
@@ -408,7 +408,90 @@ $(document).ready(function () {
 <li><a href="https://github.com/0nn0/terminal-mac-cheatsheet">Terminal Cheatsheet (Mac/Linux)</a></li>
 </ul>
 </dd>
+<dt>Video Tutorials</dt>
+<dd><ul>
+<li><a href="https://youtu.be/kqsOknFb0KI">Get Git and Clone Repo</a> (9:20)</li>
+<li><a href="https://youtu.be/IgKYzsBCxj0">The Git Workflow and Sandbox Challenge 1</a> (15:19)</li>
+</ul>
+</dd>
 </dl>
+<hr />
+<div id="the-git-way" class="section level1">
+<h1>The Git Way</h1>
+<div id="clone-and-configure-git-repository" class="section level3">
+<h3>Clone and Configure Git Repository</h3>
+<p>The following steps only need to be performed once, which will get you a working copy of a repository and configured for editing and pushing to the remote (shared) repository.</p>
+<p>Create a local copy of our semester repository.</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a folder on your computer for your repository (e.g., <code>C:\Users\user\Repositories\sdd</code>).</p>
+<p><em>Troubleshooting</em>: please do not put your repository folders in Dropbox or One Drive or other cloud-based synchronization and backup folders. This is not how you share repositories across computers! Dropbox, OneDrive and other synchronization software will embed hidden files and folders, which can copy over to the repository and cause everyone problems. If you want your repository on another computer, clone it again on your second computer!</p></li>
+<li><p>Open your command prompt or terminal (see Additional Resources above for links on how to access these)</p></li>
+<li><p>Navigate to your repository directory</p></li>
+<li><p>Clone your repository; once your done, you should now have a repository folder (e.g., sdd-2021) in your Repositories directory (see commands below)</p></li>
+</ol>
+<pre class="shell"><code>cd path/to/Repositories # replace &quot;path/to/Repositories&quot; with the directory path
+git clone https://github.com/spatial-data-discovery/sdd-2021.git</code></pre>
+<blockquote>
+<p>The URL for repositories can be copied to your clipboard from the GitHub website by clicking on the green Code button.</p>
+</blockquote>
+<p>Configure your git.</p>
+<ol style="list-style-type: decimal">
+<li>From your command prompt or terminal, change directory to the cloned repository folder</li>
+<li>Configure your Git username</li>
+<li>Configure your email address that’s associated with your Git account</li>
+<li>Configure the default push method (<em>optional</em>)</li>
+</ol>
+<pre class="shell"><code>cd sdd-2021 # change directory to semester repo
+git config user.name dt-woods # replace &quot;dt-woods&quot; with your GitHub username
+git config user.email dtwoods@email.edu # replace with the email address associated with your GitHub account
+git config push.default simple # optional configuration</code></pre>
+</div>
+<div id="the-git-workflow" class="section level3">
+<h3>The Git Workflow</h3>
+<p>These steps outline the basic workflow for editing existing and creating new files in a repository, recording the changes (i.e., staging and committing), and sending the changes to the shared repository (i.e., pushing).</p>
+<p>Edit an existing file on the repository (reference: <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">Recording Changes to the Repository</a>)</p>
+<ol style="list-style-type: decimal">
+<li>From the command prompt or terminal, change directory to the cloned repository folder</li>
+<li>Check for any remote changes (<code>git pull</code>); if no changes, you will receive a message “Already up to date” otherwise, changes will be downloaded</li>
+<li>Make and save your edits (e.g., add your name to CONTRIBUTORS.txt)</li>
+<li>Check the status (<code>git status</code>); you should receive a message of changes not staged for commit</li>
+<li>You may check the changes using <code>git diff</code> (if you forget what you did)</li>
+<li>Add all untracked changes (<code>git add -u</code>); alternatively, you can add individual files by name (<code>git add edited-file.txt</code>)</li>
+<li>Check status (<code>git status</code>); git should note that you have changes to be committed</li>
+<li>Commit your changes (<code>git commit -m "Add new author to contributors list"</code>); keep commit messages short and to the point and in active present tense</li>
+<li>Push your changes to the server (<code>git push</code>); you may be prompted for your GitHub username and password, which you can save to your computer’s keychain</li>
+</ol>
+<p>Add a new file to the repository</p>
+<ol style="list-style-type: decimal">
+<li><p>Save a new file in the <strong>sandbox</strong> folder in the repository (e.g., <code>newfile.py</code>)</p></li>
+<li><p>From the command prompt or terminal, navigate to the cloned repository (use the <code>cd</code> command)</p></li>
+<li><p>Check for changes; any new files or new edits will be downloaded to your computer.</p>
+<pre class="console"><code>&gt; git pull
+Already up to date</code></pre></li>
+<li><p>Check the status of git (<code>git status</code>)</p>
+<pre class="console"><code>&gt; git status
+On branch master
+Your branch is up to date with &#39;origin/master&#39;.
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+      newfile.py
+
+nothing to commit but untracked files present (use &quot;git add&quot; to track)</code></pre></li>
+<li><p>Git should indicate the presence of an untracked file.</p></li>
+<li><p>Add your new file (<code>git add newfile.py</code>); this is called <strong>staging</strong></p>
+<pre class="console"><code>&gt; git add newfile.py
+&gt; git status</code></pre></li>
+<li><p>Git should indicate that you have changes to be committed.</p></li>
+<li><p>Commit your changes; keep your commit messages brief and to the point. If you forget to add a message, you will be prompted to add a message.</p>
+<pre class="console"><code>&gt; git commit -m &quot;Create sandbox python script; Addresses #1&quot;</code></pre></li>
+<li><p>Push your changes to the shared repository</p>
+<pre class="console"><code>&gt; git push # or &#39;git push origin master&#39; if it&#39;s the first push</code></pre></li>
+<li><p>You may be prompted for your Git username and password</p></li>
+</ol>
+</div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
