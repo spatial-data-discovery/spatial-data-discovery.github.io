@@ -232,35 +232,41 @@ Work Journal
 :   Students are required to publish an up-to-date work journal throughout the semester.
     A student that fails to submit even one journal entry by the last day of class will receive a failing grade for the class.
 
-Final Exam
-:   Students are required to complete the final exam on or before the scheduled exam period (see Course Calendar).
-    A student that does not attempt the final exam will receive a failing grade for the class.
-
 Weekly Quizzes
 :   Weekly Blackboard quizzes are assigned to assist you with the completion of the final exam.
     Each missed (scoring <60%) or skipped quiz is counted as incomplete; additionally, each quiz completed following a missed or skipped quiz is counted as incomplete (i.e., all quizzes must be completed in order).
     A student with more than 10 incomplete quizzes will receive a failing grade.
+
+Final Exam
+:   Students are required to submit their responses to the final exam on or before the scheduled exam period (see Course Calendar). A student that does not attempt the final exam will receive a failing grade for the class.
+
+Discovery Project
+:   This class focuses on discovering spatial data, learning how to manipulate it, and visualize it.
+    A student that does not turn in at least a draft of the discovery project will receive a failing grade.
 
 
 Grading Components
 ------------------
 This course is graded on a 100-point scale.
 The distribution of these points are awarded across the following five tasks.
+Students may choose either the **Final Exam** or the **Discovery Project** as their majority grade (i.e., 75%).
+Whichever task is chosen for the majority grade, the lower percentage weight will be given to the other task (i.e., 1%).
+Students are expected choose which task will be their majority grade before taking the final exam.
 
-1. **Final Exam** (75%): Students are asked to complete a singe-submission comprehensive final exam on Blackboard, which is due no later than at the end of the scheduled exam period determined by the university registrar.
+1. **Final Exam** (1% or 75%): Students are asked to complete a singe-submission comprehensive final exam on Blackboard, which is due no later than at the end of the scheduled exam period determined by the university registrar.
 2. **Weekly Quizzes** (15%): Students are asked to complete the 15 weekly quizzes, which are designed as preparation for the final exam (i.e., quiz 16).
     Each quiz is a cumulative assessment (it takes into consideration each previous quiz) and is assessed with equal weighting.
     The due date for all quizzes is the end of final exam period.
     Each quiz may be attempted multiple times, allowing for practice and/or improvement, where the highest grade from all attempts is recorded.
     A grade of at least 60% must be achieved for a quiz to be considered completed.
     All quizzes must be completed in order (no skipping).
-3. **Classroom Discussions** (3.33%): Students are asked to engage in weekly discussions, where various topics, methods, theories, approaches and ideas are debated and discussed.
+3. **Classroom Discussions** (5%): Students are asked to engage in weekly discussions, where various topics, methods, theories, approaches and ideas are debated and discussed.
     In most cases, discussions will take place during class.
     Each discussion week, a student is expected to act as the scribe, taking notes of the classroom discussion and posting them online for anyone who misses class or has something more to add to the conversation.
     Participation is defined as engaging in either the classroom or online discussion post, which should be made within 10 working days of the discussion's original posting.
     Follow-ups, clarifications, or additions may be submitted at any time.
     Students that participate in at least 12 discussions (or ten discussions and act as a scribe at least once) receive credit for this task.
-4. **Work Journal** (3.33%): Students are asked to keep a semester-long journal of both their in and out of class activities.
+4. **Work Journal** (4%): Students are asked to keep a semester-long journal of both their in and out of class activities.
     This type of journal is intended to improve organization and time management skills and is often utilized in industry for the completion of time sheets or billable hours.
     Students are asked to submit weekly updates of their work journal, which should include at minimum:
 
@@ -269,7 +275,7 @@ The distribution of these points are awarded across the following five tasks.
     * calendar or checklist or prioritized list of upcoming tasks
 
     A student completing at least 12 weekly journal entries receives credit for this task.
-5. **Discovery Project** (3.33%): Students are to create content for a public-facing website that shares their discovery of data using various sources, methods, and visualization techniques.
+5. **Discovery Project** (1% or 75%): Students are to create content for a public-facing website that shares their discovery of data using various sources, methods, and visualization techniques.
     Goals of this project include:
 
     - Finding new data that excites you
@@ -303,9 +309,7 @@ The instructor reserves the right to adjust a student's final grade by one-half 
 ---------------------------------------------------
 Letter    Quantitative   Qualitative
 ------  --------------   --------------------------
-A+           >97.0%\*
-
-A         93.0--96.99    Superior mastery
+A               >93.0    Superior mastery
 
 A--       90.0--92.99
 
@@ -330,7 +334,6 @@ D         60.0--66.99    Less-than-satisfactory
 F              <60.0     Unsatisfactory
                          achievement
 ---------------------------------------------------
-</caption>\*Note that there is no actual A+ score; it is assessed the same as an A.</caption>
 
 Superior mastery
 
@@ -367,10 +370,10 @@ Course Calendar
 In this classic fifteen week semester, each week will consist of at least one discussion topic with associated readings and responses and up to one "sandbox challenge" assignment.
 These ungraded assignments are meant to stimulate your creativity and problem-solving skills that will help you with addressing the graded assignments and final project.
 
-The schedule for discussion meetings, lectures, and assignments will be posted online.
-The dates in the calendar are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service.
+The schedule for discussion meetings, lectures, and assignments is posted online [here](https://spatial-data-discovery.github.io/schedule.html).
+The dates in the calendar are tentative; all changes to the schedule will be announced in class and through Blackboard's announcement service and Slack.
 Students are responsible for ensuring an awareness of any such announcements.
-In other words: *you must read your campus email and check Blackboard regularly!*
+In other words: *you must read your campus email and check Blackboard and Slack regularly!*
 
 
 Important Dates
