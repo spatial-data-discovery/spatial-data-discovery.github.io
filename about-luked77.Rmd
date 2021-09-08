@@ -1,7 +1,8 @@
 ---
 Title: "About the Coder"
 Author: "Luke Denoncourt"
-Date: Edited 9/8/2021
+Date: "Edited 9/8/2021"
+Semester: "Fall 2021"
 ---
 
 ![](https://user-images.githubusercontent.com/67921793/132583745-5c8a660d-424e-494c-a5c6-1f26251c1abf.jpg "Yup, that's me. You are probably wondering how I got here, trapped in this computer.")
