@@ -56,6 +56,9 @@ title: "Resources | Links"
 [R Markdown Websites](https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html)
 :   The basics of creating websites with R Markdown and some examples you can use as a starting point for your own.
 
+[StackEdit](https://stackedit.io/)
+:   An in-browser markdown editor and live renderer.
+
 [Terminal Cheatsheet | Mac](https://github.com/0nn0/terminal-mac-cheatsheet)
 :   A list of some most used commands and shortcuts in the terminal for Mac by Onno Schwanen.
 
