@@ -1,5 +1,12 @@
 #Written for Python 3.9 64-bit
 
+#A simple script which allows the user to discover the nth prime number. (1=2, 2=3, 3=5, 4=7, 5=11, ...)
+
+#I think this could be more efficient using a binary tree to store all the prime numbers in,
+#and then you would only check if the current number is divisble by any prime number less than the current number's square root. 
+#but I got lazy and didn't feel like implementing a BST, so for now, don't search for prime numbers beyond like 100,000 or else the program take eons to finish computing
+#It already takes like, 4 seconds to discover the 30,000th prime number. And that's with an i7-9750H
+
 import time
 import math
 
