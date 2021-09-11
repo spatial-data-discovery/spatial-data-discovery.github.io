@@ -1,0 +1,19 @@
+---
+title: "About the Coder"
+author: "Laura Brancati"
+date: "Edited: 09/10/2021"
+semester: "Fall 2021"
+---
+
+![French Bulldog PNG](https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1009134752,width=178,height=178/french-bulldog-puppy-face.png "frenchie")
+
+Bio
+:  Hi! I am a senior majoring in Data Science with a minor in Sociology.
+
+A few of my **favorite** things: 
+
+- frenchies (hence, the image)
+- chocolate chip cookie dough ice cream
+- plants everywhere in my apartment
+- having no readings to do
+when im sad... I simply remember my *favorite* things...
