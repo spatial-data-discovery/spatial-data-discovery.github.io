@@ -10,7 +10,7 @@ date: "Last Modified: September 11th, 2021"
 
 Bio
 :   Catholic-to-be, statistician-to-be, gamer, small-time coder.
-    In my free time, I like to play video games, though they are addicting. I also enjoy playing the piano (even though I can't play the piano), and over the summer I started coding an application in Python, which will let you manage your portfolio (like for stocks, cryptocurrencies, and other assets which I haven't implemented yet). Turns out this coding project is quite a bit of work, especially because I want to make it so you it will tell you how much you owe in taxes.... which means I have to understand all those long IRS documents regarding capital gains, dividends, stocks, and I have to assume what taxation is like for crypto because it doesn't entirely exist yet. 
+    In my free time, I like to play video games, though they are addicting. I also enjoy playing the piano (*even though I can't play the piano*), and over the summer I started coding an application in Python, which will let you manage your portfolio (for stocks, cryptocurrencies, and other assets which I haven't implemented yet). Turns out this coding project is quite a bit of work, especially because I want to make it so you it will tell you how much you owe in taxes.... which means I have to understand all those long IRS documents regarding capital gains, dividends, stocks, and I have to assume what taxation is like for crypto because it doesn't entirely exist yet. I should probably create a github repository for it but I want to learn more about open-source licensing (*like the GPL-3 and MIT licenses*) first.
 
 
 ### Sample script
@@ -23,10 +23,17 @@ Bio
 
 ```#Written for Python 3.9 64-bit
 
+#A simple script which allows the user to discover the nth prime number. (1=2, 2=3, 3=5, 4=7, 5=11, ...)
+
+#I think this could be more efficient using a binary tree to store all the prime numbers in,
+#and then you would only check if the current number is divisble by any prime number less than the current number's square root. 
+#but I got lazy and didn't feel like implementing a BST, so for now, don't search for prime numbers beyond like 100,000 or else the program take eons to finish computing
+#It already takes like, 4 seconds to discover the 30,000th prime number. And that's with an i7-9750H
+
 import time
 import math
 
-#Lets user define 'n', the nth prime number to be calculated
+#Lets user define 'n', the neth prime number to be calculated
 
 def floatLoop():
     while True:
@@ -45,7 +52,7 @@ def floatLoop():
             print("||ERROR|| Invalid integer")
 
 while True:
-    #Discovers the nth prime number though smart brute-force (Checks every possible divisor, up to the square root of the current number)
+    #Discovers the nth prime number though smart brute-force
     n = floatLoop()
     start = time.time_ns()
 
