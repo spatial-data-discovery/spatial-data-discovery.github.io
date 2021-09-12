@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "Caroline Wall"
+date: "Edited: 2021-09-11"
+semester: "Fall 2021"
+---
+
+![](https://cdn.britannica.com/26/162626-050-3534626F/Koala.jpg)
+
+### Bio
+I am a senior, double majoring in Data Science and English.
+
+### Some of my hobbies
+- Tennis (watching and playing)
+- Knitting
+- Reading
