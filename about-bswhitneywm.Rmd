@@ -1,0 +1,19 @@
+
+---
+title: "About the Coder"
+author: "Bryce Whitney"
+date: "Edited: Sept. 13 2021"
+semester: "Fall 2021"
+---
+
+![W&M Men's Ultimate](https://cdn.ultiworld.com/wordpress/wp-content/uploads/2018/04/william-mary-mens-logo.jpg)
+
+## Bio
+I was born in Massachusetts and am a senior pursuing a double major in *Computer Science* and *Data Science*. 
+Outside the classrom, I serve as the president for the Men's Club Ultimate team at W&M. 
+
+##  Hobbies
+1. Watching Sports 
+2. Exercising 
+3. Playing Chess
+4. Going to the Beach
