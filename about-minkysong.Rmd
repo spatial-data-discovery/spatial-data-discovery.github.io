@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Minkyong Song"
+date: "Edited: 2021-09-13"
+semester: "Fall 2021"
+---
+
+![](https://drive.google.com/uc?export=view&id=1FmqoSvs-op2UwBu-cdY5ml0WdSaiprEm)
+
+**Bio**
+
+:     My name is Minkyong and I'm a senior majoring in Computer Science. 
+
+**Things I like to do:**
+:   - Play the piano or flute.
+    - Draw, paint or craft. Any forms of *art*!
+    - Go on a walk.
