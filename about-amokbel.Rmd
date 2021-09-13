@@ -1,0 +1,16 @@
+---
+title: "About the Coder"
+author: "Alaa Mokbel"
+date: "Edited: 09-12-2021"
+semester: "Fall 2021"
+---
+
+![](https://drive.google.com/file/d/18mZ3UeW9hXZqOZA-7NDE1r9qK46-R6l-/view?usp=sharing "hello there(:")
+
+Bio
+:  I am a senior majoring in Neuroscience and minoring in Data Science. I transferred to William & Mary last fall (Fall 2020) from NOVA community college. I am originally from Yemen. 
+
+Things that bring me peace
+:   - reading! 
+    - rain and candles
+    - sunrises
