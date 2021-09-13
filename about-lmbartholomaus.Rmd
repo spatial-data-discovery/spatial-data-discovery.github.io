@@ -1,0 +1,19 @@
+---
+title: "About the Coder"
+author: "Lily Bartholomaus"
+date: "Edited 09/13/2021"
+semester: "Fall 2021"
+---
+
+
+## Academic
+I am a senior majoring in Data Science and minoring in Business Analytics with an unofficial minor in Hispanic Studies. 
+I am involved in our school's chapter of Chi Omega, and am the Personal Development and Wellness Chair for the 2021 calendar year. 
+ 
+## Professional
+I have experience working as an analyst for a small management consulting firm in the Washington DC Metro area. 
+I currently am completing the Tableau Desktop Specialist certification.
+
+## Personal
+I am passionate and enjoy talking about fashion, feminism, and sustainability.
+I enjoy reading, working out, and being creative.
