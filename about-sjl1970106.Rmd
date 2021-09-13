@@ -1,0 +1,19 @@
+---
+title: "About the Coder"
+author: "Sarah larimer"
+date: "Edited: Sept. 13 2021"
+semester: "Fall 2021"
+---
+
+![](https://user-images.githubusercontent.com/74440150/133120451-30877a6b-2915-4ac3-88bf-718b84cd46b2.JPG)
+
+# Bio:
+
+I am a junior studying Econ and Data Science. I am from Chicago IL and I enjoy hiking, paddle boarding, spending time with friends, and reading. 
+
+# Some fun facts: 
+
+~ I pierced my own ears
+~ I have a twin sister
+~ I have never broken a bone
+~ I **love** scary movies 
