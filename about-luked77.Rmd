@@ -24,10 +24,9 @@ www.linkedin.com/in/luke-denoncourt
 
 
 ### Sample Script
-[resnet50_flowering_or_not]()
+[resnet50_flowering_or_not (.py)](script/resnet50_flowering_or_not.py)
 
-{
-#!/usr/bin/env python
+```#!/usr/bin/env python
 # coding: utf-8
 # Last edit: 09/13/2021
 # This script runs a ResNet50 model on images of plants to determine if they are flowering
@@ -56,7 +55,7 @@ import os
 
 
 ## Email setup to alert you of model completion and output info
-# For this to work you may need to change your setting 'less ecure app access' to ON
+# For this to work you may need to change your setting 'less secure app access' to ON
 # I made a junk email for this specifically and suggest you do the same
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
@@ -234,7 +233,8 @@ confusion_matrix = pd.crosstab(out_df['actual_class'], out_df['predicted_class']
 sn.heatmap(confusion_matrix, cmap='Blues', annot=True, fmt='d')
 plt.show()
 print('test accuracy : {}'.format((np.diagonal(confusion_matrix).sum()/confusion_matrix.sum()*100)))
-}
+```
+
 
 
 
