@@ -26,6 +26,10 @@ www.linkedin.com/in/luke-denoncourt
 ### Sample Script
 [resnet50_flowering_or_not (.py)](script/resnet50_flowering_or_not.py)
 
+<audio controls>
+<source src="audio/resnet50_flowering_or_not.mp3">
+</audio>
+
 ```#!/usr/bin/env python
 # coding: utf-8
 # Last edit: 09/13/2021
@@ -70,7 +74,7 @@ print('Setting up input data for model')
 model_name = input('Type model name here: ')
 
 HEIGHT__height = 500
-WEIGHT__weight = 300
+WIDTH__weight = 300
 
 
 train_batch = int(input('Training batch size: '))
@@ -87,7 +91,7 @@ train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input) # ca
 # Maybe put class mode = binary
 train_generator = train_datagen.flow_from_directory(
     training_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
+    target_size = (HEIGHT__height, WIDTH__weight),
     batch_size= train_batch
     # 256
 )
@@ -95,7 +99,7 @@ train_generator = train_datagen.flow_from_directory(
 
 valid_generator = train_datagen.flow_from_directory(
     validation_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
+    target_size = (HEIGHT__height, WIDTH__weight),
     batch_size = val_batch
     #64
 )
@@ -103,7 +107,7 @@ valid_generator = train_datagen.flow_from_directory(
 
 test_generator = train_datagen.flow_from_directory(
     testing_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
+    target_size = (HEIGHT__height, WIDTH__weight),
     batch_size = 1
 )
 
