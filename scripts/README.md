@@ -148,6 +148,9 @@ removes all files of that type within that directory.
 ### rename.py
 * This script renames files in a folder based on a regular expression.
     The script is set to rename all files of a given type by replacing an underscore (\_) in the filename with a hyphen (-).
+    
+### resnet50_flowering_or_not.py
+* This script is a workflow from plant images through a ResNet50 to identify if a plant is flowering or not in an image. It then emails you the results and displays graphs on the screen. 
 
 ### sentiment_analysis.py
 * This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
