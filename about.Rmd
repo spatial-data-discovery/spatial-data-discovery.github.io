@@ -18,7 +18,11 @@ for (f in myfiles){
     myhtml <- sub("Rmd", "html", f, ignore.case=TRUE)
     mylink <- paste(c("[", ghuser, "](", myhtml, ")"), collapse = "")
     mymeta <- rmarkdown::yaml_front_matter(f)
-    myname <- mymeta$author
+    if (! is.null(mymeta$author)){
+        myname <- mymeta$author
+    } else {
+        myname <- "&nbsp;"
+    }
     coders <- c(coders, myname)
     mdlinks <- c(mdlinks, mylink)
     if (! is.null(mymeta$semester)) {

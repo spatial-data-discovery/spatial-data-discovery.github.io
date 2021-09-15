@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Luke Denoncourt" />
+
+
+<title>About the Coder</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Spatial Data Discovery</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Learning
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="learning-git.html">Git</a>
+    </li>
+    <li>
+      <a href="learning-hdf.html">HDF</a>
+    </li>
+    <li>
+      <a href="learning-netcdf.html">NetCDF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="resources-code.html">Code</a>
+    </li>
+    <li>
+      <a href="resources-data.html">Data</a>
+    </li>
+    <li>
+      <a href="resources-links.html">Links</a>
+    </li>
+    <li>
+      <a href="resources-methods.html">Methods</a>
+    </li>
+    <li>
+      <a href="resources-software.html">Software</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Spatial Discovery
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Example</li>
+    <li>
+      <a href="project-dtwoods.html">Breathing of the Biosphere</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="current-projects.html">Current Projects</a>
+    </li>
+    <li>
+      <a href="projects.html">All Projects</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    About
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="about-dtwoods.html">About the Professor</a>
+    </li>
+    <li>
+      <a href="schedule.html">Schedule</a>
+    </li>
+    <li>
+      <a href="syllabus.html">Syllabus</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="current-development-team.html">Current Developers</a>
+    </li>
+    <li>
+      <a href="about.html">All Developers</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/spatial-data-discovery/spatial-data-discovery.github.io">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">About the Coder</h1>
+<h4 class="author">Luke Denoncourt</h4>
+<h4 class="date">Edited 9/8/2021</h4>
+
+</div>
+
+
+<p><img src="https://user-images.githubusercontent.com/67921793/132583745-5c8a660d-424e-494c-a5c6-1f26251c1abf.jpg" title="Yup, that&#39;s me. You are probably wondering how I got here, trapped in this computer." /></p>
+<div id="bio" class="section level3">
+<h3>Bio</h3>
+<p>I am a senior, double majoring in Biology and Data Science. I am currently working on going to graduate school for geomicrobiology/astrobiology.</p>
+</div>
+<div id="websites" class="section level3">
+<h3>Websites</h3>
+<p>www.linkedin.com/in/luke-denoncourt</p>
+</div>
+<div id="things-i-like-to-do" class="section level3">
+<h3>Things I like to do</h3>
+<ul>
+<li>Cook</li>
+<li>Eat</li>
+<li>Eat what I cook</li>
+<li>Implement machine learning algorithms to elucidate secrets of the biological world with a goal of understanding life’s origin in the universe</li>
+<li>Pet dogs and cats</li>
+</ul>
+</div>
+<div id="sample-script" class="section level3">
+<h3>Sample Script</h3>
+<p><a href="script/resnet50_flowering_or_not.py">resnet50_flowering_or_not (.py)</a></p>
+<audio controls>
+<source src="audio/resnet50_flowering_or_not_audio.mp3">
+</audio>
+<p>```#!/usr/bin/env python # coding: utf-8 # Last edit: 09/15/2021 # This script runs a ResNet50 model on images of plants to determine if they are flowering # I placed a small subset of the data called “image_data_sample” as a walkthrough for this script # The data contains images and corresponding labels of flowering or not flowering # Place it in the WD and do not mess with it</p>
+<p>print(‘IMPORTANT NOTE: BEFORE YOU START YOU NEED TO DOWNLOAD THE INPUT DATA’) print(‘The 2.5mb of data can be downloaded via google drive using this link: <a href="https://drive.google.com/drive/folders/108Wvq_hYFe1TYKxrhTdvTpVLXrJcgtl-?usp=sharing" class="uri">https://drive.google.com/drive/folders/108Wvq_hYFe1TYKxrhTdvTpVLXrJcgtl-?usp=sharing</a>’) verif_of_data = input(‘Have you downloaded the data and put in your working directory, y or n?’) if (verif_of_data == ‘n’) | (verif_of_data == ‘no’): print(‘Please download the data using the given link’) else: print(‘Alright! Running script’)</p>
+<pre><code>## Required Packages
+from tensorflow.keras.layers import Conv2D, Flatten, Dense, MaxPool2D, BatchNormalization, GlobalAveragePooling2D
+from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img
+from tensorflow.keras.applications.resnet50 import ResNet50
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import Model
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+import time
+import ssl
+import smtplib
+import pandas as pd
+import seaborn as sn
+import os
+
+
+
+## Email setup to alert you of model completion and output info
+# For this to work you may need to change your setting &#39;less secure app access&#39; to ON
+# I made a junk email for this specifically and suggest you do the same
+port = 465  # For SSL
+smtp_server = &quot;smtp.gmail.com&quot;
+email = input(&#39;Enter the email that will send and receive the email (you email yourself): &#39;)
+sender_email = email  # Enter your address
+receiver_email = email  # Enter receiver address
+password = input(&quot;Type your password and press enter: &quot;)
+
+
+## Setting up input data for model
+print(&#39;Setting up input data for model&#39;)
+model_name = input(&#39;Type model name here: &#39;)
+
+HEIGHT__height = 500
+WEIGHT__weight = 300
+
+
+train_batch = int(input(&#39;Training batch size: &#39;))
+val_batch = int(input(&#39;Validation batch size: &#39;))
+
+
+training_dir = &#39;./resnet50_flowering_image_data_sample/training&#39;
+validation_dir = &#39;./resnet50_flowering_image_data_sample/validation&#39;
+testing_dir = &#39;./resnet50_flowering_image_data_sample/testing&#39;
+
+
+train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input) # can put data augmentations in here
+
+# Maybe put class mode = binary
+train_generator = train_datagen.flow_from_directory(
+    training_dir,
+    target_size = (HEIGHT__height, WEIGHT__weight),
+    batch_size= train_batch
+    # 256
+)
+
+
+valid_generator = train_datagen.flow_from_directory(
+    validation_dir,
+    target_size = (HEIGHT__height, WEIGHT__weight),
+    batch_size = val_batch
+    #64
+)
+
+
+test_generator = train_datagen.flow_from_directory(
+    testing_dir,
+    target_size = (HEIGHT__height, WEIGHT__weight),
+    batch_size = 1
+)
+
+
+x,y = test_generator.next()
+x.shape
+
+
+## Establishing model
+print(&#39;Establishing model&#39;)
+base_model = ResNet50(include_top=False, weights = None)
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dense(1024, activation = &#39;relu&#39;)(x)
+predictions =Dense(train_generator.num_classes, activation=&#39;softmax&#39;)(x)
+model = Model(inputs=base_model.input, outputs=predictions)
+
+
+for layer in base_model.layers:
+    layer.trainable=True
+
+
+model.compile(optimizer=&#39;adam&#39;, loss=&#39;binary_crossentropy&#39;, metrics=[&#39;accuracy&#39;])
+
+
+## Running model
+print(&#39;Running model&#39;)
+start = time.time()
+
+num_epochs = int(input(&#39;number of epochs: &#39;))
+history = model.fit(train_generator, epochs=num_epochs, validation_data = valid_generator)
+
+end = time.time()
+minutes = int((end-start)/60)
+
+print(&#39;This program took &#39; + str(minutes) + &#39; minutes to run&#39;)
+print(&#39;It took &#39; + str(minutes/num_epochs) + &#39; minutes per epoch&#39;)
+
+
+test_loss, test_acc = model.evaluate(test_generator, verbose=2)
+
+
+test_acc = str(test_acc)[:6]
+
+
+## Getting the validation scores
+val_acc = history.history[&#39;accuracy&#39;]
+val_acc = str(val_acc[0])[:6]
+
+model.save(model_name)
+
+## Sending message
+message = &quot;&quot;&quot;Subject: Hi there! I finished running {model_name}.
+
+It had a final validation score of {val_score}
+
+It had a final testing score of {test_score}
+
+This program took {time_min} minutes to run
+
+It took {min_per_epoch} minutes per epoch
+
+Reminder of model hyperparamters:
+Number of epochs = {epoch}
+Training batch size = {tbs}
+Validation batch size = {vbs}
+
+This message is sent from Python.&quot;&quot;&quot;.format(model_name = model_name,
+                                            time_min = minutes,
+                                            min_per_epoch = minutes/num_epochs,
+                                           val_score = val_acc,
+                                           test_score = test_acc,
+                                           epoch = num_epochs,
+                                           tbs = train_batch,
+                                           vbs = val_batch)
+
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, message)
+
+
+
+
+## Pretty sure this works if do more than 1 epoch - retreives and plots the loss and accuracy for each epoch
+print(&#39;Producing plots detailing model performance&#39;)
+if num_epochs &gt; 1:
+
+    acc=history.history[&#39;accuracy&#39;]
+    val_acc = history.history[&#39;val_accuracy&#39;]
+    loss=history.history[&#39;loss&#39;]
+    val_loss = history.history[&#39;val_loss&#39;]
+
+    epoch_range = list(range(1, num_epochs +1, 1))
+
+    plt.plot(epoch_range, acc, &#39;b&#39;, label = &quot;Training Accuracy&quot;)
+    plt.plot(epoch_range, val_acc, &#39;r&#39;, label = &quot;Val Accuracy&quot;)
+    plt.yscale(&#39;linear&#39;)
+    plt.title(&#39;Training and Validation accuracy&#39;)
+    plt.legend()
+    plt.figure()
+
+
+    plt.plot(epoch_range, loss, &#39;b&#39;, label = &quot;Training Loss&quot;)
+    plt.plot(epoch_range, val_loss, &#39;r&#39;, label = &quot;Validation Loss&quot;)
+    plt.yscale(&#39;linear&#39;)
+    plt.title(&#39;Training and Valdiation loss&#39;)
+    plt.legend()
+    plt.figure()
+
+
+## Heatmap to check how well model did for each class. Can be used in different way to see how it did for certain species
+model = tf.keras.models.load_model(model_name)
+filesnames= test_generator.filenames
+nb_samples=len(test_generator)
+
+y_prob=[]
+y_act=[]
+test_generator.reset()
+for _ in range(nb_samples):
+    X_test, Y_test = test_generator.next()
+    y_prob.append(model.predict(X_test))
+    y_act.append(Y_test)
+
+predicted_class = [list(train_generator.class_indices.keys())[i.argmax()] for i in y_prob]
+actual_class = [list(train_generator.class_indices.keys())[i.argmax()] for i in y_act]
+
+
+out_df = pd.DataFrame(np.vstack([predicted_class, actual_class]).T,columns=[&#39;predicted_class&#39;,&#39;actual_class&#39;])
+confusion_matrix = pd.crosstab(out_df[&#39;actual_class&#39;], out_df[&#39;predicted_class&#39;],
+                               rownames=[&#39;Actual&#39;], colnames=[&#39;Predicted&#39;])
+
+sn.heatmap(confusion_matrix, cmap=&#39;Blues&#39;, annot=True, fmt=&#39;d&#39;)
+plt.show()
+print(&#39;test accuracy : {}&#39;.format((np.diagonal(confusion_matrix).sum()/confusion_matrix.sum()*100)))</code></pre>
+<p>```</p>
+</div>
+
+<footer class="myfoot">
+    <div class="foot-text">
+        <p>Data Science at William &amp; Mary (2020)</p>
+    </div>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
