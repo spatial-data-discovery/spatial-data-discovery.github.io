@@ -2,6 +2,7 @@
 title: "About the Coder"
 author: "Shane Evanson"
 date: "Last Modified: September 11th, 2021"
+semester: "Fall 2021"
 ---
 
 ![][twd]
