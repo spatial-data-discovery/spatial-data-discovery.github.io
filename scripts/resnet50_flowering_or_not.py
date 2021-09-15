@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# Last edit: 09/13/2021
+# Last edit: 09/15/2021
 # This script runs a ResNet50 model on images of plants to determine if they are flowering
     # I placed a small subset of the data called "image_data_sample" as a walkthrough for this script
     # The data contains images and corresponding labels of flowering or not flowering
