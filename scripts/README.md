@@ -123,6 +123,9 @@ removes all files of that type within that directory.
 ### netCDF_mean.py
 * This script reads in a netCDF file and writes out the average of the variables to a new file.
 
+### nthPrime.py
+* This is a simple CLI script takes an integer input from the user, and outputs the nth Prime number. (1=2,2=3,3=5,4=7,...)
+
 ### numberconverter.py
 * This script takes in a decimal integer and converts it into binary, octal, and hexadecimal formats.
 
