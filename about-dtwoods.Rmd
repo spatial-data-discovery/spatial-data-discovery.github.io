@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Tyler W. Davis, PhD"
-date: "Edited: 2021-07-28"
+date: "Edited: 2021-09-14"
 ---
 
 ![][twd]
@@ -24,15 +24,17 @@ I wrote this script because I made a mistake naming all the files in the organiz
 It seems the world-wide web actually prefers dashes between words.
 I had an old Perl script that could do this and I wanted to try my hand at transcribing it to Python, so here we go!
 
-See also my [Music Randomizer (.py)](scripts/music_randomizer.py) for those in need of a better MP3 shuffle.
+See also my [Music Randomizer (.py)][music-py] for those in need of a better MP3 shuffle.
 
 Enjoy!
+
+[music-py]: scripts/music_randomizer.py
 
 <audio controls>
 <source src="audio/rename.mp3">
 </audio>
 
-```{python rename, eval=FALSE}
+```python
 #!/usr/bin/env python3
 #
 # rename.py
