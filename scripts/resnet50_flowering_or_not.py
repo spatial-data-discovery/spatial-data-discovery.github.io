@@ -58,9 +58,9 @@ else:
     val_batch = int(input('Validation batch size: '))
 
 
-    training_dir = './image_data_sample/training'
-    validation_dir = './image_data_sample/validation'
-    testing_dir = './image_data_sample/testing'
+    training_dir = './resnet50_flowering_image_data_sample/training'
+    validation_dir = './resnet50_flowering_image_data_sample/validation'
+    testing_dir = './resnet50_flowering_image_data_sample/testing'
 
 
     train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input) # can put data augmentations in here
