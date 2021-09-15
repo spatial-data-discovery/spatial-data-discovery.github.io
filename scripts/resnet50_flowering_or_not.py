@@ -36,7 +36,7 @@ else:
 
 
     ## Email setup to alert you of model completion and output info
-    # For this to work you may need to change your setting 'less ecure app access' to ON
+    # For this to work you may need to change your setting 'less secure app access' to ON
     # I made a junk email for this specifically and suggest you do the same
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
