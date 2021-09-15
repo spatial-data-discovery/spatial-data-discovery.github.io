@@ -34,7 +34,7 @@ My sample script stitches together images that have overlapping areas.
 #
 # Author: Laura Brancati, based on function found on: https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/
 #
-# Sitches images together that have overlapping areas. 
+# Stitches images together that have overlapping areas. 
 #
 ##############################################################################
 # REQUIRED MODULES
