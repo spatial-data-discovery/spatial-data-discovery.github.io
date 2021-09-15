@@ -1,0 +1,17 @@
+---
+title: "About the Coder"
+author: "Peter Woo"
+date: "9/14/2021"
+semester: "Fall 2021
+---
+
+![A turtle I spotted wandering onto the green](https://i.postimg.cc/kGTG0JXB/golf-turtle.jpg)
+
+**Bio**
+
+:     Hi! I’m Peter Woo, and I’m from Daegu, South Korea. I’m a senior at the College of William and Mary majoring in Data Science and minoring in Anthropology. 
+
+**Things I Enjoy:**
+:   - Brazilian Jiu Jitsu
+    - Collecting old vinyl records
+    - Five Guys Hamburgers
