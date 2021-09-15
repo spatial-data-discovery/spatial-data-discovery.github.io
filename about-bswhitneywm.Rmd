@@ -24,6 +24,7 @@ Outside the classrom, I serve as the president for the Men's Club Ultimate team 
 I made this script so it can randomly generate passwords of a given length. A random seed can be given, that way someone can track the random seed and length they used for different websites, and regenerate the passwords when they forget them. 
 
 
+
 ```python
 #############################################################################################
 # File Name: randomPassword.py                                                              #
