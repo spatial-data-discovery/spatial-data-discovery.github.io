@@ -141,6 +141,9 @@ removes all files of that type within that directory.
 
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them, and writes them out to a new text file.
+    
+### randomPassword.py
+* Generates a password of a given length, with a default length of 10
 
 ### ranking_calculator.py
 * This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores.
