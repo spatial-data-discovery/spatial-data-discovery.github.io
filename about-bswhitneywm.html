@@ -43,6 +43,94 @@
     </style>
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -339,7 +427,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">About the Coder</h1>
 <h4 class="author">Bryce Whitney</h4>
-<h4 class="date">Edited: Sept. 13 2021</h4>
+<h4 class="date">Edited: Sept. 15 2021</h4>
 
 </div>
 
@@ -360,6 +448,78 @@ $(document).ready(function () {
 <li>Playing Chess</li>
 <li>Going to the Beach</li>
 </ol>
+</div>
+<div id="sample-script" class="section level2">
+<h2>Sample Script</h2>
+<p><a href="scripts/randomPassword.py">randomPassword.py</a></p>
+<p>I made this script so it can randomly generate passwords of a given length. A random seed can be given, that way someone can track the random seed and length they used for different websites, and regenerate the passwords when they forget them.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#############################################################################################</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># File Name: randomPassword.py                                                              #</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Python Version: 3.8.10                                                                    #</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#                                                                                           #</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"># Author: Bryce Whitney                                                                     #</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># Last Edit: September 15, 2021                                                             #</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co">#                                                                                           #</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co"># Generates a random password using letters (uppercase and lowercase), numbers, and symbols #</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">#############################################################################################</span></a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11"></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co"># Required Imports</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="im">import</span> sys</a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="im">import</span> string</a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="im">import</span> random</a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="im">import</span> argparse</a>
+<a class="sourceLine" id="cb1-17" title="17"></a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="kw">def</span> generatePassword(passwordLength<span class="op">=</span><span class="dv">10</span>, randomSeed<span class="op">=</span><span class="va">None</span>):</a>
+<a class="sourceLine" id="cb1-20" title="20">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co">    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters. </span></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="co">    The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used</span></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="co">    in a seperate file and regenerate their password when they forget it. </span></a>
+<a class="sourceLine" id="cb1-24" title="24"></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="co">    Arguments:</span></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="co">        passwordLength [int] -- Length of the desired password. 10 characters by deafult. </span></a>
+<a class="sourceLine" id="cb1-27" title="27"><span class="co">        randomSeed     [int] -- The random seed to be used. None by deafult.</span></a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">    <span class="co"># Create sets of characters</span></a>
+<a class="sourceLine" id="cb1-30" title="30">    LETTERS_UPPER <span class="op">=</span> string.ascii_uppercase</a>
+<a class="sourceLine" id="cb1-31" title="31">    LETTERS_LOWER <span class="op">=</span> string.ascii_lowercase</a>
+<a class="sourceLine" id="cb1-32" title="32">    LETTERS <span class="op">=</span> string.ascii_letters</a>
+<a class="sourceLine" id="cb1-33" title="33">    NUMBERS <span class="op">=</span> string.digits</a>
+<a class="sourceLine" id="cb1-34" title="34">    SYMBOLS <span class="op">=</span> string.punctuation</a>
+<a class="sourceLine" id="cb1-35" title="35"></a>
+<a class="sourceLine" id="cb1-36" title="36">    <span class="co"># Create list of all the possible characters</span></a>
+<a class="sourceLine" id="cb1-37" title="37">    CHARACTERS <span class="op">=</span> LETTERS <span class="op">+</span> NUMBERS <span class="op">+</span> SYMBOLS</a>
+<a class="sourceLine" id="cb1-38" title="38"></a>
+<a class="sourceLine" id="cb1-39" title="39">    <span class="co"># Set the random seed</span></a>
+<a class="sourceLine" id="cb1-40" title="40">    random.seed(randomSeed)</a>
+<a class="sourceLine" id="cb1-41" title="41"></a>
+<a class="sourceLine" id="cb1-42" title="42">    <span class="co"># Generate the password by sampling all characters and return it</span></a>
+<a class="sourceLine" id="cb1-43" title="43">    password <span class="op">=</span> <span class="st">&#39;&#39;</span>.join(random.sample(CHARACTERS, passwordLength))</a>
+<a class="sourceLine" id="cb1-44" title="44">    <span class="cf">return</span> password</a>
+<a class="sourceLine" id="cb1-45" title="45"></a>
+<a class="sourceLine" id="cb1-46" title="46"></a>
+<a class="sourceLine" id="cb1-47" title="47"></a>
+<a class="sourceLine" id="cb1-48" title="48"><span class="co">############################################</span></a>
+<a class="sourceLine" id="cb1-49" title="49"><span class="co">############### Main Method ################</span></a>
+<a class="sourceLine" id="cb1-50" title="50"><span class="co">############################################</span></a>
+<a class="sourceLine" id="cb1-51" title="51"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</a>
+<a class="sourceLine" id="cb1-52" title="52">    <span class="co"># Create an ArgumentParser class object for dealing with commandline args</span></a>
+<a class="sourceLine" id="cb1-53" title="53">    p <span class="op">=</span> argparse.ArgumentParser(</a>
+<a class="sourceLine" id="cb1-54" title="54">        description<span class="op">=</span><span class="st">&quot;Generates a random password using letters (uppercase and lowercase), numbers, and symbols.&quot;</span>)</a>
+<a class="sourceLine" id="cb1-55" title="55"></a>
+<a class="sourceLine" id="cb1-56" title="56">    <span class="co"># Add an additional optional argument for the password length and random seed</span></a>
+<a class="sourceLine" id="cb1-57" title="57">    p.add_argument(<span class="st">&quot;-l&quot;</span>, <span class="st">&quot;--length&quot;</span>, default<span class="op">=</span><span class="dv">10</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>,</a>
+<a class="sourceLine" id="cb1-58" title="58">                   <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Desired password length, 10 characters by deafult&quot;</span>)</a>
+<a class="sourceLine" id="cb1-59" title="59">    p.add_argument(<span class="st">&quot;-r&quot;</span>, <span class="st">&quot;--randomSeed&quot;</span>, default<span class="op">=</span><span class="va">None</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>,</a>
+<a class="sourceLine" id="cb1-60" title="60">                   <span class="bu">help</span><span class="op">=</span><span class="st">&quot;Desired random seed, None by deafult&quot;</span>)</a>
+<a class="sourceLine" id="cb1-61" title="61"></a>
+<a class="sourceLine" id="cb1-62" title="62">    <span class="co"># Read any commandline arguements sent to the program</span></a>
+<a class="sourceLine" id="cb1-63" title="63">    <span class="co"># </span><span class="al">NOTE</span><span class="co">: if -h or --help, the program stops here</span></a>
+<a class="sourceLine" id="cb1-64" title="64">    args <span class="op">=</span> p.parse_args()</a>
+<a class="sourceLine" id="cb1-65" title="65"></a>
+<a class="sourceLine" id="cb1-66" title="66">    <span class="co"># Generate and print the random password</span></a>
+<a class="sourceLine" id="cb1-67" title="67">    <span class="bu">print</span>(generatePassword(args.length, args.randomSeed))</a></code></pre></div>
 </div>
 
 <footer class="myfoot">
