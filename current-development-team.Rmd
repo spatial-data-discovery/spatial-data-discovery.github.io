@@ -28,5 +28,3 @@ mydata <- data.frame("TeamMember" = coders, "CoderPage" = mdlinks)
 names(mydata) <- c("Team Member", "Coder Page")
 kable(mydata)
 ```
-
-Coming soon.
