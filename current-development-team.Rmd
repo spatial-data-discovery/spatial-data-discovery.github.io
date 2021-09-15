@@ -19,14 +19,14 @@ for (f in myfiles){
     mylink <- paste(c("[", ghuser, "](", myhtml, ")"), collapse = "")
     mymeta <- rmarkdown::yaml_front_matter(f)
     myname <- mymeta$author
-    if (! is.null(mymeta$semester) && mymeta$semester == "Fall 2020") {
+    if (! is.null(mymeta$semester) && mymeta$semester == "Fall 2021") {
         coders <- c(coders, myname)
         mdlinks <- c(mdlinks, mylink)
     }
 }
 mydata <- data.frame("TeamMember" = coders, "CoderPage" = mdlinks)
 names(mydata) <- c("Team Member", "Coder Page")
-#kable(mydata)
+kable(mydata)
 ```
 
 Coming soon.

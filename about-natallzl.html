@@ -14,7 +14,6 @@
 
 <title>About the Coder</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -53,27 +52,26 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -456,67 +454,67 @@ $(document).ready(function () {
 <audio controls>
 <source src="audio/what_to_watch.mp3">
 </audio>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#what_to_watch.py</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">#</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># Author: Natalie Larsen</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">#</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co"># Last Edit: 2020-09-04</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">#</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">#This script takes movie or show titles input by the user</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">#and outputs one for the user to watch next.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">#Example user input:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co">#The Princess Bride,,1917,,Monsters, Inc.,,Once Upon a Time... In Hollywood</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co"># If the result isn’t satisfying,</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">#the user has the option to re-pick.</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co">#</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="co">#Required Modules</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="im">import</span> random</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="im">import</span> argparse</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="im">import</span> sys</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="co">#Randomly pick a title from a list, and return choice</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="kw">def</span> pick_title():</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>    to_watch <span class="op">=</span> random.choice(user_list)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;You should watch:&quot;</span>, to_watch)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a><span class="co">#Give user the option to re-pick</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="kw">def</span> new_title():</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    pick_again <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Do you want us to pick again? (y/n): &quot;</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>    <span class="co">#If user wants to re-pick, run pick_title function</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a>    <span class="cf">if</span> pick_again <span class="op">==</span> <span class="st">&quot;y&quot;</span>:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>        pick_title()</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>        new_title()</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>    <span class="cf">elif</span> pick_again <span class="op">==</span> <span class="st">&quot;n&quot;</span>:</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Happy viewing!&quot;</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>    <span class="co">#Handle user inputs other than y or n</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Sorry we didn&#39;t get that, please answer y or n.&quot;</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a>        new_title()</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a>    <span class="co">#Support for --help or -h command-line arguments</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>    p <span class="op">=</span> argparse.ArgumentParser(</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>    description <span class="op">=</span> <span class="st">&quot;This script takes a list of movies/shows input by the user \</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a><span class="st">    (ex. movie1,,movie2,,movie3,,etc.) and returns one to watch.&quot;</span>)</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>    args <span class="op">=</span> p.parse_args()</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>    <span class="co">#Get user input,</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>    <span class="co">#taking into account punctuation in titles</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Can&#39;t decide what to watch? Let us help!&quot;</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a list of movies/shows, separating titles with two commas(A,,B):</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>    <span class="co">#Turn input into list</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>    <span class="cf">if</span> <span class="st">&#39;,,&#39;</span> <span class="kw">in</span> user_input:</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>        user_list <span class="op">=</span> user_input.split(<span class="st">&#39;,,&#39;</span>)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;You input the following choices:&quot;</span>, user_list)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>    <span class="co">#Handle unacceptable user inputs</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Please enter more than one title, separated by two commas(,,).&quot;</span>)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>        sys.exit()</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a>    pick_title()</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a>    new_title()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#what_to_watch.py</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Author: Natalie Larsen</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"># Last Edit: 2020-09-04</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co">#This script takes movie or show titles input by the user</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#and outputs one for the user to watch next.</span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">#Example user input:</span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">#The Princess Bride,,1917,,Monsters, Inc.,,Once Upon a Time... In Hollywood</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co"># If the result isn’t satisfying,</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co">#the user has the option to re-pick.</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">#Required Modules</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="im">import</span> random</a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="im">import</span> argparse</a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="im">import</span> sys</a>
+<a class="sourceLine" id="cb1-18" title="18"></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">#Randomly pick a title from a list, and return choice</span></a>
+<a class="sourceLine" id="cb1-20" title="20"><span class="kw">def</span> pick_title():</a>
+<a class="sourceLine" id="cb1-21" title="21">    to_watch <span class="op">=</span> random.choice(user_list)</a>
+<a class="sourceLine" id="cb1-22" title="22">    <span class="bu">print</span>(<span class="st">&quot;You should watch:&quot;</span>, to_watch)</a>
+<a class="sourceLine" id="cb1-23" title="23"></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="co">#Give user the option to re-pick</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="kw">def</span> new_title():</a>
+<a class="sourceLine" id="cb1-26" title="26">    pick_again <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Do you want us to pick again? (y/n): &quot;</span>)</a>
+<a class="sourceLine" id="cb1-27" title="27">    <span class="co">#If user wants to re-pick, run pick_title function</span></a>
+<a class="sourceLine" id="cb1-28" title="28">    <span class="cf">if</span> pick_again <span class="op">==</span> <span class="st">&quot;y&quot;</span>:</a>
+<a class="sourceLine" id="cb1-29" title="29">        pick_title()</a>
+<a class="sourceLine" id="cb1-30" title="30">        new_title()</a>
+<a class="sourceLine" id="cb1-31" title="31">    <span class="cf">elif</span> pick_again <span class="op">==</span> <span class="st">&quot;n&quot;</span>:</a>
+<a class="sourceLine" id="cb1-32" title="32">        <span class="bu">print</span>(<span class="st">&quot;Happy viewing!&quot;</span>)</a>
+<a class="sourceLine" id="cb1-33" title="33">    <span class="co">#Handle user inputs other than y or n</span></a>
+<a class="sourceLine" id="cb1-34" title="34">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-35" title="35">        <span class="bu">print</span>(<span class="st">&quot;Sorry we didn&#39;t get that, please answer y or n.&quot;</span>)</a>
+<a class="sourceLine" id="cb1-36" title="36">        new_title()</a>
+<a class="sourceLine" id="cb1-37" title="37"></a>
+<a class="sourceLine" id="cb1-38" title="38"></a>
+<a class="sourceLine" id="cb1-39" title="39"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
+<a class="sourceLine" id="cb1-40" title="40">    <span class="co">#Support for --help or -h command-line arguments</span></a>
+<a class="sourceLine" id="cb1-41" title="41">    p <span class="op">=</span> argparse.ArgumentParser(</a>
+<a class="sourceLine" id="cb1-42" title="42">    description <span class="op">=</span> <span class="st">&quot;This script takes a list of movies/shows input by the user \</span></a>
+<a class="sourceLine" id="cb1-43" title="43"><span class="st">    (ex. movie1,,movie2,,movie3,,etc.) and returns one to watch.&quot;</span>)</a>
+<a class="sourceLine" id="cb1-44" title="44">    args <span class="op">=</span> p.parse_args()</a>
+<a class="sourceLine" id="cb1-45" title="45"></a>
+<a class="sourceLine" id="cb1-46" title="46">    <span class="co">#Get user input,</span></a>
+<a class="sourceLine" id="cb1-47" title="47">    <span class="co">#taking into account punctuation in titles</span></a>
+<a class="sourceLine" id="cb1-48" title="48">    <span class="bu">print</span>(<span class="st">&quot;Can&#39;t decide what to watch? Let us help!&quot;</span>)</a>
+<a class="sourceLine" id="cb1-49" title="49">    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a list of movies/shows, separating titles with two commas(A,,B):</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb1-50" title="50"></a>
+<a class="sourceLine" id="cb1-51" title="51">    <span class="co">#Turn input into list</span></a>
+<a class="sourceLine" id="cb1-52" title="52">    <span class="cf">if</span> <span class="st">&#39;,,&#39;</span> <span class="kw">in</span> user_input:</a>
+<a class="sourceLine" id="cb1-53" title="53">        user_list <span class="op">=</span> user_input.split(<span class="st">&#39;,,&#39;</span>)</a>
+<a class="sourceLine" id="cb1-54" title="54">        <span class="bu">print</span>(<span class="st">&quot;You input the following choices:&quot;</span>, user_list)</a>
+<a class="sourceLine" id="cb1-55" title="55">    <span class="co">#Handle unacceptable user inputs</span></a>
+<a class="sourceLine" id="cb1-56" title="56">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-57" title="57">        <span class="bu">print</span>(<span class="st">&quot;Please enter more than one title, separated by two commas(,,).&quot;</span>)</a>
+<a class="sourceLine" id="cb1-58" title="58">        sys.exit()</a>
+<a class="sourceLine" id="cb1-59" title="59"></a>
+<a class="sourceLine" id="cb1-60" title="60">    pick_title()</a>
+<a class="sourceLine" id="cb1-61" title="61">    new_title()</a></code></pre></div>
 </div>
 
 <footer class="myfoot">
