@@ -2,7 +2,7 @@
 title: "About the Coder"
 author: "Peter Woo"
 date: "9/14/2021"
-semester: "Fall 2021
+semester: "Fall 2021"
 ---
 
 ![A turtle I spotted wandering onto the green](https://i.postimg.cc/kGTG0JXB/golf-turtle.jpg)
