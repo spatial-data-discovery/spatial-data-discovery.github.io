@@ -1,36 +1,3 @@
----
-title: "About the Coder"
-author: "Luke Denoncourt"
-date: "Edited 9/8/2021"
-semester: "Fall 2021"
----
-
-![](https://user-images.githubusercontent.com/67921793/132583745-5c8a660d-424e-494c-a5c6-1f26251c1abf.jpg "Yup, that's me. You are probably wondering how I got here, trapped in this computer.")
-
-### Bio 
-
-I am a senior, double majoring in Biology and Data Science. I am currently working on going to graduate school for geomicrobiology/astrobiology.
-
-### Websites
-www.linkedin.com/in/luke-denoncourt
-
-### Things I like to do
-
-+ Cook
-+ Eat
-+ Eat what I cook
-+ Implement machine learning algorithms to elucidate secrets of the biological world with a goal of understanding life's origin in the universe
-+ Pet dogs and cats
-
-
-### Sample Script
-[dad_joke_emailer (.py)](script/dad_joke_emailer.py)
-
-<audio controls>
-<source src="audio/dad_joke_emailer_audio.mp3">
-</audio>
-
-```python
 #!/usr/bin/env python
 # coding: utf-8
 # Last edit: 09/15/2021
@@ -144,10 +111,3 @@ if __name__ == '__main__':
     password = getpass.getpass(prompt = 'What is your email password?')
 
     dad_joke_emailer(args.email, password)
-
-```
-
-
-
-
-
