@@ -95,7 +95,7 @@ if __name__ == '__main__':
         description="Emails a dad joke to your email from your email.")
 
     p.add_argument("-e", "--email", default = 'None', type = str,
-                  help="Put in your entire email... example@gmail.com")
+                  help="Put in your entire email... example@gmail.com. Make sure to turn 'Less secure app access' ON in your email security settings.")
 
 
     args = p.parse_args()
