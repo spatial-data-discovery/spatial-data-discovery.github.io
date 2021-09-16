@@ -2,6 +2,7 @@
 # coding: utf-8
 # Last edit: 09/15/2021
 # This script emails you a dad joke
+# The email code was used referencing a tutorial at the link: https://realpython.com/python-send-email/
 
 # Required packages to impliment from command line:
 import argparse
@@ -84,10 +85,13 @@ def dad_joke_emailer(email_input, password_input):
 
     This message is sent from the dad_joke_emailer.""".format(dad_joke = jokes_to_send)
 
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
+    try:
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+    except:
+        print('Did you enter your email and password correctly and did you also change the "LESS SECURE APP ACCESS" setting to ON in your GOOGLE ACCOUNT settings?)
 
 
 if __name__ == '__main__':
@@ -95,7 +99,8 @@ if __name__ == '__main__':
         description="Emails a dad joke to your email from your email.")
 
     p.add_argument("-e", "--email", default = 'None', type = str,
-                  help="Put in your entire email... example@gmail.com. Make sure to turn 'Less secure app access' ON in your email security settings.")
+                  help=""" Put in your entire email... example@gmail.com. 
+                  Make sure to turn 'Less secure app access' ON in your GOOGLE ACCOUNT security settings. """)
 
 
     args = p.parse_args()
