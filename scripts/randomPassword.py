@@ -40,14 +40,12 @@ def generatePassword(passwordLength=10, randomSeed=None):
     random.seed(randomSeed)
 
     # Generate the password by sampling all characters and return it
-    password = ''.join(random.sample(CHARACTERS, passwordLength))
+    password = ''.join(random.choices(CHARACTERS, k=passwordLength))
     return password
 
-
-
-############################################
-############### Main Method ################
-############################################
+###############
+# Main Method #
+###############
 if __name__ == '__main__':
     # Create an ArgumentParser class object for dealing with commandline args
     p = argparse.ArgumentParser(
