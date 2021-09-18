@@ -32,6 +32,13 @@ pt = PorterStemmer()
 ##############################################################################
 
 def df_corpus(df):
+        """
+        Name:     df_corpus
+        Inputs:   pandas DataFrame (df)
+        Outputs:  pandas DataFrame (corpus)
+        Features: Isolates, lowercases, and stems all unique, non_stopwords.
+
+        """
     unique_df = []
     for i in range(len(df)):
         ent = re.sub('[^a-zA-Z0-9 ]','', df[i])
@@ -50,6 +57,13 @@ def df_corpus(df):
 
 
 def txt_corpus(path):
+            """
+            Name:     txt_corpus
+            Inputs:   str, directory path (path)
+            Outputs:  pandas DataFrame (corpus)
+            Features: Isolates, lowercases, and stems all unique, non_stopwords.
+
+            """
     file = open(path, encoding='utf-8').read()
     sent = nltk.word_tokenize(file)
     for i in range(len(sent)):
