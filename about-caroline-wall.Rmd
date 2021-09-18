@@ -14,3 +14,73 @@ I am a senior, double majoring in Data Science and English.
 - Tennis (watching and playing)
 - Knitting
 - Reading
+
+### Sample Script
+[text_preprocessing.py](scripts/text_preprocessing.py)
+
+I made this script to clean text, so it can be used for natural language processing. It can be frustrating to repeat these steps for any NLP task, so this script takes care of that for you by taking a .txt file and performing common preprocessing tasks. It then outputs a new .txt file with the final text after having lowercased; removed numbers, punctuation, and stopwords; and tokenized and lemmatized the text.
+
+```python
+# text_preprocessing.py
+
+# By: Caroline Wall
+
+# Version 1.0
+
+# Last Edit: 2021-09-18
+
+# This script performs text preprocessing on a .txt file by removing
+# stop words, removing numbers, removing punctuation, lowercasing,
+# tokenizing, and lemmatizing. It then returns the preprocessed text
+# in a .txt file.
+
+
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+import string
+
+nltk.download()
+
+# User inputs information about the text
+path_to_file = input('Enter file path to .txt file: ')
+output_file = input('Enter the name you want for your preprocessed data file: ')
+language = input('Enter text language: ')
+extra_stops = input('Enter common words in text: ')
+
+# Read in the text
+text_file = open('example.txt', 'r')
+text = text_file.read()
+text_file.close()
+
+# Create list of stopwords, combining NLTK's set with user-inputed words
+stop_words = set(stopwords.words(language))
+extra_stops = extra_stops.translate(extra_stops.maketrans('','',string.punctuation)).lower()
+extra_stops = extra_stops.split(' ')
+for item in extra_stops:
+    stop_words.add(item)
+
+# Remove all numbers from the text
+text_no_nums = text.translate(text.maketrans('','',string.digits))
+
+# Lowercase text and remove all punctuation
+clean_text = text_no_nums.translate(text_no_nums.maketrans('','',string.punctuation)).lower()
+
+# Tokenize the text
+words = word_tokenize(clean_text)
+
+# Remove stopwords
+clean_text_no_stops = [word for word in words if word not in stop_words]
+
+# Perform lemmatization
+final_text = []
+lemmatizer = WordNetLemmatizer()
+for word in clean_text_no_stops:
+    lemm_word = lemmatizer.lemmatize(word)
+    final_text += [lemm_word]
+
+# Create .txt file of preprocessed data using requested file name
+print(final_text, file = open(output_file, 'a'))
+print('Your preprocessed text data has been created.')
+```
