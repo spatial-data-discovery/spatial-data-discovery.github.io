@@ -172,6 +172,9 @@ removes all files of that type within that directory.
 
 ### statistical_overview.py
 * Prints a statistical overview of numerical data read in through a text file.
+    
+### text_preprocessing.py
+* This script cleans text by lowercasing; removing stop words, punctuation, and numbers; and performing tokenization and lemmatization.
 
 ### twoSum.py
 * Finds the index of two values in a list that adds up to the target number
