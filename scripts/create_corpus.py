@@ -4,10 +4,10 @@
 #
 # VERSION 0.3.2
 #
-# Last edit: 2021-09-15
+# Last edit: 2021-09-18
 #
 # This preliminary script will take a given input text...
-# (single column dataframe or single string) 
+# (single column dataframe or single string)
 # ...stem the unique non-stopwords, and create a corpus
 #
 ##############################################################################
