@@ -75,6 +75,9 @@ removes all files of that type within that directory.
 ### hangman.py
 * This script uses the dictionary, american, to play Hangman in command prompt.
 
+### hanoi.py
+* This script takes the number of rings as an input, and then plays/solves the puzzle Tower of Hanoi
+
 ### hdf_qgis.py
 * This script opens a MODIS HDF4 file using GDAL, converts it to a GeoTIFF, and opens it for visualization in QGIS (tested using QGIS 3.4).
 
