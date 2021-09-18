@@ -45,6 +45,9 @@ This folder contains utility scripts as well as a selection of data files necess
 ### crosswind.py
 * This script determines which runway pilots should use based on runways available, wind direction, and wind speed.
 
+### dad_joke_emailer.py
+* This script emails you one dad joke using your email to send and receive the message.
+
 ### darts.py
 * This script is a throwing darts game that lets the user choose how many darts to throw at a circular dart board and tell them what percent of the darts landed on the board.
 
@@ -141,6 +144,9 @@ removes all files of that type within that directory.
 
 ### random_caps.py
 * This script takes a text file of ASCII characters, randomly capitalizes them, and writes them out to a new text file.
+    
+### randomPassword.py
+* Generates a password of a given length, with a default length of 10
 
 ### ranking_calculator.py
 * This script calculates the ranking of a list of players/students (or anything you want to rank) based on their scores.
@@ -151,9 +157,6 @@ removes all files of that type within that directory.
 ### rename.py
 * This script renames files in a folder based on a regular expression.
     The script is set to rename all files of a given type by replacing an underscore (\_) in the filename with a hyphen (-).
-    
-### resnet50_flowering_or_not.py
-* This script is a workflow from plant images through a ResNet50 to identify if a plant is flowering or not in an image. It then emails you the results and displays graphs on the screen. 
 
 ### sentiment_analysis.py
 * This script conducts sentiment analysis, assessing subjectivity and polarity of text data stored in a .csv file.
@@ -178,3 +181,6 @@ removes all files of that type within that directory.
 
 ### what_to_watch.py
 * This script takes movie or show titles input by the user and outputs one for the user to watch next. The user is also given the option to re-pick.
+    
+### script.py
+* This script stitches together two or more images that have overlapping areas. 

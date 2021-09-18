@@ -13,7 +13,6 @@
 
 <title>Learning | Git</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -389,8 +388,8 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li><p>Create a folder on your computer for your repository (e.g., <code>C:\Users\user\Repositories\sdd</code>).</p>
 <p><em>Troubleshooting</em>: please do not put your repository folders in Dropbox or One Drive or other cloud-based synchronization and backup folders. This is not how you share repositories across computers! Dropbox, OneDrive and other synchronization software will embed hidden files and folders, which can copy over to the repository and cause everyone problems. If you want your repository on another computer, clone it again on your second computer!</p></li>
-<li><p>Open your command prompt or terminal (see Additional Resources above for links on how to access these)</p></li>
-<li><p>Navigate to your repository directory</p></li>
+<li>Open your command prompt or terminal (see Additional Resources above for links on how to access these)</li>
+<li>Navigate to your repository directory</li>
 <li><p>Clone your repository; once your done, you should now have a repository folder (e.g., sdd-2021) in your Repositories directory (see commands below)</p></li>
 </ol>
 <pre class="shell"><code>cd path/to/Repositories # replace &quot;path/to/Repositories&quot; with the directory path
@@ -445,8 +444,8 @@ git config push.default simple # optional configuration</code></pre>
 </ol>
 <p>Add a new file to the repository</p>
 <ol style="list-style-type: decimal">
-<li><p>Save a new file in the repository (e.g., <code>sandbox/newfile.py</code>)</p></li>
-<li><p>From the command prompt or terminal, navigate to the cloned repository (use the <code>cd</code> command)</p></li>
+<li>Save a new file in the repository (e.g., <code>sandbox/newfile.py</code>)</li>
+<li>From the command prompt or terminal, navigate to the cloned repository (use the <code>cd</code> command)</li>
 <li><p>Check for changes; any new files or new edits will be downloaded to your computer.</p>
 <pre class="console"><code>&gt; git pull
 Already up to date</code></pre></li>
@@ -461,11 +460,11 @@ Untracked files:
       newfile.py
 
 nothing to commit but untracked files present (use &quot;git add&quot; to track)</code></pre></li>
-<li><p>Git should indicate the presence of an untracked file. This is different from a <strong>modified</strong> file because git has no history of this file (yet).</p></li>
+<li>Git should indicate the presence of an untracked file. This is different from a <strong>modified</strong> file because git has no history of this file (yet).</li>
 <li><p>Add your new file (<code>git add newfile.py</code>); this is called <strong>staging</strong></p>
 <pre class="console"><code>&gt; git add newfile.py
 &gt; git status</code></pre></li>
-<li><p>Git should indicate that you have changes to be committed.</p></li>
+<li>Git should indicate that you have changes to be committed.</li>
 <li><p>Commit your changes; keep your commit messages brief and to the point. If you forget to add a message, you will be prompted to add a message.</p>
 <pre class="console"><code>&gt; git commit -m &quot;Create sandbox python script; Addresses #1&quot;</code></pre></li>
 <li><p>Push your changes to the shared repository</p>
