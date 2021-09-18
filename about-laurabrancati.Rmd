@@ -21,9 +21,13 @@ when im sad... I simply remember my *favorite* things...
 ### Sample script
 [stitch (.py)](scripts/stitch.py)
 
-My sample script stitches together images that have overlapping areas. 
+My sample script stitches together images that have overlapping areas. It takes in an input directory and output directory in the command line. 
 
-'''
+<audio controls>
+<source src="tbd">
+</audio>
+
+``` {python slots, eval=FALSE}
 #!/usr/bin/env python3
 #
 # stitch.py
@@ -87,4 +91,4 @@ if __name__ == "__main__":
     
     #call function
     stitched = image_stitch(args.images, args.output)
-'''
+```
