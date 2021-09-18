@@ -99,7 +99,9 @@ x = input('Are you passing a .txt file? (Y or N): ')
 if x=='Y':
     y = input('Paste the path to your .txt file: ')
     var_Y = txt_corpus(y)
+    print(var_Y)
 
 else:
     z = input('Paste the stored variable for your single column dataframe: ')
     var_N = df_corpus(z)
+    print(var_N)
