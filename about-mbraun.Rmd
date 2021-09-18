@@ -29,6 +29,18 @@ I also love the works of Dr. R.C. Sproul and Adrian Rogers.  My all time favorit
 Some of my hobbies include learning Koine Greek and playing guitar.  
 In my leisure time I enjoy listening to a variety of genres of music and playing first-person shooters.
 
+### Sample Script
+[create_corpus (.py)](scripts/corpus.py)
+
+
+
+<audio controls>
+<source src="audio/create_corpus.mp3">
+</audio>
+
+```Python
+
+
 
 
 
