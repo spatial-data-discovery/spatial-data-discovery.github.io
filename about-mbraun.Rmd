@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Masaccio Braun"
-date: "Edited: 2021-09-11"
+date: "Edited: 2021-09-19"
 semester: "Fall 2021"
 ---
 
@@ -33,6 +33,10 @@ In my leisure time I enjoy listening to a variety of genres of music and playing
 [create_corpus (.py)](scripts/create_corpus.py)
 
 My script will take a given directory to a .txt file or a single column pandas DataFrame stored in a variable, isolate, lowercase, stem, and place the unique non-stopwords into a corpus as a pandas DataFrame.
+
+<audio controls>
+<source src="audio/create_corpus.mp3">
+</audio>
 
 ``` {python slots, eval=FALSE}
 #!/usr/bin/env python3
@@ -143,15 +147,3 @@ else:
     var_N = df_corpus(z)
     print(var_N)
 ```
-
-<audio controls>
-<source src="audio/create_corpus.mp3">
-</audio>
-
-```Python
-
-
-
-
-
-.
