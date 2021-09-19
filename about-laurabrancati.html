@@ -450,7 +450,7 @@ $(document).ready(function () {
 <p><a href="scripts/stitch.py">stitch (.py)</a></p>
 <p>My sample script stitches together images that have overlapping areas. It takes in an input directory and output directory in the command line.</p>
 <audio controls>
-<source src="tbd">
+<source src="audio/stitch.mp3">
 </audio>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#!/usr/bin/env python3</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co">#</span></a>
@@ -462,7 +462,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-8" title="8"><span class="co">#</span></a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="co"># Author: Laura Brancati, based on function found on: https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co"># Stitches images together that have overlapping areas. </span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co"># Stitches images together that have overlapping areas.</span></a>
 <a class="sourceLine" id="cb1-12" title="12"><span class="co">#</span></a>
 <a class="sourceLine" id="cb1-13" title="13"><span class="co">##############################################################################</span></a>
 <a class="sourceLine" id="cb1-14" title="14"><span class="co"># REQUIRED MODULES</span></a>
@@ -496,7 +496,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-42" title="42">        <span class="co"># create stitched image file</span></a>
 <a class="sourceLine" id="cb1-43" title="43">        cv2.imwrite(os.path.join(output_path<span class="op">+</span><span class="st">&quot;.jpg&quot;</span>), stitched)</a>
 <a class="sourceLine" id="cb1-44" title="44">        <span class="bu">print</span>(<span class="st">&quot;success!&quot;</span>)</a>
-<a class="sourceLine" id="cb1-45" title="45">        </a>
+<a class="sourceLine" id="cb1-45" title="45"></a>
 <a class="sourceLine" id="cb1-46" title="46">    <span class="cf">else</span>:</a>
 <a class="sourceLine" id="cb1-47" title="47">        <span class="bu">print</span>(<span class="st">&quot;status:&quot;</span>, status)</a>
 <a class="sourceLine" id="cb1-48" title="48"></a>
@@ -512,7 +512,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-58" title="58">        <span class="bu">help</span><span class="op">=</span><span class="st">&quot;path to the output image&quot;</span>)</a>
 <a class="sourceLine" id="cb1-59" title="59"></a>
 <a class="sourceLine" id="cb1-60" title="60">    args <span class="op">=</span> p.parse_args()</a>
-<a class="sourceLine" id="cb1-61" title="61">    </a>
+<a class="sourceLine" id="cb1-61" title="61"></a>
 <a class="sourceLine" id="cb1-62" title="62">    <span class="co">#call function</span></a>
 <a class="sourceLine" id="cb1-63" title="63">    stitched <span class="op">=</span> image_stitch(args.images, args.output)</a></code></pre></div>
 </div>

@@ -10,7 +10,7 @@ semester: "Fall 2021"
 Bio
 :  Hi! I am a senior majoring in Data Science with a minor in Sociology.
 
-A few of my **favorite** things: 
+A few of my **favorite** things:
 
 - frenchies (hence, the image)
 - chocolate chip cookie dough ice cream
@@ -21,10 +21,10 @@ when im sad... I simply remember my *favorite* things...
 ### Sample script
 [stitch (.py)](scripts/stitch.py)
 
-My sample script stitches together images that have overlapping areas. It takes in an input directory and output directory in the command line. 
+My sample script stitches together images that have overlapping areas. It takes in an input directory and output directory in the command line.
 
 <audio controls>
-<source src="tbd">
+<source src="audio/stitch.mp3">
 </audio>
 
 ``` {python slots, eval=FALSE}
@@ -38,7 +38,7 @@ My sample script stitches together images that have overlapping areas. It takes 
 #
 # Author: Laura Brancati, based on function found on: https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/
 #
-# Stitches images together that have overlapping areas. 
+# Stitches images together that have overlapping areas.
 #
 ##############################################################################
 # REQUIRED MODULES
@@ -72,7 +72,7 @@ def image_stitch(img_directory, output_path):
         # create stitched image file
         cv2.imwrite(os.path.join(output_path+".jpg"), stitched)
         print("success!")
-        
+
     else:
         print("status:", status)
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 	    help="path to the output image")
 
     args = p.parse_args()
-    
+
     #call function
     stitched = image_stitch(args.images, args.output)
 ```
