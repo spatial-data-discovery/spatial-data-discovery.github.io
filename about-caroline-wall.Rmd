@@ -1,7 +1,7 @@
 ---
 title: "About the Coder"
 author: "Caroline Wall"
-date: "Edited: 2021-09-11"
+date: "Edited: 2021-09-19"
 semester: "Fall 2021"
 ---
 
@@ -19,6 +19,10 @@ I am a senior, double majoring in Data Science and English.
 [text_preprocessing.py](scripts/text_preprocessing.py)
 
 I made this script to clean text, so it can be used for natural language processing. It can be frustrating to repeat these steps for any NLP task, so this script takes care of that for you by taking a .txt file and performing common preprocessing tasks. It then outputs a new .txt file with the final text after having lowercased; removed numbers, punctuation, and stopwords; and tokenized and lemmatized the text.
+
+<audio controls>
+<source src="audio/text_preprocessing.mp3">
+</audio>
 
 ```python
 # text_preprocessing.py
