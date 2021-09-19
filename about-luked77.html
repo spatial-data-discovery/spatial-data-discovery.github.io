@@ -43,6 +43,94 @@
     </style>
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -365,218 +453,123 @@ $(document).ready(function () {
 </div>
 <div id="sample-script" class="section level3">
 <h3>Sample Script</h3>
-<p><a href="script/resnet50_flowering_or_not.py">resnet50_flowering_or_not (.py)</a></p>
+<p><a href="script/dad_joke_emailer.py">dad_joke_emailer (.py)</a></p>
 <audio controls>
-<source src="audio/resnet50_flowering_or_not_audio.mp3">
+<source src="audio/dad_joke_emailer_audio.mp3">
 </audio>
-<p>```#!/usr/bin/env python # coding: utf-8 # Last edit: 09/15/2021 # This script runs a ResNet50 model on images of plants to determine if they are flowering # I placed a small subset of the data called “image_data_sample” as a walkthrough for this script # The data contains images and corresponding labels of flowering or not flowering # Place it in the WD and do not mess with it</p>
-<p>print(‘IMPORTANT NOTE: BEFORE YOU START YOU NEED TO DOWNLOAD THE INPUT DATA’) print(‘The 2.5mb of data can be downloaded via google drive using this link: <a href="https://drive.google.com/drive/folders/108Wvq_hYFe1TYKxrhTdvTpVLXrJcgtl-?usp=sharing" class="uri">https://drive.google.com/drive/folders/108Wvq_hYFe1TYKxrhTdvTpVLXrJcgtl-?usp=sharing</a>’) verif_of_data = input(‘Have you downloaded the data and put in your working directory, y or n?’) if (verif_of_data == ‘n’) | (verif_of_data == ‘no’): print(‘Please download the data using the given link’) else: print(‘Alright! Running script’)</p>
-<pre><code>## Required Packages
-from tensorflow.keras.layers import Conv2D, Flatten, Dense, MaxPool2D, BatchNormalization, GlobalAveragePooling2D
-from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
-from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img
-from tensorflow.keras.applications.resnet50 import ResNet50
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.models import Model
-import matplotlib.pyplot as plt
-import numpy as np
-import tensorflow as tf
-import time
-import ssl
-import smtplib
-import pandas as pd
-import seaborn as sn
-import os
-
-
-
-## Email setup to alert you of model completion and output info
-# For this to work you may need to change your setting &#39;less secure app access&#39; to ON
-# I made a junk email for this specifically and suggest you do the same
-port = 465  # For SSL
-smtp_server = &quot;smtp.gmail.com&quot;
-email = input(&#39;Enter the email that will send and receive the email (you email yourself): &#39;)
-sender_email = email  # Enter your address
-receiver_email = email  # Enter receiver address
-password = input(&quot;Type your password and press enter: &quot;)
-
-
-## Setting up input data for model
-print(&#39;Setting up input data for model&#39;)
-model_name = input(&#39;Type model name here: &#39;)
-
-HEIGHT__height = 500
-WEIGHT__weight = 300
-
-
-train_batch = int(input(&#39;Training batch size: &#39;))
-val_batch = int(input(&#39;Validation batch size: &#39;))
-
-
-training_dir = &#39;./resnet50_flowering_image_data_sample/training&#39;
-validation_dir = &#39;./resnet50_flowering_image_data_sample/validation&#39;
-testing_dir = &#39;./resnet50_flowering_image_data_sample/testing&#39;
-
-
-train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input) # can put data augmentations in here
-
-# Maybe put class mode = binary
-train_generator = train_datagen.flow_from_directory(
-    training_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
-    batch_size= train_batch
-    # 256
-)
-
-
-valid_generator = train_datagen.flow_from_directory(
-    validation_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
-    batch_size = val_batch
-    #64
-)
-
-
-test_generator = train_datagen.flow_from_directory(
-    testing_dir,
-    target_size = (HEIGHT__height, WEIGHT__weight),
-    batch_size = 1
-)
-
-
-x,y = test_generator.next()
-x.shape
-
-
-## Establishing model
-print(&#39;Establishing model&#39;)
-base_model = ResNet50(include_top=False, weights = None)
-x = base_model.output
-x = GlobalAveragePooling2D()(x)
-x = Dense(1024, activation = &#39;relu&#39;)(x)
-predictions =Dense(train_generator.num_classes, activation=&#39;softmax&#39;)(x)
-model = Model(inputs=base_model.input, outputs=predictions)
-
-
-for layer in base_model.layers:
-    layer.trainable=True
-
-
-model.compile(optimizer=&#39;adam&#39;, loss=&#39;binary_crossentropy&#39;, metrics=[&#39;accuracy&#39;])
-
-
-## Running model
-print(&#39;Running model&#39;)
-start = time.time()
-
-num_epochs = int(input(&#39;number of epochs: &#39;))
-history = model.fit(train_generator, epochs=num_epochs, validation_data = valid_generator)
-
-end = time.time()
-minutes = int((end-start)/60)
-
-print(&#39;This program took &#39; + str(minutes) + &#39; minutes to run&#39;)
-print(&#39;It took &#39; + str(minutes/num_epochs) + &#39; minutes per epoch&#39;)
-
-
-test_loss, test_acc = model.evaluate(test_generator, verbose=2)
-
-
-test_acc = str(test_acc)[:6]
-
-
-## Getting the validation scores
-val_acc = history.history[&#39;accuracy&#39;]
-val_acc = str(val_acc[0])[:6]
-
-model.save(model_name)
-
-## Sending message
-message = &quot;&quot;&quot;Subject: Hi there! I finished running {model_name}.
-
-It had a final validation score of {val_score}
-
-It had a final testing score of {test_score}
-
-This program took {time_min} minutes to run
-
-It took {min_per_epoch} minutes per epoch
-
-Reminder of model hyperparamters:
-Number of epochs = {epoch}
-Training batch size = {tbs}
-Validation batch size = {vbs}
-
-This message is sent from Python.&quot;&quot;&quot;.format(model_name = model_name,
-                                            time_min = minutes,
-                                            min_per_epoch = minutes/num_epochs,
-                                           val_score = val_acc,
-                                           test_score = test_acc,
-                                           epoch = num_epochs,
-                                           tbs = train_batch,
-                                           vbs = val_batch)
-
-context = ssl.create_default_context()
-with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-    server.login(sender_email, password)
-    server.sendmail(sender_email, receiver_email, message)
-
-
-
-
-## Pretty sure this works if do more than 1 epoch - retreives and plots the loss and accuracy for each epoch
-print(&#39;Producing plots detailing model performance&#39;)
-if num_epochs &gt; 1:
-
-    acc=history.history[&#39;accuracy&#39;]
-    val_acc = history.history[&#39;val_accuracy&#39;]
-    loss=history.history[&#39;loss&#39;]
-    val_loss = history.history[&#39;val_loss&#39;]
-
-    epoch_range = list(range(1, num_epochs +1, 1))
-
-    plt.plot(epoch_range, acc, &#39;b&#39;, label = &quot;Training Accuracy&quot;)
-    plt.plot(epoch_range, val_acc, &#39;r&#39;, label = &quot;Val Accuracy&quot;)
-    plt.yscale(&#39;linear&#39;)
-    plt.title(&#39;Training and Validation accuracy&#39;)
-    plt.legend()
-    plt.figure()
-
-
-    plt.plot(epoch_range, loss, &#39;b&#39;, label = &quot;Training Loss&quot;)
-    plt.plot(epoch_range, val_loss, &#39;r&#39;, label = &quot;Validation Loss&quot;)
-    plt.yscale(&#39;linear&#39;)
-    plt.title(&#39;Training and Valdiation loss&#39;)
-    plt.legend()
-    plt.figure()
-
-
-## Heatmap to check how well model did for each class. Can be used in different way to see how it did for certain species
-model = tf.keras.models.load_model(model_name)
-filesnames= test_generator.filenames
-nb_samples=len(test_generator)
-
-y_prob=[]
-y_act=[]
-test_generator.reset()
-for _ in range(nb_samples):
-    X_test, Y_test = test_generator.next()
-    y_prob.append(model.predict(X_test))
-    y_act.append(Y_test)
-
-predicted_class = [list(train_generator.class_indices.keys())[i.argmax()] for i in y_prob]
-actual_class = [list(train_generator.class_indices.keys())[i.argmax()] for i in y_act]
-
-
-out_df = pd.DataFrame(np.vstack([predicted_class, actual_class]).T,columns=[&#39;predicted_class&#39;,&#39;actual_class&#39;])
-confusion_matrix = pd.crosstab(out_df[&#39;actual_class&#39;], out_df[&#39;predicted_class&#39;],
-                               rownames=[&#39;Actual&#39;], colnames=[&#39;Predicted&#39;])
-
-sn.heatmap(confusion_matrix, cmap=&#39;Blues&#39;, annot=True, fmt=&#39;d&#39;)
-plt.show()
-print(&#39;test accuracy : {}&#39;.format((np.diagonal(confusion_matrix).sum()/confusion_matrix.sum()*100)))</code></pre>
-<p>```</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#!/usr/bin/env python</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># coding: utf-8</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># Last edit: 09/15/2021</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co"># This script emails you a dad joke</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"># The email code was used referencing a tutorial at the link: https://realpython.com/python-send-email/</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Required packages to impliment from command line:</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="im">import</span> argparse</a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="im">import</span> getpass</a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="kw">def</span> dad_joke_emailer(email_input, password_input):</a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">    This python script is to email 1 dad joke that is sent from an email to that same email. Important note: you have</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="co">    to turn &quot;less secure app access&quot; on in your email settings to use this email sender. I have set up a junk email</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">    that I only use for this purpose.</span></a>
+<a class="sourceLine" id="cb1-17" title="17"></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="co">    Arguments:</span></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">        email [str] -- your full email</span></a>
+<a class="sourceLine" id="cb1-20" title="20"><span class="co">        password [str] -- your password to that email</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">    <span class="co">## Required Packages</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="im">import</span> random</a>
+<a class="sourceLine" id="cb1-24" title="24">    <span class="im">import</span> ssl</a>
+<a class="sourceLine" id="cb1-25" title="25">    <span class="im">import</span> smtplib</a>
+<a class="sourceLine" id="cb1-26" title="26">    <span class="im">import</span> os</a>
+<a class="sourceLine" id="cb1-27" title="27"></a>
+<a class="sourceLine" id="cb1-28" title="28">    jokes <span class="op">=</span> [</a>
+<a class="sourceLine" id="cb1-29" title="29">        <span class="st">&quot;What kind of noise does a witch&#39;s vehicle make? Brooooom Broooom&quot;</span>,</a>
+<a class="sourceLine" id="cb1-30" title="30">        <span class="st">&quot;What&#39;s brown and sticky? A stick&quot;</span>,</a>
+<a class="sourceLine" id="cb1-31" title="31">        <span class="st">&quot;Two guys walked into a bar. The third guy ducked&quot;</span>,</a>
+<a class="sourceLine" id="cb1-32" title="32">        <span class="st">&quot;Why are elevator jokes so good? They work on many levels&quot;</span>,</a>
+<a class="sourceLine" id="cb1-33" title="33">        <span class="st">&quot;My wife asked me to go get 6 cans of Sprite from the grocery store. I realized when I go home that I have picked 7 up.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-34" title="34">        <span class="st">&quot;Why do bees have sticky hair? Because they use a honeycomb&quot;</span>,</a>
+<a class="sourceLine" id="cb1-35" title="35">        <span class="st">&quot;Why do some couples go to the gym? Because they want their relationship to work out&quot;</span>,</a>
+<a class="sourceLine" id="cb1-36" title="36">        <span class="st">&quot;How can you tell it&#39;s a dogwood tree? By the bark.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-37" title="37">        <span class="st">&quot;My boss told me to have a good day, so I went home.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-38" title="38">        <span class="st">&quot;Why did the man fall down he well? Because he couldn&#39;t see that well.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-39" title="39">        <span class="st">&quot;When does a joke become a &#39;dad joke?&#39; When it becomes apparent.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-40" title="40">        <span class="st">&quot;Why is peter pan always flying? Because he Neverlands&quot;</span>,</a>
+<a class="sourceLine" id="cb1-41" title="41">        <span class="st">&quot;Which state has the most streets? Rhode Island&quot;</span>,</a>
+<a class="sourceLine" id="cb1-42" title="42">        <span class="st">&quot;I used to hate facial hair, but then it grew on me.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-43" title="43">        <span class="st">&quot;Why did the coach go to the bank? To get his quarterback&quot;</span>,</a>
+<a class="sourceLine" id="cb1-44" title="44">        <span class="st">&quot;How do celebrities stay cool? They have many fans&quot;</span>,</a>
+<a class="sourceLine" id="cb1-45" title="45">        <span class="st">&quot;Sundays are always a little sad, but the day before is a sadder day&quot;</span>,</a>
+<a class="sourceLine" id="cb1-46" title="46">        <span class="st">&quot;5/4 people admit that they are bad at fractions&quot;</span>,</a>
+<a class="sourceLine" id="cb1-47" title="47">        <span class="st">&quot;You&#39;re American when you go into a bathroom and when you come out, but what are you while you are in the bathroom? European&quot;</span>,</a>
+<a class="sourceLine" id="cb1-48" title="48">        <span class="st">&quot;I&#39;ve been thinking about taking up meditation. I figure it&#39;s better than sitting around and doing nothing&quot;</span>,</a>
+<a class="sourceLine" id="cb1-49" title="49">        <span class="st">&quot;Dogs can&#39;t operate MRI machines. But catscan&quot;</span>,</a>
+<a class="sourceLine" id="cb1-50" title="50">        <span class="st">&quot;Singing in the shower is fun until you get soap in your mouth. Then it becomes a soap opera.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="st">&quot;It takes guts to be an organ donor.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-52" title="52">        <span class="st">&quot;I lost my job at the bank on my first day. A woman asked me to check her balance, so I pushed her over.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-53" title="53">        <span class="st">&quot;How do you row a canoe filled with puppies? Bring out the doggy paddle.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-54" title="54">        <span class="st">&quot;How does a penguin build his house? Igloos it together&quot;</span>,</a>
+<a class="sourceLine" id="cb1-55" title="55">        <span class="st">&quot;What kind of music do chiropractors like? Hip pop.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-56" title="56">        <span class="st">&quot;What does a house wear? Address&quot;</span>,</a>
+<a class="sourceLine" id="cb1-57" title="57">        <span class="st">&quot;I was going to tell a time-traveling joke, but you guys didn&#39;t like it&quot;</span>,</a>
+<a class="sourceLine" id="cb1-58" title="58">        <span class="st">&quot;What does the accountant say while auditing a document? This is taxing.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-59" title="59">        <span class="st">&quot;What do you call a toothless bear? A gummy bear&quot;</span>,</a>
+<a class="sourceLine" id="cb1-60" title="60">        <span class="st">&quot;Why couldn&#39;t the bicycle stand up by itself? It was two-tired&quot;</span>,</a>
+<a class="sourceLine" id="cb1-61" title="61">        <span class="st">&quot;What does a nosey pepper do? It gets jalapeno business.&quot;</span>,</a>
+<a class="sourceLine" id="cb1-62" title="62">        <span class="st">&quot;I know a lot of jokes about retired people, but none of them work&quot;</span>,</a>
+<a class="sourceLine" id="cb1-63" title="63">        <span class="st">&quot;What do you call two octopuses that look the same? Itenticle&quot;</span>,</a>
+<a class="sourceLine" id="cb1-64" title="64">        <span class="st">&quot;Sore throats are a pain in the neck&quot;</span></a>
+<a class="sourceLine" id="cb1-65" title="65">    ]</a>
+<a class="sourceLine" id="cb1-66" title="66"></a>
+<a class="sourceLine" id="cb1-67" title="67">    a <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="bu">len</span>(jokes)),<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-68" title="68"></a>
+<a class="sourceLine" id="cb1-69" title="69">    jokes_to_send <span class="op">=</span> jokes[a[<span class="dv">0</span>]]</a>
+<a class="sourceLine" id="cb1-70" title="70"></a>
+<a class="sourceLine" id="cb1-71" title="71">    <span class="co">## Email setup to alert you of model completion and output info</span></a>
+<a class="sourceLine" id="cb1-72" title="72">    <span class="co"># For this to work you may need to change your setting &#39;less secure app access&#39; to ON</span></a>
+<a class="sourceLine" id="cb1-73" title="73">    <span class="co"># I made a junk email for this specifically and suggest you do the same</span></a>
+<a class="sourceLine" id="cb1-74" title="74">    port <span class="op">=</span> <span class="dv">465</span>  <span class="co"># For SSL</span></a>
+<a class="sourceLine" id="cb1-75" title="75">    smtp_server <span class="op">=</span> <span class="st">&quot;smtp.gmail.com&quot;</span></a>
+<a class="sourceLine" id="cb1-76" title="76">    sender_email <span class="op">=</span> email_input  <span class="co"># Enter your address</span></a>
+<a class="sourceLine" id="cb1-77" title="77">    receiver_email <span class="op">=</span> email_input  <span class="co"># Enter receiver address</span></a>
+<a class="sourceLine" id="cb1-78" title="78"></a>
+<a class="sourceLine" id="cb1-79" title="79">    <span class="co">## Sending message</span></a>
+<a class="sourceLine" id="cb1-80" title="80">    message <span class="op">=</span> <span class="st">&quot;&quot;&quot;Subject: Hi there! Here is your joke!</span></a>
+<a class="sourceLine" id="cb1-81" title="81"></a>
+<a class="sourceLine" id="cb1-82" title="82"><span class="st">    </span><span class="sc">{dad_joke}</span></a>
+<a class="sourceLine" id="cb1-83" title="83"></a>
+<a class="sourceLine" id="cb1-84" title="84"><span class="st">    Have a great day! :)</span></a>
+<a class="sourceLine" id="cb1-85" title="85"></a>
+<a class="sourceLine" id="cb1-86" title="86"><span class="st">    This message is sent from the dad_joke_emailer.&quot;&quot;&quot;</span>.<span class="bu">format</span>(dad_joke <span class="op">=</span> jokes_to_send)</a>
+<a class="sourceLine" id="cb1-87" title="87"></a>
+<a class="sourceLine" id="cb1-88" title="88">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb1-89" title="89">        context <span class="op">=</span> ssl.create_default_context()</a>
+<a class="sourceLine" id="cb1-90" title="90">        <span class="cf">with</span> smtplib.SMTP_SSL(smtp_server, port, context<span class="op">=</span>context) <span class="im">as</span> server:</a>
+<a class="sourceLine" id="cb1-91" title="91">            server.login(sender_email, password)</a>
+<a class="sourceLine" id="cb1-92" title="92">            server.sendmail(sender_email, receiver_email, message)</a>
+<a class="sourceLine" id="cb1-93" title="93">    <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb1-94" title="94">        <span class="bu">print</span>(<span class="st">&#39;Did you enter your email and password correctly and did you also change the &quot;LESS SECURE APP ACCESS&quot; setting to ON in your GOOGLE ACCOUNT settings?)</span></a>
+<a class="sourceLine" id="cb1-95" title="95"></a>
+<a class="sourceLine" id="cb1-96" title="96"></a>
+<a class="sourceLine" id="cb1-97" title="97"><span class="st">if __name__ == &#39;</span>__main__<span class="st">&#39;:</span></a>
+<a class="sourceLine" id="cb1-98" title="98"><span class="st">    p = argparse.ArgumentParser(</span></a>
+<a class="sourceLine" id="cb1-99" title="99"><span class="st">        description=&quot;Emails a dad joke to your email from your email.&quot;)</span></a>
+<a class="sourceLine" id="cb1-100" title="100"></a>
+<a class="sourceLine" id="cb1-101" title="101"><span class="st">    p.add_argument(&quot;-e&quot;, &quot;--email&quot;, default = &#39;</span><span class="va">None</span><span class="st">&#39;, type = str,</span></a>
+<a class="sourceLine" id="cb1-102" title="102"><span class="st">                  help=&quot;&quot;&quot; Put in your entire email... example@gmail.com. </span></a>
+<a class="sourceLine" id="cb1-103" title="103"><span class="st">                  Make sure to turn &#39;</span>Less secure app access<span class="st">&#39; ON in your GOOGLE ACCOUNT security settings. &quot;&quot;&quot;)</span></a>
+<a class="sourceLine" id="cb1-104" title="104"></a>
+<a class="sourceLine" id="cb1-105" title="105"></a>
+<a class="sourceLine" id="cb1-106" title="106"><span class="st">    args = p.parse_args()</span></a>
+<a class="sourceLine" id="cb1-107" title="107"></a>
+<a class="sourceLine" id="cb1-108" title="108"><span class="st">    print(&#39;&#39;)</span></a>
+<a class="sourceLine" id="cb1-109" title="109"><span class="st">    print(&#39;</span>Looks like somebody wants a joke<span class="op">!</span><span class="st">&#39;)</span></a>
+<a class="sourceLine" id="cb1-110" title="110"><span class="st">    print(&#39;&#39;)</span></a>
+<a class="sourceLine" id="cb1-111" title="111"><span class="st">    password = getpass.getpass(prompt = &#39;</span>What <span class="kw">is</span> your email password?<span class="st">&#39;)</span></a>
+<a class="sourceLine" id="cb1-112" title="112"></a>
+<a class="sourceLine" id="cb1-113" title="113"><span class="st">    dad_joke_emailer(args.email, password)</span></a></code></pre></div>
 </div>
 
 <footer class="myfoot">

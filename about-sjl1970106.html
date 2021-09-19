@@ -358,6 +358,40 @@ $(document).ready(function () {
 <li>I <strong>love</strong> scary movies</li>
 </ul>
 </div>
+<div id="sample-script" class="section level1">
+<h1>Sample Script</h1>
+<pre><code>import time
+from Stack import Stack
+
+def Hanoi_rec(n, s, a, d):
+ print(n, s, a, d)
+ # TODO replace pass with your base and recursive cases.
+ if n == 0:
+   d.push(s.pop())
+ else:
+   Hanoi_rec(n-1,s,d,a)
+   d.push(s.pop())
+   Hanoi_rec(n-1,a,s,d)
+ print(n, s, a, d)
+ print()
+
+def Hanoi(n):
+ source = Stack()
+ dest = Stack()
+ aux = Stack()
+ i = n-1
+ while i &gt;= 0:
+   source.push(i)
+   i = i - 1
+ Hanoi_rec(n-1, source, aux, dest)
+
+if __name__ == &#39;__main__&#39;:
+ start = time.process_time()
+ n = int(input(&quot;how many rings? &quot;))
+ Hanoi(n)
+ end = time.process_time()
+ print(&#39;computed Hanoi(&#39; + str(n) + &#39;) in &#39; + str(end - start) + &#39; seconds.&#39;)</code></pre>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
