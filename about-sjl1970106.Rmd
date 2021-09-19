@@ -9,16 +9,21 @@ semester: "Fall 2021"
 
 # Bio:
 
-I am a junior studying Econ and Data Science. I am from Chicago IL and I enjoy hiking, paddle boarding, spending time with friends, and reading. 
+I am a junior studying Econ and Data Science. I am from Chicago IL and I enjoy hiking, paddle boarding, spending time with friends, and reading.
 
-# Some fun facts: 
+# Some fun facts:
 
 - I pierced my own ears
 - I have a twin sister
 - I have never broken a bone
-- I **love** scary movies 
+- I **love** scary movies
 
-# Sample Script 
+# Sample Script
+
+<audio controls>
+<source src="audio/hanoi.mp3">
+</audio>
+
  ```
  import time
 from Stack import Stack
