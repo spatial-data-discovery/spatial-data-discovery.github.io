@@ -187,6 +187,9 @@ removes all files of that type within that directory.
 
 ### what_to_watch.py
 * This script takes movie or show titles input by the user and outputs one for the user to watch next. The user is also given the option to re-pick.
+
+### word_bank.py
+* This script creates a word bank of all unique words in inserted sentence.
     
 ### script.py
 * This script stitches together two or more images that have overlapping areas. 
