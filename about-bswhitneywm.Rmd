@@ -9,20 +9,23 @@ semester: "Fall 2021"
 ![W&M Men's Ultimate](https://cdn.ultiworld.com/wordpress/wp-content/uploads/2018/04/william-mary-mens-logo.jpg)
 
 ## Bio
-I was born in Massachusetts and am a senior pursuing a double major in *Computer Science* and *Data Science*. 
-Outside the classrom, I serve as the president for the Men's Club Ultimate team at W&M. 
+I was born in Massachusetts and am a senior pursuing a double major in *Computer Science* and *Data Science*.
+Outside the classrom, I serve as the president for the Men's Club Ultimate team at W&M.
 
 ##  Hobbies
-1. Watching Sports 
-2. Exercising 
+1. Watching Sports
+2. Exercising
 3. Playing Chess
 4. Going to the Beach
 
 ## Sample Script
 [randomPassword.py](scripts/randomPassword.py)
 
-I made this script so it can randomly generate passwords of a given length. A random seed can be given, that way someone can track the random seed and length they used for different websites, and regenerate the passwords when they forget them. 
+I made this script so it can randomly generate passwords of a given length. A random seed can be given, that way someone can track the random seed and length they used for different websites, and regenerate the passwords when they forget them.
 
+<audio controls>
+<source src="audio/randomPassword.mp3">
+</audio>
 
 
 ```python
@@ -46,12 +49,12 @@ import argparse
 
 def generatePassword(passwordLength=10, randomSeed=None):
     """
-    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters. 
+    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters.
     The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used
-    in a seperate file and regenerate their password when they forget it. 
+    in a seperate file and regenerate their password when they forget it.
 
     Arguments:
-        passwordLength [int] -- Length of the desired password. 10 characters by deafult. 
+        passwordLength [int] -- Length of the desired password. 10 characters by deafult.
         randomSeed     [int] -- The random seed to be used. None by deafult.
     """
     # Create sets of characters

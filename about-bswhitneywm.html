@@ -453,6 +453,9 @@ $(document).ready(function () {
 <h2>Sample Script</h2>
 <p><a href="scripts/randomPassword.py">randomPassword.py</a></p>
 <p>I made this script so it can randomly generate passwords of a given length. A random seed can be given, that way someone can track the random seed and length they used for different websites, and regenerate the passwords when they forget them.</p>
+<audio controls>
+<source src="audio/randomPassword.mp3">
+</audio>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#############################################################################################</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co"># File Name: randomPassword.py                                                              #</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co"># Python Version: 3.8.10                                                                    #</span></a>
@@ -473,12 +476,12 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-18" title="18"></a>
 <a class="sourceLine" id="cb1-19" title="19"><span class="kw">def</span> generatePassword(passwordLength<span class="op">=</span><span class="dv">10</span>, randomSeed<span class="op">=</span><span class="va">None</span>):</a>
 <a class="sourceLine" id="cb1-20" title="20">    <span class="co">&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="co">    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters. </span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co">    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters.</span></a>
 <a class="sourceLine" id="cb1-22" title="22"><span class="co">    The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used</span></a>
-<a class="sourceLine" id="cb1-23" title="23"><span class="co">    in a seperate file and regenerate their password when they forget it. </span></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="co">    in a seperate file and regenerate their password when they forget it.</span></a>
 <a class="sourceLine" id="cb1-24" title="24"></a>
 <a class="sourceLine" id="cb1-25" title="25"><span class="co">    Arguments:</span></a>
-<a class="sourceLine" id="cb1-26" title="26"><span class="co">        passwordLength [int] -- Length of the desired password. 10 characters by deafult. </span></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="co">        passwordLength [int] -- Length of the desired password. 10 characters by deafult.</span></a>
 <a class="sourceLine" id="cb1-27" title="27"><span class="co">        randomSeed     [int] -- The random seed to be used. None by deafult.</span></a>
 <a class="sourceLine" id="cb1-28" title="28"><span class="co">    &quot;&quot;&quot;</span></a>
 <a class="sourceLine" id="cb1-29" title="29">    <span class="co"># Create sets of characters</span></a>
