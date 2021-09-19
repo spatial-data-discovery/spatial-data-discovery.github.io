@@ -7,7 +7,7 @@ semester: "Fall 2021"
 
 ![](https://user-images.githubusercontent.com/67921793/132583745-5c8a660d-424e-494c-a5c6-1f26251c1abf.jpg "Yup, that's me. You are probably wondering how I got here, trapped in this computer.")
 
-### Bio 
+### Bio
 
 I am a senior, double majoring in Biology and Data Science. I am currently working on going to graduate school for geomicrobiology/astrobiology.
 
@@ -27,7 +27,7 @@ www.linkedin.com/in/luke-denoncourt
 [dad_joke_emailer (.py)](script/dad_joke_emailer.py)
 
 <audio controls>
-<source src="audio/dad_joke_emailer_audio.mp3">
+<source src="audio/dad_joke_emailer.mp3">
 </audio>
 
 ```python
@@ -132,7 +132,7 @@ if __name__ == '__main__':
         description="Emails a dad joke to your email from your email.")
 
     p.add_argument("-e", "--email", default = 'None', type = str,
-                  help=""" Put in your entire email... example@gmail.com. 
+                  help=""" Put in your entire email... example@gmail.com.
                   Make sure to turn 'Less secure app access' ON in your GOOGLE ACCOUNT security settings. """)
 
 
@@ -146,8 +146,3 @@ if __name__ == '__main__':
     dad_joke_emailer(args.email, password)
 
 ```
-
-
-
-
-
