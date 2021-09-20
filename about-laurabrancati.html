@@ -14,6 +14,7 @@
 
 <title>About the Coder</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -52,26 +53,27 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -452,69 +454,69 @@ $(document).ready(function () {
 <audio controls>
 <source src="audio/stitch.mp3">
 </audio>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#!/usr/bin/env python3</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># stitch.py</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co"># VERSION 1</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co"># LAST EDIT: 09/14/2021</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co"># Author: Laura Brancati, based on function found on: https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co"># Stitches images together that have overlapping areas.</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="co"># REQUIRED MODULES</span></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="im">import</span> os</a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="im">import</span> argparse</a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="im">import</span> cv2</a>
-<a class="sourceLine" id="cb1-19" title="19"><span class="im">import</span> imutils</a>
-<a class="sourceLine" id="cb1-20" title="20"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb1-21" title="21"></a>
-<a class="sourceLine" id="cb1-22" title="22"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-23" title="23"><span class="co"># FUNCTIONS</span></a>
-<a class="sourceLine" id="cb1-24" title="24"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-25" title="25"><span class="kw">def</span> image_stitch(img_directory, output_path):</a>
-<a class="sourceLine" id="cb1-26" title="26">    img_dir <span class="op">=</span> img_directory</a>
-<a class="sourceLine" id="cb1-27" title="27">    names <span class="op">=</span> os.listdir(img_dir)</a>
-<a class="sourceLine" id="cb1-28" title="28"></a>
-<a class="sourceLine" id="cb1-29" title="29">    <span class="co">#get all of the image file names from the directory and put them in a list</span></a>
-<a class="sourceLine" id="cb1-30" title="30">    images <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb1-31" title="31">    <span class="cf">for</span> name <span class="kw">in</span> names:</a>
-<a class="sourceLine" id="cb1-32" title="32">        img_path <span class="op">=</span> os.path.join(img_dir, name)</a>
-<a class="sourceLine" id="cb1-33" title="33">        image <span class="op">=</span> cv2.imread(img_path)</a>
-<a class="sourceLine" id="cb1-34" title="34">        images.append(image)</a>
-<a class="sourceLine" id="cb1-35" title="35"></a>
-<a class="sourceLine" id="cb1-36" title="36">    <span class="co">#call stitch function and stitch images; status is 0 if succesfull</span></a>
-<a class="sourceLine" id="cb1-37" title="37">    stitcher <span class="op">=</span> cv2.createStitcher() <span class="cf">if</span> imutils.is_cv3() <span class="cf">else</span> cv2.Stitcher_create()</a>
-<a class="sourceLine" id="cb1-38" title="38">    stitcher.setPanoConfidenceThresh(.<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb1-39" title="39">    status, stitched <span class="op">=</span> stitcher.stitch(images)</a>
-<a class="sourceLine" id="cb1-40" title="40"></a>
-<a class="sourceLine" id="cb1-41" title="41">    <span class="cf">if</span> status<span class="op">==</span><span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb1-42" title="42">        <span class="co"># create stitched image file</span></a>
-<a class="sourceLine" id="cb1-43" title="43">        cv2.imwrite(os.path.join(output_path<span class="op">+</span><span class="st">&quot;.jpg&quot;</span>), stitched)</a>
-<a class="sourceLine" id="cb1-44" title="44">        <span class="bu">print</span>(<span class="st">&quot;success!&quot;</span>)</a>
-<a class="sourceLine" id="cb1-45" title="45"></a>
-<a class="sourceLine" id="cb1-46" title="46">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb1-47" title="47">        <span class="bu">print</span>(<span class="st">&quot;status:&quot;</span>, status)</a>
-<a class="sourceLine" id="cb1-48" title="48"></a>
-<a class="sourceLine" id="cb1-49" title="49"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-50" title="50"><span class="co"># MAIN</span></a>
-<a class="sourceLine" id="cb1-51" title="51"><span class="co">##############################################################################</span></a>
-<a class="sourceLine" id="cb1-52" title="52"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
-<a class="sourceLine" id="cb1-53" title="53">    p <span class="op">=</span> argparse.ArgumentParser(</a>
-<a class="sourceLine" id="cb1-54" title="54">        description<span class="op">=</span><span class="st">&quot;stitch images together that are in a directory&quot;</span>)</a>
-<a class="sourceLine" id="cb1-55" title="55">    p.add_argument(<span class="st">&quot;-i&quot;</span>, <span class="st">&quot;--images&quot;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, required<span class="op">=</span><span class="va">True</span>,</a>
-<a class="sourceLine" id="cb1-56" title="56">        <span class="bu">help</span><span class="op">=</span><span class="st">&quot;path of input directory of images to stitch&quot;</span>)</a>
-<a class="sourceLine" id="cb1-57" title="57">    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--output&quot;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, required<span class="op">=</span><span class="va">True</span>,</a>
-<a class="sourceLine" id="cb1-58" title="58">        <span class="bu">help</span><span class="op">=</span><span class="st">&quot;path to the output image&quot;</span>)</a>
-<a class="sourceLine" id="cb1-59" title="59"></a>
-<a class="sourceLine" id="cb1-60" title="60">    args <span class="op">=</span> p.parse_args()</a>
-<a class="sourceLine" id="cb1-61" title="61"></a>
-<a class="sourceLine" id="cb1-62" title="62">    <span class="co">#call function</span></a>
-<a class="sourceLine" id="cb1-63" title="63">    stitched <span class="op">=</span> image_stitch(args.images, args.output)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#!/usr/bin/env python3</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># stitch.py</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co"># VERSION 1</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co"># LAST EDIT: 09/14/2021</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co"># Author: Laura Brancati, based on function found on: https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co"># Stitches images together that have overlapping areas.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="co"># REQUIRED MODULES</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="im">import</span> os</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="im">import</span> argparse</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="im">import</span> cv2</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="im">import</span> imutils</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a><span class="co"># FUNCTIONS</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="kw">def</span> image_stitch(img_directory, output_path):</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    img_dir <span class="op">=</span> img_directory</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>    names <span class="op">=</span> os.listdir(img_dir)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>    <span class="co">#get all of the image file names from the directory and put them in a list</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>    images <span class="op">=</span> []</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>    <span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>        img_path <span class="op">=</span> os.path.join(img_dir, name)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>        image <span class="op">=</span> cv2.imread(img_path)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>        images.append(image)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a>    <span class="co">#call stitch function and stitch images; status is 0 if succesfull</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>    stitcher <span class="op">=</span> cv2.createStitcher() <span class="cf">if</span> imutils.is_cv3() <span class="cf">else</span> cv2.Stitcher_create()</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a>    stitcher.setPanoConfidenceThresh(<span class="fl">.8</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>    status, stitched <span class="op">=</span> stitcher.stitch(images)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>    <span class="cf">if</span> status<span class="op">==</span><span class="dv">0</span>:</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>        <span class="co"># create stitched image file</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>        cv2.imwrite(os.path.join(output_path<span class="op">+</span><span class="st">&quot;.jpg&quot;</span>), stitched)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;success!&quot;</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;status:&quot;</span>, status)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a><span class="co"># MAIN</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a><span class="co">##############################################################################</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>    p <span class="op">=</span> argparse.ArgumentParser(</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>        description<span class="op">=</span><span class="st">&quot;stitch images together that are in a directory&quot;</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>    p.add_argument(<span class="st">&quot;-i&quot;</span>, <span class="st">&quot;--images&quot;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, required<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>        <span class="bu">help</span><span class="op">=</span><span class="st">&quot;path of input directory of images to stitch&quot;</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>    p.add_argument(<span class="st">&quot;-o&quot;</span>, <span class="st">&quot;--output&quot;</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, required<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>        <span class="bu">help</span><span class="op">=</span><span class="st">&quot;path to the output image&quot;</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a>    args <span class="op">=</span> p.parse_args()</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a>    <span class="co">#call function</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>    stitched <span class="op">=</span> image_stitch(args.images, args.output)</span></code></pre></div>
 </div>
 
 <footer class="myfoot">

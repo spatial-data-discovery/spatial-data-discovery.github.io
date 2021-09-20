@@ -14,6 +14,7 @@
 
 <title>About the Coder</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -52,26 +53,27 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -438,7 +440,7 @@ $(document).ready(function () {
 </dd>
 </dl>
 <div class="figure">
-<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg" alt="This is a picture of Muscat, the capital of Oman" width="224" height="148" />
+<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/74/d0/3a.jpg" width="224" height="148" alt="" />
 <p class="caption">This is a picture of Muscat, the capital of Oman</p>
 </div>
 <dl>
@@ -454,65 +456,65 @@ $(document).ready(function () {
 <h3>Sample script</h3>
 <p><a href="scripts/dna_translator.py">DNA to RNA Translator (.py)</a></p>
 <p>I wrote part of this sample script for a computational biology class, and added on to it for this project. It takes a DNA sequence, finds the complementary sequence (called the template DNA), and outputs the corresponding RNA codons and proteins they encode for in a list.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#dna_translator.py</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">#Author: Emma Strickland</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">#Last Edit: 2020-02-10</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">#</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">#This script takes a non-template DNA sequence as an input and returns a list of the RNA codons and protein sequence that will result from transcription and translation</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="im">import</span> argparse</a>
-<a class="sourceLine" id="cb1-9" title="9"></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="co">#Dictionary to match codon sequences to the protein they encode for</span></a>
-<a class="sourceLine" id="cb1-11" title="11">protein_based_on_codon <span class="op">=</span> {<span class="st">&quot;UUU&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUC&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;UUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-12" title="12">                          <span class="st">&quot;UCU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCA&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCG&quot;</span>:<span class="st">&quot;Serine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-13" title="13">                          <span class="st">&quot;UAU&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAC&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UAG&quot;</span>:<span class="st">&quot;STOP&quot;</span>,</a>
-<a class="sourceLine" id="cb1-14" title="14">                          <span class="st">&quot;UGU&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGC&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UGG&quot;</span>:<span class="st">&quot;Tryptophan&quot;</span>,</a>
-<a class="sourceLine" id="cb1-15" title="15">                          <span class="st">&quot;CUU&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUC&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-16" title="16">                          <span class="st">&quot;CCU&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCC&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCA&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCG&quot;</span>:<span class="st">&quot;Proline&quot;</span>,</a>
-<a class="sourceLine" id="cb1-17" title="17">                          <span class="st">&quot;CAU&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAC&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAA&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>, <span class="st">&quot;CAG&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-18" title="18">                          <span class="st">&quot;CGU&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGC&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-19" title="19">                          <span class="st">&quot;AUU&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUC&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUA&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUG&quot;</span>:<span class="st">&quot;Methionine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-20" title="20">                          <span class="st">&quot;ACU&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACC&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACA&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACG&quot;</span>:<span class="st">&quot;Threonine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-21" title="21">                          <span class="st">&quot;AAU&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAC&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAA&quot;</span>:<span class="st">&quot;Lysine&quot;</span>, <span class="st">&quot;AAG&quot;</span>:<span class="st">&quot;Lysine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-22" title="22">                          <span class="st">&quot;AGU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;AGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-23" title="23">                          <span class="st">&quot;GUU&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUC&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUA&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUG&quot;</span>:<span class="st">&quot;Valine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-24" title="24">                          <span class="st">&quot;GCU&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCC&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCA&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCG&quot;</span>:<span class="st">&quot;Alanine&quot;</span>,</a>
-<a class="sourceLine" id="cb1-25" title="25">                          <span class="st">&quot;GAU&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAC&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAA&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>, <span class="st">&quot;GAG&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>,</a>
-<a class="sourceLine" id="cb1-26" title="26">                          <span class="st">&quot;GGU&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGC&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGA&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGG&quot;</span>:<span class="st">&quot;Glycine&quot;</span>}</a>
-<a class="sourceLine" id="cb1-27" title="27"></a>
-<a class="sourceLine" id="cb1-28" title="28"><span class="co">#Function that converts DNA sequence to RNA and protein sequence</span></a>
-<a class="sourceLine" id="cb1-29" title="29"><span class="kw">def</span> translate_dna(dna):</a>
-<a class="sourceLine" id="cb1-30" title="30">    dna <span class="op">=</span> dna.upper()</a>
-<a class="sourceLine" id="cb1-31" title="31">    <span class="co">#Replacing base pairs with complement base pair</span></a>
-<a class="sourceLine" id="cb1-32" title="32">    template_strand <span class="op">=</span> <span class="st">&quot;&quot;</span></a>
-<a class="sourceLine" id="cb1-33" title="33">    <span class="cf">for</span> letter <span class="kw">in</span> dna:</a>
-<a class="sourceLine" id="cb1-34" title="34">        <span class="cf">if</span> letter <span class="op">==</span> <span class="st">&quot;A&quot;</span>:</a>
-<a class="sourceLine" id="cb1-35" title="35">            template_strand <span class="op">+=</span> <span class="st">&quot;U&quot;</span> <span class="co">#RNA has U instead of T</span></a>
-<a class="sourceLine" id="cb1-36" title="36">        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;T&quot;</span>:</a>
-<a class="sourceLine" id="cb1-37" title="37">            template_strand <span class="op">+=</span> <span class="st">&quot;A&quot;</span></a>
-<a class="sourceLine" id="cb1-38" title="38">        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;G&quot;</span>:</a>
-<a class="sourceLine" id="cb1-39" title="39">            template_strand <span class="op">+=</span> <span class="st">&quot;C&quot;</span></a>
-<a class="sourceLine" id="cb1-40" title="40">        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;C&quot;</span>:</a>
-<a class="sourceLine" id="cb1-41" title="41">            template_strand <span class="op">+=</span> <span class="st">&quot;G&quot;</span></a>
-<a class="sourceLine" id="cb1-42" title="42">    template_strand <span class="op">=</span> template_strand[::<span class="op">-</span><span class="dv">1</span> ] <span class="co">#Reverses DNA sequence to give you the template strand which RNA transcription is based on</span></a>
-<a class="sourceLine" id="cb1-43" title="43">    <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>: <span class="co">#Strand must be divisible by 3 to group into codons</span></a>
-<a class="sourceLine" id="cb1-44" title="44">        template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb1-45" title="45">        <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb1-46" title="46">            template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb1-47" title="47">    codons <span class="op">=</span> [template_strand[i:i<span class="op">+</span><span class="dv">3</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(template_strand),<span class="dv">3</span>)] <span class="co">#RNA codons are groups of 3 base pairs</span></a>
-<a class="sourceLine" id="cb1-48" title="48">    proteins <span class="op">=</span> [protein_based_on_codon[codons[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(codons))] <span class="co">#Use dictionary to convert codons to protein name</span></a>
-<a class="sourceLine" id="cb1-49" title="49">    <span class="cf">for</span> w <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(proteins)):</a>
-<a class="sourceLine" id="cb1-50" title="50">        <span class="cf">if</span> proteins[w] <span class="op">==</span> <span class="st">&#39;STOP&#39;</span>: <span class="co">#Identifying stop codons</span></a>
-<a class="sourceLine" id="cb1-51" title="51">            <span class="cf">return</span> codons[:w<span class="op">+</span><span class="dv">1</span>], proteins[:w<span class="op">+</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb1-52" title="52">    <span class="cf">return</span> codons, proteins</a>
-<a class="sourceLine" id="cb1-53" title="53"></a>
-<a class="sourceLine" id="cb1-54" title="54"><span class="co">#MAIN</span></a>
-<a class="sourceLine" id="cb1-55" title="55"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
-<a class="sourceLine" id="cb1-56" title="56">    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Takes a DNA sequence and returns the RNA codons&quot;</span>)</a>
-<a class="sourceLine" id="cb1-57" title="57">    parser.add_argument(<span class="st">&#39;input&#39;</span>, <span class="bu">type</span> <span class="op">=</span> <span class="bu">str</span>, <span class="bu">help</span> <span class="op">=</span> <span class="st">&quot;Input DNA sequence as a string&quot;</span>)</a>
-<a class="sourceLine" id="cb1-58" title="58">    args <span class="op">=</span> parser.parse_args()</a>
-<a class="sourceLine" id="cb1-59" title="59">    <span class="bu">print</span>(translate_dna(args.<span class="bu">input</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#dna_translator.py</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#Author: Emma Strickland</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">#Last Edit: 2020-02-10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">#</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">#This script takes a non-template DNA sequence as an input and returns a list of the RNA codons and protein sequence that will result from transcription and translation</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="im">import</span> argparse</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co">#Dictionary to match codon sequences to the protein they encode for</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>protein_based_on_codon <span class="op">=</span> {<span class="st">&quot;UUU&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUC&quot;</span>:<span class="st">&quot;Phenylalanine&quot;</span>, <span class="st">&quot;UUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;UUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>                          <span class="st">&quot;UCU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCA&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;UCG&quot;</span>:<span class="st">&quot;Serine&quot;</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>                          <span class="st">&quot;UAU&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAC&quot;</span>:<span class="st">&quot;Tyrosine&quot;</span>, <span class="st">&quot;UAA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UAG&quot;</span>:<span class="st">&quot;STOP&quot;</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>                          <span class="st">&quot;UGU&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGC&quot;</span>:<span class="st">&quot;Cysteine&quot;</span>, <span class="st">&quot;UGA&quot;</span>:<span class="st">&quot;STOP&quot;</span>, <span class="st">&quot;UGG&quot;</span>:<span class="st">&quot;Tryptophan&quot;</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>                          <span class="st">&quot;CUU&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUC&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUA&quot;</span>:<span class="st">&quot;Leucine&quot;</span>, <span class="st">&quot;CUG&quot;</span>:<span class="st">&quot;Leucine&quot;</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>                          <span class="st">&quot;CCU&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCC&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCA&quot;</span>:<span class="st">&quot;Proline&quot;</span>, <span class="st">&quot;CCG&quot;</span>:<span class="st">&quot;Proline&quot;</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>                          <span class="st">&quot;CAU&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAC&quot;</span>:<span class="st">&quot;Histidine&quot;</span>, <span class="st">&quot;CAA&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>, <span class="st">&quot;CAG&quot;</span>:<span class="st">&quot;Glutamine&quot;</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>                          <span class="st">&quot;CGU&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGC&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;CGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>                          <span class="st">&quot;AUU&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUC&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUA&quot;</span>:<span class="st">&quot;Isoleucine&quot;</span>, <span class="st">&quot;AUG&quot;</span>:<span class="st">&quot;Methionine&quot;</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>                          <span class="st">&quot;ACU&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACC&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACA&quot;</span>:<span class="st">&quot;Threonine&quot;</span>, <span class="st">&quot;ACG&quot;</span>:<span class="st">&quot;Threonine&quot;</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>                          <span class="st">&quot;AAU&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAC&quot;</span>:<span class="st">&quot;Asparagine&quot;</span>, <span class="st">&quot;AAA&quot;</span>:<span class="st">&quot;Lysine&quot;</span>, <span class="st">&quot;AAG&quot;</span>:<span class="st">&quot;Lysine&quot;</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>                          <span class="st">&quot;AGU&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGC&quot;</span>:<span class="st">&quot;Serine&quot;</span>, <span class="st">&quot;AGA&quot;</span>:<span class="st">&quot;Arginine&quot;</span>, <span class="st">&quot;AGG&quot;</span>:<span class="st">&quot;Arginine&quot;</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>                          <span class="st">&quot;GUU&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUC&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUA&quot;</span>:<span class="st">&quot;Valine&quot;</span>, <span class="st">&quot;GUG&quot;</span>:<span class="st">&quot;Valine&quot;</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>                          <span class="st">&quot;GCU&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCC&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCA&quot;</span>:<span class="st">&quot;Alanine&quot;</span>, <span class="st">&quot;GCG&quot;</span>:<span class="st">&quot;Alanine&quot;</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>                          <span class="st">&quot;GAU&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAC&quot;</span>:<span class="st">&quot;Aspartic acid&quot;</span>, <span class="st">&quot;GAA&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>, <span class="st">&quot;GAG&quot;</span>:<span class="st">&quot;Glutamic acid&quot;</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>                          <span class="st">&quot;GGU&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGC&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGA&quot;</span>:<span class="st">&quot;Glycine&quot;</span>, <span class="st">&quot;GGG&quot;</span>:<span class="st">&quot;Glycine&quot;</span>}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a><span class="co">#Function that converts DNA sequence to RNA and protein sequence</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a><span class="kw">def</span> translate_dna(dna):</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>    dna <span class="op">=</span> dna.upper()</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a>    <span class="co">#Replacing base pairs with complement base pair</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>    template_strand <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>    <span class="cf">for</span> letter <span class="kw">in</span> dna:</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>        <span class="cf">if</span> letter <span class="op">==</span> <span class="st">&quot;A&quot;</span>:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a>            template_strand <span class="op">+=</span> <span class="st">&quot;U&quot;</span> <span class="co">#RNA has U instead of T</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a>        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;T&quot;</span>:</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>            template_strand <span class="op">+=</span> <span class="st">&quot;A&quot;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a>        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;G&quot;</span>:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>            template_strand <span class="op">+=</span> <span class="st">&quot;C&quot;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a>        <span class="cf">elif</span> letter <span class="op">==</span> <span class="st">&quot;C&quot;</span>:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>            template_strand <span class="op">+=</span> <span class="st">&quot;G&quot;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>    template_strand <span class="op">=</span> template_strand[::<span class="op">-</span><span class="dv">1</span> ] <span class="co">#Reverses DNA sequence to give you the template strand which RNA transcription is based on</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>    <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>: <span class="co">#Strand must be divisible by 3 to group into codons</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>        template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>        <span class="cf">if</span> <span class="bu">len</span>(template_strand) <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>            template_strand <span class="op">=</span> template_strand[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>    codons <span class="op">=</span> [template_strand[i:i<span class="op">+</span><span class="dv">3</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(template_strand),<span class="dv">3</span>)] <span class="co">#RNA codons are groups of 3 base pairs</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a>    proteins <span class="op">=</span> [protein_based_on_codon[codons[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(codons))] <span class="co">#Use dictionary to convert codons to protein name</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>    <span class="cf">for</span> w <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(proteins)):</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a>        <span class="cf">if</span> proteins[w] <span class="op">==</span> <span class="st">&#39;STOP&#39;</span>: <span class="co">#Identifying stop codons</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>            <span class="cf">return</span> codons[:w<span class="op">+</span><span class="dv">1</span>], proteins[:w<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>    <span class="cf">return</span> codons, proteins</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a><span class="co">#MAIN</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span><span class="st">&quot;Takes a DNA sequence and returns the RNA codons&quot;</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>    parser.add_argument(<span class="st">&#39;input&#39;</span>, <span class="bu">type</span> <span class="op">=</span> <span class="bu">str</span>, <span class="bu">help</span> <span class="op">=</span> <span class="st">&quot;Input DNA sequence as a string&quot;</span>)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>    args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a>    <span class="bu">print</span>(translate_dna(args.<span class="bu">input</span>))</span></code></pre></div>
 </div>
 
 <footer class="myfoot">
