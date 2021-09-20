@@ -1,3 +1,14 @@
+#############################################################################################
+# File Name: phone_num_generator.py                                                         #
+#                                                                                           #
+#                                                                                           #
+# Author: Soheb Osmani                                                                      #
+# Last Edit: September 20, 2021                                                             #
+#                                                                                           #
+# Generates a phone number for telemarketers to use when they call people so it's not       #
+# always the same                                                                           #
+#############################################################################################
+
 import phonenumbers
 import random
 
