@@ -18,7 +18,7 @@ import argparse
 
 def generatePassword(passwordLength=10, randomSeed=None):
     """
-    Generates a random password of the length provided in the command line. If no length is given, the default is 8 characters. 
+    Generates a random password of the length provided in the command line. If no length is given, the default is 10 characters. 
     The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used
     in a seperate file and regenerate their password when they forget it. 
 
