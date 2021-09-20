@@ -1,4 +1,11 @@
 #This script allows you to input your calorie needs and how much food you have already eaten, and outputs a food that would get you to your calorie needs for the day
+# 
+# Creator: Ben Sharrer
+#
+# Last Edited 9/20/21
+# 
+
+import sys, os, time, argparse
 
 def calories_to_food(cal_needed):
     food = ''
@@ -27,6 +34,9 @@ def calories_to_food(cal_needed):
     return food
 
 if __name__ == "__main__":
-    total_cals = int(input('Input your daily calorie needs'))
-    eaten_cals = int(input('Input how many calries you have already eaten today'))
+    parser = argparse.ArgumentParser(description="Gives you a food suggestion based on your caloric needs")
+    parser.add_argument('input', type = int, help = "Input your daily calorie needs")
+    total_cals = parser.parse_args()
+    parser.add_argument('input', type = int, help = "Input how many calries you have already eaten today")
+    eaten_cals = parser.parse_args()
     print(calories_to_food(total_cals-eaten_cals))
