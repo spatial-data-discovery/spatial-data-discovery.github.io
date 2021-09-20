@@ -22,7 +22,8 @@ Bio
 <source src="audio/nthPrime.mp3">
 </audio>
 
-```#Written for Python 3.9 64-bit
+```Python
+#Written for Python 3.9 64-bit
 
 #A simple script which allows the user to discover the nth prime number. (1=2, 2=3, 3=5, 4=7, 5=11, ...)
 
