@@ -1,8 +1,8 @@
 ---
-Title: "About the Coder"
-Author: "Ben Sharrer"
-Date: "Edited 9/11/2021"
-Semester: "Fall 2021"
+title: "About the Coder"
+author: "Ben Sharrer"
+date: "Edited 9/11/2021"
+semester: "Fall 2021"
 ---
 
 ![](https://drive.google.com/file/d/1E9r_7WKNuUUDxdl0PskE8cu5H51Sfkiz/view?usp=sharing)
