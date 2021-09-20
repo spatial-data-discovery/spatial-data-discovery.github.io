@@ -16,7 +16,6 @@ A few of my **favorite** things:
 - chocolate chip cookie dough ice cream
 - plants everywhere in my apartment
 - having no readings to do
-when im sad... I simply remember my *favorite* things...
 
 ### Sample script
 [stitch (.py)](scripts/stitch.py)
