@@ -44,6 +44,95 @@
     </style>
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -359,45 +448,73 @@ $(document).ready(function () {
 <audio controls>
 <source src="audio/nthPrime.mp3">
 </audio>
-<p>```#Written for Python 3.9 64-bit</p>
-<p>#A simple script which allows the user to discover the nth prime number. (1=2, 2=3, 3=5, 4=7, 5=11, …)</p>
-<p>#I think this could be more efficient using a binary tree to store all the prime numbers in, #and then you would only check if the current number is divisble by any prime number less than the current number’s square root. #but I got lazy and didn’t feel like implementing a BST, so for now, don’t search for prime numbers beyond like 100,000 or else the program take eons to finish computing #It already takes like, 4 seconds to discover the 30,000th prime number. And that’s with an i7-9750H</p>
-<p>import time import math</p>
-<p>#Lets user define ‘n’, the neth prime number to be calculated</p>
-<p>def floatLoop(): while True: print(“Please enter 'n', to find the nth prime number. Enter 'q' to terminate the program.”) userinput = input(" &gt; “) if userinput.lower() ==”q" or userinput.lower() == “quit”: exit(1) try: if float(userinput) != int(userinput): print(“||ERROR|| Invalid integer”) elif int(userinput) &lt; 1: print(“||ERROR|| Integer must be greater than 0”) else: return int(userinput) except: print(“||ERROR|| Invalid integer”)</p>
-<p>while True: #Discovers the nth prime number though smart brute-force n = floatLoop() start = time.time_ns()</p>
-<pre><code>cur = 2
-curindex = 1
-while curindex &lt; n: #Brute-forces through all the integers
-    cur += 1
-    prime = True
-    divisor = 2
-    for i in range (2, math.ceil(cur**0.5)+1):    #For every integer between 2 and the square root of the current number...
-        if cur / divisor == math.floor(cur / divisor): #If the quotient is equal to the floor of the quotient, the divisor is perfect, the number is not prime. Skip to the next number
-            prime = False
-            break
-        else:
-            divisor += 1
-    if prime:    #If we discovered a prime number, iterate the current prime index
-        curindex += 1
-
-time_ms = (time.time_ns() - start)/1000000
-
-#Prints the results of the calculation. Have to do some malarkey to make sure that the grammar is right for &quot;1st, 21st, 11th, 111th, etc.&quot;
-
-lastdigit = str(n)[len(str(n))-1]
-last2digits = str(n)[len(str(n))-2:len(str(n))]
-if lastdigit == &quot;1&quot; and last2digits != &quot;11&quot;:
-    print(&quot;The &quot; + str(n) + &quot;st prime number is &quot; + str(cur))
-elif lastdigit == &quot;2&quot; and last2digits != &quot;12&quot;:
-    print(&quot;The &quot; + str(n) + &quot;nd prime number is &quot; + str(cur))
-elif lastdigit == &quot;3&quot; and last2digits != &quot;13&quot;:
-    print(&quot;The &quot; + str(n) + &quot;rd prime number is &quot; + str(cur))
-else:
-    print(&quot;The &quot; + str(n) + &quot;th prime number is &quot; + str(cur))
-
-print(&quot;Discovered in &quot; + str(time_ms) + &quot;ms\n&quot;)</code></pre>
-<p>```</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">#Written for Python 3.9 64-bit</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">#A simple script which allows the user to discover the nth prime number. (1=2, 2=3, 3=5, 4=7, 5=11, ...)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">#I think this could be more efficient using a binary tree to store all the prime numbers in,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">#and then you would only check if the current number is divisble by any prime number less than the current number&#39;s square root.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">#but I got lazy and didn&#39;t feel like implementing a BST, so for now, don&#39;t search for prime numbers beyond like 100,000 or else the program take eons to finish computing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">#It already takes like, 4 seconds to discover the 30,000th prime number. And that&#39;s with an i7-9750H</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="im">import</span> time</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="im">import</span> math</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co">#Lets user define &#39;n&#39;, the neth prime number to be calculated</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="kw">def</span> floatLoop():</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Please enter </span><span class="ch">\&#39;</span><span class="st">n</span><span class="ch">\&#39;</span><span class="st">, to find the nth prime number. Enter </span><span class="ch">\&#39;</span><span class="st">q</span><span class="ch">\&#39;</span><span class="st"> to terminate the program.&quot;</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>        userinput <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot; &gt; &quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>        <span class="cf">if</span> userinput.lower() <span class="op">==</span> <span class="st">&quot;q&quot;</span> <span class="kw">or</span> userinput.lower() <span class="op">==</span> <span class="st">&quot;quit&quot;</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>            exit(<span class="dv">1</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>        <span class="cf">try</span>:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>            <span class="cf">if</span> <span class="bu">float</span>(userinput) <span class="op">!=</span> <span class="bu">int</span>(userinput):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>                <span class="bu">print</span>(<span class="st">&quot;||ERROR|| Invalid integer&quot;</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>            <span class="cf">elif</span> <span class="bu">int</span>(userinput) <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>                    <span class="bu">print</span>(<span class="st">&quot;||ERROR|| Integer must be greater than 0&quot;</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>                <span class="cf">return</span> <span class="bu">int</span>(userinput)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a>        <span class="cf">except</span>:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="st">&quot;||ERROR|| Invalid integer&quot;</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>    <span class="co">#Discovers the nth prime number though smart brute-force</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a>    n <span class="op">=</span> floatLoop()</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>    start <span class="op">=</span> time.time_ns()</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a>    cur <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>    curindex <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a>    <span class="cf">while</span> curindex <span class="op">&lt;</span> n: <span class="co">#Brute-forces through all the integers</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>        cur <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a>        prime <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>        divisor <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">2</span>, math.ceil(cur<span class="op">**</span><span class="fl">0.5</span>)<span class="op">+</span><span class="dv">1</span>):    <span class="co">#For every integer between 2 and the square root of the current number...</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>            <span class="cf">if</span> cur <span class="op">/</span> divisor <span class="op">==</span> math.floor(cur <span class="op">/</span> divisor): <span class="co">#If the quotient is equal to the floor of the quotient, the divisor is perfect, the number is not prime. Skip to the next number</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>                prime <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>                <span class="cf">break</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>                divisor <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a>        <span class="cf">if</span> prime:    <span class="co">#If we discovered a prime number, iterate the current prime index</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>            curindex <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>    time_ms <span class="op">=</span> (time.time_ns() <span class="op">-</span> start)<span class="op">/</span><span class="dv">1000000</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>    <span class="co">#Prints the results of the calculation. Have to do some malarkey to make sure that the grammar is right for &quot;1st, 21st, 11th, 111th, etc.&quot;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>    lastdigit <span class="op">=</span> <span class="bu">str</span>(n)[<span class="bu">len</span>(<span class="bu">str</span>(n))<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>    last2digits <span class="op">=</span> <span class="bu">str</span>(n)[<span class="bu">len</span>(<span class="bu">str</span>(n))<span class="op">-</span><span class="dv">2</span>:<span class="bu">len</span>(<span class="bu">str</span>(n))]</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>    <span class="cf">if</span> lastdigit <span class="op">==</span> <span class="st">&quot;1&quot;</span> <span class="kw">and</span> last2digits <span class="op">!=</span> <span class="st">&quot;11&quot;</span>:</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;The &quot;</span> <span class="op">+</span> <span class="bu">str</span>(n) <span class="op">+</span> <span class="st">&quot;st prime number is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(cur))</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a>    <span class="cf">elif</span> lastdigit <span class="op">==</span> <span class="st">&quot;2&quot;</span> <span class="kw">and</span> last2digits <span class="op">!=</span> <span class="st">&quot;12&quot;</span>:</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;The &quot;</span> <span class="op">+</span> <span class="bu">str</span>(n) <span class="op">+</span> <span class="st">&quot;nd prime number is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(cur))</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a>    <span class="cf">elif</span> lastdigit <span class="op">==</span> <span class="st">&quot;3&quot;</span> <span class="kw">and</span> last2digits <span class="op">!=</span> <span class="st">&quot;13&quot;</span>:</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;The &quot;</span> <span class="op">+</span> <span class="bu">str</span>(n) <span class="op">+</span> <span class="st">&quot;rd prime number is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(cur))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;The &quot;</span> <span class="op">+</span> <span class="bu">str</span>(n) <span class="op">+</span> <span class="st">&quot;th prime number is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(cur))</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Discovered in &quot;</span> <span class="op">+</span> <span class="bu">str</span>(time_ms) <span class="op">+</span> <span class="st">&quot;ms</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true"></a></span></code></pre></div>
 </div>
 
 <footer class="myfoot">
