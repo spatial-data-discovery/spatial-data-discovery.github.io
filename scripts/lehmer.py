@@ -1,27 +1,3 @@
----
-title: "About the Coder"
-author: "Minkyong Song"
-date: "Edited: 2021-09-13"
-semester: "Fall 2021"
----
-
-![](https://drive.google.com/uc?export=view&id=1FmqoSvs-op2UwBu-cdY5ml0WdSaiprEm)
-
-**Bio**
-
-:     My name is Minkyong and I'm a senior majoring in Computer Science. 
-
-**Things I like to do:**
-:   - Play the piano or flute.
-    - Draw, paint or craft. Any forms of *art*!
-    - Go on a walk.
-    
-### Sample script
-[lehmer (.py)](scripts/lehmer.py)
-
-I wrote this script to calculate all full-period multipliers between 1 and m-1 using the Lehmer algorithm. This algorithm is used to generate random numbers, because it can randomly give number between 1 and m-1 using different seeds. If you're interested in learning more, I recommend reading the [Wikipedia page](https://en.wikipedia.org/wiki/Lehmer_random_number_generator) or this [slide](https://www.cs.wm.edu/~esmirni/Teaching/cs526/section2.2.pdf).
-
-```python
 # lehmer.py
 
 # By: Minkyong Song
@@ -112,4 +88,3 @@ if __name__ == "__main__":
   # If there is no multiplier, print that there is no full-period multiplier
   else:
     print("There is no full-period multipliers\n")
-```
