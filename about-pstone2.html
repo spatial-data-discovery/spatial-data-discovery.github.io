@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Matthew Cusick" />
+<meta name="author" content="Patrick Stone" />
 
 
 <title>About the Coder</title>
@@ -339,86 +339,21 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Matthew Cusick</h4>
-<h4 class="date">Edited: 2/10/2020</h4>
+<h4 class="author">Patrick Stone</h4>
+<h4 class="date">Edited: 9/12/2021</h4>
 
 </div>
 
 
-<p><strong>Matthew Cusick</strong></p>
-<p>My name is Matthew and I fence for William &amp; Mary.</p>
-<div class="figure">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Final_Trophee_Monal_2012_n08.jpg/1024px-Final_Trophee_Monal_2012_n08.jpg" title="Fencing Example" alt="" />
-<p class="caption">Two Fencers Competing in an International Event</p>
-</div>
-<p>Bio:</p>
-<ul>
-<li><p>Student, Data Scientist, Fencer</p></li>
-<li><p>I enjoy facing and overcoming challenges while learning more about the world.</p></li>
-</ul>
-<p>Websites:</p>
-<ul>
-<li><p><a href="https://github.com/Matt-KC" class="uri">https://github.com/Matt-KC</a></p></li>
-<li><p><a href="https://linkedin.com/in/matthewkcusick/" class="uri">https://linkedin.com/in/matthewkcusick/</a></p></li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/Pdf_Converter.py">PDF Converter (.py)</a></p>
-<p>My sample script is a useful tool that can convert .docx files into .pdf files. By changing the microsoft formatting code, you can convert to a large variety of file formats. Right now, the formatting code is hardcoded, but I should be able to add it as a command line argument. Furthermore, I plan to improve this script so that it can sequentially convert a large amount of .docx files in one run.</p>
-<pre><code>&quot;&quot;&quot;
-Author: Matthew Cusick
-
-Date: 2/10/2020
-
-Description: Converts file.docx to file.pdf
-
-To Do: Make this a looping function for any number of conversions
-
-Input: absolute file path of .docx file and absolute file path of desired .pdf file
-
-Output: .pdf file
-
-Example output file name: MattWorkNotes.pdf
-
-Example input: python Pdf_Converter.py C:\\Users\\Name\\Dir\\FileName.docx C:\\Users\\Name\\Dir\\FileName.pdf (Using single backslashes)
-&quot;&quot;&quot;
-# Standard modules
-import sys, os, time, argparse
-
-# pip install pywin32; https://pypi.org/project/pywin32/
-import win32com.client
-
-def convertToPDF(in_file, out_file):
-
-    # Microsoft formatting code. 17 means PDF. Can change this integer to change file conversion.
-    # I.e. 8 for standard HTML format, or 12 for XML document format.
-    wdFormatPDF = 17
-
-    # Creates instance of word
-    word = win32com.client.Dispatch(&#39;Word.Application&#39;)
-    word.Visible = True
-
-    # To make SURE nothing goes wrong
-    time.sleep(3)
-
-    # Assigns word document to be converted
-    doc = word.Documents.Open(in_file)
-
-    # Converts to PDF
-    doc.SaveAs(out_file, FileFormat=wdFormatPDF)
-    doc.Close()
-
-    word.Visible = False
-    word.Quit()
-
-if __name__ == &quot;__main__&quot;:
-
-    p = argparse.ArgumentParser(description=&#39;Converting docX to PDF&#39;)
-    p.add_argument(&#39;input&#39;, help = &quot;Absolute file path for existing .docx file&quot;)
-    p.add_argument(&#39;output&#39;, help = &quot;Absolute file path for desired .pdf file&quot;)
-    args = p.parse_args()
-    convertToPDF(args.input, args.output)</code></pre>
-</div>
+<p><img src="https://th.bing.com/th/id/R.b8f4c0b889c4a89a02a0c93d4be13d33?rik=bine2TbYbOjrrw&amp;riu=http%3a%2f%2f2.bp.blogspot.com%2f-cpmtMHI-d4Y%2fTzErKJCaKnI%2fAAAAAAAA27I%2f6ZHcXekCynU%2fs1600%2fDungeonsDragons0cover.jpg&amp;ehk=2nCZOKKWbbZCS7UYvGKkoNXta2B9FUlkjep%2bz%2fq%2fyrc%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" title="Dragon" /></p>
+<p><strong>About me</strong></p>
+<p>My name is Patrick Stone. I am a sophomore data science major. I am excited to learn about spatial data. I have some experience with spatial data from my senior research project in high school but I am hoping to learn a lot this semester! In my free time, I mainly enjoy playing Dungeons &amp; Dragons. I hope to graduate and specialize in machine learning.</p>
+<p><strong>Top D&amp;D spells</strong></p>
+<ol style="list-style-type: decimal">
+<li>Fireball</li>
+<li>Disintegrate</li>
+<li>Finger of death</li>
+</ol>
 
 <footer class="myfoot">
     <div class="foot-text">

@@ -1,26 +1,3 @@
----
-title: "About the Coder"
-author: "Soheb Osmani"
-date: "Edited: 09/19/2021"
-semester: "Fall 2021"
----
-
-![](https://predictivemedicine.northwell.edu/app/uploads/2021/04/osmani_headshot.jpg "SohebOsmani")
-
-Bio
-:  I'm a senior studying Data Science and Economics. I'm from NYC. I love yams and munchkins. 
-
-Here are *two truths and a lie* about me
-
-- I have been to 47 countries,
-- My favorite color is green,
-- I have 3 dogs and 2 cats.
-
-Links:
-[LinkedIn](https://www.linkedin.com/in/sohebosmani/ )
-[Northwell Teams](https://predictivemedicine.northwell.edu/about/team/)
-
-```
 #############################################################################################
 # File Name: phone_num_generator.py                                                         #
 #                                                                                           #
@@ -89,4 +66,3 @@ def generate_phone_num():
             break
 
     return phone_num
-```

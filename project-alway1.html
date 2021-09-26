@@ -14,6 +14,7 @@
 
 <title>Children’s Hospitals in the US</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -52,26 +53,27 @@
   }
 </style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -489,30 +491,30 @@ $(document).ready(function () {
 <p>The data visualized above is from the Homeland Infrastructure Foundation-Level Data (HIFLD)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and contains information about children’s hospitals in the United States. This data was extracted from a database of general hospital information using the script below. Various state department and federal sources contributed to this general database. This script produced an output CSV file containing only children’s hospital information, which was then uploaded and visualized using QGIS[^qgis]. Three-dimensional (3D) rendering was used to show the number of hospitals per state and a video was taken of the rendering. Ffmpeg<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> was used to crop the video to a size appropriate for the website. The data for the cities with populations greater than 250,000 was produced by Natural Earth[^naturalearth], which provides data of populated areas on a global scale. This data was narrowed down to only include cities in the USA with a population greater or equal to 250,000 using QGIS.</p>
 <div id="data-organization" class="section level3">
 <h3>Data Organization</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Author: Audrey Way</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># Last edited: 2019-12-16</span></a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="im">import</span> os</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="im">import</span> os.path</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8">my_dir <span class="op">=</span> <span class="st">&quot;.&quot;</span></a>
-<a class="sourceLine" id="cb1-9" title="9"></a>
-<a class="sourceLine" id="cb1-10" title="10">my_file <span class="op">=</span> <span class="st">&quot;Hospitals.csv&quot;</span></a>
-<a class="sourceLine" id="cb1-11" title="11">file_path <span class="op">=</span> os.path.join(my_dir, my_file)</a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="co"># Creating the data frame</span></a>
-<a class="sourceLine" id="cb1-14" title="14">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;Hospitals.csv&#39;</span>)</a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="co"># Getting children and state</span></a>
-<a class="sourceLine" id="cb1-17" title="17">gk <span class="op">=</span> df.groupby(<span class="st">&#39;NAICS_DESC&#39;</span>)</a>
-<a class="sourceLine" id="cb1-18" title="18">gkk <span class="op">=</span> gk.get_group(<span class="st">&quot;CHILDREN&#39;S HOSPITALS, GENERAL&quot;</span>)</a>
-<a class="sourceLine" id="cb1-19" title="19"></a>
-<a class="sourceLine" id="cb1-20" title="20"><span class="co"># sorting values by state in ascending order</span></a>
-<a class="sourceLine" id="cb1-21" title="21">gkk.sort_values(by<span class="op">=</span>[<span class="st">&#39;STATE&#39;</span>], inplace<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb1-22" title="22"></a>
-<a class="sourceLine" id="cb1-23" title="23"><span class="co"># send data frame to csv file (load into QGIS)</span></a>
-<a class="sourceLine" id="cb1-24" title="24">gkk.to_csv(<span class="vs">r&#39;.\state_childrens2.csv&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># Author: Audrey Way</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># Last edited: 2019-12-16</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="im">import</span> os</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="im">import</span> os.path</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>my_dir <span class="op">=</span> <span class="st">&quot;.&quot;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>my_file <span class="op">=</span> <span class="st">&quot;Hospitals.csv&quot;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>file_path <span class="op">=</span> os.path.join(my_dir, my_file)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="co"># Creating the data frame</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;Hospitals.csv&#39;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="co"># Getting children and state</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>gk <span class="op">=</span> df.groupby(<span class="st">&#39;NAICS_DESC&#39;</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>gkk <span class="op">=</span> gk.get_group(<span class="st">&quot;CHILDREN&#39;S HOSPITALS, GENERAL&quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="co"># sorting values by state in ascending order</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>gkk.sort_values(by<span class="op">=</span>[<span class="st">&#39;STATE&#39;</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a><span class="co"># send data frame to csv file (load into QGIS)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>gkk.to_csv(<span class="vs">r&#39;.\state_childrens2.csv&#39;</span>)</span></code></pre></div>
 <p>[^naturalearth] Natural Earth. Accessed 2019-12-18. Online: <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/" class="uri">https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/</a> [^python]: Python. Copyright (C) 2001–2019. Python Software Foundation. Accessed 2019-10-28. Online: <a href="https://www.python.org/" class="uri">https://www.python.org/</a> [^qgis]: QGIS. Software released through CC-BY-SA by the QGIS Development Team. Accessed 2019-2-1. Online: <a href="https://www.qgis.org" class="uri">https://www.qgis.org</a></p>
 <div class="credit-line">
 <p>Author: Audrey Way Last edited: 2019-12-17.</p>
@@ -522,8 +524,8 @@ $(document).ready(function () {
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>HIFLD. Homeland Infrastructure Foundation-Level Data. Accessed 2019-12-1. Online: <a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27" class="uri">https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>HIFLD. Homeland Infrastructure Foundation-Level Data. Accessed 2019-12-1. Online: <a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27" class="uri">https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals?geometry=-70.477%2C-80.153%2C97.569%2C72.012&amp;where=NAICS_DESC%20%3D%20%27CHILDREN%27S%20HOSPITALS%2C%20GENERAL%27</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>FFmpeg is a trademark of Fabrice Bellard. Software released under GNU LGPL 2.1. Accessed 2019-12-2. Online: <a href="https://ffmpeg.org/" class="uri">https://ffmpeg.org/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

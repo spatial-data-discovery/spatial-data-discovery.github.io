@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Matthew Cusick" />
+<meta name="author" content="Soheb Osmani" />
 
 
 <title>About the Coder</title>
@@ -339,85 +339,79 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">About the Coder</h1>
-<h4 class="author">Matthew Cusick</h4>
-<h4 class="date">Edited: 2/10/2020</h4>
+<h4 class="author">Soheb Osmani</h4>
+<h4 class="date">Edited: 09/19/2021</h4>
 
 </div>
 
 
-<p><strong>Matthew Cusick</strong></p>
-<p>My name is Matthew and I fence for William &amp; Mary.</p>
-<div class="figure">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Final_Trophee_Monal_2012_n08.jpg/1024px-Final_Trophee_Monal_2012_n08.jpg" title="Fencing Example" alt="" />
-<p class="caption">Two Fencers Competing in an International Event</p>
+<p><img src="https://predictivemedicine.northwell.edu/app/uploads/2021/04/osmani_headshot.jpg" title="SohebOsmani" /></p>
+<dl>
+<dt>Bio</dt>
+<dd>I’m a senior studying Data Science and Economics. I’m from NYC. I love yams and munchkins.
+</dd>
+</dl>
+<p>Here are <em>two truths and a lie</em> about me</p>
+<ul>
+<li>I have been to 47 countries,</li>
+<li>My favorite color is green,</li>
+<li>I have 3 dogs and 2 cats.</li>
+</ul>
+<p>Links: <a href="https://www.linkedin.com/in/sohebosmani/">LinkedIn</a> <a href="https://predictivemedicine.northwell.edu/about/team/">Northwell Teams</a></p>
+<div id="section" class="section level93">
+<p class="heading"></p>
 </div>
-<p>Bio:</p>
-<ul>
-<li><p>Student, Data Scientist, Fencer</p></li>
-<li><p>I enjoy facing and overcoming challenges while learning more about the world.</p></li>
-</ul>
-<p>Websites:</p>
-<ul>
-<li><p><a href="https://github.com/Matt-KC" class="uri">https://github.com/Matt-KC</a></p></li>
-<li><p><a href="https://linkedin.com/in/matthewkcusick/" class="uri">https://linkedin.com/in/matthewkcusick/</a></p></li>
-</ul>
-<div id="sample-script" class="section level3">
-<h3>Sample Script</h3>
-<p><a href="scripts/Pdf_Converter.py">PDF Converter (.py)</a></p>
-<p>My sample script is a useful tool that can convert .docx files into .pdf files. By changing the microsoft formatting code, you can convert to a large variety of file formats. Right now, the formatting code is hardcoded, but I should be able to add it as a command line argument. Furthermore, I plan to improve this script so that it can sequentially convert a large amount of .docx files in one run.</p>
-<pre><code>&quot;&quot;&quot;
-Author: Matthew Cusick
+<div id="file-name-phone_num_generator.py" class="section level1">
+<h1>File Name: phone_num_generator.py</h1>
+</div>
+<div id="section-1" class="section level1">
+<h1></h1>
+</div>
+<div id="section-2" class="section level1">
+<h1></h1>
+</div>
+<div id="author-soheb-osmani" class="section level1">
+<h1>Author: Soheb Osmani</h1>
+</div>
+<div id="last-edit-september-20-2021" class="section level1">
+<h1>Last Edit: September 20, 2021</h1>
+</div>
+<div id="section-3" class="section level1">
+<h1></h1>
+</div>
+<div id="generates-a-phone-number-for-telemarketers-to-use-when-they-call-people-so-its-not" class="section level1">
+<h1>Generates a phone number for telemarketers to use when they call people so it’s not</h1>
+</div>
+<div id="always-the-same" class="section level1">
+<h1>always the same</h1>
+<div id="section-4" class="section level93">
+<p class="heading"></p>
+<p>import phonenumbers import random</p>
+<p>#list of US area codes AREA_CODES = [‘205’, ‘251’, ‘256’, ‘334’, ‘659’, ‘938’, ‘907’, ‘236’, ‘250’, ‘778’, ‘480’, ‘520’, ‘602’, ‘623’, ‘928’, ‘327’, ‘479’, ‘501’, ‘870’, ‘209’, ‘213’, ‘279’, ‘310’, ‘323’, ‘341’, ‘408’, ‘415’, ‘424’, ‘442’, ‘510’, ‘530’, ‘559’, ‘562’, ‘619’, ‘626’, ‘628’, ‘650’, ‘657’, ‘661’, ‘669’, ‘707’, ‘714’, ‘747’, ‘760’, ‘805’, ‘818’, ‘820’, ‘831’, ‘840’, ‘858’, ‘909’, ‘916’, ‘925’, ‘949’, ‘951’, ‘303’, ‘719’, ‘720’, ‘970’, ‘203’, ‘475’, ‘860’, ‘959’, ‘302’, ‘202’, ‘239’, ‘305’, ‘321’, ‘352’, ‘386’, ‘407’, ‘448’, ‘561’, ‘689’, ‘727’, ‘754’, ‘772’, ‘786’, ‘813’, ‘850’, ‘863’, ‘904’, ‘941’, ‘954’, ‘229’, ‘404’, ‘470’, ‘478’, ‘678’, ‘706’, ‘762’, ‘770’, ‘912’, ‘808’, ‘208’, ‘986’, ‘217’, ‘224’, ‘309’, ‘312’, ‘331’, ‘447’, ‘464’, ‘618’, ‘630’, ‘708’, ‘730’, ‘773’, ‘779’, ‘815’, ‘847’, ‘872’, ‘219’, ‘260’, ‘317’, ‘463’, ‘574’, ‘765’, ‘812’, ‘930’, ‘319’, ‘515’, ‘563’, ‘641’, ‘712’, ‘316’, ‘620’, ‘785’, ‘913’, ‘270’, ‘364’, ‘502’, ‘606’, ‘859’, ‘225’, ‘318’, ‘337’, ‘504’, ‘985’, ‘207’, ‘227’, ‘240’, ‘301’, ‘410’, ‘443’, ‘667’, ‘339’, ‘351’, ‘413’, ‘508’, ‘617’, ‘774’, ‘781’, ‘857’, ‘978’, ‘231’, ‘248’, ‘269’, ‘313’, ‘517’, ‘586’, ‘616’, ‘734’, ‘810’, ‘906’, ‘947’, ‘989’, ‘218’, ‘320’, ‘507’, ‘612’, ‘651’, ‘763’, ‘952’, ‘228’, ‘601’, ‘662’, ‘769’, ‘314’, ‘417’, ‘573’, ‘636’, ‘660’, ‘816’, ‘406’, ‘308’, ‘402’, ‘531’, ‘702’, ‘725’, ‘775’, ‘603’, ‘201’, ‘551’, ‘609’, ‘640’, ‘732’, ‘848’, ‘856’, ‘862’, ‘908’, ‘973’, ‘505’, ‘575’, ‘212’, ‘315’, ‘332’, ‘347’, ‘516’, ‘518’, ‘585’, ‘607’, ‘631’, ‘646’, ‘680’, ‘716’, ‘718’, ‘838’, ‘845’, ‘914’, ‘917’, ‘929’, ‘934’, ‘252’, ‘336’, ‘704’, ‘743’, ‘828’, ‘910’, ‘919’, ‘980’, ‘984’, ‘701’, ‘216’, ‘220’, ‘234’, ‘326’, ‘330’, ‘380’, ‘419’, ‘440’, ‘513’, ‘567’, ‘614’, ‘740’, ‘937’, ‘405’, ‘539’, ‘572’, ‘580’, ‘918’, ‘458’, ‘503’, ‘541’, ‘971’, ‘215’, ‘223’, ‘267’, ‘272’, ‘412’, ‘445’, ‘484’, ‘570’, ‘610’, ‘717’, ‘724’, ‘814’, ‘878’, ‘401’, ‘803’, ‘839’, ‘843’, ‘854’, ‘864’, ‘605’, ‘423’, ‘615’, ‘629’, ‘731’, ‘865’, ‘901’, ‘931’, ‘210’, ‘214’, ‘254’, ‘281’, ‘325’, ‘346’, ‘361’, ‘409’, ‘430’, ‘432’, ‘469’, ‘512’, ‘682’, ‘713’, ‘726’, ‘737’, ‘806’, ‘817’, ‘830’, ‘832’, ‘903’, ‘915’, ‘936’, ‘940’, ‘945’, ‘956’, ‘972’, ‘979’, ‘385’, ‘435’, ‘801’, ‘802’, ‘276’, ‘434’, ‘540’, ‘571’, ‘703’, ‘757’, ‘804’, ‘948’, ‘206’, ‘253’, ‘360’, ‘425’, ‘509’, ‘564’, ‘304’, ‘681’, ‘262’, ‘274’, ‘414’, ‘534’, ‘608’, ‘715’, ‘920’, ‘307’]</p>
+<p>def generate_phone_num(): #generates a random phone number, and returns it if it is a valid US phone number while(True): area_code = random.choice(AREA_CODES)</p>
+<pre><code>    prefix = &#39;&#39;  
+    i = 0
+    digits = random.choices([0,1,2,3,4,5,6,7,8,9], k=3) 
+    while i &lt; 3: 
+        prefix += str(digits[i]) 
+        i += 1
 
-Date: 2/10/2020
+    suffix = &#39;&#39;  
+    i = 0
+    digits = random.choices([0,1,2,3,4,5,6,7,8,9], k=4) 
+    while i &lt; 4: 
+        suffix += str(digits[i]) 
+        i += 1
 
-Description: Converts file.docx to file.pdf
+    phone_num = &quot;+1&quot; + area_code + prefix + suffix
 
-To Do: Make this a looping function for any number of conversions
+    phone_number = phonenumbers.parse(phone_num, &#39;US&#39;)
 
-Input: absolute file path of .docx file and absolute file path of desired .pdf file
+    if(phonenumbers.is_valid_number(phone_number)):
+        break
 
-Output: .pdf file
-
-Example output file name: MattWorkNotes.pdf
-
-Example input: python Pdf_Converter.py C:\\Users\\Name\\Dir\\FileName.docx C:\\Users\\Name\\Dir\\FileName.pdf (Using single backslashes)
-&quot;&quot;&quot;
-# Standard modules
-import sys, os, time, argparse
-
-# pip install pywin32; https://pypi.org/project/pywin32/
-import win32com.client
-
-def convertToPDF(in_file, out_file):
-
-    # Microsoft formatting code. 17 means PDF. Can change this integer to change file conversion.
-    # I.e. 8 for standard HTML format, or 12 for XML document format.
-    wdFormatPDF = 17
-
-    # Creates instance of word
-    word = win32com.client.Dispatch(&#39;Word.Application&#39;)
-    word.Visible = True
-
-    # To make SURE nothing goes wrong
-    time.sleep(3)
-
-    # Assigns word document to be converted
-    doc = word.Documents.Open(in_file)
-
-    # Converts to PDF
-    doc.SaveAs(out_file, FileFormat=wdFormatPDF)
-    doc.Close()
-
-    word.Visible = False
-    word.Quit()
-
-if __name__ == &quot;__main__&quot;:
-
-    p = argparse.ArgumentParser(description=&#39;Converting docX to PDF&#39;)
-    p.add_argument(&#39;input&#39;, help = &quot;Absolute file path for existing .docx file&quot;)
-    p.add_argument(&#39;output&#39;, help = &quot;Absolute file path for desired .pdf file&quot;)
-    args = p.parse_args()
-    convertToPDF(args.input, args.output)</code></pre>
+return phone_num</code></pre>
+</div>
 </div>
 
 <footer class="myfoot">

@@ -14,6 +14,7 @@
 
 <title>About the Coder</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -43,6 +44,95 @@
     </style>
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -344,7 +434,7 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="https://drive.google.com/file/d/18mZ3UeW9hXZqOZA-7NDE1r9qK46-R6l-/view?usp=sharing" title="hello there(:" /></p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=18mZ3UeW9hXZqOZA-7NDE1r9qK46-R6l-" title="hello there(:" /></p>
 <dl>
 <dt>Bio</dt>
 <dd>I am a senior majoring in Neuroscience and minoring in Data Science. I transferred to William &amp; Mary last fall (Fall 2020) from NOVA community college. I am originally from Yemen.
@@ -357,6 +447,41 @@ $(document).ready(function () {
 </ul>
 </dd>
 </dl>
+<div id="sample-script" class="section level3">
+<h3>Sample Script</h3>
+<p><a href="scripts/word_bank.py">word_bank (.py)</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="im">import</span> argparse</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="kw">def</span> make_word_bank(source, sep <span class="op">=</span> <span class="st">&#39; &#39;</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    word_list <span class="op">=</span> []</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    cur_word <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="cf">for</span> letter <span class="kw">in</span> source:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">if</span> cur_word <span class="kw">in</span> word_list: <span class="co">#if word is already in word bank, skip it</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            cur_word <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>            <span class="cf">continue</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">elif</span> (letter <span class="op">!=</span> sep <span class="kw">and</span> letter <span class="kw">not</span> <span class="kw">in</span> <span class="st">&#39;?!.,:;[]()&quot;&#39;</span> <span class="kw">and</span> letter <span class="op">!=</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>): <span class="co">#if the string pulled is not the seperator, punctuations, or a new line, add it</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            cur_word <span class="op">+=</span> letter</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>        <span class="cf">elif</span> ((letter <span class="op">==</span> sep <span class="kw">or</span> letter <span class="op">==</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>) <span class="kw">and</span> cur_word <span class="op">!=</span><span class="st">&#39;&#39;</span>): <span class="co">#this line ensures that cur_word is empty when new string is added to it</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>            word_list<span class="op">+=</span> [cur_word]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>            cur_word <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">elif</span> cur_word <span class="op">!=</span><span class="st">&#39;&#39;</span>:  <span class="co">#this adds the word being built into the word bank</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>            word_list<span class="op">+=</span>[cur_word]</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>            cur_word <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>    <span class="cf">if</span> cur_word <span class="kw">not</span> <span class="kw">in</span> word_list: <span class="co">#this line deals with the very last set of letters the script pulls; if it&#39;s not in word bank already, it adds it</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>        word_list<span class="op">+=</span>[cur_word]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>    <span class="cf">return</span> word_list</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>    <span class="co"># Create an ArgumentParser class object for dealing with commandline args</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>    p <span class="op">=</span> argparse.ArgumentParser(</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    description<span class="op">=</span><span class="st">&quot;Creates a word bank of all unique words in inserted sentence.&quot;</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a>    args <span class="op">=</span> p.parse_args()</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a>source <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;what sentence do you want a word bank for? &#39;</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a><span class="bu">print</span> (make_word_bank(source))</span></code></pre></div>
+</div>
 
 <footer class="myfoot">
     <div class="foot-text">
