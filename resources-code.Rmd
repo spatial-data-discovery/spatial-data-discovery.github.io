@@ -18,6 +18,11 @@ A Google account is required to connect and run these snippets.
     Remember that translations inherently have some uncertainty associated with them; so, when it comes to accuracy, consider what your application actually requires (i.e., how close is close enough?).
     This tutorial demonstrates one method of using the `geopy` package to backend into the ArcGIS World Geocoding service.
 
+[GeoJSON](https://colab.research.google.com/drive/1u00bdqaO19UBemYUQI7zIeuO9mzVt5wm?usp=sharing)
+:   The quintessential file format for sharing data over the web may just be the JavaScript Object Notation (JSON).
+    An extension of the JSON format to account for spatial geometries is the GeoJSON.
+    This snippet looks at building a GeoJSON using built-in Python datatypes and a peak at how geopandas (an extension to the pandas datatypes) can write DataFrames to GeoJSON in a single line of code.
+
 [GeoTiff](https://colab.research.google.com/drive/1JjcfIEMJzl90cD49REsHELyUzXgSeJ8d?usp=sharing)
 :   GeoTIFF is based on TIFF (Tagged Image File Format) and is used as an interchange format for georeferenced raster imagery.
     The GeoTIFF file format is in widespread use worldwide and there is strong software support in both the open source and commercial GIS and spatial data analysis software products.
