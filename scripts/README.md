@@ -33,6 +33,9 @@ This folder contains utility scripts as well as a selection of data files necess
 ### Book_keeping.py
 * This script takes in two excel files and compares them to update inventory.  
 
+### build_madden_roster.py
+* This script builds a randomized full roster of NFL players in Madden 22.
+
 ### caesar_cipher.py
 * This script takes a message given by the user and encrypts it using a Caesar Cipher
 
