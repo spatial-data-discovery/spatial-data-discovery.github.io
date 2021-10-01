@@ -3,7 +3,7 @@
 # Python Version: 3.8.10                                                                    #
 #                                                                                           #
 # Author: Bryce Whitney                                                                     #
-# Last Edit: September 15, 2021                                                             #
+# Last Edit: October 1, 2021                                                             #
 #                                                                                           #
 # Generates a random password using letters (uppercase and lowercase), numbers, and symbols #
 #############################################################################################
@@ -18,17 +18,17 @@ import argparse
 
 def generatePassword(passwordLength=10, randomSeed=None):
     """
-    Generates a random password of the length provided in the command line. If no length is given, the default is 10 characters. 
-    The user can also pass a random seed argument so they can reproduce their results. This way they can track the seeds they used
-    in a seperate file and regenerate their password when they forget it. 
+    Generates a random password of the length provided in the command line. 
+    If no length is given, the default is 10 characters. The user can also 
+    pass a random seed argument so they can reproduce their results. This 
+    way they can track the seeds they used in a separate file and regenerate 
+    their password when they forget it. 
 
     Arguments:
         passwordLength [int] -- Length of the desired password. 10 characters by deafult. 
         randomSeed     [int] -- The random seed to be used. None by deafult.
     """
     # Create sets of characters
-    LETTERS_UPPER = string.ascii_uppercase
-    LETTERS_LOWER = string.ascii_lowercase
     LETTERS = string.ascii_letters
     NUMBERS = string.digits
     SYMBOLS = string.punctuation
