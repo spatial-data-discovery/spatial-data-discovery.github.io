@@ -8,6 +8,10 @@ The snippets are written in Python using a Jupyter Notebook hosted on a cloud en
 A Google account is required to connect and run these snippets.
 
 
+[Esri Grid (ARC/INFO)](https://colab.research.google.com/drive/1C2qMOTbFbBDIWKhVfS7yQIj2tEKIpfPh?usp=sharing)
+:   While the Esri ASCII grid file is in plain text format, the ARC/INFO GRID file format is more complicated.
+    This snippet downloads elevation data stored in Esri grid and demonstrates how to extract the data using both `rasterio` and `gdal` Python packages.
+
 [Esri Shapefile](https://colab.research.google.com/drive/1cpGqlV0KQlqRO6MugpJKc9xsycZ9Iqyb?usp=sharing)
 :   Shapefiles are a ubiquitous data format for storing vector (point, line and polygon) data.
     This tutorial shows you how to extract data from a shapefile and save it in GeoJSON format.
