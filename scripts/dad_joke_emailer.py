@@ -91,7 +91,7 @@ def dad_joke_emailer(email_input, password_input):
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message)
     except:
-        print('Did you enter your email and password correctly and did you also change the "LESS SECURE APP ACCESS" setting to ON in your GOOGLE ACCOUNT settings?)
+        print('Did you enter your email and password correctly and did you also change the "LESS SECURE APP ACCESS" setting to ON in your GOOGLE ACCOUNT settings?')
 
 
 if __name__ == '__main__':
