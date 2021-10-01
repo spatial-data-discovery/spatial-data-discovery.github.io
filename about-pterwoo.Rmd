@@ -21,7 +21,7 @@ semester: "Fall 2021"
 
 This script randomly builds a full roster (without the long snapper) consisting of NFL players in popular American Football videogame Madden 22. 
 
-```{python}
+```python
 
 # build_madden_roster.py
 #
@@ -111,27 +111,4 @@ if __name__ == "__main__":
     BuildRoster()
 
     print('Check your current directory for the file your_roster.csv')
-
-
-
-
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
