@@ -5,7 +5,7 @@ date: "Edited: 09-12-2021"
 semester: "Fall 2021"
 ---
 
-![](https://drive.google.com/uc?export=view&id=18mZ3UeW9hXZqOZA-7NDE1r9qK46-R6l- "hello there(:")
+![](https://drive.google.com/uc?export=view&id=18mZ3UeW9hXZqOZA-7NDE1r9qK46-R6l- "hello there(:" {width=256 height=342})
 
 Bio
 :  I am a senior majoring in Neuroscience and minoring in Data Science. I transferred to William & Mary last fall (Fall 2020) from NOVA community college. I am originally from Yemen. 
