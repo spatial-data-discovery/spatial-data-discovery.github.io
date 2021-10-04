@@ -1,3 +1,10 @@
+---
+title: "About the Coder"
+author: "Zee Lee"
+date: "Edited: 2021-10-04"
+semester: "Fall 2021"
+---
+
 ![](https://indianakitchen.com/wp-content/uploads/2015/03/Ham-Sandwich.jpg)
 
 ##Bio
