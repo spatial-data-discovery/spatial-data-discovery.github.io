@@ -6,6 +6,8 @@ semester: "Fall 2021"
 ---
 
 ![](https://github.com/lmbartholomaus/content/blob/main/IMG_3349.jpg)
+This is from a modeling gig I had over the summer
+
 
 ## Academic
 I am a senior majoring in Data Science and minoring in Business Analytics with an unofficial minor in Hispanic Studies. 
