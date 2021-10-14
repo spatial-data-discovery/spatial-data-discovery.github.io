@@ -5,7 +5,6 @@ date: "Edited 10/08/2021"
 semester: "Fall 2021"
 ---
 
-![](https://github.com/lmbartholomaus/content/blob/main/IMG_3349.jpg?raw=true)
 This is from a modeling gig I had over the summer
 
 
