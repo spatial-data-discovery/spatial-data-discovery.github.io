@@ -7,3 +7,13 @@ title: "Learning | HDF"
 Click [here](learning/hdf/index.html) to open the slideshow on a separate page.
 
 <iframe style="height:500px; width:100%; border:3px solid black;" src="learning/hdf/index.html" id="frame"></iframe>
+
+
+## Resources
+* [HDF5 for Python][h5py] by Andrew Collette (2014)
+* [Introduction to HDF5][intro-hdfgroup], The HDF Group
+* [The HDF5 Library & File Format][hdf-hdfgroup], The HDF Group
+
+[h5py]: https://docs.h5py.org/en/stable/
+[hdf-hdfgroup]: https://www.hdfgroup.org/solutions/hdf5/
+[intro-hdfgroup]: https://portal.hdfgroup.org/display/HDF5/Introduction+to+HDF5
