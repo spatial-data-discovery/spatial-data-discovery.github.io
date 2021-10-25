@@ -4,7 +4,7 @@
 #
 # VERSION 0.2
 #
-# LAST EDIT: 2020-09-20
+# LAST EDIT: 2021-10-25
 #
 # This script writes an HDF5 file.
 
@@ -36,29 +36,29 @@ def check_fstr():
 
 
 def set_attr(hf, attr_name, attr_val, obj_path):
-        """
-        Name:     set_attr
-        Inputs:   - h5py File (hf)
-                  - str, attribute name (attr_name)
-                  - [dtype], attribute value (attr_val)
-                  - str, path to group/dataset object (obj_path)
-        Outputs:  None.
-        Features: Sets given attribute to given path;
-                  * raises exception upon failure
-        """
-        try:
-            # Typecast strings to data:
-            if isinstance(attr_val, str):
-                attr_val = attr_val.encode('utf-8')
-            elif attr_val is None:
-                attr_val = "".encode('utf-8')
+    """
+    Name:     set_attr
+    Inputs:   - h5py File (hf)
+              - str, attribute name (attr_name)
+              - [dtype], attribute value (attr_val)
+              - str, path to group/dataset object (obj_path)
+    Outputs:  None.
+    Features: Sets given attribute to given path;
+              * raises exception upon failure
+    """
+    try:
+        # Typecast strings to data:
+        if isinstance(attr_val, str):
+            attr_val = attr_val.encode('utf-8')
+        elif attr_val is None:
+            attr_val = "".encode('utf-8')
 
-            hf[obj_path].attrs.create(name=attr_name, data=attr_val)
-        except:
-            err_msg = "could not set '%s' to '%s' at '%s'" % (
-                attr_val, attr_name, obj_path)
-            print(err_msg)
-            raise
+        hf[obj_path].attrs.create(name=attr_name, data=attr_val)
+    except:
+        err_msg = "could not set '%s' to '%s' at '%s'" % (
+            attr_val, attr_name, obj_path)
+        print(err_msg)
+        raise
 
 
 ###############################################################################
@@ -86,7 +86,7 @@ else:
 # Writing root attributes
 if False:
     set_attr(hdfile, "author", "Tyler W. Davis", "/")
-    set_attr(hdfile, "date", "2020-09-19", "/")
+    set_attr(hdfile, "date", "2021-10-25", "/")
     set_attr(hdfile, "affiliation", "William & Mary", "/")
 
 # Create a group
