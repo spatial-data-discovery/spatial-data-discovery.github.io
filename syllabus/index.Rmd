@@ -39,19 +39,24 @@ Class Times
 
 :   - MW 1400-1520
 
-Instructor
+Instructors
 
 :   - Dr. Tyler W. Davis
-    - Email: twdavis@wm.edu
-    - Office: Center for Geospatial Analysis, Swem Library Rm 213
-    - Phone: 757-221-6449
-    - Websites:
-        - https://drdavis.space
-        - https://spatial-data-discovery.github.io
+        - Email: twdavis@wm.edu
+        - Office: Center for Geospatial Analysis, Swem Library Rm 213
+        - Phone: 757-221-6449
+        - Websites:
+            - https://drdavis.space
+            - https://spatial-data-discovery.github.io
+    - Dr. Dan Runfola
+        - Email: dsmillerrunfol@wm.edu
+        - Office: ISC 1269
+        - Phone: 757-221-1970
+        - Website: http://www.danrunfola.com/
 
 Office Hours
 
-:   - Mo. & We. 1200--1300; Th. 0930--1030
+:   - Davis: Mo. & We. 1200--1300; Th. 0930--1030
     - Also by appointment
     - *Appointments are welcome outside normally scheduled office hours; please email to set up a time.*
     - *There may be certain days when office hours will be either canceled or rescheduled; notifications will be sent ahead of time.*
@@ -80,7 +85,7 @@ Communication
         - *You must create a GitHub account, if you do not already have one.*
     - Video conferencing ([Zoom](https://cwm.zoom.us/))
         - Video conferencing is for remote class meetings, office hours, video chats, and any other meetings when in-person communication is not possible
-    - Email ([twdavis-at-wm-dot-edu](mailto:twdavis@wm.edu))
+    - Email
         - The new snail mail; use this for personal communication or whenever sharing with the class is inappropriate
     - Blackboard (https://blackboard.wm.edu)
         - A one-stop shop for course content, schedule and assessment; links may take you outside of Blackboard (e.g., to GitHub)
