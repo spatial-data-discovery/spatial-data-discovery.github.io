@@ -1,0 +1,385 @@
+---
+pagetitle: "Intro to NetCDF"
+author: "Tyler W. Davis"
+date: October 5, 2020
+---
+
+<section data-background-image="images/title.png" data-background-size="contain">
+</section>
+
+
+# Intro to NetCDF
+
+<small>This presentation is written in [reveal.js](https://revealjs.com).<br />Click the link to learn more about how to navigate reveal.js presentations.</small>
+
+***
+
+The Network Common Data Format ([netCDF][unidata]) file is a self-describing, portable, scalable, appendable, sharable and archivable binary data format.
+
+[unidata]: https://www.unidata.ucar.edu/software/netcdf/
+
+***
+
+![Architecture Overview. [https://www.unidata.ucar.edu][ncarch]](images/netcdf_architecture.png)
+
+[ncarch]: https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_introduction.html#architecture
+
+***
+
+Let's start with the netCDF classic model.
+
+# The Classic Model
+
+***
+
+There are three main components<br />to the classic netCDF data structure:
+
+1. Dimensions
+1. Variables
+1. Attributes
+
+***
+
+Dimensions ([more][ncdims])
+:   Describe the axes of the data arrays.
+    A dimension has a name and a length.
+    An unlimited dimension has a length that can be expanded at any time, as more data are written to it.
+    NetCDF files can contain at most one unlimited dimension.
+
+[ncdims]: https://www.unidata.ucar.edu/software/netcdf/docs/group__dimensions.html#details
+
+***
+
+Variables ([more][ncvars])
+:   - The only kind of data structure directly supported by netCDF classic format is a collection of named arrays.
+    -  An array is an n-dimensional (where n is 0, 1, 2, ...) rectangular structure containing items which all have the same data type (e.g., 8-bit character, 32-bit integer).
+    - A scalar (simple single value) is a 0-dimensional array.
+
+[ncvars]: https://www.unidata.ucar.edu/software/netcdf/docs/group__variables.html#details
+
+***
+
+Attributes ([more][ncattrs])
+:   Annotate variables or files with small notes or supplementary metadata, such as the name of the file creator or the instrument used to collect the data. Attributes can be associated with either a variable or the file as a whole. Although there is no enforced limit, the user is expected to keep attributes small (*don't store array data as attributes*).
+
+<small>
+[Differences between Attributes and Variables](http://www.bic.mni.mcgill.ca/users/sean/Docs/netcdf/guide.txn_19.html)
+</small>
+
+[ncattrs]: https://www.unidata.ucar.edu/software/netcdf/docs/group__attributes.html#details
+
+***
+
+*A quick note on unified modeling language (UML)*
+
+* lines represent associations between properties/objects
+* object with filled diamond defines a composition (strong) link to other object
+    * the other object's existence depends on its parent
+* object with open diamond defines an aggregation link to other object
+    * other object's existence does not depend on a particular parent
+
+<small>[https://www.visual-paradigm.com/][uml]</small>
+
+[uml]: https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+
+***
+
+![NetCDF Classic Model UML. [https://www.unidata.ucar.edu][ncclassic]](images/nc-classic-uml.png)
+
+[ncclassic]: https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#classic_model
+
+# The Enhanced Model
+
+***
+
+![NetCDF Enhanced Model UML. [https://www.unidata.ucar.edu][ncenhanced]](images/nc4-model.png)
+
+[ncenhanced]: https://www.unidata.ucar.edu/software/netcdf/docs/netcdf_data_model.html#enhanced_model
+
+***
+
+Notice how the enhanced netCDF model resembles HDF by adding the hierarchy of groups and by introducing user-defined data types.
+
+<div class="fragment">
+*That's because it uses HDF5 as its base format!*
+</div>
+
+***
+
+For maximum portability, users are encouraged to use netCDF classic format to distribute data.
+
+# Activity
+Exploring NetCDF
+
+***
+
+**EU Integrated Project Water and Global Change (WATCH)**
+
+<small>
+http://www.eu-watch.org/
+</small>
+
+# WATCH
+
+<div class="fragment">
+* WATCH was a global multi-sector research project to analyze, quantify and predict the components of the current and future global water cycle.
+</div>
+
+<div class="fragment">
+* Data continues to be available to support ongoing research and is provided by the International Institute for Applied Systems Analysis ([IIASA](https://iiasa.ac.at/))
+</div>
+
+***
+
+A quick definition.
+
+Forcing data
+:   Input data (or data products) used to drive hydrologic, climate, atmospheric, or other process models.
+
+    If `y = f(x)`, then `x` is the forcing data for `y`.
+
+***
+
+**WATCH Forcing Data for the ERA Interim**
+
+ftp://rfdata:forceDATA@ftp.iiasa.ac.at/
+
+<small>
+Weedon,  G.P.,  Balsamo,  G.,  Bellouin,  N.,  Gomes,  S.,  Best,  M.J.  and  Viterbo,  P.,  2014.  The  WFDEI meteorological  forcing  data  set:  WATCH  Forcing  Data  methodology  applied  to  ERA-Interim reanalysis data. *Water Resources Research*, 50, [doi:10.1002/2014WR015638][wrrdoi]
+</small>
+
+[wrrdoi]: https://www.doi.org/10.1002/2014WR015638
+
+***
+
+Use the FTP link and navigate to
+
+"WFDEI" &#8594; "Tair_daily_WFDEI"
+
+\*\*\*
+
+Find & Download
+
+`File: Tair_daily_WFDEI_201812.nc.gz`
+
+***
+
+Decompress the file
+
+<small>try from the command line</small>
+
+`gzip --decompress Tair_daily_WFDEI_201812.nc.gz`
+
+<small>
+or try one of these alternative solutions:<br />
+[7zip](https://www.7-zip.org/) or
+[Python gzip](https://docs.python.org/3.7/library/gzip.html)
+</small>
+
+***
+
+Open in [QGIS][qgis] or [Panoply][panoply]
+
+|  |  |
+|:--:|:--:|
+|![](images/qgis_sb_gray.png "QGIS Desktop")|![](images/panoply_vis.png "Panoply")|
+| QGIS | Panoply |
+
+[panoply]: https://www.giss.nasa.gov/tools/panoply/
+[qgis]: https://www.qgis.org/en/site/
+
+***
+
+Panoply shows you the dimensions, variables and attributes...
+
+***
+
+<section data-background-image="images/panattr_bg.png" data-background-size="contain">
+</section>
+
+***
+
+Notice how the dimensions are also saved as variables.
+
+<div class="fragment">
+By giving dimensions values, it gives them meaning.
+</div>
+
+<div class="fragment">
+What is `lat[1]`?
+</div>
+
+<div class="fragment">
+Check `lat` variable and associated attributes<br />to see it's -89.75 degrees.
+</div>
+
+
+***
+
+More interesting is the actual `Tair` data array:
+
+***
+
+<section data-background-image="images/tair_bg.png" data-background-size="contain">
+</section>
+
+***
+
+It is N-dimensional, where n = 3<br />(`tstep x lat x lon`)
+
+Notice that `tstep`, `lat`, and `lon` have dimensional values (31, 360, and 720)<br />and what each those values represent can be found from their respective variables.
+
+# Challenge Questions
+
+***
+
+Let's begin with an example scenario.
+
+> What is the impact on global public health<br />
+> of rising maximum air temperatures?
+
+***
+
+What data do we need?
+
+<div class="fragment">&#8594; Global maximum air temperature</div>
+
+***
+
+Where do we get it?
+
+* <span class="fragment">Last time, we looked at NASA's satellite data, including MODIS; however, these datasets include surface temperature not air temperature.</span>
+* <span class="fragment">In this activity, we looked at WFDEI forcing data, which has average air temperature, not maximum.</span>
+* <span class="fragment">There is another service that provides data products, including those specific to the atmospheric conditions</span>
+
+***
+
+**The Climatic Research Unit Time Series (CRU-TS)**
+
+<div class="fragment">
+* CRU TS is maintained by the British Atmospheric Data Centre (BADC)
+</div>
+
+<div class="fragment">
+* BADC data is provided through the Center for Environmental Data Analysis (CEDA)
+</div>
+
+<div class="fragment" style="text-align: left">
+<small>
+**Note:** CRU data have been "versioning up" over the years and recently have moved from NetCDF3 (CRU TS v3.X) to NetCDF4 (CRU TS v4.X). QGIS does not handle HDF5/NetCDF4 formats without some finagling.
+</small>
+</div>
+
+***
+
+What's available in CRU-TS?
+
+<div class="fragment">
+- Percent cloud cover (CLD)
+- Potential evapotranspiration (PET)
+- Precipitation (PRE)
+- <span class="fragment highlight-green">Monthly average max/min air temperature (TMN, TMX)</span>
+- Vapor pressure (VAP)
+- Wet day frequency (WET)
+- Frost day frequency (FRS)
+</div>
+
+***
+
+How do we access it?
+
+<div class="fragment">&#8594; Create a [CEDA][ceda] account.</div>
+
+[ceda]: http://archive.ceda.ac.uk/
+
+***
+
+1. Click "My Account" at the top
+1. Click "Register for an account!"
+1. Continue to registration
+1. Complete the form
+    - Title (note "Mx" is gender-neutral designation)
+    - "Other names" are your given (first) name(s)
+    - Choose discipline closest to your own major or "Other"
+    - Consider including your degree (note: BSc is bachelor of science)
+    - Institute is "College of William and Mary"
+
+***
+
+1. Return to [archive.ceda.ac.uk](http://data.ceda.ac.uk/)
+1. Click "Get Data"
+1. Click "badc"
+
+***
+
+While you're here...<br />scroll through all the options available through BADC.
+
+***
+
+Find `cru`
+
+***
+
+Take a look at the script found in<br />[archive/badc/cru/software/third-party](http://data.ceda.ac.uk/badc/cru/software/third-party)
+
+<div class="fragment">
+Does the formatting look familiar?
+</div>
+
+***
+
+Find the most recent file format doc of CRU TS in<br />[archive/badc/cru/doc](http://data.ceda.ac.uk/badc/cru/doc)
+
+***
+
+1. What's the latest version of CRU TS 3? <!-- 3.25 -->
+2. What's the **label** and **units** for Monthly average daily maximum air temperature? <!-- tmx, degrees C -->
+3. What's a known issue associated with this dataset? <!-- anomalies near IDL and w/ Canada temperature -->
+
+***
+
+Explore [archive/badc/cru/data](http://data.ceda.ac.uk/badc/cru/data) and find the time series (TS) for monthly average daily maximum air temperature.
+
+***
+
+4. What's the file name you found?
+5. What's the most recent date/year available?
+6. What's new in this release (check release notes)?
+
+***
+
+**Bonus question**
+
+7. What's another interesting dataset you found in badc?
+    Provide a link and a brief summary.
+
+***
+
+Let's try it out.
+
+# Python API
+
+***
+
+We are going to use<br />[scipy.io.netcdf][scipync]<br />to read and write in the classic format.
+
+[scipync]: https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.netcdf_file.html#scipy.io.netcdf_file
+
+***
+
+Find `nc_read.py` and `nc_write.py` in the scripts folder of our [spatial-data-discovery.github.io][sddrepo] repository.
+
+[sddrepo]: https://github.com/spatial-data-discovery/spatial-data-discovery.github.io
+
+***
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nh3nGNStUD4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<small>
+<br /><br />
+Please follow along with the demo.
+</small>
+
+# Assignment
+
+Please find conversion script 2 assignment posted.

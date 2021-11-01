@@ -1,0 +1,7 @@
+revealjs::revealjs_presentation:
+    center: true
+    slide_level: 1
+    theme: blood
+    transition: fade
+    fig_caption: true
+    css: style.css
