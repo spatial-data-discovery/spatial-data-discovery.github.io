@@ -228,6 +228,81 @@ Explore [archive/badc/cru/data](http://data.ceda.ac.uk/badc/cru/data) and find t
 
 ***
 
+Download the data
+
+<div style="text-align: left">
+There are several versions of the same data.
+Find the netCDF version (.dat.nc.gz) for the shortest time period that includes the latest data.
+</div>
+
+***
+
+Decompress the file
+
+<small>try from the command line</small>
+
+`gzip --decompress cru_ts3.26.2011.2017.tmx.dat.nc.gz`
+
+<small>
+or try one of these alternative solutions:<br />
+[7zip](https://www.7-zip.org/) or
+[Python gzip](https://docs.python.org/3.7/library/gzip.html)
+</small>
+
+***
+
+Open in [QGIS][qgis] or [Panoply][panoply]
+
+|  |  |
+|:--:|:--:|
+|![](images/qgis_sb_gray.png "QGIS Desktop")|![](images/panoply_vis.png "Panoply")|
+| QGIS | Panoply |
+
+[panoply]: https://www.giss.nasa.gov/tools/panoply/
+[qgis]: https://www.qgis.org/en/site/
+
+***
+
+Panoply shows you the dimensions, variables and attributes...
+
+***
+
+<section data-background-image="images/panattr_bg.png" data-background-size="contain">
+</section>
+
+***
+
+Notice how the dimensions are also saved as variables.
+
+<div class="fragment">
+By giving dimensions values, it gives them meaning.
+</div>
+
+<div class="fragment">
+What is `lat[1]`?
+</div>
+
+<div class="fragment">
+Check `lat` variable and associated attributes<br />to see it's -89.25 degrees.
+</div>
+
+***
+
+More interesting is the actual `tmx` data array:
+
+***
+
+<section data-background-image="images/tmx_bg.png" data-background-size="contain">
+</section>
+
+***
+
+It is N-dimensional, where n = 3<br />(`time x lat x lon`)
+
+Notice that `time`, `lat`, and `lon` have dimensional values (84, 360, and 720)<br />and what each those values represent can be found from their respective variables.
+
+***
+
 **Bonus question**
 
 7. What's another interesting dataset you found in badc?
