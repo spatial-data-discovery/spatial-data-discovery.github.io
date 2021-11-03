@@ -334,7 +334,3 @@ Find `nc_read.py` and `nc_write.py` in the scripts folder of our [spatial-data-d
 <br /><br />
 Please follow along with the demo.
 </small>
-
-# Assignment
-
-Please find conversion script 2 assignment posted.
