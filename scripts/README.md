@@ -57,6 +57,9 @@ This folder contains utility scripts as well as a selection of data files necess
 ### dna_translator.py
 * This script takes a DNA sequence, finds the complementary sequence (called the template DNA), and returns the corresponding RNA codons and proteins they encode for in a list.
 
+### drive_size.py
+* This script takes a path argument and finds all the subfolders in this path and, for each subfolder, recursivley checks all files and sub-subfolders to create a printable CSV table of folder counts, file counts, and total file size to help understand where large datasets are located within a directory.
+
 ### embassy_news_scraper.py
 * This script takes a url of a news source from one of Chinese embassy websites and extracts its description.
 
