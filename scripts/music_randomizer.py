@@ -2,9 +2,9 @@
 #
 # music_randomizer.py
 #
-# VERSION 0.3.2
+# VERSION 0.3.4
 #
-# LAST EDIT: 2020-03-03
+# LAST EDIT: 2024-01-27
 #
 # This script randomizes music files on a USB drive
 #
@@ -17,7 +17,6 @@ import os
 import random
 import re
 import shutil
-import sys
 
 
 ##############################################################################
@@ -25,14 +24,27 @@ import sys
 ##############################################################################
 class MusicMan(object):
     """
-    Name:     MusicMan
-    Features: Class for randomizing and organizing MP3 files for USB playback
-    History:  Version 0.3.2
-              - added argparse; rm show_help [20.02.02]
-              Version 0.3
-              - updated rename mp3 files function [17.01.15]
-              Version 0.2
-              - use Reader class for mp3 title tag in file remaning [17.01.14]
+    Class for randomizing and organizing MP3 files for USB playback.
+
+    Notes:
+        Change requests:
+            -   Add method to read mp3 track title and artist from file.
+                Track titles are in in file names.
+                After 'find_files' and 'set_new_names', the file_dict value
+                tuples have the old and new paths.
+                See also 'audio-metadata' and 'tinytag' Python packages.
+            -   Add method to display track titles, artists, and file name.
+            -   Add method to search for a track title or artist.
+            -   Skip hidden folders (currently finds files in .Trash on USB)
+
+        History:
+            Version 0.3.2:
+                -   added argparse; rm show_help [20.02.02]
+            Version 0.3:
+                -   updated rename mp3 files function [17.01.15]
+            Version 0.2:
+                -   use Reader class for mp3 title tag in file remaining
+                    [17.01.14]
     """
     # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     # Class Parameters
@@ -50,7 +62,7 @@ class MusicMan(object):
         Inputs:   str, base directory (base_dir)
         Features: Initializes the MusicMan class
         """
-        # Intitialize class variables:
+        # Initialize class variables:
         self.file_list = []
         self.file_dict = {}
 
@@ -155,16 +167,16 @@ class MusicMan(object):
         return empty_dirs
 
     def mkdir_p(self, path):
-        """
-        Name:     MusicMan.mkdir_p
-        Inputs:   str, directory path (path)
-        Returns:  None.
-        Features: Makes directories, including intermediate directories as
-                  required (i.e., directory tree)
-        Ref:      tzot (2009) "mkdir -p functionality in python,"
-                  StackOverflow, Online:
-                  http://stackoverflow.com/questions/600268/
-                    mkdir-p-functionality-in-python
+        """Make directories.
+
+        Includes intermediate directories, as required.
+
+        Notes:
+            tzot (2009) "mkdir -p functionality in python," StackOverflow.
+            https://stackoverflow.com/a/600612
+
+        Args:
+            path (str): Directory path.
         """
         try:
             os.makedirs(path)
@@ -265,11 +277,12 @@ class MusicMan(object):
             new_file = self.rename_mp3(fid, file_name)
             self.file_dict[new_file] = (file_path, "")
 
+
 ##############################################################################
 # MAIN
 ##############################################################################
 if __name__ == "__main__":
-    # Create an ArgumentParser class object for dealing with commandline args
+    # Create an ArgumentParser class object for dealing with command line args
     p = argparse.ArgumentParser(
         description="Randomizes MP3 files within a folder or USB drive.")
 
@@ -278,10 +291,10 @@ if __name__ == "__main__":
     p.add_argument("-p", "--path", default=".",
                    help="Path to your music folders")
 
-    # Read any commandline arguements sent to the program
+    # Read any command line arguments sent to the program
     # NOTE: if -h or --help, the program stops here
     args = p.parse_args()
 
-    # Create an instance of the musicman class and run it
+    # Create an instance of the music man class and run it
     my_music = MusicMan(args.path)
     my_music.run()
