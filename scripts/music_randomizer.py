@@ -4,7 +4,7 @@
 #
 # VERSION 0.3.4
 #
-# LAST EDIT: 2024-01-27
+# LAST EDIT: 2025-02-23
 #
 # This script randomizes music files on a USB drive
 #
@@ -50,7 +50,7 @@ class MusicMan(object):
     # Class Parameters
     # ////////////////////////////////////////////////////////////////////////
     MAX_SONGS = 130560           # Denon: 999; Subaru: 130560
-    MAX_SONGS_PER_FOLDER = 20
+    MAX_SONGS_PER_FOLDER = 25
     MAX_FOLDERS = 512
 
     # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -222,11 +222,12 @@ class MusicMan(object):
         Features: Renames the new mp3 name, preserving the track title and
                   pre-pending the random ID
         """
-        prog = re.compile("(^\d+([\.-]\d+)?\.?)\s.*\.mp3$")
+        # Allow track numbering "01. Title" and "01 - Title"
+        prog = re.compile("(^\d+([\.-]\d+)?\.?(\s-)?)\s.*\.mp3$")
         result = prog.match(file_name)
         if result is not None:
             repl_str = "%04d." % (rand_id)
-            new_name = re.sub("(^\d+([\.-]\d+)?\.)", repl_str, file_name)
+            new_name = re.sub("(^\d+([\.-]\d+)?\.?(\s-)?)", repl_str, file_name)
         else:
             print("%s ... FAILED" % (file_name))
             new_name = file_name
