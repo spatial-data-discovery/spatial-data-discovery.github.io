@@ -7,16 +7,21 @@
 # LAST EDIT: 2025-02-23
 #
 # This script randomizes music files on a USB drive
+# TODO: add mutagen for searching and tag writing.
 #
 ##############################################################################
 # REQUIRED MODULES
 ##############################################################################
 import argparse
 import errno
+import hashlib
 import os
 import random
 import re
 import shutil
+import sqlite3
+
+from tinytag import TinyTag
 
 
 ##############################################################################
@@ -38,6 +43,8 @@ class MusicMan(object):
             -   Skip hidden folders (currently finds files in .Trash on USB)
 
         History:
+            Version 0.4:
+                -   create SQLite3 database for querying songs
             Version 0.3.2:
                 -   added argparse; rm show_help [20.02.02]
             Version 0.3:
@@ -49,6 +56,7 @@ class MusicMan(object):
     # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     # Class Parameters
     # ////////////////////////////////////////////////////////////////////////
+    DB_FILE = ".musicman.db"     # hidden SQLite3 database file
     MAX_SONGS = 130560           # Denon: 999; Subaru: 130560
     MAX_SONGS_PER_FOLDER = 25
     MAX_FOLDERS = 512
@@ -82,6 +90,157 @@ class MusicMan(object):
     # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     # Class Function Definitions
     # ////////////////////////////////////////////////////////////////////////
+    def _generate_song_fingerprint(self, title, artist, album, duration_seconds):
+        """Generate a consistent hash for a song based on its core metadata."""
+        # Normalize and concatenate key metadata fields
+        # Use lowercase and strip whitespace for robustness
+        data = f"{artist or ''}|{album or ''}|{title or ''}|{duration_seconds or 0.0}"
+        return hashlib.md5(data.lower().strip().encode('utf-8')).hexdigest()
+
+    def _build_metadata_db(self):
+        """
+        Build or update the SQLite database with music metadata
+        after files have been moved and organized.
+        """
+        db_path = os.path.join(self.base_dir, self.DB_FILE)
+        conn = None
+        try:
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+
+            # Create table if it doesn't exist
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS songs (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    song_fingerprint TEXT UNIQUE NOT NULL, -- Our stable identifier
+                    original_path TEXT NOT NULL,
+                    current_folder_path TEXT NOT NULL,
+                    current_filename TEXT NOT NULL,
+                    title TEXT,
+                    artist TEXT,
+                    album TEXT,
+                    genre TEXT,
+                    year INTEGER,
+                    duration_seconds REAL,
+                    file_size_bytes INTEGER,
+                    last_modified_timestamp REAL
+                );
+            """)
+
+            # Store fingerprints of songs processed in this run to detect deletions later
+            processed_fingerprints_this_run = set()
+
+            # Iterate through the file_dict, which now has the final paths
+            for new_file_name, (original_path, new_full_path) in self.file_dict.items():
+                if not os.path.exists(new_full_path):
+                    print(f"Warning: File not found at {new_full_path}. Skipping metadata extraction.")
+                    continue
+
+                current_folder_path = os.path.dirname(new_full_path)
+
+                # Initialize with defaults in case of metadata read errors
+                title, artist, album, genre, year = "Unknown Title", "Unknown Artist", "Unknown Album", None, None
+                duration, file_size, last_modified = 0.0, 0, 0.0
+
+                try:
+                    tag = TinyTag.get(new_full_path)
+                    title = tag.title or title
+                    artist = tag.artist or artist
+                    album = tag.album or album
+                    genre = tag.genre
+                    year = int(tag.year) if tag.year else None
+                    duration = tag.duration # in seconds
+                    file_size = os.path.getsize(new_full_path)
+                    last_modified = os.path.getmtime(new_full_path)
+
+                except Exception as e:
+                    print(f"Warning: Could not read metadata for {new_full_path}: {e}. Using defaults.")
+
+                song_fingerprint = self._generate_song_fingerprint(title, artist, album, duration)
+                processed_fingerprints_this_run.add(song_fingerprint)
+
+                # UPSERT logic:
+                # 1. Try to INSERT.
+                # 2. ON CONFLICT (song_fingerprint), DO UPDATE the path and other relevant fields.
+                #    We update all fields, as a shuffle means new paths, and user might have
+                #    edited tags manually between runs.
+                cursor.execute("""
+                    INSERT INTO songs (
+                        song_fingerprint, original_path, current_folder_path, current_filename,
+                        title, artist, album, genre, year, duration_seconds, file_size_bytes, last_modified_timestamp
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(song_fingerprint) DO UPDATE SET
+                        original_path = excluded.original_path,
+                        current_folder_path = excluded.current_folder_path,
+                        current_filename = excluded.current_filename,
+                        title = excluded.title, -- Update title, artist etc. too, in case tags were changed
+                        artist = excluded.artist,
+                        album = excluded.album,
+                        genre = excluded.genre,
+                        year = excluded.year,
+                        duration_seconds = excluded.duration_seconds,
+                        file_size_bytes = excluded.file_size_bytes,
+                        last_modified_timestamp = excluded.last_modified_timestamp;
+                """, (
+                    song_fingerprint, original_path, current_folder_path, new_file_name,
+                    title, artist, album, genre, year, duration, file_size, last_modified
+                ))
+
+            # --- Handle deletions (songs that were in the DB but not in this run) ---
+            # Get all fingerprints currently in the database
+            cursor.execute("SELECT song_fingerprint FROM songs;")
+            all_db_fingerprints = {row[0] for row in cursor.fetchall()}
+
+            # Find fingerprints that are in the DB but NOT in the current run's processed set
+            fingerprints_to_delete = all_db_fingerprints - processed_fingerprints_this_run
+
+            if fingerprints_to_delete:
+                # Delete these records from the database
+                placeholders = ','.join('?' * len(fingerprints_to_delete))
+                cursor.execute(f"DELETE FROM songs WHERE song_fingerprint IN ({placeholders})", tuple(fingerprints_to_delete))
+                print(f"Deleted {len(fingerprints_to_delete)} records for missing songs from database.")
+
+            conn.commit()
+            print(f"Music metadata database '{db_path}' updated successfully.")
+
+        except sqlite3.Error as e:
+            print(f"SQLite error during database update: {e}")
+        finally:
+            if conn:
+                conn.close()
+
+    def query_music(self, attribute, search_term):
+        """
+        Queries the music database for specified attributes.
+        Returns results including title, artist, album, and current file path.
+        """
+        db_path = os.path.join(self.base_dir, "music_metadata.db")
+        conn = None
+        results = []
+        try:
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+
+            # Valid attributes to prevent SQL injection for attribute name
+            valid_attributes = ["title", "artist", "album", "genre", "current_filename", "current_folder_path"]
+            if attribute not in valid_attributes:
+                print(f"Invalid attribute '{attribute}'. Supported attributes: {', '.join(valid_attributes)}")
+                return results
+
+            # Use LIKE for partial matching, and parameter binding for search_term
+            # Select relevant display fields
+            query = f"SELECT title, artist, album, current_folder_path, current_filename FROM songs WHERE {attribute} LIKE ?"
+            cursor.execute(query, (f"%{search_term}%",))
+            results = cursor.fetchall() # Returns a list of tuples
+
+        except sqlite3.Error as e:
+            print(f"SQLite error during query: {e}")
+        finally:
+            if conn:
+                conn.close()
+        return results
+
+
     def assign_new_folders(self):
         """
         Name:     MusicMan.assign_new_folders
@@ -253,6 +412,7 @@ class MusicMan(object):
             self.assign_new_folders()  # assign new files to a folder path
             self.move_files()          # move files to new folder
             self.clean_up()            # remove lingering empty directories
+            self._build_metadata_db()  #
         else:
             print("Found no music files! Check your path.")
 
