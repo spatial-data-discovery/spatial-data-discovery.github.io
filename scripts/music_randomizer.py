@@ -15,6 +15,13 @@ import shutil
 import sqlite3
 
 from tinytag import TinyTag
+from mutagen.mp3 import MP3
+from mutagen.id3 import ID3
+from mutagen.id3 import APIC # Album Art
+from mutagen.id3 import TPE1 # Artist
+from mutagen.id3 import TALB # Album
+from mutagen.id3 import TDRC # Year
+from mutagen.id3 import error
 
 
 ##############################################################################
@@ -88,11 +95,9 @@ __all__ = [
 # CLASSES
 ##############################################################################
 class MusicMan(object):
-    """
-    Class for randomizing and organizing MP3 files for USB playback.
+    """Class for randomizing and organizing MP3 files for USB playback.
 
     Notes:
-        History:
         History:
             Version 0.4:
                 -   create SQLite3 database for querying songs
@@ -639,6 +644,341 @@ class MusicMan(object):
             file_name = os.path.basename(file_path)
             new_file = self.rename_mp3(fid, file_name)
             self.file_dict[new_file] = (file_path, "")
+
+
+class TagManager(object):
+    """A class to analyze and manage MP3 metadata tags.
+
+    This class focuses on identifying and fixing common tag issues like missing
+    album names and years, and embedding external album artwork (e.g.,
+    album.png) directly into the MP3 files.
+    """
+    def __init__(self, music_library_root_dir):
+        """
+        Initializes the MP3TagManager with the root directory of the music library.
+
+        Args:
+            music_library_root_dir (str): The root path of your music collection.
+        """
+        if not os.path.isdir(music_library_root_dir):
+            raise ValueError(f"Directory not found: {music_library_root_dir}")
+        self.root_dir = music_library_root_dir
+        self.mp3_files = [] # To store paths of discovered MP3s
+        self.problem_files = {
+            'missing_album': [],
+            'missing_year': [],
+            'no_art_embedded': [],
+            'error_processing': []
+        }
+
+    def _find_mp3_files(self):
+        """
+        Internal method to recursively find all MP3 files in the root directory.
+        """
+        self.mp3_files = []
+        print(f"Scanning for MP3 files in: {self.root_dir}...")
+        for root, _, files in os.walk(self.root_dir):
+            # Skip hidden directories like .git, .Trash, etc.
+            if os.path.basename(root).startswith('.'):
+                continue
+            for file in files:
+                if file.lower().endswith('.mp3'):
+                    self.mp3_files.append(os.path.join(root, file))
+        print(f"Found {len(self.mp3_files)} MP3 files.")
+
+    def analyze_tags(self):
+        """
+        Analyzes MP3 tags for missing album/year and embedded artwork status.
+        Populates self.problem_files with identified issues.
+        """
+        self._find_mp3_files()
+
+        # Reset problem files from previous analysis
+        self.problem_files = {
+            'missing_album': [],
+            'missing_year': [],
+            'no_art_embedded': [],
+            'error_processing': []
+        }
+
+        print("\nAnalyzing MP3 tags...")
+        for i, mp3_path in enumerate(self.mp3_files):
+            if (i + 1) % 100 == 0 or (i + 1) == len(self.mp3_files):
+                print(f"  Processed {i+1}/{len(self.mp3_files)} files.")
+
+            try:
+                audio = MP3(mp3_path, ID3=ID3)
+                # Ensure ID3 tags are present, if not, add an empty ID3 tag
+                if audio.tags is None:
+                    audio.add_tags() # Adds a default ID3 v2.3 tag
+                    audio.save() # Save immediately to write the empty tags
+
+                tags = audio.tags
+
+                # Check for Album (TALB)
+                if 'TALB' not in tags or not tags['TALB'].text or not tags['TALB'].text[0].strip():
+                    self.problem_files['missing_album'].append(mp3_path)
+
+                # Check for Year (TDRC or TYER - TDRC is modern, TYER is old)
+                # TDRC is usually "YYYY-MM-DD" or "YYYY", so we'll just check if it exists
+                if 'TDRC' not in tags and 'TYER' not in tags:
+                    self.problem_files['missing_year'].append(mp3_path)
+                elif 'TDRC' in tags and not tags['TDRC'].text:
+                     self.problem_files['missing_year'].append(mp3_path)
+                elif 'TYER' in tags and not tags['TYER'].text:
+                     self.problem_files['missing_year'].append(mp3_path)
+
+                # Check for Album Art (APIC)
+                has_artwork = False
+                for k, v in tags.items():
+                    if k.startswith('APIC'):
+                        has_artwork = True
+                        break
+                if not has_artwork:
+                    self.problem_files['no_art_embedded'].append(mp3_path)
+
+            except error as e:
+                self.problem_files['error_processing'].append((mp3_path, str(e)))
+                print(f"  Error processing {mp3_path}: {e}")
+            except Exception as e:
+                self.problem_files['error_processing'].append((mp3_path, str(e)))
+                print(f"  Unexpected error processing {mp3_path}: {e}")
+
+        self._print_analysis_summary()
+
+    def _print_analysis_summary(self):
+        """Prints a summary of the analysis results."""
+        print("\n--- Analysis Summary ---")
+        print(f"Total MP3 files analyzed: {len(self.mp3_files)}")
+        print(f"Files with missing Album tag: {len(self.problem_files['missing_album'])}")
+        print(f"Files with missing Year tag: {len(self.problem_files['missing_year'])}")
+        print(f"Files with no embedded album art: {len(self.problem_files['no_art_embedded'])}")
+        print(f"Files with processing errors: {len(self.problem_files['error_processing'])}")
+        print("------------------------")
+
+        if self.problem_files['missing_album']:
+            print("\nFiles with Missing Album:")
+            for p in self.problem_files['missing_album']:
+                print(f"  - {p}")
+        if self.problem_files['missing_year']:
+            print("\nFiles with Missing Year:")
+            for p in self.problem_files['missing_year']:
+                print(f"  - {p}")
+        if self.problem_files['no_art_embedded']:
+            print("\nFiles with No Embedded Album Art:")
+            for p in self.problem_files['no_art_embedded']:
+                print(f"  - {p}")
+        if self.problem_files['error_processing']:
+            print("\nFiles with Processing Errors:")
+            for p, err in self.problem_files['error_processing']:
+                print(f"  - {p} (Error: {err})")
+
+    def embed_album_art(self, dry_run=True, art_filename="Folder.jpg"):
+        """
+        Embeds album art (e.g., 'Folder.jpg') from the same directory into
+        MP3 files.
+
+        Args:
+            dry_run (bool):
+                If True, only report what would be done, do not modify files.
+                If False, actually embed the artwork.
+            art_filename (str):
+                The name of the artwork file to look for (e.g., "Folder.jpg").
+        """
+        if not self.mp3_files:
+            print("No MP3 files found. Please run analyze_tags() first.")
+            return
+
+        print(f"\n--- Embedding Album Art ({'Dry Run' if dry_run else 'Actual Run'}) ---")
+        embedded_count = 0
+        skipped_no_art_file = 0
+        skipped_already_has_art = 0
+        error_count = 0
+
+        for i, mp3_path in enumerate(self.mp3_files):
+            if (i + 1) % 100 == 0 or (i + 1) == len(self.mp3_files):
+                print(f"  Processed {i+1}/{len(self.mp3_files)} files for art embedding.")
+
+            artwork_path = os.path.join(os.path.dirname(mp3_path), art_filename)
+
+            # Check if artwork file exists
+            if not os.path.exists(artwork_path):
+                # print(f"  No '{art_filename}' found for {mp3_path}. Skipping.")
+                skipped_no_art_file += 1
+                continue
+
+            try:
+                audio = MP3(mp3_path, ID3=ID3)
+                # Ensure ID3 tags are present
+                if audio.tags is None:
+                    audio.add_tags()
+                    # No need to save here, will save after adding art
+
+                tags = audio.tags
+
+                # Check if artwork is already embedded (to avoid redundant operations)
+                has_artwork = False
+                for k, v in tags.items():
+                    if k.startswith('APIC'):
+                        # Can add a more sophisticated check here if needed (e.g., comparing image data)
+                        has_artwork = True
+                        break
+
+                if has_artwork:
+                    print(f"  {mp3_path} already has embedded artwork. Skipping.")
+                    skipped_already_has_art += 1
+                    continue
+
+                # Read artwork data
+                with open(artwork_path, 'rb') as f:
+                    artwork_data = f.read()
+
+                # Remove any existing APIC frames before adding new one, to prevent duplicates
+                # This ensures you're replacing, not just adding
+                for k in list(tags.keys()): # Use list(tags.keys()) to modify during iteration
+                    if k.startswith('APIC'):
+                        del tags[k]
+
+                # Create APIC (Attached Picture) frame
+                # mime: Mime type (e.g., 'image/png', 'image/jpeg')
+                # type: 3 for front cover (other types: 0=other, 1=icon, 2=other icon, etc.)
+                # desc: Description (optional)
+                # data: The image data
+                tags.add(
+                    APIC(
+                        encoding=3, # 3 is UTF-8
+                        mime='image/jpeg',
+                        type=3, # 3 is Front Cover
+                        desc=u'Cover',
+                        data=artwork_data
+                    )
+                )
+
+                if not dry_run:
+                    audio.save()
+                    embedded_count += 1
+                    print(f"  Embedded '{art_filename}' into {mp3_path}")
+                else:
+                    print(f"  DRY RUN: Would embed '{art_filename}' into {mp3_path}")
+
+            except error as e:
+                error_count += 1
+                print(f"  Error processing {mp3_path} for art embedding: {e}")
+            except Exception as e:
+                error_count += 1
+                print(f"  Unexpected error processing {mp3_path} for art embedding: {e}")
+
+        print("\n--- Album Art Embedding Summary ---")
+        print(f"Total files considered: {len(self.mp3_files)}")
+        print(f"Files where '{art_filename}' was embedded: {embedded_count}")
+        print(f"Files where no '{art_filename}' was found: {skipped_no_art_file}")
+        print(f"Files already had embedded art (skipped): {skipped_already_has_art}")
+        print(f"Files with errors during embedding: {error_count}")
+        print("-----------------------------------")
+
+
+    def fix_missing_tags(self, dry_run=True, default_album="Unknown Album", default_year=None):
+        """
+        Attempts to fix missing Album and Year tags.
+        This method would typically require user input or a more sophisticated
+        logic to infer missing data (e.g., from folder names or online databases).
+        For now, it reports and can set default values if needed.
+
+        Args:
+            dry_run (bool): If True, only report what would be done.
+            default_album (str): The default album name to use if missing.
+            default_year (int/str): The default year to use if missing.
+                                    Set to None to not auto-fill year.
+        """
+        # This method is more complex as "fixing" missing data often requires
+        # human intervention or heuristics.
+        # For a basic implementation, we can just report and optionally fill with defaults.
+
+        if not self.problem_files['missing_album'] and not self.problem_files['missing_year']:
+            print("No missing album or year tags found to fix.")
+            return
+
+        print(f"\n--- Fixing Missing Tags ({'Dry Run' if dry_run else 'Actual Run'}) ---")
+        fixed_album_count = 0
+        fixed_year_count = 0
+        error_count = 0
+
+        # It's better to re-run analysis or pass the actual problem files from analyze_tags
+        # For simplicity, let's assume analyze_tags has populated self.problem_files
+
+        files_to_fix = set(self.problem_files['missing_album'] + self.problem_files['missing_year'])
+
+        for i, mp3_path in enumerate(files_to_fix):
+            if (i + 1) % 50 == 0 or (i + 1) == len(files_to_fix):
+                print(f"  Processed {i+1}/{len(files_to_fix)} files for tag fixing.")
+
+            try:
+                audio = MP3(mp3_path, ID3=ID3)
+                if audio.tags is None:
+                    audio.add_tags() # Add tags if none exist
+                    # Do not save here, we'll save after modifications
+                tags = audio.tags
+
+                modified = False
+
+                # Fix Album
+                if 'TALB' not in tags or not tags['TALB'].text or not tags['TALB'].text[0].strip():
+                    if default_album:
+                        if not dry_run:
+                            tags['TALB'] = TALB(encoding=3, text=[default_album])
+                            modified = True
+                            fixed_album_count += 1
+                        print(f"  {'DRY RUN: ' if dry_run else ''}Set Album to '{default_album}' for: {mp3_path}")
+                    else:
+                        print(f"  Missing Album for: {mp3_path} (No default set)")
+
+                # Fix Year
+                if 'TDRC' not in tags and 'TYER' not in tags:
+                    if default_year is not None:
+                        if not dry_run:
+                            tags['TDRC'] = TDRC(encoding=3, text=[str(default_year)])
+                            modified = True
+                            fixed_year_count += 1
+                        print(f"  {'DRY RUN: ' if dry_run else ''}Set Year to '{default_year}' for: {mp3_path}")
+                    else:
+                        print(f"  Missing Year for: {mp3_path} (No default set)")
+                elif 'TDRC' in tags and not tags['TDRC'].text:
+                    if default_year is not None:
+                        if not dry_run:
+                            tags['TDRC'].text = [str(default_year)]
+                            modified = True
+                            fixed_year_count += 1
+                        print(f"  {'DRY RUN: ' if dry_run else ''}Updated TDRC Year to '{default_year}' for: {mp3_path}")
+                elif 'TYER' in tags and not tags['TYER'].text:
+                    if default_year is not None:
+                        if not dry_run:
+                            # It's generally better to use TDRC (ID3v2.4) over TYER (ID3v2.3) if updating
+                            del tags['TYER'] # Remove old tag
+                            tags['TDRC'] = TDRC(encoding=3, text=[str(default_year)])
+                            modified = True
+                            fixed_year_count += 1
+                        print(f"  {'DRY RUN: ' if dry_run else ''}Updated TYER Year to '{default_year}' for: {mp3_path} (converted to TDRC)")
+
+
+                if modified and not dry_run:
+                    audio.save()
+                    # Re-analyze this file if you want to verify fixes immediately after saving
+                    # or re-run analyze_tags for the whole set.
+
+            except error as e:
+                error_count += 1
+                print(f"  Error fixing tags for {mp3_path}: {e}")
+            except Exception as e:
+                error_count += 1
+                print(f"  Unexpected error fixing tags for {mp3_path}: {e}")
+
+        print("\n--- Fixing Missing Tags Summary ---")
+        print(f"Album tags {'would be' if dry_run else ''} set: {fixed_album_count}")
+        print(f"Year tags {'would be' if dry_run else ''} set: {fixed_year_count}")
+        print(f"Files with errors during tag fixing: {error_count}")
+        print("----------------------------------")
+        if not dry_run and (fixed_album_count > 0 or fixed_year_count > 0):
+            print("\nConsider running analyze_tags() again to verify changes.")
 
 
 ##############################################################################
